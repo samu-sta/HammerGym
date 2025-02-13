@@ -1,0 +1,29 @@
+.menu-container {
+position: relative;
+
+}
+
+.dropdown-menu {
+position: absolute;
+top: 80px;
+right: 0;
+background-color: #2d3033;
+min-width: 200px;
+border-radius: 4px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+z-index: 1000;
+}
+
+.dropdown-item {
+color: white;
+padding: 12px 16px;
+text-decoration: none;
+font-style: italic;
+display: block;
+transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+background-color: #998000;
+color: white;
+}
