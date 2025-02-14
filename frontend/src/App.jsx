@@ -5,6 +5,8 @@ import { TbAlignJustified } from "react-icons/tb";
 import { useWindowSize } from './hooks/useWindowSize.jsx';
 import { MOBILE_WIDTH } from './config/constants.js';
 import DropdownHeader from './components/DropdownHeader.jsx';
+import Home from './pages/Home.jsx'
+
 function App() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,7 +71,10 @@ function App() {
             )}
           </section>
         </header>
-      </main>
+        <Routes>
+          <Route path="/" element={<Home isMobile={isMobile}/>} />
+        </Routes>
+        </main>
     </BrowserRouter>
   )
 }

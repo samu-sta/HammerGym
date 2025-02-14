@@ -1,0 +1,22 @@
+.achievement-home{
+  background-size: cover;
+  border: 2.3px solid #aaa;
+  border-radius: 99999999px;
+  width: 70px;
+  height: 70px;
+  font-size: 13px;
+  padding: 5px;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #aaa;
+  font-weight: bold;
+}
+
+.achievement-home-mobile{
+  width: 35px;
+  height: 35px;
+  font-size: 8px;
+}
