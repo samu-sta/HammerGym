@@ -2,6 +2,8 @@ import React from 'react';
 import './styles/Home.css';
 import AchievementHome from '../components/AchievementHome.jsx';
 import { Link } from 'react-router-dom';
+import AccessHome from '../components/AccessHome.jsx';
+import SliderHome from '../components/SliderHome.jsx';
 const Home = ({isMobile}) => {
   return (
     <main className='main-home'>
@@ -23,6 +25,18 @@ const Home = ({isMobile}) => {
             </Link>
 
         </article>
+
+      </section>
+      <section className='main-home-slider'>
+        <h2 className={isMobile ? 'main-home-slider-title main-home-slider-title-mobile'
+                                : 'main-home-slider-title'}>
+          DESCUBRE NUESTRAS INSTALACIONES</h2>
+        <SliderHome isMobile={isMobile}/>
+      </section>
+      <section className='main-home-register-section'>
+        <AccessHome isMobile={isMobile}></AccessHome>
+        <AccessHome isMobile={isMobile}></AccessHome>
+        <AccessHome isMobile={isMobile}></AccessHome>
 
       </section>
     </main>
