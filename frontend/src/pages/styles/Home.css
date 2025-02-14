@@ -68,6 +68,16 @@
   background-color: #786500;
 }
 
+/* Remove the duplicate .main-home-slider-title at the bottom */
+
+.main-home-slider,
+.main-home-register-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .main-home-slider-title {
   font-size: 30px;
   font-weight: bold;
@@ -79,6 +89,7 @@
   text-align: center;
   transition: font-size 0.4s ease;
   font-style: italic;
+  display: inline-block;
 }
 
 .main-home-slider-title::before,
@@ -101,6 +112,27 @@
 }
 
 .main-home-slider-title-mobile {
-  font-size: 18px;
-  transition: font-size 0.4s ease;
+  font-size: 19px;
+  transition: all 0.4s ease;
+}
+
+.main-home-register-section{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
+
+.main-home-register-section-main{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.4s ease;
+  width: 100%;
+}
+
+.main-home-register-section-main-mobile{
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.4s ease;
 }

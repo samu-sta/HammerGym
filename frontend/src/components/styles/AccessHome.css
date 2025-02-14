@@ -1,0 +1,34 @@
+.access-home-article{
+  background-color: #333;
+  font-size: 14px;
+  padding: 10px 35px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  height: 100%;
+}
+
+.access-account-home-title{
+  color: #998000;
+  font-style: italic;
+  font-size: 20px;
+  text-align: center;
+}
+
+.access-home-links{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.access-home-icon-container{
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.access-home-icon{
+  font-size: 20px;
+  color: #998000;
+  transform: translateX(15px);
+}
