@@ -1,10 +1,23 @@
 import {z} from 'zod';
 import {FORM_ERROR_MESSAGES} from './../config/constants.js';
 
+
 export const loginSchema = z.object({
   email: z.string(),
   password: z.string(),
-}).superRefine((data, ctx) => {
+}).superRefine((data, ctx) => commonSuperRefine(data, ctx));
+
+export const registrationSchema = z.object({
+  role: z.enum(['Usuario', 'Entrenador']),
+  name: z.string().nonempty({ message: 'El nombre es requerido' }),
+  surname: z.string().nonempty({ message: 'Los apellidos son requeridos' }),
+  username: z.string().nonempty({ message: 'El nombre de usuario es requerido' }),
+  email: z.string(),
+  password: z.string()
+}).superRefine((data, ctx) => commonSuperRefine(data, ctx));
+
+
+const commonSuperRefine = (data, ctx) => {
   if (!data.email) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
@@ -32,4 +45,4 @@ export const loginSchema = z.object({
       path: ["password"],
     });
   }
-});
+}

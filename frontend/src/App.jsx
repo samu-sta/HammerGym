@@ -8,6 +8,7 @@ import DropdownHeader from './components/DropdownHeader.jsx';
 import Home from './pages/Home.jsx'
 import Footer from './components/Footer.jsx';
 import LoginPage from './pages/LoginPage.jsx';
+import RegistrationPage from './pages/RegisterPage.jsx';
 function App() {
 
 
@@ -97,6 +98,7 @@ function App() {
                 isScrolling={isScrolling}
                 setShouldShowAccessButton={setShouldShowAccessButton} />} />
           <Route path="/login" element={<LoginPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
+          <Route path="/register" element={<RegistrationPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
         </Routes >
         <Footer />
       </main>

@@ -1,29 +1,28 @@
-.login-page {
+.registration-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
   min-height: 78vh;
   width: 100%;
 }
 
-.login-page-title {
+.registration-page-title {
   font-size: 3rem;
   font-style: italic;
 }
 
-.login-form {
+.registration-form {
   padding: 20px;
   width: 80%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 20px;
   align-items: center;
 }
 
-.login-input {
+.registration-input {
   padding: 12px;
   border: none;
   font-size: 1.2rem;
@@ -32,25 +31,23 @@
   font-family: inherit;
 }
 
-.login-input:focus {
+.registration-input:focus {
   outline: none;
 }
 
-.login-form-container {
+.registration-form-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   width: 100%;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-
 }
 
-
-.login-submit-button {
+.registration-submit-button {
   background-color: #998000;
   color: white;
   padding: 10px 20px;
@@ -62,28 +59,23 @@
   transition: all 0.3s ease;
 }
 
-.login-submit-button:hover {
+.registration-submit-button:hover {
   background-color: #786500;
   transform: scale(1.05);
 }
 
-.login-submit-button:active {
+.registration-submit-button:active {
   transform: scale(1);
-}
-
-.login-input-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .error-message {
   color: #d73333;
   width: fit-content;
+  height: 24px;
   margin: 0;
 }
 
-.login-page-back-container{
+.registration-page-back-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +84,7 @@
   padding: 20px 0px;
 }
 
-.login-page-back{
+.registration-page-back {
   color: rgb(3, 92, 151);
   font-size: 1.2rem;
   cursor: pointer;
@@ -104,14 +96,50 @@
   font-style: italic;
 }
 
-.login-page-back:hover{
+.registration-page-back:hover {
   color: rgb(2, 71, 117);
   transition: all 0.3s ease;
 }
 
-.login-form-buttons{
+.registration-form-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.custom-select {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-select-option {
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-select-option::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #998000;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.custom-select-option.selected::after {
+  width: 100%;
+  left: 0;
+}
+
+.custom-select-option.selected{
+  color: #998000;
+}
+
+.custom-select-option:active::after {
+  width: 100%;
+  left: 0;
 }
