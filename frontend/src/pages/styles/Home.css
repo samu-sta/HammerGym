@@ -138,7 +138,8 @@
 .main-home-register-section{
   display: flex;
   flex-direction: column;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
+  gap: 20px;
 }
 
 
@@ -156,6 +157,19 @@
   transition: all 0.4s ease;
 }
 
+.login-link-bottom{
+  margin-top: 30px;
+  color: #998000;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.login-link-bottom:hover {
+  transform: scale(1.1);
+  color: #786500;
+}
 
 @keyframes fadeInUp {
   from {

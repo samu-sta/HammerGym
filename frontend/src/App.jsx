@@ -7,14 +7,16 @@ import { MOBILE_WIDTH } from './config/constants.js';
 import DropdownHeader from './components/DropdownHeader.jsx';
 import Home from './pages/Home.jsx'
 import Footer from './components/Footer.jsx';
-
+import LoginPage from './pages/LoginPage.jsx';
 function App() {
+
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const windowWidth = useWindowSize();
   const isMobile = windowWidth < MOBILE_WIDTH;
   const accessSectionRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [shouldSowAccessButton, setShouldShowAccessButton] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,14 +25,13 @@ function App() {
   const scrollToAccessSection = () => {
     accessSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
 
-    // Reset scrolling state after the animation completes
     setTimeout(() => {
       setIsScrolling(true);
-    }, 600); // Adjust the timeout to match the scroll animation duration
+    }, 600);
 
     setTimeout(() => {
       setIsScrolling(false);
-    }, 1300); // Adjust the timeout to match the scroll animation duration
+    }, 1300);
   };
 
   return (
@@ -63,13 +64,14 @@ function App() {
           </section>
 
           <section className='header-app-right'>
-            <button
-              to="/login"
-              className='app-link login-link'
-              onClick={scrollToAccessSection}>
-              ACCEDER
-            </button>
-            
+            {shouldSowAccessButton && (
+              <Link
+                to="/login"
+                className='app-link login-link'>
+                ACCEDER
+              </Link>
+            )}
+
             {isMobile && (
               <>
                 <TbAlignJustified
@@ -79,16 +81,25 @@ function App() {
                     toggleMenu();
                   }}
                 />
-                {isMenuOpen && ( <DropdownHeader/> )}
+                {isMenuOpen && (<DropdownHeader />)}
               </>
             )}
           </section>
         </header>
         <Routes>
-          <Route path="/" element={<Home isMobile={isMobile} accessSectionRef={accessSectionRef} scrollToAccessSection={scrollToAccessSection} isScrolling={isScrolling}/>} />
-        </Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                isMobile={isMobile}
+                accessSectionRef={accessSectionRef}
+                scrollToAccessSection={scrollToAccessSection}
+                isScrolling={isScrolling}
+                setShouldShowAccessButton={setShouldShowAccessButton} />} />
+          <Route path="/login" element={<LoginPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
+        </Routes >
         <Footer />
-        </main>
+      </main>
     </BrowserRouter>
   )
 }

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './styles/Home.css';
 import AchievementHome from '../components/AchievementHome.jsx';
 import { Link } from 'react-router-dom';
 import AccessHome from '../components/AccessHome.jsx';
 import SliderHome from '../components/SliderHome.jsx';
 import { PERSONAL } from '../config/constants.js';
-const Home = ({ isMobile, accessSectionRef, scrollToAccessSection, isScrolling }) => {
+const Home = ({ isMobile, accessSectionRef, scrollToAccessSection, isScrolling, setShouldShowAccessButton }) => {
+  
+  useEffect(() => setShouldShowAccessButton(true), []);
+  
   return (
     <main className='main-home'>
       <section className={isMobile ? 'main-home-content main-home-content-mobile'
@@ -62,6 +65,7 @@ const Home = ({ isMobile, accessSectionRef, scrollToAccessSection, isScrolling }
             linkLogin={'/login'}
             />
         </main>
+        <Link to='/login' className='login-link-bottom login-link'>¿Ya tienes cuenta? Inicia sesión</Link>
 
 
       </section>

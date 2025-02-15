@@ -4,7 +4,7 @@ import "./styles/SliderHome.css";
 
 const SliderHome = ({isMobile}) => {
   return (
-    <div class={isMobile ? 'slider-frame slider-frame-mobile' : 'slider-frame'}>
+    <div className={isMobile ? 'slider-frame slider-frame-mobile' : 'slider-frame'}>
         <ul>
           <li><img src="/carrusel/1.png" alt=""/></li>
           <li><img src="/carrusel/2.png" alt=""/></li>

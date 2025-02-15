@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './styles/AccessHome.css';
 import { Link } from 'react-router-dom';
 
-const AccessHome = ({personal, linkRegister, linkLogin, isScrolling}) => {
+const AccessHome = ({personal, linkRegister, isScrolling}) => {
   const Icon = personal.icon;
 
   const [applyHover, setApplyHover] = useState(false);
@@ -38,7 +38,6 @@ const AccessHome = ({personal, linkRegister, linkLogin, isScrolling}) => {
       </main>
       
       <section className="access-home-links">
-        <Link className='app-link login-link' to={linkLogin}>ACCEDER</Link>
         <Link className='app-link register-link' to={linkRegister}>INSCRÍBETE</Link>
       </section>
       

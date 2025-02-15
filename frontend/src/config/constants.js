@@ -38,3 +38,15 @@ export const PERSONAL = [
     delay : 400
   }
 ];
+
+export const FORM_ERROR_MESSAGES = {
+  email: {
+    required: 'El email es requerido',
+    invalid: 'Dirección de email inválida'
+  },
+  password: {
+    required: 'La contraseña es requerida',
+    invalid: 'La contraseña debe tener al menos 8 caracteres'
+  }
+};
+
