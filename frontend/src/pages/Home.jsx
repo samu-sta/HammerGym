@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import AccessHome from '../components/AccessHome.jsx';
 import SliderHome from '../components/SliderHome.jsx';
 import { PERSONAL } from '../config/constants.js';
-const Home = ({ isMobile }) => {
+const Home = ({ isMobile, accessSectionRef, scrollToAccessSection, isScrolling }) => {
   return (
     <main className='main-home'>
       <section className={isMobile ? 'main-home-content main-home-content-mobile'
@@ -19,14 +19,14 @@ const Home = ({ isMobile }) => {
             <AchievementHome isMobile={isMobile}>365 DÍAS AL AÑO</AchievementHome>
             <AchievementHome isMobile={isMobile}>ACCESO NACIONAL</AchievementHome>
           </section>
-          <Link
-            to="/register"
-            className='app-link register-link register-link-home'>
+          <button
+            className='app-link register-link register-link-home'
+            aria-label="Inscríbete ahora"
+            onClick={scrollToAccessSection}>
             INSCRÍBETE
-          </Link>
+          </button>
 
         </article>
-
       </section>
       <section className='main-home-slider'>
         <h2 className={isMobile ? 'main-home-slider-title main-home-slider-title-mobile'
@@ -35,7 +35,7 @@ const Home = ({ isMobile }) => {
         </h2>
         <SliderHome isMobile={isMobile} />
       </section>
-      <section className='main-home-register-section'>
+      <section className='main-home-register-section' ref={accessSectionRef}>
         <h2 className={isMobile ? 'main-home-slider-title main-home-slider-title-mobile'
           : 'main-home-slider-title'}>
           ACCESO
@@ -47,15 +47,18 @@ const Home = ({ isMobile }) => {
             personal={PERSONAL[0]} 
             linkRegister={'/register'}
             linkLogin={'/login'}
+            isScrolling={isScrolling}
             />
           <AccessHome 
             personal={PERSONAL[1]} 
             linkRegister={'/register'}
+            isScrolling={isScrolling}
             linkLogin={'/login'}
             />
           <AccessHome 
             personal={PERSONAL[2]} 
             linkRegister={'/register'}
+            isScrolling={isScrolling}
             linkLogin={'/login'}
             />
         </main>

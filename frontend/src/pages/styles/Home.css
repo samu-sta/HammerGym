@@ -1,10 +1,8 @@
 
 .main-home{
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  
 }
 
 .main-home-content{
@@ -18,10 +16,28 @@
   width: 100%;
   min-height: 700px;
   transition: min-height 0.4s ease;
+  position: relative;
 }
+
 .main-home-content-mobile{
   background-image: url("../public/images/gymWallpaper2.png");
   min-height: 500px;
+}
+
+.main-home-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.7) 0%,
+    rgba(0,0,0,0.3) 50%,
+    rgba(0,0,0,0.7) 100%
+  );
+  z-index: 1;
 }
 
 .main-home-article{
@@ -32,6 +48,12 @@
   flex-direction: column;
   gap: 30px;
   justify-content: center;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .main-home-article-mobile{
@@ -39,7 +61,14 @@
 }
 
 .main-home-article b{
-  color: #998000;
+  color: #ffc107;
+}
+
+.main-home-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 .main-home-slider{
@@ -54,6 +83,15 @@
   gap: 20px;
 }
 
+.main-home-achievements > * {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.main-home-achievements > *:nth-child(1) { animation-delay: 0.1s; }
+.main-home-achievements > *:nth-child(2) { animation-delay: 0.2s; }
+.main-home-achievements > *:nth-child(3) { animation-delay: 0.3s; }
+.main-home-achievements > *:nth-child(4) { animation-delay: 0.4s; }
+
 .register-link-home{
   width: fit-content;
   text-decoration: none;
@@ -61,14 +99,14 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(153,128,0,0.3);
+  padding: 15px 20px;
 }
 
 .register-link-home:hover {
   transform: scale(1.1);
   background-color: #786500;
 }
-
-/* Remove the duplicate .main-home-slider-title at the bottom */
 
 .main-home-slider,
 .main-home-register-section {
@@ -90,25 +128,6 @@
   transition: font-size 0.4s ease;
   font-style: italic;
   display: inline-block;
-}
-
-.main-home-slider-title::before,
-.main-home-slider-title::after {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 30px;
-  background-color: #998000;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.main-home-slider-title::before {
-  left: -40px;
-}
-
-.main-home-slider-title::after {
-  right: -40px;
 }
 
 .main-home-slider-title-mobile {
@@ -135,4 +154,28 @@
   flex-direction: column;
   gap: 20px;
   transition: all 0.4s ease;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

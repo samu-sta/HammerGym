@@ -1,12 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './styles/AccessHome.css';
 import { Link } from 'react-router-dom';
 
-const AccessHome = ({personal, linkRegister, linkLogin}) => {
+const AccessHome = ({personal, linkRegister, linkLogin, isScrolling}) => {
   const Icon = personal.icon;
+
+  const [applyHover, setApplyHover] = useState(false);
+
+  useEffect(() => {
+    let timeoutId;
+
+    if (isScrolling) {
+      timeoutId = setTimeout(() => {
+        setApplyHover(true);
+      }, personal.delay); // Use personal.delay here
+    } else {
+      setApplyHover(false);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [isScrolling, personal.delay]);
   
   return (
-    <article className="access-home-article">
+    <article className={`access-home-article ${applyHover ? 'access-home-article-hover' : ''}`}>
       <main className="access-home-main">
       <aside className="access-home-icon-container">
         <Icon className="access-home-icon" />

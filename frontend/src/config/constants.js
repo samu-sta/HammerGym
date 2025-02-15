@@ -12,7 +12,8 @@ export const PERSONAL = [
       'Registro de actividades',
       'Consulta de resultados'
     ],
-    icon: FaUser
+    icon: FaUser,
+    delay : 0
   },
   {
     name: 'Entrenador',
@@ -22,7 +23,8 @@ export const PERSONAL = [
       'Consulta de resultados',
       'Gestión de clases'
     ],
-    icon: FaUserGraduate
+    icon: FaUserGraduate,
+    delay : 200
   },
   {
     name: 'Administrador',
@@ -32,6 +34,7 @@ export const PERSONAL = [
       'Gestión de espacios',
       'Gestión de membresias'
     ],
-    icon: FaUserSecret
+    icon: FaUserSecret,
+    delay : 400
   }
 ];
