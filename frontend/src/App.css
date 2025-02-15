@@ -2,17 +2,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 90px;
 }
 
 .header-app{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background-color: #2d3033;
-    height: 90;
-    padding: 7.5px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #2d3033;
+  height: 90px;
+  padding: 7.5px 0;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
+
 
 .header-app-logo{
   height: 70px;
