@@ -35,28 +35,20 @@ const LoginPage = ({setShouldShowAccessButton}) => {
       <form className="login-form" onSubmit={handleSubmit}>
         <main className='login-form-container'>
           <section className="form-group">
-            <header className='login-input-header'>
               <label htmlFor="email">Email:</label>
-
-              {errors.email && (
-                <p className="error-message">{errors.email._errors.join(', ')}</p>
-              )}
-            </header>
             <input
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className='login-input'
             />
+            {errors.email ? (
+                <p className="error-message">{errors.email._errors.join(', ')}</p>
+              )
+              : (<p className="error-message"/>)}
           </section>
           <section className="form-group">
-
-            <header className='login-input-header'>
               <label htmlFor="password">Contraseña:</label>
-              {errors.password && (
-                <p className="error-message">{errors.password._errors.join(', ')}</p>
-              )}
-            </header>
             <input
               type="password"
               id="password"
@@ -64,7 +56,10 @@ const LoginPage = ({setShouldShowAccessButton}) => {
               onChange={(e) => setPassword(e.target.value)}
               className='login-input'
             />
-
+            {errors.password ? (
+                <p className="error-message">{errors.password._errors.join(', ')}</p>
+              )
+            : (<p className="error-message"/>)}
           </section>
         </main>
         <section className='login-form-buttons'>
