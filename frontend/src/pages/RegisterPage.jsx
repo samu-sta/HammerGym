@@ -15,7 +15,10 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  useEffect(() => setShouldShowAccessButton(true), []);
+  useEffect(() => {
+    setShouldShowAccessButton(true);
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();

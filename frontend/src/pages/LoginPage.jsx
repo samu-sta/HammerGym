@@ -10,7 +10,10 @@ const LoginPage = ({setShouldShowAccessButton}) => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   
-  useEffect(() => setShouldShowAccessButton(false), []);
+  useEffect(() => {
+      setShouldShowAccessButton(false);
+      window.scrollTo(0, 0);
+    }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();

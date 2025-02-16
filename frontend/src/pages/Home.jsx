@@ -7,7 +7,10 @@ import SliderHome from '../components/SliderHome.jsx';
 import { PERSONAL } from '../config/constants.js';
 const Home = ({ isMobile, accessSectionRef, scrollToAccessSection, isScrolling, setShouldShowAccessButton }) => {
   
-  useEffect(() => setShouldShowAccessButton(true), []);
+  useEffect(() => {
+      setShouldShowAccessButton(true);
+      window.scrollTo(0, 0);
+    }, []);
   
   return (
     <main className='main-home'>
