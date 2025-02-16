@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './styles/AdminPage.css';
 import { FaUsers, FaUserTie, FaDumbbell, FaCreditCard } from 'react-icons/fa';
-import { FaChalkboardTeacher, FaClipboardList, FaTools, FaFileContract, FaEnvelope, FaHistory } from 'react-icons/fa';
+import { FaTools, FaHistory } from 'react-icons/fa';
 const AdminPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);

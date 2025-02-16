@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import './styles/Home.css';
-import AchievementHome from '../components/AchievementHome.jsx';
 import { Link } from 'react-router-dom';
-import AccessHome from '../components/AccessHome.jsx';
-import SliderHome from '../components/SliderHome.jsx';
+import AccessHome from '../components/home/AccessHome.jsx';
+import SliderHome from '../components/home/SliderHome.jsx';
+import AchievementHome from '../components/home/AchievementHome.jsx';
 import { PERSONAL } from '../config/constants.js';
 const Home = ({ isMobile, accessSectionRef, scrollToAccessSection, isScrolling, setShouldShowAccessButton }) => {
   

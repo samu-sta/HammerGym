@@ -4,13 +4,14 @@ import { useState, useRef } from 'react'
 import { TbAlignJustified } from "react-icons/tb";
 import { useWindowSize } from './hooks/useWindowSize.jsx';
 import { MOBILE_WIDTH } from './config/constants.js';
-import DropdownHeader from './components/DropdownHeader.jsx';
+import DropdownHeader from './components/app/DropdownHeader.jsx';
 import Home from './pages/Home.jsx'
-import Footer from './components/Footer.jsx';
+import Footer from './components/app/Footer.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegistrationPage from './pages/RegisterPage.jsx';
 import NotFound from './pages/NotFound.jsx';
 import AdminPage from './pages/AdminPage.jsx';
+import UserPage from './pages/UserPage.jsx';
 function App() {
 
 
@@ -102,6 +103,7 @@ function App() {
           <Route path="/login" element={<LoginPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
           <Route path="/register" element={<RegistrationPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/user" element={<UserPage />} />
           <Route path="*" element={<NotFound />} />
 
         </Routes >

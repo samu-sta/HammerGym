@@ -1,0 +1,37 @@
+.user-activities {
+  background: rgba(25, 25, 25, 0.6);
+  border-radius: 10px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(153, 128, 0, 0.2);
+}
+
+.activities-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(153, 128, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+  transform: translateX(10px);
+  background: rgba(153, 128, 0, 0.15);
+}
+
+.activity-type {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: bold;
+}
+
+.activity-date {
+  color: #998000;
+}
