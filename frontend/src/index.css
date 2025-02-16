@@ -13,14 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px #242424 inset !important;
-  -webkit-text-fill-color: #FFF !important;
-
-}
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+input:-webkit-autofill:valid {
+  -webkit-box-shadow: 0 0 0 30px #242424 inset !important;
+  -webkit-text-fill-color: #FFF !important;
 }
