@@ -10,6 +10,7 @@ import Footer from './components/Footer.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegistrationPage from './pages/RegisterPage.jsx';
 import NotFound from './pages/NotFound.jsx';
+import AdminPage from './pages/AdminPage.jsx';
 function App() {
 
 
@@ -47,19 +48,19 @@ function App() {
             {!isMobile && (
               <nav className='header-app-nav'>
                 <Link
-                  to="/exercises"
+                  to="/admin"
                   className='app-link header-app-nav-link'>
-                  EJERCICIOS
+                  ADMIN
                 </Link>
                 <Link
-                  to="/routines"
+                  to="/trainer"
                   className='app-link header-app-nav-link'>
-                  RUTINAS
+                  ENTRENADOR
                 </Link>
                 <Link
-                  to="/trainers"
+                  to="/user"
                   className='app-link header-app-nav-link'>
-                  ENTRENADORES
+                  USUARIO
                 </Link>
               </nav>
             )}
@@ -100,6 +101,7 @@ function App() {
                 setShouldShowAccessButton={setShouldShowAccessButton} />} />
           <Route path="/login" element={<LoginPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
           <Route path="/register" element={<RegistrationPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<NotFound />} />
 
         </Routes >
