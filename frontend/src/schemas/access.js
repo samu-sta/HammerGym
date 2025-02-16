@@ -1,21 +1,5 @@
-import {z} from 'zod';
-import {FORM_ERROR_MESSAGES} from './../config/constants.js';
-
-
-export const loginSchema = z.object({
-  email: z.string(),
-  password: z.string(),
-}).superRefine((data, ctx) => commonSuperRefine(data, ctx));
-
-export const registrationSchema = z.object({
-  role: z.enum(['Usuario', 'Entrenador']),
-  name: z.string().nonempty({ message: 'El nombre es requerido' }),
-  surname: z.string().nonempty({ message: 'Los apellidos son requeridos' }),
-  username: z.string().nonempty({ message: 'El nombre de usuario es requerido' }),
-  email: z.string(),
-  password: z.string()
-}).superRefine((data, ctx) => commonSuperRefine(data, ctx));
-
+import { z } from 'zod';
+import { FORM_ERROR_MESSAGES } from './../config/constants.js';
 
 const commonSuperRefine = (data, ctx) => {
   if (!data.email) {
@@ -45,4 +29,67 @@ const commonSuperRefine = (data, ctx) => {
       path: ["password"],
     });
   }
-}
+
+  if (data.confirmPassword !== undefined) {
+    if (!data.confirmPassword) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'La confirmación de la contraseña es requerida',
+        path: ["confirmPassword"],
+      });
+    } else if (data.confirmPassword !== data.password) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Las contraseñas no coinciden',
+        path: ["confirmPassword"],
+      });
+    }
+  }
+
+  if (data.nombre !== undefined && !data.nombre) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'El nombre es requerido',
+      path: ["nombre"],
+    });
+  }
+
+  if (data.apellido !== undefined && !data.apellido) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Los apellidos son requeridos',
+      path: ["apellido"],
+    });
+  }
+
+  if (data.nombreUsuario !== undefined && !data.nombreUsuario) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'El nombre de usuario es requerido',
+      path: ["nombreUsuario"],
+    });
+  }
+
+  if (data.role !== undefined && !['Usuario', 'Entrenador'].includes(data.role)) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'El rol es requerido',
+      path: ["role"],
+    });
+  }
+};
+
+export const loginSchema = z.object({
+  email: z.string(),
+  password: z.string(),
+}).superRefine((data, ctx) => commonSuperRefine(data, ctx));
+
+export const registrationSchema = z.object({
+  role: z.enum(['Usuario', 'Entrenador']),
+  nombre: z.string(),
+  apellido: z.string(),
+  nombreUsuario: z.string(),
+  email: z.string(),
+  password: z.string(),
+  confirmPassword: z.string(),
+}).superRefine((data, ctx) => commonSuperRefine(data, ctx));

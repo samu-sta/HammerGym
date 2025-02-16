@@ -1,3 +1,10 @@
+/* Add this CSS rule to remove the light gray background for autofill */
+input:-webkit-autofill {
+  -webkit-box-shadow: none;
+    -webkit-text-fill-color: #000 !important;
+}
+
+/* Existing CSS rules */
 .registration-page {
   display: flex;
   flex-direction: column;
@@ -135,7 +142,7 @@
   left: 0;
 }
 
-.custom-select-option.selected{
+.custom-select-option.selected {
   color: #998000;
 }
 

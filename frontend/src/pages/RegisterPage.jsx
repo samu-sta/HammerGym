@@ -6,11 +6,12 @@ import { registrationSchema } from '../schemas/access.js';
 
 const RegisterPage = ({ setShouldShowAccessButton }) => {
   const [role, setRole] = useState('Usuario');
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [username, setUsername] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [nombreUsuario, setNombreUsuario] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const result = registrationSchema.safeParse({ role, name, surname, username, email, password });
+    const result = registrationSchema.safeParse({ role, nombre, apellido, nombreUsuario, email, password, confirmPassword });
 
     if (!result.success) {
       const formattedErrors = result.error.format();
@@ -29,11 +30,12 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
 
     setErrors({});
     console.log('Role:', role);
-    console.log('Name:', name);
-    console.log('Surname:', surname);
-    console.log('Username:', username);
+    console.log('Nombre:', nombre);
+    console.log('Apellido:', apellido);
+    console.log('NombreUsuario:', nombreUsuario);
     console.log('Email:', email);
     console.log('Password:', password);
+    console.log('ConfirmPassword:', confirmPassword);
   };
 
   const handleBackClick = () => {
@@ -48,57 +50,57 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
         <main className='registration-form-container'>
           <section className="form-group">
             <label htmlFor="role">Rol:</label>
-            <div className="custom-select">
-              <div
+            <section className="custom-select">
+              <article
                 className={`custom-select-option ${role === 'Usuario' ? 'selected' : ''}`}
                 onClick={() => setRole('Usuario')}
               >
                 Usuario
-              </div>
-              <div
+              </article>
+              <article
                 className={`custom-select-option ${role === 'Entrenador' ? 'selected' : ''}`}
                 onClick={() => setRole('Entrenador')}
               >
                 Entrenador
-              </div>
-            </div>
+              </article>
+            </section>
           </section>
           <section className="form-group">
-            <label htmlFor="name">Nombre:</label>
+            <label htmlFor="nombre">Nombre real:</label>
             <input
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              id="nombre"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
               className='registration-input'
             />
-            {errors.name ? (
-              <p className="error-message">{errors.name._errors.join(', ')}</p>
+            {errors.nombre ? (
+              <p className="error-message">{errors.nombre._errors.join(', ')}</p>
             )
               : (<p className="error-message"/>)}
           </section>
           <section className="form-group">
-            <label htmlFor="surname">Apellido/s:</label>
+            <label htmlFor="apellido">Apellido/s:</label>
             <input
-              id="surname"
-              value={surname}
-              onChange={(e) => setSurname(e.target.value)}
+              id="apellido"
+              value={apellido}
+              onChange={(e) => setApellido(e.target.value)}
               className='registration-input'
             />
-            {errors.surname ? (
-              <p className="error-message">{errors.surname._errors.join(', ')}</p>
+            {errors.apellido ? (
+              <p className="error-message">{errors.apellido._errors.join(', ')}</p>
             )
               : (<p className="error-message"/>)}
           </section>
           <section className="form-group">
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="nombreUsuario">Nombre de usuario:</label>
             <input
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              id="nombreUsuario"
+              value={nombreUsuario}
+              onChange={(e) => setNombreUsuario(e.target.value)}
               className='registration-input'
             />
-            {errors.username ? (
-              <p className="error-message">{errors.username._errors.join(', ')}</p>
+            {errors.nombreUsuario ? (
+              <p className="error-message">{errors.nombreUsuario._errors.join(', ')}</p>
             )
               : (<p className="error-message"/>)}
           </section>
@@ -126,6 +128,20 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
             />
             {errors.password ? (
               <p className="error-message">{errors.password._errors.join(', ')}</p>
+            )
+              : (<p className="error-message"/>)}
+          </section>
+          <section className="form-group">
+            <label htmlFor="confirmPassword">Confirmar Contraseña:</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className='registration-input'
+            />
+            {errors.confirmPassword ? (
+              <p className="error-message">{errors.confirmPassword._errors.join(', ')}</p>
             )
               : (<p className="error-message"/>)}
           </section>
