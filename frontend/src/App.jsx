@@ -9,6 +9,7 @@ import Home from './pages/Home.jsx'
 import Footer from './components/Footer.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegistrationPage from './pages/RegisterPage.jsx';
+import NotFound from './pages/NotFound.jsx';
 function App() {
 
 
@@ -99,6 +100,8 @@ function App() {
                 setShouldShowAccessButton={setShouldShowAccessButton} />} />
           <Route path="/login" element={<LoginPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
           <Route path="/register" element={<RegistrationPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
+          <Route path="*" element={<NotFound />} />
+
         </Routes >
         <Footer />
       </main>
