@@ -1,6 +1,9 @@
 import React from 'react';
 import { FaClipboardList } from 'react-icons/fa';
 import './styles/RoutineSection.css';
+import { dayMap } from '../../config/constants.js';
+import { FaLongArrowAltLeft } from 'react-icons/fa';
+
 const RoutineSection = ({ routine, selectedDay, setSelectedDay }) => {
   return (
     <section className='user-routine'>
@@ -8,30 +11,31 @@ const RoutineSection = ({ routine, selectedDay, setSelectedDay }) => {
         <FaClipboardList className='section-icon' />
         <h2>Rutina Semanal</h2>
       </header>
-      <div className='routine-content'>
+      <main className='routine-content'>
         {selectedDay ? (
           <article className='routine-day-expanded'>
             <header className='routine-day-header'>
-              <h3>{selectedDay}</h3>
-              <button 
+              <button
                 className='routine-back-button'
                 onClick={() => setSelectedDay(null)}
               >
-                Volver
+                <FaLongArrowAltLeft /> Volver
               </button>
+              <h3>{selectedDay}</h3>
+
             </header>
             {routine[selectedDay].length > 0 ? (
               <ul className='routine-exercises-list'>
                 {routine[selectedDay].map((exercise, idx) => (
                   <li key={idx} className='routine-exercise-item'>
-                    <div className='exercise-details'>
+                    <section className='exercise-details'>
                       <h4 className='exercise-name'>{exercise.name}</h4>
-                      <div className='exercise-meta'>
+                      <section className='exercise-meta'>
                         <span className='exercise-sets'>{exercise.sets} series</span>
                         <span className='exercise-separator'>•</span>
                         <span className='exercise-reps'>{exercise.reps} repeticiones</span>
-                      </div>
-                    </div>
+                      </section>
+                    </section>
                   </li>
                 ))}
               </ul>
@@ -39,25 +43,24 @@ const RoutineSection = ({ routine, selectedDay, setSelectedDay }) => {
               <p className='no-data'>Día de descanso</p>
             )}
           </article>
-        ) : (
-          <div className='routine-days-grid'>
-            {Object.entries(routine).map(([day, exercises], index) => (
-              <article 
-                key={index} 
-                className='routine-day'
-                onClick={() => setSelectedDay(day)}
-              >
-                <h3>{day}</h3>
-                <p className='routine-day-summary'>
-                  {exercises.length > 0 
-                    ? `${exercises.length} ejercicio${exercises.length !== 1 ? 's' : ''}`
-                    : 'Descanso'}
-                </p>
-              </article>
-            ))}
-          </div>
+        ) : (<>
+          {Object.entries(routine).map(([day, exercises], index) => (
+            <article
+              key={index}
+              className='routine-day'
+              onClick={() => setSelectedDay(day)}
+            >
+              <h3>{dayMap[day] || day}</h3>
+              <p className='routine-day-summary'>
+                {exercises.length > 0
+                  ? `${exercises.length} ejercicio${exercises.length !== 1 ? 's' : ''}`
+                  : 'Descanso'}
+              </p>
+            </article>
+          ))}
+        </>
         )}
-      </div>
+      </main>
     </section>
   );
 };

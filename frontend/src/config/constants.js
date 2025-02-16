@@ -50,3 +50,13 @@ export const FORM_ERROR_MESSAGES = {
   }
 };
 
+
+export const dayMap = {
+  Monday: 'Lunes',
+  Tuesday: 'Martes',
+  Wednesday: 'Miércoles',
+  Thursday: 'Jueves',
+  Friday: 'Viernes',
+  Saturday: 'Sábado',
+  Sunday: 'Domingo'
+};

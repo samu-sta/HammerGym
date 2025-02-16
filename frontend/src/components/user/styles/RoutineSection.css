@@ -4,29 +4,23 @@
   padding: 2rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(153, 128, 0, 0.2);
+  width: 100%;
 }
 
 .routine-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  width: 100%;
-}
-
-.routine-days-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
 }
 
 .routine-day {
   background: rgba(153, 128, 0, 0.1);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+  width: 120px;
 }
 
 .routine-day:hover {
@@ -53,26 +47,35 @@
 
 .routine-day-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  padding-right: 98.22px;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid rgba(153, 128, 0, 0.2);
 }
 
+.routine-day-header h3 {
+  color: #998000;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
 .routine-back-button {
   background: none;
   border: none;
-  color: #998000;
-  text-decoration: underline;
+  color: rgb(3, 92, 151);
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 1rem;
+  width: fit-content;
+
 }
 
 .routine-back-button:hover {
-  background: rgba(153, 128, 0, 0.1);
+  color: rgb(2, 71, 117);
 }
 
 .routine-exercises-list {

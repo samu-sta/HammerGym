@@ -97,9 +97,9 @@ const UserPage = () => {
           </article>
         ))}
       </nav>
-      <div className="user-content">
+      <main className="user-content">
         {renderSection()}
-      </div>
+      </main>
     </main>
   );
 };
