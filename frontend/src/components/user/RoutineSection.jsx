@@ -47,7 +47,7 @@ const RoutineSection = ({ routine, selectedDay, setSelectedDay }) => {
           {Object.entries(routine).map(([day, exercises], index) => (
             <article
               key={index}
-              className='routine-day'
+              className={`routine-day ${exercises.length == 0 ? 'rest-day' : ''}`}
               onClick={() => setSelectedDay(day)}
             >
               <h3>{dayMap[day] || day}</h3>

@@ -22,10 +22,19 @@
   text-align: center;
   width: 120px;
 }
+.rest-day{
+  background: rgba(153, 128, 0, 0.028);
+}
 
 .routine-day:hover {
   transform: translateY(-5px);
   background: rgba(153, 128, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(153, 128, 0, 0.1);
+}
+
+.rest-day:hover{
+  transform: translateY(-5px);
+  background: rgba(153, 128, 0, 0.05);
   box-shadow: 0 4px 15px rgba(153, 128, 0, 0.1);
 }
 
