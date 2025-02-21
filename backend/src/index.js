@@ -1,11 +1,5 @@
-import express from 'express';
+import { createApp } from './app/app.js';
+import UserModel from './models/User.js';
 
-const app = express();
+createApp({userModel: UserModel});
 
-app.get('/', (req, res) => {
-    res.send('<h1>Hello World!</h1>');
-});
-
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-    });
