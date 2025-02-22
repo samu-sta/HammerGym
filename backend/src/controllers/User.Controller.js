@@ -71,4 +71,8 @@ export default class UserController{
       return res.status(500).json({ error: MESSAGES.ERROR_500 });
     }
   }
+
+  logout = async (req, res) => {
+    return res.status(200).clearCookie('token').json({ success: MESSAGES.LOGOUT_SUCCESS });
+  }
 }

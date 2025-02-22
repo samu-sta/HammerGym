@@ -5,6 +5,7 @@ const REGISTRATION_SUCCESS = "Registration successful";
 const LOGIN_SUCCESS = "Login successful";
 const INVALID_DATA = "Invalid data";
 const ERROR_500 = "Internal server error";
+const LOGOUT_SUCCESS = "Logout successful";
 
 const MESSAGES = {
   USER_NOT_FOUND,
@@ -14,6 +15,7 @@ const MESSAGES = {
   LOGIN_SUCCESS,
   INVALID_DATA,
   ERROR_500,
+  LOGOUT_SUCCESS,
 };
 
 export default MESSAGES;
