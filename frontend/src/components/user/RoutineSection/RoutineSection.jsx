@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaClipboardList } from 'react-icons/fa';
 import './styles/RoutineSection.css';
-import { dayMap } from '../../config/constants.js';
+import { dayMap } from '../../../config/constants.js';
 import { FaLongArrowAltLeft } from 'react-icons/fa';
 
 const RoutineSection = ({ routine, selectedDay, setSelectedDay }) => {

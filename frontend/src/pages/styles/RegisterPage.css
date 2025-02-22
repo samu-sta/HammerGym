@@ -22,19 +22,6 @@
   align-items: center;
 }
 
-.registration-input {
-  padding: 12px;
-  border: none;
-  font-size: 1.2rem;
-  background-color: inherit;
-  border-bottom: 2px solid #998000;
-  font-family: inherit;
-}
-
-.registration-input:focus {
-  outline: none;
-}
-
 .registration-form-container {
   display: flex;
   flex-direction: column;

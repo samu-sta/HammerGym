@@ -38,7 +38,7 @@ const AccessHome = ({personal, linkRegister, isScrolling}) => {
       </main>
       
       <section className="access-home-links">
-        <Link className='app-link register-link' to={linkRegister}>INSCRÍBETE</Link>
+        <Link className='app-link primary-button' to={linkRegister}>INSCRÍBETE</Link>
       </section>
       
     </article>

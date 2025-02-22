@@ -1,60 +1,20 @@
 import React, { useState } from 'react';
 import './styles/UserPage.css';
 import { FaUser, FaDumbbell, FaHistory, FaClipboardList } from 'react-icons/fa';
-import ProfileSection from '../components/user/ProfileSection.jsx';
-import ProgressSection from '../components/user/ProgressSection.jsx';
-import ActivitiesSection from '../components/user/ActivitiesSection.jsx';
-import RoutineSection from '../components/user/RoutineSection.jsx';
+import ProfileSection from '../components/user/ProfileSection/ProfileSection.jsx';
+import ProgressSection from '../components/user/ProgressSection/ProgressSection.jsx';
+import ActivitiesSection from '../components/user/ActivitiesSection/ActivitiesSection.jsx';
+import RoutineSection from '../components/user/RoutineSection/RoutineSection.jsx';
 
 const UserPage = () => {
   const [activeSection, setActiveSection] = useState('profile');
   const [selectedDay, setSelectedDay] = useState(null);
 
   const mockUserData = {
-    name: 'John Doe',
+    realName: 'John Doe',
+    lastNames: 'Smith',
     email: 'example@a.com',
-    joinDate: '2021-01-01',
-    progress: [
-      {
-        date: '2021-01-01',
-        exercises: [
-          { name: 'Push-ups', repetitions: 20 },
-          { name: 'Squats', repetitions: 30 }
-        ]
-      },
-      {
-        date: '2021-01-02',
-        exercises: [
-          { name: 'Push-ups', repetitions: 25 },
-          { name: 'Squats', repetitions: 35 }
-        ]
-      }
-    ],
-    activities: [
-      { type: 'Login', date: '2021-01-01T08:00:00' },
-      { type: 'Exercise', date: '2021-01-01T08:30:00' }
-    ],
-    routine: {
-      Monday: [
-        { name: 'Bench Press', sets: 3, reps: 10 },
-        { name: 'Deadlift', sets: 3, reps: 8 }
-      ],
-      Tuesday: [
-        { name: 'Pull-Ups', sets: 3, reps: 12 },
-        { name: 'Bicep Curls', sets: 3, reps: 15 }
-      ],
-      Wednesday: [],
-      Thursday: [
-        { name: 'Squats', sets: 4, reps: 10 },
-        { name: 'Lunges', sets: 3, reps: 12 }
-      ],
-      Friday: [
-        { name: 'Overhead Press', sets: 3, reps: 8 },
-        { name: 'Tricep Dips', sets: 3, reps: 12 }
-      ],
-      Saturday: [],
-      Sunday: []
-    }
+    username: 'johndoe'
   };
 
   const sections = [

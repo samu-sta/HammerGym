@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './styles/RegisterPage.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaLongArrowAltLeft } from "react-icons/fa";
@@ -6,9 +7,9 @@ import { registrationSchema } from '../schemas/access.js';
 
 const RegisterPage = ({ setShouldShowAccessButton }) => {
   const [role, setRole] = useState('Usuario');
-  const [nombre, setNombre] = useState('');
-  const [apellido, setApellido] = useState('');
-  const [nombreUsuario, setNombreUsuario] = useState('');
+  const [realName, setRealName] = useState('');
+  const [lastNames, setLastNames] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -23,22 +24,46 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const result = registrationSchema.safeParse({ role, nombre, apellido, nombreUsuario, email, password, confirmPassword });
+    const data = {
+      role,
+      realName,
+      lastNames,
+      username,
+      email,
+      password,
+      confirmPassword
+    };
+
+    const result = registrationSchema.safeParse(data);
+
 
     if (!result.success) {
       const formattedErrors = result.error.format();
+      console.log(formattedErrors);
       setErrors(formattedErrors);
       return;
     }
 
     setErrors({});
-    console.log('Role:', role);
-    console.log('Nombre:', nombre);
-    console.log('Apellido:', apellido);
-    console.log('NombreUsuario:', nombreUsuario);
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('ConfirmPassword:', confirmPassword);
+    fetch('http://localhost:3000/user/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+      credentials: 'include',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          console.log(data);
+          navigate('/login');
+        } else {
+          setErrors({ email: { _errors: [data.message] } });
+        }
+      }
+      );
   };
 
   const handleBackClick = () => {
@@ -72,9 +97,9 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
             <label htmlFor="nombre">Nombre real:</label>
             <input
               id="nombre"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              className='registration-input'
+              value={realName}
+              onChange={(e) => setRealName(e.target.value)}
+              className='input'
             />
             {errors.nombre ? (
               <p className="error-message">{errors.nombre._errors.join(', ')}</p>
@@ -85,9 +110,9 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
             <label htmlFor="apellido">Apellido/s:</label>
             <input
               id="apellido"
-              value={apellido}
-              onChange={(e) => setApellido(e.target.value)}
-              className='registration-input'
+              value={lastNames}
+              onChange={(e) => setLastNames(e.target.value)}
+              className='input'
             />
             {errors.apellido ? (
               <p className="error-message">{errors.apellido._errors.join(', ')}</p>
@@ -98,9 +123,9 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
             <label htmlFor="nombreUsuario">Nombre de usuario:</label>
             <input
               id="nombreUsuario"
-              value={nombreUsuario}
-              onChange={(e) => setNombreUsuario(e.target.value)}
-              className='registration-input'
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className='input'
             />
             {errors.nombreUsuario ? (
               <p className="error-message">{errors.nombreUsuario._errors.join(', ')}</p>
@@ -113,7 +138,7 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className='registration-input'
+              className='input'
             />
             {errors.email ? (
               <p className="error-message">{errors.email._errors.join(', ')}</p>
@@ -127,7 +152,7 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className='registration-input'
+              className='input'
             />
             {errors.password ? (
               <p className="error-message">{errors.password._errors.join(', ')}</p>
@@ -141,7 +166,7 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
               id="confirmPassword"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className='registration-input'
+              className='input'
             />
             {errors.confirmPassword ? (
               <p className="error-message">{errors.confirmPassword._errors.join(', ')}</p>
@@ -150,7 +175,7 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
           </section>
         </main>
         <section className='registration-form-buttons'>
-          <button className='register-link registration-submit-button' type="submit">
+          <button className='primary-button registration-submit-button' type="submit">
             Registrarse
           </button>
           <Link to="/login" className='login-link'>¿Ya tienes cuenta? Inicia Sesión</Link>

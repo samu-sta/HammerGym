@@ -46,7 +46,7 @@ const commonSuperRefine = (data, ctx) => {
     }
   }
 
-  if (data.nombre !== undefined && !data.nombre) {
+  if (data.realName !== undefined && !data.realName) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: 'El nombre es requerido',
@@ -54,7 +54,7 @@ const commonSuperRefine = (data, ctx) => {
     });
   }
 
-  if (data.apellido !== undefined && !data.apellido) {
+  if (data.lastNames !== undefined && !data.lastNames) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: 'Los apellidos son requeridos',
@@ -62,7 +62,7 @@ const commonSuperRefine = (data, ctx) => {
     });
   }
 
-  if (data.nombreUsuario !== undefined && !data.nombreUsuario) {
+  if (data.username !== undefined && !data.username) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       message: 'El nombre de usuario es requerido',
@@ -80,16 +80,16 @@ const commonSuperRefine = (data, ctx) => {
 };
 
 export const loginSchema = z.object({
-  email: z.string(),
-  password: z.string(),
+  email: z.string().email().max(255),
+  password: z.string().min(6).max(255),
 }).superRefine((data, ctx) => commonSuperRefine(data, ctx));
 
 export const registrationSchema = z.object({
   role: z.enum(['Usuario', 'Entrenador']),
-  nombre: z.string(),
-  apellido: z.string(),
-  nombreUsuario: z.string(),
-  email: z.string(),
-  password: z.string(),
-  confirmPassword: z.string(),
+  username: z.string().min(3).max(255),
+  email: z.string().email().max(255),
+  password: z.string().min(6).max(255),
+  realName: z.string().min(2).max(255),
+  lastNames: z.string().min(2).max(255),
+  confirmPassword: z.string().min(6).max(255),
 }).superRefine((data, ctx) => commonSuperRefine(data, ctx));

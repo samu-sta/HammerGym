@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react';
 import './styles/LoginPage.css';
 import { Link } from 'react-router-dom';
 import { FaLongArrowAltLeft } from "react-icons/fa";
-
 import {loginSchema} from '../schemas/access.js';
-
+import { useNavigate } from 'react-router-dom';
 const LoginPage = ({setShouldShowAccessButton}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
-  
+  const navigate = useNavigate();
   useEffect(() => {
       setShouldShowAccessButton(false);
       window.scrollTo(0, 0);
     }, []);
+
+    
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,8 +29,29 @@ const LoginPage = ({setShouldShowAccessButton}) => {
 
 
     setErrors({});
-    console.log('Email:', email);
-    console.log('Password:', password);
+    fetch('http://localhost:3000/user/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+      credentials: 'include',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          localStorage.setItem('user', JSON.stringify(data.user));
+            if (data.user.role === 'admin') {
+              navigate('/admin');
+            } else if (data.user.role === 'Entrenador') {
+              navigate('/entrenador');
+            } else {
+              navigate('/usuario');
+              }
+          } else {
+          setErrors({ email: { _errors: [data.message] } });
+        }
+      });
   };
 
   return (
@@ -43,7 +65,7 @@ const LoginPage = ({setShouldShowAccessButton}) => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className='login-input'
+              className='input'
             />
             {errors.email ? (
                 <p className="error-message">{errors.email._errors.join(', ')}</p>
@@ -57,7 +79,7 @@ const LoginPage = ({setShouldShowAccessButton}) => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className='login-input'
+              className='input'
             />
             {errors.password ? (
                 <p className="error-message">{errors.password._errors.join(', ')}</p>
@@ -66,7 +88,7 @@ const LoginPage = ({setShouldShowAccessButton}) => {
           </section>
         </main>
         <section className='login-form-buttons'>
-        <button className='register-link login-submit-button' type="submit">
+        <button className='primary-button login-submit-button' type="submit">
           Iniciar Sesión
         </button>
         <Link to="/register" className='login-link'>¿No tienes cuenta? Regístrate</Link>

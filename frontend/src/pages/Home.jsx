@@ -26,7 +26,7 @@ const Home = ({ isMobile, accessSectionRef, scrollToAccessSection, isScrolling, 
             <AchievementHome isMobile={isMobile}>ACCESO NACIONAL</AchievementHome>
           </section>
           <button
-            className='app-link register-link register-link-home'
+            className='app-link primary-button register-link-home'
             aria-label="Inscríbete ahora"
             onClick={scrollToAccessSection}>
             INSCRÍBETE

@@ -103,7 +103,7 @@ function App() {
           <Route path="/login" element={<LoginPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
           <Route path="/register" element={<RegistrationPage setShouldShowAccessButton={setShouldShowAccessButton} />} />
           <Route path="/admin" element={<AdminPage />} />
-          <Route path="/user" element={<UserPage />} />
+          <Route path="/usuario" element={<UserPage />} />
           <Route path="*" element={<NotFound />} />
 
         </Routes >

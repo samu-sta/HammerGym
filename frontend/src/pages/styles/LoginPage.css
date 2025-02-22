@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-.login-input {
+.input {
   padding: 12px;
   border: none;
   font-size: 1.2rem;
@@ -32,7 +32,7 @@
   font-family: inherit;
 }
 
-.login-input:focus {
+.input:focus {
   outline: none;
 }
 
