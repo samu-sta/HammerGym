@@ -3,10 +3,12 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
-  host: 'localhost',
-  dialect: 'mysql',
-  port: 3306,
+const sequelize = new Sequelize({
+  host: process.env.DB_HOST,
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  dialect: 'mysql'
 });
 
 export default sequelize;

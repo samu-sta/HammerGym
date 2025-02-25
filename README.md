@@ -52,6 +52,19 @@ cd frontend
 npm run dev
 ```
 
+## 🐳 Docker
+
+```bash
+# Construir y levantar contenedores
+docker-compose up -d --build
+
+# Detener contenedores
+docker-compose down
+
+# Ver logs
+docker-compose logs -f
+```
+
 ## 🔧 Desarrollo
 
 - Frontend corre en: `http://localhost:5173`
