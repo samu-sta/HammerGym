@@ -55,7 +55,9 @@ npm run dev
 ## 🐳 Docker
 
 ```bash
-# Construir y levantar contenedores
+
+# Construir y levantar contenedores backend
+cd backend
 docker-compose up -d --build
 
 # Detener contenedores
