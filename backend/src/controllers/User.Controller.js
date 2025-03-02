@@ -38,6 +38,8 @@ export default class UserController{
   }
 
   login = async (req, res) => {
+
+    console.log(req.body);
     const result = userSchema.validateLoginUser(req.body);
 
     if (!result.success) {

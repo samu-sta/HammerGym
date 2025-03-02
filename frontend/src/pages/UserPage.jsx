@@ -14,7 +14,71 @@ const UserPage = () => {
     realName: 'John Doe',
     lastNames: 'Smith',
     email: 'example@a.com',
-    username: 'johndoe'
+    username: 'johndoe',
+
+    progress: [
+      {
+        date: '2021-10-01',
+        weight: 80,
+        height: 1.80,
+        bmi: 24.69,
+        exercises: [
+          { name: 'Press de banca', repetitions: 12 },
+          { name: 'Sentadillas', repetitions: 10 }
+        ]
+      },
+      {
+        date: '2021-10-15',
+        weight: 78,
+        height: 1.80,
+        bmi: 24.07,
+        exercises: [
+          { name: 'Peso muerto', repetitions: 8 },
+          { name: 'Dominadas', repetitions: 6 }
+        ]
+      },
+      {
+        date: '2021-10-30',
+        weight: 76,
+        height: 1.80,
+        bmi: 23.45,
+        exercises: [
+          { name: 'Curl de bíceps', repetitions: 15 },
+          { name: 'Extensiones de tríceps', repetitions: 12 }
+        ]
+      }
+    ],
+
+    activities: [
+      { date: '2021-10-01', type: 'Running', duration: 30, distance: 5 },
+      { date: '2021-10-03', type: 'Cycling', duration: 45, distance: 10 },
+      { date: '2021-10-05', type: 'Swimming', duration: 60, distance: 1 }
+    ],
+
+    routine: {
+      monday: [
+        { name: 'Press de banca', sets: 3, reps: 12 },
+        { name: 'Sentadillas', sets: 4, reps: 10 }
+      ],
+      tuesday: [
+        { name: 'Dominadas', sets: 3, reps: 8 }
+      ],
+      wednesday: [
+        { name: 'Peso muerto', sets: 3, reps: 8 },
+        { name: 'Curl de bíceps', sets: 3, reps: 12 }
+      ],
+      thursday: [
+        { name: 'Prensa de piernas', sets: 4, reps: 10 }
+      ],
+      friday: [
+        { name: 'Extensiones de tríceps', sets: 3, reps: 12 },
+        { name: 'Elevaciones laterales', sets: 3, reps: 15 }
+      ],
+      saturday: [
+        { name: 'Abdominales', sets: 3, reps: 20 }
+      ],
+      sunday: []
+    }
   };
 
   const sections = [
@@ -25,7 +89,7 @@ const UserPage = () => {
   ];
 
   const renderSection = () => {
-    switch(activeSection) {
+    switch (activeSection) {
       case 'profile':
         return <ProfileSection userData={mockUserData} />;
       case 'progress':
@@ -33,7 +97,7 @@ const UserPage = () => {
       case 'activities':
         return <ActivitiesSection activities={mockUserData.activities} />;
       case 'routine':
-        return <RoutineSection 
+        return <RoutineSection
           routine={mockUserData.routine}
           selectedDay={selectedDay}
           setSelectedDay={setSelectedDay}
