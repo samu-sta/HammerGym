@@ -1,9 +1,7 @@
 import userSchema from "../schemas/UserSchema.js";
-import bcrypt from 'bcrypt';
+import argon2 from 'argon2';
 import auth from '../auth/auth.js';
 import MESSAGES from "../messages/messages.js";
-
-const HASH_SALT_ROUNDS = 8;
 
 export default class UserController{
   constructor ({userModel}) {
@@ -28,7 +26,7 @@ export default class UserController{
     }
 
     try {
-      result.data.password = await bcrypt.hash(result.data.password, HASH_SALT_ROUNDS);
+      result.data.password = await argon2.hash(result.data.password);
       const newUser = await this.userModel.create(result.data);
       return res.status(201).send({success: true});
     }
@@ -55,7 +53,7 @@ export default class UserController{
         return res.status(404).json({ error: MESSAGES.USER_NOT_FOUND });
       }
 
-      const isPasswordValid = await bcrypt.compare(result.data.password, user.password);
+      const isPasswordValid = await argon2.verify(user.password, result.data.password);
 
       if (!isPasswordValid) {
         return res.status(401).json({ error: MESSAGES.INVALID_PASSWORD });
