@@ -56,15 +56,17 @@ npm run dev
 
 ```bash
 
-# Construir y levantar contenedores backend
-cd backend
-docker-compose up -d --build
+# Crear el archivo de variables de entorno:
+cp .env.example .env
 
-# Detener contenedores
-docker-compose down
+# Construir y levantar todos los contenedores
+docker compose up --build
 
-# Ver logs
-docker-compose logs -f
+# Para ejecutar en segundo plano
+docker compose up -d --build
+
+# Para ver logs cuando se ejecuta en segundo plano
+docker compose logs -f
 ```
 
 ## 🔧 Desarrollo
