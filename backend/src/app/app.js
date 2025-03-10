@@ -3,6 +3,8 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import { UserRoutes } from '../routes/User.Routes.js';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
+
 const DEFAULT_PORT = 3000;
 
 dotenv.config();
@@ -13,6 +15,7 @@ export const createApp = ({userModel}) => {
   const app = express();
   app.use(morgan('dev'));
   app.use(express.json());
+  app.use(cookieParser());
   app.use(cors({
     origin: 'http://localhost:5173',
     credentials: true

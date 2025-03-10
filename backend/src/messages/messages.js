@@ -6,6 +6,9 @@ const LOGIN_SUCCESS = "Login successful";
 const INVALID_DATA = "Invalid data";
 const ERROR_500 = "Internal server error";
 const LOGOUT_SUCCESS = "Logout successful";
+const NO_TOKEN_PROVIDED = "No token provided";
+const INVALID_TOKEN = "Invalid token";
+const ACCESS_DENIED = "Access denied";
 
 const MESSAGES = {
   USER_NOT_FOUND,
@@ -16,6 +19,9 @@ const MESSAGES = {
   INVALID_DATA,
   ERROR_500,
   LOGOUT_SUCCESS,
+  NO_TOKEN_PROVIDED,
+  INVALID_TOKEN,
+  ACCESS_DENIED
 };
 
 export default MESSAGES;

@@ -12,8 +12,13 @@ const createToken = (user) => {
   });
 }
 
+const verifyToken = (token) => {
+  return jwt.verify(token, JWT_SECRET);
+}
+
 const auth = {
-  createToken
+  createToken,
+  verifyToken
 }
 
 export default auth;
