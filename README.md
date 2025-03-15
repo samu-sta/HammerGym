@@ -3,6 +3,16 @@
 ## 📋 Descripción
 Sistema de información web para la gestión integral de una cadena de gimnasios.
 
+## Diagrama de Gantt
+
+![Screenshot from 2025-03-15 15-56-27](https://github.com/user-attachments/assets/45884a5f-aab6-48e0-83b9-d00774baf2c9)
+![Screenshot from 2025-03-15 15-56-42](https://github.com/user-attachments/assets/1e61f012-372d-4a2d-9fa2-f1209d3cc755)
+![Screenshot from 2025-03-15 15-56-57](https://github.com/user-attachments/assets/6ad3b5b9-c3ee-416f-a185-c377a11f8850)
+
+
+
+
+
 ## 🚀 Características Principales
 
 - Gestión de miembros
