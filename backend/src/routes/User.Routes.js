@@ -2,9 +2,9 @@ import { Router } from 'express';
 import UserController from '../controllers/User.Controller.js';
 import { authUser } from '../middleware/auth.js';
 
-export const UserRoutes = ({ userModel }) => {
+export const UserRoutes = () => {
   const userRouter = Router();
-  const userController = new UserController({ userModel });
+  const userController = new UserController();
 
   userRouter.post('/register', userController.register);
   userRouter.post('/login', userController.login);
@@ -12,7 +12,7 @@ export const UserRoutes = ({ userModel }) => {
   userRouter.get('/profile', authUser, userController.getUser);
   userRouter.put('/profile', authUser, userController.updateUser);
 
-  
+
 
   return userRouter;
 }
