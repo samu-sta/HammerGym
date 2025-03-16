@@ -16,7 +16,8 @@ const initDatabase = async () => {
       dialect: 'mysql'
     });
 
-    await tempSequelize.query('CREATE DATABASE IF NOT EXISTS `hammergym`');
+    await tempSequelize.query(`DROP DATABASE IF EXISTS ${process.env.DB_NAME}`);
+    await tempSequelize.query(`CREATE DATABASE ${process.env.DB_NAME}`);
     await tempSequelize.close();
 
     await UserModel.sync();
