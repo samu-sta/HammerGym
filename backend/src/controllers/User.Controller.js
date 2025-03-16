@@ -1,6 +1,6 @@
 import userSchema from "../schemas/UserSchema.js";
 import argon2 from 'argon2';
-import auth from '../utils/auth.js';
+import auth from '../auth/auth.js';
 import MESSAGES from "../messages/messages.js";
 
 export default class UserController{
@@ -72,37 +72,9 @@ export default class UserController{
     }
   }
 
-  logout = async (_req, res) => {
+  logout = async (req, res) => {
     return res.status(200).clearCookie('token').json({ success: MESSAGES.LOGOUT_SUCCESS });
   }
 
-  getUser = async (req, res) => {
-    return res.status(200).json({ success: true, user: req.user });
-  }
-
-  updateUser = async (req, res) => {
-    const result = userSchema.validateUpdateUser(req.body);
-
-    if (!result.success) {
-      return res.status(400).json({ error: MESSAGES.INVALID_DATA });
-    }
-
-    try {
-      if (result.data.password) {
-        result.data.password = await argon2.hash(result.data.password);
-      }
-      
-      await this.userModel.update(result.data, {
-        where: { id: req.user.id }
-      });
-      const resultUser = { 
-        ...req.user.dataValues,  // Use dataValues to get the plain object from Sequelize model
-        ...result.data           // Overlay with the updated values
-      };
-      return res.status(200).json({ success: MESSAGES.UPDATE_SUCCESS, user: resultUser });
-    }
-    catch (error) {
-      return res.status(500).json({ error: MESSAGES.ERROR_500 });
-    }
-  }
+  
 }
