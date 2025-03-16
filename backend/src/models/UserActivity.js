@@ -7,11 +7,16 @@ const UserActivityModel = sequelize.define('UserActivity', {
         primaryKey: true,
         autoIncrement: true
     },
+    dateTime: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
+    },
     type: {
         type: DataTypes.ENUM('Entry', 'Exit'),
         allowNull: false
     },
-    idGym: {
+    gymId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
@@ -19,7 +24,7 @@ const UserActivityModel = sequelize.define('UserActivity', {
             key: 'idGimnasio'
         }
     },
-    idUser: {
+    userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {

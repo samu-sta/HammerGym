@@ -1,35 +1,44 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
-const Maquina = sequelize.define('maquina', {
-    idMaquina: {
+const MachineModel = sequelize.define('Machine', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    estado: {
-        type: DataTypes.ENUM('libre', 'ocupado', 'mantenimiento', 'outservice'),
-        allowNull: false
+    status: {
+        type: DataTypes.ENUM('available', 'inUse', 'broken', 'preparing', 'outOfService'),
+        allowNull: false,
+        defaultValue: 'available'
     },
-    idModeloMaquina: {
+    machineModelId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'modeloMaquina',
-            key: 'idmodeloMaquina'
+            model: 'MachineModel',
+            key: 'id'
         }
     },
-    idGimnasio: {
+    gymId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'gimnasio',
-            key: 'idGimnasio'
+            model: 'Gym',
+            key: 'id'
         }
     }
 }, {
-    tableName: 'Maquina',
-    timestamps: false
+    tableName: 'Machine',
+    timestamps: false,
+    methods: {
+        estimateRepairCost() {
+            if (this.status === 'broken') {
+                return Math.random() * 1000;
+            }
+            return 0;
+        }
+    }
 });
 
-export default Maquina;
+export default MachineModel;

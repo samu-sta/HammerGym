@@ -10,6 +10,10 @@ const MembershipModel = sequelize.define('Membership', {
     price: {
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+    type: {
+        type: DataTypes.STRING(255),
+        allowNull: false
     }
 }, {
     tableName: 'Membership',

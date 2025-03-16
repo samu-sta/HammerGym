@@ -22,7 +22,15 @@ const ClassModel = sequelize.define('Class', {
     difficulty: {
         type: DataTypes.ENUM('low', 'medium', 'high'),
         allowNull: false
-    }
+    },
+    trainerId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'Trainer',
+            key: 'id'
+        }
+    },
 }, {
     tableName: 'Class',
     timestamps: false

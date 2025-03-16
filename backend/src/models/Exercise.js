@@ -1,23 +1,22 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../database/database.js"
 
-const Ejercicio = sequelize.define('Ejercicio', {
-    idEjercicio: {
+const ExerciseModel = sequelize.define('Exercise', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    nombre: {
+    name: {
         type: DataTypes.STRING(255),
         allowNull: false
     },
-    musculo: {
-        type: DataTypes.ENUM('biceps', 'triceps', 'espalda', 'pecho', 'hombros', 'piernas'),
+    muscles: {
+        type: DataTypes.ENUM('biceps', 'triceps', 'back', 'chest', 'shoulders', 'legs'),
     }
 }, {
-    tableName: 'Membresia',
+    tableName: 'Exercise',
     timestamps: false
-
 });
 
-export default Ejercicio;
+export default ExerciseModel;
