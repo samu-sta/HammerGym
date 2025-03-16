@@ -1,20 +1,19 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../database/database.js"
 
-const Membresia = sequelize.define('Membresia', {
-    idMembresia: {
+const MembershipModel = sequelize.define('Membership', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    precio: {
+    price: {
         type: DataTypes.INTEGER,
         allowNull: false
     }
 }, {
-    tableName: 'Membresia',
+    tableName: 'Membership',
     timestamps: false
-
 });
 
-export default Membresia;
+export default MembershipModel;

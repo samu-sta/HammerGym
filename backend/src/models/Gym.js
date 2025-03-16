@@ -1,28 +1,31 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../database/database.js"
 
-const Gimnasio = sequelize.define('Gimnasio', {
-    idGimnasio: {
+const GymModel = sequelize.define('Gym', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    Ubicacion: {
+    telephone: {
         type: DataTypes.STRING(255),
         allowNull: false
     },
-    capacidadMaxima: {
+    location: {
+        type: DataTypes.STRING(255),
+        allowNull: false
+    },
+    maxCapacity: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    afluenciaActual: {
+    currentOccupancy: {
         type: DataTypes.INTEGER,
         allowNull: false
     }
 }, {
-    tableName: 'Gimnasio',
+    tableName: 'Gym',
     timestamps: false
-
 });
 
-export default Gimnasio;
+export default GymModel;

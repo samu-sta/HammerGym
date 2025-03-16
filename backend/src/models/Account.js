@@ -1,24 +1,23 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../database/database.js"
 
-const modeloMaquina = sequelize.define('modeloMaquina', {
-    idmodeloMaquina: {
+const AccountModel = sequelize.define('Account', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    nombre: {
-        type: DataTypes.STRING(45),
+    password: {
+        type: DataTypes.STRING(255),
         allowNull: false
     },
-    marca: {
-        type: DataTypes.STRING(45),
+    login: {
+        type: DataTypes.STRING(255),
         allowNull: false
-    }
+    },
 }, {
-    tableName: 'Membresia',
+    tableName: 'Account',
     timestamps: false
-
 });
 
-export default modeloMaquina;
+export default AccountModel;

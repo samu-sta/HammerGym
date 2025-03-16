@@ -1,17 +1,17 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../database/database.js"
 
-const actividadUsuario = sequelize.define('actividadUsuario', {
-    idActividad: {
+const UserActivityModel = sequelize.define('UserActivity', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    tipo: {
-        type: DataTypes.ENUM('Entrada', 'Salida'),
+    type: {
+        type: DataTypes.ENUM('Entry', 'Exit'),
         allowNull: false
     },
-    idGimnasio: {
+    idGym: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
@@ -19,26 +19,18 @@ const actividadUsuario = sequelize.define('actividadUsuario', {
             key: 'idGimnasio'
         }
     },
-    idMaquina: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Maquina',
-            key: 'idMaquina'
-        }
-    },
-    idUsuario: {
+    idUser: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Usuario',
-            key: 'idUsuario'
+            key: 'id'
         }
     }
 }, {
-    tableName: 'Membresia',
+    tableName: 'UserActivity',
     timestamps: false
 
 });
 
-export default Membresia;
+export default UserActivityModel;

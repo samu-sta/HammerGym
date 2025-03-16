@@ -1,32 +1,31 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../database/database.js"
 
-const Clase = sequelize.define('Clase', {
-    idClase: {
+const ClassModel = sequelize.define('Class', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    nombre: {
+    name: {
         type: DataTypes.STRING(255),
         allowNull: false
     },
-    descripcion: {
+    description: {
         type: DataTypes.STRING(255),
         allowNull: false
     },
-    capacidadMaxima: {
+    maxCapacity: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    dificultad: {
-        type: DataTypes.ENUM('baja', 'media', 'alta'),
+    difficulty: {
+        type: DataTypes.ENUM('low', 'medium', 'high'),
         allowNull: false
     }
 }, {
-    tableName: 'clase',
+    tableName: 'Class',
     timestamps: false
-
 });
 
-export default Clase;
+export default ClassModel;
