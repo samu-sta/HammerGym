@@ -4,9 +4,7 @@ const RegisterUserSchema = zod.object({
   username: zod.string().min(3).max(255),
   email: zod.string().email().max(255),
   password: zod.string().min(6).max(255),
-  realName: zod.string().min(2).max(255),
-  lastNames: zod.string().min(2).max(255),
-  role: zod.enum(['Usuario', 'Entrenador'])
+  role: zod.enum(['user', 'trainer'])
 });
 
 const LoginUserSchema = zod.object({
@@ -18,8 +16,6 @@ const UpdateUserSchema = zod.object({
   username: zod.string().min(3).max(255).optional(),
   email: zod.string().email().max(255).optional(),
   password: zod.string().min(6).max(255).optional(),
-  realName: zod.string().min(2).max(255).optional(),
-  lastNames: zod.string().min(2).max(255).optional()
 });
 
 function validateRegisterUser(data) {

@@ -1,11 +1,11 @@
-import UserModel from '../models/User.js';
+import AccountModel from '../models/Account.js';
 import auth from '../utils/auth.js';
 import MESSAGES from '../messages/messages.js';
 
-export const authUser = async (req, res, next) => {
-    const token = 
-        (req.cookies && req.cookies.token) || 
-        req.headers.authorization?.split(' ')[1] || 
+export const authAccount = async (req, res, next) => {
+    const token =
+        (req.cookies && req.cookies.token) ||
+        req.headers.authorization?.split(' ')[1] ||
         req.headers['x-access-token'];
 
     if (!token) {
@@ -14,15 +14,15 @@ export const authUser = async (req, res, next) => {
 
     try {
         const decoded = auth.verifyToken(token);
-        const user = await UserModel.findOne({
+        const account = await AccountModel.findOne({
             where: { id: decoded.id }
         });
-        if (!user) {
+        if (!account) {
             return res.status(404).json({ error: MESSAGES.USER_NOT_FOUND });
         }
-        req.user = user;
+        req.account = account;
         next();
-    } 
+    }
     catch (error) {
         return res.status(500).json({ error: MESSAGES.ERROR_500 });
     }

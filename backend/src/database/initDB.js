@@ -1,5 +1,8 @@
 import sequelize from './database.js';
 import UserModel from '../models/User.js';
+import AccountModel from '../models/Account.js';
+import AdminModel from '../models/Admin.js';
+import TrainerModel from '../models/Trainer.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 
@@ -19,8 +22,11 @@ const initDatabase = async () => {
     await tempSequelize.query(`DROP DATABASE IF EXISTS ${process.env.DB_NAME}`);
     await tempSequelize.query(`CREATE DATABASE ${process.env.DB_NAME}`);
     await tempSequelize.close();
-
+    await AccountModel.sync();
     await UserModel.sync();
+    await AdminModel.sync();
+    await TrainerModel.sync();
+
     await sequelize.sync({ force: false });
 
     console.log('Database & tables created!');

@@ -1,6 +1,7 @@
 const USER_NOT_FOUND = "User not found";
 const INVALID_PASSWORD = "Invalid password";
 const USER_ALREADY_EXISTS = "User already exists";
+const EMAIL_ALREADY_EXISTS = "Email already exists";
 const REGISTRATION_SUCCESS = "Registration successful";
 const LOGIN_SUCCESS = "Login successful";
 const INVALID_DATA = "Invalid data";
@@ -9,11 +10,14 @@ const LOGOUT_SUCCESS = "Logout successful";
 const NO_TOKEN_PROVIDED = "No token provided";
 const INVALID_TOKEN = "Invalid token";
 const ACCESS_DENIED = "Access denied";
+const ACTIVITY_SUCCESS = "Activity registered successfully";
+const ACTIVITY_ERROR = "Error registering activity";
 
 const MESSAGES = {
   USER_NOT_FOUND,
   INVALID_PASSWORD,
   USER_ALREADY_EXISTS,
+  EMAIL_ALREADY_EXISTS,
   REGISTRATION_SUCCESS,
   LOGIN_SUCCESS,
   INVALID_DATA,
@@ -21,7 +25,9 @@ const MESSAGES = {
   LOGOUT_SUCCESS,
   NO_TOKEN_PROVIDED,
   INVALID_TOKEN,
-  ACCESS_DENIED
+  ACCESS_DENIED,
+  ACTIVITY_SUCCESS,
+  ACTIVITY_ERROR
 };
 
 export default MESSAGES;

@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../database/database.js"
+import e from "express";
 
 const AccountModel = sequelize.define('Account', {
     id: {
@@ -11,7 +12,11 @@ const AccountModel = sequelize.define('Account', {
         type: DataTypes.STRING(255),
         allowNull: false
     },
-    login: {
+    username: {
+        type: DataTypes.STRING(255),
+        allowNull: false
+    },
+    email: {
         type: DataTypes.STRING(255),
         allowNull: false
     },

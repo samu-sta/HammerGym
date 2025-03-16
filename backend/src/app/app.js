@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import { UserRoutes } from '../routes/User.Routes.js';
+import { AccountRoutes } from '../routes/Account.Routes.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
@@ -21,7 +21,7 @@ export const createApp = () => {
     credentials: true
   }));
 
-  app.use('/user', UserRoutes());
+  app.use('/account', AccountRoutes());
 
   app.get('/', (req, res) => {
     res.send('Hello World');
