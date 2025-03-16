@@ -1,70 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import './styles/RegisterPage.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaLongArrowAltLeft } from "react-icons/fa";
-import { registrationSchema } from '../schemas/access.js';
+import { useRegister } from '../hooks/useRegister.jsx';
 
 const RegisterPage = ({ setShouldShowAccessButton }) => {
-  const [role, setRole] = useState('Usuario');
-  const [realName, setRealName] = useState('');
-  const [lastNames, setLastNames] = useState('');
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [errors, setErrors] = useState({});
+  const { errors, role, setRole, handleSubmit } = useRegister();
   const navigate = useNavigate();
 
   useEffect(() => {
     setShouldShowAccessButton(true);
     window.scrollTo(0, 0);
-  }, []);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const data = {
-      role,
-      realName,
-      lastNames,
-      username,
-      email,
-      password,
-      confirmPassword
-    };
-
-    const result = registrationSchema.safeParse(data);
-
-
-    if (!result.success) {
-      const formattedErrors = result.error.format();
-      console.log(formattedErrors);
-      setErrors(formattedErrors);
-      return;
-    }
-
-    setErrors({});
-    fetch('http://localhost:3000/user/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-      credentials: 'include',
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.success) {
-          console.log(data);
-          navigate('/login');
-        } else {
-          setErrors({ email: { _errors: [data.message] } });
-        }
-      }
-      );
-  };
+  }, [setShouldShowAccessButton]);
 
   const handleBackClick = () => {
     setShouldShowAccessButton(true);
@@ -94,84 +41,72 @@ const RegisterPage = ({ setShouldShowAccessButton }) => {
             </section>
           </section>
           <section className="form-group">
-            <label htmlFor="nombre">Nombre real:</label>
+            <label htmlFor="realName">Nombre real:</label>
             <input
-              id="nombre"
-              value={realName}
-              onChange={(e) => setRealName(e.target.value)}
+              id="realName"
+              name="realName"
               className='input'
             />
-            {errors.nombre ? (
-              <p className="error-message">{errors.nombre._errors.join(', ')}</p>
-            )
-              : (<p className="error-message"/>)}
+            {errors.realName ? (
+              <p className="error-message">{errors.realName._errors.join(', ')}</p>
+            ) : (<p className="error-message" />)}
           </section>
           <section className="form-group">
-            <label htmlFor="apellido">Apellido/s:</label>
+            <label htmlFor="lastNames">Apellido/s:</label>
             <input
-              id="apellido"
-              value={lastNames}
-              onChange={(e) => setLastNames(e.target.value)}
+              id="lastNames"
+              name="lastNames"
               className='input'
             />
-            {errors.apellido ? (
-              <p className="error-message">{errors.apellido._errors.join(', ')}</p>
-            )
-              : (<p className="error-message"/>)}
+            {errors.lastNames ? (
+              <p className="error-message">{errors.lastNames._errors.join(', ')}</p>
+            ) : (<p className="error-message" />)}
           </section>
           <section className="form-group">
-            <label htmlFor="nombreUsuario">Nombre de usuario:</label>
+            <label htmlFor="username">Nombre de usuario:</label>
             <input
-              id="nombreUsuario"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              id="username"
+              name="username"
               className='input'
             />
-            {errors.nombreUsuario ? (
-              <p className="error-message">{errors.nombreUsuario._errors.join(', ')}</p>
-            )
-              : (<p className="error-message"/>)}
+            {errors.username ? (
+              <p className="error-message">{errors.username._errors.join(', ')}</p>
+            ) : (<p className="error-message" />)}
           </section>
           <section className="form-group">
             <label htmlFor="email">Email:</label>
             <input
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
               className='input'
             />
             {errors.email ? (
               <p className="error-message">{errors.email._errors.join(', ')}</p>
-            )
-              : (<p className="error-message"/>)}
+            ) : (<p className="error-message" />)}
           </section>
           <section className="form-group">
             <label htmlFor="password">Contraseña:</label>
             <input
               type="password"
               id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
               className='input'
             />
             {errors.password ? (
               <p className="error-message">{errors.password._errors.join(', ')}</p>
-            )
-              : (<p className="error-message"/>)}
+            ) : (<p className="error-message" />)}
           </section>
           <section className="form-group">
             <label htmlFor="confirmPassword">Confirmar Contraseña:</label>
             <input
               type="password"
               id="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              name="confirmPassword"
               className='input'
             />
             {errors.confirmPassword ? (
               <p className="error-message">{errors.confirmPassword._errors.join(', ')}</p>
-            )
-              : (<p className="error-message"/>)}
+            ) : (<p className="error-message" />)}
           </section>
         </main>
         <section className='registration-form-buttons'>
