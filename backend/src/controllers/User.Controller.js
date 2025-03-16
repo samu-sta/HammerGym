@@ -1,11 +1,11 @@
 import userSchema from "../schemas/UserSchema.js";
 import argon2 from 'argon2';
-import auth from '../auth/auth.js';
+import auth from '../utils/auth.js';
 import MESSAGES from "../messages/messages.js";
-
-export default class UserController{
-  constructor ({userModel}) {
-    this.userModel = userModel;
+import UserModel from "../models/User.js";
+export default class UserController {
+  constructor() {
+    this.userModel = UserModel;
   }
 
   register = async (req, res) => {
@@ -28,16 +28,15 @@ export default class UserController{
     try {
       result.data.password = await argon2.hash(result.data.password);
       const newUser = await this.userModel.create(result.data);
-      return res.status(201).send({success: true});
+      return res.status(201).send({ success: true });
     }
-    catch(error) {
+    catch (error) {
       return res.status(500).json({ error: MESSAGES.ERROR_500 });
     }
   }
 
   login = async (req, res) => {
 
-    console.log(req.body);
     const result = userSchema.validateLoginUser(req.body);
 
     if (!result.success) {
@@ -46,7 +45,7 @@ export default class UserController{
 
     try {
       const user = await this.userModel.findOne({
-        where: {email: result.data.email, }
+        where: { email: result.data.email, }
       });
 
       if (!user) {
@@ -60,14 +59,15 @@ export default class UserController{
       }
 
       const token = auth.createToken(user);
+      const { password, ...userData } = user.dataValues;
 
       return res.status(200).cookie('token', token, {
         httpOnly: true,
         secure: true,
         sameSite: 'none'
-      }).json({ success: true, user });
+      }).json({ success: true, user: userData });
     }
-    catch(error) {
+    catch (error) {
       return res.status(500).json({ error: MESSAGES.ERROR_500 });
     }
   }
@@ -76,5 +76,36 @@ export default class UserController{
     return res.status(200).clearCookie('token').json({ success: MESSAGES.LOGOUT_SUCCESS });
   }
 
-  
+  getUser = async (req, res) => {
+    const { password, ...userData } = req.user.dataValues;
+    return res.status(200).json({ success: true, user: userData });
+  }
+
+  updateUser = async (req, res) => {
+    const result = userSchema.validateUpdateUser(req.body);
+
+    if (!result.success) {
+      return res.status(400).json({ error: MESSAGES.INVALID_DATA });
+    }
+
+    try {
+      if (result.data.password) {
+        result.data.password = await argon2.hash(result.data.password);
+      }
+
+      await this.userModel.update(result.data, {
+        where: { id: req.user.id }
+      });
+      const resultUser = {
+        ...req.user.dataValues,
+        ...result.data,
+      };
+      const { password, ...userData } = resultUser
+
+      return res.status(200).json({ success: MESSAGES.UPDATE_SUCCESS, user: userData });
+    }
+    catch (error) {
+      return res.status(500).json({ error: MESSAGES.ERROR_500 });
+    }
+  }
 }

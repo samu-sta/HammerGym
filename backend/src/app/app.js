@@ -11,7 +11,7 @@ dotenv.config();
 const PORT = process.env.PORT || DEFAULT_PORT;
 
 
-export const createApp = ({userModel}) => {
+export const createApp = () => {
   const app = express();
   app.use(morgan('dev'));
   app.use(express.json());
@@ -21,7 +21,7 @@ export const createApp = ({userModel}) => {
     credentials: true
   }));
 
-  app.use('/user', UserRoutes({userModel}));
+  app.use('/user', UserRoutes());
 
   app.get('/', (req, res) => {
     res.send('Hello World');
