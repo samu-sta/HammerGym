@@ -87,8 +87,8 @@ export default class UserController {
       }
 
       const token = auth.createToken(account);
-      const { password, ...userData } = account.dataValues;
-      userData.role = wichAccount(account);
+      const { password, id, ...userData } = account.dataValues;
+      userData.role = wichAccount(account.id);
 
       return res.status(200).cookie('token', token, {
         httpOnly: true,
@@ -102,12 +102,12 @@ export default class UserController {
   }
 
   logout = async (_req, res) => {
-    return res.status(200).clearCookie('token').json({ success: MESSAGES.LOGOUT_SUCCESS });
+    return res.status(200).clearCookie('token').json({ success: true });
   }
 
   getUser = async (req, res) => {
-    const { password, ...userData } = req.account.dataValues;
-    userData.role = wichAccount(req.user);
+    const { password, id, ...userData } = req.account.dataValues;
+    userData.role = wichAccount(req.account.id);
     return res.status(200).json({ success: true, account: userData });
   }
 
@@ -131,17 +131,26 @@ export default class UserController {
         return res.status(409).json({ error: MESSAGES.EMAIL_ALREADY_EXISTS });
       }
 
-      await this.userModel.update(result.data, {
-        where: { id: req.account.id }
-      });
+
+      await this.accountModel.update(
+        {
+          email: result.data.email,
+          username: result.data.username,
+          password: result.data.password
+        },
+        {
+          where: { id: req.account.id }
+        }
+      );
+
       const resultUser = {
         ...req.account.dataValues,
         ...result.data,
       };
-      const { password, ...userData } = resultUser
-      userData.role = wichAccount(req.account);
+      const { password, id, ...userData } = resultUser
+      userData.role = wichAccount(req.account.id);
 
-      return res.status(200).json({ success: MESSAGES.UPDATE_SUCCESS, user: userData });
+      return res.status(200).json({ success: true, account: userData });
     }
     catch (error) {
       return res.status(500).json({ error: MESSAGES.ERROR_500 });

@@ -18,6 +18,7 @@ const initDatabase = async () => {
       database: process.env.DB_NAME,
       dialect: 'mysql'
     });
+    console.log("Creating database...");
 
     await tempSequelize.query(`DROP DATABASE IF EXISTS ${process.env.DB_NAME}`);
     await tempSequelize.query(`CREATE DATABASE ${process.env.DB_NAME}`);
