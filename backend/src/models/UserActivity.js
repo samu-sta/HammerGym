@@ -16,25 +16,26 @@ const UserActivityModel = sequelize.define('UserActivity', {
         type: DataTypes.ENUM('Entry', 'Exit'),
         allowNull: false
     },
-    gymId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Gimnasio',
-            key: 'idGimnasio'
-        }
-    },
     userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Usuario',
+            model: 'User',
+            key: 'accountId'
+        }
+    },
+    gymId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'Gym',
             key: 'id'
         }
     }
 }, {
     tableName: 'UserActivity',
-    timestamps: false
+    timestamps: false,
+    sequelize
 
 });
 

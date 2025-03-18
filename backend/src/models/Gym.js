@@ -25,7 +25,8 @@ const GymModel = sequelize.define('Gym', {
     }
 }, {
     tableName: 'Gym',
-    timestamps: false
+    timestamps: false,
+    sequelize
 });
 
 export default GymModel;

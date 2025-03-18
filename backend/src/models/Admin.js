@@ -12,7 +12,8 @@ const AdminModel = sequelize.define('Admin', {
     }
 }, {
     tableName: 'Admin',
-    timestamps: false
+    timestamps: false,
+    sequelize
 
 });
 

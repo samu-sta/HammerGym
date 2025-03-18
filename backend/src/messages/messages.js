@@ -12,6 +12,7 @@ const INVALID_TOKEN = "Invalid token";
 const ACCESS_DENIED = "Access denied";
 const ACTIVITY_SUCCESS = "Activity registered successfully";
 const ACTIVITY_ERROR = "Error registering activity";
+const NO_ACTIVITIES = "No activities found";
 
 const MESSAGES = {
   USER_NOT_FOUND,
@@ -27,7 +28,8 @@ const MESSAGES = {
   INVALID_TOKEN,
   ACCESS_DENIED,
   ACTIVITY_SUCCESS,
-  ACTIVITY_ERROR
+  ACTIVITY_ERROR,
+  NO_ACTIVITIES
 };
 
 export default MESSAGES;

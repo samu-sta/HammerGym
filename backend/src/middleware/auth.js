@@ -20,7 +20,7 @@ export const authAccount = async (req, res, next) => {
         if (!account) {
             return res.status(404).json({ error: MESSAGES.USER_NOT_FOUND });
         }
-        req.account = account;
+        req.account = account.dataValues;
         next();
     }
     catch (error) {

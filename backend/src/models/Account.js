@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../database/database.js"
-import e from "express";
 
 const AccountModel = sequelize.define('Account', {
     id: {
@@ -22,7 +21,8 @@ const AccountModel = sequelize.define('Account', {
     },
 }, {
     tableName: 'Account',
-    timestamps: false
+    timestamps: false,
+    sequelize
 });
 
 export default AccountModel;
