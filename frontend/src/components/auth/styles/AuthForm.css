@@ -1,19 +1,19 @@
-.login-page {
+.auth-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
   min-height: 78vh;
   width: 100%;
 }
 
-.login-page-title {
+.auth-page-title {
   font-size: 3rem;
   font-style: italic;
+  margin: 0;
 }
 
-.login-form {
+.auth-form {
   padding: 20px;
   width: 80%;
   max-width: 600px;
@@ -23,34 +23,14 @@
   align-items: center;
 }
 
-.input {
-  padding: 12px;
-  border: none;
-  font-size: 1.2rem;
-  background-color: inherit;
-  border-bottom: 2px solid #998000;
-  font-family: inherit;
-}
-
-.input:focus {
-  outline: none;
-}
-
-.login-form-container {
+.auth-form-container {
   display: flex;
   flex-direction: column;
   gap: 40px;
   width: 100%;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-
-}
-
-
-.login-submit-button {
+.auth-submit-button {
   background-color: #998000;
   color: white;
   padding: 10px 20px;
@@ -62,28 +42,12 @@
   transition: all 0.3s ease;
 }
 
-.login-submit-button:hover {
+.auth-submit-button:hover {
   background-color: #786500;
   transform: scale(1.05);
 }
 
-.login-submit-button:active {
-  transform: scale(1);
-}
-
-.login-input-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.error-message {
-  color: #d73333;
-  width: fit-content;
-  margin: 0;
-}
-
-.login-page-back-container{
+.auth-page-back-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +56,7 @@
   padding: 20px 0px;
 }
 
-.login-page-back{
+.auth-page-back {
   color: rgb(3, 92, 151);
   font-size: 1.2rem;
   cursor: pointer;
@@ -104,14 +68,26 @@
   font-style: italic;
 }
 
-.login-page-back:hover{
+.auth-page-back:hover {
   color: rgb(2, 71, 117);
   transition: all 0.3s ease;
 }
 
-.login-form-buttons{
+.auth-form-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.auth-link {
+  color: #786500;
+  text-decoration: none;
+  font-style: italic;
+  transition: all 0.3s ease;
+}
+
+.auth-link:hover {
+  color: #5c5200;
+  text-decoration: underline;
 }

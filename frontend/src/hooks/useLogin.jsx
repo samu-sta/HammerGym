@@ -1,46 +1,42 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginSchema } from '../schemas/access.js';
-import { loginUser } from '../utils/fetchUserData.js';
+import { validateLoginAccount } from '../schemas/access.js';
+import { loginUser } from '../services/UserService.js';
+import useAuth from './useAuth.jsx';
+
+const INVALID_CREDENTIALS = 'Credenciales inválidas';
 
 export const useLogin = () => {
-  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const submitLogin = async (formValues) => {
+    return await loginUser(formValues.email, formValues.password);
+  };
 
-    const formData = new FormData(event.target);
-    const email = formData.get('email');
-    const password = formData.get('password');
+  const handleLoginSuccess = (response) => {
+    localStorage.setItem('account', JSON.stringify(response.account));
 
-    const result = loginSchema.safeParse({ email, password });
-    if (!result.success) {
-      const formattedErrors = result.error.format();
-      setErrors(formattedErrors);
-      return;
-    }
-
-    setErrors({});
-    const data = await loginUser(email, password);
-
-    if (!data.success) {
-      setErrors({ email: { _errors: [data.message] } });
-      return
-    }
-    localStorage.setItem('user', JSON.stringify(data.user));
-    if (data.user.role === 'admin') {
+    if (response.account.role === 'admin') {
       navigate('/admin');
-    } else if (data.user.role === 'Entrenador') {
+    } else if (response.account.role === 'trainer') {
       navigate('/entrenador');
     } else {
       navigate('/usuario');
     }
   };
 
-  return {
-    errors,
-    handleSubmit
+  const handleLoginError = (response, setErrors) => {
+    setErrors({
+      email: { _errors: [INVALID_CREDENTIALS] },
+      password: { _errors: [INVALID_CREDENTIALS] }
+    });
   };
 
-}
+  const { errors, handleSubmit } = useAuth(
+    validateLoginAccount,
+    submitLogin,
+    handleLoginSuccess,
+    handleLoginError
+  );
+
+  return { errors, handleSubmit };
+};
