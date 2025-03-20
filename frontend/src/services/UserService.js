@@ -1,6 +1,6 @@
 export const loginUser = async (email, password) => {
   try {
-    const response = await fetch('http://localhost:3000/user/login', {
+    const response = await fetch('http://localhost:3000/account/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ export const loginUser = async (email, password) => {
 
 export const registerUser = async (userData) => {
   try {
-    const response = await fetch('http://localhost:3000/user/register', {
+    const response = await fetch('http://localhost:3000/account/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -1,44 +1,35 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { registrationSchema } from '../schemas/access.js';
-import { registerUser } from '../utils/fetchUserData.js';
+import { validateRegisterAccount } from '../schemas/access.js';
+import { registerUser } from '../services/UserService.js';
+import useAuth from './useAuth.jsx';
 
 export const useRegister = () => {
-  const [errors, setErrors] = useState({});
-  const [role, setRole] = useState('Usuario');
+  const [role, setRole] = useState('user');
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
+  const submitRegistration = async (formValues) => {
     const userData = {
-      role: role,
-      realName: formData.get('realName'),
-      lastNames: formData.get('lastNames'),
-      username: formData.get('username'),
-      email: formData.get('email'),
-      password: formData.get('password'),
-      confirmPassword: formData.get('confirmPassword')
+      ...formValues,
+      role: role
     };
-
-    const result = registrationSchema.safeParse(userData);
-
-    if (!result.success) {
-      const formattedErrors = result.error.format();
-      setErrors(formattedErrors);
-      return;
-    }
-
-    setErrors({});
-    const data = await registerUser(userData);
-
-    if (data.success) {
-      navigate('/login');
-    } else {
-      setErrors({ email: { _errors: [data.message] } });
-    }
+    return await registerUser(userData);
   };
+
+  const handleRegisterSuccess = () => {
+    navigate('/login');
+  };
+
+  const handleRegisterError = (response, setErrors) => {
+    setErrors({ email: { _errors: [data.message] } });
+  }
+
+  const { errors, handleSubmit } = useAuth(
+    validateRegisterAccount,
+    submitRegistration,
+    handleRegisterSuccess,
+    handleRegisterError
+  );
 
   return {
     errors,
