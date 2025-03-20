@@ -9,7 +9,7 @@ export const authAccount = async (req, res, next) => {
         req.headers['x-access-token'];
 
     if (!token) {
-        return res.status(401).json({ error: MESSAGES.NO_TOKEN_PROVIDED });
+        return res.status(401).json({ success: false, message: MESSAGES.NO_TOKEN_PROVIDED });
     }
 
     try {
@@ -18,13 +18,13 @@ export const authAccount = async (req, res, next) => {
             where: { id: decoded.id }
         });
         if (!account) {
-            return res.status(404).json({ error: MESSAGES.USER_NOT_FOUND });
+            return res.status(404).json({ success: false, message: MESSAGES.USER_NOT_FOUND });
         }
         req.account = account.dataValues;
         next();
     }
     catch (error) {
-        return res.status(500).json({ error: MESSAGES.ERROR_500 });
+        return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
 }
 

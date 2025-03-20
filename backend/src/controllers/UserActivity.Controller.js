@@ -13,7 +13,7 @@ export default class UserActivityController {
     const result = actividadSchema.validateCreateActivity(req.body);
 
     if (!result.success) {
-      return res.status(400).json({ error: MESSAGES.INVALID_DATA });
+      return res.status(400).json({ success: false, message: MESSAGES.INVALID_DATA });
     }
 
     try {
@@ -30,7 +30,7 @@ export default class UserActivityController {
       });
     } catch (error) {
       console.log(error)
-      return res.status(500).json({ error: MESSAGES.ERROR_500 });
+      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   }
 
@@ -50,7 +50,7 @@ export default class UserActivityController {
 
       if (activities.length === 0) {
         console.log(MESSAGES.NO_ACTIVITIES);
-        return res.status(404).json({ error: MESSAGES.NO_ACTIVITIES });
+        return res.status(404).json({ success: false, message: MESSAGES.NO_ACTIVITIES });
       }
 
       return res.status(200).json({
@@ -59,7 +59,7 @@ export default class UserActivityController {
       });
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ error: MESSAGES.ERROR_500 });
+      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   }
 }
