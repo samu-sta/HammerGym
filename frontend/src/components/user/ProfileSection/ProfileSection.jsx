@@ -1,8 +1,11 @@
-import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import './styles/ProfileSection.css';
 import InputProfileSection from './components/InputProfileSection.jsx';
-const ProfileSection = ({ userData }) => {
+import { useAccount } from '../../../context/AccountContext.jsx';
+
+const ProfileSection = () => {
+  const { account, setAccount } = useAccount();
+
   return (
     <section className='user-info'>
       <header className='user-info-header'>
@@ -10,10 +13,9 @@ const ProfileSection = ({ userData }) => {
         <h2>Perfil de Usuario</h2>
       </header>
       <article className='user-info-content'>
-        <InputProfileSection label='Nombre Real' value={userData.realName} />
-        <InputProfileSection label='Apellidos' value={userData.lastNames} />
-        <InputProfileSection label='Nombre de usuario' value={userData.username} />
-        <InputProfileSection label='Correo Electrónico' value={userData.email} />
+
+        <InputProfileSection label='Nombre de usuario' value={account.username} onChange={(e) => setAccount({ ...userData, username: e.target.value })} />
+        <InputProfileSection label='Email' value={account.email} onChange={(e) => setAccount({ ...userData, email: e.target.value })} />
       </article>
       <footer className='user-info-footer'>
         <button className='primary-button button'>ACTUALIZAR</button>

@@ -1,18 +1,20 @@
 import React from 'react';
 import './styles/InputProfileSection.css';
+import { useIsMobile } from '../../../../hooks/useWindowSize';
 
+const mobileSize = 768;
 
-const InputProfileSection = ({ label, value, onChange }) => {
+const InputProfileSection = ({ label, value }) => {
+  const isMobile = useIsMobile({ mobileSize });
   return (
-    <p className='profile-atribute-p'>
+    <article className={`profile-atribute ${isMobile ? 'mobile' : ''}`}>
       <strong>{label}:</strong>{' '}
-      <input 
-        className='input user-profile-section-input' 
-        type="text" 
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
+      <input
+        className='input user-profile-section-input'
+        type="text"
+        defaultValue={value}
       />
-    </p>
+    </article>
   );
 };
 

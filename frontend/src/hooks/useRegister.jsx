@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateRegisterAccount } from '../schemas/access.js';
-import { registerUser } from '../services/UserService.js';
+import { registerAccount } from '../services/AccountService.js';
 import useAuth from './useAuth.jsx';
 
 export const useRegister = () => {
@@ -9,11 +9,11 @@ export const useRegister = () => {
   const navigate = useNavigate();
 
   const submitRegistration = async (formValues) => {
-    const userData = {
+    const accountData = {
       ...formValues,
       role: role
     };
-    return await registerUser(userData);
+    return await registerAccount(accountData);
   };
 
   const handleRegisterSuccess = () => {
@@ -21,7 +21,7 @@ export const useRegister = () => {
   };
 
   const handleRegisterError = (response, setErrors) => {
-    setErrors({ email: { _errors: [data.message] } });
+    setErrors({ email: { _errors: [response.message] } });
   }
 
   const { errors, handleSubmit } = useAuth(

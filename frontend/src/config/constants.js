@@ -1,7 +1,7 @@
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaUserSecret } from "react-icons/fa6";
-export const MOBILE_WIDTH = 950;
+export const DEFAULT_MOBILE_WIDTH = 950;
 
 export const PERSONAL = [
   {
