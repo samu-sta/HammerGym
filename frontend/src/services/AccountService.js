@@ -60,3 +60,20 @@ export const updateAccount = async (accountData) => {
     };
   }
 };
+
+export const logoutAccount = async () => {
+  try {
+    const response = await fetch('http://localhost:3000/account/logout', {
+      method: 'POST',
+      credentials: 'include',
+    });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return {
+      success: false,
+      message: 'Error de conexión con el servidor'
+    };
+  }
+}
