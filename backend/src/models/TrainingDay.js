@@ -2,17 +2,20 @@ import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
 const TrainingDayModel = sequelize.define('TrainingDay', {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   day: {
     type: DataTypes.ENUM('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'),
-    primaryKey: true,
     allowNull: false
   },
-  trainingPlanId: {
+  trainingId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    primaryKey: true,
     references: {
-      model: 'WeeklyTrainingPlan',
+      model: 'Training',
       key: 'id'
     }
   }

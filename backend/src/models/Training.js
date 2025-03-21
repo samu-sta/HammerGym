@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
-const WeeklyTrainingPlanModel = sequelize.define('WeeklyTrainingPlan', {
+const TrainingModel = sequelize.define('Training', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -12,7 +12,7 @@ const WeeklyTrainingPlanModel = sequelize.define('WeeklyTrainingPlan', {
     allowNull: false,
     references: {
       model: 'Trainer',
-      key: 'id'
+      key: 'accountId'
     }
   },
   userId: {
@@ -20,12 +20,12 @@ const WeeklyTrainingPlanModel = sequelize.define('WeeklyTrainingPlan', {
     allowNull: false,
     references: {
       model: 'User',
-      key: 'id'
+      key: 'accountId'
     }
   }
 }, {
-  tableName: 'WeeklyTrainingPlan',
+  tableName: 'Training',
   timestamps: true
 });
 
-export default WeeklyTrainingPlanModel;
+export default TrainingModel;
