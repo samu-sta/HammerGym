@@ -1,7 +1,7 @@
 import { useContext, createContext, useState, useEffect } from 'react';
 import { updateAccount } from '../services/AccountService';
-
-// Crear el contexto
+import { logoutAccount } from '../services/AccountService';
+import { Navigate } from 'react-router-dom';
 const AccountContext = createContext();
 
 // Proveedor del contexto
@@ -53,13 +53,16 @@ export const AccountProvider = ({ children }) => {
   };
 
   const setAccountData = (accountData) => {
-    localStorage.setItem('account', JSON.stringify(accountData));
-    setAccount(accountData);
+    localStorage.setItem('account', JSON.stringify({ ...account, ...accountData }));
+    setAccount({ ...account, ...accountData });
+
   };
 
   const logout = () => {
     localStorage.removeItem('account');
     setAccount(null);
+    logoutAccount();
+    return <Navigate to='/' />;
   };
 
   const hasRole = (role) => {
