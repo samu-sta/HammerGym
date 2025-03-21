@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import { AccountRoutes } from '../routes/Account.Routes.js';
 import { UserActivityRoutes } from '../routes/UserActivity.Routes.js';
+import { TrainingRoutes } from '../routes/Training.Routes.js';
 import setupAssociations from '../database/associations.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -25,6 +26,7 @@ export const createApp = () => {
 
   app.use('/account', AccountRoutes());
   app.use('/user-activity', UserActivityRoutes());
+  app.use('/training', TrainingRoutes());
 
   app.get('/', (req, res) => {
     res.send('Hello World');
