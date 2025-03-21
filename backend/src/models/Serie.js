@@ -1,27 +1,32 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../database/database.js"
 
-const SeireModel = sequelize.define('Serie', {
-    idTrain: {
+const SerieModel = sequelize.define('Serie', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: true
+    },
+    idTrainingDay: {
+        type: DataTypes.INTEGER,
         references: {
-            model: 'Train',
+            model: 'TrainingDay',
             key: 'id'
         }
     },
     idExercise: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
         references: {
             model: 'Exercise',
             key: 'id'
         }
     },
-    type: {
-        type: DataTypes.STRING(255),
+    reps: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    weigth: {
+        type: DataTypes.DOUBLE,
         allowNull: false
     }
 }, {

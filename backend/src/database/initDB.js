@@ -5,10 +5,13 @@ import AdminModel from '../models/Admin.js';
 import TrainerModel from '../models/Trainer.js';
 import GymModel from '../models/Gym.js';
 import UserActivityModel from '../models/UserActivity.js';
+import TrainingModel from '../models/Training.js';
+import TrainingDayModel from '../models/TrainingDay.js';
+import SerieModel from '../models/Serie.js';
+import ExerciseModel from '../models/Exercise.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
-import setupAssociations from './associations.js';
-import { set } from 'zod';
+
 
 dotenv.config();
 
@@ -29,11 +32,19 @@ const initDatabase = async () => {
     await tempSequelize.close();
 
     await AccountModel.sync({ force: true });
-    await UserModel.sync({ force: true });
-    await AdminModel.sync({ force: true });
-    await TrainerModel.sync({ force: true });
     await GymModel.sync({ force: true });
+    await ExerciseModel.sync({ force: true });
+
+    await UserModel.sync({ force: true });
+    await TrainerModel.sync({ force: true });
+    await AdminModel.sync({ force: true });
+
+    await TrainingModel.sync({ force: true });
     await UserActivityModel.sync({ force: true });
+
+    await TrainingDayModel.sync({ force: true });
+
+    await SerieModel.sync({ force: true });
 
     await sequelize.sync({ force: true });
     GymModel.create({
