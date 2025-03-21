@@ -1,25 +1,81 @@
 import React from 'react';
-import { FaHistory } from 'react-icons/fa';
+import { FaHistory, FaSync } from 'react-icons/fa';
 import './styles/ActivitiesSection.css';
-const ActivitiesSection = ({ activities }) => {
+import ActivityDay from './ActivityDay';
+import FilterPills from './FilterPills';
+import StatusMessage from './StatusMessage';
+import useUserActivities from '../../../hooks/useUserActivities';
+import { useIsMobile } from '../../../hooks/useWindowSize';
+
+const ActivitiesSection = () => {
+  const isMobile = useIsMobile({ mobileSize: 500 });
+
+  const {
+    filteredActivities,
+    groupedActivities,
+    loading,
+    refreshing,
+    error,
+    timeFilter,
+    expandedDay,
+    loadActivities,
+    toggleDay,
+    handleFilterChange,
+    TIME_FILTERS
+  } = useUserActivities();
+
   return (
-    <section className='user-activities'>
-      <header className='section-header'>
-        <FaHistory className='section-icon' />
-        <h2>Actividades Recientes</h2>
+    <section className='activities-section'>
+      <header className={`activities-header ${isMobile ? 'mobile' : ''}`}>
+        <h2>
+          <FaHistory className='header-icon' />
+          Actividades
+        </h2>
+
+        <section className={`actions ${isMobile ? 'mobile' : ''}`}>
+          <FilterPills
+            activeFilter={timeFilter}
+            onFilterChange={handleFilterChange}
+            filters={TIME_FILTERS}
+            isMobile={isMobile}
+          />
+
+          <button
+            className={`refresh-btn ${refreshing ? 'spinning' : ''}`}
+            onClick={loadActivities}
+            disabled={refreshing}
+            aria-label="Refrescar actividades"
+          >
+            <FaSync />
+          </button>
+        </section>
       </header>
-      <div className='activities-content'>
-        {activities.length > 0 ? (
-          activities.map((activity, index) => (
-            <article key={index} className='activity-item'>
-              <span className='activity-type'>{activity.type}</span>
-              <span className='activity-date'>{new Date(activity.date).toLocaleString()}</span>
-            </article>
-          ))
+
+      <main className='activities-body'>
+        {loading && !refreshing ? (
+          <StatusMessage type="loading" />
+        ) : error ? (
+          <StatusMessage type="error" message={error} />
+        ) : filteredActivities.length === 0 ? (
+          <StatusMessage
+            type="empty"
+            timeFilter={timeFilter}
+            filters={TIME_FILTERS}
+          />
         ) : (
-          <p className='no-data'>No hay actividades recientes.</p>
+          <ul className='activity-timeline'>
+            {groupedActivities.map((group) => (
+              <ActivityDay
+                key={group.date.toISOString()}
+                dayGroup={group}
+                isExpanded={expandedDay === group.date.toDateString()}
+                onToggle={() => toggleDay(group.date.toDateString())}
+                isMobile={isMobile}
+              />
+            ))}
+          </ul>
         )}
-      </div>
+      </main>
     </section>
   );
 };

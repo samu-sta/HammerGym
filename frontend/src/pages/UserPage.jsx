@@ -95,7 +95,7 @@ const UserPage = () => {
       case 'progress':
         return <ProgressSection progress={mockUserData.progress} />;
       case 'activities':
-        return <ActivitiesSection activities={mockUserData.activities} />;
+        return <ActivitiesSection />;
       case 'routine':
         return <RoutineSection
           routine={mockUserData.routine}
