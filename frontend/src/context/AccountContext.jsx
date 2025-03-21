@@ -1,6 +1,5 @@
 import { useContext, createContext, useState, useEffect } from 'react';
 import { updateAccount } from '../services/AccountService';
-
 // Crear el contexto
 const AccountContext = createContext();
 
@@ -53,8 +52,9 @@ export const AccountProvider = ({ children }) => {
   };
 
   const setAccountData = (accountData) => {
-    localStorage.setItem('account', JSON.stringify(accountData));
-    setAccount(accountData);
+    localStorage.setItem('account', JSON.stringify({ ...account, ...accountData }));
+    setAccount({ ...account, ...accountData });
+
   };
 
   const logout = () => {

@@ -1,7 +1,7 @@
 .main-app{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
     padding-top: 90px;
     box-sizing: border-box;
     

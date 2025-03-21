@@ -4,7 +4,15 @@ import InputProfileSection from './components/InputProfileSection.jsx';
 import { useAccount } from '../../../context/AccountContext.jsx';
 
 const ProfileSection = () => {
-  const { account, setAccount } = useAccount();
+  const { account, updateAccountData } = useAccount();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const accountData = Object.fromEntries(formData);
+    updateAccountData(accountData);
+  }
 
   return (
     <section className='user-info'>
@@ -12,14 +20,16 @@ const ProfileSection = () => {
         <FaUser className='section-icon' />
         <h2>Perfil de Usuario</h2>
       </header>
-      <article className='user-info-content'>
+      <form className='user-info-form' onSubmit={handleSubmit}>
+        <article className='user-info-content'>
+          <InputProfileSection name="username" label='Nombre de usuario' value={account.username} />
+          <InputProfileSection name="email" label='Email' value={account.email} />
+        </article>
+        <footer className='user-info-footer'>
+          <button className='primary-button button'>ACTUALIZAR</button>
+        </footer>
+      </form>
 
-        <InputProfileSection label='Nombre de usuario' value={account.username} onChange={(e) => setAccount({ ...userData, username: e.target.value })} />
-        <InputProfileSection label='Email' value={account.email} onChange={(e) => setAccount({ ...userData, email: e.target.value })} />
-      </article>
-      <footer className='user-info-footer'>
-        <button className='primary-button button'>ACTUALIZAR</button>
-      </footer>
     </section>
   );
 };

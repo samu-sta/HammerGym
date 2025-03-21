@@ -42,7 +42,7 @@ export const registerAccount = async (accountData) => {
 
 export const updateAccount = async (accountData) => {
   try {
-    const response = await fetch('http://localhost:3000/account/update', {
+    const response = await fetch('http://localhost:3000/account/profile', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

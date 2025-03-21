@@ -4,7 +4,7 @@ import { useIsMobile } from '../../../../hooks/useWindowSize';
 
 const mobileSize = 768;
 
-const InputProfileSection = ({ label, value }) => {
+const InputProfileSection = ({ label, value, name }) => {
   const isMobile = useIsMobile({ mobileSize });
   return (
     <article className={`profile-atribute ${isMobile ? 'mobile' : ''}`}>
@@ -13,6 +13,7 @@ const InputProfileSection = ({ label, value }) => {
         className='input user-profile-section-input'
         type="text"
         defaultValue={value}
+        name={name}
       />
     </article>
   );
