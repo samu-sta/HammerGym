@@ -6,7 +6,6 @@
   gap: 2rem;
   min-height: 71.5vh;
   width: 100%;
-  max-width: 1550px;
   
 }
 
@@ -66,4 +65,5 @@
   display: flex;
   justify-content: center;
   width: 85%;
+  overflow: visible ;
 }

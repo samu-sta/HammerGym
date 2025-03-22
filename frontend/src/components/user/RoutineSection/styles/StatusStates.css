@@ -1,0 +1,72 @@
+.loading-routine,
+.error-routine,
+.empty-routine,
+.rest-day-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  min-height: 250px;
+}
+
+/* Elementos de estados específicos */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(153, 128, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #998000;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.empty-routine-icon,
+.rest-icon {
+  font-size: 2.5rem;
+  color: rgba(153, 128, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.rest-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+/* Textos en estados especiales */
+.rest-day-message h3 {
+  color: #998000;
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.rest-day-message p,
+.empty-routine p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Botones de acción */
+.retry-button {
+  background: rgba(40, 40, 40, 0.8);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.retry-button:hover {
+  background: rgba(50, 50, 50, 0.9);
+  transform: translateY(-2px);
+}

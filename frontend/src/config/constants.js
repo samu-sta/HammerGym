@@ -87,5 +87,12 @@ export const dayMap = {
   Thursday: 'Jueves',
   Friday: 'Viernes',
   Saturday: 'Sábado',
-  Sunday: 'Domingo'
+  Sunday: 'Domingo',
+  monday: 'Lunes',
+  tuesday: 'Martes',
+  wednesday: 'Miércoles',
+  thursday: 'Jueves',
+  friday: 'Viernes',
+  saturday: 'Sábado',
+  sunday: 'Domingo'
 };
