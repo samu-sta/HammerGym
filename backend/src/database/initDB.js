@@ -9,6 +9,8 @@ import TrainingModel from '../models/Training.js';
 import TrainingDayModel from '../models/TrainingDay.js';
 import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
+import ClassModel from '../models/Class.js';
+import ScheduleModel from '../models/schedule.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 import argon2 from 'argon2';
@@ -160,6 +162,23 @@ const initDatabase = async () => {
       }
     }
 
+    await ScheduleModel.create({
+      startDate: new Date(),
+      start: 10,
+      end: 12
+    });
+
+    await ClassModel.create({
+      name: 'Yoga Avanzado',
+      description: 'Clase de yoga para niveles avanzados.',
+      maxCapacity: 20,
+      currentCapacity: 0,
+      schedule: 'Lunes 10:00 AM - 12:00 PM',
+      difficulty: 'medium',
+      trainerId: trainer.id,
+      scheduleid: 1
+    }
+    );
     console.log('Database, tables, and sample data created successfully!');
     console.log('Created training plan ID:', training.id);
     console.log('Login credentials:');

@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { AccountRoutes } from '../routes/Account.Routes.js';
 import { UserActivityRoutes } from '../routes/UserActivity.Routes.js';
 import { TrainingRoutes } from '../routes/Training.Routes.js';
+import { ClassRoutes } from "./routes/Class.Routes.js";
 import setupAssociations from '../database/associations.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -27,6 +28,7 @@ export const createApp = () => {
   app.use('/account', AccountRoutes());
   app.use('/user-activity', UserActivityRoutes());
   app.use('/training', TrainingRoutes());
+  app.use("/classes", ClassRoutes());
 
   app.get('/', (req, res) => {
     res.send('Hello World');
