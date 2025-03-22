@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './styles/UserPage.css';
 import { FaUser, FaDumbbell, FaHistory, FaClipboardList } from 'react-icons/fa';
 import ProfileSection from '../components/user/ProfileSection/ProfileSection.jsx';
-import ProgressSection from '../components/user/ProgressSection/ProgressSection.jsx';
 import ActivitiesSection from '../components/user/ActivitiesSection/ActivitiesSection.jsx';
 import RoutineSection from '../components/user/RoutineSection/RoutineSection.jsx';
 
@@ -93,7 +92,7 @@ const UserPage = () => {
       case 'profile':
         return <ProfileSection userData={mockUserData} />;
       case 'progress':
-        return <ProgressSection progress={mockUserData.progress} />;
+        return <h1> Progress Section </h1>;
       case 'activities':
         return <ActivitiesSection />;
       case 'routine':
