@@ -9,7 +9,7 @@ const DaySelector = ({ selectedDay, setSelectedDay, days, hasDayTraining }) => {
   const { isModalOpen, setIsModalOpen, modalRef } = useModal();
 
   return (
-    <>
+    <section className="day-selector-container">
       <button
         className="button day-selector-toggle"
         onClick={() => setIsModalOpen(!isModalOpen)}
@@ -41,7 +41,7 @@ const DaySelector = ({ selectedDay, setSelectedDay, days, hasDayTraining }) => {
           ))}
         </article>
       )}
-    </>
+    </section>
   );
 };
 
