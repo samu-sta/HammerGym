@@ -1,0 +1,17 @@
+.exercise-list-container {
+  min-height: 200px;
+}
+
+.exercises-list {
+  display: flex;
+  flex-direction: column;
+  align-items:  center;
+  gap: 1.5rem;
+}
+
+.exercises-list li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+

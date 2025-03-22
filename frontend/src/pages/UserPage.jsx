@@ -97,11 +97,7 @@ const UserPage = () => {
       case 'activities':
         return <ActivitiesSection />;
       case 'routine':
-        return <RoutineSection
-          routine={mockUserData.routine}
-          selectedDay={selectedDay}
-          setSelectedDay={setSelectedDay}
-        />;
+        return <RoutineSection />;
       default:
         return null;
     }
