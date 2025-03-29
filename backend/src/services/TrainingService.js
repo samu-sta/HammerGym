@@ -34,6 +34,7 @@ export default class TrainingService {
 
   formatTrainingData(rawTraining) {
     const training = {
+      id: rawTraining.id,
       days: {}
     };
 

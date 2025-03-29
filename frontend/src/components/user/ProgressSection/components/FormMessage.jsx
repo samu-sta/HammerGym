@@ -6,10 +6,10 @@ const FormMessage = ({ message }) => {
   if (!message) return null;
 
   return (
-    <div className={`form-message ${message.type}`}>
-      {message.type === 'success' ? <FaCheck /> : <FaTimes />}
-      {message.text}
-    </div>
+    <article className={`form-message ${message.success ? 'success' : 'error'}`}>
+      {message.success ? <FaCheck /> : <FaTimes />}
+      {message}
+    </article>
   );
 };
 

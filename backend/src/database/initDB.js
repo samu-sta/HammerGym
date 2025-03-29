@@ -11,6 +11,7 @@ import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
 import ClassModel from '../models/Class.js';
 import ScheduleModel from '../models/schedule.js';
+import ProgressUserModel from '../models/UserProgress.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 import argon2 from 'argon2';
@@ -44,6 +45,8 @@ const initDatabase = async () => {
     await UserActivityModel.sync({ force: true });
 
     await TrainingDayModel.sync({ force: true });
+
+    await ProgressUserModel.sync({ force: true });
 
     await SerieModel.sync({ force: true });
 

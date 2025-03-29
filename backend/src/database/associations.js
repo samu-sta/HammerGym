@@ -8,7 +8,7 @@ import TrainingModel from '../models/Training.js';
 import TrainingDayModel from '../models/TrainingDay.js';
 import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
-
+import ProgressUserModel from '../models/UserProgress.js';
 
 const setupAssociations = () => {
 
@@ -125,6 +125,29 @@ const setupAssociations = () => {
     foreignKey: 'userId',
     targetKey: 'accountId',
     as: 'user'
+  });
+
+  // Relación User-ProgressUser (One-to-Many)
+  UserModel.hasMany(ProgressUserModel, {
+    foreignKey: 'userId',
+    sourceKey: 'accountId',
+    as: 'progress'
+  }
+  );
+  ProgressUserModel.belongsTo(UserModel, {
+    foreignKey: 'userId',
+    targetKey: 'accountId',
+    as: 'user'
+  });
+  // Relación Training-ProgressUser (One-to-Many)
+  TrainingModel.hasMany(ProgressUserModel, {
+    foreignKey: 'trainingId',
+    as: 'progress'
+  }
+  );
+  ProgressUserModel.belongsTo(TrainingModel, {
+    foreignKey: 'trainingId',
+    as: 'training'
   });
 
   console.log('Associations set up successfully');

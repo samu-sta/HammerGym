@@ -39,12 +39,3 @@ export const getUserTraining = async () => {
     };
   }
 }
-
-export const sendProgress = async (progressData) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      console.log('Progreso enviado:', progressData);
-      resolve({ success: true });
-    }, 1000);
-  });
-};

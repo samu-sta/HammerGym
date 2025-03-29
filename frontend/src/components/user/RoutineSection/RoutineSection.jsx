@@ -42,6 +42,7 @@ const RoutineSection = () => {
         exercises={getSelectedDayExercises()}
         hasExercises={hasExercises()}
         selectedDay={selectedDay}
+        trainingId={training.id}
       />
     </section>
   );

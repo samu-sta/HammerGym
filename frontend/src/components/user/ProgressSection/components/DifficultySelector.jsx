@@ -5,7 +5,7 @@ import { useIsMobile } from '../../../../hooks/useWindowSize';
 
 const DIFFICULTY_LEVELS = [
   {
-    value: 'veryEasy',
+    value: 'reallyEasy',
     label: 'Muy fácil',
     icon: <FaGrinBeam />,
     color: '#4caf50'
@@ -17,7 +17,7 @@ const DIFFICULTY_LEVELS = [
     color: '#8bc34a'
   },
   {
-    value: 'normal',
+    value: 'medium',
     label: 'Normal',
     icon: <FaMeh />,
     color: '#998000'
@@ -29,7 +29,7 @@ const DIFFICULTY_LEVELS = [
     color: '#ff9800'
   },
   {
-    value: 'veryHard',
+    value: 'reallyHard',
     label: 'Muy difícil',
     icon: <FaSadTear />,
     color: '#f44336'
