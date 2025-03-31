@@ -6,7 +6,7 @@ import UserModel from "../models/User.js";
 import AccountModel from "../models/Account.js";
 import TrainerModel from "../models/Trainer.js";
 import sequelize from '../database/database.js';
-import { wichAccount } from "../utils/account.js";
+import { whichAccount } from "../utils/account.js";
 
 export default class UserController {
 
@@ -84,7 +84,8 @@ export default class UserController {
 
       const token = auth.createToken(account);
       const { password, id, ...userData } = account.dataValues;
-      userData.role = wichAccount(account.id);
+      console.log(account.id);
+      userData.role = await whichAccount(account.id);
 
       return res.status(200).cookie('token', token, {
         httpOnly: true,
@@ -103,7 +104,7 @@ export default class UserController {
 
   getUser = async (req, res) => {
     const { password, id, ...userData } = req.account.dataValues;
-    userData.role = wichAccount(req.account.id);
+    userData.role = whichAccount(req.account.id);
     return res.status(200).json({ success: true, account: userData });
   }
 
@@ -144,7 +145,8 @@ export default class UserController {
         ...result.data,
       };
       const { password, id, ...userData } = resultUser
-      userData.role = wichAccount(req.account.id);
+      userData.role = await whichAccount(req.account.id);
+      console.log(userData);
 
       return res.status(200).json({ success: true, account: userData });
     }

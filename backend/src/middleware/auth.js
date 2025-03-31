@@ -1,7 +1,7 @@
 import AccountModel from '../models/Account.js';
 import auth from '../utils/auth.js';
 import MESSAGES from '../messages/messages.js';
-import { wichAccount } from '../utils/account.js';
+import { whichAccount } from '../utils/account.js';
 
 export const authAccount = async (req, res, next) => {
     const token =
@@ -33,7 +33,21 @@ export const authUser = async (req, res, next) => {
     try {
         await authAccount(req, res, () => {
             const account = req.account;
-            if (wichAccount(account) !== 'user') {
+            if (whichAccount(account) !== 'user') {
+                return res.status(403).json({ success: false, message: MESSAGES.ACCESS_DENIED });
+            }
+            next();
+        });
+    } catch (error) {
+        return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+    }
+}
+
+export const authTrainer = async (req, res, next) => {
+    try {
+        await authAccount(req, res, () => {
+            const account = req.account;
+            if (whichAccount(account) !== 'trainer') {
                 return res.status(403).json({ success: false, message: MESSAGES.ACCESS_DENIED });
             }
             next();

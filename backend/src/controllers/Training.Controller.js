@@ -35,4 +35,8 @@ export default class TrainingController {
       });
     }
   }
+
+  createUserTraining = async (req, res) => {
+    
+  }
 }

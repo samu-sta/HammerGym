@@ -80,4 +80,29 @@ export default class TrainingService {
     const exercisesMap = this.groupSeriesByExercise(series);
     return Array.from(exercisesMap.values());
   }
+
+  createUserTraining = async (trainingData) => {
+    const { userId, days } = trainingData;
+
+    const training = await TrainingModel.create({ userId });
+
+    for (const day of Object.keys(days)) {
+      const trainingDay = await TrainingDayModel.create({ day, trainingId: training.id });
+
+      for (const exercise of days[day].exercises) {
+        for (const serie of exercise.series) {
+          await SerieModel.create({
+            reps: serie.reps,
+            weigth: serie.weight,
+            trainingDayId: trainingDay.id,
+            exerciseId: exercise.id
+          });
+        }
+      }
+    }
+
+    return training;
+  }
+
+
 }
