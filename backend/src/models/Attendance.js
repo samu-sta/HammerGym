@@ -7,7 +7,7 @@ const AttendanceModel = sequelize.define('Attendance', {
     primaryKey: true,
     references: {
       model: 'User',
-      key: 'id'
+      key: 'accountId'
     }
   },
   date: {

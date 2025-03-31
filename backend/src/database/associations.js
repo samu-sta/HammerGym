@@ -10,6 +10,7 @@ import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
 import ProgressUserModel from '../models/UserProgress.js';
 import AttendanceModel from '../models/Attendance.js';
+import ClassModel from '../models/Class.js';
 
 const setupAssociations = () => {
 
