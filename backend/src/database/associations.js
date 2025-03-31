@@ -9,6 +9,7 @@ import TrainingDayModel from '../models/TrainingDay.js';
 import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
 import ProgressUserModel from '../models/UserProgress.js';
+import AttendanceModel from '../models/Attendance.js';
 
 const setupAssociations = () => {
 
@@ -149,6 +150,27 @@ const setupAssociations = () => {
     foreignKey: 'trainingId',
     as: 'training'
   });
+  AttendanceModel.belongsTo(UserModel, {
+    foreignKey: 'userid',
+    targetKey: 'accountId',
+    as: 'user'
+  });
+  AttendanceModel.belongsTo(ClassModel, {
+    foreignKey: 'classId',
+    targetKey: 'id',
+    as: 'class'
+  });
+  UserModel.hasMany(AttendanceModel, {
+    foreignKey: 'userid',
+    sourceKey: 'accountId',
+    as: 'attendances'
+  });
+  ClassModel.hasMany(AttendanceModel, {
+    foreignKey: 'classId',
+    sourceKey: 'id',
+    as: 'attendances'
+  });
+
   
 
   console.log('Associations set up successfully');
