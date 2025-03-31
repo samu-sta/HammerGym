@@ -15,6 +15,7 @@ import ProgressUserModel from '../models/UserProgress.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 import argon2 from 'argon2';
+import AttendanceModel from '../models/Attendance.js';
 
 dotenv.config();
 
@@ -182,6 +183,13 @@ const initDatabase = async () => {
       scheduleid: 1
     }
     );
+
+    await AttendanceModel.create({
+      userid: user.id,
+      date: new Date(),
+      classId: 1
+    });
+    
     console.log('Database, tables, and sample data created successfully!');
     console.log('Created training plan ID:', training.id);
     console.log('Login credentials:');

@@ -11,6 +11,10 @@ const ScheduleModel = sequelize.define('Schedule', {
         type: DataTypes.DATE,
         allowNull: false
     },
+    endDate: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
     start: {
         type: DataTypes.INTEGER,
         allowNull: false

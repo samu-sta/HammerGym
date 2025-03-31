@@ -2,10 +2,13 @@ import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
 const AttendanceModel = sequelize.define('Attendance', {
-  id: {
+  userid: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true
+    references: {
+      model: 'User',
+      key: 'id'
+    }
   },
   date: {
     type: DataTypes.DATE,
@@ -14,6 +17,7 @@ const AttendanceModel = sequelize.define('Attendance', {
   },
   classId: {
     type: DataTypes.INTEGER,
+    primaryKey: true,
     allowNull: false,
     references: {
       model: 'Class',

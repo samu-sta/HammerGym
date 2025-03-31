@@ -149,6 +149,7 @@ const setupAssociations = () => {
     foreignKey: 'trainingId',
     as: 'training'
   });
+  
 
   console.log('Associations set up successfully');
 };
