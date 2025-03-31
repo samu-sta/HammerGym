@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './styles/UserPage.css';
 import { FaUser, FaDumbbell, FaHistory, FaClipboardList } from 'react-icons/fa';
 import ProfileSection from '../components/user/ProfileSection/ProfileSection.jsx';
 import ActivitiesSection from '../components/user/ActivitiesSection/ActivitiesSection.jsx';
-import RoutineSection from '../components/user/RoutineSection/RoutineSection.jsx';
-
-const UserPage = () => {
+import CreateTraining from '../components/trainer/createTraining/CreateTraining.jsx';
+const TrainerPage = () => {
   const [activeSection, setActiveSection] = useState('profile');
 
   const sections = [
     { id: 'profile', name: 'Perfil', icon: <FaUser /> },
-    { id: 'activities', name: 'Actividades', icon: <FaHistory /> },
-    { id: 'routine', name: 'Rutina', icon: <FaClipboardList /> }
+    { id: 'classes', name: 'Clases', icon: <FaDumbbell /> },
+    { id: 'userRoutines', name: 'Rutinas', icon: <FaClipboardList /> }
   ];
 
   const renderSection = () => {
@@ -20,8 +19,8 @@ const UserPage = () => {
         return <ProfileSection />;
       case 'activities':
         return <ActivitiesSection />;
-      case 'routine':
-        return <RoutineSection />;
+      case 'userRoutines':
+        return <CreateTraining />;
       default:
         return null;
     }
@@ -48,4 +47,4 @@ const UserPage = () => {
   );
 };
 
-export default UserPage;
+export default TrainerPage;

@@ -1,6 +1,7 @@
 .form-group {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .input {
@@ -10,6 +11,7 @@
   background-color: inherit;
   border-bottom: 2px solid #998000;
   font-family: inherit;
+  width: 100%;
 }
 
 .input:focus {

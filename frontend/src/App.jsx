@@ -13,6 +13,7 @@ import UserPage from './pages/UserPage.jsx';
 import ProtectedLayout from './components/common/ProtectedLayout.jsx';
 import Header from './components/app/Header.jsx';
 import { AccountProvider } from './context/AccountContext.jsx';
+import TrainerPage from './pages/TrainerPage.jsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,6 +78,10 @@ function App() {
             <Route element={<ProtectedLayout allowedRoles={['user']} />}>
               <Route path="/usuario" element={<UserPage />} />
               <Route path="/usuario/*" element={<UserPage />} />
+            </Route>
+
+            <Route element={<ProtectedLayout allowedRoles={['trainer']} />}>
+              <Route path="/entrenador" element={<TrainerPage />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />
