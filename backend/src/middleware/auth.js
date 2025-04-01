@@ -31,9 +31,10 @@ export const authAccount = async (req, res, next) => {
 
 export const authUser = async (req, res, next) => {
     try {
-        await authAccount(req, res, () => {
-            const account = req.account;
-            if (whichAccount(account) !== 'user') {
+        await authAccount(req, res, async () => {
+            const accountType = await whichAccount(req.account.id);
+            console.log('Account type:', accountType);
+            if (accountType !== 'user') {
                 return res.status(403).json({ success: false, message: MESSAGES.ACCESS_DENIED });
             }
             next();
@@ -45,9 +46,10 @@ export const authUser = async (req, res, next) => {
 
 export const authTrainer = async (req, res, next) => {
     try {
-        await authAccount(req, res, () => {
+        await authAccount(req, res, async () => {
             const account = req.account;
-            if (whichAccount(account) !== 'trainer') {
+            const accountType = await whichAccount(account);
+            if (accountType !== 'trainer') {
                 return res.status(403).json({ success: false, message: MESSAGES.ACCESS_DENIED });
             }
             next();

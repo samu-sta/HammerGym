@@ -7,6 +7,8 @@ const whichAccount = async (accountId) => {
       where: { accountId }
     });
 
+    console.log('User:', accountId);
+
     if (user) {
       return 'user';
     } else {

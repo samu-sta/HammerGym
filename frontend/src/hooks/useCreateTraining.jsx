@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getAllExercises } from '../services/ExerciseService';
+import { createUserTraining } from '../services/TrainingService';
+
 const useTrainingForm = () => {
   const [training, setTraining] = useState({
     userId: '',
@@ -13,6 +15,7 @@ const useTrainingForm = () => {
   const [formMessage, setFormMessage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formattedData, setFormattedData] = useState(null);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const daysOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
   const muscleGroups = ['biceps', 'triceps', 'back', 'chest', 'shoulders', 'legs'];
@@ -220,31 +223,47 @@ const useTrainingForm = () => {
     return trainingData;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setFormMessage(null);
+    setIsSuccess(false);
 
     try {
-      const cleanedTraining = collectFormData(e.target);
-      console.log('Submitting training data:', cleanedTraining);
+      // Collect form data
+      const trainingData = collectFormData(e.target);
 
-      setFormattedData(cleanedTraining);
+      // Validate required fields
+      if (!trainingData.userId) {
+        throw new Error('User ID is required');
+      }
 
-      console.log('Training data ready to submit:');
-      console.log(JSON.stringify(cleanedTraining, null, 2));
+      if (Object.keys(trainingData.days).length === 0) {
+        throw new Error('At least one training day with exercises is required');
+      }
 
-      setFormMessage({
-        type: 'success',
-        text: 'All data collected successfully!'
-      });
+      console.log('Submitting training data:', trainingData);
+      setFormattedData(trainingData);
 
-      return cleanedTraining;
+      // Send data to API
+      console.log('Sending training data to API:', JSON.stringify(trainingData));
+      const response = await createUserTraining(trainingData);
+
+      if (response.success) {
+        setIsSuccess(true);
+        setFormMessage({
+          type: 'success',
+          text: 'Training plan created successfully!'
+        });
+      } else {
+        throw new Error(response.message || 'Failed to create training plan');
+      }
+
     } catch (error) {
-      console.error('Error collecting form data:', error);
+      console.error('Error submitting training data:', error);
       setFormMessage({
         type: 'error',
-        text: 'Error collecting form data: ' + error.message
+        text: error.message || 'An error occurred while creating the training plan'
       });
     } finally {
       setIsSubmitting(false);
@@ -268,7 +287,8 @@ const useTrainingForm = () => {
     formattedData,
     allExercises,
     loadingExercises,
-    exerciseError
+    exerciseError,
+    isSuccess
   };
 };
 

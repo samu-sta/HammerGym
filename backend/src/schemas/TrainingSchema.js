@@ -1,22 +1,32 @@
 import zod from 'zod';
 
+// Schema for series data
 const serieSchema = zod.object({
   reps: zod.number().int().positive(),
   weight: zod.number().positive()
 });
 
+// Schema for exercises with just ID (used in training creation)
+const exerciseWithIdSchema = zod.object({
+  id: zod.number().int().positive(),
+  series: zod.array(serieSchema).nonempty()
+});
+
+// Schema for complete exercises (used in other contexts)
 const exerciseSchema = zod.object({
-  id: zod.number().int().positive().optional(),
+  id: zod.number().int().positive(),
   name: zod.string().min(1).max(255),
   description: zod.string().max(255),
   muscles: zod.enum(['biceps', 'triceps', 'back', 'chest', 'shoulders', 'legs']),
   series: zod.array(serieSchema).nonempty()
 });
 
+// Schema for daily exercises in training plan
 const dayExercisesSchema = zod.object({
-  exercises: zod.array(exerciseSchema).nonempty()
+  exercises: zod.array(exerciseWithIdSchema).nonempty()
 });
 
+// Schema for creating a new training plan
 const createTrainingSchema = zod.object({
   userId: zod.number().int().positive(),
   trainerId: zod.number().int().positive().optional(),
