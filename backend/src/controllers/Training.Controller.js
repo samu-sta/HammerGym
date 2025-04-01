@@ -3,6 +3,7 @@ import { validateCreateTraining } from "../schemas/TrainingSchema.js";
 import TrainingModel from "../models/Training.js";
 import TrainingDayModel from "../models/TrainingDay.js";
 import SerieModel from "../models/Serie.js";
+
 export default class TrainingController {
 
   constructor() {
@@ -28,7 +29,6 @@ export default class TrainingController {
         success: true,
         training
       });
-
     }
     catch (error) {
       console.error('Error al obtener entrenamiento:', error);
@@ -40,16 +40,11 @@ export default class TrainingController {
   }
 
   createUserTraining = async (req, res) => {
-    console.log('Creating user training plan');
     try {
-      // Log the request body to debug
-      console.log('Request body:', JSON.stringify(req.body));
-
       // Validate request data
       const validation = validateCreateTraining(req.body);
 
       if (!validation.success) {
-        console.log('Validation failed:', validation.error.format());
         return res.status(400).json({
           success: false,
           message: "Datos de entrenamiento inválidos",
@@ -64,8 +59,30 @@ export default class TrainingController {
         trainingData.trainerId = req.account.id;
       }
 
-      // Create the main training record
-      const training = await TrainingModel.create({
+      // Check if training exists for this user already
+      const existingTraining = await TrainingModel.findByPk(trainingData.userId);
+
+      // If it exists, delete associated training days
+      if (existingTraining) {
+        const trainingDays = await TrainingDayModel.findAll({
+          where: { userId: trainingData.userId }
+        });
+
+        // Delete series for each training day
+        for (const day of trainingDays) {
+          await SerieModel.destroy({
+            where: { idTrainingDay: day.id }
+          });
+        }
+
+        // Delete training days
+        await TrainingDayModel.destroy({
+          where: { userId: trainingData.userId }
+        });
+      }
+
+      // Create or update the training record
+      await TrainingModel.upsert({
         userId: trainingData.userId,
         trainerId: trainingData.trainerId
       });
@@ -77,7 +94,7 @@ export default class TrainingController {
         // Create a training day record
         const trainingDay = await TrainingDayModel.create({
           day,
-          trainingId: training.id
+          userId: trainingData.userId
         });
 
         // Process exercises for this day
@@ -86,12 +103,11 @@ export default class TrainingController {
         for (const exercise of exercises) {
           // Process series for this exercise
           for (const serie of exercise.series) {
-            // Fix: Map 'weight' to 'weigth' (matching the model field name)
             await SerieModel.create({
               idTrainingDay: trainingDay.id,
               idExercise: exercise.id,
               reps: serie.reps,
-              weigth: serie.weight // Note: We map 'weight' to 'weigth' here
+              weigth: serie.weight // Map 'weight' to 'weigth' to match model field name
             });
           }
         }
@@ -101,9 +117,8 @@ export default class TrainingController {
         success: true,
         message: "Plan de entrenamiento creado exitosamente",
         training: {
-          id: training.id,
-          userId: training.userId,
-          trainerId: training.trainerId,
+          userId: trainingData.userId,
+          trainerId: trainingData.trainerId,
           days: days.length
         }
       });
@@ -125,23 +140,6 @@ export default class TrainingController {
         });
       }
 
-      return res.status(500).json({
-        success: false,
-        message: "Error interno del servidor"
-      });
-    }
-  }
-
-  getExercises = async (req, res) => {
-    try {
-      const exercises = this.trainingService.fetchExercises();
-
-      return res.status(200).json({
-        success: true,
-        exercises
-      });
-    }
-    catch (error) {
       return res.status(500).json({
         success: false,
         message: "Error interno del servidor"

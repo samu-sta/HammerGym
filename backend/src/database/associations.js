@@ -56,10 +56,10 @@ const setupAssociations = () => {
   });
 
   // Relación User-Training (User recibe entrenamientos)
-  UserModel.hasMany(TrainingModel, {
+  UserModel.hasOne(TrainingModel, {
     foreignKey: 'userId',
     sourceKey: 'accountId',
-    as: 'assignedTrainings'
+    as: 'assignedTraining'
   });
 
   TrainingModel.belongsTo(UserModel, {
@@ -70,12 +70,14 @@ const setupAssociations = () => {
 
   // Relación Training-TrainingDay (One-to-Many)
   TrainingModel.hasMany(TrainingDayModel, {
-    foreignKey: 'trainingId',
+    foreignKey: 'userId',
+    sourceKey: 'userId',
     as: 'trainingDays'
   });
 
   TrainingDayModel.belongsTo(TrainingModel, {
-    foreignKey: 'trainingId',
+    foreignKey: 'userId',
+    targetKey: 'userId',
     as: 'training'
   });
 
@@ -172,7 +174,7 @@ const setupAssociations = () => {
     as: 'attendances'
   });
 
-  
+
 
   console.log('Associations set up successfully');
 };

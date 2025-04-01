@@ -11,12 +11,12 @@ const TrainingDayModel = sequelize.define('TrainingDay', {
     type: DataTypes.ENUM('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'),
     allowNull: false
   },
-  trainingId: {
+  userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
       model: 'Training',
-      key: 'id'
+      key: 'userId'
     }
   }
 }, {

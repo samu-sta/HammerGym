@@ -6,11 +6,7 @@ import ExerciseModel from '../models/Exercise.js';
 export default class TrainingService {
 
   fetchUserTraining = async (userId) => {
-    return await TrainingModel.findOne({
-      where: {
-        userId
-      },
-      order: [['createdAt', 'DESC']],
+    return await TrainingModel.findByPk(userId, {
       include: [
         {
           model: TrainingDayModel,
@@ -34,7 +30,8 @@ export default class TrainingService {
 
   formatTrainingData(rawTraining) {
     const training = {
-      id: rawTraining.id,
+      userId: rawTraining.userId,
+      trainerId: rawTraining.trainerId,
       days: {}
     };
 
@@ -56,6 +53,7 @@ export default class TrainingService {
 
   createExerciseObject(serie) {
     return {
+      id: serie.exercise.id,
       name: serie.exercise.name,
       description: serie.exercise.description,
       muscles: serie.exercise.muscles,
@@ -82,20 +80,34 @@ export default class TrainingService {
   }
 
   createUserTraining = async (trainingData) => {
-    const { userId, days } = trainingData;
+    const { userId, days, trainerId } = trainingData;
 
-    const training = await TrainingModel.create({ userId });
+    // First check if a training plan already exists for this user
+    const existingTraining = await TrainingModel.findByPk(userId);
+    if (existingTraining) {
+      // If one exists, update it or delete associated data
+      await TrainingDayModel.destroy({ where: { userId } });
+    }
+
+    // Create or update the training record
+    const training = await TrainingModel.upsert({
+      userId,
+      trainerId
+    });
 
     for (const day of Object.keys(days)) {
-      const trainingDay = await TrainingDayModel.create({ day, trainingId: training.id });
+      const trainingDay = await TrainingDayModel.create({
+        day,
+        userId: userId
+      });
 
       for (const exercise of days[day].exercises) {
         for (const serie of exercise.series) {
           await SerieModel.create({
             reps: serie.reps,
             weigth: serie.weight,
-            trainingDayId: trainingDay.id,
-            exerciseId: exercise.id
+            idTrainingDay: trainingDay.id,
+            idExercise: exercise.id
           });
         }
       }
@@ -109,5 +121,4 @@ export default class TrainingService {
       order: [['name', 'ASC']]
     });
   }
-
 }

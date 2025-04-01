@@ -22,7 +22,7 @@ const UserProgressModel = sequelize.define('UserProgress', {
     allowNull: false,
     references: {
       model: 'Training',
-      key: 'id'
+      key: 'userId'
     }
   },
 
