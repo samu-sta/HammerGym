@@ -2,16 +2,19 @@ import React from 'react';
 import ExerciseItem from './ExerciseItem';
 import '../styles/TrainingDay.css';
 
-const TrainingDay = ({ 
-  day, 
-  exercises, 
-  series, 
-  muscleGroups, 
-  onRemoveDay, 
-  onAddExercise, 
-  onRemoveExercise, 
-  onAddSeries, 
-  onRemoveSeries 
+const TrainingDay = ({
+  day,
+  exercises,
+  series,
+  muscleGroups,
+  onRemoveDay,
+  onAddExercise,
+  onRemoveExercise,
+  onAddSeries,
+  onRemoveSeries,
+  allExercises,
+  loadingExercises,
+  exerciseError
 }) => {
   return (
     <article className="day-container">
@@ -38,6 +41,9 @@ const TrainingDay = ({
           onRemoveExercise={() => onRemoveExercise(exerciseIndex)}
           onAddSeries={() => onAddSeries(exerciseIndex)}
           onRemoveSeries={(seriesIndex) => onRemoveSeries(exerciseIndex, seriesIndex)}
+          allExercises={allExercises}
+          loading={loadingExercises}
+          error={exerciseError}
         />
       ))}
 

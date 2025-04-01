@@ -6,6 +6,7 @@ import { UserActivityRoutes } from '../routes/UserActivity.Routes.js';
 import { TrainingRoutes } from '../routes/Training.Routes.js';
 import { ProgressUserRoutes } from '../routes/ProgressUser.Routes.js';
 import { ClassRoutes } from "../routes/Class.Routes.js";
+import { ExercisesRoutes } from '../routes/Exercises.Routes.js';
 import setupAssociations from '../database/associations.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -31,6 +32,7 @@ export const createApp = () => {
   app.use('/training', TrainingRoutes());
   app.use("/classes", ClassRoutes());
   app.use('/progress', ProgressUserRoutes());
+  app.use('/api/exercises', ExercisesRoutes());
 
   app.get('/', (req, res) => {
     res.send('Hello World');

@@ -166,30 +166,6 @@ const initDatabase = async () => {
       }
     }
 
-    await ScheduleModel.create({
-      startDate: new Date(),
-      start: 10,
-      end: 12
-    });
-
-    await ClassModel.create({
-      name: 'Yoga Avanzado',
-      description: 'Clase de yoga para niveles avanzados.',
-      maxCapacity: 20,
-      currentCapacity: 0,
-      schedule: 'Lunes 10:00 AM - 12:00 PM',
-      difficulty: 'medium',
-      trainerId: trainer.id,
-      scheduleid: 1
-    }
-    );
-
-    await AttendanceModel.create({
-      userid: user.id,
-      date: new Date(),
-      classId: 1
-    });
-    
     console.log('Database, tables, and sample data created successfully!');
     console.log('Created training plan ID:', training.id);
     console.log('Login credentials:');

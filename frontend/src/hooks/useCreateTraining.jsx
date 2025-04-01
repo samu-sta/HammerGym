@@ -1,10 +1,14 @@
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import { getAllExercises } from '../services/ExerciseService';
 const useTrainingForm = () => {
   const [training, setTraining] = useState({
     userId: '',
     days: {}
   });
+
+  const [allExercises, setAllExercises] = useState([]);
+  const [loadingExercises, setLoadingExercises] = useState(true);
+  const [exerciseError, setExerciseError] = useState(null);
 
   const [formMessage, setFormMessage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,6 +18,37 @@ const useTrainingForm = () => {
   const muscleGroups = ['biceps', 'triceps', 'back', 'chest', 'shoulders', 'legs'];
 
   const selectedDays = Object.keys(training.days);
+
+  useEffect(() => {
+    const fetchExercises = async () => {
+      setLoadingExercises(true);
+      setExerciseError(null);
+
+      try {
+        const data = await getAllExercises();
+
+        if (data.success && Array.isArray(data.exercises)) {
+          // Map API response format to the expected format in components
+          const formattedExercises = data.exercises.map(exercise => ({
+            id: exercise.id,
+            name: exercise.name,
+            muscleGroup: exercise.muscles, // Map API's 'muscles' to component's 'muscleGroup'
+            description: exercise.description
+          }));
+          setAllExercises(formattedExercises);
+        } else {
+          throw new Error(data.message || 'Invalid exercise data structure');
+        }
+      } catch (error) {
+        console.error('Error in useTrainingForm:', error);
+        setExerciseError('Failed to load exercises. Please try again.');
+      } finally {
+        setLoadingExercises(false);
+      }
+    };
+
+    fetchExercises();
+  }, []);
 
   const toggleDay = (day) => {
     setTraining(prev => {
@@ -230,7 +265,10 @@ const useTrainingForm = () => {
     handleSubmit,
     formMessage,
     isSubmitting,
-    formattedData
+    formattedData,
+    allExercises,
+    loadingExercises,
+    exerciseError
   };
 };
 

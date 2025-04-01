@@ -104,5 +104,10 @@ export default class TrainingService {
     return training;
   }
 
+  fetchExercises = async () => {
+    return await ExerciseModel.findAll({
+      order: [['name', 'ASC']]
+    });
+  }
 
 }

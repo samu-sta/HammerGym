@@ -37,6 +37,23 @@ export default class TrainingController {
   }
 
   createUserTraining = async (req, res) => {
-    
+
+  }
+
+  getExercises = async (req, res) => {
+    try {
+      const exercises = this.trainingService.fetchExercises();
+
+      return res.status(200).json({
+        success: true,
+        exercises
+      });
+    }
+    catch (error) {
+      return res.status(500).json({
+        success: false,
+        message: "Error interno del servidor"
+      });
+    }
   }
 }

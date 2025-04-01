@@ -19,7 +19,10 @@ const CreateTraining = () => {
     updateUserId,
     handleSubmit,
     formMessage,
-    isSubmitting
+    isSubmitting,
+    allExercises,
+    loadingExercises,
+    exerciseError
   } = useTrainingForm();
 
   return (
@@ -66,6 +69,9 @@ const CreateTraining = () => {
                 onRemoveExercise={(exerciseIndex) => removeExercise(day, exerciseIndex)}
                 onAddSeries={(exerciseIndex) => addSeries(day, exerciseIndex)}
                 onRemoveSeries={(exerciseIndex, seriesIndex) => removeSeries(day, exerciseIndex, seriesIndex)}
+                allExercises={allExercises}
+                loadingExercises={loadingExercises}
+                exerciseError={exerciseError}
               />
             ))}
           </section>

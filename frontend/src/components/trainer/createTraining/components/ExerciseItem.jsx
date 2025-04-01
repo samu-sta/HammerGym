@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SeriesList from './SeriesList';
 import '../styles/ExerciseItem.css';
 
@@ -9,77 +9,24 @@ const ExerciseItem = ({
   muscleGroups,
   onRemoveExercise,
   onAddSeries,
-  onRemoveSeries
+  onRemoveSeries,
+  // New props
+  allExercises,
+  loading,
+  error
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [allExercises, setAllExercises] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [selectedExercise, setSelectedExercise] = useState(null);
   const [showExerciseList, setShowExerciseList] = useState(true);
 
-  // Load all exercises on component mount
-  useEffect(() => {
-    setLoading(true);
-
-    // Simulate API call delay
-    const timer = setTimeout(() => {
-      // This would be your actual API fetch for all exercises
-      const exercises = [
-        // Biceps
-        { id: 101, name: "Barbell Curl", muscleGroup: "biceps" },
-        { id: 102, name: "Dumbbell Curl", muscleGroup: "biceps" },
-        { id: 103, name: "Hammer Curl", muscleGroup: "biceps" },
-        { id: 104, name: "Preacher Curl", muscleGroup: "biceps" },
-        { id: 105, name: "Concentration Curl", muscleGroup: "biceps" },
-        // Triceps
-        { id: 201, name: "Tricep Pushdown", muscleGroup: "triceps" },
-        { id: 202, name: "Skull Crusher", muscleGroup: "triceps" },
-        { id: 203, name: "Dips", muscleGroup: "triceps" },
-        { id: 204, name: "Overhead Extension", muscleGroup: "triceps" },
-        { id: 205, name: "Diamond Push-Up", muscleGroup: "triceps" },
-        // Back
-        { id: 301, name: "Pull-Up", muscleGroup: "back" },
-        { id: 302, name: "Lat Pulldown", muscleGroup: "back" },
-        { id: 303, name: "Bent Over Row", muscleGroup: "back" },
-        { id: 304, name: "Deadlift", muscleGroup: "back" },
-        { id: 305, name: "T-Bar Row", muscleGroup: "back" },
-        // Chest
-        { id: 401, name: "Bench Press", muscleGroup: "chest" },
-        { id: 402, name: "Push-Up", muscleGroup: "chest" },
-        { id: 403, name: "Dumbbell Fly", muscleGroup: "chest" },
-        { id: 404, name: "Cable Crossover", muscleGroup: "chest" },
-        { id: 405, name: "Incline Bench Press", muscleGroup: "chest" },
-        // Shoulders
-        { id: 501, name: "Shoulder Press", muscleGroup: "shoulders" },
-        { id: 502, name: "Lateral Raise", muscleGroup: "shoulders" },
-        { id: 503, name: "Front Raise", muscleGroup: "shoulders" },
-        { id: 504, name: "Reverse Fly", muscleGroup: "shoulders" },
-        { id: 505, name: "Shrugs", muscleGroup: "shoulders" },
-        // Legs
-        { id: 601, name: "Squat", muscleGroup: "legs" },
-        { id: 602, name: "Leg Press", muscleGroup: "legs" },
-        { id: 603, name: "Lunge", muscleGroup: "legs" },
-        { id: 604, name: "Leg Extension", muscleGroup: "legs" },
-        { id: 605, name: "Leg Curl", muscleGroup: "legs" },
-        { id: 606, name: "Romanian Deadlift", muscleGroup: "legs" },
-        { id: 607, name: "Calf Raise", muscleGroup: "legs" },
-        { id: 608, name: "Hip Thrust", muscleGroup: "legs" },
-        { id: 609, name: "Glute Bridge", muscleGroup: "legs" },
-        { id: 610, name: "Hack Squat", muscleGroup: "legs" },
-      ];
-
-      setAllExercises(exercises);
-      setLoading(false);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, []);
+  // No need for useEffect to fetch data anymore - we get it from props
 
   // Filter exercises based on search term
   const filteredExercises = searchTerm
     ? allExercises.filter(ex =>
       ex.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      ex.muscleGroup.toLowerCase().includes(searchTerm.toLowerCase())
+      ex.muscleGroup.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (ex.description && ex.description.toLowerCase().includes(searchTerm.toLowerCase()))
     )
     : allExercises;
 
@@ -151,6 +98,8 @@ const ExerciseItem = ({
                 <section className="exercise-list-field">
                   {loading ? (
                     <p className="loading-indicator">Loading exercises...</p>
+                  ) : error ? (
+                    <p className="error-message">{error}</p>
                   ) : filteredExercises.length > 0 ? (
                     <ul className="exercise-list">
                       {filteredExercises.map(exercise => (
@@ -166,6 +115,7 @@ const ExerciseItem = ({
                               handleExerciseSelect(exercise);
                             }
                           }}
+                          title={exercise.description}
                         >
                           <span className="exercise-name">{exercise.name}</span>
                           <span className="exercise-muscle-group">{exercise.muscleGroup}</span>
