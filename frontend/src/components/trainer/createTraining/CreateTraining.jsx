@@ -16,7 +16,7 @@ const CreateTraining = () => {
     removeExercise,
     addSeries,
     removeSeries,
-    updateUserId,
+    updateUserEmail,
     handleSubmit,
     formMessage,
     isSubmitting,
@@ -35,16 +35,17 @@ const CreateTraining = () => {
         <fieldset>
           <legend>User Information</legend>
           <FormField
-            label="User ID"
+            label="User Email"
             type="text"
-            name="userId"
-            value={training.userId}
-            onChange={updateUserId}
+            name="userEmail"
+            value={training.userEmail}
+            onChange={updateUserEmail}
             required
-            placeholder="Enter user ID"
+            placeholder="Enter user email"
           />
         </fieldset>
 
+        {/* Rest of the component remains the same */}
         <fieldset>
           <legend>Training Schedule</legend>
           <DaySelector
@@ -87,6 +88,7 @@ const CreateTraining = () => {
           </button>
         </footer>
       </form>
+
       {formMessage && (
         <section className={`form-message ${formMessage.type}`}>
           {formMessage.text}

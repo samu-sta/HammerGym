@@ -17,15 +17,6 @@ const UserProgressModel = sequelize.define('UserProgress', {
       key: 'accountId'
     }
   },
-  trainingId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'Training',
-      key: 'userId'
-    }
-  },
-
   howWasIt: {
     type: DataTypes.ENUM('reallyEasy', 'easy', 'medium', 'hard', 'reallyHard'),
     allowNull: false

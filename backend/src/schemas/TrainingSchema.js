@@ -28,7 +28,7 @@ const dayExercisesSchema = zod.object({
 
 // Schema for creating a new training plan
 const createTrainingSchema = zod.object({
-  userId: zod.number().int().positive(),
+  userEmail: zod.string().email(),
   trainerId: zod.number().int().positive().optional(),
   days: zod.record(
     zod.enum(['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']),

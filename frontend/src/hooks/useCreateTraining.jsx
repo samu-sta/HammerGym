@@ -4,7 +4,7 @@ import { createUserTraining } from '../services/TrainingService';
 
 const useTrainingForm = () => {
   const [training, setTraining] = useState({
-    userId: '',
+    userEmail: '',  // Changed from userId
     days: {}
   });
 
@@ -22,6 +22,7 @@ const useTrainingForm = () => {
 
   const selectedDays = Object.keys(training.days);
 
+  // Fetch exercises - no change needed here
   useEffect(() => {
     const fetchExercises = async () => {
       setLoadingExercises(true);
@@ -31,11 +32,10 @@ const useTrainingForm = () => {
         const data = await getAllExercises();
 
         if (data.success && Array.isArray(data.exercises)) {
-          // Map API response format to the expected format in components
           const formattedExercises = data.exercises.map(exercise => ({
             id: exercise.id,
             name: exercise.name,
-            muscleGroup: exercise.muscles, // Map API's 'muscles' to component's 'muscleGroup'
+            muscleGroup: exercise.muscles,
             description: exercise.description
           }));
           setAllExercises(formattedExercises);
@@ -167,19 +167,19 @@ const useTrainingForm = () => {
     });
   };
 
-  const updateUserId = (userId) => {
+  const updateUserEmail = (userEmail) => {
     setTraining(prev => ({
       ...prev,
-      userId
+      userEmail
     }));
   };
 
   const collectFormData = (form) => {
     const formData = new FormData(form);
-    const userId = formData.get('userId');
+    const userEmail = formData.get('userEmail'); // Changed from userId
 
     const trainingData = {
-      userId: userId ? parseInt(userId) : '',
+      userEmail: userEmail || '',  // Changed from userId
       days: {}
     };
 
@@ -233,9 +233,15 @@ const useTrainingForm = () => {
       // Collect form data
       const trainingData = collectFormData(e.target);
 
-      // Validate required fields
-      if (!trainingData.userId) {
-        throw new Error('User ID is required');
+      // Validate required fields - check email instead of userId
+      if (!trainingData.userEmail) {
+        throw new Error('User email is required');
+      }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(trainingData.userEmail)) {
+        throw new Error('Please enter a valid email address');
       }
 
       if (Object.keys(trainingData.days).length === 0) {
@@ -246,7 +252,6 @@ const useTrainingForm = () => {
       setFormattedData(trainingData);
 
       // Send data to API
-      console.log('Sending training data to API:', JSON.stringify(trainingData));
       const response = await createUserTraining(trainingData);
 
       if (response.success) {
@@ -280,7 +285,7 @@ const useTrainingForm = () => {
     removeExercise,
     addSeries,
     removeSeries,
-    updateUserId,
+    updateUserEmail,
     handleSubmit,
     formMessage,
     isSubmitting,

@@ -3,6 +3,8 @@ import { validateCreateTraining } from "../schemas/TrainingSchema.js";
 import TrainingModel from "../models/Training.js";
 import TrainingDayModel from "../models/TrainingDay.js";
 import SerieModel from "../models/Serie.js";
+import AccountModel from "../models/Account.js";
+import UserModel from "../models/User.js";
 
 export default class TrainingController {
 
@@ -54,18 +56,37 @@ export default class TrainingController {
 
       const trainingData = validation.data;
 
+      // Find user by email instead of using userId directly
+      const account = await AccountModel.findOne({
+        where: { email: trainingData.userEmail },
+        include: [{
+          model: UserModel,
+          as: 'user'
+        }]
+      });
+
+      if (!account || !account.user) {
+        return res.status(404).json({
+          success: false,
+          message: `No user found with email: ${trainingData.userEmail}`
+        });
+      }
+
+      // Get the actual userId from the found account
+      const userId = account.user.accountId;
+
       // Set trainer ID from authenticated account if not provided
       if (!trainingData.trainerId) {
         trainingData.trainerId = req.account.id;
       }
 
       // Check if training exists for this user already
-      const existingTraining = await TrainingModel.findByPk(trainingData.userId);
+      const existingTraining = await TrainingModel.findByPk(userId);
 
       // If it exists, delete associated training days
       if (existingTraining) {
         const trainingDays = await TrainingDayModel.findAll({
-          where: { userId: trainingData.userId }
+          where: { userId: userId }
         });
 
         // Delete series for each training day
@@ -77,13 +98,13 @@ export default class TrainingController {
 
         // Delete training days
         await TrainingDayModel.destroy({
-          where: { userId: trainingData.userId }
+          where: { userId: userId }
         });
       }
 
       // Create or update the training record
       await TrainingModel.upsert({
-        userId: trainingData.userId,
+        userId: userId,
         trainerId: trainingData.trainerId
       });
 
@@ -94,7 +115,7 @@ export default class TrainingController {
         // Create a training day record
         const trainingDay = await TrainingDayModel.create({
           day,
-          userId: trainingData.userId
+          userId: userId
         });
 
         // Process exercises for this day
@@ -117,9 +138,10 @@ export default class TrainingController {
         success: true,
         message: "Plan de entrenamiento creado exitosamente",
         training: {
-          userId: trainingData.userId,
+          userId: userId,
           trainerId: trainingData.trainerId,
-          days: days.length
+          days: days.length,
+          email: trainingData.userEmail
         }
       });
     } catch (error) {

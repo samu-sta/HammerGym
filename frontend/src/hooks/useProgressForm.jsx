@@ -3,7 +3,7 @@ import { createProgressUser } from '../services/ProgressUserService';
 import { validateCreateProgressUser } from '../schemas/progress';
 import { dayNumberMap } from '../config/constants';
 
-const useProgressForm = (selectedDay, trainingId, onClose) => {
+const useProgressForm = (selectedDay, onClose) => {
   const [difficulty, setDifficulty] = useState('medium');
   const [observations, setObservations] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,16 +34,16 @@ const useProgressForm = (selectedDay, trainingId, onClose) => {
     selectedDate.setDate(today.getDate() + difference);
 
     progress.date = selectedDate.toISOString().split('T')[0];
-    progress.trainingId = trainingId;
 
     try {
       const response = await createProgressUser(progress);
-      if (!response.success) {
-        setFormMessage(response.message);
-        return;
-      }
-      setFormMessage('Progreso guardado correctamente');
-      onClose();
+      setFormMessage(response);
+
+      if (!response.success) return;
+
+      setTimeout(() => {
+        onClose();
+      }, 1000);
     }
     catch (error) {
       setFormMessage('Error de conexión con el servidor');
@@ -51,9 +51,7 @@ const useProgressForm = (selectedDay, trainingId, onClose) => {
     finally {
       setIsSubmitting(false);
     }
-  }
-    , [selectedDay, difficulty, observations, onClose]);
-
+  }, [selectedDay, difficulty, observations, onClose]);
 
   return {
     difficulty,

@@ -7,7 +7,7 @@ import FormMessage from './components/FormMessage';
 import useProgressForm from '../../../hooks/useProgressForm';
 import './styles/ProgressForm.css';
 
-const ProgressForm = ({ selectedDay, trainingId, onClose }) => {
+const ProgressForm = ({ selectedDay, onClose }) => {
   const {
     difficulty,
     observations,
@@ -16,7 +16,7 @@ const ProgressForm = ({ selectedDay, trainingId, onClose }) => {
     setDifficulty,
     setObservations,
     handleSubmit
-  } = useProgressForm(selectedDay, trainingId, onClose);
+  } = useProgressForm(selectedDay, onClose);
 
   return (
     <section className="progress-form-container">
@@ -30,7 +30,7 @@ const ProgressForm = ({ selectedDay, trainingId, onClose }) => {
           value={observations}
           onChange={setObservations}
         />
-        {formMessage && <FormMessage message={formMessage} />}
+        {formMessage && <FormMessage result={formMessage} />}
         <button
           type="submit"
           className="submit-button"

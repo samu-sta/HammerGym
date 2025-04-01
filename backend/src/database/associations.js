@@ -143,16 +143,6 @@ const setupAssociations = () => {
     targetKey: 'accountId',
     as: 'user'
   });
-  // Relación Training-ProgressUser (One-to-Many)
-  TrainingModel.hasMany(ProgressUserModel, {
-    foreignKey: 'trainingId',
-    as: 'progress'
-  }
-  );
-  ProgressUserModel.belongsTo(TrainingModel, {
-    foreignKey: 'trainingId',
-    as: 'training'
-  });
   AttendanceModel.belongsTo(UserModel, {
     foreignKey: 'userid',
     targetKey: 'accountId',

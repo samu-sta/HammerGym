@@ -13,30 +13,37 @@ export default class UserProgressController {
       console.log(result.error);
       return res.status(400).json({ success: false, message: result.error });
     }
+
     try {
+      const userId = req.account.id;
 
-      const progress = await UserProgressModel.findOne({
-        where: {
-          userId: req.account.id,
-          date: result.data.date
-        }
-      });
-      if (progress) {
-        return res.status(400).json({ success: false, message: MESSAGES.PROGRESS_ALREADY_EXISTS });
-      }
-
-      await UserProgressModel.create({
-        userId: req.account.id,
-        trainingId: result.data.trainingId,
+      await UserProgressModel.upsert({
+        userId: userId,
         date: result.data.date,
         howWasIt: result.data.howWasIt,
         observations: result.data.observations
       });
 
-      return res.status(201).json({ success: true });
+      const wasUpdate = await UserProgressModel.findOne({
+        where: {
+          userId,
+          date: result.data.date
+        }
+      });
+
+      const message = wasUpdate ? MESSAGES.PROGRESS_UPDATED : MESSAGES.PROGRESS_CREATED;
+
+      return res.status(200).json({
+        success: true,
+        message
+      });
     }
     catch (error) {
-      return res.status(500).json({ success: false, message: error });
+      console.error('Error managing progress:', error);
+      return res.status(500).json({
+        success: false,
+        message: error.message || "Internal server error"
+      });
     }
   }
 

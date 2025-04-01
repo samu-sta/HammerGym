@@ -2,13 +2,13 @@ import React from 'react';
 import { FaCheck, FaTimes } from 'react-icons/fa';
 import '../styles/FormMessage.css';
 
-const FormMessage = ({ message }) => {
-  if (!message) return null;
+const FormMessage = ({ result }) => {
+  if (!result) return null;
 
   return (
-    <article className={`form-message ${message.success ? 'success' : 'error'}`}>
-      {message.success ? <FaCheck /> : <FaTimes />}
-      {message}
+    <article className={`form-message ${result.success ? 'success' : 'error'}`}>
+      {result.success ? <FaCheck /> : <FaTimes />}
+      {result.message}
     </article>
   );
 };

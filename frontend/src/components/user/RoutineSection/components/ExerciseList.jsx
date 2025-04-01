@@ -5,7 +5,7 @@ import ProgressForm from '../../ProgressSection/ProgressForm';
 import { FaClipboardCheck } from 'react-icons/fa';
 import '../styles/ExerciseList.css';
 
-const ExerciseList = ({ trainingId, exercises, hasExercises, selectedDay }) => {
+const ExerciseList = ({ exercises, hasExercises, selectedDay }) => {
   const [showProgressForm, setShowProgressForm] = useState(false);
 
   return (
@@ -35,7 +35,6 @@ const ExerciseList = ({ trainingId, exercises, hasExercises, selectedDay }) => {
             <ProgressForm
               selectedDay={selectedDay}
               onClose={() => setShowProgressForm(false)}
-              trainingId={trainingId}
             />
           )}
         </>
