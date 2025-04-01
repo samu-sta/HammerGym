@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
 const useTrainingForm = () => {
-  const [selectedDays, setSelectedDays] = useState([]);
-  const [exercises, setExercises] = useState({});
-  const [series, setSeries] = useState({});
+  const [training, setTraining] = useState({
+    userId: '',
+    days: {}
+  });
+
   const [formMessage, setFormMessage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formattedData, setFormattedData] = useState(null);
@@ -11,149 +13,176 @@ const useTrainingForm = () => {
   const daysOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
   const muscleGroups = ['biceps', 'triceps', 'back', 'chest', 'shoulders', 'legs'];
 
+  const selectedDays = Object.keys(training.days);
+
   const toggleDay = (day) => {
-    if (selectedDays.includes(day)) {
-      setSelectedDays(selectedDays.filter(d => d !== day));
+    setTraining(prev => {
+      const updatedDays = { ...prev.days };
 
-      // Clean up exercises for this day
-      const updatedExercises = { ...exercises };
-      delete updatedExercises[day];
-      setExercises(updatedExercises);
-
-      // Clean up series for this day
-      const updatedSeries = { ...series };
-      delete updatedSeries[day];
-      setSeries(updatedSeries);
-    } else {
-      setSelectedDays([...selectedDays, day]);
-      setExercises({ ...exercises, [day]: [0] });
-      setSeries({ ...series, [day]: { 0: [0] } });
-    }
+      if (updatedDays[day]) {
+        const { [day]: removedDay, ...restDays } = updatedDays;
+        return {
+          ...prev,
+          days: restDays
+        };
+      } else {
+        return {
+          ...prev,
+          days: {
+            ...updatedDays,
+            [day]: {
+              exercises: [{
+                id: '',
+                series: [{
+                  reps: '',
+                  weight: ''
+                }]
+              }]
+            }
+          }
+        };
+      }
+    });
   };
 
   const addExercise = (day) => {
-    const newIndex = exercises[day].length;
-    setExercises({
-      ...exercises,
-      [day]: [...exercises[day], newIndex]
-    });
-    setSeries({
-      ...series,
-      [day]: {
-        ...series[day],
-        [newIndex]: [0]
-      }
+    setTraining(prev => {
+      const dayExercises = prev.days[day]?.exercises || [];
+
+      return {
+        ...prev,
+        days: {
+          ...prev.days,
+          [day]: {
+            exercises: [
+              ...dayExercises,
+              {
+                id: '',
+                series: [{
+                  reps: '',
+                  weight: ''
+                }]
+              }
+            ]
+          }
+        }
+      };
     });
   };
 
   const removeExercise = (day, exerciseIndex) => {
-    const updatedExercises = { ...exercises };
-    updatedExercises[day] = exercises[day].filter((_, i) => i !== exerciseIndex);
+    setTraining(prev => {
+      const updatedExercises = prev.days[day]?.exercises.filter((_, i) => i !== exerciseIndex);
 
-    // Remap indices to keep them sequential
-    const remappedExercises = updatedExercises[day].map((_, i) => i);
-    updatedExercises[day] = remappedExercises;
-
-    const updatedSeries = { ...series };
-    
-    // Create new series object with remapped keys
-    const newDaySeries = {};
-    updatedExercises[day].forEach((_, i) => {
-      const oldIndex = exercises[day][i];
-      if (updatedSeries[day][oldIndex]) {
-        newDaySeries[i] = updatedSeries[day][oldIndex];
-      }
+      return {
+        ...prev,
+        days: {
+          ...prev.days,
+          [day]: {
+            exercises: updatedExercises
+          }
+        }
+      };
     });
-    
-    updatedSeries[day] = newDaySeries;
-
-    setExercises(updatedExercises);
-    setSeries(updatedSeries);
   };
 
   const addSeries = (day, exerciseIndex) => {
-    const currentSeries = series[day][exerciseIndex] || [];
-    const newSeriesIndex = currentSeries.length;
+    setTraining(prev => {
+      const updatedDays = { ...prev.days };
+      const dayData = { ...updatedDays[day] };
+      const exercises = [...dayData.exercises];
+      const exercise = { ...exercises[exerciseIndex] };
 
-    setSeries({
-      ...series,
-      [day]: {
-        ...series[day],
-        [exerciseIndex]: [...currentSeries, newSeriesIndex]
-      }
+      exercise.series = [
+        ...exercise.series,
+        { reps: '', weight: '' }
+      ];
+
+      exercises[exerciseIndex] = exercise;
+      dayData.exercises = exercises;
+      updatedDays[day] = dayData;
+
+      return {
+        ...prev,
+        days: updatedDays
+      };
     });
   };
 
   const removeSeries = (day, exerciseIndex, seriesIndex) => {
-    const updatedSeries = { ...series };
-    updatedSeries[day][exerciseIndex] = series[day][exerciseIndex].filter((_, i) => i !== seriesIndex);
+    setTraining(prev => {
+      const updatedDays = { ...prev.days };
+      const dayData = { ...updatedDays[day] };
+      const exercises = [...dayData.exercises];
+      const exercise = { ...exercises[exerciseIndex] };
 
-    setSeries(updatedSeries);
+      exercise.series = exercise.series.filter((_, i) => i !== seriesIndex);
+
+      exercises[exerciseIndex] = exercise;
+      dayData.exercises = exercises;
+      updatedDays[day] = dayData;
+
+      return {
+        ...prev,
+        days: updatedDays
+      };
+    });
+  };
+
+  const updateUserId = (userId) => {
+    setTraining(prev => ({
+      ...prev,
+      userId
+    }));
   };
 
   const collectFormData = (form) => {
     const formData = new FormData(form);
     const userId = formData.get('userId');
-    
-    if (!userId) {
-      return { success: false, message: 'User ID is required' };
-    }
 
-    // Prepare the training structure
     const trainingData = {
-      userId: parseInt(userId),
+      userId: userId ? parseInt(userId) : '',
       days: {}
     };
 
-    // For each selected day
     for (const day of selectedDays) {
-      const dayExercises = [];
+      const exercises = [];
 
-      // For each exercise in this day
-      if (exercises[day]) {
-        for (const exerciseIndex of exercises[day]) {
-          const exerciseId = formData.get(`exercise_${day}_${exerciseIndex}_id`);
-          
-          if (!exerciseId) {
-            continue; // Skip if no exercise ID
-          }
+      for (let i = 0; i < 20; i++) {
+        const exerciseId = formData.get(`exercise_${day}_${i}_id`);
 
-          const exerciseSeries = [];
-          
-          // For each series of this exercise
-          if (series[day] && series[day][exerciseIndex]) {
-            for (const seriesIndex of series[day][exerciseIndex]) {
-              const reps = formData.get(`series_${day}_${exerciseIndex}_${seriesIndex}_reps`);
-              const weight = formData.get(`series_${day}_${exerciseIndex}_${seriesIndex}_weight`);
-              
-              if (reps && weight) {
-                exerciseSeries.push({
-                  reps: parseInt(reps),
-                  weight: parseFloat(weight)
-                });
-              }
+        if (exerciseId) {
+          const series = [];
+
+          for (let j = 0; j < 20; j++) {
+            const reps = formData.get(`series_${day}_${i}_${j}_reps`);
+            const weight = formData.get(`series_${day}_${i}_${j}_weight`);
+
+            if (reps && weight) {
+              series.push({
+                reps: parseInt(reps),
+                weight: parseFloat(weight)
+              });
             }
           }
 
-          // Only add exercise if it has series
-          if (exerciseSeries.length > 0) {
-            dayExercises.push({
+          if (series.length > 0) {
+            exercises.push({
               id: parseInt(exerciseId),
-              series: exerciseSeries
+              series
             });
           }
         }
       }
 
-      // Only add day if it has exercises
-      if (dayExercises.length > 0) {
+      if (exercises.length > 0) {
         trainingData.days[day] = {
-          exercises: dayExercises
+          exercises
         };
       }
     }
 
-    return { success: true, data: trainingData };
+    return trainingData;
   };
 
   const handleSubmit = (e) => {
@@ -161,37 +190,35 @@ const useTrainingForm = () => {
     setIsSubmitting(true);
     setFormMessage(null);
 
-    const result = collectFormData(e.target);
-    
-    if (!result.success) {
-      setFormMessage({ type: 'error', text: result.message });
-      setIsSubmitting(false);
-      return;
-    }
+    try {
+      const cleanedTraining = collectFormData(e.target);
+      console.log('Submitting training data:', cleanedTraining);
 
-    // Store the formatted data and display it for debugging
-    setFormattedData(result.data);
-    
-    // Better console logging with formatting
-    console.log('Training data ready to submit:');
-    console.log(JSON.stringify(result.data, null, 2));
-    
-    // Show success message without making the API call
-    setFormMessage({ 
-      type: 'success', 
-      text: 'Training data collected successfully! Check the console for the formatted data.'
-    });
-    
-    setIsSubmitting(false);
-    
-    // Return the data for any external handling if needed
-    return result.data;
+      setFormattedData(cleanedTraining);
+
+      console.log('Training data ready to submit:');
+      console.log(JSON.stringify(cleanedTraining, null, 2));
+
+      setFormMessage({
+        type: 'success',
+        text: 'All data collected successfully!'
+      });
+
+      return cleanedTraining;
+    } catch (error) {
+      console.error('Error collecting form data:', error);
+      setFormMessage({
+        type: 'error',
+        text: 'Error collecting form data: ' + error.message
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return {
+    training,
     selectedDays,
-    exercises,
-    series,
     daysOfWeek,
     muscleGroups,
     toggleDay,
@@ -199,10 +226,11 @@ const useTrainingForm = () => {
     removeExercise,
     addSeries,
     removeSeries,
+    updateUserId,
     handleSubmit,
     formMessage,
     isSubmitting,
-    formattedData  // Expose formatted data if needed in the UI
+    formattedData
   };
 };
 

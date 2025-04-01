@@ -4,19 +4,29 @@ import '../styles/SeriesList.css';
 
 const SeriesList = ({ day, exerciseIndex, series, onAddSeries, onRemoveSeries }) => {
   return (
-    <section className="series-container">
-      <h5 className="series-title">Series</h5>
-      
-      {series && series.map((_, seriesIndex) => (
-        <SeriesItem
-          key={seriesIndex}
-          day={day}
-          exerciseIndex={exerciseIndex}
-          seriesIndex={seriesIndex}
-          onRemoveSeries={() => onRemoveSeries(seriesIndex)}
-          canRemove={series.length > 1}
-        />
-      ))}
+    <>
+      <table className="series-table">
+        <thead>
+          <tr className="series-header">
+            <th>Serie</th>
+            <th>Reps</th>
+            <th>Weight (kg)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {series && series.map((_, seriesIndex) => (
+            <SeriesItem
+              key={seriesIndex}
+              day={day}
+              exerciseIndex={exerciseIndex}
+              seriesIndex={seriesIndex}
+              onRemoveSeries={() => onRemoveSeries(seriesIndex)}
+              canRemove={series.length > 1}
+            />
+          ))}
+        </tbody>
+      </table>
 
       <button
         type="button"
@@ -25,7 +35,7 @@ const SeriesList = ({ day, exerciseIndex, series, onAddSeries, onRemoveSeries })
       >
         Add Series
       </button>
-    </section>
+    </>
   );
 };
 

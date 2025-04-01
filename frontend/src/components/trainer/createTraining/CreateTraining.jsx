@@ -1,14 +1,14 @@
-import InputProfileSection from '../../user/ProfileSection/components/InputProfileSection.jsx';
+import React from 'react';
+import useTrainingForm from '../../../hooks/useCreateTraining';
 import DaySelector from './components/DaySelector';
 import TrainingDay from './components/TrainingDay';
-import useTrainingForm from '../../../hooks/useCreateTraining.jsx';
+import FormField from '../../auth/FormField';
 import './styles/CreateTraining.css';
 
 const CreateTraining = () => {
   const {
+    training,
     selectedDays,
-    exercises,
-    series,
     daysOfWeek,
     muscleGroups,
     toggleDay,
@@ -16,54 +16,76 @@ const CreateTraining = () => {
     removeExercise,
     addSeries,
     removeSeries,
-    handleSubmit
+    updateUserId,
+    handleSubmit,
+    formMessage,
+    isSubmitting
   } = useTrainingForm();
 
   return (
     <main className="create-training-container">
-      <h2 className="page-title">Create Training Plan</h2>
+      <header>
+        <h2 className="page-title">Create Training Plan</h2>
+      </header>
 
       <form className="training-form" onSubmit={handleSubmit}>
-        <InputProfileSection
-          label="User ID"
-          name="userId"
-          type="number"
-          required
-          min="1"
-          max="999999999"
-        />
-
-        <DaySelector 
-          days={daysOfWeek} 
-          selectedDays={selectedDays} 
-          onToggleDay={toggleDay} 
-        />
-
-        {selectedDays.map(day => (
-          <TrainingDay
-            key={day}
-            day={day}
-            exercises={exercises[day] || []}
-            series={series[day] || {}}
-            muscleGroups={muscleGroups}
-            onRemoveDay={() => toggleDay(day)}
-            onAddExercise={() => addExercise(day)}
-            onRemoveExercise={(exerciseIndex) => removeExercise(day, exerciseIndex)}
-            onAddSeries={(exerciseIndex) => addSeries(day, exerciseIndex)}
-            onRemoveSeries={(exerciseIndex, seriesIndex) => removeSeries(day, exerciseIndex, seriesIndex)}
+        <fieldset>
+          <legend>User Information</legend>
+          <FormField
+            label="User ID"
+            type="text"
+            name="userId"
+            value={training.userId}
+            onChange={updateUserId}
+            required
+            placeholder="Enter user ID"
           />
-        ))}
+        </fieldset>
 
-        <footer className="form-footer">
+        <fieldset>
+          <legend>Training Schedule</legend>
+          <DaySelector
+            days={daysOfWeek}
+            selectedDays={selectedDays}
+            onToggleDay={toggleDay}
+          />
+        </fieldset>
+
+        {selectedDays.length > 0 && (
+          <section className="training-days">
+            <h3>Daily Exercises</h3>
+            {selectedDays.map(day => (
+              <TrainingDay
+                key={day}
+                day={day}
+                exercises={training.days[day]?.exercises || []}
+                series={training.days[day]?.exercises.map(exercise => exercise.series) || []}
+                muscleGroups={muscleGroups}
+                onRemoveDay={() => toggleDay(day)}
+                onAddExercise={() => addExercise(day)}
+                onRemoveExercise={(exerciseIndex) => removeExercise(day, exerciseIndex)}
+                onAddSeries={(exerciseIndex) => addSeries(day, exerciseIndex)}
+                onRemoveSeries={(exerciseIndex, seriesIndex) => removeSeries(day, exerciseIndex, seriesIndex)}
+              />
+            ))}
+          </section>
+        )}
+
+        <footer className="form-actions">
           <button
             type="submit"
             className="submit-button"
-            disabled={selectedDays.length === 0}
+            disabled={isSubmitting || selectedDays.length === 0}
           >
-            Create Training Plan
+            {isSubmitting ? 'Creating...' : 'Create Training Plan'}
           </button>
         </footer>
       </form>
+      {formMessage && (
+        <section className={`form-message ${formMessage.type}`}>
+          {formMessage.text}
+        </section>
+      )}
     </main>
   );
 };

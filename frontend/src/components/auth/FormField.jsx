@@ -1,12 +1,12 @@
 import './styles/FormField.css';
 
-const FormField = ({ id, label, type = 'text', errors }) => (
+const FormField = ({ id, label, type = 'text', errors, name = id }) => (
   <fieldset className="form-group">
     <label htmlFor={id}>{label}:</label>
     <input
       type={type}
       id={id}
-      name={id}
+      name={name}
       className='input'
     />
     {errors && errors[id] ? (
