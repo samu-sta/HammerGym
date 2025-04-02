@@ -14,6 +14,7 @@ import ProtectedLayout from './components/common/ProtectedLayout.jsx';
 import Header from './components/app/Header.jsx';
 import { AccountProvider } from './context/AccountContext.jsx';
 import TrainerPage from './pages/TrainerPage.jsx';
+import CreateTraining from './components/trainer/createTraining/CreateTraining.jsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,6 +83,7 @@ function App() {
 
             <Route element={<ProtectedLayout allowedRoles={['trainer']} />}>
               <Route path="/entrenador" element={<TrainerPage />} />
+              <Route path="/entrenador/crear-plan" element={<CreateTraining />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />

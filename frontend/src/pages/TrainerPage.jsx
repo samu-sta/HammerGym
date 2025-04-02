@@ -4,6 +4,7 @@ import { FaUser, FaDumbbell, FaHistory, FaClipboardList } from 'react-icons/fa';
 import ProfileSection from '../components/user/ProfileSection/ProfileSection.jsx';
 import ActivitiesSection from '../components/user/ActivitiesSection/ActivitiesSection.jsx';
 import CreateTraining from '../components/trainer/createTraining/CreateTraining.jsx';
+import UsersList from '../components/trainer/usersList/UsersList.jsx';
 const TrainerPage = () => {
   const [activeSection, setActiveSection] = useState('profile');
 
@@ -20,7 +21,7 @@ const TrainerPage = () => {
       case 'activities':
         return <ActivitiesSection />;
       case 'userRoutines':
-        return <CreateTraining />;
+        return <UsersList />;
       default:
         return null;
     }

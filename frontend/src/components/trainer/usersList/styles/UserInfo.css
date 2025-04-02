@@ -1,0 +1,42 @@
+.user-card-body {
+  padding: 1.25rem;
+  background-color: rgba(25, 25, 25, 0.4);
+  width: 100%;
+}
+
+.user-email {
+  margin: 0 0 0.75rem;
+  color: #c5c9cc;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.email-icon {
+  color: rgba(153, 136, 0, 0.8);
+  font-size: 1rem;
+}
+
+.user-assigned-date {
+  margin: 0;
+  color: #adb5bd;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed rgba(153, 136, 0, 0.2);
+  margin-top: 0.5rem;
+}
+
+.calendar-icon {
+  color: rgba(153, 136, 0, 0.8);
+  font-size: 0.9rem;
+}
+
+.user-assigned-date span {
+  color: #f8f9fa;
+  font-weight: 500;
+}

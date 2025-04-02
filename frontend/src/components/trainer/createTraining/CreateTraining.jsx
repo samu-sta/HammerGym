@@ -1,8 +1,9 @@
-import React from 'react';
+import { useEffect } from 'react';
 import useTrainingForm from '../../../hooks/useCreateTraining';
 import DaySelector from './components/DaySelector';
 import TrainingDay from './components/TrainingDay';
 import FormField from '../../auth/FormField';
+import { useNavigate } from 'react-router-dom';
 import './styles/CreateTraining.css';
 
 const CreateTraining = () => {
@@ -22,8 +23,21 @@ const CreateTraining = () => {
     isSubmitting,
     allExercises,
     loadingExercises,
-    exerciseError
+    exerciseError,
+    isSuccess
   } = useTrainingForm();
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    if (isSuccess) {
+      const timer = setTimeout(() => {
+        navigate('/entrenador');
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isSuccess, navigate]);
 
   return (
     <main className="create-training-container">
