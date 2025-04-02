@@ -6,7 +6,7 @@ import ActivitiesSection from '../components/user/ActivitiesSection/ActivitiesSe
 import CreateTraining from '../components/trainer/createTraining/CreateTraining.jsx';
 import UsersList from '../components/trainer/usersList/UsersList.jsx';
 const TrainerPage = () => {
-  const [activeSection, setActiveSection] = useState('profile');
+  const [activeSection, setActiveSection] = useState('userRoutines');
 
   const sections = [
     { id: 'profile', name: 'Perfil', icon: <FaUser /> },

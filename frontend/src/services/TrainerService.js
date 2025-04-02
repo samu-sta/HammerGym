@@ -20,3 +20,26 @@ export const getTrainerAssignedUsers = async () => {
     };
   }
 };
+
+
+export const getUserProgressByEmail = async (userEmail) => {
+  try {
+
+    const response = await fetch(`http://localhost:3000/progress/${userEmail}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    });
+
+    return await response.json();
+
+  } catch (error) {
+    console.error('Error fetching user progress:', error);
+    return {
+      success: false,
+      message: 'Error de conexión con el servidor'
+    };
+  }
+};

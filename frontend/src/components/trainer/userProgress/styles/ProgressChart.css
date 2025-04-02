@@ -1,0 +1,107 @@
+.progress-chart-container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.weekly-charts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.day-chart {
+  background-color: rgba(30, 30, 30, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+  border-left: 4px solid #9980008a;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.15);
+}
+
+.day-chart.empty-chart {
+  opacity: 0.7;
+}
+
+.day-title {
+  margin: 0;
+  padding: 1rem;
+  color: #998000;
+  border-bottom: 1px solid #fff;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.day-chart-wrapper {
+  height: 250px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.no-day-data {
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #adb5bd;
+  text-align: center;
+  font-size: 0.95rem;
+  height: 250px;
+  box-sizing: border-box;
+  background-color: rgba(20, 20, 20, 0.3);
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: rgba(30, 30, 30, 0.5);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+}
+
+.no-chart-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #adb5bd;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 100%;
+  background-color: rgba(30, 30, 30, 0.5);
+  border-radius: 8px;
+  border: 1px solid rgba(153, 136, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .day-chart-wrapper {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .day-chart-wrapper {
+    height: 200px;
+    padding: 0.75rem;
+  }
+  
+  .day-title {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}

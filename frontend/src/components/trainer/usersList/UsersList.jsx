@@ -3,7 +3,7 @@ import { FaUserFriends, FaPlus } from 'react-icons/fa';
 import useUsersList from '../../../hooks/useUsersList';
 import UsersGrid from './components/UsersGrid';
 import EmptyState from './components/EmptyState';
-import ErrorState from './components/ErrorState';
+import ErrorState from '../../common/ErrorState';
 import ActionButton from '../../common/ActionButton';
 import './styles/UsersList.css';
 

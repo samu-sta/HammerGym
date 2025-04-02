@@ -109,3 +109,40 @@ export const dayNumberMap = {
   'saturday': 6,
   'sunday': 0
 };
+
+export const difficultyLabels = [
+  'Muy fácil',
+  'Fácil',
+  'Normal',
+  'Difícil',
+  'Muy difícil'
+];
+
+export const getDifficultyColor = (difficulty) => {
+  switch (difficulty) {
+    case 'reallyEasy':
+      return '#4caf50'; // Verde
+    case 'easy':
+      return '#8bc34a'; // Verde claro
+    case 'medium':
+      return '#998000'; // Amarillo
+    case 'hard':
+      return '#ff9800'; // Naranja
+    case 'reallyHard':
+      return '#f44336'; // Rojo
+    default:
+      return '#607D8B'; // Gris azulado
+  }
+};
+
+// Mapear dificultad a valor numérico para la gráfica
+export const mapDifficultyToNumeric = (difficulty) => {
+  switch (difficulty) {
+    case 'reallyEasy': return 1;
+    case 'easy': return 2;
+    case 'medium': return 3;
+    case 'hard': return 4;
+    case 'reallyHard': return 5;
+    default: return 3;
+  }
+};

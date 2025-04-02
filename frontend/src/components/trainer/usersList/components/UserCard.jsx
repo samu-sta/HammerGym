@@ -18,7 +18,7 @@ const UserCard = ({ user, formatDate }) => {
         />
         <aside className="user-card-footer">
           <ActionLink
-            to={`/trainer/user/${user.email}/progress`}
+            to={`/entrenador/${user.email}/progress`}
             icon={<FaChartLine className="button-icon" />}
             text="Ver Progreso"
             className="view-progress-button"

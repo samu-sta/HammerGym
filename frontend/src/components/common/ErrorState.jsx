@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaExclamationTriangle, FaUserPlus } from 'react-icons/fa';
-import ActionButton from '../../../common/ActionButton';
+import ActionButton from './ActionButton';
+import './styles/ErrorState.css';
 
 const ErrorState = ({ error, handleCreateTraining }) => {
   return (
