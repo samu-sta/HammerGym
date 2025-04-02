@@ -1,6 +1,7 @@
 import AccountModel from '../models/Account.js';
 import auth from '../utils/auth.js';
 import MESSAGES from '../messages/messages.js';
+import { whichAccount } from '../utils/account.js';
 
 export const authAccount = async (req, res, next) => {
     const token =
@@ -24,6 +25,36 @@ export const authAccount = async (req, res, next) => {
         next();
     }
     catch (error) {
+        return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+    }
+}
+
+export const authUser = async (req, res, next) => {
+    try {
+        await authAccount(req, res, async () => {
+            const accountType = await whichAccount(req.account.id);
+            console.log('Account type:', accountType);
+            if (accountType !== 'user') {
+                return res.status(403).json({ success: false, message: MESSAGES.ACCESS_DENIED });
+            }
+            next();
+        });
+    } catch (error) {
+        return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+    }
+}
+
+export const authTrainer = async (req, res, next) => {
+    try {
+        await authAccount(req, res, async () => {
+            const account = req.account;
+            const accountType = await whichAccount(account);
+            if (accountType !== 'trainer') {
+                return res.status(403).json({ success: false, message: MESSAGES.ACCESS_DENIED });
+            }
+            next();
+        });
+    } catch (error) {
         return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
 }

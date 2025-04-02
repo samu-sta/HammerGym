@@ -1,48 +1,12 @@
-.main-app{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 90px;
-    box-sizing: border-box;
-    
-  }
-
-.header-app{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background-color: #2d3033;
-  height: 90px;
-  position: fixed; 
-  top: 0;
-  left: 0;
-  z-index: 1000;
+.main-app {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
 }
 
 
-.header-app-logo{
-  height: 70px;
-  object-fit: contain;
-  display: flex;
-  align-items: center;
-
-}
-
-.header-app-left{
-    display: flex;
-    gap: 40px;
-    padding: 0 10px;
-}
-
-.header-app-nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-}
-
-.app-link{
+.app-link {
   text-decoration: none;
   cursor: pointer;
   user-select: none;
@@ -51,57 +15,78 @@
   font-size: inherit;
 }
 
-
-.header-app-nav-link{
-  color: white;
-  font-style: italic;
-  transition: color 0.2s ease-in-out;
-
-}
-
-.header-app-nav-link:hover{
+.header-app-nav-link:hover {
   color: #998000;
   transition: color 0.2s ease-in;
 
 }
 
-.header-app-right{
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    padding: 0 10px;
+.header-app-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 0 10px;
 }
 
-.primary-button{
-    color: white;
-    font-weight: bold;
-    background-color: #998000;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-style: italic;
-    transition: color 0.2s ease-in-out;
-    transition: transform 0.2s ease-in;
-}
-.primary-button:hover{
-    transform: scale(1.05);
-    transition: transform 0.2s ease-in;
+.primary-button {
+  color: white;
+  font-weight: bold;
+  background-color: #998000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-style: italic;
+  transition: color 0.2s ease-in-out;
+  transition: transform 0.2s ease-in;
 }
 
-.button{
-    cursor: pointer;
-    user-select: none;
-    border: none;
-    font-size: inherit;
+.primary-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in;
 }
 
-.login-link{
-    color: #998000;
-    font-weight: bold;
-    padding: 10px 15px;
-    font-style: italic;
+.button {
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  font-size: inherit;
 }
 
-.header-app-right-options{
+.login-link {
+  color: #998000;
+  font-weight: bold;
+  padding: 10px 15px;
+  font-style: italic;
+}
+
+.header-app-right-options {
   font-size: 30px;
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

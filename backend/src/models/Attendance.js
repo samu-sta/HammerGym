@@ -2,8 +2,10 @@ import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
 const AttendanceModel = sequelize.define('Attendance', {
+  
   classId: {
     type: DataTypes.INTEGER,
+    primaryKey: true,
     allowNull: false,
     references: {
         model: 'Class',

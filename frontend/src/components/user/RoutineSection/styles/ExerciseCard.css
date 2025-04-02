@@ -1,0 +1,47 @@
+.exercise-card {
+  background: rgba(30, 30, 30, 0.6);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  animation: slideInUp 0.5s ease forwards;
+  animation-delay: calc(var(--index) * 0.2s);
+  opacity: 0;
+  transform: translateY(20px);
+  border-left: 4px solid #99800081;
+  width: 100%;
+  max-width: 900px;
+}
+
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.exercise-header h3 {
+  color: #998000;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.exercise-muscles {
+  color: #998000;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  background: rgba(153, 128, 0, 0.043);
+  border-radius: 4px;
+}
+
+.exercise-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}

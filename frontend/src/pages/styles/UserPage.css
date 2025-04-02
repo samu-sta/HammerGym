@@ -6,7 +6,6 @@
   gap: 2rem;
   min-height: 71.5vh;
   width: 100%;
-  max-width: 1550px;
   
 }
 
@@ -65,5 +64,7 @@
   animation: fadeIn 0.5s ease forwards;
   display: flex;
   justify-content: center;
-  width: 85%;
+  width: 95%;
+  max-width: 1600px;
+  overflow: visible ;
 }

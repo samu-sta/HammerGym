@@ -1,0 +1,20 @@
+.form-message {
+  margin-bottom: 1.2rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.form-message.success {
+  background: rgba(76, 175, 80, 0.08);
+  color: #66bb6a;
+}
+
+.form-message.error {
+  background: rgba(244, 67, 54, 0.08);
+  color: #ef5350;
+}

@@ -1,132 +1,13 @@
 .user-routine {
-  background: rgba(25, 25, 25, 0.6);
-  border-radius: 10px;
+  background: rgba(22, 22, 22, 0.8);
+  border-radius: 12px;
   padding: 2rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(153, 128, 0, 0.2);
   width: 100%;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  height: 100%;
+  min-height: 62vh;
 }
 
-.routine-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-}
-
-.routine-day {
-  background: rgba(153, 128, 0, 0.1);
-  border-radius: 8px;
-  padding: 1.5rem 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-  width: 120px;
-}
-.rest-day{
-  background: rgba(153, 128, 0, 0.028);
-}
-
-.routine-day:hover {
-  transform: translateY(-5px);
-  background: rgba(153, 128, 0, 0.15);
-  box-shadow: 0 4px 15px rgba(153, 128, 0, 0.1);
-}
-
-.rest-day:hover{
-  transform: translateY(-5px);
-  background: rgba(153, 128, 0, 0.05);
-  box-shadow: 0 4px 15px rgba(153, 128, 0, 0.1);
-}
-
-.routine-day h3 {
-  color: #998000;
-  margin: 0 0 0.5rem 0;
-}
-
-.routine-day-summary {
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.routine-day-expanded {
-  width: 100%;
-  animation: expandIn 0.3s ease-out;
-}
-
-.routine-day-header {
-  display: flex;
-  justify-content: center;
-  padding-right: 98.22px;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid rgba(153, 128, 0, 0.2);
-}
-
-.routine-day-header h3 {
-  color: #998000;
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.routine-back-button {
-  background: none;
-  border: none;
-  color: rgb(3, 92, 151);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: inherit;
-  font-size: 1rem;
-  width: fit-content;
-
-}
-
-.routine-back-button:hover {
-  color: rgb(2, 71, 117);
-}
-
-.routine-exercises-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.routine-exercise-item {
-  background: rgba(153, 128, 0, 0.1);
-  border-radius: 8px;
+.user-routine.mobile {
   padding: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.routine-exercise-item:hover {
-  transform: translateY(-5px);
-  background: rgba(153, 128, 0, 0.15);
-}
-
-.exercise-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.exercise-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-}
-
-.exercise-separator {
-  color: #998000;
-}
-
-@keyframes expandIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
 }

@@ -1,7 +1,10 @@
 import { FaUserGraduate } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaUserSecret } from "react-icons/fa6";
-export const MOBILE_WIDTH = 950;
+import {
+  FaGrinBeam, FaSmile, FaMeh, FaFrown, FaSadTear
+} from 'react-icons/fa';
+export const DEFAULT_MOBILE_WIDTH = 950;
 
 export const PERSONAL = [
   {
@@ -87,5 +90,22 @@ export const dayMap = {
   Thursday: 'Jueves',
   Friday: 'Viernes',
   Saturday: 'Sábado',
-  Sunday: 'Domingo'
+  Sunday: 'Domingo',
+  monday: 'Lunes',
+  tuesday: 'Martes',
+  wednesday: 'Miércoles',
+  thursday: 'Jueves',
+  friday: 'Viernes',
+  saturday: 'Sábado',
+  sunday: 'Domingo'
+};
+
+export const dayNumberMap = {
+  'monday': 1,
+  'tuesday': 2,
+  'wednesday': 3,
+  'thursday': 4,
+  'friday': 5,
+  'saturday': 6,
+  'sunday': 0
 };

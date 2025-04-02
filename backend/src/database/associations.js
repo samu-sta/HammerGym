@@ -11,6 +11,7 @@ import ExerciseModel from '../models/Exercise.js';
 import AttendanceModel from '../models/Attendance.js';
 import ClassModel from '../models/Class.js';
 import assitanceListModel from '../models/assistanceList.js';
+import ProgressUserModel from '../models/UserProgress.js';
 
 const setupAssociations = () => {
 
@@ -56,10 +57,10 @@ const setupAssociations = () => {
   });
 
   // Relación User-Training (User recibe entrenamientos)
-  UserModel.hasMany(TrainingModel, {
+  UserModel.hasOne(TrainingModel, {
     foreignKey: 'userId',
     sourceKey: 'accountId',
-    as: 'assignedTrainings'
+    as: 'assignedTraining'
   });
 
   TrainingModel.belongsTo(UserModel, {
@@ -70,12 +71,14 @@ const setupAssociations = () => {
 
   // Relación Training-TrainingDay (One-to-Many)
   TrainingModel.hasMany(TrainingDayModel, {
-    foreignKey: 'trainingId',
+    foreignKey: 'userId',
+    sourceKey: 'userId',
     as: 'trainingDays'
   });
 
   TrainingDayModel.belongsTo(TrainingModel, {
-    foreignKey: 'trainingId',
+    foreignKey: 'userId',
+    targetKey: 'userId',
     as: 'training'
   });
 
@@ -162,7 +165,37 @@ const setupAssociations = () => {
     as: 'assistanceList'
   });
 
- 
+   UserModel.hasMany(ProgressUserModel, {
+    foreignKey: 'userId',
+    sourceKey: 'accountId',
+    as: 'progress'
+  }
+  );
+  ProgressUserModel.belongsTo(UserModel, {
+    foreignKey: 'userId',
+    targetKey: 'accountId',
+    as: 'user'
+  });
+  AttendanceModel.belongsTo(UserModel, {
+    foreignKey: 'userid',
+    targetKey: 'accountId',
+    as: 'user'
+  });
+  AttendanceModel.belongsTo(ClassModel, {
+    foreignKey: 'classId',
+    targetKey: 'id',
+    as: 'class'
+  });
+  UserModel.hasMany(AttendanceModel, {
+    foreignKey: 'userid',
+    sourceKey: 'accountId',
+    as: 'attendances'
+  });
+  ClassModel.hasMany(AttendanceModel, {
+    foreignKey: 'classId',
+    sourceKey: 'id',
+    as: 'attendances'
+  });
 
   console.log('Associations set up successfully');
 };
