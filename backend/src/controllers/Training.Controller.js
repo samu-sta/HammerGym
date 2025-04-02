@@ -72,63 +72,52 @@ export default class TrainingController {
         });
       }
 
-      // Get the actual userId from the found account
       const userId = account.user.accountId;
 
-      // Set trainer ID from authenticated account if not provided
       if (!trainingData.trainerId) {
         trainingData.trainerId = req.account.id;
       }
 
-      // Check if training exists for this user already
       const existingTraining = await TrainingModel.findByPk(userId);
 
-      // If it exists, delete associated training days
       if (existingTraining) {
         const trainingDays = await TrainingDayModel.findAll({
           where: { userId: userId }
         });
 
-        // Delete series for each training day
         for (const day of trainingDays) {
           await SerieModel.destroy({
             where: { idTrainingDay: day.id }
           });
         }
 
-        // Delete training days
         await TrainingDayModel.destroy({
           where: { userId: userId }
         });
       }
 
-      // Create or update the training record
       await TrainingModel.upsert({
         userId: userId,
         trainerId: trainingData.trainerId
       });
 
-      // Process each training day
       const days = Object.keys(trainingData.days);
 
       for (const day of days) {
-        // Create a training day record
         const trainingDay = await TrainingDayModel.create({
           day,
           userId: userId
         });
 
-        // Process exercises for this day
         const exercises = trainingData.days[day].exercises;
 
         for (const exercise of exercises) {
-          // Process series for this exercise
           for (const serie of exercise.series) {
             await SerieModel.create({
               idTrainingDay: trainingDay.id,
               idExercise: exercise.id,
               reps: serie.reps,
-              weigth: serie.weight // Map 'weight' to 'weigth' to match model field name
+              weigth: serie.weight
             });
           }
         }
@@ -147,7 +136,6 @@ export default class TrainingController {
     } catch (error) {
       console.error('Error creating training plan:', error);
 
-      // Handle specific error types
       if (error.name === 'SequelizeForeignKeyConstraintError') {
         return res.status(400).json({
           success: false,

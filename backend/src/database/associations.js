@@ -138,7 +138,7 @@ const setupAssociations = () => {
     sourceKey: 'accountId',
     otherKey: 'classId'
   });
-  
+
   ClassModel.belongsToMany(UserModel, {
     through: AttendanceModel,
     foreignKey: 'classId',
@@ -146,11 +146,11 @@ const setupAssociations = () => {
     targetKey: 'accountId'
   });
 
-  assistanceListModel.belongsTo(ClassModel, {
+  assitanceListModel.belongsTo(ClassModel, {
     foreignKey: 'classId',
     as: 'class'
   });
-  ClassModel.hasMany(assistanceListModel, {
+  ClassModel.hasMany(assitanceListModel, {
     foreignKey: 'classId',
     as: 'assistanceList'
   });
@@ -159,13 +159,13 @@ const setupAssociations = () => {
     foreignKey: 'userId',
     as: 'user'
   });
-  
+
   UserModel.hasMany(assitanceListModel, {
     foreignKey: 'userId',
     as: 'assistanceList'
   });
 
-   UserModel.hasMany(ProgressUserModel, {
+  UserModel.hasMany(ProgressUserModel, {
     foreignKey: 'userId',
     sourceKey: 'accountId',
     as: 'progress'
@@ -177,7 +177,7 @@ const setupAssociations = () => {
     as: 'user'
   });
   AttendanceModel.belongsTo(UserModel, {
-    foreignKey: 'userid',
+    foreignKey: 'userId',
     targetKey: 'accountId',
     as: 'user'
   });
@@ -187,7 +187,7 @@ const setupAssociations = () => {
     as: 'class'
   });
   UserModel.hasMany(AttendanceModel, {
-    foreignKey: 'userid',
+    foreignKey: 'userId',
     sourceKey: 'accountId',
     as: 'attendances'
   });

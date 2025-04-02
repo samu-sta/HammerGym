@@ -16,16 +16,16 @@ const ScheduleModel = sequelize.define('Schedule', {
         allowNull: false
     },
     start: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.TIME,
         allowNull: false
     },
     end: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.TIME,
         allowNull: false
     }
 }, {
-  tableName: 'Schedule',
-  timestamps: false
+    tableName: 'Schedule',
+    timestamps: false
 });
 
 export default ScheduleModel;

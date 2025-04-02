@@ -94,6 +94,7 @@ export default class UserController {
       }).json({ success: true, account: userData });
     }
     catch (error) {
+      console.error('Error during login:', error);
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   }
