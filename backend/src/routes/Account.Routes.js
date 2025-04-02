@@ -1,18 +1,17 @@
 import { Router } from 'express';
 import AccountController from '../controllers/Account.Controller.js';
 import { authAccount } from '../middleware/auth.js';
+import { authTrainer } from '../middleware/auth.js';
 
 export const AccountRoutes = () => {
-  const userRouter = Router();
+  const accountRouter = Router();
   const accountController = new AccountController();
 
-  userRouter.post('/register', accountController.register);
-  userRouter.post('/login', accountController.login);
-  userRouter.post('/logout', accountController.logout);
-  userRouter.get('/profile', authAccount, accountController.getUser);
-  userRouter.put('/profile', authAccount, accountController.updateUser);
+  accountRouter.post('/register', accountController.register);
+  accountRouter.post('/login', accountController.login);
+  accountRouter.post('/logout', accountController.logout);
+  accountRouter.get('/profile', authAccount, accountController.getUser);
+  accountRouter.put('/profile', authAccount, accountController.updateUser);
 
-
-
-  return userRouter;
+  return accountRouter;
 }

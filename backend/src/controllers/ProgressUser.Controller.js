@@ -67,5 +67,22 @@ export default class UserProgressController {
       return res.status(500).json({ success: false, message: error.message });
     }
   }
+
+  getProgressByUserId = async (req, res) => {
+    try {
+      const { userId } = req.params;
+
+      const progress = await UserProgressModel.findAll({
+        where: {
+          userId: userId
+        }
+      });
+
+      return res.status(200).json({ success: true, data: progress });
+    }
+    catch (error) {
+      return res.status(500).json({ success: false, message: error.message });
+    }
+  }
 }
 
