@@ -14,6 +14,10 @@ import ScheduleModel from '../models/schedule.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 import argon2 from 'argon2';
+import AttendanceModel from '../models/Attendance.js';
+import setupAssociations from './associations.js';
+import assitanceListModel from '../models/assistanceList.js';
+
 
 dotenv.config();
 
@@ -32,6 +36,16 @@ const initDatabase = async () => {
     await tempSequelize.query(`CREATE DATABASE ${process.env.DB_NAME}`);
     await tempSequelize.close();
 
+    console.log("Database created successfully!");
+
+    await sequelize.query('SET FOREIGN_KEY_CHECKS = 0');
+
+    setupAssociations();
+
+    await sequelize.sync({ force: true });
+
+    await sequelize.query('SET FOREIGN_KEY_CHECKS = 1');
+    
     await AccountModel.sync({ force: true });
     await GymModel.sync({ force: true });
     await ExerciseModel.sync({ force: true });
@@ -46,6 +60,10 @@ const initDatabase = async () => {
     await TrainingDayModel.sync({ force: true });
 
     await SerieModel.sync({ force: true });
+    await ClassModel.sync({ force: true });
+    await ScheduleModel.sync({ force: true });
+    await AttendanceModel.sync({ force: true });
+    await assitanceListModel.sync({ force: true });
 
     await sequelize.sync({ force: true });
 
@@ -162,13 +180,14 @@ const initDatabase = async () => {
       }
     }
 
-    await ScheduleModel.create({
-      startDate: new Date(),
-      start: 10,
-      end: 12
+    const schedule = await ScheduleModel.create({
+      startDate: '2023-10-01',
+      endDate: '2023-12-31',
+      start: '09:00:00', 
+      end: '18:00:00'    
     });
-
-    await ClassModel.create({
+    
+    const classInstance = await ClassModel.create({
       name: 'Yoga Avanzado',
       description: 'Clase de yoga para niveles avanzados.',
       maxCapacity: 20,
@@ -176,9 +195,22 @@ const initDatabase = async () => {
       schedule: 'Lunes 10:00 AM - 12:00 PM',
       difficulty: 'medium',
       trainerId: trainer.id,
-      scheduleid: 1
-    }
-    );
+      scheduleid: schedule.id
+    });
+    
+    await AttendanceModel.create({
+      userId: account.id, // Usar account.id en lugar de user.id
+      classId: classInstance.id,
+      attendanceDate: new Date()
+    });
+
+    await assitanceListModel.create({
+      userId: user.id,
+      classId: classInstance.id,
+      attendanceDate: new Date()
+    });
+
+
     console.log('Database, tables, and sample data created successfully!');
     console.log('Created training plan ID:', training.id);
     console.log('Login credentials:');

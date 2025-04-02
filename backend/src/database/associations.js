@@ -8,7 +8,9 @@ import TrainingModel from '../models/Training.js';
 import TrainingDayModel from '../models/TrainingDay.js';
 import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
-
+import AttendanceModel from '../models/Attendance.js';
+import ClassModel from '../models/Class.js';
+import assitanceListModel from '../models/assistanceList.js';
 
 const setupAssociations = () => {
 
@@ -126,6 +128,41 @@ const setupAssociations = () => {
     targetKey: 'accountId',
     as: 'user'
   });
+
+  UserModel.belongsToMany(ClassModel, {
+    through: AttendanceModel,
+    foreignKey: 'userId',
+    sourceKey: 'accountId',
+    otherKey: 'classId'
+  });
+  
+  ClassModel.belongsToMany(UserModel, {
+    through: AttendanceModel,
+    foreignKey: 'classId',
+    otherKey: 'userId',
+    targetKey: 'accountId'
+  });
+
+  assistanceListModel.belongsTo(ClassModel, {
+    foreignKey: 'classId',
+    as: 'class'
+  });
+  ClassModel.hasMany(assistanceListModel, {
+    foreignKey: 'classId',
+    as: 'assistanceList'
+  });
+
+  assitanceListModel.belongsTo(UserModel, {
+    foreignKey: 'userId',
+    as: 'user'
+  });
+  
+  UserModel.hasMany(assitanceListModel, {
+    foreignKey: 'userId',
+    as: 'assistanceList'
+  });
+
+ 
 
   console.log('Associations set up successfully');
 };
