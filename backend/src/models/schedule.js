@@ -1,5 +1,5 @@
-import { DataTypes } from "sequelize"
-import sequelize from "../database/database.js"
+import { DataTypes } from "sequelize";
+import sequelize from "../database/database.js";
 
 const ScheduleModel = sequelize.define('Schedule', {
     id: {
@@ -24,8 +24,8 @@ const ScheduleModel = sequelize.define('Schedule', {
         allowNull: false
     }
 }, {
-    tableName: 'Schedule',
-    timestamps: false
+  tableName: 'Schedule',
+  timestamps: false
 });
 
 export default ScheduleModel;

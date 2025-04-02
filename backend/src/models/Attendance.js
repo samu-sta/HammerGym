@@ -2,27 +2,28 @@ import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
 const AttendanceModel = sequelize.define('Attendance', {
-  userid: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    references: {
-      model: 'User',
-      key: 'accountId'
-    }
-  },
-  date: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW
-  },
+  
   classId: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     allowNull: false,
     references: {
-      model: 'Class',
-      key: 'id'
+        model: 'Class',
+        key: 'id'
     }
+  },
+  userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+          model: 'User',
+          key: 'id'
+      }
+  },
+  attendanceDate: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW
   }
 }, {
   tableName: 'Attendance',

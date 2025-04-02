@@ -8,9 +8,10 @@ import TrainingModel from '../models/Training.js';
 import TrainingDayModel from '../models/TrainingDay.js';
 import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
-import ProgressUserModel from '../models/UserProgress.js';
 import AttendanceModel from '../models/Attendance.js';
 import ClassModel from '../models/Class.js';
+import assitanceListModel from '../models/assistanceList.js';
+import ProgressUserModel from '../models/UserProgress.js';
 
 const setupAssociations = () => {
 
@@ -131,8 +132,40 @@ const setupAssociations = () => {
     as: 'user'
   });
 
-  // Relación User-ProgressUser (One-to-Many)
-  UserModel.hasMany(ProgressUserModel, {
+  UserModel.belongsToMany(ClassModel, {
+    through: AttendanceModel,
+    foreignKey: 'userId',
+    sourceKey: 'accountId',
+    otherKey: 'classId'
+  });
+  
+  ClassModel.belongsToMany(UserModel, {
+    through: AttendanceModel,
+    foreignKey: 'classId',
+    otherKey: 'userId',
+    targetKey: 'accountId'
+  });
+
+  assistanceListModel.belongsTo(ClassModel, {
+    foreignKey: 'classId',
+    as: 'class'
+  });
+  ClassModel.hasMany(assistanceListModel, {
+    foreignKey: 'classId',
+    as: 'assistanceList'
+  });
+
+  assitanceListModel.belongsTo(UserModel, {
+    foreignKey: 'userId',
+    as: 'user'
+  });
+  
+  UserModel.hasMany(assitanceListModel, {
+    foreignKey: 'userId',
+    as: 'assistanceList'
+  });
+
+   UserModel.hasMany(ProgressUserModel, {
     foreignKey: 'userId',
     sourceKey: 'accountId',
     as: 'progress'
@@ -163,8 +196,6 @@ const setupAssociations = () => {
     sourceKey: 'id',
     as: 'attendances'
   });
-
-
 
   console.log('Associations set up successfully');
 };
