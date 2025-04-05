@@ -30,18 +30,11 @@ const ClassModel = sequelize.define('Class', {
             model: 'Trainer',
             key: 'id'
         }
-    },
-    scheduleid: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Schedule',
-            key: 'id'
-        }
     }
 }, {
     tableName: 'Class',
-    timestamps: false
+    timestamps: false,
+    sequelize
 });
 
 export default ClassModel;

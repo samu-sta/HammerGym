@@ -2,10 +2,14 @@ import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
 const ScheduleModel = sequelize.define('Schedule', {
-    id: {
+    classId: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        allowNull: false,
+        references: {
+            model: 'Class',
+            key: 'id'
+        }
     },
     startDate: {
         type: DataTypes.DATE,
@@ -14,18 +18,11 @@ const ScheduleModel = sequelize.define('Schedule', {
     endDate: {
         type: DataTypes.DATE,
         allowNull: false
-    },
-    start: {
-        type: DataTypes.TIME,
-        allowNull: false
-    },
-    end: {
-        type: DataTypes.TIME,
-        allowNull: false
     }
 }, {
     tableName: 'Schedule',
-    timestamps: false
+    timestamps: false,
+    sequelize
 });
 
 export default ScheduleModel;

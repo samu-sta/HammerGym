@@ -31,6 +31,7 @@ const MachineModel = sequelize.define('Machine', {
 }, {
     tableName: 'Machine',
     timestamps: false,
+    sequelize,
     methods: {
         estimateRepairCost() {
             if (this.status === 'broken') {

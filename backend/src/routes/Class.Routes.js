@@ -9,7 +9,8 @@ export const ClassRoutes = () => {
   classRouter.use(authAccount);
 
   classRouter.get("/", classController.getAllClasses);
-  classRouter.post("/:id/enroll", classController.enrollInClass);
+  classRouter.post("/enroll", classController.enrollInClass);
+  classRouter.post("/unenroll", classController.unenrollFromClass);
 
   return classRouter;
 };

@@ -20,7 +20,8 @@ const ExerciseModel = sequelize.define('Exercise', {
     }
 }, {
     tableName: 'Exercise',
-    timestamps: false
+    timestamps: false,
+    sequelize
 });
 
 export default ExerciseModel;

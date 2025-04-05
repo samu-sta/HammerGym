@@ -17,6 +17,13 @@ const INVALID_CREDENTIALS = "Invalid credentials";
 const PROGRESS_ALREADY_EXISTS = "Progress already exists";
 const PROGRESS_CREATED = "Progress created successfully";
 const PROGRESS_UPDATED = "Progress updated successfully";
+const CLASS_NOT_FOUND = "Clase no encontrada";
+const CLASS_FULL = "La clase está llena";
+const ALREADY_ENROLLED = "Ya estás inscrito en esta clase";
+const ENROLLMENT_SUCCESS = "Inscripción exitosa";
+const NO_PERMISSION_CREATE_CLASS = "No tienes permisos para crear clases";
+const CLASS_CREATED = "Clase creada exitosamente";
+const NOT_ENROLLED = "No estás inscrito en esta clase";
 
 const MESSAGES = {
   USER_NOT_FOUND,
@@ -38,6 +45,13 @@ const MESSAGES = {
   PROGRESS_ALREADY_EXISTS,
   PROGRESS_CREATED,
   PROGRESS_UPDATED,
+  CLASS_NOT_FOUND,
+  CLASS_FULL,
+  ALREADY_ENROLLED,
+  ENROLLMENT_SUCCESS,
+  NO_PERMISSION_CREATE_CLASS,
+  CLASS_CREATED,
+  NOT_ENROLLED
 };
 
 export default MESSAGES;

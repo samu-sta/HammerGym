@@ -10,13 +10,14 @@ import TrainingDayModel from '../models/TrainingDay.js';
 import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
 import ClassModel from '../models/Class.js';
-import ScheduleModel from '../models/schedule.js';
+import ScheduleModel from '../models/Schedule.js';
 import ProgressUserModel from '../models/UserProgress.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 import argon2 from 'argon2';
 import AttendanceModel from '../models/Attendance.js';
-import assitanceListModel from '../models/assistanceList.js';
+import setupAssociations from './associations.js';
+import ScheduleDayModel from '../models/ScheduleDay.js';
 
 dotenv.config();
 
@@ -37,29 +38,7 @@ const initDatabase = async () => {
 
     console.log("Database created successfully!");
 
-
-
-    await AccountModel.sync({ force: true });
-    await GymModel.sync({ force: true });
-    await ExerciseModel.sync({ force: true });
-
-    await UserModel.sync({ force: true });
-    await TrainerModel.sync({ force: true });
-    await AdminModel.sync({ force: true });
-
-    await TrainingModel.sync({ force: true });
-    await UserActivityModel.sync({ force: true });
-
-    await TrainingDayModel.sync({ force: true });
-
-    await ProgressUserModel.sync({ force: true });
-
-    await SerieModel.sync({ force: true });
-    await ScheduleModel.sync({ force: true });
-    await ClassModel.sync({ force: true });
-    await AttendanceModel.sync({ force: true });
-    await assitanceListModel.sync({ force: true });
-
+    setupAssociations();
     await sequelize.sync({ force: true });
 
     // Crear un gimnasio
@@ -155,7 +134,7 @@ const initDatabase = async () => {
     for (const dayInfo of trainingDays) {
       const trainingDay = await TrainingDayModel.create({
         day: dayInfo.day,
-        userId: user.accountId  // Reference userId instead of trainingId
+        userId: user.accountId
       });
 
       for (const exerciseIndex of dayInfo.exercises) {
@@ -172,12 +151,7 @@ const initDatabase = async () => {
       }
     }
 
-    const schedule = await ScheduleModel.create({
-      startDate: '2023-10-01',
-      endDate: '2023-12-31',
-      start: '09:00:00',
-      end: '18:00:00'
-    });
+
 
     const classInstance = await ClassModel.create({
       name: 'Yoga Avanzado',
@@ -186,17 +160,30 @@ const initDatabase = async () => {
       currentCapacity: 0,
       schedule: 'Lunes 10:00 AM - 12:00 PM',
       difficulty: 'medium',
-      trainerId: trainer.id,
-      scheduleid: schedule.id
+      trainerId: trainer.id
+    });
+
+    const schedule = await ScheduleModel.create({
+      classId: classInstance.id,
+      startDate: '2023-10-01',
+      endDate: '2023-12-31'
+    });
+
+    await ScheduleDayModel.create({
+      scheduleId: classInstance.id,
+      day: 'Monday',
+      startHour: '09:00:00',
+      endHour: '18:00:00'
+    });
+
+    await ScheduleDayModel.create({
+      scheduleId: classInstance.id,
+      day: 'Wednesday',
+      startHour: '09:00:00',
+      endHour: '18:00:00'
     });
 
     await AttendanceModel.create({
-      userId: user.accountId,
-      classId: classInstance.id,
-      attendanceDate: new Date()
-    });
-
-    await assitanceListModel.create({
       userId: user.accountId,
       classId: classInstance.id,
       attendanceDate: new Date()

@@ -29,7 +29,8 @@ const ContractModel = sequelize.define('Contract', {
   }
 }, {
   tableName: 'Contract',
-  timestamps: true
+  timestamps: true,
+  sequelize
 });
 
 export default ContractModel;

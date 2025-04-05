@@ -12,7 +12,8 @@ const TrainerModel = sequelize.define('Trainer', {
   }
 }, {
   tableName: 'Trainer',
-  timestamps: true
+  timestamps: true,
+  sequelize
 });
 
 export default TrainerModel;

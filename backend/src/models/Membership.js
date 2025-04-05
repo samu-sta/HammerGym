@@ -17,7 +17,8 @@ const MembershipModel = sequelize.define('Membership', {
     }
 }, {
     tableName: 'Membership',
-    timestamps: false
+    timestamps: false,
+    sequelize
 });
 
 export default MembershipModel;

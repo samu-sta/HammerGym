@@ -10,12 +10,11 @@ import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
 import AttendanceModel from '../models/Attendance.js';
 import ClassModel from '../models/Class.js';
-import assitanceListModel from '../models/assistanceList.js';
 import ProgressUserModel from '../models/UserProgress.js';
+import ScheduleModel from '../models/Schedule.js';
+import ScheduleDayModel from '../models/ScheduleDay.js';
 
 const setupAssociations = () => {
-
-  /* Account Associations */
 
   // Account - User (One-to-One)
   AccountModel.hasOne(UserModel, {
@@ -133,68 +132,91 @@ const setupAssociations = () => {
   });
 
   UserModel.belongsToMany(ClassModel, {
-    through: AttendanceModel,
+    through: 'SignedUpIn',
     foreignKey: 'userId',
-    sourceKey: 'accountId',
-    otherKey: 'classId'
+    otherKey: 'classId',
+    as: 'registeredClasses'
   });
 
   ClassModel.belongsToMany(UserModel, {
-    through: AttendanceModel,
+    through: 'SignedUpIn',
     foreignKey: 'classId',
     otherKey: 'userId',
-    targetKey: 'accountId'
+    as: 'registeredUsers'
   });
 
-  assitanceListModel.belongsTo(ClassModel, {
-    foreignKey: 'classId',
-    as: 'class'
-  });
-  ClassModel.hasMany(assitanceListModel, {
-    foreignKey: 'classId',
-    as: 'assistanceList'
-  });
-
-  assitanceListModel.belongsTo(UserModel, {
-    foreignKey: 'userId',
-    as: 'user'
-  });
-
-  UserModel.hasMany(assitanceListModel, {
-    foreignKey: 'userId',
-    as: 'assistanceList'
-  });
 
   UserModel.hasMany(ProgressUserModel, {
     foreignKey: 'userId',
     sourceKey: 'accountId',
     as: 'progress'
-  }
-  );
+  });
+
   ProgressUserModel.belongsTo(UserModel, {
     foreignKey: 'userId',
     targetKey: 'accountId',
     as: 'user'
   });
-  AttendanceModel.belongsTo(UserModel, {
-    foreignKey: 'userId',
-    targetKey: 'accountId',
-    as: 'user'
-  });
-  AttendanceModel.belongsTo(ClassModel, {
-    foreignKey: 'classId',
-    targetKey: 'id',
-    as: 'class'
-  });
+
   UserModel.hasMany(AttendanceModel, {
     foreignKey: 'userId',
     sourceKey: 'accountId',
     as: 'attendances'
   });
+
+  AttendanceModel.belongsTo(UserModel, {
+    foreignKey: 'userId',
+    targetKey: 'accountId',
+    as: 'user'
+  });
+
   ClassModel.hasMany(AttendanceModel, {
     foreignKey: 'classId',
     sourceKey: 'id',
     as: 'attendances'
+  });
+
+  AttendanceModel.belongsTo(ClassModel, {
+    foreignKey: 'classId',
+    targetKey: 'id',
+    as: 'class'
+  });
+
+  // Relación Schedule-Class (One-to-Many)
+  ClassModel.hasOne(ScheduleModel, {
+    foreignKey: 'classId',
+    sourceKey: 'id',
+    as: 'schedule'
+  });
+
+  ScheduleModel.belongsTo(ClassModel, {
+    foreignKey: 'classId',
+    targetKey: 'id',
+    as: 'class'
+  });
+
+  // Relación Schedule-ScheduleDay 
+  ScheduleModel.hasMany(ScheduleDayModel, {
+    foreignKey: 'scheduleId',
+    sourceKey: 'classId',
+    as: 'scheduleDays'
+  });
+
+  ScheduleDayModel.belongsTo(ScheduleModel, {
+    foreignKey: 'scheduleId',
+    targetKey: 'classId',
+    as: 'schedule'
+  });
+
+  TrainerModel.hasMany(ClassModel, {
+    foreignKey: 'trainerId',
+    sourceKey: 'id',
+    as: 'classes'
+  });
+  ClassModel.belongsTo(TrainerModel, {
+    foreignKey: 'trainerId',
+    targetKey: 'id',
+    as: 'trainer'
   });
 
   console.log('Associations set up successfully');

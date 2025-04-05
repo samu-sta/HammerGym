@@ -31,7 +31,8 @@ const SerieModel = sequelize.define('Serie', {
     }
 }, {
     tableName: 'Serie',
-    timestamps: false
+    timestamps: false,
+    sequelize
 });
 
 export default SerieModel;

@@ -1,6 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
+import setupAssociations from '../database/associations.js';
+setupAssociations();
 import { AccountRoutes } from '../routes/Account.Routes.js';
 import { UserActivityRoutes } from '../routes/UserActivity.Routes.js';
 import { TrainingRoutes } from '../routes/Training.Routes.js';
@@ -8,7 +10,6 @@ import { ProgressUserRoutes } from '../routes/ProgressUser.Routes.js';
 import { ClassRoutes } from "../routes/Class.Routes.js";
 import { ExercisesRoutes } from '../routes/Exercises.Routes.js';
 import { TrainerRoutes } from '../routes/Trainer.Routes.js';
-import setupAssociations from '../database/associations.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 const DEFAULT_PORT = 3000;
@@ -18,7 +19,6 @@ const PORT = process.env.PORT || DEFAULT_PORT;
 
 
 export const createApp = () => {
-  setupAssociations();
   const app = express();
   app.use(morgan('dev'));
   app.use(express.json());

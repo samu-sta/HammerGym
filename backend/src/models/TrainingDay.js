@@ -21,7 +21,8 @@ const TrainingDayModel = sequelize.define('TrainingDay', {
   }
 }, {
   tableName: 'TrainingDay',
-  timestamps: true
+  timestamps: true,
+  sequelize
 });
 
 export default TrainingDayModel;

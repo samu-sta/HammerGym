@@ -21,7 +21,8 @@ const TrainingModel = sequelize.define('Training', {
   }
 }, {
   tableName: 'Training',
-  timestamps: true
+  timestamps: true,
+  sequelize
 });
 
 export default TrainingModel;

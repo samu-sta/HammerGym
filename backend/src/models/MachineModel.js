@@ -17,7 +17,9 @@ const MachineModelModel = sequelize.define('MachineModel', {
     }
 }, {
     tableName: 'MachineModel',
-    timestamps: false
+    timestamps: false,
+    sequelize
+
 });
 
 export default MachineModelModel;

@@ -27,7 +27,8 @@ const AttendanceModel = sequelize.define('Attendance', {
   }
 }, {
   tableName: 'Attendance',
-  timestamps: true
+  timestamps: true,
+  sequelize
 });
 
 export default AttendanceModel;
