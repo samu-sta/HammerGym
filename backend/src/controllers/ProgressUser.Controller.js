@@ -2,6 +2,8 @@ import UserProgressModel from "../models/UserProgress.js";
 import { validateCreateProgressUser } from "../schemas/ProgressUserSchema.js";
 import { Op } from "sequelize";
 import MESSAGES from "../messages/messages.js";
+import AccountModel from "../models/Account.js";
+import UserModel from "../models/User.js";
 export default class UserProgressController {
 
 
@@ -70,13 +72,28 @@ export default class UserProgressController {
 
   getProgressByUserId = async (req, res) => {
     try {
-      const { userId } = req.params;
+      const { userEmail } = req.params;
 
       const progress = await UserProgressModel.findAll({
-        where: {
-          userId: userId
-        }
+        attributes: ['date', 'howWasIt', 'observations'],
+        include: [{
+          model: UserModel,
+          as: 'user',
+          attributes: [],
+          include: [{
+            model: AccountModel,
+            as: 'account',
+            attributes: ['username'],
+            where: {
+              email: userEmail
+            }
+          }]
+        }]
       });
+
+      if (!progress || progress.length === 0) {
+        return res.status(404).json({ success: false, message: MESSAGES.USER_NOT_FOUND });
+      }
 
       return res.status(200).json({ success: true, data: progress });
     }

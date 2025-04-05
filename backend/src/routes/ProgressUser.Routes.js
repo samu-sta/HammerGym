@@ -10,7 +10,7 @@ export const ProgressUserRoutes = () => {
 
   progressUserRouter.post("/", authUser, progressUserController.createProgress);
   progressUserRouter.get("/", authAccount, progressUserController.getProgress);
-  progressUserRouter.get("/:userId", authTrainer, progressUserController.getProgressByUserId);
+  progressUserRouter.get("/:userEmail", authTrainer, progressUserController.getProgressByUserId);
 
   return progressUserRouter;
 };
