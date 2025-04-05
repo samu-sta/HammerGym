@@ -1,11 +1,11 @@
 import React from 'react';
 import ExerciseItem from './ExerciseItem';
 import '../styles/TrainingDay.css';
+import { translateDay } from '../../../../config/constants';
 
 const TrainingDay = ({
   day,
   exercises,
-  series,
   muscleGroups,
   onRemoveDay,
   onAddExercise,
@@ -21,22 +21,22 @@ const TrainingDay = ({
       <input type="hidden" name={`days_${day}`} value={day} />
 
       <header className="day-header">
-        <h3 className="day-title">{day.charAt(0).toUpperCase() + day.slice(1)}</h3>
+        <h3 className="day-title">{translateDay(day)}</h3>
         <button
           type="button"
           className="remove-button"
           onClick={onRemoveDay}
         >
-          Remove Day
+          Eliminar Día
         </button>
       </header>
 
-      {exercises.map((_, exerciseIndex) => (
+      {exercises.map((exercise, exerciseIndex) => (
         <ExerciseItem
           key={exerciseIndex}
           day={day}
           exerciseIndex={exerciseIndex}
-          series={series[exerciseIndex] || []}
+          exercise={exercise}
           muscleGroups={muscleGroups}
           onRemoveExercise={() => onRemoveExercise(exerciseIndex)}
           onAddSeries={() => onAddSeries(exerciseIndex)}
@@ -53,7 +53,7 @@ const TrainingDay = ({
           className="add-button"
           onClick={onAddExercise}
         >
-          Add Exercise
+          Añadir Ejercicio
         </button>
       </footer>
     </article>

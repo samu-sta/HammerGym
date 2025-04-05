@@ -8,6 +8,7 @@ export const TrainingRoutes = () => {
 
 
   trainingRouter.get('/', authUser, trainingController.getUserAsignedTraining);
+  trainingRouter.get('/:userEmail', authTrainer, trainingController.getTrainingByUserEmail);
   trainingRouter.post('/', authTrainer, trainingController.createUserTraining);
 
   return trainingRouter;

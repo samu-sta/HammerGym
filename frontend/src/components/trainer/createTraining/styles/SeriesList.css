@@ -1,8 +1,8 @@
 .series-container {
-  margin-top: 1.5rem;
   padding: 1rem;
   background-color: rgba(30, 30, 30, 0.6);
   border-radius: 6px;
+  width: 100%;
 }
 
 .series-title {
@@ -18,7 +18,7 @@
 }
 
 .series-header th {
-  text-align: left;
+  text-align: center;
   padding: 10px;
   border-bottom: 2px solid rgba(153, 136, 0, 0.3);
   color: #f8f9fa;

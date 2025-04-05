@@ -10,7 +10,7 @@ const DaySelector = ({ days, selectedDays, onToggleDay }) => {
             key={day}
             type="button"
             onClick={() => onToggleDay(day)}
-            className={`day-button ${selectedDays.includes(day) ? 'selected' : ''}`}
+            className={`button day-button ${selectedDays.includes(day) ? 'selected' : ''}`}
           >
             {day.charAt(0).toUpperCase() + day.slice(1)}
           </button>

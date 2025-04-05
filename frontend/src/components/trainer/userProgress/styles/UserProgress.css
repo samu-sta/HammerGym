@@ -27,21 +27,23 @@
 }
 
 .back-button {
-  background-color: rgba(108, 117, 125, 0.7);
-  color: white;
+  background-color: inherit;
+  color: #09f;
   border: none;
   padding: 0.75rem 1.25rem;
   border-radius: 6px;
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  transition: color 0.2s;
 }
 
 .back-button:hover {
-  background-color: rgba(108, 117, 125, 0.9);
+  color: rgb(3, 91, 149);
 }
 
 .progress-content {

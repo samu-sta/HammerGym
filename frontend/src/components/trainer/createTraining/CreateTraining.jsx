@@ -41,8 +41,15 @@ const CreateTraining = () => {
 
   return (
     <main className="create-training-container">
-      <header>
-        <h2 className="page-title">Create Training Plan</h2>
+      <header className='create-training-header'>
+        <button
+          className="back-button"
+          onClick={() => navigate(-1)}
+          aria-label="Go back"
+        >
+          &larr; Volver
+        </button>
+        <h2 className="page-title">Plan Entrenamiento</h2>
       </header>
 
       <form className="training-form" onSubmit={handleSubmit}>

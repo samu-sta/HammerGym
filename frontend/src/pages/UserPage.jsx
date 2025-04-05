@@ -6,7 +6,7 @@ import ActivitiesSection from '../components/user/ActivitiesSection/ActivitiesSe
 import RoutineSection from '../components/user/RoutineSection/RoutineSection.jsx';
 
 const UserPage = () => {
-  const [activeSection, setActiveSection] = useState('profile');
+  const [activeSection, setActiveSection] = useState('routine');
 
   const sections = [
     { id: 'profile', name: 'Perfil', icon: <FaUser /> },

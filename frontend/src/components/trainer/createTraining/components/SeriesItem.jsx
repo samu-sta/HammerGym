@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdDelete } from "react-icons/md";
 import '../styles/SeriesItem.css';
 
 const SeriesItem = ({ day, exerciseIndex, seriesIndex, onRemoveSeries, canRemove }) => {
@@ -40,7 +41,7 @@ const SeriesItem = ({ day, exerciseIndex, seriesIndex, onRemoveSeries, canRemove
           onClick={onRemoveSeries}
           disabled={!canRemove}
         >
-          Remove
+          <MdDelete />
         </button>
       </td>
     </tr>

@@ -45,7 +45,7 @@ const UserProgress = () => {
   }
 
   return (
-    <div className="user-progress-container">
+    <main className="user-progress-container">
       <header className="user-progress-header">
         <ActionButton
           icon={<FaArrowLeft />}
@@ -77,7 +77,7 @@ const UserProgress = () => {
           <ProgressList progressData={progressData} />
         )}
       </main>
-    </div>
+    </main>
   );
 };
 

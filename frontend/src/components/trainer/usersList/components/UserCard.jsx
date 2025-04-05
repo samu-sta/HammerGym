@@ -24,7 +24,7 @@ const UserCard = ({ user, formatDate }) => {
             className="view-progress-button"
           />
           <ActionLink
-            to={`/trainer/user/${user.email}/training`}
+            to={`/entrenador/training/${user.email}`}
             icon={<FaDumbbell className="button-icon" />}
             text="Ver Entrenamiento"
             className="view-training-button"

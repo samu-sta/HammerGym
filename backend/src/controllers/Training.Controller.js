@@ -5,6 +5,7 @@ import TrainingDayModel from "../models/TrainingDay.js";
 import SerieModel from "../models/Serie.js";
 import AccountModel from "../models/Account.js";
 import UserModel from "../models/User.js";
+import ExerciseModel from "../models/Exercise.js";
 
 export default class TrainingController {
 
@@ -15,6 +16,7 @@ export default class TrainingController {
   getUserAsignedTraining = async (req, res) => {
     try {
       const { id } = req.account;
+      console.log("ID del usuario:", id);
 
       const rawTraining = await this.trainingService.fetchUserTraining(id);
 
@@ -150,6 +152,35 @@ export default class TrainingController {
         });
       }
 
+      return res.status(500).json({
+        success: false,
+        message: "Error interno del servidor"
+      });
+    }
+  }
+
+  getTrainingByUserEmail = async (req, res) => {
+    try {
+      const { userEmail } = req.params;
+
+      const rawTraining = await this.trainingService.fetchUserTrainingByEmail(userEmail);
+
+      if (!rawTraining) {
+        return res.status(404).json({
+          success: false,
+          message: `No se encontró entrenamiento para el usuario con email: ${userEmail}`
+        });
+      }
+
+      const training = this.trainingService.formatTrainingData(rawTraining);
+
+      return res.status(200).json({
+        success: true,
+        training
+      });
+
+    } catch (error) {
+      console.error('Error fetching training by user email:', error);
       return res.status(500).json({
         success: false,
         message: "Error interno del servidor"

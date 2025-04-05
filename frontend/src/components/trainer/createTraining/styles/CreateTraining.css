@@ -1,5 +1,25 @@
 /* Common form elements */
-.training-form{
+.create-training-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.training-days{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.create-training-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.training-form {
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -7,6 +27,8 @@
   padding: 30px;
   background-color: rgba(25, 25, 25, 0.6);
   border-radius: 8px;
+  width: 100%;
+  max-width: 900px;
 }
 
 .form-group {
@@ -24,7 +46,9 @@
   color: #ddd;
 }
 
-.form-input, .form-textarea, .form-select {
+.form-input,
+.form-textarea,
+.form-select {
   width: 100%;
   padding: 0.75rem;
   background-color: rgba(40, 40, 40, 0.6);
@@ -33,26 +57,32 @@
   color: #fff;
 }
 
-.form-input:focus, .form-textarea:focus, .form-select:focus {
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
   outline: none;
   border-color: #998000;
   box-shadow: 0 0 0 2px rgba(153, 128, 0, 0.2);
 }
 
 /* Common button styles */
-.day-button, .remove-button, .add-button, .submit-button {
+.remove-button,
+.add-button,
+.submit-button {
   padding: 0.75rem 1rem;
   background-color: rgba(153, 128, 0, 0.7);
   color: white;
   border: none;
   border-radius: 5px;
+  font-weight: 500;
   cursor: pointer;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
   transition: all 0.2s;
 }
 
-.day-button:hover, .remove-button:hover, .add-button:hover, .submit-button:hover {
+.day-button:hover,
+.remove-button:hover,
+.add-button:hover,
+.submit-button:hover {
   background-color: rgba(153, 128, 0, 0.9);
 }
 
@@ -73,7 +103,11 @@
 }
 
 /* Common title styles */
-.page-title, .section-title, .day-title, .exercise-title, .series-title {
+.page-title,
+.section-title,
+.day-title,
+.exercise-title,
+.series-title {
   margin-top: 20px;
   margin-bottom: 15px;
   color: #fff;
@@ -100,34 +134,16 @@
   color: #e0a0a0;
 }
 
-.day-selection {
-  margin: 2rem 0;
-}
-
-.day-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.day-button {
-  background-color: rgba(60, 60, 60, 0.6);
-  color: #ddd;
-}
-
-.day-button.selected {
-  background-color: rgba(153, 128, 0, 0.7);
-  color: white;
-}
 
 @media (max-width: 768px) {
-  .day-buttons {
-    justify-content: space-between;
+  .create-training-header {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .day-button {
-    flex: 0 0 48%;
-    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .training-form  {
+    padding: 0;
   }
 }

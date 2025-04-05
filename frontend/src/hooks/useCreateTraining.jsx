@@ -1,12 +1,60 @@
 import { useState, useEffect } from 'react';
 import { getAllExercises } from '../services/ExerciseService';
-import { createUserTraining } from '../services/TrainingService';
+import { createUserTraining, getTrainingByUserEmail } from '../services/TrainingService';
+import { useParams } from 'react-router-dom';
 
 const useTrainingForm = () => {
   const [training, setTraining] = useState({
-    userEmail: '',  // Changed from userId
+    userEmail: '',
     days: {}
   });
+
+  const { userEmail } = useParams();
+
+  useEffect(() => {
+    const fetchUserTraining = async () => {
+      try {
+        const response = await getTrainingByUserEmail(userEmail);
+        if (!response.success) {
+          throw new Error(response.message || 'Failed to fetch training data');
+        }
+        const trainingData = response.training;
+        const formattedTraining = {
+          userEmail: userEmail,
+          days: {}
+        };
+
+        Object.entries(trainingData.days).forEach(([dayName, dayData]) => {
+          formattedTraining.days[dayName] = {
+            exercises: dayData.exercises.map(exercise => ({
+              id: exercise.id,
+              name: exercise.name,
+              muscleGroup: exercise.muscles,
+              description: exercise.description,
+              series: exercise.series.map(serie => ({
+                reps: serie.reps,
+                weight: serie.weight
+              }))
+            }))
+          };
+        });
+        console.log('Formatted training data:', formattedTraining);
+        setTraining(formattedTraining);
+      }
+      catch (error) {
+        console.error('Error fetching training data:', error);
+        setTraining({
+          userEmail: '',
+          days: {}
+        });
+      }
+    };
+
+    if (userEmail) {
+      fetchUserTraining();
+    }
+  }, [userEmail]);
+
 
   const [allExercises, setAllExercises] = useState([]);
   const [loadingExercises, setLoadingExercises] = useState(true);
@@ -167,7 +215,8 @@ const useTrainingForm = () => {
     });
   };
 
-  const updateUserEmail = (userEmail) => {
+  const updateUserEmail = (e) => {
+    const userEmail = e.target.value;
     setTraining(prev => ({
       ...prev,
       userEmail

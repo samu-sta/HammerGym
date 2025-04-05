@@ -86,6 +86,7 @@ function App() {
               <Route path="/entrenador" element={<TrainerPage />} />
               <Route path="/entrenador/crear-plan" element={<CreateTraining />} />
               <Route path="/entrenador/:email/progress" element={<UserProgress />} />
+              <Route path="/entrenador/training/:userEmail" element={<CreateTraining />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />

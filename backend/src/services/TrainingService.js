@@ -2,6 +2,8 @@ import TrainingModel from '../models/Training.js';
 import TrainingDayModel from '../models/TrainingDay.js';
 import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
+import AccountModel from '../models/Account.js';
+import UserModel from '../models/User.js';
 
 export default class TrainingService {
 
@@ -120,5 +122,47 @@ export default class TrainingService {
     return await ExerciseModel.findAll({
       order: [['name', 'ASC']]
     });
+  }
+
+  fetchUserTrainingByEmail = async (userEmail) => {
+    // Primero buscar la cuenta por email
+    const account = await AccountModel.findOne({
+      where: { email: userEmail },
+      include: [{
+        model: UserModel,
+        as: 'user'
+      }]
+    });
+
+    if (!account || !account.user) {
+      return null;
+    }
+
+    // Obtener el userId desde la cuenta
+    const userId = account.user.accountId;
+
+    // Ahora buscar el entrenamiento por userId
+    return await TrainingModel.findOne({
+      where: { userId },
+      include: [
+        {
+          model: TrainingDayModel,
+          as: 'trainingDays',
+          include: [
+            {
+              model: SerieModel,
+              as: 'series',
+              include: [
+                {
+                  model: ExerciseModel,
+                  as: 'exercise'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    });
+
   }
 }

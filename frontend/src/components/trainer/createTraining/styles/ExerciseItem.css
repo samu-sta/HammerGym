@@ -1,6 +1,5 @@
 .exercise-container {
   border-radius: 8px;
-  padding: 16px;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease;
@@ -168,14 +167,6 @@
 }
 
 .remove-button {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s;
   font-weight: 500;
 }
 
