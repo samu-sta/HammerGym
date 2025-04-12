@@ -151,7 +151,78 @@ const initDatabase = async () => {
       }
     }
 
+    // Crear datos de progreso de usuario de ejemplo
+    // Crear registros de progreso para los últimos 30 días con diferentes niveles de dificultad
+    const today = new Date();
+    const howWasItOptions = ['easy', 'medium', 'hard'];
+    const observations = [
+      'Me sentí con energía hoy',
+      'Estaba un poco cansado pero pude completar el entrenamiento',
+      'Muy buen entrenamiento, aumenté el peso en todos los ejercicios',
+      'Hoy tuve dificultades con los ejercicios de espalda',
+      'Gran progreso en sentadillas',
+      'Me duelen los músculos del entrenamiento anterior',
+      'Excelente día, me sentí muy fuerte',
+      'Necesito mejorar mi técnica en press de banca',
+      'Buena sesión pero corta por falta de tiempo',
+      'Hoy batí mi récord personal en peso muerto'
+    ];
 
+    // Crear progreso para los últimos 30 días con datos aleatorios
+    for (let i = 0; i < 30; i++) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+
+      // Solo crear entradas para días de entrenamiento (lunes, miércoles, viernes)
+      const dayOfWeek = date.getDay();
+      if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) {
+        const randomHowWasIt = howWasItOptions[Math.floor(Math.random() * howWasItOptions.length)];
+        const randomObservation = observations[Math.floor(Math.random() * observations.length)];
+
+        await ProgressUserModel.create({
+          userId: user.accountId,
+          date: date,
+          howWasIt: randomHowWasIt,
+          observations: randomObservation
+        });
+      }
+    }
+
+    // Crear algunos días con progreso específico para probar visualización
+    await ProgressUserModel.create({
+      userId: user.accountId,
+      date: new Date('2025-04-01'),
+      howWasIt: 'easy',
+      observations: 'Primer día después de las vacaciones, volví con rutina ligera'
+    });
+
+    await ProgressUserModel.create({
+      userId: user.accountId,
+      date: new Date('2025-04-03'),
+      howWasIt: 'medium',
+      observations: 'Aumenté el peso en press de banca a 80kg'
+    });
+
+    await ProgressUserModel.create({
+      userId: user.accountId,
+      date: new Date('2025-04-05'),
+      howWasIt: 'hard',
+      observations: 'Día de piernas muy intenso, batí mi récord en sentadillas con 120kg'
+    });
+
+    await ProgressUserModel.create({
+      userId: user.accountId,
+      date: new Date('2025-04-08'),
+      howWasIt: 'medium',
+      observations: 'Buenos ejercicios de espalda, mejorando en dominadas'
+    });
+
+    await ProgressUserModel.create({
+      userId: user.accountId,
+      date: new Date('2025-04-10'),
+      howWasIt: 'hard',
+      observations: 'Entrenamiento de volumen, muchas repeticiones hoy'
+    });
 
     const classInstance = await ClassModel.create({
       name: 'Yoga Avanzado',
@@ -194,6 +265,7 @@ const initDatabase = async () => {
     console.log('Login credentials:');
     console.log('- User: user@example.com / password123');
     console.log('- Trainer: trainer@example.com / password123');
+    console.log('Added 30+ progress entries for testing progress visualization');
 
   } catch (error) {
     console.error('Error creating database:', error);

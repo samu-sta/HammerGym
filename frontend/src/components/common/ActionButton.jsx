@@ -8,7 +8,7 @@ const ActionButton = ({
 }) => {
   return (
     <button
-      className={`${className} action-button`}
+      className={`action-button ${className}`}
       onClick={onClick}
       disabled={disabled}
     >
