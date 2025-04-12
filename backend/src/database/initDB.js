@@ -260,6 +260,171 @@ const initDatabase = async () => {
       attendanceDate: new Date()
     });
 
+    // Crear varios entrenadores adicionales para las nuevas clases
+    const trainerAccounts = [];
+    for (let i = 1; i <= 3; i++) {
+      const trainerAccount = await AccountModel.create({
+        email: `trainer${i}@example.com`,
+        username: `Trainer${i}`,
+        password: hashedPassword
+      });
+
+      const newTrainer = await TrainerModel.create({
+        accountId: trainerAccount.id
+      });
+
+      trainerAccounts.push(newTrainer);
+    }
+
+    // Lista de clases para crear
+    const classesInfo = [
+      {
+        name: 'CrossFit Elite',
+        description: 'Entrenamiento funcional de alta intensidad que combina elementos de halterofilia, gimnasia y ejercicios cardiovasculares.',
+        maxCapacity: 15,
+        difficulty: 'high',
+        trainerId: trainerAccounts[0].id,
+        days: [
+          { day: 'Monday', startHour: '07:00:00', endHour: '08:30:00' },
+          { day: 'Wednesday', startHour: '07:00:00', endHour: '08:30:00' },
+          { day: 'Friday', startHour: '07:00:00', endHour: '08:30:00' }
+        ]
+      },
+      {
+        name: 'Pilates Reformer',
+        description: 'Clase de pilates usando máquinas reformer para mejorar la flexibilidad, la fuerza y la postura.',
+        maxCapacity: 10,
+        difficulty: 'medium',
+        trainerId: trainerAccounts[1].id,
+        days: [
+          { day: 'Tuesday', startHour: '10:00:00', endHour: '11:00:00' },
+          { day: 'Thursday', startHour: '10:00:00', endHour: '11:00:00' }
+        ]
+      },
+      {
+        name: 'Spinning Extreme',
+        description: 'Clase de ciclismo estacionario de alta intensidad con intervalos y simulación de terrenos.',
+        maxCapacity: 20,
+        difficulty: 'high',
+        trainerId: trainerAccounts[2].id,
+        days: [
+          { day: 'Monday', startHour: '18:00:00', endHour: '19:00:00' },
+          { day: 'Wednesday', startHour: '18:00:00', endHour: '19:00:00' },
+          { day: 'Friday', startHour: '18:00:00', endHour: '19:00:00' }
+        ]
+      },
+      {
+        name: 'Yoga para Principiantes',
+        description: 'Introducción a las posturas básicas de yoga, técnicas de respiración y meditación.',
+        maxCapacity: 25,
+        difficulty: 'low',
+        trainerId: trainer.id,
+        days: [
+          { day: 'Tuesday', startHour: '09:00:00', endHour: '10:00:00' },
+          { day: 'Thursday', startHour: '09:00:00', endHour: '10:00:00' }
+        ]
+      },
+      {
+        name: 'HIIT Quemagrasa',
+        description: 'Entrenamiento por intervalos de alta intensidad diseñado para maximizar la quema de calorías.',
+        maxCapacity: 18,
+        difficulty: 'high',
+        trainerId: trainerAccounts[0].id,
+        days: [
+          { day: 'Tuesday', startHour: '19:00:00', endHour: '20:00:00' },
+          { day: 'Thursday', startHour: '19:00:00', endHour: '20:00:00' },
+          { day: 'Saturday', startHour: '10:00:00', endHour: '11:00:00' }
+        ]
+      },
+      {
+        name: 'Zumba Fitness',
+        description: 'Rutina de baile energética que combina movimientos aeróbicos con ritmos latinoamericanos.',
+        maxCapacity: 30,
+        difficulty: 'medium',
+        trainerId: trainerAccounts[1].id,
+        days: [
+          { day: 'Monday', startHour: '20:00:00', endHour: '21:00:00' },
+          { day: 'Wednesday', startHour: '20:00:00', endHour: '21:00:00' },
+          { day: 'Friday', startHour: '20:00:00', endHour: '21:00:00' }
+        ]
+      },
+      {
+        name: 'Boxeo Fitness',
+        description: 'Entrenamiento que combina técnicas de boxeo con ejercicios de acondicionamiento físico.',
+        maxCapacity: 15,
+        difficulty: 'medium',
+        trainerId: trainerAccounts[2].id,
+        days: [
+          { day: 'Tuesday', startHour: '18:00:00', endHour: '19:30:00' },
+          { day: 'Thursday', startHour: '18:00:00', endHour: '19:30:00' }
+        ]
+      },
+      {
+        name: 'Entrenamiento Funcional',
+        description: 'Ejercicios que imitan movimientos de la vida diaria para mejorar la fuerza y movilidad general.',
+        maxCapacity: 20,
+        difficulty: 'medium',
+        trainerId: trainer.id,
+        days: [
+          { day: 'Monday', startHour: '12:00:00', endHour: '13:00:00' },
+          { day: 'Wednesday', startHour: '12:00:00', endHour: '13:00:00' },
+          { day: 'Friday', startHour: '12:00:00', endHour: '13:00:00' }
+        ]
+      },
+      {
+        name: 'Body Pump',
+        description: 'Entrenamiento con pesas al ritmo de la música, enfocado en alta repetición y bajo peso.',
+        maxCapacity: 25,
+        difficulty: 'medium',
+        trainerId: trainerAccounts[0].id,
+        days: [
+          { day: 'Monday', startHour: '09:00:00', endHour: '10:00:00' },
+          { day: 'Friday', startHour: '09:00:00', endHour: '10:00:00' }
+        ]
+      },
+      {
+        name: 'Stretching & Mobility',
+        description: 'Clase enfocada en mejorar la flexibilidad, rango de movimiento y recuperación muscular.',
+        maxCapacity: 20,
+        difficulty: 'low',
+        trainerId: trainerAccounts[1].id,
+        days: [
+          { day: 'Tuesday', startHour: '21:00:00', endHour: '22:00:00' },
+          { day: 'Thursday', startHour: '21:00:00', endHour: '22:00:00' },
+          { day: 'Sunday', startHour: '11:00:00', endHour: '12:00:00' }
+        ]
+      }
+    ];
+
+    // Crear las clases y sus horarios
+    for (const classInfo of classesInfo) {
+      const newClass = await ClassModel.create({
+        name: classInfo.name,
+        description: classInfo.description,
+        maxCapacity: classInfo.maxCapacity,
+        currentCapacity: 0,
+        schedule: `Varios horarios semanales`,
+        difficulty: classInfo.difficulty,
+        trainerId: classInfo.trainerId
+      });
+
+      const schedule = await ScheduleModel.create({
+        classId: newClass.id,
+        startDate: '2025-04-01',
+        endDate: '2025-07-31'
+      });
+
+      // Crear los días de horario para cada clase
+      for (const dayInfo of classInfo.days) {
+        await ScheduleDayModel.create({
+          scheduleId: newClass.id,
+          day: dayInfo.day,
+          startHour: dayInfo.startHour,
+          endHour: dayInfo.endHour
+        });
+      }
+    }
+
     console.log('Database, tables, and sample data created successfully!');
     console.log('Created training plan ID:', training.id);
     console.log('Login credentials:');

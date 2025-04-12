@@ -1,0 +1,137 @@
+.class-item {
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.25rem;
+  background-color: #252525;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.class-title {
+  color: #998800;
+  font-weight: 600;
+  margin-top: 0;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.class-item p {
+  margin: 0.5rem 0;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.class-item ul {
+  margin-top: 0.75rem;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.class-item li {
+  margin-bottom: 0.5rem;
+  color: #bbb;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.difficulty-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.difficulty-easy {
+  background-color: #4CAF50;
+}
+
+.difficulty-medium {
+  background-color: #FFC107;
+}
+
+.difficulty-hard {
+  background-color: #F44336;
+}
+
+.class-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.info-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: #333;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+.difficulty-chip {
+  font-weight: bold;
+  color: #222;
+}
+
+.difficulty-chip.difficulty-easy {
+  background-color: #4caf4fcd;
+}
+
+.difficulty-chip.difficulty-medium {
+  background-color: #ffc10773;
+}
+
+.difficulty-chip.difficulty-hard {
+  background-color: #f44336c2;
+}
+
+.schedule-days-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.day-schedule {
+  background-color: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-name {
+  background-color: transparent;
+  color: #998800;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #444;
+  width: 90%;
+}
+
+.day-time {
+  padding: 0.5rem 0.6rem;
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  justify-content: center;
+}
