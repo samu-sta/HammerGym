@@ -19,6 +19,10 @@ const ClassModel = sequelize.define('Class', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    currentCapacity: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     difficulty: {
         type: DataTypes.ENUM('low', 'medium', 'high'),
         allowNull: false

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { FaChartLine, FaArrowLeft } from 'react-icons/fa';
+import { FaChartLine, FaLongArrowAltLeft } from 'react-icons/fa';
 import useUserProgress from '../../../hooks/useUserProgress';
 import LoadingSpinner from '../../common/LoadingSpinner';
 import ProgressHeader from './components/ProgressHeader';
@@ -48,7 +48,7 @@ const UserProgress = () => {
     <main className="user-progress-container">
       <header className="user-progress-header">
         <ActionButton
-          icon={<FaArrowLeft />}
+          icon={<FaLongArrowAltLeft />}
           text="Volver"
           onClick={handleGoBack}
           className="back-button"

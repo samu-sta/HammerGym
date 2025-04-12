@@ -1,48 +1,16 @@
-import ClassModel from "../models/Class.js";
 import MESSAGES from "../messages/messages.js";
-import UserModel from "../models/User.js";
-import TrainerModel from "../models/Trainer.js";
-import ScheduleModel from "../models/Schedule.js";
-import ScheduleDayModel from "../models/ScheduleDay.js";
-import AccountModel from "../models/Account.js";
+import ClassService from "../services/ClassService.js";
 
 export default class ClassController {
+  constructor() {
+    this.classService = new ClassService();
+  }
+
   getAllClasses = async (_req, res) => {
     try {
-      const classes = await ClassModel.findAll({
-        include: [
-          {
-            model: ScheduleModel,
-            as: 'schedule',
-            attributes: ['classId', 'startDate', 'endDate'],
-            include: [
-              {
-                model: ScheduleDayModel,
-                as: 'scheduleDays',
-                attributes: ['day', 'startHour', 'endHour']
-              }
-            ]
-          },
-          {
-            model: TrainerModel,
-            as: 'trainer',
-            include: [
-              {
-                model: AccountModel,
-                as: 'account',
-                attributes: ['username', 'email']
-              }
-            ]
-          }
-        ],
-        attributes: {
-          exclude: ['trainerId']
-        }
-      });
-
+      const classes = await this.classService.getAllClasses();
       return res.status(200).json({ success: true, classes });
     } catch (error) {
-      console.error(error);
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   };
@@ -50,37 +18,18 @@ export default class ClassController {
   enrollInClass = async (req, res) => {
     const classId = req.body.classId;
     const userId = req.account.id;
-    console.log(classId);
 
     try {
-      const classInstance = await ClassModel.findByPk(classId);
-
-      if (!classInstance) {
-        return res.status(404).json({ success: false, message: MESSAGES.CLASS_NOT_FOUND });
-      }
-
-      if (classInstance.currentCapacity >= classInstance.maxCapacity) {
-        return res.status(400).json({ success: false, message: MESSAGES.CLASS_FULL });
-      }
-
-      const user = await UserModel.findOne({ where: { accountId: userId } });
-
-      const isRegistered = await user.getRegisteredClasses({ where: { id: classId } });
-
-      console.log(isRegistered);
-      if (isRegistered.length > 0) {
-        return res.status(400).json({ success: false, message: MESSAGES.ALREADY_ENROLLED });
-      }
-      await user.addRegisteredClass(classInstance)
-      await user.save();
-
-      classInstance.currentCapacity += 1;
-      await classInstance.save();
-
+      await this.classService.enrollUserInClass(classId, userId);
       return res.status(200).json({ success: true });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+
+    }
+    catch (error) {
+      if (!error.status || !error.messages) {
+        error.status = 500;
+        error.messages = MESSAGES.ERROR_500;
+      }
+      return res.status(error.status).json({ success: false, message: error.messages });
     }
   };
 
@@ -89,51 +38,25 @@ export default class ClassController {
     const userId = req.account.id;
 
     try {
-      const classInstance = await ClassModel.findByPk(classId);
-
-      if (!classInstance) {
-        return res.status(404).json({ success: false, message: MESSAGES.CLASS_NOT_FOUND });
-      }
-
-      const user = await UserModel.findOne({ where: { accountId: userId } });
-
-      const isRegistered = await user.getRegisteredClasses({ where: { id: classId } });
-
-      if (isRegistered.length === 0) {
-        return res.status(400).json({ success: false, message: MESSAGES.NOT_ENROLLED });
-      }
-
-      await user.removeRegisteredClass(classInstance);
-      classInstance.currentCapacity -= 1;
-      await classInstance.save();
-
+      await this.classService.unenrollUserFromClass(classId, userId);
       return res.status(200).json({ success: true });
     } catch (error) {
-      console.error(error);
-      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+      if (!error.status || !error.messages) {
+        error.status = 500;
+        error.messages = MESSAGES.ERROR_500;
+      }
+      return res.status(error.status).json({
+        success: false,
+        message: error.messages
+      });
     }
   }
 
   createClass = async (req, res) => {
-    const { name, description, maxCapacity, schedule, difficulty } = req.body;
     const trainerId = req.account.id;
 
     try {
-      const trainer = await TrainerModel.findOne({ where: { accountId: trainerId } });
-
-      if (!trainer) {
-        return res.status(403).json({ success: false, message: MESSAGES.NO_PERMISSION_CREATE_CLASS });
-      }
-
-      const newClass = await ClassModel.create({
-        name,
-        description,
-        maxCapacity,
-        schedule,
-        difficulty,
-        trainerId: trainer.id,
-        currentCapacity: 0
-      });
+      const newClass = await this.classService.createClass(req.body, trainerId);
 
       return res.status(201).json({
         success: true,
@@ -142,10 +65,24 @@ export default class ClassController {
       });
     }
     catch (error) {
-      console.error(error);
-      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+      if (!error.status || !error.messages) {
+        error.status = 500;
+        error.messages = MESSAGES.ERROR_500;
+      }
+      return res.status(error.status).json({
+        success: false,
+        message: error.messages
+      });
     }
   };
 
-
+  getUserClasses = async (req, res) => {
+    try {
+      const classes = await this.classService.getUserClasses(req.account.id);
+      return res.status(200).json({ success: true, classes });
+    }
+    catch (error) {
+      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+    }
+  };
 }
