@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getAllClasses, getUserClasses } from '../services/classService';
 
-const useClasses = (type = 'all') => {
+const useClasses = (type = 'all', view) => {
   const [classes, setClasses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,9 +26,14 @@ const useClasses = (type = 'all') => {
     };
 
     fetchClasses();
-  }, [type]);
+  }, [view]);
 
-  return { classes, loading, error };
+  return {
+    classes,
+    setClasses,
+    loading,
+    error
+  };
 };
 
 export default useClasses;

@@ -24,4 +24,40 @@ const getUserClasses = async () => {
   }
 };
 
-export { getAllClasses, getUserClasses };
+const enrollInClass = async (classId) => {
+  try {
+    const response = await fetch('http://localhost:3000/classes/enroll', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({ classId }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error enrolling in class:', error);
+    return { success: false, message: 'Error al inscribirse en la clase' };
+  }
+};
+
+const unenrollFromClass = async (classId) => {
+  try {
+    const response = await fetch('http://localhost:3000/classes/unenroll', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({ classId }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error unenrolling from class:', error);
+    return { success: false, message: 'Error al cancelar la inscripción' };
+  }
+};
+
+export { getAllClasses, getUserClasses, enrollInClass, unenrollFromClass };

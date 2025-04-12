@@ -135,3 +135,72 @@
   font-size: 0.9rem;
   justify-content: center;
 }
+
+.class-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.class-actions .info-chip {
+  margin-right: auto;
+}
+
+.enroll-button {
+  background-color: #998800;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.enroll-button:hover:not(:disabled) {
+  background-color: #b9a400;
+}
+
+.enroll-button:disabled {
+  background-color: #555555;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.unenroll-button {
+  background-color: #993333;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.unenroll-button:hover:not(:disabled) {
+  background-color: #cc4444;
+}
+
+.unenroll-button:disabled {
+  background-color: #555555;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.class-item-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

@@ -1,9 +1,14 @@
-import { FaUser, FaCalendarAlt, FaUsers, FaFire } from 'react-icons/fa';
+import { FaUser, FaCalendarAlt, FaUsers, FaFire, FaUserPlus, FaUserMinus } from 'react-icons/fa';
 import '../styles/ClassItem.css';
 import InfoChip from './InfoChip';
 import ScheduleDay from './ScheduleDay';
+import useClassEnrollment from '../../../../hooks/useClassEnrollment';
+import { useState } from 'react';
 
-const ClassItem = ({ classData }) => {
+const ClassItem = ({ classData, setClasses, onEnrollmentChange, isInSearch = false }) => {
+  const { enroll, unenroll, loading } = useClassEnrollment();
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
 
   const getDifficultyClass = (difficulty) => {
     switch (difficulty.toLowerCase()) {
@@ -14,6 +19,8 @@ const ClassItem = ({ classData }) => {
         return 'difficulty-medium';
       case 'high':
         return 'difficulty-hard';
+      default:
+        return '';
     }
   };
 
@@ -43,6 +50,27 @@ const ClassItem = ({ classData }) => {
     };
     return days[day] || day;
   };
+
+  const handleEnrollmentChange = async (action) => {
+    setIsProcessing(true);
+    const success = await action(classData.id);
+    setIsProcessing(false);
+    if (!success) return;
+
+    setIsHidden(true);
+    if (onEnrollmentChange) {
+      onEnrollmentChange(classData.id);
+    }
+    setClasses(prevClasses => prevClasses.filter(cls => cls.id !== classData.id));
+  };
+
+  const handleEnroll = () => handleEnrollmentChange(enroll);
+  const handleUnenroll = () => handleEnrollmentChange(unenroll);
+
+  const isEnrolled = classData.SignedUpIn !== undefined;
+  const isClassFull = classData.currentCapacity >= classData.maxCapacity;
+
+  if (isHidden) return null;
 
   return (
     <article className="class-item">
@@ -89,13 +117,36 @@ const ClassItem = ({ classData }) => {
           ))}
         </ul>
       </section>
+      {isEnrolled && (
+        <InfoChip icon={FaCalendarAlt}>
+          Inscrito desde: {new Date(classData.SignedUpIn).toLocaleDateString()}
+        </InfoChip>
+      )}
 
-      {classData.SignedUpIn && (
-        <footer>
-          <InfoChip icon={FaCalendarAlt}>
-            Inscrito desde: {new Date(classData.SignedUpIn).toLocaleDateString()}
-          </InfoChip>
+      {isEnrolled ? (
+        <footer className='class-item-footer'>
+          {!isInSearch && (
+            <button
+              className="unenroll-button"
+              onClick={handleUnenroll}
+              disabled={isProcessing || loading}
+            >
+              <FaUserMinus /> Cancelar inscripción
+            </button>
+          )}
         </footer>
+      ) : (
+        isInSearch && (
+          <footer className='class-item-footer'>
+            <button
+              className="enroll-button"
+              onClick={handleEnroll}
+              disabled={isProcessing || loading || isClassFull}
+            >
+              <FaUserPlus /> {isClassFull ? "Clase llena" : "Inscribirse"}
+            </button>
+          </footer>
+        )
       )}
     </article>
   );
