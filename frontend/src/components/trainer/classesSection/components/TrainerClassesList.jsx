@@ -1,11 +1,12 @@
 import TrainerClassItem from './TrainerClassItem';
 import ClassesList from '../../../common/ClassesList';
 
-const TrainerClassesList = ({ classes, loading, error }) => {
+const TrainerClassesList = ({ classes, loading, error, onClassDeleted }) => {
   const renderItem = (classItem) => (
     <TrainerClassItem
       key={classItem.id}
       classData={classItem}
+      onClassDeleted={onClassDeleted}
     />
   );
 

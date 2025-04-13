@@ -101,4 +101,23 @@ const unenrollFromClass = async (classId) => {
   }
 };
 
-export { getAllClasses, getUserClasses, getTrainerClasses, enrollInClass, unenrollFromClass, createClass };
+const deleteClass = async (classId) => {
+  try {
+    const response = await fetch(`http://localhost:3000/classes/${classId}`, {
+      method: 'DELETE',
+      credentials: 'include'
+    });
+
+    if (!response.ok) {
+      const data = await response.json();
+      throw new Error(data.message || 'Error al eliminar la clase');
+    }
+
+    return { success: true, message: 'Clase eliminada correctamente' };
+  } catch (error) {
+    console.error('Error eliminando clase:', error);
+    return { success: false, message: error.message || 'Error al eliminar la clase' };
+  }
+};
+
+export { getAllClasses, getUserClasses, getTrainerClasses, enrollInClass, unenrollFromClass, createClass, deleteClass };

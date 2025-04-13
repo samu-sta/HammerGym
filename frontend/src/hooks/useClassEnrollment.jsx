@@ -14,7 +14,7 @@ const useClassEnrollment = () => {
 
       const response = await enrollInClass(classId);
 
-      if (response.success) {
+      if (response) {
         setSuccess(true);
         return true;
       } else {
@@ -37,15 +37,15 @@ const useClassEnrollment = () => {
 
       const response = await unenrollFromClass(classId);
 
-      if (response.success) {
+      if (response) {
         setSuccess(true);
         return true;
       } else {
-        setError(response.message || 'Error al cancelar la inscripción');
+        setError('Error al cancelar la inscripción');
         return false;
       }
     } catch (err) {
-      setError(err.message || 'Error al cancelar la inscripción');
+      setError('Error al cancelar la inscripción');
       return false;
     } finally {
       setLoading(false);

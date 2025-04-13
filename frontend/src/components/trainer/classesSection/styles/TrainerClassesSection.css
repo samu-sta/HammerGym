@@ -29,7 +29,6 @@
 
 .classes-container input.search-input {
   max-width: none;
-  flex: 1;
 }
 
 @media (max-width: 768px) {

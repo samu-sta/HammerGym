@@ -12,6 +12,7 @@ const TrainerClassesSection = () => {
   const { isOpen, openModal, closeModal } = useModal();
   const {
     classes,
+    setClasses,
     loading,
     error,
     refetch
@@ -22,6 +23,10 @@ const TrainerClassesSection = () => {
       refetch();
       closeModal();
     }, 1500);
+  };
+
+  const handleClassDeleted = (classId) => {
+    setClasses(prevClasses => prevClasses.filter(cls => cls.id !== classId));
   };
 
   const filteredClasses = classes.filter(classItem =>
@@ -51,6 +56,7 @@ const TrainerClassesSection = () => {
         classes={filteredClasses}
         loading={loading}
         error={error}
+        onClassDeleted={handleClassDeleted}
       />
 
       <Modal
