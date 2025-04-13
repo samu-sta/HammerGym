@@ -6,19 +6,11 @@ const UserAttendanceModel = sequelize.define('UserAttendance', {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
-    references: {
-      model: 'Attendance',
-      key: 'id'
-    }
   },
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
-    references: {
-      model: 'User',
-      key: 'id'
-    }
   }
 }, {
   tableName: 'UserAttendance',

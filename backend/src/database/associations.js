@@ -10,13 +10,11 @@ import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
 import AttendanceModel from '../models/Attendance.js';
 import ClassModel from '../models/Class.js';
-import assitanceListModel from '../models/assistanceList.js';
+import ScheduleModel from '../models/schedule.js';
+import assistanceListModel from '../models/assistanceList.js';
 
 const setupAssociations = () => {
 
-  /* Account Associations */
-
-  // Account - User (One-to-One)
   AccountModel.hasOne(UserModel, {
     foreignKey: 'accountId',
     as: 'user'
@@ -27,7 +25,6 @@ const setupAssociations = () => {
     as: 'account'
   });
 
-  // Account - Trainer (One-to-One)
   AccountModel.hasOne(TrainerModel, {
     foreignKey: 'accountId',
     as: 'trainer'
@@ -38,7 +35,6 @@ const setupAssociations = () => {
     as: 'account'
   });
 
-  // Account - Admin (One-to-One)
   AccountModel.hasOne(AdminModel, {
     foreignKey: 'accountId',
     as: 'admin'
@@ -55,7 +51,6 @@ const setupAssociations = () => {
     as: 'trainer'
   });
 
-  // Relación User-Training (User recibe entrenamientos)
   UserModel.hasMany(TrainingModel, {
     foreignKey: 'userId',
     sourceKey: 'accountId',
@@ -68,7 +63,6 @@ const setupAssociations = () => {
     as: 'user'
   });
 
-  // Relación Training-TrainingDay (One-to-Many)
   TrainingModel.hasMany(TrainingDayModel, {
     foreignKey: 'trainingId',
     as: 'trainingDays'
@@ -79,9 +73,6 @@ const setupAssociations = () => {
     as: 'training'
   });
 
-  // ======= SERIES Y EJERCICIOS =======
-
-  // Relación TrainingDay-Serie (One-to-Many)
   TrainingDayModel.hasMany(SerieModel, {
     foreignKey: 'idTrainingDay',
     as: 'series'
@@ -91,7 +82,6 @@ const setupAssociations = () => {
     foreignKey: 'idTrainingDay',
   });
 
-  // Exercise - Serie (One-to-Many)
   ExerciseModel.hasMany(SerieModel, {
     foreignKey: 'idExercise',
     as: 'series'
@@ -151,13 +141,13 @@ const setupAssociations = () => {
     foreignKey: 'classId',
     as: 'assistanceList'
   });
-
-  assitanceListModel.belongsTo(UserModel, {
+  
+  assistanceListModel.belongsTo(UserModel, {
     foreignKey: 'userId',
     as: 'user'
   });
   
-  UserModel.hasMany(assitanceListModel, {
+  UserModel.hasMany(assistanceListModel, {
     foreignKey: 'userId',
     as: 'assistanceList'
   });

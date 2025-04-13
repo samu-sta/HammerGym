@@ -10,18 +10,10 @@ const TrainingModel = sequelize.define('Training', {
   trainerId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    references: {
-      model: 'Trainer',
-      key: 'accountId'
-    }
   },
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    references: {
-      model: 'User',
-      key: 'accountId'
-    }
   }
 }, {
   tableName: 'Training',

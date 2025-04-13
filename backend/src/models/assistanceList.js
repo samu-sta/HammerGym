@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
-const assitanceListModel = sequelize.define('assitanceList', {
+const assistanceListModel = sequelize.define('assistanceList', {
   userId: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -22,4 +22,4 @@ const assitanceListModel = sequelize.define('assitanceList', {
   timestamps: true
 });
 
-export default assitanceListModel;
+export default assistanceListModel;

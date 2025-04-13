@@ -4,7 +4,10 @@ import dotenv from 'dotenv';
 import { AccountRoutes } from '../routes/Account.Routes.js';
 import { UserActivityRoutes } from '../routes/UserActivity.Routes.js';
 import { TrainingRoutes } from '../routes/Training.Routes.js';
-import { ClassRoutes } from "./routes/Class.Routes.js";
+import { ClassRoutes } from "../routes/Class.Routes.js";
+import { GymRoutes } from '../routes/Gym.Routes.js';
+import { MachineModelRoutes } from '../routes/MachineModel.Routes.js'; 
+import { MachineRoutes } from '../routes/Machine.Routes.js'; 
 import setupAssociations from '../database/associations.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -25,6 +28,9 @@ export const createApp = () => {
     credentials: true
   }));
 
+  app.use('/api/admin/gyms', GymRoutes());
+  app.use('/api/admin/machine-models', MachineModelRoutes());
+  app.use('/api/admin/machines', MachineRoutes());
   app.use('/account', AccountRoutes());
   app.use('/user-activity', UserActivityRoutes());
   app.use('/training', TrainingRoutes());

@@ -13,19 +13,11 @@ const ContractModel = sequelize.define('Contract', {
   },
   membershipId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'Membership',
-      key: 'id'
-    }
+    allowNull: false
   },
   userId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'User',
-      key: 'id'
-    }
+    allowNull: false
   }
 }, {
   tableName: 'Contract',

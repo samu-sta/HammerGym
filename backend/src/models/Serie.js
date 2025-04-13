@@ -8,18 +8,10 @@ const SerieModel = sequelize.define('Serie', {
         autoIncrement: true
     },
     idTrainingDay: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'TrainingDay',
-            key: 'id'
-        }
+        type: DataTypes.INTEGER
     },
     idExercise: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'Exercise',
-            key: 'id'
-        }
+        type: DataTypes.INTEGER
     },
     reps: {
         type: DataTypes.INTEGER,

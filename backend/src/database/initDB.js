@@ -16,7 +16,7 @@ import dotenv from 'dotenv';
 import argon2 from 'argon2';
 import AttendanceModel from '../models/Attendance.js';
 import setupAssociations from './associations.js';
-import assitanceListModel from '../models/assistanceList.js';
+import assistanceListModel from '../models/assistanceList.js';
 
 
 dotenv.config();
@@ -45,27 +45,6 @@ const initDatabase = async () => {
     await sequelize.sync({ force: true });
 
     await sequelize.query('SET FOREIGN_KEY_CHECKS = 1');
-    
-    await AccountModel.sync({ force: true });
-    await GymModel.sync({ force: true });
-    await ExerciseModel.sync({ force: true });
-
-    await UserModel.sync({ force: true });
-    await TrainerModel.sync({ force: true });
-    await AdminModel.sync({ force: true });
-
-    await TrainingModel.sync({ force: true });
-    await UserActivityModel.sync({ force: true });
-
-    await TrainingDayModel.sync({ force: true });
-
-    await SerieModel.sync({ force: true });
-    await ClassModel.sync({ force: true });
-    await ScheduleModel.sync({ force: true });
-    await AttendanceModel.sync({ force: true });
-    await assitanceListModel.sync({ force: true });
-
-    await sequelize.sync({ force: true });
 
     // Crear un gimnasio
     const gym = await GymModel.create({
@@ -143,6 +122,20 @@ const initDatabase = async () => {
       accountId: userAccount.id
     });
 
+    // Después de crear las otras cuentas:
+
+    const adminAccount = await AccountModel.create({
+      email: 'admin@example.com',
+      username: 'AdminUser',
+      password: hashedPassword
+    });
+
+    const admin = await AdminModel.create({
+      accountId: adminAccount.id
+    });
+
+    console.log('- Admin: admin@example.com / password123');
+
     // Crear un entrenamiento
     const training = await TrainingModel.create({
       trainerId: trainer.accountId,
@@ -199,13 +192,13 @@ const initDatabase = async () => {
     });
     
     await AttendanceModel.create({
-      userId: account.id, // Usar account.id en lugar de user.id
+      userId: userAccount.id, // Usar account.id en lugar de user.id
       classId: classInstance.id,
       attendanceDate: new Date()
     });
 
-    await assitanceListModel.create({
-      userId: user.id,
+    await assistanceListModel.create({
+      userId: userAccount.id,
       classId: classInstance.id,
       attendanceDate: new Date()
     });

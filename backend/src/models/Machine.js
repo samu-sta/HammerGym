@@ -15,18 +15,10 @@ const MachineModel = sequelize.define('Machine', {
     machineModelId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        references: {
-            model: 'MachineModel',
-            key: 'id'
-        }
     },
     gymId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        references: {
-            model: 'Gym',
-            key: 'id'
-        }
     }
 }, {
     tableName: 'Machine',

@@ -1,4 +1,5 @@
 import AccountModel from '../models/Account.js';
+import AdminModel from '../models/Admin.js'; 
 import auth from '../utils/auth.js';
 import MESSAGES from '../messages/messages.js';
 
@@ -27,5 +28,35 @@ export const authAccount = async (req, res, next) => {
         return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
 }
+
+export const isAdmin = async (req, res, next) => {
+    try {
+      if (!req.account || !req.account.id) {
+        return res.status(401).json({ 
+          success: false, 
+          message: MESSAGES.NO_TOKEN_PROVIDED 
+        });
+      }
+      
+      const admin = await AdminModel.findOne({
+        where: { accountId: req.account.id }
+      });
+  
+      if (!admin) {
+        return res.status(403).json({ 
+          success: false, 
+          message: MESSAGES.UNAUTHORIZED 
+        });
+      }
+      req.admin = admin;
+      next();
+    } catch (error) {
+      console.error('Error al verificar rol de administrador:', error);
+      return res.status(500).json({ 
+        success: false, 
+        message: MESSAGES.ERROR_500 
+      });
+    }
+  };
 
 

@@ -9,27 +9,15 @@ const ExerciseTupleModel = sequelize.define('ExerciseTuple', {
   },
   exerciseId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'Exercise',
-      key: 'id'
-    }
+    allowNull: false
   },
   trainingDayId: {
     type: DataTypes.INTEGER,
-    allowNull: true,
-    references: {
-      model: 'TrainingDay',
-      key: 'id'
-    }
+    allowNull: true
   },
   userProgressDayId: {
     type: DataTypes.INTEGER,
-    allowNull: true,
-    references: {
-      model: 'UserProgressDay',
-      key: 'id'
-    }
+    allowNull: true
   },
   estimatedTime: {
     type: DataTypes.DOUBLE,
@@ -37,11 +25,7 @@ const ExerciseTupleModel = sequelize.define('ExerciseTuple', {
   },
   seriesId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'Series',
-      key: 'id'
-    }
+    allowNull: false
   },
   weight: {
     type: DataTypes.DOUBLE,

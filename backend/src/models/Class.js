@@ -25,19 +25,11 @@ const ClassModel = sequelize.define('Class', {
     },
     trainerId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Trainer',
-            key: 'id'
-        }
+        allowNull: false
     },
     scheduleid: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Schedule',
-            key: 'id'
-        }
+        allowNull: false
     }
 }, {
     tableName: 'Class',

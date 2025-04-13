@@ -6,19 +6,11 @@ const TupleSeriesModel = sequelize.define('TupleSeries', {
     type: DataTypes.INTEGER,
     primaryKey: true,
     allowNull: false,
-    references: {
-      model: 'ExerciseTuple',
-      key: 'id'
-    }
   },
   seriesId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
-    references: {
-      model: 'Series',
-      key: 'id'
-    }
   }
 }, {
   tableName: 'TupleSeries',

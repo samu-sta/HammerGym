@@ -18,19 +18,11 @@ const UserActivityModel = sequelize.define('UserActivity', {
     },
     userId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'User',
-            key: 'accountId'
-        }
+        allowNull: false
     },
     gymId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Gym',
-            key: 'id'
-        }
+        allowNull: false
     }
 }, {
     tableName: 'UserActivity',
