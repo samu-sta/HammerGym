@@ -1,0 +1,38 @@
+.info-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  background-color: #333;
+  color: #ddd;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.info-chip svg {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.difficulty-chip {
+  font-weight: 600;
+  color: #222;
+}
+
+.difficulty-chip svg {
+  color: #222 !important;
+}
+
+.difficulty-easy {
+  background-color: #4caf4fcd;
+}
+
+.difficulty-medium {
+  background-color: #ffc10773;
+}
+
+.difficulty-hard {
+  background-color: #f44336c2;
+}
