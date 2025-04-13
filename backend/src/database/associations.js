@@ -10,13 +10,9 @@ import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
 import AttendanceModel from '../models/Attendance.js';
 import ClassModel from '../models/Class.js';
-<<<<<<< HEAD
 import ScheduleModel from '../models/schedule.js';
 import assistanceListModel from '../models/assistanceList.js';
-=======
-import assitanceListModel from '../models/assistanceList.js';
 import ProgressUserModel from '../models/UserProgress.js';
->>>>>>> 2f6f5fcb02fca6680508b9b5153fb0aae9a9841a
 
 const setupAssociations = () => {
 
@@ -55,13 +51,8 @@ const setupAssociations = () => {
     foreignKey: 'trainerId',
     as: 'trainer'
   });
-
-<<<<<<< HEAD
-  UserModel.hasMany(TrainingModel, {
-=======
   // Relación User-Training (User recibe entrenamientos)
   UserModel.hasOne(TrainingModel, {
->>>>>>> 2f6f5fcb02fca6680508b9b5153fb0aae9a9841a
     foreignKey: 'userId',
     sourceKey: 'accountId',
     as: 'assignedTraining'
