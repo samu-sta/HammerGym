@@ -5,6 +5,7 @@ import ScheduleModel from "../models/Schedule.js";
 import ScheduleDayModel from "../models/ScheduleDay.js";
 import AccountModel from "../models/Account.js";
 import MESSAGES from "../messages/messages.js";
+import sequelize from "../database/database.js";
 
 export default class ClassService {
   getAllClasses = async () => {
@@ -92,22 +93,48 @@ export default class ClassService {
 
   createClass = async (classData, trainerId) => {
     const { name, description, maxCapacity, schedule, difficulty } = classData;
+    const t = await sequelize.transaction();
 
-    const trainer = await TrainerModel.findOne({ where: { accountId: trainerId } });
+    try {
+      const trainer = await TrainerModel.findOne({
+        where: { accountId: trainerId },
+        transaction: t
+      });
 
-    if (!trainer) {
-      throw new Error({ messages: MESSAGES.NO_PERMISSION_CREATE_CLASS, status: 403 });
+      if (!trainer) {
+        throw new Error({ messages: MESSAGES.NO_PERMISSION_CREATE_CLASS, status: 403 });
+      }
+
+      const newClass = await ClassModel.create({
+        name,
+        description,
+        maxCapacity,
+        difficulty,
+        trainerId: trainer.id,
+        currentCapacity: 0
+      }, { transaction: t });
+
+      const newSchedule = await ScheduleModel.create({
+        classId: newClass.id,
+        startDate: new Date(schedule.startDate),
+        endDate: new Date(schedule.endDate)
+      }, { transaction: t });
+
+      const scheduleDays = schedule.scheduleDays.map(day => ({
+        scheduleId: newClass.id,
+        day: day.day,
+        startHour: day.startHour,
+        endHour: day.endHour
+      }));
+
+      await ScheduleDayModel.bulkCreate(scheduleDays, { transaction: t });
+
+      await t.commit();
     }
-
-    return await ClassModel.create({
-      name,
-      description,
-      maxCapacity,
-      schedule,
-      difficulty,
-      trainerId: trainer.id,
-      currentCapacity: 0
-    });
+    catch (error) {
+      await t.rollback();
+      throw error;
+    }
   };
 
   getUserClasses = async (userId) => {
@@ -146,7 +173,7 @@ export default class ClassService {
     return this.refactorClasses(classesData);
   };
 
-  refactorClasses = (classesData) => {
+  refactorClasses = (classesData, includeTrainer = true) => {
     return classesData.map(classItem => {
       const classObj = {
         id: classItem.id,
@@ -155,12 +182,6 @@ export default class ClassService {
         maxCapacity: classItem.maxCapacity,
         currentCapacity: classItem.currentCapacity,
         difficulty: classItem.difficulty,
-        trainer: {
-          account: {
-            username: classItem.trainer.account.username,
-            email: classItem.trainer.account.email
-          }
-        },
         schedule: classItem.schedule ? {
           startDate: classItem.schedule.startDate,
           endDate: classItem.schedule.endDate,
@@ -173,11 +194,58 @@ export default class ClassService {
         } : null
       };
 
+      if (includeTrainer && classItem.trainer && classItem.trainer.account) {
+        classObj.trainer = {
+          account: {
+            username: classItem.trainer.account.username,
+            email: classItem.trainer.account.email
+          }
+        };
+      }
+
       if (classItem.SignedUpIn) {
         classObj.SignedUpIn = classItem.SignedUpIn.createdAt;
       }
 
       return classObj;
     });
+  }
+
+  getTrainerClasses = async (trainerId) => {
+    const trainer = await TrainerModel.findOne({ where: { accountId: trainerId } });
+
+    if (!trainer) {
+      throw new Error({ messages: MESSAGES.NO_PERMISSION_CREATE_CLASS, status: 403 });
+    }
+
+    const classesData = await ClassModel.findAll({
+      where: { trainerId: trainer.id },
+      include: [
+        {
+          model: ScheduleModel,
+          as: 'schedule',
+          attributes: ['classId', 'startDate', 'endDate'],
+          include: [
+            {
+              model: ScheduleDayModel,
+              as: 'scheduleDays',
+              attributes: ['day', 'startHour', 'endHour']
+            }
+          ]
+        }
+      ]
+    });
+
+    return this.refactorClasses(classesData, false);
+  }
+
+  deleteClass = async (classId) => {
+    const classInstance = await ClassModel.findByPk(classId);
+
+    if (!classInstance) {
+      throw new Error({ messages: MESSAGES.CLASS_NOT_FOUND, status: 404 });
+    }
+
+    await classInstance.destroy();
   }
 }

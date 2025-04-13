@@ -1,5 +1,6 @@
 import MESSAGES from "../messages/messages.js";
 import ClassService from "../services/ClassService.js";
+import classSchema from "../schemas/ClassSchema.js";
 
 export default class ClassController {
   constructor() {
@@ -55,13 +56,21 @@ export default class ClassController {
   createClass = async (req, res) => {
     const trainerId = req.account.id;
 
+    const validationResult = classSchema.validateCreateClass(req.body);
+
+    if (!validationResult.success) {
+      return res.status(400).json({
+        success: false,
+        message: MESSAGES.INVALID_DATA,
+        errors: validationResult.error.format()
+      });
+    }
+
     try {
-      const newClass = await this.classService.createClass(req.body, trainerId);
+      const newClass = await this.classService.createClass(validationResult.data, trainerId);
 
       return res.status(201).json({
-        success: true,
-        message: MESSAGES.CLASS_CREATED,
-        class: newClass
+        success: true
       });
     }
     catch (error) {
@@ -73,6 +82,30 @@ export default class ClassController {
         success: false,
         message: error.messages
       });
+    }
+  };
+
+  getTrainerClasses = async (req, res) => {
+    const trainerId = req.account.id;
+
+    try {
+      const classes = await this.classService.getTrainerClasses(trainerId);
+      return res.status(200).json({ success: true, classes });
+    }
+    catch (error) {
+      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+    }
+  };
+
+  deleteClass = async (req, res) => {
+    const classId = req.params.classId;
+
+    try {
+      await this.classService.deleteClass(classId);
+      return res.status(200).json({ success: true });
+    }
+    catch (error) {
+      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   };
 
