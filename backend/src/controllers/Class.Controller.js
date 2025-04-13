@@ -58,6 +58,7 @@ export default class ClassController {
 
     const validationResult = classSchema.validateCreateClass(req.body);
 
+    console.log(validationResult.error?.message);
     if (!validationResult.success) {
       return res.status(400).json({
         success: false,

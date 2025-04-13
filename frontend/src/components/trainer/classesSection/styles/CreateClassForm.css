@@ -1,0 +1,191 @@
+.create-class-form {
+  width: 100%;
+  color: #f5f5f5;
+}
+
+.form-group-create-class {
+  margin-bottom: 1.25rem;
+  width: 100%;
+  position: relative;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-row .form-group-create-class {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-label, .form-group-create-class label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.form-input, .form-textarea, .form-select {
+  width: 100%;
+  background-color: rgba(25, 25, 25, 0.6);
+  border: 1px solid rgba(153, 136, 0, 0.3);
+  border-radius: 5px;
+  padding: 0.75rem;
+  color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  outline: none;
+  border-color: #998800;
+  box-shadow: 0 0 0 2px rgba(153, 136, 0, 0.2);
+}
+
+.form-input.input-error, .form-textarea.input-error, .form-select.input-error {
+  border-color: #d73333;
+  box-shadow: 0 0 0 1px rgba(215, 51, 51, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.schedule-fieldset {
+  border: 1px solid rgba(153, 136, 0, 0.3);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.schedule-fieldset legend {
+  padding: 0 0.75rem;
+  font-weight: 600;
+  color: #998800;
+}
+
+.days-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.day-button {
+  background-color: rgba(60, 60, 60, 0.6);
+  color: #ddd;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.day-button.selected {
+  background-color: rgba(153, 136, 0, 0.7);
+  color: white;
+}
+
+.day-schedule-create-class {
+  background-color: rgba(40, 40, 40, 0.6);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid rgba(153, 136, 0, 0.5);
+}
+
+.day-schedule-create-class h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #998800;
+}
+
+.schedule-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.time-group {
+  flex: 1;
+  min-width: 150px;
+  position: relative;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background-color: rgba(80, 80, 80, 0.7);
+  color: #ddd;
+}
+
+.btn-submit {
+  background-color: rgba(153, 136, 0, 0.7);
+  color: white;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: rgba(173, 156, 0, 0.8);
+}
+
+.form-error {
+  background-color: rgba(180, 60, 60, 0.2);
+  border: 1px solid rgba(180, 60, 60, 0.3);
+  color: #e0a0a0;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.form-success {
+  background-color: rgba(60, 150, 60, 0.2);
+  border: 1px solid rgba(60, 150, 60, 0.3);
+  color: #a0e0a0;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.field-error {
+  color: #d73333;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0 0;
+  height: 20px;
+  display: block;
+}
+
+.days-error {
+  margin: 0 0 0.75rem 0;
+}

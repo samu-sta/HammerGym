@@ -9,7 +9,7 @@ const ExerciseList = ({ exercises, hasExercises, selectedDay }) => {
   const [showProgressForm, setShowProgressForm] = useState(false);
 
   return (
-    <main className='exercise-list-container'>
+    <section className='exercise-list-container'>
       {hasExercises ? (
         <>
           <ul className="exercises-list">
@@ -41,7 +41,7 @@ const ExerciseList = ({ exercises, hasExercises, selectedDay }) => {
       ) : (
         <RestDayMessage selectedDay={selectedDay} />
       )}
-    </main>
+    </section>
   );
 };
 
