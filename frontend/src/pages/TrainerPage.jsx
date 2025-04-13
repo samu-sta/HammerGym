@@ -5,6 +5,8 @@ import ProfileSection from '../components/user/ProfileSection/ProfileSection.jsx
 import ActivitiesSection from '../components/user/ActivitiesSection/ActivitiesSection.jsx';
 import CreateTraining from '../components/trainer/createTraining/CreateTraining.jsx';
 import UsersList from '../components/trainer/usersList/UsersList.jsx';
+import TrainerClassesSection from '../components/trainer/classesSection/TrainerClassesSection.jsx';
+
 const TrainerPage = () => {
   const [activeSection, setActiveSection] = useState('userRoutines');
 
@@ -20,6 +22,8 @@ const TrainerPage = () => {
         return <ProfileSection />;
       case 'activities':
         return <ActivitiesSection />;
+      case 'classes':
+        return <TrainerClassesSection />;
       case 'userRoutines':
         return <UsersList />;
       default:

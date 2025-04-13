@@ -24,6 +24,19 @@ const getUserClasses = async () => {
   }
 };
 
+const getTrainerClasses = async () => {
+  try {
+    const response = await fetch('http://localhost:3000/classes/trainer', {
+      credentials: 'include'
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching trainer classes:', error);
+    return { success: false, classes: [] };
+  }
+};
+
 const enrollInClass = async (classId) => {
   try {
     const response = await fetch('http://localhost:3000/classes/enroll', {
@@ -60,4 +73,4 @@ const unenrollFromClass = async (classId) => {
   }
 };
 
-export { getAllClasses, getUserClasses, enrollInClass, unenrollFromClass };
+export { getAllClasses, getUserClasses, getTrainerClasses, enrollInClass, unenrollFromClass };

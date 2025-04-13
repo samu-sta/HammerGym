@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/InfoChip.css';
+import './styles/InfoChip.css';
 
 const InfoChip = ({ icon, className = '', children }) => {
   const Icon = icon;

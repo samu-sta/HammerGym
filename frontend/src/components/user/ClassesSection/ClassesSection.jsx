@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import ClassesList from './components/ClassesList';
+import UserClassesList from './components/UserClassesList';
 import useClasses from '../../../hooks/useClasses';
 import './styles/ClassesSection.css';
 
@@ -27,7 +27,6 @@ const ClassesSection = () => {
     }
   }, [view]);
 
-  // Filter out classes that the user is already enrolled in from all classes
   const availableClasses = allClasses.filter(classItem =>
     !userClasses.some(userClass => userClass.id === classItem.id)
   );
@@ -75,7 +74,7 @@ const ClassesSection = () => {
       />
 
       {view === 'all' ? (
-        <ClassesList
+        <UserClassesList
           classes={filteredAllClasses}
           setClasses={setAllClasses}
           loading={allLoading}
@@ -84,7 +83,7 @@ const ClassesSection = () => {
           isInSearch={true}
         />
       ) : (
-        <ClassesList
+        <UserClassesList
           classes={filteredUserClasses}
           setClasses={setUserClasses}
           loading={userLoading}
