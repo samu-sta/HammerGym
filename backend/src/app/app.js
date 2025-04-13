@@ -4,16 +4,12 @@ import dotenv from 'dotenv';
 import { AccountRoutes } from '../routes/Account.Routes.js';
 import { UserActivityRoutes } from '../routes/UserActivity.Routes.js';
 import { TrainingRoutes } from '../routes/Training.Routes.js';
-<<<<<<< HEAD
 import { ClassRoutes } from "../routes/Class.Routes.js";
 import { GymRoutes } from '../routes/Gym.Routes.js';
 import { MachineModelRoutes } from '../routes/MachineModel.Routes.js'; 
 import { MachineRoutes } from '../routes/Machine.Routes.js'; 
-=======
 import { ProgressUserRoutes } from '../routes/ProgressUser.Routes.js';
-import { ClassRoutes } from "../routes/Class.Routes.js";
 import { ExercisesRoutes } from '../routes/Exercises.Routes.js';
->>>>>>> 2f6f5fcb02fca6680508b9b5153fb0aae9a9841a
 import setupAssociations from '../database/associations.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
