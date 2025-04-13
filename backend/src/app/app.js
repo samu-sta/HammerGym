@@ -11,8 +11,12 @@ import { MachineRoutes } from '../routes/Machine.Routes.js';
 import { ProgressUserRoutes } from '../routes/ProgressUser.Routes.js';
 import { ExercisesRoutes } from '../routes/Exercises.Routes.js';
 import setupAssociations from '../database/associations.js';
+import { UserRoutes } from "../routes/User.Routes.js";
+import { TrainerRoutes } from "../routes/Trainer.Routes.js";
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import { authAccount, isAdmin } from '../middleware/auth.js';
+
 const DEFAULT_PORT = 3000;
 
 dotenv.config();
@@ -30,9 +34,11 @@ export const createApp = () => {
     credentials: true
   }));
 
-  app.use('/api/admin/gyms', GymRoutes());
-  app.use('/api/admin/machine-models', MachineModelRoutes());
-  app.use('/api/admin/machines', MachineRoutes());
+  app.use("/api/admin/users", authAccount, isAdmin, UserRoutes());
+  app.use("/api/admin/trainers", authAccount, isAdmin, TrainerRoutes());
+  app.use('/api/admin/gyms', authAccount, isAdmin, GymRoutes());
+  app.use('/api/admin/machine-models', authAccount, isAdmin, MachineModelRoutes());
+  app.use('/api/admin/machines', authAccount, isAdmin, MachineRoutes());
   app.use('/account', AccountRoutes());
   app.use('/user-activity', UserActivityRoutes());
   app.use('/training', TrainingRoutes());

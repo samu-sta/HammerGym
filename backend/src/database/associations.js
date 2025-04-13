@@ -167,24 +167,23 @@ const setupAssociations = () => {
     as: 'user'
   });
   AttendanceModel.belongsTo(UserModel, {
-    foreignKey: 'userid',
-    targetKey: 'accountId',
-    as: 'user'
+    foreignKey: "userId",
+    as: "user",
   });
-  AttendanceModel.belongsTo(ClassModel, {
-    foreignKey: 'classId',
-    targetKey: 'id',
-    as: 'class'
-  });
+
   UserModel.hasMany(AttendanceModel, {
-    foreignKey: 'userid',
-    sourceKey: 'accountId',
-    as: 'attendances'
+    foreignKey: "userId",
+    as: "attendances",
   });
+
+  AttendanceModel.belongsTo(ClassModel, {
+    foreignKey: "classId",
+    as: "class",
+  });
+
   ClassModel.hasMany(AttendanceModel, {
-    foreignKey: 'classId',
-    sourceKey: 'id',
-    as: 'attendances'
+    foreignKey: "classId",
+    as: "attendances",
   });
 
   console.log('Associations set up successfully');

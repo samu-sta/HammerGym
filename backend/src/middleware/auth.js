@@ -29,8 +29,6 @@ export const authAccount = async (req, res, next) => {
         return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
 }
-
-<<<<<<< HEAD
 export const isAdmin = async (req, res, next) => {
     try {
       if (!req.account || !req.account.id) {
@@ -60,7 +58,6 @@ export const isAdmin = async (req, res, next) => {
       });
     }
   };
-=======
 export const authUser = async (req, res, next) => {
     try {
         await authAccount(req, res, async () => {
@@ -90,6 +87,5 @@ export const authTrainer = async (req, res, next) => {
         return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
 }
->>>>>>> 2f6f5fcb02fca6680508b9b5153fb0aae9a9841a
 
 

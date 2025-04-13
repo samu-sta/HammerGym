@@ -13,15 +13,7 @@ const TrainingDayModel = sequelize.define('TrainingDay', {
   },
   userId: {
     type: DataTypes.INTEGER,
-<<<<<<< HEAD
     allowNull: false
-=======
-    allowNull: false,
-    references: {
-      model: 'Training',
-      key: 'userId'
-    }
->>>>>>> 2f6f5fcb02fca6680508b9b5153fb0aae9a9841a
   }
 }, {
   tableName: 'TrainingDay',

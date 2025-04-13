@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ClassController from "../controllers/Class.Controller.js";
+import ClassController from "../controllers/Class.controller.js";
 import { authAccount } from "../middleware/auth.js";
 
 export const ClassRoutes = () => {

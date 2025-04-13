@@ -14,17 +14,11 @@ const TrainingModel = sequelize.define('Training', {
   trainerId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-<<<<<<< HEAD
   },
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-=======
-    references: {
-      model: 'Trainer',
-      key: 'accountId'
-    }
->>>>>>> 2f6f5fcb02fca6680508b9b5153fb0aae9a9841a
+
   }
 }, {
   tableName: 'Training',
