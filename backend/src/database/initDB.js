@@ -11,13 +11,13 @@ import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
 import ClassModel from '../models/Class.js';
 import ScheduleModel from '../models/schedule.js';
+import ProgressUserModel from '../models/UserProgress.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 import argon2 from 'argon2';
 import AttendanceModel from '../models/Attendance.js';
 import setupAssociations from './associations.js';
 import assistanceListModel from '../models/assistanceList.js';
-
 
 dotenv.config();
 
@@ -151,23 +151,20 @@ const initDatabase = async () => {
 
     // Crear días de entrenamiento y series
     for (const dayInfo of trainingDays) {
-      // Crear el día de entrenamiento
       const trainingDay = await TrainingDayModel.create({
         day: dayInfo.day,
-        trainingId: training.id
+        userId: user.accountId  // Reference userId instead of trainingId
       });
 
-      // Crear series para los ejercicios de este día
       for (const exerciseIndex of dayInfo.exercises) {
         const exercise = exercises[exerciseIndex];
 
-        // Crear 3 series para cada ejercicio
         for (let i = 1; i <= 3; i++) {
           await SerieModel.create({
             idTrainingDay: trainingDay.id,
             idExercise: exercise.id,
-            reps: 10 + (i * 2), // 12, 14, 16 repeticiones
-            weigth: 20 + (i * 5) // 25, 30, 35 kg
+            reps: 10 + (i * 2),
+            weigth: 20 + (i * 5)
           });
         }
       }
@@ -202,7 +199,6 @@ const initDatabase = async () => {
       classId: classInstance.id,
       attendanceDate: new Date()
     });
-
 
     console.log('Database, tables, and sample data created successfully!');
     console.log('Created training plan ID:', training.id);

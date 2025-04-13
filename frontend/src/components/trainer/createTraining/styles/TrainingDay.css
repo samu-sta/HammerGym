@@ -1,0 +1,17 @@
+.day-container {
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: rgba(35, 35, 35, 0.6);
+  border-left: 4px solid rgba(153, 136, 0, 0.8);
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-footer {
+  display: flex;
+  justify-content: flex-start;
+}

@@ -10,8 +10,13 @@ import SerieModel from '../models/Serie.js';
 import ExerciseModel from '../models/Exercise.js';
 import AttendanceModel from '../models/Attendance.js';
 import ClassModel from '../models/Class.js';
+<<<<<<< HEAD
 import ScheduleModel from '../models/schedule.js';
 import assistanceListModel from '../models/assistanceList.js';
+=======
+import assitanceListModel from '../models/assistanceList.js';
+import ProgressUserModel from '../models/UserProgress.js';
+>>>>>>> 2f6f5fcb02fca6680508b9b5153fb0aae9a9841a
 
 const setupAssociations = () => {
 
@@ -51,10 +56,15 @@ const setupAssociations = () => {
     as: 'trainer'
   });
 
+<<<<<<< HEAD
   UserModel.hasMany(TrainingModel, {
+=======
+  // Relación User-Training (User recibe entrenamientos)
+  UserModel.hasOne(TrainingModel, {
+>>>>>>> 2f6f5fcb02fca6680508b9b5153fb0aae9a9841a
     foreignKey: 'userId',
     sourceKey: 'accountId',
-    as: 'assignedTrainings'
+    as: 'assignedTraining'
   });
 
   TrainingModel.belongsTo(UserModel, {
@@ -64,12 +74,14 @@ const setupAssociations = () => {
   });
 
   TrainingModel.hasMany(TrainingDayModel, {
-    foreignKey: 'trainingId',
+    foreignKey: 'userId',
+    sourceKey: 'userId',
     as: 'trainingDays'
   });
 
   TrainingDayModel.belongsTo(TrainingModel, {
-    foreignKey: 'trainingId',
+    foreignKey: 'userId',
+    targetKey: 'userId',
     as: 'training'
   });
 
@@ -152,7 +164,37 @@ const setupAssociations = () => {
     as: 'assistanceList'
   });
 
- 
+   UserModel.hasMany(ProgressUserModel, {
+    foreignKey: 'userId',
+    sourceKey: 'accountId',
+    as: 'progress'
+  }
+  );
+  ProgressUserModel.belongsTo(UserModel, {
+    foreignKey: 'userId',
+    targetKey: 'accountId',
+    as: 'user'
+  });
+  AttendanceModel.belongsTo(UserModel, {
+    foreignKey: 'userid',
+    targetKey: 'accountId',
+    as: 'user'
+  });
+  AttendanceModel.belongsTo(ClassModel, {
+    foreignKey: 'classId',
+    targetKey: 'id',
+    as: 'class'
+  });
+  UserModel.hasMany(AttendanceModel, {
+    foreignKey: 'userid',
+    sourceKey: 'accountId',
+    as: 'attendances'
+  });
+  ClassModel.hasMany(AttendanceModel, {
+    foreignKey: 'classId',
+    sourceKey: 'id',
+    as: 'attendances'
+  });
 
   console.log('Associations set up successfully');
 };

@@ -1,0 +1,55 @@
+.series-container {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(30, 30, 30, 0.6);
+  border-radius: 6px;
+}
+
+.series-title {
+  margin-bottom: 1rem;
+  color: #f8f9fa;
+  font-size: 1.1rem;
+}
+
+.series-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.series-header th {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 2px solid rgba(153, 136, 0, 0.3);
+  color: #f8f9fa;
+  font-weight: 500;
+}
+
+.series-table th:first-child {
+  width: 60px;
+}
+
+.series-table th:last-child {
+  width: 100px;
+}
+
+.add-button {
+  background-color: rgba(153, 136, 0, 0.8);
+  color: #f8f9fa;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.add-button:hover {
+  background-color: rgba(153, 136, 0, 1);
+}
+
+.add-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(153, 136, 0, 0.4);
+}

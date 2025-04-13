@@ -15,15 +15,6 @@ const ExerciseModel = sequelize.define('Exercise', {
         type: DataTypes.STRING(255),
         allowNull: false
     },
-    /* TODO: Add machine id */
-    /* idMachine: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Machine',
-            key: 'id'
-        }
-    }, */
     muscles: {
         type: DataTypes.ENUM('biceps', 'triceps', 'back', 'chest', 'shoulders', 'legs'),
     }

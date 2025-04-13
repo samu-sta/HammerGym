@@ -14,6 +14,9 @@ const ACTIVITY_SUCCESS = "Activity registered successfully";
 const ACTIVITY_ERROR = "Error registering activity";
 const NO_ACTIVITIES = "No activities found";
 const INVALID_CREDENTIALS = "Invalid credentials";
+const PROGRESS_ALREADY_EXISTS = "Progress already exists";
+const PROGRESS_CREATED = "Progress created successfully";
+const PROGRESS_UPDATED = "Progress updated successfully";
 
 const MESSAGES = {
   USER_NOT_FOUND,
@@ -31,7 +34,10 @@ const MESSAGES = {
   ACTIVITY_SUCCESS,
   ACTIVITY_ERROR,
   NO_ACTIVITIES,
-  INVALID_CREDENTIALS
+  INVALID_CREDENTIALS,
+  PROGRESS_ALREADY_EXISTS,
+  PROGRESS_CREATED,
+  PROGRESS_UPDATED,
 };
 
 export default MESSAGES;
