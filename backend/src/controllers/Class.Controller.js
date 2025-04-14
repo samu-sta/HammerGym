@@ -119,4 +119,29 @@ export default class ClassController {
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   };
+
+  recordAttendance = async (req, res) => {
+    const result = classSchema.validateRecordAttendance(req.body);
+
+    if (!result.success) {
+      return res.status(400).json({
+        success: false,
+        message: MESSAGES.INVALID_DATA,
+        errors: result.error.format()
+      });
+    }
+
+    try {
+      await this.classService.recordAttendance(result.data.classId, result.data);
+      return res.status(200).json({ success: true });
+    }
+    catch (error) {
+      if (!error.status || !error.messages) {
+        error.status = 500;
+        error.messages = error.message || MESSAGES.ERROR_500;
+      }
+      return res.status(error.status).json({ success: false, message: error.messages });
+    }
+  }
+
 }

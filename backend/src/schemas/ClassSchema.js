@@ -33,12 +33,32 @@ const createClassSchema = zod.object({
   schedule: scheduleSchema
 });
 
+const attendanceUserSchema = zod.object({
+  username: zod.string().min(1)
+});
+const dateOnlyStringToDate = zod.string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format")
+  .transform((dateString) => {
+    return new Date(dateString);
+  });
+
+const recordAttendanceSchema = zod.object({
+  classId: zod.number().int().positive(),
+  date: zod.union([zod.date(), dateOnlyStringToDate]),
+  users: zod.array(attendanceUserSchema)
+});
+
 export const validateCreateClass = (data) => {
   return createClassSchema.safeParse(data);
 };
 
+export const validateRecordAttendance = (data) => {
+  return recordAttendanceSchema.safeParse(data);
+};
+
 const classSchema = {
-  validateCreateClass
+  validateCreateClass,
+  validateRecordAttendance
 };
 
 export default classSchema;

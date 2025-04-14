@@ -14,6 +14,7 @@ const AttendanceModel = sequelize.define('Attendance', {
   },
   userId: {
     type: DataTypes.INTEGER,
+    primaryKey: true,
     allowNull: false,
     references: {
       model: 'User',
@@ -21,7 +22,8 @@ const AttendanceModel = sequelize.define('Attendance', {
     }
   },
   attendanceDate: {
-    type: DataTypes.DATE,
+    type: DataTypes.DATEONLY,
+    primaryKey: true,
     allowNull: false,
     defaultValue: DataTypes.NOW
   }
