@@ -36,15 +36,10 @@ const createClassSchema = zod.object({
 const attendanceUserSchema = zod.object({
   username: zod.string().min(1)
 });
-const dateOnlyStringToDate = zod.string()
-  .regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format")
-  .transform((dateString) => {
-    return new Date(dateString);
-  });
 
+// Removed date validation since we'll use server's current date
 const recordAttendanceSchema = zod.object({
   classId: zod.number().int().positive(),
-  date: zod.union([zod.date(), dateOnlyStringToDate]),
   users: zod.array(attendanceUserSchema)
 });
 

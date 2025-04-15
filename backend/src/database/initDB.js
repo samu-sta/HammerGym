@@ -236,8 +236,8 @@ const initDatabase = async () => {
 
     const schedule = await ScheduleModel.create({
       classId: classInstance.id,
-      startDate: '2023-10-01',
-      endDate: '2023-12-31'
+      startDate: '2025-01-01',
+      endDate: '2025-12-31'
     });
 
     await ScheduleDayModel.create({
@@ -249,7 +249,7 @@ const initDatabase = async () => {
 
     await ScheduleDayModel.create({
       scheduleId: classInstance.id,
-      day: 'Wednesday',
+      day: 'Tuesday',
       startHour: '09:00:00',
       endHour: '18:00:00'
     });

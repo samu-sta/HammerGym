@@ -184,19 +184,47 @@ export default class ClassService {
     const t = await sequelize.transaction();
 
     try {
-      const classInstance = await this.validateClassExists(classId);
-      const attendanceDate = new Date(attendanceData.date);
+      // Find the class and include its schedule information
+      const classInstance = await ClassModel.findByPk(classId, {
+        include: [{
+          model: ScheduleModel,
+          as: 'schedule',
+          include: [{
+            model: ScheduleDayModel,
+            as: 'scheduleDays'
+          }]
+        }],
+        transaction: t
+      });
+
+      console.log(classInstance);
+
+      if (!classInstance) throw { status: 404, messages: MESSAGES.CLASS_NOT_FOUND };
+
+      // Get current server date to use for attendance
+      const currentDate = new Date();
+      const currentDay = this.getDayOfWeek(currentDate);
+
+      // Check if today is a scheduled day for this class
+      const isScheduledDay = this.isClassScheduledForDay(classInstance, currentDay);
+      if (!isScheduledDay) {
+        throw {
+          status: 403,
+          messages: `No se puede registrar asistencia hoy (${currentDay}). Esta clase solo se imparte en los días programados en su horario.`
+        };
+      }
 
       const userMap = await this.getUserMapForClass(classInstance);
 
-      await this.clearPreviousAttendance(classId, attendanceDate, t);
+      // Use the current date for attendance records
+      await this.clearPreviousAttendance(classId, currentDate, t);
 
       if (!attendanceData.users || attendanceData.users.length === 0) {
         await t.commit();
         return true;
       }
 
-      await this.createAttendanceRecords(classId, attendanceData.users, userMap, attendanceDate, t);
+      await this.createAttendanceRecords(classId, attendanceData.users, userMap, currentDate, t);
 
       await t.commit();
       return true;
@@ -205,6 +233,36 @@ export default class ClassService {
       await t.rollback();
       throw error;
     }
+  }
+
+  // Helper method to get the day of the week as a string
+  getDayOfWeek(date) {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[date.getDay()];
+  }
+
+  // Helper method to check if a class is scheduled for a given day
+  isClassScheduledForDay(classInstance, dayOfWeek) {
+    if (!classInstance.schedule || !classInstance.schedule.scheduleDays) {
+      return false;
+    }
+
+    // Check current date is within the schedule range
+    const currentDate = new Date();
+    const startDate = new Date(classInstance.schedule.startDate);
+    const endDate = new Date(classInstance.schedule.endDate);
+
+    console.log("Current Date:", currentDate);
+    console.log("Start Date:", startDate);
+    console.log("End Date:", endDate);
+
+    if (currentDate < startDate || currentDate > endDate) {
+      return false;
+    }
+    // Check if the day of week matches any scheduled day
+    return classInstance.schedule.scheduleDays.some(scheduledDay =>
+      scheduledDay.day === dayOfWeek
+    );
   }
 
   async validateClassExists(classId) {
