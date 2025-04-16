@@ -1,6 +1,8 @@
+const API_BASE_URL = 'http://localhost:3000';
+
 const getAllClasses = async () => {
   try {
-    const response = await fetch('http://localhost:3000/classes', {
+    const response = await fetch(`${API_BASE_URL}/classes`, {
       credentials: 'include'
     });
     const data = await response.json();
@@ -13,7 +15,7 @@ const getAllClasses = async () => {
 
 const getUserClasses = async () => {
   try {
-    const response = await fetch('http://localhost:3000/classes/user', {
+    const response = await fetch(`${API_BASE_URL}/classes/user`, {
       credentials: 'include'
     });
     const data = await response.json();
@@ -26,7 +28,7 @@ const getUserClasses = async () => {
 
 const getTrainerClasses = async () => {
   try {
-    const response = await fetch('http://localhost:3000/classes/trainer', {
+    const response = await fetch(`${API_BASE_URL}/classes/trainer`, {
       credentials: 'include'
     });
     const data = await response.json();
@@ -39,7 +41,7 @@ const getTrainerClasses = async () => {
 
 const createClass = async (classData) => {
   try {
-    const response = await fetch('http://localhost:3000/classes', {
+    const response = await fetch(`${API_BASE_URL}/classes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -57,7 +59,7 @@ const createClass = async (classData) => {
 
 const enrollInClass = async (classId) => {
   try {
-    const response = await fetch('http://localhost:3000/classes/enroll', {
+    const response = await fetch(`${API_BASE_URL}/classes/enroll`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -80,7 +82,7 @@ const enrollInClass = async (classId) => {
 
 const unenrollFromClass = async (classId) => {
   try {
-    const response = await fetch('http://localhost:3000/classes/unenroll', {
+    const response = await fetch(`${API_BASE_URL}/classes/unenroll`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -103,7 +105,7 @@ const unenrollFromClass = async (classId) => {
 
 const deleteClass = async (classId) => {
   try {
-    const response = await fetch(`http://localhost:3000/classes/${classId}`, {
+    const response = await fetch(`${API_BASE_URL}/classes/${classId}`, {
       method: 'DELETE',
       credentials: 'include'
     });
@@ -120,4 +122,68 @@ const deleteClass = async (classId) => {
   }
 };
 
-export { getAllClasses, getUserClasses, getTrainerClasses, enrollInClass, unenrollFromClass, createClass, deleteClass };
+/**
+ * Obtiene los datos de asistencia de una clase para una fecha específica
+ * @param {string} classId - ID de la clase
+ * @param {string} date - Fecha en formato ISO (YYYY-MM-DD)
+ * @returns {Promise<Object>} Datos de la clase y usuarios con su estado de asistencia
+ */
+const getClassAttendance = async (classId, date) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/classes/attendance/${classId}&${date}`, {
+      credentials: 'include'
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Error al obtener la asistencia');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching class attendance:', error);
+    return { success: false, message: error.message, users: [], class: null };
+  }
+};
+
+/**
+ * Registra la asistencia de usuarios a una clase
+ * @param {string} classId - ID de la clase 
+ * @param {Array} users - Array de objetos con {username} de los usuarios que asistieron
+ * @param {string} date - Fecha en formato ISO (YYYY-MM-DD)
+ * @returns {Promise<Object>} Resultado de la operación
+ */
+const submitClassAttendance = async (classId, users, date) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/classes/attendance`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ classId, users, date }),
+      credentials: 'include'
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Error al registrar la asistencia');
+    }
+
+    return { success: true, data: await response.json() };
+  } catch (error) {
+    console.error('Error submitting attendance:', error);
+    return { success: false, message: error.message };
+  }
+};
+
+export {
+  getAllClasses,
+  getUserClasses,
+  getTrainerClasses,
+  enrollInClass,
+  unenrollFromClass,
+  createClass,
+  deleteClass,
+  getClassAttendance,
+  submitClassAttendance
+};

@@ -15,6 +15,7 @@ export const ClassRoutes = () => {
   classRouter.get("/user", authUser, classController.getUserClasses);
   classRouter.get("/trainer", authTrainer, classController.getTrainerClasses);
   classRouter.post("/attendance", authTrainer, classController.recordAttendance);
+  classRouter.get("/attendance/:classId&:date", authTrainer, classController.getClassAttendance);
 
   return classRouter;
 };

@@ -197,34 +197,29 @@ export default class ClassService {
         transaction: t
       });
 
-      console.log(classInstance);
-
       if (!classInstance) throw { status: 404, messages: MESSAGES.CLASS_NOT_FOUND };
 
-      // Get current server date to use for attendance
-      const currentDate = new Date();
-      const currentDay = this.getDayOfWeek(currentDate);
+      // Use the provided date or default to current date
+      const attendanceDate = attendanceData.date ? new Date(attendanceData.date) : new Date();
+      const dayOfWeek = this.getDayOfWeek(attendanceDate);
 
-      // Check if today is a scheduled day for this class
-      const isScheduledDay = this.isClassScheduledForDay(classInstance, currentDay);
-      if (!isScheduledDay) {
-        throw {
-          status: 403,
-          messages: `No se puede registrar asistencia hoy (${currentDay}). Esta clase solo se imparte en los días programados en su horario.`
-        };
-      }
+      // Validate if the date is within schedule range and matches a scheduled day
+      this.isDateWithinSchedule(classInstance, attendanceDate);
+
+      // Check if the day is a scheduled day for this class
+      await this.isClassScheduledForDay(classInstance, dayOfWeek);
+
 
       const userMap = await this.getUserMapForClass(classInstance);
 
-      // Use the current date for attendance records
-      await this.clearPreviousAttendance(classId, currentDate, t);
+      await this.clearPreviousAttendance(classId, attendanceDate, t);
 
-      if (!attendanceData.users || attendanceData.users.length === 0) {
+      if (attendanceData.users.length === 0) {
         await t.commit();
         return true;
       }
 
-      await this.createAttendanceRecords(classId, attendanceData.users, userMap, currentDate, t);
+      await this.createAttendanceRecords(classId, attendanceData.users, userMap, attendanceDate, t);
 
       await t.commit();
       return true;
@@ -242,31 +237,44 @@ export default class ClassService {
   }
 
   // Helper method to check if a class is scheduled for a given day
+  isDateWithinSchedule(classInstance, date) {
+
+    const scheduleStartDate = new Date(classInstance.schedule.startDate);
+    const scheduleEndDate = new Date(classInstance.schedule.endDate);
+
+    // Reset time part for date comparison
+    const dateToCheck = new Date(date.setHours(0, 0, 0, 0));
+    const startDate = new Date(scheduleStartDate.setHours(0, 0, 0, 0));
+    const endDate = new Date(scheduleEndDate.setHours(23, 59, 59, 999));
+
+    if (!(dateToCheck >= startDate && dateToCheck <= endDate)) {
+      throw {
+        status: 403,
+        messages: `La fecha seleccionada está fuera del período programado para esta clase.`
+      };
+    }
+  }
+
+  // Refactored the isClassScheduledForDay method to focus only on checking days
   isClassScheduledForDay(classInstance, dayOfWeek) {
-    if (!classInstance.schedule || !classInstance.schedule.scheduleDays) {
-      return false;
-    }
-
-    // Check current date is within the schedule range
-    const currentDate = new Date();
-    const startDate = new Date(classInstance.schedule.startDate);
-    const endDate = new Date(classInstance.schedule.endDate);
-
-    console.log("Current Date:", currentDate);
-    console.log("Start Date:", startDate);
-    console.log("End Date:", endDate);
-
-    if (currentDate < startDate || currentDate > endDate) {
-      return false;
-    }
     // Check if the day of week matches any scheduled day
-    return classInstance.schedule.scheduleDays.some(scheduledDay =>
-      scheduledDay.day === dayOfWeek
-    );
+    if (!classInstance.schedule.scheduleDays.some(scheduledDay => scheduledDay.day === dayOfWeek)) {
+      throw {
+        status: 403,
+        messages: `No se puede registrar asistencia para ${dayOfWeek}. Esta clase solo se imparte en los días programados en su horario.`
+      };
+    }
   }
 
   async validateClassExists(classId) {
-    const classInstance = await ClassModel.findByPk(classId);
+    const classInstance = await ClassModel.findByPk(classId
+      , {
+        include: [{
+          model: ScheduleModel,
+          as: 'schedule',
+          include: [{ model: ScheduleDayModel, as: 'scheduleDays' }]
+        }]
+      });
     if (!classInstance) throw { status: 404, messages: MESSAGES.CLASS_NOT_FOUND };
     return classInstance;
   }
@@ -347,5 +355,28 @@ export default class ClassService {
 
       return result;
     });
+  }
+
+  async getClassAttendanceData(classId, date) {
+    const classInstance = await this.validateClassExists(classId);
+
+    const users = await classInstance.getRegisteredUsers({
+      include: [{ model: AccountModel, as: 'account' }]
+    });
+
+    const attendanceRecords = await AttendanceModel.findAll({
+      where: {
+        classId: classId,
+        attendanceDate: date
+      }
+    });
+
+    const attendedUserIdsSet = new Set(attendanceRecords.map(record => record.userId));
+
+    return users.map(user => ({
+      username: user.account.username,
+      email: user.account.email,
+      attendance: attendedUserIdsSet.has(user.accountId)
+    }));
   }
 }

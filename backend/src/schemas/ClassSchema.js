@@ -1,4 +1,4 @@
-import zod from 'zod';
+import zod, { date } from 'zod';
 
 const scheduleDaySchema = zod.object({
   day: zod.enum(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']),
@@ -39,8 +39,13 @@ const attendanceUserSchema = zod.object({
 
 // Removed date validation since we'll use server's current date
 const recordAttendanceSchema = zod.object({
+  date: zod.string().date(),
   classId: zod.number().int().positive(),
   users: zod.array(attendanceUserSchema)
+});
+
+const classAttendanceSchema = zod.object({
+  date: zod.string().date()
 });
 
 export const validateCreateClass = (data) => {
@@ -51,9 +56,6 @@ export const validateRecordAttendance = (data) => {
   return recordAttendanceSchema.safeParse(data);
 };
 
-const classSchema = {
-  validateCreateClass,
-  validateRecordAttendance
+export const validateClassAttendance = (data) => {
+  return classAttendanceSchema.safeParse(data);
 };
-
-export default classSchema;
