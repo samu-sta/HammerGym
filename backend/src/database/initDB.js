@@ -425,6 +425,18 @@ const initDatabase = async () => {
       }
     }
 
+    const adminAccount = await AccountModel.create({
+      email: 'admin@example.com',
+      username: 'AdminUser',
+      password: hashedPassword
+    });
+
+    await AdminModel.create({
+      accountId: adminAccount.id
+    });
+
+    console.log('- Admin: admin@example.com / password123');
+
     console.log('Database, tables, and sample data created successfully!');
     console.log('Created training plan ID:', training.id);
     console.log('Login credentials:');

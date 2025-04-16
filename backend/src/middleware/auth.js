@@ -59,4 +59,19 @@ export const authTrainer = async (req, res, next) => {
     }
 }
 
+export const authAdmin = async (req, res, next) => {
+    try {
+        await authAccount(req, res, async () => {
+            const account = req.account;
+            const accountType = await whichAccount(account);
+            if (accountType !== 'admin') {
+                return res.status(403).json({ success: false, message: MESSAGES.ACCESS_DENIED });
+            }
+            next();
+        });
+    } catch (error) {
+        return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+    }
+}
+
 
