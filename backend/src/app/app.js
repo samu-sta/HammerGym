@@ -10,6 +10,10 @@ import { ProgressUserRoutes } from '../routes/ProgressUser.Routes.js';
 import { ClassRoutes } from "../routes/Class.Routes.js";
 import { ExercisesRoutes } from '../routes/Exercises.Routes.js';
 import { TrainerRoutes } from '../routes/Trainer.Routes.js';
+import { GymRoutes } from '../routes/Gym.Routes.js';
+import { MachineModelRoutes } from '../routes/MachineModel.Routes.js';
+import { MachineRoutes } from '../routes/Machine.Routes.js';
+import { UserRoutes } from '../routes/User.Routes.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 const DEFAULT_PORT = 3000;
@@ -28,13 +32,17 @@ export const createApp = () => {
     credentials: true
   }));
 
+  app.use('/user', UserRoutes());
+  app.use('/trainer', TrainerRoutes());
+  app.use('/gym', GymRoutes());
+  app.use('/machine', MachineModelRoutes());
+  app.use('/machines', MachineRoutes());
   app.use('/account', AccountRoutes());
   app.use('/user-activity', UserActivityRoutes());
   app.use('/training', TrainingRoutes());
   app.use("/classes", ClassRoutes());
   app.use('/progress', ProgressUserRoutes());
   app.use('/api/exercises', ExercisesRoutes());
-  app.use('/trainer', TrainerRoutes());
 
   app.get('/', (req, res) => {
     res.send('Hello World');

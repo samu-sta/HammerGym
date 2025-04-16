@@ -1,15 +1,19 @@
 import { Router } from 'express';
 import TrainerController from '../controllers/Trainer.Controller.js';
-import { authTrainer } from '../middleware/auth.js';
+import { authTrainer, authAdmin } from '../middleware/auth.js';
 
 
 export const TrainerRoutes = () => {
   const trainerRouter = Router();
   const trainerController = new TrainerController();
 
-  trainerRouter.use(authTrainer);
 
-  trainerRouter.get('/assigned-users', trainerController.getTrainerAssignedUsers);
+  trainerRouter.get('/assigned-users', authTrainer, trainerController.getTrainerAssignedUsers);
+  trainerRouter.get("/", authAdmin, trainerController.getAllTrainers);
+  trainerRouter.get("/:id", authAdmin, trainerController.getTrainerById);
+  trainerRouter.post("/", authAdmin, trainerController.createTrainer);
+  trainerRouter.put("/:id", authAdmin, trainerController.updateTrainer);
+  trainerRouter.delete("/:id", authAdmin, trainerController.deleteTrainer);
 
   return trainerRouter;
 }

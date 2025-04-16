@@ -1,5 +1,5 @@
 import UserModel from "../models/User.js";
-
+import TrainerModel from "../models/Trainer.js";
 
 const whichAccount = async (accountId) => {
   try {
@@ -7,13 +7,18 @@ const whichAccount = async (accountId) => {
       where: { accountId }
     });
 
-    console.log('User:', accountId);
-
     if (user) {
       return 'user';
-    } else {
+    }
+
+    const trainer = await TrainerModel.findOne({
+      where: { accountId }
+    });
+    if (trainer) {
       return 'trainer';
     }
+
+    return 'admin';
   } catch (error) {
     console.error('Error determining account type:', error);
     throw error;
