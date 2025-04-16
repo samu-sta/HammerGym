@@ -1,4 +1,4 @@
-import { FaCalendarAlt, FaUsers, FaFire, FaTrash } from 'react-icons/fa';
+import { FaCalendarAlt, FaUsers, FaFire, FaTrash, FaUserCheck } from 'react-icons/fa';
 import ClassItem from '../../../common/ClassItem';
 import InfoChip from '../../../common/InfoChip';
 import ScheduleDay from '../../../common/ScheduleDay';
@@ -6,45 +6,35 @@ import useDeleteClass from '../../../../hooks/useDeleteClass';
 import useModal from '../../../../hooks/useModal';
 import Modal from '../../../common/Modal';
 import { getDifficultyClass } from '../../../../utils/classUtils';
+import AttendanceModal from './AttendanceModal';
+import DeleteConfirmation from './DeleteConfirmation';
 import '../styles/TrainerClassItem.css';
-
-const DeleteConfirmation = ({ onConfirm, onCancel, loading, error }) => (
-  <div className="delete-confirmation">
-    <p>¿Estás seguro de eliminar esta clase?</p>
-    <div className="confirmation-buttons">
-      <button
-        className="confirm-button"
-        onClick={onConfirm}
-        disabled={loading}
-      >
-        {loading ? 'Eliminando...' : 'Confirmar'}
-      </button>
-      <button
-        className="cancel-button"
-        onClick={onCancel}
-        disabled={loading}
-      >
-        Cancelar
-      </button>
-    </div>
-    {error && <p className="error-message">{error}</p>}
-  </div>
-);
 
 const TrainerClassItem = ({ classData, onClassDeleted }) => {
   const { deleteClass, loading, error } = useDeleteClass();
-  const { isOpen, openModal, closeModal } = useModal();
+
+  const {
+    isOpen: isDeleteOpen,
+    openModal: openDeleteModal,
+    closeModal: closeDeleteModal
+  } = useModal();
+
+  const {
+    isOpen: isAttendanceOpen,
+    openModal: openAttendanceModal,
+    closeModal: closeAttendanceModal
+  } = useModal();
 
   const handleDelete = async () => {
     if (loading) return;
 
     const success = await deleteClass(classData.id, onClassDeleted);
     if (success) {
-      closeModal();
+      closeDeleteModal();
     }
   };
 
-  const renderInfoChips = ({ classData }) => (
+  const renderInfoChips = () => (
     <>
       <InfoChip icon={FaUsers}>
         {classData.currentCapacity || 0}/{classData.maxCapacity || 0} alumnos
@@ -64,15 +54,22 @@ const TrainerClassItem = ({ classData, onClassDeleted }) => {
   );
 
   const renderFooter = () => (
-    <div className="class-actions">
+    <footer className="class-actions">
+      <button
+        className="attendance-button"
+        onClick={openAttendanceModal}
+        title="Registrar asistencia"
+      >
+        <FaUserCheck /> Asistencia
+      </button>
       <button
         className="delete-button"
-        onClick={openModal}
+        onClick={openDeleteModal}
         title="Eliminar clase"
       >
         <FaTrash /> Eliminar
       </button>
-    </div>
+    </footer>
   );
 
   return (
@@ -87,15 +84,26 @@ const TrainerClassItem = ({ classData, onClassDeleted }) => {
       />
 
       <Modal
-        isOpen={isOpen}
-        onClose={closeModal}
+        isOpen={isDeleteOpen}
+        onClose={closeDeleteModal}
         title="Confirmar eliminación"
       >
         <DeleteConfirmation
           onConfirm={handleDelete}
-          onCancel={closeModal}
+          onCancel={closeDeleteModal}
           loading={loading}
           error={error}
+        />
+      </Modal>
+
+      <Modal
+        isOpen={isAttendanceOpen}
+        onClose={closeAttendanceModal}
+        title="Registro de Asistencia"
+      >
+        <AttendanceModal
+          classId={classData.id}
+          onClose={closeAttendanceModal}
         />
       </Modal>
     </>

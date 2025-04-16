@@ -49,6 +49,7 @@
   user-select: none;
   border: none;
   font-size: inherit;
+  font-weight: bold;
 }
 
 .login-link {
