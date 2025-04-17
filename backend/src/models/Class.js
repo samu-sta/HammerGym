@@ -32,7 +32,7 @@ const ClassModel = sequelize.define('Class', {
         allowNull: false,
         references: {
             model: 'Trainer',
-            key: 'id'
+            key: 'accountId'
         }
     }
 }, {

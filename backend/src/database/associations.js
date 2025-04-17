@@ -210,12 +210,12 @@ const setupAssociations = () => {
 
   TrainerModel.hasMany(ClassModel, {
     foreignKey: 'trainerId',
-    sourceKey: 'id',
+    sourceKey: 'accountId',
     as: 'classes'
   });
   ClassModel.belongsTo(TrainerModel, {
     foreignKey: 'trainerId',
-    targetKey: 'id',
+    targetKey: 'accountId',
     as: 'trainer'
   });
 

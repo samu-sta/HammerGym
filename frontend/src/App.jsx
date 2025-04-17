@@ -17,6 +17,7 @@ import TrainerPage from './pages/TrainerPage.jsx';
 import CreateTraining from './components/trainer/createTraining/CreateTraining.jsx';
 import UserProgress from './components/trainer/userProgress/UserProgress.jsx';
 import UsersManagement from './pages/UsersManagement.jsx';
+import TrainersManagement from './pages/TrainersManagement.jsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,6 +77,7 @@ function App() {
             <Route element={<ProtectedLayout allowedRoles={['admin']} />}>
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/admin/users" element={<UsersManagement />} />
+              <Route path="/admin/trainers" element={<TrainersManagement />} />
               <Route path="/admin/*" element={<AdminPage />} />
             </Route>
 
@@ -89,6 +91,7 @@ function App() {
               <Route path="/entrenador/crear-plan" element={<CreateTraining />} />
               <Route path="/entrenador/:email/progress" element={<UserProgress />} />
               <Route path="/entrenador/training/:userEmail" element={<CreateTraining />} />
+              <Route path="/entrenador/management" element={<TrainersManagement />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />

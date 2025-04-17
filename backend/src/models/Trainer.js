@@ -5,6 +5,7 @@ const TrainerModel = sequelize.define('Trainer', {
   accountId: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    primaryKey: true,
     references: {
       model: 'Account',
       key: 'id'
@@ -12,8 +13,8 @@ const TrainerModel = sequelize.define('Trainer', {
   }
 }, {
   tableName: 'Trainer',
-  timestamps: true,
-  sequelize
+  sequelize,
+  timestamps: false
 });
 
 export default TrainerModel;

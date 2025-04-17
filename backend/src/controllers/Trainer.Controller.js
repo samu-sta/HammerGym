@@ -1,7 +1,9 @@
 import TrainingModel from '../models/Training.js';
 import UserModel from '../models/User.js';
 import AccountModel from '../models/Account.js';
+import TrainerModel from '../models/Trainer.js';
 import MESSAGES from '../messages/messages.js';
+import updateUserSchema from "../schemas/UpdateUserSchema.js";
 
 export default class TrainerController {
 
@@ -52,7 +54,18 @@ export default class TrainerController {
       const trainers = await TrainerModel.findAll({
         include: [{ model: AccountModel, as: "account" }]
       });
-      return res.status(200).json({ success: true, trainers });
+
+      const refactoredTrainers = trainers.map(trainer => {
+        const { account, accountId, ...trainerData } = trainer.dataValues;
+        return {
+          ...trainerData,
+          id: account.id,
+          email: account.email,
+          username: account.username
+        };
+      });
+
+      return res.status(200).json({ success: true, trainers: refactoredTrainers });
     } catch (error) {
       console.error(error);
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
@@ -89,15 +102,34 @@ export default class TrainerController {
 
   updateTrainer = async (req, res) => {
     const { id } = req.params;
+    const result = updateUserSchema.validateUpdateUser(req.body);
+
+    if (!result.success) {
+      return res.status(400).json({
+        success: false,
+        message: MESSAGES.INVALID_DATA,
+        errors: result.error.format()
+      });
+    }
+
     try {
-      const trainer = await TrainerModel.findByPk(id);
+      const trainer = await TrainerModel.findByPk(id, {
+        include: [{ model: AccountModel, as: "account" }]
+      });
+
       if (!trainer) {
         return res.status(404).json({ success: false, message: "Entrenador no encontrado" });
       }
-      await trainer.update(req.body);
-      return res.status(200).json({ success: true, trainer });
-    } catch (error) {
-      console.error(error);
+
+      const accountData = {};
+      accountData.email = result.data.email;
+      accountData.username = result.data.username;
+
+      await trainer.account.update(accountData);
+
+      return res.status(200).json({ success: true });
+    }
+    catch (error) {
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   };
@@ -107,6 +139,7 @@ export default class TrainerController {
     try {
       const trainer = await TrainerModel.findByPk(id);
       if (!trainer) {
+        console.error("Entrenador no encontrado");
         return res.status(404).json({ success: false, message: "Entrenador no encontrado" });
       }
       await trainer.destroy();
