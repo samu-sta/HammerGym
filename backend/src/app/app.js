@@ -35,7 +35,7 @@ export const createApp = () => {
   app.use('/user', UserRoutes());
   app.use('/trainer', TrainerRoutes());
   app.use('/gym', GymRoutes());
-  app.use('/machine', MachineModelRoutes());
+  app.use('/machine-model', MachineModelRoutes());
   app.use('/machines', MachineRoutes());
   app.use('/account', AccountRoutes());
   app.use('/user-activity', UserActivityRoutes());

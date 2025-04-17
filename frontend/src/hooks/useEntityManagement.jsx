@@ -134,10 +134,7 @@ const useEntityManagement = ({
   }, [tableHeaders, transformEntityForEdit]);
 
   const handleDelete = useCallback(async (entity) => {
-    if (!window.confirm(`¿Estás seguro de que quieres eliminar este ${entityName.slice(0, -1)}?`)) {
-      return;
-    }
-
+    // Removing the window.confirm alert to only use the modal confirmation
     setIsLoading(true);
     setError(null);
 

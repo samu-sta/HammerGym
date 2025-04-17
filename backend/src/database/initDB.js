@@ -12,6 +12,8 @@ import ExerciseModel from '../models/Exercise.js';
 import ClassModel from '../models/Class.js';
 import ScheduleModel from '../models/Schedule.js';
 import ProgressUserModel from '../models/UserProgress.js';
+import MachineModel from '../models/Machine.js';
+import MachineModelModel from '../models/MachineModel.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 import argon2 from 'argon2';
@@ -434,6 +436,35 @@ const initDatabase = async () => {
     await AdminModel.create({
       accountId: adminAccount.id
     });
+
+    // Crear modelos de máquina de ejemplo
+    const machineModels = await MachineModelModel.bulkCreate([
+      {
+        name: 'Leg Press V8',
+        brand: 'Hammer Strength',
+        description: 'Máquina de prensa de piernas con sistema de ajuste multifuncional'
+      },
+      {
+        name: 'Smith Machine',
+        brand: 'Life Fitness',
+        description: 'Máquina de peso guiado para entrenamiento de fuerza y levantamiento seguro'
+      },
+      {
+        name: 'Chest Press Pro',
+        brand: 'Technogym',
+        description: 'Máquina de press de pecho con sistema biomecánico avanzado'
+      },
+      {
+        name: 'Lat Pulldown XL',
+        brand: 'Matrix',
+        description: 'Máquina para ejercicios de espalda con poleas de alta resistencia'
+      },
+      {
+        name: 'Shoulder Press Elite',
+        brand: 'Precor',
+        description: 'Máquina especializada para desarrollo de hombros con ajuste ergonómico'
+      }
+    ]);
 
     console.log('- Admin: admin@example.com / password123');
 
