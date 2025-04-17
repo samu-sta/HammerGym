@@ -21,7 +21,8 @@ const GymModel = sequelize.define('Gym', {
     },
     currentOccupancy: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 0
     }
 }, {
     tableName: 'Gym',

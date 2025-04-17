@@ -56,6 +56,8 @@ const useEntityManagement = ({
       ? transformEntityForEdit(entity)
       : defaultTransform(entity);
 
+    console.log('formattedEntity', formattedEntity);
+
     setFormFields(generateFormFieldsFromHeaders(tableHeaders, formattedEntity));
     setCurrentEntity(formattedEntity);
     setIsModalOpen(true);

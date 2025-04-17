@@ -13,7 +13,6 @@ const useCrudForm = (initialValues = {}, fields = [], onSubmit, isOpen) => {
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
 
-  // Reset form when modal opens or initialValues change
   useEffect(() => {
     if (isOpen) {
       setFormData(initialValues || {});
@@ -21,15 +20,22 @@ const useCrudForm = (initialValues = {}, fields = [], onSubmit, isOpen) => {
     }
   }, [isOpen, initialValues]);
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    const typeHandlers = {
+      'number': () => Number(value),
+      'checkbox': () => checked,
+      'default': () => value
+    };
+
+    const finalValue = (typeHandlers[type] || typeHandlers['default'])();
+
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: finalValue
     });
 
-    // Clear validation error for this field when user types
     if (errors[name]) {
       setErrors({
         ...errors,
@@ -38,7 +44,6 @@ const useCrudForm = (initialValues = {}, fields = [], onSubmit, isOpen) => {
     }
   };
 
-  // Validate form fields
   const validateForm = () => {
     const newErrors = {};
 
@@ -52,7 +57,6 @@ const useCrudForm = (initialValues = {}, fields = [], onSubmit, isOpen) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 

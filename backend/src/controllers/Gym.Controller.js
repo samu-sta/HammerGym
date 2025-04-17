@@ -49,6 +49,7 @@ export default class GymController {
 
   updateGym = async (req, res) => {
     const { id } = req.params;
+    console.log(req.body);
     const result = gymSchema.validateUpdateGym(req.body);
 
     if (!result.success) {

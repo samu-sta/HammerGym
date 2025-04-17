@@ -19,7 +19,7 @@ const FormField = ({ field, formData, errors, handleChange }) => {
         return (
           <select
             name={name}
-            value={formData[name] || ''}
+            value={formData[name] !== undefined && formData[name] !== null ? formData[name] : ''}
             onChange={handleChange}
             className={errors[name] ? 'crud-modal-input-error' : ''}
           >
@@ -36,7 +36,7 @@ const FormField = ({ field, formData, errors, handleChange }) => {
         return (
           <textarea
             name={name}
-            value={formData[name] || ''}
+            value={formData[name] !== undefined && formData[name] !== null ? formData[name] : ''}
             placeholder={placeholder || ''}
             onChange={handleChange}
             className={errors[name] ? 'crud-modal-input-error' : ''}
@@ -59,7 +59,7 @@ const FormField = ({ field, formData, errors, handleChange }) => {
           <input
             type={type}
             name={name}
-            value={formData[name] || ''}
+            value={formData[name] !== undefined && formData[name] !== null ? formData[name] : ''}
             placeholder={placeholder || ''}
             onChange={handleChange}
             className={errors[name] ? 'crud-modal-input-error' : ''}

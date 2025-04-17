@@ -126,5 +126,7 @@ export const renderCell = (item, column) => {
     return nestedValue;
   }
 
+  if (value === 0) return 0;
+
   return value || 'N/A';
 };

@@ -18,6 +18,7 @@ import CreateTraining from './components/trainer/createTraining/CreateTraining.j
 import UserProgress from './components/trainer/userProgress/UserProgress.jsx';
 import UsersManagement from './pages/UsersManagement.jsx';
 import TrainersManagement from './pages/TrainersManagement.jsx';
+import GymsManagement from './pages/GymsManagement.jsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,6 +79,7 @@ function App() {
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/admin/users" element={<UsersManagement />} />
               <Route path="/admin/trainers" element={<TrainersManagement />} />
+              <Route path="/admin/gyms" element={<GymsManagement />} />
               <Route path="/admin/*" element={<AdminPage />} />
             </Route>
 
