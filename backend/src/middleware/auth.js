@@ -43,12 +43,11 @@ export const authUser = async (req, res, next) => {
         return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
 }
-
 export const authTrainer = async (req, res, next) => {
     try {
         await authAccount(req, res, async () => {
             const account = req.account;
-            const accountType = await whichAccount(account);
+            const accountType = await whichAccount(account.id);
             if (accountType !== 'trainer') {
                 return res.status(403).json({ success: false, message: MESSAGES.ACCESS_DENIED });
             }
@@ -58,12 +57,11 @@ export const authTrainer = async (req, res, next) => {
         return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
 }
-
 export const authAdmin = async (req, res, next) => {
     try {
         await authAccount(req, res, async () => {
             const account = req.account;
-            const accountType = await whichAccount(account);
+            const accountType = await whichAccount(account.id);
             if (accountType !== 'admin') {
                 return res.status(403).json({ success: false, message: MESSAGES.ACCESS_DENIED });
             }

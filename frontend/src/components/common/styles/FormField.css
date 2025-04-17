@@ -1,0 +1,50 @@
+/* Estilos para el componente FormField */
+.crud-modal-field {
+  margin-bottom: 20px;
+}
+
+.crud-modal-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.crud-modal-required {
+  color: #ff6b6b;
+  margin-left: 4px;
+}
+
+.crud-modal-field input,
+.crud-modal-field select,
+.crud-modal-field textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.crud-modal-field input:focus,
+.crud-modal-field select:focus,
+.crud-modal-field textarea:focus {
+  border-color: #998000;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(153, 128, 0, 0.2);
+}
+
+.crud-modal-input-error {
+  border-color: #ff6b6b !important;
+}
+
+.crud-modal-error {
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin-top: 6px;
+}

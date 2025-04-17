@@ -87,11 +87,16 @@ export default class UserController {
       console.log(account.id);
       userData.role = await whichAccount(account.id);
 
-      return res.status(200).cookie('token', token, {
+      // Configuración de cookies para entorno de desarrollo
+      const cookieOptions = {
         httpOnly: true,
-        secure: true,
-        sameSite: 'none'
-      }).json({ success: true, account: userData });
+        secure: process.env.NODE_ENV === 'production', // Solo usar secure en producción
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+      };
+
+      return res.status(200)
+        .cookie('token', token, cookieOptions)
+        .json({ success: true, account: userData });
     }
     catch (error) {
       console.error('Error during login:', error);
@@ -100,7 +105,12 @@ export default class UserController {
   }
 
   logout = async (_req, res) => {
-    return res.status(200).clearCookie('token').json({ success: true });
+    const cookieOptions = {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+    };
+    return res.status(200).clearCookie('token', cookieOptions).json({ success: true });
   }
 
   getUser = async (req, res) => {

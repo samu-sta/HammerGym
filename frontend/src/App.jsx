@@ -16,6 +16,7 @@ import { AccountProvider } from './context/AccountContext.jsx';
 import TrainerPage from './pages/TrainerPage.jsx';
 import CreateTraining from './components/trainer/createTraining/CreateTraining.jsx';
 import UserProgress from './components/trainer/userProgress/UserProgress.jsx';
+import UsersManagement from './pages/UsersManagement.jsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,6 +75,7 @@ function App() {
             {/* Rutas protegidas */}
             <Route element={<ProtectedLayout allowedRoles={['admin']} />}>
               <Route path="/admin" element={<AdminPage />} />
+              <Route path="/admin/users" element={<UsersManagement />} />
               <Route path="/admin/*" element={<AdminPage />} />
             </Route>
 

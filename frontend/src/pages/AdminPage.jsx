@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import './styles/AdminPage.css';
 import { FaUsers, FaUserTie, FaDumbbell, FaCreditCard } from 'react-icons/fa';
 import { FaTools, FaHistory } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
 const AdminPage = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -11,54 +15,66 @@ const AdminPage = () => {
     {
       title: 'Usuarios',
       icon: <FaUsers className="admin-action-icon" />,
-      description: 'Administra los usuarios registrados en la plataforma'
+      description: 'Administra los usuarios registrados en la plataforma',
+      route: '/admin/users'
     },
     {
       title: 'Entrenadores',
       icon: <FaUserTie className="admin-action-icon" />,
-      description: 'Gestiona los entrenadores, sus entrenamientos y clases'
+      description: 'Gestiona los entrenadores, sus entrenamientos y clases',
+      route: '/admin/trainers'
     },
     {
       title: 'Espacios',
       icon: <FaDumbbell className="admin-action-icon" />,
-      description: 'Administra las zonas y equipamiento del gimnasio'
+      description: 'Administra las zonas y equipamiento del gimnasio',
+      route: '/admin/gyms'
     },
     {
       title: 'Membresías',
       icon: <FaCreditCard className="admin-action-icon" />,
-      description: 'Gestiona los planes y pagos de membresías'
+      description: 'Gestiona los planes y pagos de membresías',
+      route: '/admin/memberships'
     },
-    
+
     {
       title: 'Máquinas',
       icon: <FaTools className="admin-action-icon" />,
-      description: 'Registra nuevas máquinas, actualiza su estado y calcula costos de reparación'
+      description: 'Registra nuevas máquinas, actualiza su estado y calcula costos de reparación',
+      route: '/admin/machines'
     },
     {
       title: 'Actividades de Usuario',
       icon: <FaHistory className="admin-action-icon" />,
-      description: 'Supervisa las actividades realizadas por los usuarios en el gimnasio'
+      description: 'Supervisa las actividades realizadas por los usuarios en el gimnasio',
+      route: '/admin/user-activities'
     }
   ];
-  
+
+  const handleActionClick = (route) => {
+    navigate(route);
+  };
 
   return (
     <main className="admin-page">
       <h2 className="admin-page-title">Panel de Administración</h2>
       <section className="admin-dashboard">
         {adminActions.map((action, index) => (
-          <div className="admin-action-container">
-          <article 
-            key={index} 
-            className="admin-action-card"
+          <article
+            className="admin-action-container admin-action-card"
+            key={index}
             style={{ animationDelay: `${index * 200}ms` }}
           >
             {action.icon}
             <h3 className="admin-action-title">{action.title}</h3>
             <p className="admin-action-description">{action.description}</p>
-            <button className="admin-action-button">Gestionar</button>
+            <button
+              className="admin-action-button"
+              onClick={() => handleActionClick(action.route)}
+            >
+              Gestionar
+            </button>
           </article>
-          </div>
         ))}
       </section>
     </main>

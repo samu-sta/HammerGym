@@ -1,0 +1,247 @@
+.crud-table-container {
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.crud-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+}
+
+.crud-table-header h2 {
+  font-size: 1.7rem;
+  margin: 0;
+  color: #998800;
+}
+
+.crud-table-add-button {
+  display: none;
+}
+
+.crud-table-add-button:hover {
+  background-color: #7a6c00;
+  transform: translateY(-2px);
+}
+
+.crud-table-responsive {
+  overflow-x: auto;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.crud-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.crud-table th,
+.crud-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.crud-table th {
+  background: rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+}
+
+.crud-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+
+.crud-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.crud-table-actions {
+  text-align: center;
+  white-space: nowrap;
+  width: 100px;
+}
+
+.crud-table-edit-button,
+.crud-table-delete-button {
+  border: none;
+  padding: 8px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crud-table-edit-button {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #2196F3;
+}
+
+.crud-table-edit-button:hover {
+  background-color: #1976D2;
+  transform: translateY(-0.5px);
+}
+
+.crud-table-delete-button {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #e53935;
+}
+
+.crud-table-delete-button:hover {
+  background-color: #c62828;
+  transform: translateY(-0.5px);
+}
+
+.crud-table-loading,
+.crud-table-error,
+.crud-table-empty {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+.crud-table-error {
+  color: #ff6b6b;
+}
+
+/* Estilos para los valores en las celdas */
+.crud-table td {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+/* Estilos específicos para valores importantes */
+.crud-table td {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Vista de tarjetas para móviles */
+.crud-cards-view {
+  display: none;
+}
+
+.crud-card {
+  background: rgba(30, 30, 30, 0.7);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-left: 3px solid #998800;
+}
+
+.crud-card-item {
+  display: flex;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.crud-card-item:last-child {
+  border-bottom: none;
+}
+
+.crud-card-label {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  width: 40%;
+  padding-right: 10px;
+}
+
+.crud-card-value {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  width: 60%;
+}
+
+.crud-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .crud-table-container {
+    padding: 15px;
+    border-radius: 6px;
+  }
+  
+  .crud-table th,
+  .crud-table td {
+    padding: 10px;
+  }
+  
+  .crud-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .crud-table-add-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .crud-table th,
+  .crud-table td {
+    padding: 8px 6px;
+    font-size: 0.85rem;
+  }
+  
+  .crud-table-edit-button,
+  .crud-table-delete-button {
+    padding: 6px;
+    margin: 0 2px;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Ocultar la vista de tabla y mostrar las tarjetas */
+  .crud-table-responsive {
+    display: none;
+  }
+  
+  .crud-cards-view {
+    display: block;
+  }
+  
+  .crud-table-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .crud-card-actions {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .crud-table-edit-button,
+  .crud-table-delete-button {
+    width: 100%;
+    padding: 8px;
+  }
+}

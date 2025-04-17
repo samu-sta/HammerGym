@@ -1,6 +1,7 @@
 import UserModel from "../models/User.js";
 import AccountModel from "../models/Account.js";
 import MESSAGES from "../messages/messages.js";
+import updateUserSchema from "../schemas/UpdateUserSchema.js";
 
 export default class UserController {
   getAllUsers = async (_req, res) => {
@@ -8,35 +9,18 @@ export default class UserController {
       const users = await UserModel.findAll({
         include: [{ model: AccountModel, as: "account" }]
       });
-      return res.status(200).json({ success: true, users });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
-    }
-  };
 
-  getUserById = async (req, res) => {
-    const { id } = req.params;
-    try {
-      const user = await UserModel.findByPk(id, {
-        include: [{ model: AccountModel, as: "account" }]
+      const refactoredUsers = users.map(user => {
+        const { account, accountId, ...userData } = user.dataValues;
+        return {
+          ...userData,
+          id: account.id,
+          email: account.email,
+          username: account.username
+        };
       });
-      if (!user) {
-        return res.status(404).json({ success: false, message: "Usuario no encontrado" });
-      }
-      return res.status(200).json({ success: true, user });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
-    }
-  };
 
-  createUser = async (req, res) => {
-    try {
-      const { email, username, password } = req.body;
-      const account = await AccountModel.create({ email, username, password });
-      const user = await UserModel.create({ accountId: account.id });
-      return res.status(201).json({ success: true, user });
+      return res.status(200).json({ success: true, users: refactoredUsers });
     } catch (error) {
       console.error(error);
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
@@ -45,15 +29,34 @@ export default class UserController {
 
   updateUser = async (req, res) => {
     const { id } = req.params;
+    const result = updateUserSchema.validateUpdateUser(req.body);
+
+    if (!result.success) {
+      return res.status(400).json({
+        success: false,
+        message: MESSAGES.INVALID_DATA,
+        errors: result.error.format()
+      });
+    }
+
     try {
-      const user = await UserModel.findByPk(id);
+      const user = await UserModel.findByPk(id, {
+        include: [{ model: AccountModel, as: "account" }]
+      });
+
       if (!user) {
         return res.status(404).json({ success: false, message: "Usuario no encontrado" });
       }
-      await user.update(req.body);
-      return res.status(200).json({ success: true, user });
-    } catch (error) {
-      console.error(error);
+
+      const accountData = {};
+      accountData.email = result.data.email;
+      accountData.username = result.data.username;
+
+      await user.account.update(accountData);
+
+      return res.status(200).json({ success: true });
+    }
+    catch (error) {
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   };

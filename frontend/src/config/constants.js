@@ -167,3 +167,25 @@ export const mapDifficultyToNumeric = (difficulty) => {
     default: return 3;
   }
 };
+
+export const API_URL = 'http://localhost:3000';
+
+// User-related constants
+export const USER_ROLES = {
+  ADMIN: 'admin',
+  TRAINER: 'trainer',
+  USER: 'user'
+};
+
+// API endpoints
+export const ENDPOINTS = {
+  USERS: '/user',
+  TRAINERS: '/trainer',
+  GYMS: '/gym',
+  MACHINES: '/machine',
+  MACHINE_MODELS: '/machine-model',
+  CLASSES: '/classes',
+  TRAINING: '/training',
+  USER_ACTIVITY: '/user-activity',
+  PROGRESS: '/progress'
+};

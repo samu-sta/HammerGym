@@ -1,0 +1,47 @@
+.entity-management {
+  padding: 24px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.entity-management-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+/* Quitamos el título de cabecera */
+.entity-management-header h2 {
+  display: none;
+}
+
+/* Añadimos el título de la tabla CRUD */
+.entity-management-table-title {
+  font-size: 1.8rem;
+  color: #998800;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.entity-management-back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #09f;
+  transition: all 0.2s;
+}
+
+.entity-management-back-button:hover {
+  color: #09f;
+}
+
+@media (max-width: 650px) {
+  .entity-management {
+    padding: 24px 0px;
+  }
+}
