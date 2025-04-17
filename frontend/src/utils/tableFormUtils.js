@@ -15,11 +15,40 @@ export const capitalizeFirstLetter = (string) => {
 };
 
 /**
+ * Predefined headers for different entity types
+ * These can be used directly or as a base to modify
+ */
+export const predefinedHeaders = {
+  trainers: [
+    { key: 'id', label: 'ID', type: 'number' },
+    { key: 'username', label: 'Nombre', type: 'text' },
+    { key: 'email', label: 'Correo Electrónico', type: 'email' }
+  ],
+  gyms: [
+    { key: 'id', label: 'ID', type: 'number' },
+    { key: 'location', label: 'Ubicación', type: 'text' },
+    { key: 'telephone', label: 'Teléfono', type: 'text' },
+    { key: 'maxCapacity', label: 'Capacidad Máxima', type: 'number' },
+    { key: 'currentOccupancy', label: 'Ocupación Actual', type: 'number' }
+  ],
+  users: [
+    { key: 'id', label: 'ID', type: 'number' },
+    { key: 'username', label: 'Nombre', type: 'text' },
+    { key: 'email', label: 'Correo Electrónico', type: 'email' }
+  ]
+};
+
+/**
  * Generates table headers from an array of data objects
  * @param {Array} data - Array of data objects
+ * @param {string} entityType - Optional type of entity (e.g., 'trainers', 'gyms')
  * @returns {Array} Array of header objects with key and label properties
  */
-export const generateTableHeaders = (data) => {
+export const generateTableHeaders = (data, entityType = null) => {
+  if (entityType && predefinedHeaders[entityType]) {
+    return predefinedHeaders[entityType];
+  }
+
   if (!data?.length) return [];
 
   const firstItem = data[0];
@@ -36,13 +65,20 @@ export const generateTableHeaders = (data) => {
  * Generates form fields based on data and optional current item
  * @param {Array} data - Array of data objects
  * @param {Object} currentItem - Optional current item for editing (null for new items)
+ * @param {string} entityType - Optional type of entity (e.g., 'trainers', 'gyms')
  * @returns {Array} Array of form field configurations
  */
-export const generateFormFields = (data, currentItem = null) => {
-  if (!data?.length) return [];
+export const generateFormFields = (data, currentItem = null, entityType = null) => {
+  if (!data?.length && !entityType) return [];
 
-  const headers = generateTableHeaders(data);
-  return generateFormFieldsFromHeaders(headers, currentItem || data[0]);
+  let headers;
+  if (entityType && predefinedHeaders[entityType]) {
+    headers = predefinedHeaders[entityType];
+  } else {
+    headers = generateTableHeaders(data);
+  }
+
+  return generateFormFieldsFromHeaders(headers, currentItem || (data.length > 0 ? data[0] : {}));
 };
 
 /**
@@ -55,39 +91,17 @@ export const generateFormFieldsFromHeaders = (headers, itemData) => {
   const fields = headers
     .filter(header => header.key !== 'id')
     .map(header => {
-      // Skip password for editing
       if (itemData?.id && header.key === 'password') return null;
 
       const field = {
         name: header.key,
-        label: header.label
+        label: header.label,
+        type: header.type,
       };
-
-      // Set field type based on key or data type
-      if (header.key === 'email') {
-        field.type = 'email';
-      } else if (header.key === 'password') {
-        field.type = 'password';
-      } else if (typeof itemData[header.key] === 'boolean') {
-        field.type = 'checkbox';
-      } else if (typeof itemData[header.key] === 'number') {
-        console.log('itemData[header.key]', itemData[header.key]);
-        field.type = 'number';
-      } else if (header.key.toLowerCase().includes('date')) {
-        field.type = 'date';
-      } else if (header.key === 'status') {
-        field.type = 'select';
-        field.options = [
-          { value: 'active', label: 'Activo' },
-          { value: 'inactive', label: 'Inactivo' }
-        ];
-      } else {
-        field.type = 'text';
-      }
 
       return field;
     })
-    .filter(Boolean); // Remove null items
+    .filter(Boolean);
   return fields;
 };
 

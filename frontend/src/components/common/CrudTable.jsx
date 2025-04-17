@@ -74,11 +74,7 @@ const CrudTable = ({
 
       {error && <p className="crud-table-error">Error: {error}</p>}
 
-      {!isLoading && !error && data && data.length === 0 && (
-        <p className="crud-table-empty">No hay datos disponibles</p>
-      )}
-
-      {!isLoading && !error && data && data.length > 0 && (
+      {!isLoading && !error && (
         <>
           <div className={`crud-table-responsive ${isMobile ? 'mobile' : ''}`}>
             <table className="crud-table">
@@ -91,34 +87,44 @@ const CrudTable = ({
                 </tr>
               </thead>
               <tbody>
-                {data.map((item, rowIndex) => (
-                  <tr key={item.id || rowIndex}>
-                    {headers.map((header, colIndex) => (
-                      <td key={colIndex}>{renderCell(item, header)}</td>
-                    ))}
-                    <td className="crud-table-actions">
-                      <button
-                        className={`crud-table-edit-button ${isMobile ? 'mobile' : ''}`}
-                        onClick={() => onEdit(item)}
-                      >
-                        <MdModeEditOutline />
-                      </button>
-                      <button
-                        className={`crud-table-delete-button ${isMobile ? 'mobile' : ''}`}
-                        onClick={() => handleDelete(item)}
-                      >
-                        <FaTrash />
-                      </button>
+                {data && data.length > 0 ? (
+                  data.map((item, rowIndex) => (
+                    <tr key={item.id || rowIndex}>
+                      {headers.map((header, colIndex) => (
+                        <td key={colIndex}>{renderCell(item, header)}</td>
+                      ))}
+                      <td className="crud-table-actions">
+                        <button
+                          className={`crud-table-edit-button ${isMobile ? 'mobile' : ''}`}
+                          onClick={() => onEdit(item)}
+                        >
+                          <MdModeEditOutline />
+                        </button>
+                        <button
+                          className={`crud-table-delete-button ${isMobile ? 'mobile' : ''}`}
+                          onClick={() => handleDelete(item)}
+                        >
+                          <FaTrash />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={headers.length + 1} className="crud-table-empty">
+                      No hay datos disponibles
                     </td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </div>
 
-          <section className={`crud-cards-view ${isMobile ? 'mobile' : ''}`}>
-            {renderCards()}
-          </section>
+          {data && data.length > 0 && (
+            <section className={`crud-cards-view ${isMobile ? 'mobile' : ''}`}>
+              {renderCards()}
+            </section>
+          )}
         </>
       )}
 

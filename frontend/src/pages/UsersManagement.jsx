@@ -15,6 +15,7 @@ const UsersManagement = () => {
   return (
     <EntityManagement
       title="Usuarios"
+      entityType="users"
       fetchEntities={fetchAllUsers}
       updateEntity={updateUser}
       deleteEntity={deleteUser}

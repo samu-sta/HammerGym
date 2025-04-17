@@ -14,6 +14,7 @@ const TrainersManagement = () => {
   return (
     <EntityManagement
       title="Entrenadores"
+      entityType="trainers"
       fetchEntities={fetchAllTrainers}
       updateEntity={updateTrainer}
       deleteEntity={deleteTrainer}

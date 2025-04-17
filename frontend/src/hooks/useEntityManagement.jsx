@@ -3,6 +3,7 @@ import { generateTableHeaders, generateFormFields, generateFormFieldsFromHeaders
 
 const useEntityManagement = ({
   entityName,
+  entityType = null,
   fetchEntities,
   updateEntity,
   deleteEntity,
@@ -24,48 +25,95 @@ const useEntityManagement = ({
     setError(null);
 
     try {
-      const data = await fetchEntities();
-      setEntities(data);
+      const response = await fetchEntities();
 
-      if (!data || data.length === 0) return;
+      // Handle both legacy and new API response format
+      let entitiesData = [];
+      let headersData = [];
 
-      const headers = generateTableHeaders(data);
-      setTableHeaders(headers);
-      setFormFields(generateFormFields(data, null));
+      if (response.entities !== undefined && response.headers !== undefined) {
+        // New API format with explicit entities and headers
+        entitiesData = response.entities;
+        headersData = response.headers;
+      } else {
+        // Legacy format - response is the entities array
+        entitiesData = response;
+        if (entitiesData && entitiesData.length > 0) {
+          headersData = generateTableHeaders(entitiesData, entityType);
+        }
+      }
+
+      setEntities(entitiesData);
+
+      // Use the headers from the backend if available, otherwise generate them
+      if (headersData && headersData.length > 0) {
+        setTableHeaders(headersData);
+
+        // Generate form fields based on the headers
+        const emptyEntity = {};
+        if (entitiesData.length > 0) {
+          // Use first entity as template for types
+          Object.keys(entitiesData[0]).forEach(key => {
+            const value = entitiesData[0][key];
+            if (typeof value === 'number') emptyEntity[key] = 0;
+            else if (typeof value === 'boolean') emptyEntity[key] = false;
+            else emptyEntity[key] = '';
+          });
+        } else {
+          // If no entities, create empty entity from headers
+          headersData.forEach(header => {
+            switch (header.type) {
+              case 'number':
+                emptyEntity[header.key] = 0;
+                break;
+              case 'boolean':
+                emptyEntity[header.key] = false;
+                break;
+              default:
+                emptyEntity[header.key] = '';
+            }
+          });
+        }
+
+        setFormFields(generateFormFieldsFromHeaders(headersData, emptyEntity));
+      }
     }
     catch (err) {
+      console.error("Error loading entities:", err);
       setError(`Error al cargar los ${entityName.toLowerCase()}. Por favor, intenta de nuevo.`);
     }
     finally {
       setIsLoading(false);
     }
-  }, [fetchEntities, entityName]);
+  }, [fetchEntities, entityName, entityType]);
 
   useEffect(() => {
     loadEntities();
   }, [loadEntities]);
 
   const handleCreate = useCallback(() => {
-    if (entities.length > 0) {
-      // Create an empty entity that preserves the original data types
-      const emptyEntity = Object.fromEntries(
-        Object.keys(entities[0])
-          .filter(key => typeof entities[0][key] !== 'object' || entities[0][key] === null)
-          .map(key => {
-            // Preserve the original data type
-            const originalValue = entities[0][key];
-            if (typeof originalValue === 'number') return [key, 0];
-            if (typeof originalValue === 'boolean') return [key, false];
-            return [key, ''];
-          })
-      );
+    // Create an empty entity that preserves the original data types
+    const emptyEntity = {};
 
-      setFormFields(generateFormFieldsFromHeaders(tableHeaders, emptyEntity));
-      setCurrentEntity(null);
-      setIsCreating(true);
-      setIsModalOpen(true);
-    }
-  }, [entities, tableHeaders]);
+    // Use tableHeaders to create the empty entity
+    tableHeaders.forEach(header => {
+      switch (header.type) {
+        case 'number':
+          emptyEntity[header.key] = 0;
+          break;
+        case 'boolean':
+          emptyEntity[header.key] = false;
+          break;
+        default:
+          emptyEntity[header.key] = '';
+      }
+    });
+
+    setFormFields(generateFormFieldsFromHeaders(tableHeaders, emptyEntity));
+    setCurrentEntity(null);
+    setIsCreating(true);
+    setIsModalOpen(true);
+  }, [tableHeaders]);
 
   const handleEdit = useCallback((entity) => {
     const defaultTransform = (entity) => {
@@ -86,36 +134,45 @@ const useEntityManagement = ({
   }, [tableHeaders, transformEntityForEdit]);
 
   const handleDelete = useCallback(async (entity) => {
+    if (!window.confirm(`¿Estás seguro de que quieres eliminar este ${entityName.slice(0, -1)}?`)) {
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+
     try {
       await deleteEntity(entity.id);
       loadEntities();
     }
     catch (err) {
-      setError(`Error al eliminar el ${entityName.toLowerCase()}. Por favor, intenta de nuevo.`);
+      console.error(`Error deleting ${entityName.slice(0, -1)}:`, err);
+      setError(`Error al eliminar el ${entityName.slice(0, -1).toLowerCase()}. Por favor, intenta de nuevo.`);
+      setIsLoading(false);
     }
-  }, [deleteEntity, loadEntities, entityName]);
+  }, [deleteEntity, entityName, loadEntities]);
 
   const handleUpdate = useCallback(async (formData) => {
     setIsSubmitting(true);
+
     try {
       if (isCreating) {
-        if (createEntity) {
-          await createEntity(formData);
-        }
+        await createEntity(formData);
       } else {
         await updateEntity(currentEntity.id, formData);
       }
+
+      await loadEntities();
       setIsModalOpen(false);
-      loadEntities();
     }
     catch (err) {
-      const action = isCreating ? 'crear' : 'guardar los datos de';
-      setError(`Error al ${action} el ${entityName.toLowerCase()}. Por favor, intenta de nuevo.`);
+      console.error(`Error ${isCreating ? 'creating' : 'updating'} ${entityName.slice(0, -1)}:`, err);
+      alert(`Error al ${isCreating ? 'crear' : 'actualizar'} el ${entityName.slice(0, -1).toLowerCase()}. Por favor, intenta de nuevo.`);
     }
     finally {
       setIsSubmitting(false);
     }
-  }, [updateEntity, createEntity, loadEntities, currentEntity, entityName, isCreating]);
+  }, [createEntity, updateEntity, currentEntity, entityName, isCreating, loadEntities]);
 
   const closeModal = useCallback(() => {
     setIsModalOpen(false);

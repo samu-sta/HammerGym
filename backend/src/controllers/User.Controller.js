@@ -20,7 +20,10 @@ export default class UserController {
         };
       });
 
-      return res.status(200).json({ success: true, users: refactoredUsers });
+      return res.status(200).json({
+        success: true,
+        users: refactoredUsers
+      });
     } catch (error) {
       console.error(error);
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
@@ -63,13 +66,22 @@ export default class UserController {
 
   deleteUser = async (req, res) => {
     const { id } = req.params;
+
     try {
-      const user = await UserModel.findByPk(id);
+      const user = await UserModel.findOne({
+        where: { accountId: id }
+      });
+
       if (!user) {
         return res.status(404).json({ success: false, message: "Usuario no encontrado" });
       }
+
+      const account = await AccountModel.findByPk(id);
+
       await user.destroy();
-      return res.status(200).json({ success: true, message: "Usuario eliminado correctamente" });
+      await account.destroy();
+
+      return res.status(200).json({ success: true });
     } catch (error) {
       console.error(error);
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });

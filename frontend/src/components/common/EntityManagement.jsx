@@ -7,6 +7,7 @@ import useEntityManagement from '../../hooks/useEntityManagement';
 
 const EntityManagement = ({
   title,
+  entityType = null,
   fetchEntities,
   updateEntity,
   deleteEntity,
@@ -36,6 +37,7 @@ const EntityManagement = ({
     closeModal
   } = useEntityManagement({
     entityName: title,
+    entityType: entityType,
     fetchEntities,
     updateEntity,
     deleteEntity,
@@ -57,7 +59,7 @@ const EntityManagement = ({
           <button
             className="entity-management-create-button"
             onClick={handleCreate}
-            disabled={isLoading || entities.length === 0}
+            disabled={isLoading || tableHeaders.length === 0}
           >
             <FaPlus /> Nuevo {title.slice(0, -1)}
           </button>

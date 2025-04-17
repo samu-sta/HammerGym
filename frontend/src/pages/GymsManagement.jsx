@@ -20,6 +20,7 @@ const GymsManagement = () => {
   return (
     <EntityManagement
       title="Gimnasios"
+      entityType="gyms"
       fetchEntities={fetchAllGyms}
       updateEntity={updateGym}
       deleteEntity={deleteGym}
