@@ -2,7 +2,7 @@ import './styles/EntityManagement.css';
 import CrudTable from './CrudTable';
 import CrudModal from './CrudModal';
 import { useNavigate } from 'react-router-dom';
-import { FaLongArrowAltLeft } from "react-icons/fa";
+import { FaLongArrowAltLeft, FaPlus } from "react-icons/fa";
 import useEntityManagement from '../../hooks/useEntityManagement';
 
 const EntityManagement = ({
@@ -10,9 +10,11 @@ const EntityManagement = ({
   fetchEntities,
   updateEntity,
   deleteEntity,
+  createEntity,
   backPath = '/admin',
   additionalControls,
-  transformEntityForEdit
+  transformEntityForEdit,
+  mobileBreakpoint = 420, // Parámetro nuevo con valor por defecto de 420
 }) => {
   const navigate = useNavigate();
 
@@ -25,7 +27,9 @@ const EntityManagement = ({
     isSubmitting,
     tableHeaders,
     formFields,
+    isCreating,
     loadEntities,
+    handleCreate,
     handleEdit,
     handleDelete,
     handleUpdate,
@@ -35,6 +39,7 @@ const EntityManagement = ({
     fetchEntities,
     updateEntity,
     deleteEntity,
+    createEntity,
     transformEntityForEdit
   });
 
@@ -48,6 +53,15 @@ const EntityManagement = ({
           <FaLongArrowAltLeft /> volver
         </button>
         {additionalControls && additionalControls}
+        {createEntity && (
+          <button
+            className="entity-management-create-button"
+            onClick={handleCreate}
+            disabled={isLoading || entities.length === 0}
+          >
+            <FaPlus /> Nuevo {title.slice(0, -1)}
+          </button>
+        )}
       </header>
 
       <section>
@@ -60,13 +74,14 @@ const EntityManagement = ({
           onDelete={handleDelete}
           isLoading={isLoading}
           error={error}
+          mobileBreakpoint={mobileBreakpoint}
         />
       </section>
 
       <CrudModal
         isOpen={isModalOpen}
         onClose={closeModal}
-        title={`Editar ${title}`}
+        title={isCreating ? `Crear ${title.slice(0, -1)}` : `Editar ${title.slice(0, -1)}`}
         fields={formFields}
         initialValues={currentEntity}
         onSubmit={handleUpdate}

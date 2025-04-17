@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { MdModeEditOutline } from "react-icons/md";
 import DeleteConfirmationModal from './DeleteConfirmationModal';
 import { renderCell } from '../../utils/tableFormUtils';
+import { useIsMobile } from '../../hooks/useWindowSize';
 import './styles/CrudTable.css';
 
 const CrudTable = ({
@@ -12,10 +13,12 @@ const CrudTable = ({
   onEdit,
   onDelete,
   isLoading,
-  error
+  error,
+  mobileBreakpoint = 420
 }) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
+  const isMobile = useIsMobile({ mobileSize: mobileBreakpoint });
 
   const handleDelete = (item) => {
     setItemToDelete(item);
@@ -39,18 +42,19 @@ const CrudTable = ({
         {headers.map((header, headerIndex) => (
           <section className="crud-card-item" key={headerIndex}>
             <h4 className="crud-card-label">{header.label}:</h4>
-            <p className="crud-card-value">{renderCell(item, header)}</p>
+            <p className={`crud-card-value ${isMobile ? 'mobile' : ''} ${header.className || ''}`}>
+              {renderCell(item, header)}</p>
           </section>
         ))}
-        <footer className="crud-card-actions">
+        <footer className={`crud-card-actions ${isMobile ? 'mobile' : ''}`}>
           <button
-            className="crud-table-edit-button"
+            className={`crud-table-edit-button ${isMobile ? 'mobile' : ''}`}
             onClick={() => onEdit(item)}
           >
             <MdModeEditOutline />
           </button>
           <button
-            className="crud-table-delete-button"
+            className={`crud-table-delete-button ${isMobile ? 'mobile' : ''}`}
             onClick={() => handleDelete(item)}
           >
             <FaTrash />
@@ -62,7 +66,7 @@ const CrudTable = ({
 
   return (
     <section className="crud-table-container">
-      <header className="crud-table-header">
+      <header className={`crud-table-header ${isMobile ? 'mobile' : ''}`}>
         <h2>{title}</h2>
       </header>
 
@@ -76,7 +80,7 @@ const CrudTable = ({
 
       {!isLoading && !error && data && data.length > 0 && (
         <>
-          <div className="crud-table-responsive">
+          <div className={`crud-table-responsive ${isMobile ? 'mobile' : ''}`}>
             <table className="crud-table">
               <thead>
                 <tr>
@@ -94,13 +98,13 @@ const CrudTable = ({
                     ))}
                     <td className="crud-table-actions">
                       <button
-                        className="crud-table-edit-button"
+                        className={`crud-table-edit-button ${isMobile ? 'mobile' : ''}`}
                         onClick={() => onEdit(item)}
                       >
                         <MdModeEditOutline />
                       </button>
                       <button
-                        className="crud-table-delete-button"
+                        className={`crud-table-delete-button ${isMobile ? 'mobile' : ''}`}
                         onClick={() => handleDelete(item)}
                       >
                         <FaTrash />
@@ -112,7 +116,7 @@ const CrudTable = ({
             </table>
           </div>
 
-          <section className="crud-cards-view">
+          <section className={`crud-cards-view ${isMobile ? 'mobile' : ''}`}>
             {renderCards()}
           </section>
         </>

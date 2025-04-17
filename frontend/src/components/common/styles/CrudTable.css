@@ -1,3 +1,7 @@
+:root {
+  --crud-mobile-breakpoint: 420px; /* Valor por defecto, será sobrescrito por JavaScript */
+}
+
 .crud-table-container {
   background: rgba(20, 20, 20, 0.8);
   border-radius: 8px;
@@ -220,28 +224,29 @@
   }
 }
 
-@media (max-width: 420px) {
-  /* Ocultar la vista de tabla y mostrar las tarjetas */
-  .crud-table-responsive {
-    display: none;
-  }
-  
-  .crud-cards-view {
-    display: block;
-  }
-  
-  .crud-table-header h2 {
-    font-size: 1.4rem;
-  }
+.crud-table-responsive.mobile {
+  display: none;
+}
 
-  .crud-card-actions {
-    justify-content: space-between;
-    gap: 1rem;
-  }
+.crud-cards-view.mobile {
+  display: block;
+}
 
-  .crud-table-edit-button,
-  .crud-table-delete-button {
-    width: 100%;
-    padding: 8px;
-  }
+.crud-table-header.mobile h2 {
+  font-size: 1.4rem;
+}
+
+.crud-card-actions.mobile {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.crud-table-edit-button.mobile,
+.crud-table-delete-button.mobile {
+  width: 100%;
+  padding: 8px;
+}
+
+.crud-card-value.mobile {
+  text-align: right;
 }

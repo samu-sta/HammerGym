@@ -40,8 +40,44 @@
   color: #09f;
 }
 
+.entity-management-create-button {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #998800;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.entity-management-create-button:hover {
+  background-color: #7a6c00;
+  transform: translateY(-2px);
+}
+
+.entity-management-create-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
 @media (max-width: 650px) {
   .entity-management {
     padding: 24px 0px;
+  }
+  
+  .entity-management-header {
+    flex-wrap: wrap;
+  }
+  
+  .entity-management-create-button {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
   }
 }

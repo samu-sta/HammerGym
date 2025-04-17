@@ -1,6 +1,6 @@
 import React from 'react';
 import EntityManagement from '../components/common/EntityManagement';
-import { fetchAllGyms, updateGym, deleteGym } from '../services/GymService';
+import { fetchAllGyms, updateGym, deleteGym, createGym } from '../services/GymService';
 
 const GymsManagement = () => {
   const transformEntityForEdit = (gym) => {
@@ -23,8 +23,10 @@ const GymsManagement = () => {
       fetchEntities={fetchAllGyms}
       updateEntity={updateGym}
       deleteEntity={deleteGym}
+      createEntity={createGym}
       backPath="/admin"
       transformEntityForEdit={transformEntityForEdit}
+      mobileBreakpoint={640} // Ajusta este valor según sea necesario
     />
   );
 };

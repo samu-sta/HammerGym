@@ -71,6 +71,7 @@ export const generateFormFieldsFromHeaders = (headers, itemData) => {
       } else if (typeof itemData[header.key] === 'boolean') {
         field.type = 'checkbox';
       } else if (typeof itemData[header.key] === 'number') {
+        console.log('itemData[header.key]', itemData[header.key]);
         field.type = 'number';
       } else if (header.key.toLowerCase().includes('date')) {
         field.type = 'date';
@@ -87,12 +88,6 @@ export const generateFormFieldsFromHeaders = (headers, itemData) => {
       return field;
     })
     .filter(Boolean); // Remove null items
-
-  // Add password field only for new items
-  if (!itemData?.id) {
-    fields.push({ name: 'password', label: 'Contraseña', type: 'password' });
-  }
-
   return fields;
 };
 
