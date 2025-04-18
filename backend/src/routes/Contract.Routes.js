@@ -1,16 +1,23 @@
 import { Router } from 'express';
-import { getUserContracts, createContract, getContractById } from '../controllers/Contract.Controller.js';
-import { authAccount } from '../middleware/auth.js';
+import { getUserContracts, createContract, getContractById, createCheckoutSession, handleStripeWebhook } from '../controllers/Contract.Controller.js';
+import { authAccount, authUser } from '../middleware/auth.js';
+import express from 'express';
 
 const router = Router();
+
+// Get all contracts for the authenticated user
+router.get('/my-contracts', authUser, getUserContracts);
 
 // Get contract by ID
 router.get('/:id', authAccount, getContractById);
 
-// Get all contracts for a specific user
-router.get('/user/:userId', authAccount, getUserContracts);
+// Create a new contract (incluyendo procesamiento de pago)
+router.post('/', authUser, createContract);
 
-// Create a new contract
-router.post('/', authAccount, createContract);
+// Crear una nueva sesión de checkout con Stripe
+router.post('/checkout-session', authUser, createCheckoutSession);
+
+// Webhook para manejar eventos de Stripe (sin auth para permitir peticiones de Stripe)
+router.post('/webhook', express.raw({ type: 'application/json' }), handleStripeWebhook);
 
 export default router;

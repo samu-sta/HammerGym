@@ -4,21 +4,16 @@ import { getUserContracts } from '../../services/MembershipService';
 import LoadingSpinner from '../common/LoadingSpinner';
 import './styles/UserContractsList.css';
 
-const UserContractsList = ({ userId }) => {
+const UserContractsList = () => {
   const [contracts, setContracts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchContracts = async () => {
-      if (!userId) {
-        setLoading(false);
-        return;
-      }
-
       try {
         setLoading(true);
-        const userContracts = await getUserContracts(userId);
+        const userContracts = await getUserContracts();
         setContracts(userContracts);
       } catch (err) {
         setError('Error al cargar los contratos. Por favor, intenta de nuevo más tarde.');
@@ -29,7 +24,7 @@ const UserContractsList = ({ userId }) => {
     };
 
     fetchContracts();
-  }, [userId]);
+  }, []);
 
   if (loading) {
     return <LoadingSpinner />;
@@ -37,10 +32,6 @@ const UserContractsList = ({ userId }) => {
 
   if (error) {
     return <div className="contracts-alert alert-danger">{error}</div>;
-  }
-
-  if (!userId) {
-    return <div className="contracts-alert alert-warning">Por favor, inicia sesión para ver tus contratos.</div>;
   }
 
   if (contracts.length === 0) {
