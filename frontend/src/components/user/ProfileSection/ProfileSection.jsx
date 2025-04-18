@@ -1,10 +1,12 @@
-import { FaUser } from 'react-icons/fa';
+import { FaUser, FaFileContract } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import './styles/ProfileSection.css';
 import InputProfileSection from './components/InputProfileSection.jsx';
 import { useAccount } from '../../../context/AccountContext.jsx';
 
 const ProfileSection = () => {
   const { account, updateAccountData } = useAccount();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,6 +14,10 @@ const ProfileSection = () => {
     const formData = new FormData(form);
     const accountData = Object.fromEntries(formData);
     updateAccountData(accountData);
+  }
+
+  const handleMembershipClick = () => {
+    navigate('/usuario/contratos');
   }
 
   return (
@@ -30,6 +36,17 @@ const ProfileSection = () => {
         </footer>
       </form>
 
+      <div className='membership-section'>
+        <h3>Gestión de Membresía</h3>
+        <p>Accede a tu membresía actual, historial de contratos o adquiere una nueva membresía.</p>
+        <button
+          className='membership-button'
+          onClick={handleMembershipClick}
+        >
+          <FaFileContract className='membership-icon' />
+          <span>Ver mi membresía</span>
+        </button>
+      </div>
     </section>
   );
 };

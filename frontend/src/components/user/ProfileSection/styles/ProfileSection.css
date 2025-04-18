@@ -51,3 +51,47 @@
   flex-direction: column;
   gap: 1rem;
 }
+
+/* Estilos para la sección de membresía */
+.membership-section {
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(153, 128, 0, 0.3);
+}
+
+.membership-section h3 {
+  color: #998000;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.membership-section p {
+  color: #d1d1d1;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.membership-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(153, 128, 0, 0.2);
+  color: #fff;
+  border: 1px solid rgba(153, 128, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.membership-button:hover {
+  background: rgba(153, 128, 0, 0.4);
+  border-color: #998000;
+}
+
+.membership-icon {
+  font-size: 1.2rem;
+  color: #998000;
+}

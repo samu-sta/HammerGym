@@ -14,6 +14,8 @@ import ScheduleModel from '../models/Schedule.js';
 import ProgressUserModel from '../models/UserProgress.js';
 import MachineModel from '../models/Machine.js';
 import MachineModelModel from '../models/MachineModel.js';
+import MembershipModel from '../models/Membership.js';
+import ContractModel from '../models/Contract.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
 import argon2 from 'argon2';
@@ -95,6 +97,25 @@ const initDatabase = async () => {
       }
     ]);
 
+    // Crear membresías disponibles
+    const memberships = await MembershipModel.bulkCreate([
+      {
+        type: 'Básico',
+        price: 29.99,
+        description: 'Acceso a áreas básicas del gimnasio con horario limitado (6am - 10pm)'
+      },
+      {
+        type: 'Premium',
+        price: 49.99,
+        description: 'Acceso completo al gimnasio, incluye clases grupales, acceso 24/7'
+      },
+      {
+        type: 'VIP',
+        price: 79.99,
+        description: 'Acceso completo al gimnasio, incluye entrenador personal, spa, y todos los servicios premium'
+      }
+    ]);
+
     // Crear cuentas de ejemplo
     const hashedPassword = await argon2.hash('password123');
 
@@ -117,6 +138,32 @@ const initDatabase = async () => {
 
     const user = await UserModel.create({
       accountId: userAccount.id
+    });
+
+    // Crear un contrato de ejemplo para el usuario
+    const expirationDate = new Date();
+    expirationDate.setMonth(expirationDate.getMonth() + 3); // Contrato de 3 meses
+
+    await ContractModel.create({
+      userId: user.accountId,
+      membershipId: memberships[1].id, // Premium
+      expirationDate: expirationDate,
+      paymentStatus: 'paid',
+      paymentMethod: 'credit_card',
+      paymentReference: 'TX-12345678'
+    });
+
+    // Crear un contrato expirado para mostrar historial
+    const pastExpirationDate = new Date();
+    pastExpirationDate.setMonth(pastExpirationDate.getMonth() - 1);
+
+    await ContractModel.create({
+      userId: user.accountId,
+      membershipId: memberships[0].id, // Básico
+      expirationDate: pastExpirationDate,
+      paymentStatus: 'paid',
+      paymentMethod: 'debit_card',
+      paymentReference: 'TX-87654321'
     });
 
     // Crear un entrenamiento

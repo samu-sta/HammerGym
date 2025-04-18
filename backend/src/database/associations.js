@@ -15,6 +15,8 @@ import ScheduleModel from '../models/Schedule.js';
 import ScheduleDayModel from '../models/ScheduleDay.js';
 import MachineModel from '../models/Machine.js';
 import MachineModelModel from '../models/MachineModel.js';
+import ContractModel from '../models/Contract.js';
+import MembershipModel from '../models/Membership.js';
 
 const setupAssociations = () => {
 
@@ -241,6 +243,28 @@ const setupAssociations = () => {
   MachineModel.belongsTo(GymModel, {
     foreignKey: 'gymId',
     as: 'gym'
+  });
+
+  // Contract and User associations
+  UserModel.hasMany(ContractModel, {
+    foreignKey: 'userId',
+    as: 'contracts'
+  });
+
+  ContractModel.belongsTo(UserModel, {
+    foreignKey: 'userId',
+    as: 'user'
+  });
+
+  // Contract and Membership associations
+  MembershipModel.hasMany(ContractModel, {
+    foreignKey: 'membershipId',
+    as: 'contracts'
+  });
+
+  ContractModel.belongsTo(MembershipModel, {
+    foreignKey: 'membershipId',
+    as: 'membership'
   });
 
   console.log('Associations set up successfully');

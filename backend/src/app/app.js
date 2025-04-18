@@ -14,6 +14,8 @@ import { GymRoutes } from '../routes/Gym.Routes.js';
 import { MachineModelRoutes } from '../routes/MachineModel.Routes.js';
 import { MachineRoutes } from '../routes/Machine.Routes.js';
 import { UserRoutes } from '../routes/User.Routes.js';
+import MembershipRoutes from '../routes/Membership.Routes.js';
+import ContractRoutes from '../routes/Contract.Routes.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 const DEFAULT_PORT = 3000;
@@ -43,6 +45,8 @@ export const createApp = () => {
   app.use("/classes", ClassRoutes());
   app.use('/progress', ProgressUserRoutes());
   app.use('/api/exercises', ExercisesRoutes());
+  app.use('/memberships', MembershipRoutes);
+  app.use('/contracts', ContractRoutes);
 
   app.get('/', (req, res) => {
     res.send('Hello World');

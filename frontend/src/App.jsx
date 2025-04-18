@@ -21,6 +21,7 @@ import TrainersManagement from './pages/TrainersManagement.jsx';
 import GymsManagement from './pages/GymsManagement.jsx';
 import MachineModelsManagement from './pages/MachineModelsManagement.jsx';
 import MachinesManagement from './pages/MachinesManagement.jsx';
+import ContractPage from './pages/ContractPage.jsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -89,6 +90,7 @@ function App() {
 
             <Route element={<ProtectedLayout allowedRoles={['user']} />}>
               <Route path="/usuario" element={<UserPage />} />
+              <Route path="/usuario/contratos" element={<ContractPage />} />
               <Route path="/usuario/*" element={<UserPage />} />
             </Route>
 

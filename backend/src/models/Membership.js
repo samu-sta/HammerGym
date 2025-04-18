@@ -1,24 +1,38 @@
-import { DataTypes } from "sequelize"
-import sequelize from "../database/database.js"
+import { DataTypes } from 'sequelize';
+import sequelize from '../database/database.js';
 
-const MembershipModel = sequelize.define('Membership', {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
+const MembershipModel = sequelize.define(
+    'Membership',
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+        price: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false,
+            validate: {
+                isNumeric: true,
+                min: 0
+            }
+        },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        }
     },
-    price: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    type: {
-        type: DataTypes.STRING(255),
-        allowNull: false
+    {
+        tableName: 'memberships',
+        timestamps: true
     }
-}, {
-    tableName: 'Membership',
-    timestamps: false,
-    sequelize
-});
+);
 
 export default MembershipModel;

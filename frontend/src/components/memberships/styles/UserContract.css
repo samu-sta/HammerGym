@@ -1,0 +1,81 @@
+.contract-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.contract-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.contract-header h5 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.status-active {
+  color: white;
+  background-color: #28a745;
+}
+
+.status-expired {
+  color: white;
+  background-color: #dc3545;
+}
+
+.contract-body {
+  padding: 1.5rem;
+}
+
+.contract-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.contract-info {
+  margin-bottom: 0.5rem;
+}
+
+.contract-info strong {
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.days-remaining-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.days-normal {
+  color: white;
+  background-color: #17a2b8;
+}
+
+.days-warning {
+  color: white;
+  background-color: #ffc107;
+}
