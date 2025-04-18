@@ -35,6 +35,13 @@ export const predefinedHeaders = {
     { key: 'id', label: 'ID', type: 'number' },
     { key: 'username', label: 'Nombre', type: 'text' },
     { key: 'email', label: 'Correo Electrónico', type: 'email' }
+  ],
+  machines: [
+    { key: 'id', label: 'ID', type: 'number' },
+    { key: 'gym.location', label: 'Ubicación', type: 'text' },
+    { key: 'model.name', label: 'Modelo', type: 'text' },
+    { key: 'model.brand', label: 'Marca', type: 'text' },
+    { key: 'status', label: 'Estado', type: 'text' }
   ]
 };
 

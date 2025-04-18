@@ -19,7 +19,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  width: 70%;
+  width: 90%;
 }
 
 .admin-action-card {
@@ -33,7 +33,6 @@
   transition: transform 0.3s ease;
   animation: fadeIn 0.5s ease forwards;
   opacity: 0;
-  width: 300px;
 }
 
 .admin-action-card:hover {
@@ -80,18 +79,14 @@
   transform: scale(0.95);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} 
-
 .admin-action-container {
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 400px) {
+  .admin-dashboard {
+    grid-template-columns: 1fr;
+  }
+  
 }

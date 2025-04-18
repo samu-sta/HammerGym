@@ -8,7 +8,7 @@ const MachineModel = sequelize.define('Machine', {
         autoIncrement: true
     },
     status: {
-        type: DataTypes.ENUM('available', 'inUse', 'broken', 'preparing', 'outOfService'),
+        type: DataTypes.ENUM('available', 'broken', 'preparing', 'outOfService'),
         allowNull: false,
         defaultValue: 'available'
     },

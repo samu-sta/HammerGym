@@ -13,6 +13,8 @@ import ClassModel from '../models/Class.js';
 import ProgressUserModel from '../models/UserProgress.js';
 import ScheduleModel from '../models/Schedule.js';
 import ScheduleDayModel from '../models/ScheduleDay.js';
+import MachineModel from '../models/Machine.js';
+import MachineModelModel from '../models/MachineModel.js';
 
 const setupAssociations = () => {
 
@@ -217,6 +219,28 @@ const setupAssociations = () => {
     foreignKey: 'trainerId',
     targetKey: 'accountId',
     as: 'trainer'
+  });
+
+  // Machine and MachineModel associations
+  MachineModelModel.hasMany(MachineModel, {
+    foreignKey: 'machineModelId',
+    as: 'machines'
+  });
+
+  MachineModel.belongsTo(MachineModelModel, {
+    foreignKey: 'machineModelId',
+    as: 'model'
+  });
+
+  // Machine and Gym associations
+  GymModel.hasMany(MachineModel, {
+    foreignKey: 'gymId',
+    as: 'machines'
+  });
+
+  MachineModel.belongsTo(GymModel, {
+    foreignKey: 'gymId',
+    as: 'gym'
   });
 
   console.log('Associations set up successfully');

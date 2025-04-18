@@ -57,6 +57,11 @@
   color: #fff;
 }
 
+.form-select option {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {

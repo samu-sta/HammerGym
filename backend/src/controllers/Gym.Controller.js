@@ -89,4 +89,16 @@ export default class GymController {
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   };
+
+  getGymLocations = async (_req, res) => {
+    try {
+      const gyms = await GymModel.findAll({
+        attributes: ['id', 'location']
+      });
+      return res.status(200).json({ success: true, gyms });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+    }
+  };
 }

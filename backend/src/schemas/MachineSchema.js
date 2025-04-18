@@ -2,16 +2,16 @@ import zod from 'zod';
 
 const CreateMachineSchema = zod.object({
   serialNumber: zod.string().optional(),
-  status: zod.enum(['available', 'inUse', 'broken', 'preparing', 'outOfService']).default('available'),
+  status: zod.enum(['available', 'broken', 'preparing', 'outOfService']).default('available'),
   machineModelId: zod.number().int().positive(),
-  gymId: zod.number().int().positive()
+  // gymId ya no se requiere ya que lo obtenemos de gymLocation
 });
 
 const UpdateMachineSchema = zod.object({
   serialNumber: zod.string().optional(),
-  status: zod.enum(['available', 'inUse', 'broken', 'preparing', 'outOfService']).optional(),
+  status: zod.enum(['available', 'broken', 'preparing', 'outOfService']).optional(),
   machineModelId: zod.number().int().positive().optional(),
-  gymId: zod.number().int().positive().optional()
+  // gymId ya no se requiere ya que lo obtenemos de gymLocation
 });
 
 function validateCreateMachine(data) {

@@ -9,6 +9,7 @@ const useEntityManagement = ({
   deleteEntity,
   createEntity,
   transformEntityForEdit,
+  customFields
 }) => {
   const [entities, setEntities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -109,11 +110,15 @@ const useEntityManagement = ({
       }
     });
 
-    setFormFields(generateFormFieldsFromHeaders(tableHeaders, emptyEntity));
-    setCurrentEntity(null);
+    // Si hay campos personalizados, usamos esos, sino los generados
+    if (!customFields) {
+      setFormFields(generateFormFieldsFromHeaders(tableHeaders, emptyEntity));
+    }
+
+    setCurrentEntity(emptyEntity);
     setIsCreating(true);
     setIsModalOpen(true);
-  }, [tableHeaders]);
+  }, [tableHeaders, customFields]);
 
   const handleEdit = useCallback((entity) => {
     const defaultTransform = (entity) => {
@@ -127,11 +132,15 @@ const useEntityManagement = ({
       ? transformEntityForEdit(entity)
       : defaultTransform(entity);
 
-    setFormFields(generateFormFieldsFromHeaders(tableHeaders, formattedEntity));
+    // Si no hay campos personalizados, generamos los campos de formulario
+    if (!customFields) {
+      setFormFields(generateFormFieldsFromHeaders(tableHeaders, formattedEntity));
+    }
+
     setCurrentEntity(formattedEntity);
     setIsCreating(false);
     setIsModalOpen(true);
-  }, [tableHeaders, transformEntityForEdit]);
+  }, [tableHeaders, transformEntityForEdit, customFields]);
 
   const handleDelete = useCallback(async (entity) => {
     // Removing the window.confirm alert to only use the modal confirmation

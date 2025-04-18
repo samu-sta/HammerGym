@@ -7,6 +7,7 @@ export const GymRoutes = () => {
   const gymController = new GymController();
 
   gymRouter.get('/', gymController.getAllGyms);
+  gymRouter.get('/locations', gymController.getGymLocations);
   gymRouter.get('/:id', gymController.getGymById);
   gymRouter.post('/', authAdmin, gymController.createGym);
   gymRouter.put('/:id', authAdmin, gymController.updateGym);

@@ -31,6 +31,11 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.crud-modal-field select option {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 .crud-modal-field input:focus,
 .crud-modal-field select:focus,
 .crud-modal-field textarea:focus {

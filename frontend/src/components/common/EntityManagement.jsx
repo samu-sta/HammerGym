@@ -15,6 +15,7 @@ const EntityManagement = ({
   backPath = '/admin',
   additionalControls,
   transformEntityForEdit,
+  customFields,
   mobileBreakpoint = 420, // Parámetro nuevo con valor por defecto de 420
 }) => {
   const navigate = useNavigate();
@@ -42,7 +43,8 @@ const EntityManagement = ({
     updateEntity,
     deleteEntity,
     createEntity,
-    transformEntityForEdit
+    transformEntityForEdit,
+    customFields
   });
 
   return (
@@ -84,7 +86,7 @@ const EntityManagement = ({
         isOpen={isModalOpen}
         onClose={closeModal}
         title={isCreating ? `Crear ${title.slice(0, -1)}` : `Editar ${title.slice(0, -1)}`}
-        fields={formFields}
+        fields={customFields || formFields}
         initialValues={currentEntity}
         onSubmit={handleUpdate}
         isSubmitting={isSubmitting}

@@ -20,6 +20,7 @@ import UsersManagement from './pages/UsersManagement.jsx';
 import TrainersManagement from './pages/TrainersManagement.jsx';
 import GymsManagement from './pages/GymsManagement.jsx';
 import MachineModelsManagement from './pages/MachineModelsManagement.jsx';
+import MachinesManagement from './pages/MachinesManagement.jsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,6 +83,7 @@ function App() {
               <Route path="/admin/trainers" element={<TrainersManagement />} />
               <Route path="/admin/gyms" element={<GymsManagement />} />
               <Route path="/admin/machine-models" element={<MachineModelsManagement />} />
+              <Route path="/admin/machines" element={<MachinesManagement />} />
               <Route path="/admin/*" element={<AdminPage />} />
             </Route>
 

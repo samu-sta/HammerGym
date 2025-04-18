@@ -42,7 +42,8 @@ export default class MachineController {
   };
 
   createMachine = async (req, res) => {
-    const result = machineSchema.validateCreateMachine(req.body);
+    const { gymLocation, ...machineData } = req.body;
+    const result = machineSchema.validateCreateMachine(machineData);
 
     if (!result.success) {
       return res.status(400).json({
@@ -58,12 +59,20 @@ export default class MachineController {
         return res.status(404).json({ success: false, message: "El modelo de máquina especificado no existe" });
       }
 
-      const gymExists = await GymModel.findByPk(result.data.gymId);
-      if (!gymExists) {
-        return res.status(404).json({ success: false, message: "El gimnasio especificado no existe" });
+      // Buscar el gimnasio por ubicación en lugar de ID
+      const gym = await GymModel.findOne({
+        where: { location: gymLocation }
+      });
+
+      if (!gym) {
+        return res.status(404).json({ success: false, message: "No se encontró gimnasio con la ubicación especificada" });
       }
 
-      const newMachine = await MachineModel.create(result.data);
+      // Crear la máquina con el ID del gimnasio obtenido
+      const newMachine = await MachineModel.create({
+        ...result.data,
+        gymId: gym.id
+      });
 
       const machine = await MachineModel.findByPk(newMachine.id, {
         include: [
@@ -81,7 +90,8 @@ export default class MachineController {
 
   updateMachine = async (req, res) => {
     const { id } = req.params;
-    const result = machineSchema.validateUpdateMachine(req.body);
+    const { gymLocation, ...machineData } = req.body;
+    const result = machineSchema.validateUpdateMachine(machineData);
 
     if (!result.success) {
       return res.status(400).json({
@@ -104,14 +114,19 @@ export default class MachineController {
         }
       }
 
-      if (result.data.gymId) {
-        const gymExists = await GymModel.findByPk(result.data.gymId);
-        if (!gymExists) {
-          return res.status(404).json({ success: false, message: "El gimnasio especificado no existe" });
+      // Preparar datos de actualización
+      let updateData = { ...result.data };
+
+      // Si se proporciona una ubicación, buscar el gimnasio correspondiente
+      if (gymLocation) {
+        const gym = await GymModel.findOne({ where: { location: gymLocation } });
+        if (!gym) {
+          return res.status(404).json({ success: false, message: "No se encontró gimnasio con la ubicación especificada" });
         }
+        updateData.gymId = gym.id;
       }
 
-      await machine.update(result.data);
+      await machine.update(updateData);
 
       const updatedMachine = await MachineModel.findByPk(id, {
         include: [
