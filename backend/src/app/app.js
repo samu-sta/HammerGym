@@ -18,6 +18,8 @@ import MembershipRoutes from '../routes/Membership.Routes.js';
 import ContractRoutes from '../routes/Contract.Routes.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import { handleStripeWebhook } from '../controllers/Webhook.Controller.js';
+
 const DEFAULT_PORT = 3000;
 
 dotenv.config();
@@ -27,6 +29,12 @@ const PORT = process.env.PORT || DEFAULT_PORT;
 export const createApp = () => {
   const app = express();
   app.use(morgan('dev'));
+
+  app.post('/contracts/webhook',
+    express.raw({ type: 'application/json' }),
+    handleStripeWebhook
+  );
+
   app.use(express.json());
   app.use(cookieParser());
   app.use(cors({

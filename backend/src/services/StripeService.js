@@ -127,7 +127,8 @@ export default class StripeService {
         success: true,
         session
       };
-    } catch (error) {
+    }
+    catch (error) {
       console.error('Error al crear la sesión de checkout:', error);
       return {
         success: false,
