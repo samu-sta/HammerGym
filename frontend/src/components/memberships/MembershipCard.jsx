@@ -37,16 +37,16 @@ const MembershipCard = ({ membership, onSelect, isSelected }) => {
   };
 
   return (
-    <div className={`membership-card ${isSelected ? 'selected' : ''}`}>
-      <div className="membership-card-header">
+    <article className={`membership-card ${isSelected ? 'selected' : ''}`}>
+      <header className="membership-card-header">
         <h4>{type}</h4>
         {isSelected && <span className="membership-card-badge">Seleccionado</span>}
-      </div>
-      <div className="membership-card-body">
-        <div className="membership-card-price">
+      </header>
+      <section className="membership-card-body">
+        <section className="membership-card-price">
           <h2>${price}</h2>
           <small>por mes</small>
-        </div>
+        </section>
         <ul className="membership-features">
           {getFeatures().map((feature, index) => (
             <li key={index} className="membership-feature">
@@ -60,8 +60,8 @@ const MembershipCard = ({ membership, onSelect, isSelected }) => {
         >
           {isSelected ? 'Seleccionado' : 'Seleccionar'}
         </button>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

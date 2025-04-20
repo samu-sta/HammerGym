@@ -32,26 +32,26 @@ const UserContractsList = ({ onRenewContract }) => {
   }
 
   if (error) {
-    return <div className="contracts-alert alert-danger">{error}</div>;
+    return <aside className="contracts-alert alert-danger">{error}</aside>;
   }
 
   if (!contract) {
-    return <div className="contracts-alert alert-info">No tienes contrato actualmente. Selecciona una membresía para comenzar.</div>;
+    return <aside className="contracts-alert alert-info">No tienes contrato actualmente. Selecciona una membresía para comenzar.</aside>;
   }
 
   return (
-    <div className="contracts-container">
-      <div className="contracts-section">
-        <div className="contracts-row">
-          <div className="contract-column">
+    <section className="contracts-container">
+      <article className="contracts-section">
+        <section className="contracts-row">
+          <article className="contract-column">
             <UserContract
               contract={contract}
               onRenewClick={onRenewContract}
             />
-          </div>
-        </div>
-      </div>
-    </div>
+          </article>
+        </section>
+      </article>
+    </section>
   );
 };
 

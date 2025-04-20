@@ -1,37 +1,93 @@
 .payment-result-modal {
   text-align: center;
-  padding: 20px;
+  padding: 1.5rem;
+  background: rgba(28, 28, 30, 0.97);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .payment-result-icon {
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.5s ease;
 }
 
 .payment-result-icon.success {
-  color: #28a745;
+  color: #998000;
 }
 
 .payment-result-icon.error {
-  color: #dc3545;
+  color: #e53935;
 }
 
 .payment-result-title {
   font-size: 1.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   font-weight: 600;
+  color: #fff;
 }
 
 .payment-result-message {
-  color: #6c757d;
-  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .payment-result-actions {
-  margin-top: 20px;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
-.payment-result-actions .btn {
-  min-width: 160px;
-  padding: 10px 20px;
+.payment-result-actions .action-button {
+  min-width: 180px;
+  padding: 0.9rem 1.5rem;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-result-actions .success-button {
+  background: linear-gradient(to right, #998000, #b29600);
+  color: white;
+}
+
+.payment-result-actions .primary-button {
+  background: rgba(153, 128, 0, 0.2);
+  color: #998000;
+}
+
+.payment-result-actions .action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(153, 128, 0, 0.2);
+}
+
+.payment-result-actions .success-button:hover {
+  background: linear-gradient(to right, #b29600, #ccad00);
+}
+
+.payment-result-actions .primary-button:hover {
+  background: rgba(153, 128, 0, 0.3);
+}
+
+.button-icon {
+  font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .payment-result-actions .action-button {
+    width: 100%;
+  }
 }

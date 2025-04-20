@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from '../common/Modal';
-import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaTimesCircle, FaCreditCard, FaFileContract } from 'react-icons/fa';
 import './styles/PaymentResultModal.css';
 
 const PaymentResultModal = ({ isOpen, onClose, isSuccess, isRenewal = false }) => {
@@ -10,14 +10,14 @@ const PaymentResultModal = ({ isOpen, onClose, isSuccess, isRenewal = false }) =
       onClose={onClose}
       title={isSuccess ? "Pago Exitoso" : "Pago Cancelado"}
     >
-      <div className="payment-result-modal">
-        <div className={`payment-result-icon ${isSuccess ? 'success' : 'error'}`}>
-          {isSuccess ? <FaCheckCircle size={50} /> : <FaTimesCircle size={50} />}
-        </div>
+      <article className="payment-result-modal">
+        <figure className={`payment-result-icon ${isSuccess ? 'success' : 'error'}`}>
+          {isSuccess ? <FaCheckCircle size={60} /> : <FaTimesCircle size={60} />}
+        </figure>
 
         <h3 className="payment-result-title">
           {isSuccess
-            ? isRenewal 
+            ? isRenewal
               ? "¡Tu contrato ha sido renovado con éxito!"
               : "¡Tu pago ha sido procesado con éxito!"
             : "El proceso de pago ha sido cancelado"}
@@ -31,15 +31,25 @@ const PaymentResultModal = ({ isOpen, onClose, isSuccess, isRenewal = false }) =
             : "No se ha completado el pago. Si experimentaste algún problema, por favor intenta nuevamente o contacta con soporte."}
         </p>
 
-        <div className="payment-result-actions">
+        <footer className="payment-result-actions">
           <button
-            className={`btn ${isSuccess ? 'btn-success' : 'btn-primary'}`}
+            className={`action-button ${isSuccess ? 'success-button' : 'primary-button'}`}
             onClick={onClose}
           >
-            {isSuccess ? "Ver mis contratos" : "Entendido"}
+            {isSuccess ? (
+              <>
+                <FaFileContract className="button-icon" />
+                <span>Ver mis contratos</span>
+              </>
+            ) : (
+              <>
+                <FaCreditCard className="button-icon" />
+                <span>Entendido</span>
+              </>
+            )}
           </button>
-        </div>
-      </div>
+        </footer>
+      </article>
     </Modal>
   );
 };

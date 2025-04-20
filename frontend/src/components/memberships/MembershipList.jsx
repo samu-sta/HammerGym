@@ -35,27 +35,27 @@ const MembershipList = ({ onMembershipSelect, selectedMembershipId }) => {
   }
 
   if (error) {
-    return <div className="memberships-alert alert-danger">{error}</div>;
+    return <aside className="memberships-alert alert-danger">{error}</aside>;
   }
 
   if (memberships.length === 0) {
-    return <div className="memberships-alert alert-info">No hay membresías disponibles en este momento.</div>;
+    return <aside className="memberships-alert alert-info">No hay membresías disponibles en este momento.</aside>;
   }
 
   return (
-    <div className="memberships-container">
-      <div className="memberships-row">
+    <section className="memberships-container">
+      <article className="memberships-row">
         {memberships.map((membership) => (
-          <div key={membership.id} className="membership-column">
+          <section key={membership.id} className="membership-column">
             <MembershipCard
               membership={membership}
               onSelect={handleSelect}
               isSelected={membership.id === selectedMembershipId}
             />
-          </div>
+          </section>
         ))}
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

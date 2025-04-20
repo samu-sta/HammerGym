@@ -25,39 +25,38 @@ const UserContract = ({ contract, onRenewClick }) => {
   };
 
   return (
-    <div className="contract-card">
-      <div className="contract-header">
-        <h5>Contrato #{id}</h5>
+    <article className="contract-card">
+      <header className="contract-header">
         <span className={`status-badge ${isExpired ? 'status-expired' : 'status-active'}`}>
           {isExpired ? 'Expirado' : 'Activo'}
         </span>
-      </div>
-      <div className="contract-body">
+      </header>
+      <section className="contract-body">
         <h3 className="contract-title">{membership?.type || 'Membresía'}</h3>
-        <div className="contract-info">
+        <p className="contract-info">
           <strong>Fecha de contratación:</strong> {formatDate(createdAtObj)}
-        </div>
-        <div className="contract-info">
+        </p>
+        <p className="contract-info">
           <strong>Fecha de expiración:</strong> {formatDate(expirationDateObj)}
-        </div>
+        </p>
         {!isExpired && (
-          <div className="days-remaining">
+          <aside className="days-remaining">
             <span className={`days-remaining-badge ${daysRemaining() > 30 ? 'days-normal' : 'days-warning'}`}>
               {daysRemaining()} días restantes
             </span>
-          </div>
+          </aside>
         )}
 
-        <div className="contract-actions">
+        <footer className="contract-actions">
           <button
             className="btn btn-primary btn-renew"
             onClick={() => onRenewClick && onRenewClick(contract)}
           >
             Renovar por 1 mes
           </button>
-        </div>
-      </div>
-    </div>
+        </footer>
+      </section>
+    </article>
   );
 };
 

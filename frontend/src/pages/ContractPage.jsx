@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { addMonths } from 'date-fns';
 import { useAccount } from '../context/AccountContext';
+import { FaLongArrowAltLeft } from 'react-icons/fa';
 import MembershipList from '../components/memberships/MembershipList';
 import UserContractsList from '../components/memberships/UserContractsList';
 import PaymentResultModal from '../components/memberships/PaymentResultModal';
@@ -287,13 +288,25 @@ const ContractPage = () => {
     }
   };
 
+  const handleGoBack = () => {
+    navigate('/usuario');
+  };
+
   if (!account) {
     return <LoadingSpinner />;
   }
 
   return (
     <div className="contract-page-container">
-      <h1 className="page-title">Contrato y Membresía</h1>
+      <div className="page-header">
+        <button
+          className="btn-back"
+          onClick={handleGoBack}
+        >
+          <FaLongArrowAltLeft /> Volver
+        </button>
+        <h1 className="page-title">Contrato y Membresía</h1>
+      </div>
 
       {/* Modal de Resultado de Pago */}
       <PaymentResultModal
