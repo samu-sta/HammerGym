@@ -5,7 +5,7 @@ import { useAccount } from '../context/AccountContext';
 import MembershipList from '../components/memberships/MembershipList';
 import UserContractsList from '../components/memberships/UserContractsList';
 import PaymentResultModal from '../components/memberships/PaymentResultModal';
-import { createContract, createStripeCheckoutSession, processStripeRedirect } from '../services/MembershipService';
+import { createContract, createStripeCheckoutSession, processStripeRedirect, getUserContracts } from '../services/MembershipService';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import './styles/ContractPage.css';
 
@@ -26,6 +26,7 @@ const ContractPage = () => {
   const [processingRedirect, setProcessingRedirect] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [hasActiveContract, setHasActiveContract] = useState(false);
 
   // Manejar redirección de Stripe al cargar la página
   useEffect(() => {
@@ -37,6 +38,22 @@ const ContractPage = () => {
       handleStripeRedirect(query);
     }
   }, [location, account, processingRedirect]);
+
+  // Verificar si el usuario ya tiene un contrato activo
+  useEffect(() => {
+    const checkActiveContract = async () => {
+      try {
+        const contract = await getUserContracts();
+        setHasActiveContract(!!contract); // If contract is non-null, user has an active contract
+      } catch (err) {
+        console.error('Error comprobando contrato activo:', err);
+      }
+    };
+
+    if (account) {
+      checkActiveContract();
+    }
+  }, [account, success]);
 
   const handleStripeRedirect = async (query) => {
     if (!account) return;
@@ -243,8 +260,10 @@ const ContractPage = () => {
             Mis Contratos
           </a>
         </li>
-        <li className={`custom-tab ${activeTab === 'memberships' ? 'custom-tab-active' : ''}`}>
-          <a className="custom-tab-link" onClick={() => setActiveTab('memberships')}>
+        <li className={`custom-tab ${activeTab === 'memberships' ? 'custom-tab-active' : ''} ${hasActiveContract ? 'custom-tab-disabled' : ''}`}>
+          <a className={`custom-tab-link ${hasActiveContract ? 'disabled' : ''}`}
+            onClick={() => !hasActiveContract && setActiveTab('memberships')}
+            title={hasActiveContract ? 'Ya tienes un contrato activo' : 'Adquirir nueva membresía'}>
             Membresías Disponibles
           </a>
         </li>
@@ -261,7 +280,7 @@ const ContractPage = () => {
             <UserContractsList />
           </div>
 
-          {activeTab === 'contracts' && (
+          {activeTab === 'contracts' && !hasActiveContract && (
             <div className="center-button-container">
               <button
                 className="btn btn-primary btn-lg"

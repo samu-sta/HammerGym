@@ -56,6 +56,22 @@
   pointer-events: none;
 }
 
+.custom-tab-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.custom-tab-link.disabled {
+  cursor: not-allowed;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.custom-tab-link.disabled:hover {
+  color: #6c757d;
+  text-decoration: none;
+}
+
 /* Tab Content */
 .tab-content {
   padding-top: 1rem;

@@ -1,34 +1,61 @@
 import ContractModel from '../models/Contract.js';
 import MembershipModel from '../models/Membership.js';
 import StripeService from '../services/StripeService.js';
+import { Op } from 'sequelize';
 
 const stripeService = new StripeService();
 
 export const getUserContracts = async (req, res) => {
   const userId = req.account.id;
+  const currentDate = new Date();
 
   try {
-    const contracts = await ContractModel.findAll({
-      where: { userId },
+    const contract = await ContractModel.findOne({
+      where: {
+        userId,
+        expirationDate: {
+          [Op.gt]: currentDate // Only get non-expired contract
+        }
+      },
       include: [{
         model: MembershipModel,
-        attributes: ['type', 'price'],
+        attributes: ['type'], // Exclude price
         as: 'membership'
       }],
+      attributes: ['id', 'expirationDate', 'createdAt'], // Only include these fields
       order: [['createdAt', 'DESC']]
     });
 
-    res.json({
-      message: 'User contracts retrieved successfully',
-      contracts
-    });
+    console.log(`Contract for user ${userId}:`, contract);
+
+    if (!contract) {
+      return res.json(null);
+    }
+
+    res.json(contract);
   } catch (error) {
-    console.error(`Error retrieving contracts for user ${userId}:`, error);
+    console.error(`Error retrieving contract for user ${userId}:`, error);
     res.status(500).json({
-      message: 'Error retrieving user contracts',
+      message: 'Error retrieving user contract',
       error: error.message
     });
   }
+};
+
+// Función auxiliar para verificar si un usuario ya tiene un contrato activo
+const userHasActiveContract = async (userId) => {
+  const currentDate = new Date();
+
+  const activeContracts = await ContractModel.findOne({
+    where: {
+      userId,
+      expirationDate: {
+        [Op.gt]: currentDate // Fecha de expiración mayor que la fecha actual = contrato activo
+      }
+    }
+  });
+
+  return activeContracts !== null;
 };
 
 export const createCheckoutSession = async (req, res) => {
@@ -39,6 +66,15 @@ export const createCheckoutSession = async (req, res) => {
     if (!membershipId) {
       return res.status(400).json({
         message: 'Se requiere membershipId para crear una sesión de checkout',
+        success: false
+      });
+    }
+
+    // Verificar si el usuario ya tiene un contrato activo
+    const hasActiveContract = await userHasActiveContract(userId);
+    if (hasActiveContract) {
+      return res.status(400).json({
+        message: 'Ya tienes un contrato activo. No puedes adquirir otra membresía hasta que expire tu contrato actual.',
         success: false
       });
     }

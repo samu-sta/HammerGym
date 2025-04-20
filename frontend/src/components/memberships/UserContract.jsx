@@ -35,9 +35,6 @@ const UserContract = ({ contract }) => {
       <div className="contract-body">
         <h3 className="contract-title">{membership?.type || 'Membresía'}</h3>
         <div className="contract-info">
-          <strong>Precio:</strong> ${membership?.price}
-        </div>
-        <div className="contract-info">
           <strong>Fecha de contratación:</strong> {formatDate(createdAtObj)}
         </div>
         <div className="contract-info">

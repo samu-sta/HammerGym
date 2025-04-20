@@ -1,29 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import UserContract from './UserContract';
-import { getUserContracts } from '../../services/MembershipService';
 import LoadingSpinner from '../common/LoadingSpinner';
 import './styles/UserContractsList.css';
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 const UserContractsList = () => {
-  const [contracts, setContracts] = useState([]);
+  const [contract, setContract] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchContracts = async () => {
+    const fetchContract = async () => {
       try {
-        setLoading(true);
-        const userContracts = await getUserContracts();
-        setContracts(userContracts);
+        console.log("Fetching from:", `http://localhost:3000/contracts/my-contracts`);
+        const response = await fetch(`http://localhost:3000/contracts/my-contracts`, {
+          method: 'GET',
+          credentials: 'include',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          }
+        });
+
+        if (!response.ok) {
+          const contentType = response.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || `Error ${response.status}: ${response.statusText}`);
+          } else {
+            throw new Error(`Error ${response.status}: ${response.statusText}`);
+          }
+        }
+
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          throw new Error("Response is not JSON. Received content type: " + contentType);
+        }
+
+        const data = await response.json();
+        console.log("Contract data:", data);
+        setContract(data);
+        setLoading(false);
       } catch (err) {
-        setError('Error al cargar los contratos. Por favor, intenta de nuevo más tarde.');
-        console.error('Error fetching contracts:', err);
-      } finally {
+        console.error('Error fetching contract:', err);
+        setError(`Error al cargar el contrato: ${err.message}`);
         setLoading(false);
       }
     };
 
-    fetchContracts();
+    fetchContract();
   }, []);
 
   if (loading) {
@@ -34,51 +60,19 @@ const UserContractsList = () => {
     return <div className="contracts-alert alert-danger">{error}</div>;
   }
 
-  if (contracts.length === 0) {
-    return <div className="contracts-alert alert-info">No tienes contratos actualmente. Selecciona una membresía para comenzar.</div>;
+  if (!contract) {
+    return <div className="contracts-alert alert-info">No tienes contrato actualmente. Selecciona una membresía para comenzar.</div>;
   }
-
-  // Sort contracts by creation date (newest first)
-  const sortedContracts = [...contracts].sort((a, b) =>
-    new Date(b.createdAt) - new Date(a.createdAt)
-  );
-
-  // Separate active and expired contracts
-  const now = new Date();
-  const activeContracts = sortedContracts.filter(
-    contract => new Date(contract.expirationDate) > now
-  );
-  const expiredContracts = sortedContracts.filter(
-    contract => new Date(contract.expirationDate) <= now
-  );
 
   return (
     <div className="contracts-container">
-      {activeContracts.length > 0 && (
-        <div className="contracts-section">
-          <h4 className="contracts-section-title">Contratos activos</h4>
-          <div className="contracts-row">
-            {activeContracts.map(contract => (
-              <div key={contract.id} className="contract-column">
-                <UserContract contract={contract} />
-              </div>
-            ))}
+      <div className="contracts-section">
+        <div className="contracts-row">
+          <div className="contract-column">
+            <UserContract contract={contract} />
           </div>
         </div>
-      )}
-
-      {expiredContracts.length > 0 && (
-        <div className="contracts-section">
-          <h4 className="contracts-section-title">Contratos expirados</h4>
-          <div className="contracts-row">
-            {expiredContracts.map(contract => (
-              <div key={contract.id} className="contract-column">
-                <UserContract contract={contract} />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 };

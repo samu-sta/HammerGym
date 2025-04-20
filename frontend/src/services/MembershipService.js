@@ -46,10 +46,11 @@ export const getUserContracts = async () => {
       throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
 
-    const data = await response.json();
-    return data.contracts;
+    // The API now returns a single contract object directly, not wrapped in a 'contracts' property
+    const contract = await response.json();
+    return contract;
   } catch (error) {
-    console.error('Error fetching user contracts:', error);
+    console.error('Error fetching user contract:', error);
     throw error;
   }
 };
@@ -111,31 +112,18 @@ export const processStripeRedirect = async (query) => {
 
       // Comprobar si el contrato ya fue creado por el webhook
       try {
-        // Usar la nueva ruta para obtener los contratos del usuario autenticado
-        const response = await fetch(`${API_URL}/contracts/my-contracts`, {
-          credentials: 'include'
-        });
+        // Obtener el contrato del usuario autenticado
+        const contract = await getUserContracts();
 
-        if (!response.ok) {
-          throw new Error(`Error ${response.status}: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        const contracts = data.contracts;
-
-        const existingContract = contracts.find(
-          contract => contract.paymentReference === query.session_id
-        );
-
-        if (existingContract) {
+        if (contract && contract.paymentReference === query.session_id) {
           return {
             success: true,
             message: 'Tu pago ha sido procesado correctamente y tu membresía está activa.',
-            contractId: existingContract.id
+            contractId: contract.id
           };
         }
       } catch (e) {
-        console.error('Error verificando contratos existentes:', e);
+        console.error('Error verificando contrato existente:', e);
       }
 
       // Si no existe, crear el contrato manualmente
