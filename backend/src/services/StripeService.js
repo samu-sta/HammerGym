@@ -136,4 +136,66 @@ export default class StripeService {
       };
     }
   }
+
+  /**
+   * Crea una sesión de checkout de Stripe para renovación de contrato
+   * @param {number} amount - Cantidad a cobrar (en centavos)
+   * @param {string} currency - Moneda (eur, usd)
+   * @param {string} description - Descripción del producto (ej. "Renovación de membresía Premium - 1 mes")
+   * @param {number} contractId - ID del contrato a renovar
+   * @param {number} userId - ID del usuario
+   * @returns {Promise<Object>} - Resultado de la creación de la sesión
+   */
+  async createRenewalCheckoutSession(amount, currency, description, contractId, userId) {
+    try {
+      // Validar que todos los parámetros requeridos existan
+      if (!amount || !currency || !description || !contractId || !userId) {
+        console.error('Parámetros faltantes para crear sesión de renovación:', {
+          amount, currency, description, contractId, userId
+        });
+        throw new Error('Todos los parámetros son requeridos para crear una sesión de renovación');
+      }
+
+      // Convertir valores a string de forma segura
+      const safeUserId = userId ? userId.toString() : '';
+      const safeContractId = contractId ? contractId.toString() : '';
+
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: [
+          {
+            price_data: {
+              currency: currency,
+              product_data: {
+                name: description,
+                description: `Renovación de contrato para HammerGym - 1 mes adicional`,
+              },
+              unit_amount: amount, // Precio para 1 mes
+            },
+            quantity: 1,
+          },
+        ],
+        mode: 'payment',
+        success_url: `http://localhost:5173/usuario/contratos?success=true&renewal=true&contract_id=${safeContractId}`,
+        cancel_url: `http://localhost:5173/usuario/contratos?canceled=true&renewal=true`,
+        metadata: {
+          userId: safeUserId,
+          contractId: safeContractId,
+          isRenewal: 'true'
+        }
+      });
+
+      return {
+        success: true,
+        session
+      };
+    }
+    catch (error) {
+      console.error('Error al crear la sesión de renovación:', error);
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+  }
 }

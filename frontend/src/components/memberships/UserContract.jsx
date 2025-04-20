@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import './styles/UserContract.css';
 
-const UserContract = ({ contract }) => {
+const UserContract = ({ contract, onRenewClick }) => {
   if (!contract) {
     return null;
   }
@@ -47,6 +47,15 @@ const UserContract = ({ contract }) => {
             </span>
           </div>
         )}
+
+        <div className="contract-actions">
+          <button
+            className="btn btn-primary btn-renew"
+            onClick={() => onRenewClick && onRenewClick(contract)}
+          >
+            Renovar por 1 mes
+          </button>
+        </div>
       </div>
     </div>
   );

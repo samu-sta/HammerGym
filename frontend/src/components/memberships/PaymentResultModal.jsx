@@ -3,7 +3,7 @@ import Modal from '../common/Modal';
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import './styles/PaymentResultModal.css';
 
-const PaymentResultModal = ({ isOpen, onClose, isSuccess }) => {
+const PaymentResultModal = ({ isOpen, onClose, isSuccess, isRenewal = false }) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -17,13 +17,17 @@ const PaymentResultModal = ({ isOpen, onClose, isSuccess }) => {
 
         <h3 className="payment-result-title">
           {isSuccess
-            ? "¡Tu pago ha sido procesado con éxito!"
+            ? isRenewal 
+              ? "¡Tu contrato ha sido renovado con éxito!"
+              : "¡Tu pago ha sido procesado con éxito!"
             : "El proceso de pago ha sido cancelado"}
         </h3>
 
         <p className="payment-result-message">
           {isSuccess
-            ? "Tu contrato de membresía ha sido creado correctamente. Puedes ver los detalles en la sección Mis Contratos."
+            ? isRenewal
+              ? "Tu contrato de membresía ha sido renovado correctamente. Puedes ver los detalles actualizados en la sección Mis Contratos."
+              : "Tu contrato de membresía ha sido creado correctamente. Puedes ver los detalles en la sección Mis Contratos."
             : "No se ha completado el pago. Si experimentaste algún problema, por favor intenta nuevamente o contacta con soporte."}
         </p>
 

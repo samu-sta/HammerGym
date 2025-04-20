@@ -5,7 +5,13 @@ import { useAccount } from '../context/AccountContext';
 import MembershipList from '../components/memberships/MembershipList';
 import UserContractsList from '../components/memberships/UserContractsList';
 import PaymentResultModal from '../components/memberships/PaymentResultModal';
-import { createContract, createStripeCheckoutSession, processStripeRedirect, getUserContracts } from '../services/MembershipService';
+import {
+  createContract,
+  createStripeCheckoutSession,
+  processStripeRedirect,
+  getUserContracts,
+  createRenewalStripeCheckoutSession
+} from '../services/MembershipService';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import './styles/ContractPage.css';
 
@@ -27,6 +33,9 @@ const ContractPage = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [hasActiveContract, setHasActiveContract] = useState(false);
+  const [isRenewal, setIsRenewal] = useState(false);
+  const [currentContract, setCurrentContract] = useState(null);
+  const [contractId, setContractId] = useState(null);
 
   // Manejar redirección de Stripe al cargar la página
   useEffect(() => {
@@ -35,6 +44,12 @@ const ContractPage = () => {
     const query = new URLSearchParams(location.search);
     if ((query.get('success') || query.get('canceled')) && !processingRedirect) {
       setProcessingRedirect(true);
+      // Verificar si hay un parámetro renewal=true en la URL
+      setIsRenewal(query.get('renewal') === 'true');
+      // Guardar el ID del contrato si existe en la URL
+      if (query.get('contract_id')) {
+        setContractId(query.get('contract_id'));
+      }
       handleStripeRedirect(query);
     }
   }, [location, account, processingRedirect]);
@@ -45,6 +60,7 @@ const ContractPage = () => {
       try {
         const contract = await getUserContracts();
         setHasActiveContract(!!contract); // If contract is non-null, user has an active contract
+        setCurrentContract(contract);
       } catch (err) {
         console.error('Error comprobando contrato activo:', err);
       }
@@ -102,6 +118,8 @@ const ContractPage = () => {
   const closePaymentModal = () => {
     setShowPaymentModal(false);
     setActiveTab('contracts'); // Volver a la pestaña de contratos al cerrar el modal
+    // Clean URL parameters
+    window.history.replaceState({}, document.title, window.location.pathname);
   };
 
   useEffect(() => {
@@ -113,6 +131,36 @@ const ContractPage = () => {
   const handleMembershipSelect = (membership) => {
     setSelectedMembership(membership);
     setActiveTab('payment');
+  };
+
+  const handleRenewalContract = async (contract) => {
+    if (!contract || !contract.id) {
+      setError('Información del contrato no disponible');
+      return;
+    }
+
+    try {
+      setLoading(true);
+      setError(null);
+
+      // Guardar referencia al contrato actual para usarlo en el pago
+      setCurrentContract(contract);
+      setIsRenewal(true);
+
+      const response = await createRenewalStripeCheckoutSession(contract.id);
+
+      if (response.success && response.url) {
+        // Redireccionar al usuario a la página de pago de Stripe
+        window.location.href = response.url;
+      } else {
+        setError(response.message || 'Error al crear la sesión de renovación de pago con Stripe.');
+      }
+    } catch (err) {
+      setError('Error al conectar con el servicio de pago para la renovación: ' + (err.message || ''));
+      console.error('Error creating renewal Stripe session:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleStripeCheckout = async () => {
@@ -252,6 +300,7 @@ const ContractPage = () => {
         isOpen={showPaymentModal}
         onClose={closePaymentModal}
         isSuccess={paymentSuccess}
+        isRenewal={isRenewal}
       />
 
       <ul className="custom-tabs">
@@ -277,7 +326,7 @@ const ContractPage = () => {
       <div className="tab-content">
         <div className={`tab-pane ${activeTab === 'contracts' ? 'active' : ''}`}>
           <div className="mb-4">
-            <UserContractsList />
+            <UserContractsList onRenewContract={handleRenewalContract} />
           </div>
 
           {activeTab === 'contracts' && !hasActiveContract && (

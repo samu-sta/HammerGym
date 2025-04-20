@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import UserContract from './UserContract';
 import LoadingSpinner from '../common/LoadingSpinner';
 import './styles/UserContractsList.css';
+import { getUserContracts } from '../../services/MembershipService';
 
-const API_URL = import.meta.env.VITE_API_URL || '';
-
-const UserContractsList = () => {
+const UserContractsList = ({ onRenewContract }) => {
   const [contract, setContract] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,31 +13,7 @@ const UserContractsList = () => {
     const fetchContract = async () => {
       try {
         console.log("Fetching from:", `http://localhost:3000/contracts/my-contracts`);
-        const response = await fetch(`http://localhost:3000/contracts/my-contracts`, {
-          method: 'GET',
-          credentials: 'include',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          }
-        });
-
-        if (!response.ok) {
-          const contentType = response.headers.get("content-type");
-          if (contentType && contentType.includes("application/json")) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || `Error ${response.status}: ${response.statusText}`);
-          } else {
-            throw new Error(`Error ${response.status}: ${response.statusText}`);
-          }
-        }
-
-        const contentType = response.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-          throw new Error("Response is not JSON. Received content type: " + contentType);
-        }
-
-        const data = await response.json();
+        const data = await getUserContracts();
         console.log("Contract data:", data);
         setContract(data);
         setLoading(false);
@@ -69,7 +44,10 @@ const UserContractsList = () => {
       <div className="contracts-section">
         <div className="contracts-row">
           <div className="contract-column">
-            <UserContract contract={contract} />
+            <UserContract
+              contract={contract}
+              onRenewClick={onRenewContract}
+            />
           </div>
         </div>
       </div>

@@ -155,3 +155,49 @@ export const processStripeRedirect = async (query) => {
     throw error;
   }
 };
+
+export const renewContract = async (contractId) => {
+  try {
+    const response = await fetch(`${API_URL}/contracts/${contractId}/renew`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || `Error ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error renewing contract:', error);
+    throw error;
+  }
+};
+
+export const createRenewalStripeCheckoutSession = async (contractId) => {
+  try {
+    const response = await fetch(`${API_URL}/contracts/${contractId}/renewal-checkout-session`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || `Error ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error creating Stripe renewal checkout session:', error);
+    throw error;
+  }
+};

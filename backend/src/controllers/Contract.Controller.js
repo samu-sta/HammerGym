@@ -2,6 +2,7 @@ import ContractModel from '../models/Contract.js';
 import MembershipModel from '../models/Membership.js';
 import StripeService from '../services/StripeService.js';
 import { Op } from 'sequelize';
+import { addMonths } from 'date-fns';
 
 const stripeService = new StripeService();
 
@@ -116,6 +117,137 @@ export const createCheckoutSession = async (req, res) => {
   catch (error) {
     res.status(500).json({
       message: 'Error creating checkout session',
+      error: error.message,
+      success: false
+    });
+  }
+};
+
+// Crear una sesión de checkout para renovar un contrato existente
+export const createRenewalCheckoutSession = async (req, res) => {
+  const { contractId } = req.params;
+  const userId = req.account.id;
+
+  try {
+    // Verificar que el contrato existe y pertenece al usuario
+    const contract = await ContractModel.findOne({
+      where: {
+        id: contractId,
+        userId
+      },
+      include: [{
+        model: MembershipModel,
+        as: 'membership'
+      }]
+    });
+
+    if (!contract) {
+      return res.status(404).json({
+        message: 'Contrato no encontrado o no tienes permiso para renovarlo',
+        success: false
+      });
+    }
+
+    // Obtener la información de la membresía asociada al contrato
+    const membership = contract.membership;
+    if (!membership) {
+      return res.status(404).json({
+        message: 'Información de membresía no disponible',
+        success: false
+      });
+    }
+
+    // El precio es para 1 mes (renovación)
+    const amount = Math.round(membership.price * 100);
+
+    // Crear sesión de Stripe para el pago de renovación
+    const sessionResult = await stripeService.createRenewalCheckoutSession(
+      amount,
+      'usd',
+      `Renovación de ${membership.type} - 1 mes`,
+      contract.id,
+      userId
+    );
+
+    if (!sessionResult.success) {
+      return res.status(400).json({
+        message: 'Error al crear la sesión de pago para renovación',
+        error: sessionResult.error,
+        success: false
+      });
+    }
+
+    res.json({
+      message: 'Sesión de pago para renovación creada',
+      sessionId: sessionResult.session.id,
+      success: true,
+      url: sessionResult.session.url
+    });
+  } catch (error) {
+    console.error('Error al crear la sesión de pago para renovación:', error);
+    res.status(500).json({
+      message: 'Error al crear la sesión de pago para renovación',
+      error: error.message,
+      success: false
+    });
+  }
+};
+
+// Procesar la renovación de un contrato después del pago
+export const renewContract = async (req, res) => {
+  const { contractId } = req.params;
+  const userId = req.account.id;
+
+  try {
+    // Verificar que el contrato existe y pertenece al usuario
+    const contract = await ContractModel.findOne({
+      where: {
+        id: contractId,
+        userId
+      },
+      include: [{
+        model: MembershipModel,
+        as: 'membership'
+      }]
+    });
+
+    if (!contract) {
+      return res.status(404).json({
+        message: 'Contrato no encontrado o no tienes permiso para renovarlo',
+        success: false
+      });
+    }
+
+    // Calcular la nueva fecha de expiración (1 mes adicional)
+    let newExpirationDate = new Date(contract.expirationDate);
+
+    // Si la fecha de expiración ya pasó, comenzar a contar desde hoy
+    const currentDate = new Date();
+    if (newExpirationDate < currentDate) {
+      newExpirationDate = currentDate;
+    }
+
+    // Añadir 1 mes a la fecha actual de expiración
+    newExpirationDate = addMonths(newExpirationDate, 1);
+
+    // Actualizar la fecha de expiración del contrato
+    await contract.update({
+      expirationDate: newExpirationDate
+    });
+
+    res.json({
+      message: 'Contrato renovado exitosamente',
+      contract: {
+        id: contract.id,
+        expirationDate: newExpirationDate,
+        membershipType: contract.membership?.type
+      },
+      success: true
+    });
+  } catch (error) {
+    console.error('Error al renovar contrato:', error);
+    res.status(500).json({
+      message: 'Error al renovar contrato',
       error: error.message,
       success: false
     });
