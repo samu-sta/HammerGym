@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import EntityManagement from '../components/common/EntityManagement';
-import { 
-  fetchAllMembershipFeatures, 
-  createMembershipFeature, 
-  updateMembershipFeature, 
-  deleteMembershipFeature 
+import {
+  fetchAllMembershipFeatures,
+  createMembershipFeature,
+  updateMembershipFeature,
+  deleteMembershipFeature
 } from '../services/MembershipFeatureService';
 import { fetchAllMemberships } from '../services/MembershipService';
 

@@ -221,3 +221,5 @@ export const URL_PARAMS = {
 export const PAYMENT_STATUSES = {
   SUCCESS: 'true'
 };
+
+export const STRIPE_URL_DASHBOARD = 'https://dashboard.stripe.com/test/dashboard';

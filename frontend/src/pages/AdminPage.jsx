@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import './styles/AdminPage.css';
 import { FaUsers, FaUserTie, FaDumbbell, FaCogs, FaCreditCard, FaFileContract, FaListUl } from 'react-icons/fa';
-import { FaTools, FaHistory } from 'react-icons/fa';
+import { FaTools, FaHistory, FaDollarSign } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { STRIPE_URL_DASHBOARD } from '../config/constants';
 
 const AdminPage = () => {
   const navigate = useNavigate();
@@ -54,7 +55,6 @@ const AdminPage = () => {
       description: 'Gestiona los modelos de máquina disponibles',
       route: '/admin/machine-models'
     },
-
     {
       title: 'Máquinas',
       icon: <FaTools className="admin-action-icon" />,
@@ -62,15 +62,20 @@ const AdminPage = () => {
       route: '/admin/machines'
     },
     {
-      title: 'Actividades de Usuario',
-      icon: <FaHistory className="admin-action-icon" />,
-      description: 'Supervisa las actividades realizadas por los usuarios en el gimnasio',
-      route: '/admin/user-activities'
+      title: 'Gestión de Pagos',
+      icon: <FaDollarSign className="admin-action-icon" />,
+      description: 'Accede al dashboard de Stripe para visualizar todos los pagos realizados',
+      externalLink: true,
+      route: STRIPE_URL_DASHBOARD
     }
   ];
 
-  const handleActionClick = (route) => {
-    navigate(route);
+  const handleActionClick = (route, isExternalLink) => {
+    if (isExternalLink) {
+      window.open(route, '_blank');
+    } else {
+      navigate(route);
+    }
   };
 
   return (
@@ -88,7 +93,7 @@ const AdminPage = () => {
             <p className="admin-action-description">{action.description}</p>
             <button
               className="admin-action-button"
-              onClick={() => handleActionClick(action.route)}
+              onClick={() => handleActionClick(action.route, action.externalLink)}
             >
               Gestionar
             </button>
