@@ -3,37 +3,7 @@ import { FaCheck } from 'react-icons/fa';
 import './styles/MembershipCard.css';
 
 const MembershipCard = ({ membership, onSelect, isSelected }) => {
-  const { id, type, price } = membership;
-
-  const getFeatures = () => {
-    switch (type.toLowerCase()) {
-      case 'básico':
-      case 'basico':
-        return [
-          'Acceso a área de pesas',
-          'Acceso a cardio',
-          'Horario limitado (6am - 10pm)'
-        ];
-      case 'premium':
-        return [
-          'Acceso a área de pesas',
-          'Acceso a cardio',
-          'Acceso a clases grupales',
-          'Acceso 24/7'
-        ];
-      case 'vip':
-        return [
-          'Acceso a área de pesas',
-          'Acceso a cardio',
-          'Acceso a clases grupales',
-          'Acceso a spa',
-          'Entrenador personal',
-          'Acceso 24/7'
-        ];
-      default:
-        return ['Características no especificadas'];
-    }
-  };
+  const { id, type, price, features } = membership;
 
   return (
     <article className={`membership-card ${isSelected ? 'selected' : ''}`}>
@@ -47,11 +17,17 @@ const MembershipCard = ({ membership, onSelect, isSelected }) => {
           <small>por mes</small>
         </section>
         <ul className="membership-features">
-          {getFeatures().map((feature, index) => (
-            <li key={index} className="membership-feature">
-              <FaCheck className="feature-icon" /> {feature}
+          {features && features.length > 0 ? (
+            features.map((feature) => (
+              <li key={feature.id} className="membership-feature">
+                <FaCheck className="feature-icon" /> {feature.description}
+              </li>
+            ))
+          ) : (
+            <li className="membership-feature">
+              <FaCheck className="feature-icon" /> Características no especificadas
             </li>
-          ))}
+          )}
         </ul>
         <button
           className={`membership-select-button ${isSelected ? 'selected' : ''}`}
