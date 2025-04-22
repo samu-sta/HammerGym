@@ -1,0 +1,14 @@
+.contract-page-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .contract-page-container {
+    padding: 1rem;
+  }
+}

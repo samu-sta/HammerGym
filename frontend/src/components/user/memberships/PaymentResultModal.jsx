@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from '../common/Modal';
+import Modal from '../../common/Modal';
 import { FaCheckCircle, FaTimesCircle, FaCreditCard, FaFileContract } from 'react-icons/fa';
 import './styles/PaymentResultModal.css';
 

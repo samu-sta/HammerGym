@@ -1,5 +1,5 @@
 import React from 'react';
-import MembershipList from '../../memberships/MembershipList';
+import MembershipList from '../memberships/MembershipList';
 import './styles/MembershipsTab.css';
 
 const MembershipsTab = ({ onMembershipSelect, selectedMembershipId }) => {

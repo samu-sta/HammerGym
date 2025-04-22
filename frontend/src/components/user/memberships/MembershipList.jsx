@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MembershipCard from './MembershipCard';
-import { fetchAllMemberships } from '../../services/MembershipService';
-import LoadingSpinner from '../common/LoadingSpinner';
+import { fetchAllMemberships } from '../../../services/MembershipService';
+import LoadingSpinner from '../../common/LoadingSpinner';
 import './styles/MembershipList.css';
 
 const MembershipList = ({ onMembershipSelect, selectedMembershipId }) => {

@@ -187,5 +187,37 @@ export const ENDPOINTS = {
   CLASSES: '/classes',
   TRAINING: '/training',
   USER_ACTIVITY: '/user-activity',
-  PROGRESS: '/progress'
+  PROGRESS: '/progress',
+  MEMBERSHIP: '/membership',
+  CONTRACT: '/contract',
+  STRIPE: '/stripe'
+};
+
+// Contract and membership-related constants
+export const CONTRACT_TABS = {
+  CONTRACTS: 'contracts',
+  MEMBERSHIPS: 'memberships',
+  PAYMENT: 'payment'
+};
+
+export const CONTRACT_MESSAGES = {
+  SELECT_MEMBERSHIP: 'Por favor, selecciona una membresía',
+  NO_USER_INFO: 'No hay información de usuario disponible, por favor inicia sesión nuevamente',
+  NO_MEMBERSHIP_ID: 'ID de membresía no disponible',
+  STRIPE_SESSION_ERROR: 'Error al crear la sesión de pago con Stripe.',
+  CONNECTION_ERROR: 'Error al conectar con el servicio de pago: ',
+  RENEWAL_SESSION_ERROR: 'Error al crear la sesión de renovación de pago con Stripe.',
+  CONTRACT_INFO_ERROR: 'Información del contrato no disponible',
+  PAYMENT_PROCESS_ERROR: 'Error al procesar la redirección de pago.'
+};
+
+export const URL_PARAMS = {
+  SUCCESS: 'success',
+  CANCELED: 'canceled',
+  RENEWAL: 'renewal',
+  CONTRACT_ID: 'contract_id'
+};
+
+export const PAYMENT_STATUSES = {
+  SUCCESS: 'true'
 };

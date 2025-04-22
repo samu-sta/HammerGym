@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import UserContract from './UserContract';
-import LoadingSpinner from '../common/LoadingSpinner';
+import LoadingSpinner from '../../common/LoadingSpinner';
 import './styles/UserContractsList.css';
-import { getUserContracts } from '../../services/MembershipService';
+import { getUserContracts } from '../../../services/MembershipService';
 
 const UserContractsList = ({ onRenewContract }) => {
   const [contract, setContract] = useState(null);

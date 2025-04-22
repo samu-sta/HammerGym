@@ -88,7 +88,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* Responsive */
 @media (min-width: 576px) {
   .membership-column {
     flex: 0 0 50%;

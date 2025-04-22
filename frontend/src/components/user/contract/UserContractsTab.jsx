@@ -1,5 +1,5 @@
 import React from 'react';
-import UserContractsList from '../../memberships/UserContractsList';
+import UserContractsList from '../memberships/UserContractsList';
 import './styles/UserContractsTab.css';
 
 const UserContractsTab = ({ hasActiveContract, onRenewContract, onNewMembership }) => {

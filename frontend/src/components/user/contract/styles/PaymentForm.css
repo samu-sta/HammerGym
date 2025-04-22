@@ -1,11 +1,9 @@
-/* Form styles */
 .contract-form {
   display: flex;
   flex-direction: column;
   padding: 0 1.5rem 1rem;
 }
 
-/* Submit button styles */
 .contract-submit-button {
   display: flex;
   align-items: center;

@@ -1,5 +1,3 @@
-/* filepath: /home/thegamas/Desktop/HammerGym/frontend/src/components/memberships/styles/UserContract.css */
-
 .membership-contract {
   display: flex;
   flex-direction: column;
@@ -18,7 +16,6 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Encabezado del contrato */
 .membership-contract header {
   display: flex;
   justify-content: space-between;
@@ -41,13 +38,11 @@
   flex-wrap: wrap;
 }
 
-/* Detalles del contrato */
 .contract-details {
   padding: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Responsive */
 .contract-details dl {
   display: grid;
   gap: 1rem;
@@ -71,7 +66,6 @@
   color: #fff;
 }
 
-/* Footer del contrato */
 .membership-contract footer {
   padding: 1rem 1.5rem;
   display: flex;
