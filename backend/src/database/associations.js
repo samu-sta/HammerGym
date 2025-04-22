@@ -17,6 +17,7 @@ import MachineModel from '../models/Machine.js';
 import MachineModelModel from '../models/MachineModel.js';
 import ContractModel from '../models/Contract.js';
 import MembershipModel from '../models/Membership.js';
+import MembershipFeatureModel from '../models/MembershipFeature.js';
 
 const setupAssociations = () => {
 
@@ -263,6 +264,17 @@ const setupAssociations = () => {
   });
 
   ContractModel.belongsTo(MembershipModel, {
+    foreignKey: 'membershipId',
+    as: 'membership'
+  });
+
+  // Membership and MembershipFeature associations
+  MembershipModel.hasMany(MembershipFeatureModel, {
+    foreignKey: 'membershipId',
+    as: 'features'
+  });
+
+  MembershipFeatureModel.belongsTo(MembershipModel, {
     foreignKey: 'membershipId',
     as: 'membership'
   });

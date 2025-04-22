@@ -15,6 +15,7 @@ import ProgressUserModel from '../models/UserProgress.js';
 import MachineModel from '../models/Machine.js';
 import MachineModelModel from '../models/MachineModel.js';
 import MembershipModel from '../models/Membership.js';
+import MembershipFeatureModel from '../models/MembershipFeature.js';
 import ContractModel from '../models/Contract.js';
 import Sequelize from 'sequelize';
 import dotenv from 'dotenv';
@@ -101,18 +102,74 @@ const initDatabase = async () => {
     const memberships = await MembershipModel.bulkCreate([
       {
         type: 'Básico',
-        price: 29.99,
-        description: 'Acceso a áreas básicas del gimnasio con horario limitado (6am - 10pm)'
+        price: 29.99
       },
       {
         type: 'Premium',
-        price: 49.99,
-        description: 'Acceso completo al gimnasio, incluye clases grupales, acceso 24/7'
+        price: 49.99
       },
       {
         type: 'VIP',
-        price: 79.99,
-        description: 'Acceso completo al gimnasio, incluye entrenador personal, spa, y todos los servicios premium'
+        price: 79.99
+      }
+    ]);
+
+    // Crear features para cada membresía
+    await MembershipFeatureModel.bulkCreate([
+      // Features para membresía Básica
+      {
+        membershipId: 1,
+        description: 'Acceso a área de pesas'
+      },
+      {
+        membershipId: 1,
+        description: 'Acceso a cardio'
+      },
+      {
+        membershipId: 1,
+        description: 'Horario limitado (6am - 10pm)'
+      },
+      // Features para membresía Premium
+      {
+        membershipId: 2,
+        description: 'Acceso a área de pesas'
+      },
+      {
+        membershipId: 2,
+        description: 'Acceso a cardio'
+      },
+      {
+        membershipId: 2,
+        description: 'Acceso a clases grupales'
+      },
+      {
+        membershipId: 2,
+        description: 'Acceso 24/7'
+      },
+      // Features para membresía VIP
+      {
+        membershipId: 3,
+        description: 'Acceso a área de pesas'
+      },
+      {
+        membershipId: 3,
+        description: 'Acceso a cardio'
+      },
+      {
+        membershipId: 3,
+        description: 'Acceso a clases grupales'
+      },
+      {
+        membershipId: 3,
+        description: 'Acceso a spa'
+      },
+      {
+        membershipId: 3,
+        description: 'Entrenador personal'
+      },
+      {
+        membershipId: 3,
+        description: 'Acceso 24/7'
       }
     ]);
 

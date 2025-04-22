@@ -36,6 +36,76 @@ export const fetchMembershipById = async (id) => {
   }
 };
 
+export const createMembership = async (membershipData) => {
+  try {
+    const response = await fetch(`${API_URL}/memberships`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(membershipData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || `Error ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.membership;
+  } catch (error) {
+    console.error('Error creating membership:', error);
+    throw error;
+  }
+}
+
+export const deleteMembership = async (id) => {
+  try {
+    const response = await fetch(`${API_URL}/memberships/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || `Error ${response.status}: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error deleting membership with id ${id}:`, error);
+    throw error;
+  }
+};
+
+export const updateMembership = async (id, membershipData) => {
+  try {
+    // Remove description field if it exists before sending to API
+    const { description, ...dataWithoutDescription } = membershipData;
+
+    const response = await fetch(`${API_URL}/memberships/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(dataWithoutDescription),
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || `Error ${response.status}: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data.membership;
+  } catch (error) {
+    console.error(`Error updating membership with id ${id}:`, error);
+    throw error;
+  }
+};
+
 export const getUserContracts = async () => {
   try {
     const response = await fetch(`${API_URL}/contracts/my-contracts`, {

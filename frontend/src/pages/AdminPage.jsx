@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './styles/AdminPage.css';
-import { FaUsers, FaUserTie, FaDumbbell, FaCogs } from 'react-icons/fa';
+import { FaUsers, FaUserTie, FaDumbbell, FaCogs, FaCreditCard } from 'react-icons/fa';
 import { FaTools, FaHistory } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,6 +23,12 @@ const AdminPage = () => {
       icon: <FaUserTie className="admin-action-icon" />,
       description: 'Gestiona los entrenadores, sus entrenamientos y clases',
       route: '/admin/trainers'
+    },
+    {
+      title: 'Membresías',
+      icon: <FaCreditCard className="admin-action-icon" />,
+      description: 'Gestiona los planes de membresía disponibles para los usuarios',
+      route: '/admin/memberships'
     },
     {
       title: 'Espacios',

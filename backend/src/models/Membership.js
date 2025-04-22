@@ -23,15 +23,11 @@ const MembershipModel = sequelize.define(
                 isNumeric: true,
                 min: 0
             }
-        },
-        description: {
-            type: DataTypes.TEXT,
-            allowNull: true
         }
     },
     {
         tableName: 'memberships',
-        timestamps: true
+        timestamps: false
     }
 );
 

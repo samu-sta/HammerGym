@@ -21,6 +21,7 @@ import TrainersManagement from './pages/TrainersManagement.jsx';
 import GymsManagement from './pages/GymsManagement.jsx';
 import MachineModelsManagement from './pages/MachineModelsManagement.jsx';
 import MachinesManagement from './pages/MachinesManagement.jsx';
+import MembershipsManagement from './pages/MembershipsManagement.jsx';
 import ContractPage from './pages/ContractPage.jsx';
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/admin/users" element={<UsersManagement />} />
               <Route path="/admin/trainers" element={<TrainersManagement />} />
+              <Route path="/admin/memberships" element={<MembershipsManagement />} />
               <Route path="/admin/gyms" element={<GymsManagement />} />
               <Route path="/admin/machine-models" element={<MachineModelsManagement />} />
               <Route path="/admin/machines" element={<MachinesManagement />} />
