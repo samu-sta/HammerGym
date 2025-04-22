@@ -5,7 +5,6 @@ import './styles/MembershipCard.css';
 const MembershipCard = ({ membership, onSelect, isSelected }) => {
   const { id, type, price } = membership;
 
-  // Define features based on membership type
   const getFeatures = () => {
     switch (type.toLowerCase()) {
       case 'básico':

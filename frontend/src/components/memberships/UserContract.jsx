@@ -2,6 +2,8 @@ import React from 'react';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 import './styles/UserContract.css';
+import InfoChip from '../common/InfoChip';
+import { FaCheckCircle, FaExclamationCircle, FaCalendarAlt, FaHourglassHalf } from 'react-icons/fa';
 
 const UserContract = ({ contract, onRenewClick }) => {
   if (!contract) {
@@ -24,38 +26,58 @@ const UserContract = ({ contract, onRenewClick }) => {
     return diffDays;
   };
 
-  return (
-    <article className="contract-card">
-      <header className="contract-header">
-        <span className={`status-badge ${isExpired ? 'status-expired' : 'status-active'}`}>
-          {isExpired ? 'Expirado' : 'Activo'}
-        </span>
-      </header>
-      <section className="contract-body">
-        <h3 className="contract-title">{membership?.type || 'Membresía'}</h3>
-        <p className="contract-info">
-          <strong>Fecha de contratación:</strong> {formatDate(createdAtObj)}
-        </p>
-        <p className="contract-info">
-          <strong>Fecha de expiración:</strong> {formatDate(expirationDateObj)}
-        </p>
-        {!isExpired && (
-          <aside className="days-remaining">
-            <span className={`days-remaining-badge ${daysRemaining() > 30 ? 'days-normal' : 'days-warning'}`}>
-              {daysRemaining()} días restantes
-            </span>
-          </aside>
-        )}
+  const getDaysRemainingColor = () => {
+    const days = daysRemaining();
+    if (days <= 7) return 'danger';
+    if (days <= 14) return 'warning';
+    return 'success';
+  };
 
-        <footer className="contract-actions">
-          <button
-            className="btn btn-primary btn-renew"
-            onClick={() => onRenewClick && onRenewClick(contract)}
+  return (
+    <article className="membership-contract">
+      <header>
+        <h3>{membership?.type || 'Membresía'}</h3>
+
+        <div className="status-chips">
+          <InfoChip
+            icon={isExpired ? FaExclamationCircle : FaCheckCircle}
+            className={isExpired ? 'danger' : 'success'}
           >
-            Renovar por 1 mes
-          </button>
-        </footer>
+            {isExpired ? 'Expirado' : 'Activo'}
+          </InfoChip>
+
+          {!isExpired && (
+            <InfoChip
+              icon={FaHourglassHalf}
+              className={getDaysRemainingColor()}
+            >
+              {daysRemaining()} días restantes
+            </InfoChip>
+          )}
+        </div>
+      </header>
+
+      <section className="contract-details">
+        <dl>
+          <div className="detail-item">
+            <dt>Contratación:</dt>
+            <dd>{formatDate(createdAtObj)}</dd>
+          </div>
+          <div className="detail-item">
+            <dt>Expiración:</dt>
+            <dd>{formatDate(expirationDateObj)}</dd>
+          </div>
+        </dl>
       </section>
+
+      <footer>
+        <button
+          onClick={() => onRenewClick && onRenewClick(contract)}
+          aria-label="Renovar membresía"
+        >
+          Renovar
+        </button>
+      </footer>
     </article>
   );
 };

@@ -12,7 +12,6 @@ const UserContractsList = ({ onRenewContract }) => {
   useEffect(() => {
     const fetchContract = async () => {
       try {
-        console.log("Fetching from:", `http://localhost:3000/contracts/my-contracts`);
         const data = await getUserContracts();
         console.log("Contract data:", data);
         setContract(data);
@@ -32,25 +31,19 @@ const UserContractsList = ({ onRenewContract }) => {
   }
 
   if (error) {
-    return <aside className="contracts-alert alert-danger">{error}</aside>;
+    return <p className="message error-message">{error}</p>;
   }
 
   if (!contract) {
-    return <aside className="contracts-alert alert-info">No tienes contrato actualmente. Selecciona una membresía para comenzar.</aside>;
+    return <p className="message info-message">No tienes contrato actualmente. Selecciona una membresía para comenzar.</p>;
   }
 
   return (
     <section className="contracts-container">
-      <article className="contracts-section">
-        <section className="contracts-row">
-          <article className="contract-column">
-            <UserContract
-              contract={contract}
-              onRenewClick={onRenewContract}
-            />
-          </article>
-        </section>
-      </article>
+      <UserContract
+        contract={contract}
+        onRenewClick={onRenewContract}
+      />
     </section>
   );
 };
