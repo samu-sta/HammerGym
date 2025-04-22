@@ -33,11 +33,9 @@ const useEntityManagement = ({
       let headersData = [];
 
       if (response.entities !== undefined && response.headers !== undefined) {
-        // New API format with explicit entities and headers
         entitiesData = response.entities;
         headersData = response.headers;
       } else {
-        // Legacy format - response is the entities array
         entitiesData = response;
         if (entitiesData && entitiesData.length > 0) {
           headersData = generateTableHeaders(entitiesData, entityType);
@@ -80,7 +78,6 @@ const useEntityManagement = ({
       }
     }
     catch (err) {
-      console.error("Error loading entities:", err);
       setError(`Error al cargar los ${entityName.toLowerCase()}. Por favor, intenta de nuevo.`);
     }
     finally {
@@ -152,7 +149,6 @@ const useEntityManagement = ({
       loadEntities();
     }
     catch (err) {
-      console.error(`Error deleting ${entityName.slice(0, -1)}:`, err);
       setError(`Error al eliminar el ${entityName.slice(0, -1).toLowerCase()}. Por favor, intenta de nuevo.`);
       setIsLoading(false);
     }
@@ -172,7 +168,6 @@ const useEntityManagement = ({
       setIsModalOpen(false);
     }
     catch (err) {
-      console.error(`Error ${isCreating ? 'creating' : 'updating'} ${entityName.slice(0, -1)}:`, err);
       alert(`Error al ${isCreating ? 'crear' : 'actualizar'} el ${entityName.slice(0, -1).toLowerCase()}. Por favor, intenta de nuevo.`);
     }
     finally {

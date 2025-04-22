@@ -119,6 +119,11 @@ export const generateFormFieldsFromHeaders = (headers, itemData) => {
  * @returns {string} The formatted cell value
  */
 export const renderCell = (item, column) => {
+  // Si hay un formateador personalizado, utilizarlo
+  if (typeof column.formatter === 'function') {
+    return column.formatter(item);
+  }
+
   const value = item[column.key];
 
   if (typeof value === 'boolean') {
