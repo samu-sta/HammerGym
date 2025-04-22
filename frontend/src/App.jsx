@@ -22,6 +22,7 @@ import GymsManagement from './pages/GymsManagement.jsx';
 import MachineModelsManagement from './pages/MachineModelsManagement.jsx';
 import MachinesManagement from './pages/MachinesManagement.jsx';
 import MembershipsManagement from './pages/MembershipsManagement.jsx';
+import MembershipFeaturesManagement from './pages/MembershipFeaturesManagement.jsx';
 import ContractPage from './pages/ContractPage.jsx';
 import ContractsManagement from './pages/ContractsManagement.jsx';
 
@@ -85,6 +86,7 @@ function App() {
               <Route path="/admin/users" element={<UsersManagement />} />
               <Route path="/admin/trainers" element={<TrainersManagement />} />
               <Route path="/admin/memberships" element={<MembershipsManagement />} />
+              <Route path="/admin/membership-features" element={<MembershipFeaturesManagement />} />
               <Route path="/admin/contracts" element={<ContractsManagement />} />
               <Route path="/admin/gyms" element={<GymsManagement />} />
               <Route path="/admin/machine-models" element={<MachineModelsManagement />} />

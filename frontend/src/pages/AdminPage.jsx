@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './styles/AdminPage.css';
-import { FaUsers, FaUserTie, FaDumbbell, FaCogs, FaCreditCard, FaFileContract } from 'react-icons/fa';
+import { FaUsers, FaUserTie, FaDumbbell, FaCogs, FaCreditCard, FaFileContract, FaListUl } from 'react-icons/fa';
 import { FaTools, FaHistory } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,6 +29,12 @@ const AdminPage = () => {
       icon: <FaCreditCard className="admin-action-icon" />,
       description: 'Gestiona los planes de membresía disponibles para los usuarios',
       route: '/admin/memberships'
+    },
+    {
+      title: 'Características de Membresías',
+      icon: <FaListUl className="admin-action-icon" />,
+      description: 'Administra las características incluidas en cada tipo de membresía',
+      route: '/admin/membership-features'
     },
     {
       title: 'Contratos',

@@ -15,6 +15,7 @@ import { MachineModelRoutes } from '../routes/MachineModel.Routes.js';
 import { MachineRoutes } from '../routes/Machine.Routes.js';
 import { UserRoutes } from '../routes/User.Routes.js';
 import MembershipRoutes from '../routes/Membership.Routes.js';
+import { MembershipFeatureRoutes } from '../routes/MembershipFeature.Routes.js';
 import ContractRoutes from '../routes/Contract.Routes.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
@@ -54,6 +55,7 @@ export const createApp = () => {
   app.use('/progress', ProgressUserRoutes());
   app.use('/api/exercises', ExercisesRoutes());
   app.use('/memberships', MembershipRoutes);
+  app.use('/membership-features', MembershipFeatureRoutes());
   app.use('/contracts', ContractRoutes);
 
   app.get('/', (req, res) => {
