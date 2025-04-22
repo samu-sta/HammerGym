@@ -1,0 +1,12 @@
+/* ContractTabsContainer styles */
+.contract-tab-content {
+  padding: 0.5rem;
+  min-height: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contract-tab-content {
+    padding: 0.25rem;
+  }
+}

@@ -1,0 +1,69 @@
+/* Payment info layout */
+.contract-payment-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1.5rem 1.5rem;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: rgba(40, 40, 45, 0.4);
+  border: 1px solid rgba(153, 128, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.contract-payment-text {
+  flex: 1;
+  padding-right: 1.5rem;
+}
+
+.contract-payment-text h4 {
+  margin-top: 0;
+  color: #998000;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contract-payment-text p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contract-security-note {
+  margin-top: 10px !important; 
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.contract-payment-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  min-width: 160px;
+}
+
+.contract-payment-image img {
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.contract-payment-image:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .contract-payment-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contract-payment-text {
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+}

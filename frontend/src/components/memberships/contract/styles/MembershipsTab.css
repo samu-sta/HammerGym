@@ -1,0 +1,10 @@
+/* Memberships Tab */
+.contract-article {
+  margin-bottom: 2rem;
+  animation: contract-fadeIn 0.5s ease forwards;
+}
+
+@keyframes contract-fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

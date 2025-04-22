@@ -1,0 +1,44 @@
+/* Payment summary - Estética mejorada */
+.contract-payment-summary {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(40, 40, 45, 0.6);
+  border-left: 4px solid #998000;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem;
+}
+
+.contract-payment-summary-title {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #998000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contract-payment-summary p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(153, 128, 0, 0.1);
+}
+
+.contract-payment-summary p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #998000;
+}
+
+@media (max-width: 768px) {
+  .contract-payment-summary {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,37 @@
+/* Tab Content */
+.contract-tab-content {
+  padding-top: 1.5rem;
+  animation: contract-fadeIn 0.5s ease forwards;
+}
+
+/* Artículos dentro del contenido */
+.contract-article {
+  margin-bottom: 2rem;
+}
+
+/* Estilo para el botón principal dentro del artículo */
+.contract-btn-primary {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #998000, #b29600);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(153, 128, 0, 0.2);
+}
+
+.contract-btn-primary:hover {
+  background: linear-gradient(to right, #b29600, #ccad00);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(153, 128, 0, 0.3);
+}
+
+@keyframes contract-fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
