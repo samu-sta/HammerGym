@@ -102,18 +102,6 @@
   border-left: 4px solid #e53935;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Mejoras de accesibilidad */
-:focus {
-  outline: 2px solid #ffcc00;
-  outline-offset: 2px;
-}
-
-/* Responsive styles */
 @media (max-width: 768px) {
   .gimnasios-header h1 {
     font-size: 2rem;
@@ -130,7 +118,6 @@
   }
 }
 
-/* Dark mode preference support */
 @media (prefers-reduced-motion) {
   .gimnasios-header {
     animation: none;
