@@ -79,8 +79,8 @@ const useTrainingForm = () => {
       try {
         const data = await getAllExercises();
 
-        if (data.success && Array.isArray(data.exercises)) {
-          const formattedExercises = data.exercises.map(exercise => ({
+        if (data && Array.isArray(data)) {
+          const formattedExercises = data.map(exercise => ({
             id: exercise.id,
             name: exercise.name,
             muscleGroup: exercise.muscles,

@@ -24,6 +24,7 @@ const ENROLLMENT_SUCCESS = "Inscripción exitosa";
 const NO_PERMISSION_CREATE_CLASS = "No tienes permisos para crear clases";
 const CLASS_CREATED = "Clase creada exitosamente";
 const NOT_ENROLLED = "No estás inscrito en esta clase";
+const EXERCISE_DELETED = "Ejercicio eliminado correctamente";
 
 const MESSAGES = {
   USER_NOT_FOUND,
@@ -51,7 +52,8 @@ const MESSAGES = {
   ENROLLMENT_SUCCESS,
   NO_PERMISSION_CREATE_CLASS,
   CLASS_CREATED,
-  NOT_ENROLLED
+  NOT_ENROLLED,
+  EXERCISE_DELETED
 };
 
 export default MESSAGES;

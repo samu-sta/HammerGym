@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './styles/AdminPage.css';
 import { FaUsers, FaUserTie, FaDumbbell, FaCogs, FaCreditCard, FaFileContract, FaListUl } from 'react-icons/fa';
-import { FaTools, FaHistory, FaDollarSign } from 'react-icons/fa';
+import { FaTools, FaHistory, FaDollarSign, FaRunning } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { STRIPE_URL_DASHBOARD } from '../config/constants';
 
@@ -24,6 +24,12 @@ const AdminPage = () => {
       icon: <FaUserTie className="admin-action-icon" />,
       description: 'Gestiona los entrenadores, sus entrenamientos y clases',
       route: '/admin/trainers'
+    },
+    {
+      title: 'Ejercicios',
+      icon: <FaRunning className="admin-action-icon" />,
+      description: 'Gestiona el catálogo de ejercicios disponibles para entrenamiento',
+      route: '/admin/exercises'
     },
     {
       title: 'Membresías',

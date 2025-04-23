@@ -26,6 +26,7 @@ import MembershipFeaturesManagement from './pages/MembershipFeaturesManagement.j
 import ContractPage from './pages/ContractPage.jsx';
 import ContractsManagement from './pages/ContractsManagement.jsx';
 import Gimnasios from './pages/Gimnasios.jsx';
+import ExercisesManagement from './pages/ExercisesManagement.jsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -96,6 +97,7 @@ function App() {
               <Route path="/admin/gyms" element={<GymsManagement />} />
               <Route path="/admin/machine-models" element={<MachineModelsManagement />} />
               <Route path="/admin/machines" element={<MachinesManagement />} />
+              <Route path="/admin/exercises" element={<ExercisesManagement />} />
               <Route path="/admin/*" element={<AdminPage />} />
             </Route>
 
