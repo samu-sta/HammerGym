@@ -1,9 +1,10 @@
+import { API_URL } from '../config/constants';
+
 // Servicio para gestionar contratos de usuarios
-const API_BASE_URL = 'http://localhost:3000';
 
 export const fetchAllContracts = async () => {
   try {
-    const response = await fetch(`${API_BASE_URL}/contracts/admin`, {
+    const response = await fetch(`${API_URL}/contracts/admin`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +26,7 @@ export const fetchAllContracts = async () => {
 
 export const fetchContractById = async (contractId) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/contracts/admin/${contractId}`, {
+    const response = await fetch(`${API_URL}/contracts/admin/${contractId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +48,7 @@ export const fetchContractById = async (contractId) => {
 
 export const createContract = async (contractData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/contracts/admin`, {
+    const response = await fetch(`${API_URL}/contracts/admin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -71,7 +72,7 @@ export const createContract = async (contractData) => {
 
 export const updateContract = async (contractId, contractData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/contracts/admin/${contractId}`, {
+    const response = await fetch(`${API_URL}/contracts/admin/${contractId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -95,7 +96,7 @@ export const updateContract = async (contractId, contractData) => {
 
 export const deleteContract = async (contractId) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/contracts/admin/${contractId}`, {
+    const response = await fetch(`${API_URL}/contracts/admin/${contractId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

@@ -34,7 +34,6 @@ const useGyms = () => {
     }
   };
 
-  // Función para determinar la clase de ocupación según el porcentaje
   const getOccupancyClass = (current, max) => {
     if (!current || !max || max === 0) return 'occupancy-low';
 

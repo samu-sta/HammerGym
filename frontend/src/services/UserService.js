@@ -1,6 +1,8 @@
+import { API_URL } from '../config/constants';
+
 export const getUserActivities = async () => {
   try {
-    const response = await fetch('http://localhost:3000/user-activity', {
+    const response = await fetch(`${API_URL}/user-activity`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -21,7 +23,7 @@ export const getUserActivities = async () => {
 
 export const getUserTraining = async () => {
   try {
-    const response = await fetch('http://localhost:3000/training', {
+    const response = await fetch(`${API_URL}/training`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -39,8 +41,6 @@ export const getUserTraining = async () => {
     };
   }
 }
-
-import { API_URL } from '../config/constants';
 
 export const fetchAllUsers = async () => {
   try {

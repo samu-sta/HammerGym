@@ -5,6 +5,8 @@ dotenv.config();
 
 // Inicializar Stripe con la clave secreta proporcionada
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+// URL base para redirecciones
+const BASE_URL = process.env.BASE_URL || 'http://192.168.0.19:5173';
 
 export default class StripeService {
   /**
@@ -23,7 +25,7 @@ export default class StripeService {
         payment_method: paymentMethod,
         description,
         confirm: true,
-        return_url: 'http://localhost:5173/contracts',
+        return_url: `${BASE_URL}/contracts`,
       });
 
       return {
@@ -115,8 +117,8 @@ export default class StripeService {
           },
         ],
         mode: 'payment',
-        success_url: `http://localhost:5173/usuario/contratos?success=true`,
-        cancel_url: `http://localhost:5173/usuario/contratos?canceled=true`,
+        success_url: `${BASE_URL}/usuario/contratos?success=true`,
+        cancel_url: `${BASE_URL}/usuario/contratos?canceled=true`,
         metadata: {
           userId: safeUserId,
           membershipId: safeMembershipId
@@ -176,8 +178,8 @@ export default class StripeService {
           },
         ],
         mode: 'payment',
-        success_url: `http://localhost:5173/usuario/contratos?success=true&renewal=true&contract_id=${safeContractId}`,
-        cancel_url: `http://localhost:5173/usuario/contratos?canceled=true&renewal=true`,
+        success_url: `${BASE_URL}/usuario/contratos?success=true&renewal=true&contract_id=${safeContractId}`,
+        cancel_url: `${BASE_URL}/usuario/contratos?canceled=true&renewal=true`,
         metadata: {
           userId: safeUserId,
           contractId: safeContractId,

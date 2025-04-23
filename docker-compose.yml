@@ -10,6 +10,7 @@ services:
       - /app/node_modules
     environment:
       - VITE_API_URL=${API_URL}
+      - VITE_BASE_URL=http://155.210.60.4:${FRONTEND_PORT}
     networks:
       - cluedo-network
     depends_on:
@@ -21,13 +22,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "${BACKEND_PORT}:${BACKEND_PORT}"
-    env_file:
-      - ./backend/.env
     environment:
       - DB_HOST=${DB_HOST}
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_NAME=${DB_NAME}
+      - BASE_URL=http://155.210.60.4:${FRONTEND_PORT}
+      - PORT=${BACKEND_PORT}
     depends_on:
       db:
         condition: service_healthy
@@ -53,6 +54,18 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+
+  stripe-cli:
+    image: stripe/stripe-cli
+    container_name: stripe-cli
+    command: "listen --forward-to http://backend:${BACKEND_PORT}/contracts/webhook"
+    environment:
+      - STRIPE_API_KEY=${STRIPE_SECRET_KEY}
+    depends_on:
+      - backend
+    networks:
+      - cluedo-network
+    restart: unless-stopped
 
 volumes:
   mysql_data:

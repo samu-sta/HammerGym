@@ -1,6 +1,8 @@
+import { API_URL } from '../config/constants';
+
 export const loginAccount = async (email, password) => {
   try {
-    const response = await fetch('http://localhost:3000/account/login', {
+    const response = await fetch(`${API_URL}/account/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +23,7 @@ export const loginAccount = async (email, password) => {
 
 export const registerAccount = async (accountData) => {
   try {
-    const response = await fetch('http://localhost:3000/account/register', {
+    const response = await fetch(`${API_URL}/account/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,7 +44,7 @@ export const registerAccount = async (accountData) => {
 
 export const updateAccount = async (accountData) => {
   try {
-    const response = await fetch('http://localhost:3000/account/profile', {
+    const response = await fetch(`${API_URL}/account/profile`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -63,7 +65,7 @@ export const updateAccount = async (accountData) => {
 
 export const logoutAccount = async () => {
   try {
-    const response = await fetch('http://localhost:3000/account/logout', {
+    const response = await fetch(`${API_URL}/account/logout`, {
       method: 'POST',
       credentials: 'include',
     });

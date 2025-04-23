@@ -1,6 +1,8 @@
+import { API_URL } from '../config/constants';
+
 export const createProgressUser = async (progress) => {
   try {
-    const response = await fetch('http://localhost:3000/progress', {
+    const response = await fetch(`${API_URL}/progress`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
