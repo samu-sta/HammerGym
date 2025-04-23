@@ -27,7 +27,7 @@ services:
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_NAME=${DB_NAME}
-      - BASE_URL=http://155.210.60.4:${FRONTEND_PORT}
+      - BASE_URL=${FRONTEND_URL}
       - PORT=${BACKEND_PORT}
     depends_on:
       db:

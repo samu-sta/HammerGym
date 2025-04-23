@@ -4,10 +4,18 @@ import { useRegister } from '../hooks/useRegister.jsx';
 import FormField from '../components/auth/FormField.jsx';
 import RoleSelector from '../components/auth/RoleSelector.jsx';
 import AuthForm from '../components/auth/AuthForm.jsx';
-
+import { redirectToAccount } from '../utils/accountUtils.js';
 const RegisterPage = ({ setShouldShowAccessButton }) => {
   const { errors, role, setRole, handleSubmit } = useRegister();
   const navigate = useNavigate();
+
+  const account = JSON.parse(localStorage.getItem('account'));
+
+  useEffect(() => {
+    if (!account) return;
+    navigate(redirectToAccount(account));
+
+  }, [account, navigate]);
 
   useEffect(() => {
     setShouldShowAccessButton(true);

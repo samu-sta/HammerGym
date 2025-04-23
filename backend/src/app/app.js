@@ -25,6 +25,7 @@ const DEFAULT_PORT = 3000;
 
 dotenv.config();
 const PORT = process.env.PORT || DEFAULT_PORT;
+const FRONTEND_URL = process.env.BASE_URL || 'http://localhost:5173';
 
 
 export const createApp = () => {
@@ -39,7 +40,7 @@ export const createApp = () => {
   app.use(express.json());
   app.use(cookieParser());
   app.use(cors({
-    origin: true,
+    origin: FRONTEND_URL,
     credentials: true
   }));
 

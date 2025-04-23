@@ -2,8 +2,18 @@ import React, { useEffect } from 'react';
 import { useLogin } from '../hooks/useLogin.jsx';
 import FormField from '../components/auth/FormField.jsx';
 import AuthForm from '../components/auth/AuthForm.jsx';
-
+import { useNavigate } from 'react-router-dom';
+import { redirectToAccount } from '../utils/accountUtils.js';
 const LoginPage = ({ setShouldShowAccessButton }) => {
+  const navigate = useNavigate();
+  const account = JSON.parse(localStorage.getItem('account'));
+
+  useEffect(() => {
+    if (!account) return;
+    navigate(redirectToAccount(account));
+
+  }, [account, navigate]);
+
   const { errors, handleSubmit } = useLogin();
 
   useEffect(() => {
