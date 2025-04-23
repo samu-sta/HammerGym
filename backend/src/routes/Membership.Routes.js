@@ -1,20 +1,21 @@
 import { Router } from 'express';
-import { getAllMemberships, getMembershipById, createMembership, updateMembership, deleteMembership } from '../controllers/Membership.Controller.js';
+import MembershipController from '../controllers/Membership.Controller.js';
 import { authAdmin } from '../middleware/auth.js';
 
 const router = Router();
+const membershipController = new MembershipController();
 
 // Get all memberships
-router.get('/', getAllMemberships);
+router.get('/', membershipController.getAllMemberships);
 
 // Get membership by ID 
-router.get('/:id', getMembershipById);
+router.get('/:id', membershipController.getMembershipById);
 
-router.put('/:id', authAdmin, updateMembership);
+router.put('/:id', authAdmin, membershipController.updateMembership);
 
 // Create a new membership (protected, likely for admin use)
-router.post('/', authAdmin, createMembership);
+router.post('/', authAdmin, membershipController.createMembership);
 
-router.delete('/:id', authAdmin, deleteMembership);
+router.delete('/:id', authAdmin, membershipController.deleteMembership);
 
 export default router;

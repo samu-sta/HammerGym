@@ -19,7 +19,7 @@ import { MembershipFeatureRoutes } from '../routes/MembershipFeature.Routes.js';
 import ContractRoutes from '../routes/Contract.Routes.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import { handleStripeWebhook } from '../controllers/Webhook.Controller.js';
+import WebhookController from '../controllers/Webhook.Controller.js';
 
 const DEFAULT_PORT = 3000;
 
@@ -32,9 +32,11 @@ export const createApp = () => {
   const app = express();
   app.use(morgan('dev'));
 
+  const webhookController = new WebhookController();
+
   app.post('/contracts/webhook',
     express.raw({ type: 'application/json' }),
-    handleStripeWebhook
+    webhookController.handleStripeWebhook
   );
 
   app.use(express.json());
