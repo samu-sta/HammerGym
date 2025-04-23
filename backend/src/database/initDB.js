@@ -582,13 +582,13 @@ const initDatabase = async () => {
         telephone: '555123456',
         location: 'Barcelona Diagonal',
         maxCapacity: 150,
-        currentOccupancy: 60
+        currentOccupancy: 80
       },
       {
         telephone: '777888999',
         location: 'Valencia Puerto',
         maxCapacity: 80,
-        currentOccupancy: 30
+        currentOccupancy: 70
       }
     ]);
 

@@ -25,6 +25,7 @@ import MembershipsManagement from './pages/MembershipsManagement.jsx';
 import MembershipFeaturesManagement from './pages/MembershipFeaturesManagement.jsx';
 import ContractPage from './pages/ContractPage.jsx';
 import ContractsManagement from './pages/ContractsManagement.jsx';
+import Gimnasios from './pages/Gimnasios.jsx';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,6 +79,10 @@ function App() {
             <Route
               path="/register"
               element={<RegistrationPage setShouldShowAccessButton={setShouldShowAccessButton} />}
+            />
+            <Route
+              path="/gimnasios"
+              element={<Gimnasios />}
             />
 
             {/* Rutas protegidas */}

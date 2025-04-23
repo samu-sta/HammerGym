@@ -1,0 +1,96 @@
+.gimnasios-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.gimnasios-list-container {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+.no-gyms {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  color: #a0a0a0;
+  font-size: 1.2rem;
+  margin: 40px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #666;
+}
+
+.no-gyms-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+/* Filtros de gimnasios (si se implementan en el futuro) */
+.gimnasios-filters {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-button {
+  background-color: #333;
+  border: none;
+  color: #e0e0e0;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+  background-color: #444;
+}
+
+.filter-button.active {
+  background-color: #ffcc00;
+  color: #222;
+  font-weight: 500;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .gimnasios-list {
+    gap: 20px;
+  }
+  
+  .gimnasios-filters {
+    padding: 0 10px;
+  }
+  
+  .no-gyms {
+    margin: 20px 10px;
+    padding: 40px 15px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .gimnasios-list-container {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

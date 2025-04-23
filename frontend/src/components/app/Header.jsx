@@ -12,6 +12,21 @@ const Header = ({
 
   const { account, logout } = useAccount();
 
+  const getAccountUrl = () => {
+    if (!account) return '/login';
+
+    switch (account.role) {
+      case 'admin':
+        return '/admin';
+      case 'trainer':
+        return '/entrenador';
+      case 'user':
+        return '/usuario';
+      default:
+        return '/login';
+    }
+  };
+
   return (
     <header className='header-app'>
       <section className='header-app-left'>
@@ -22,19 +37,14 @@ const Header = ({
         {!isMobile && (
           <nav className='header-app-nav'>
             <Link
-              to="/admin"
+              to={getAccountUrl()}
               className='app-link header-app-nav-link'>
-              ADMIN
+              CUENTA
             </Link>
             <Link
-              to="/entrenador"
+              to="/gimnasios"
               className='app-link header-app-nav-link'>
-              ENTRENADOR
-            </Link>
-            <Link
-              to="/usuario"
-              className='app-link header-app-nav-link'>
-              USUARIO
+              GIMNASIOS
             </Link>
           </nav>
         )}

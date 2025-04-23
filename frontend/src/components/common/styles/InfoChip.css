@@ -1,14 +1,25 @@
 .info-chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 16px;
-  font-size: 0.85rem;
-  background-color: #333;
-  color: #ddd;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #f0f0f0;
+  font-size: 0.9rem;
   margin-right: 8px;
-  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.info-chip-icon {
+  margin-right: 8px;
+  font-size: 1rem;
+  color: #ffcc00;
+}
+
+.info-chip-text {
+  display: inline-block;
 }
 
 .info-chip svg {
@@ -22,7 +33,7 @@
 }
 
 .difficulty-chip svg {
-  color: #222 !important;
+  color: #222;
 }
 
 .difficulty-easy {
@@ -35,4 +46,41 @@
 
 .difficulty-hard {
   background-color: #f44336c2;
+}
+
+/* Clases de ocupación */
+.occupancy-low {
+  background-color: rgba(76, 175, 80, 0.15);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.occupancy-medium {
+  background-color: rgba(255, 152, 0, 0.15);
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.occupancy-high {
+  background-color: rgba(244, 67, 54, 0.15);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* Estados de máquinas */
+.status-available {
+  background-color: rgba(76, 175, 80, 0.15);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.status-broken, .status-outOfService {
+  background-color: rgba(244, 67, 54, 0.15);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.status-preparing {
+  background-color: rgba(255, 152, 0, 0.15);
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.status-unknown {
+  background-color: rgba(158, 158, 158, 0.15);
+  border: 1px solid rgba(158, 158, 158, 0.3);
 }

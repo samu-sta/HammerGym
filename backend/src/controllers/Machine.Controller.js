@@ -41,6 +41,24 @@ export default class MachineController {
     }
   };
 
+  getMachinesByGymId = async (req, res) => {
+    const { gymId } = req.params;
+    try {
+      const machines = await MachineModel.findAll({
+        where: { gymId },
+        include: [
+          { model: MachineModelModel, as: 'model' },
+          { model: GymModel, as: 'gym' }
+        ]
+      });
+
+      return res.status(200).json({ success: true, machines });
+    } catch (error) {
+      console.error(`Error al obtener máquinas del gimnasio ${gymId}:`, error);
+      return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+    }
+  };
+
   createMachine = async (req, res) => {
     const { gymLocation, ...machineData } = req.body;
     const result = machineSchema.validateCreateMachine(machineData);

@@ -13,17 +13,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.footer-nav {
-  margin-top: 10px;
-}
-
-.footer-link {
-  color: #998000;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
