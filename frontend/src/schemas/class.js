@@ -90,34 +90,6 @@ const scheduleSchema = z.object({
   path: ['scheduleDays']
 });
 
-// New refinement to check start/end date day match with selected days
-scheduleSchema.refine(data => {
-  const startDate = new Date(data.startDate);
-  const endDate = new Date(data.endDate);
-  const selectedDays = data.scheduleDays.map(sd => sd.day);
-
-  // Adjust getDay() (Sun=0) to match WEEK_DAYS (Mon=0 index, but value is 'Monday')
-  const dayMap = {
-    'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6
-  };
-  const selectedDayIndices = selectedDays.map(day => dayMap[day]);
-
-  const startDayIndex = startDate.getDay(); // 0 = Sunday, 1 = Monday, ...
-  const endDayIndex = endDate.getDay();
-
-  // Check if start and end dates are the same
-  if (startDate.toDateString() === endDate.toDateString()) {
-    // If dates are the same, only one day should be selected, and it must match the date's day
-    return selectedDayIndices.length === 1 && selectedDayIndices[0] === startDayIndex;
-  } else {
-    // If dates are different, both start and end date's days must be among the selected days
-    return selectedDayIndices.includes(startDayIndex) && selectedDayIndices.includes(endDayIndex);
-  }
-}, {
-  message: ERROR.schedule.scheduleDays.dayMismatchWithDateRange,
-  path: ['scheduleDays'] // Apply error to the scheduleDays field
-});
-
 export const classSchema = z.object({
   name: z.string()
     .min(3, ERROR.name.min)
