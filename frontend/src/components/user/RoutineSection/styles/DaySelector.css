@@ -32,6 +32,7 @@
 .day-selector-modal {
   position: fixed;
   margin-top: 1rem;
+  right: 30px;
   background: rgba(30, 30, 30, 0.95);
   border-radius: 8px;
   width: 220px;
@@ -80,4 +81,11 @@
   color: rgba(255, 255, 255, 0.4);
   font-style: italic;
   font-size: 0.85rem;
+}
+
+@media (max-width: 479px) {
+  .day-selector-modal {
+    width: 80%;
+    right: auto;
+  }
 }

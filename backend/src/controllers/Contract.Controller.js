@@ -10,7 +10,6 @@ export default class ContractController {
 
     try {
       const contract = await this.contractService.getUserContract(userId);
-      console.log(`Contract for user ${userId}:`, contract);
       res.json(contract);
     } catch (error) {
       console.error(`Error retrieving contract for user ${userId}:`, error);

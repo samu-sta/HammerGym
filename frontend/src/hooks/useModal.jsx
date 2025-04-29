@@ -5,7 +5,10 @@ const useModal = (initialState = false) => {
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
-  const toggleModal = () => setIsOpen(!isOpen);
+  const toggleModal = () => {
+    setIsOpen(!isOpen)
+    console.log('Modal toggled:', !isOpen);
+  };
 
   return {
     isOpen,

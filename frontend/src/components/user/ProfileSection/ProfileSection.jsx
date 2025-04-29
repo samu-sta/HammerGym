@@ -35,18 +35,19 @@ const ProfileSection = () => {
           <button className='primary-button button'>ACTUALIZAR</button>
         </footer>
       </form>
-
-      <div className='membership-section'>
-        <h3>Gestión de Membresía</h3>
-        <p>Accede a tu membresía actual, historial de contratos o adquiere una nueva membresía.</p>
-        <button
-          className='membership-button'
-          onClick={handleMembershipClick}
-        >
-          <FaFileContract className='membership-icon' />
-          <span>Ver mi membresía</span>
-        </button>
-      </div>
+      {account.role === 'user' && (
+        <div className='membership-section'>
+          <h3>Gestión de Membresía</h3>
+          <p>Accede a tu membresía actual, historial de contratos o adquiere una nueva membresía.</p>
+          <button
+            className='membership-button'
+            onClick={handleMembershipClick}
+          >
+            <FaFileContract className='membership-icon' />
+            <span>Ver mi membresía</span>
+          </button>
+        </div>
+      )}
     </section>
   );
 };

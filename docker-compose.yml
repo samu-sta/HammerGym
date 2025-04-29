@@ -10,7 +10,7 @@ services:
       - /app/node_modules
     environment:
       - VITE_API_URL=${API_URL}
-      - VITE_BASE_URL=http://155.210.60.4:${FRONTEND_PORT}
+      - VITE_STRIPE_URL=${STRIPE_URL}
     networks:
       - cluedo-network
     depends_on:
@@ -29,6 +29,9 @@ services:
       - DB_NAME=${DB_NAME}
       - BASE_URL=${FRONTEND_URL}
       - PORT=${BACKEND_PORT}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - JWT_SECRET=${JWT_SECRET}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
     depends_on:
       db:
         condition: service_healthy

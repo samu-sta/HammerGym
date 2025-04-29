@@ -4,9 +4,10 @@ import Stripe from 'stripe';
 dotenv.config();
 
 // Inicializar Stripe con la clave secreta proporcionada
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const API_KEY = process.env.STRIPE_SECRET_KEY;
+const stripe = new Stripe(API_KEY);
 // URL base para redirecciones
-const BASE_URL = process.env.BASE_URL || 'http://192.168.0.19:5173';
+const BASE_URL = process.env.BASE_URL || 'http://localhost:5173';
 
 export default class StripeService {
   /**

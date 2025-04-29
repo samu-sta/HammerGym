@@ -99,19 +99,12 @@ export default class ClassService {
     const t = await sequelize.transaction();
 
     try {
-      const trainer = await TrainerModel.findOne({
-        where: { accountId: trainerId },
-        transaction: t
-      });
-
-      if (!trainer) throw { status: 403, messages: MESSAGES.NO_PERMISSION_CREATE_CLASS };
-
       const newClass = await ClassModel.create({
         name,
         description,
         maxCapacity,
         difficulty,
-        trainerId: trainer.id,
+        trainerId: trainerId,
         currentCapacity: 0
       }, { transaction: t });
 
@@ -161,11 +154,8 @@ export default class ClassService {
   }
 
   async getTrainerClasses(trainerId) {
-    const trainer = await TrainerModel.findOne({ where: { accountId: trainerId } });
-    if (!trainer) throw { status: 403, messages: MESSAGES.NO_PERMISSION_CREATE_CLASS };
-
     const classes = await ClassModel.findAll({
-      where: { trainerId: trainer.id },
+      where: { trainerId },
       include: [{
         model: ScheduleModel,
         as: 'schedule',

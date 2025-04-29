@@ -42,6 +42,80 @@ const scheduleSchema = z.object({
 }, {
   message: ERROR.schedule.invalidRange,
   path: ['endDate']
+}).refine(data => {
+  // Check if all selected days are within the date range
+  const startDate = new Date(data.startDate);
+  const endDate = new Date(data.endDate);
+
+  // Get the day of week for start and end dates (0 = Sunday, 1 = Monday, etc.)
+  const startDay = startDate.getDay();
+  const endDay = endDate.getDay(); // Fixed variable definition
+
+  // Create a map of days to their index (0-6) for easy comparison
+  // JavaScript uses 0 = Sunday, but our app uses Monday first, so adjust the mapping
+  const dayMap = {
+    'Monday': 1,
+    'Tuesday': 2,
+    'Wednesday': 3,
+    'Thursday': 4,
+    'Friday': 5,
+    'Saturday': 6,
+    'Sunday': 0
+  };
+
+  // Create an array of valid days between start and end date (inclusive)
+  const validDays = [];
+
+  // If start and end date are the same day, only that day is valid
+  if (startDate.toDateString() === endDate.toDateString()) {
+    validDays.push(startDay);
+  } else {
+    // Handle case when dates span multiple days
+    let currentDay = startDay;
+
+    // Add all days between start and end (inclusive) to validDays array
+    do {
+      validDays.push(currentDay);
+      currentDay = (currentDay + 1) % 7; // Move to next day, loop back to Sunday after Saturday
+    } while (currentDay !== (endDay + 1) % 7);
+  }
+
+  // Check if all selected days are in validDays array
+  return data.scheduleDays.every(scheduleDay => {
+    const dayIndex = dayMap[scheduleDay.day];
+    return validDays.includes(dayIndex);
+  });
+}, {
+  message: ERROR.schedule.scheduleDays.dayOutsideDateRange,
+  path: ['scheduleDays']
+});
+
+// New refinement to check start/end date day match with selected days
+scheduleSchema.refine(data => {
+  const startDate = new Date(data.startDate);
+  const endDate = new Date(data.endDate);
+  const selectedDays = data.scheduleDays.map(sd => sd.day);
+
+  // Adjust getDay() (Sun=0) to match WEEK_DAYS (Mon=0 index, but value is 'Monday')
+  const dayMap = {
+    'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6
+  };
+  const selectedDayIndices = selectedDays.map(day => dayMap[day]);
+
+  const startDayIndex = startDate.getDay(); // 0 = Sunday, 1 = Monday, ...
+  const endDayIndex = endDate.getDay();
+
+  // Check if start and end dates are the same
+  if (startDate.toDateString() === endDate.toDateString()) {
+    // If dates are the same, only one day should be selected, and it must match the date's day
+    return selectedDayIndices.length === 1 && selectedDayIndices[0] === startDayIndex;
+  } else {
+    // If dates are different, both start and end date's days must be among the selected days
+    return selectedDayIndices.includes(startDayIndex) && selectedDayIndices.includes(endDayIndex);
+  }
+}, {
+  message: ERROR.schedule.scheduleDays.dayMismatchWithDateRange,
+  path: ['scheduleDays'] // Apply error to the scheduleDays field
 });
 
 export const classSchema = z.object({

@@ -22,14 +22,22 @@ export const verifyStripeEvent = (req) => {
       };
     }
 
+    // Get raw body as a string if it's a Buffer
+    const payload = req.body instanceof Buffer
+      ? req.body.toString('utf8')
+      : typeof req.body === 'string'
+        ? req.body
+        : JSON.stringify(req.body);
+
     const event = stripe.webhooks.constructEvent(
-      req.body,
+      payload,
       signature,
       stripeWebhookSecret
     );
 
     return { success: true, event };
   } catch (error) {
+    console.error('Stripe verification error:', error.message);
     return {
       success: false,
       status: 400,

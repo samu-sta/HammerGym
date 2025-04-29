@@ -1,17 +1,29 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useContext } from 'react';
 import './styles/Home.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AccessHome from '../components/home/AccessHome.jsx';
 import SliderHome from '../components/home/SliderHome.jsx';
 import AchievementHome from '../components/home/AchievementHome.jsx';
 import { PERSONAL } from '../config/constants.js';
+import { useAccount } from '../context/AccountContext';
+import { redirectToAccount } from '../utils/accountUtils';
+
 const Home = ({ isMobile, accessSectionRef, scrollToAccessSection, isScrolling, setShouldShowAccessButton }) => {
-  
+  const { account } = useAccount();
+  const navigate = useNavigate();
+
   useEffect(() => {
-      setShouldShowAccessButton(true);
-      window.scrollTo(0, 0);
-    }, []);
-  
+    // Verificar si el usuario está autenticado
+    if (account) {
+      const redirectUrl = redirectToAccount(account);
+      navigate(redirectUrl);
+      return;
+    }
+
+    setShouldShowAccessButton(true);
+    window.scrollTo(0, 0);
+  }, [account, navigate, setShouldShowAccessButton]);
+
   return (
     <main className='main-home'>
       <section className={isMobile ? 'main-home-content main-home-content-mobile'
@@ -48,25 +60,25 @@ const Home = ({ isMobile, accessSectionRef, scrollToAccessSection, isScrolling, 
         </h2>
         <main className={`main-home-register-section-main 
         ${isMobile ? 'main-home-register-section-main-mobile' : ''}  `}>
-          
-          <AccessHome 
-            personal={PERSONAL[0]} 
+
+          <AccessHome
+            personal={PERSONAL[0]}
             linkRegister={'/register'}
             linkLogin={'/login'}
             isScrolling={isScrolling}
-            />
-          <AccessHome 
-            personal={PERSONAL[1]} 
+          />
+          <AccessHome
+            personal={PERSONAL[1]}
             linkRegister={'/register'}
             isScrolling={isScrolling}
             linkLogin={'/login'}
-            />
-          <AccessHome 
-            personal={PERSONAL[2]} 
+          />
+          <AccessHome
+            personal={PERSONAL[2]}
             linkRegister={'/register'}
             isScrolling={isScrolling}
             linkLogin={'/login'}
-            />
+          />
         </main>
         <Link to='/login' className='login-link-bottom login-link'>¿Ya tienes cuenta? Inicia sesión</Link>
 

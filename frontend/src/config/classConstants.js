@@ -55,7 +55,8 @@ export const CLASS_ERROR_MESSAGES = {
       missingTime: 'Debe ingresar las horas de inicio y fin para {day}',
       missingStartTime: 'Debe ingresar la hora de inicio para {day}',
       missingEndTime: 'Debe ingresar la hora de fin para {day}',
-      invalidTimeRange: 'En {day} la hora de fin debe ser posterior a la de inicio'
+      invalidTimeRange: 'En {day} la hora de fin debe ser posterior a la de inicio',
+      dayOutsideDateRange: 'Los días seleccionados deben estar dentro del rango de fechas'
     }
   }
 };

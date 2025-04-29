@@ -1,6 +1,8 @@
+import { API_URL } from "../config/constants";
+
 export const createUserTraining = async (trainingData) => {
   try {
-    const response = await fetch('http://localhost:3000/training', {
+    const response = await fetch(`${API_URL}/training`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -22,7 +24,7 @@ export const createUserTraining = async (trainingData) => {
 
 export const getTrainingByUserEmail = async (userEmail) => {
   try {
-    const response = await fetch(`http://localhost:3000/training/${userEmail}`, {
+    const response = await fetch(`${API_URL}/training/${userEmail}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

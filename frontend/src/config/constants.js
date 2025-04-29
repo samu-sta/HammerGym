@@ -166,8 +166,7 @@ export const mapDifficultyToNumeric = (difficulty) => {
   }
 };
 
-// URL de la API - Usar valor de variable de entorno si está disponible
-export const API_URL = import.meta.env.VITE_API_URL || 'http://192.168.0.19:3000';
+export const API_URL = import.meta.env.VITE_API_URL;
 
 // User-related constants
 export const USER_ROLES = {
@@ -221,4 +220,4 @@ export const PAYMENT_STATUSES = {
   SUCCESS: 'true'
 };
 
-export const STRIPE_URL_DASHBOARD = 'https://dashboard.stripe.com/test/dashboard';
+export const STRIPE_URL_DASHBOARD = import.meta.env.VITE_STRIPE_URL || 'https://dashboard.stripe.com';

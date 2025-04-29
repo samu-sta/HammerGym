@@ -6,20 +6,20 @@ import '../styles/DaySelector.css';
 const allWeekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
 const DaySelector = ({ selectedDay, setSelectedDay, days, hasDayTraining }) => {
-  const { isModalOpen, setIsModalOpen, modalRef } = useModal();
+  const { isOpen, toggleModal, modalRef } = useModal();
 
   return (
     <section className="day-selector-container">
       <button
         className="button day-selector-toggle"
-        onClick={() => setIsModalOpen(!isModalOpen)}
+        onClick={toggleModal}
       >
         <FaCalendarAlt />
         <span>{dayMap[selectedDay] || selectedDay}</span>
-        <FaChevronDown className={`chevron ${isModalOpen ? 'open' : ''}`} />
+        <FaChevronDown className={`chevron ${isOpen ? 'open' : ''}`} />
       </button>
 
-      {isModalOpen && (
+      {isOpen && (
         <article className="day-selector-modal" ref={modalRef}>
           {allWeekdays.map(day => (
             <button
@@ -28,7 +28,7 @@ const DaySelector = ({ selectedDay, setSelectedDay, days, hasDayTraining }) => {
                 ${selectedDay === day ? 'selected' : ''}`}
               onClick={() => {
                 setSelectedDay(day);
-                setIsModalOpen(false);
+                toggleModal();
               }}
             >
               <span className="day-name">{dayMap[day] || day}</span>

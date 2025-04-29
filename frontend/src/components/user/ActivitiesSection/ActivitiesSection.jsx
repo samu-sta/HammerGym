@@ -4,6 +4,7 @@ import './styles/ActivitiesSection.css';
 import ActivityDay from './ActivityDay';
 import FilterPills from './FilterPills';
 import StatusMessage from './StatusMessage';
+import ActivityButtons from './ActivityButtons';
 import useUserActivities from '../../../hooks/useUserActivities';
 import { useIsMobile } from '../../../hooks/useWindowSize';
 
@@ -50,6 +51,8 @@ const ActivitiesSection = () => {
           </button>
         </section>
       </header>
+
+      <ActivityButtons isMobile={isMobile} onActivityRegistered={loadActivities} />
 
       <main className='activities-body'>
         {loading && !refreshing ? (

@@ -77,6 +77,7 @@ const AdminPage = () => {
   ];
 
   const handleActionClick = (route, isExternalLink) => {
+    console.log('Clicked route:', route);
     if (isExternalLink) {
       window.open(route, '_blank');
     } else {

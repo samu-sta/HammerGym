@@ -11,7 +11,6 @@ class WebhookService {
    * @returns {Object} - Respuesta procesada
    */
   async processStripeWebhook(req) {
-    // Verificar y construir el evento de Stripe
     const verificationResult = verifyStripeEvent(req);
     if (!verificationResult.success) {
       return {
@@ -23,7 +22,6 @@ class WebhookService {
 
     const { event } = verificationResult;
 
-    // Verificar si es un evento de checkout completado
     if (!isCheckoutCompletedEvent(event)) {
       return {
         success: false,

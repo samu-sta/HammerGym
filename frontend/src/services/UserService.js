@@ -21,6 +21,31 @@ export const getUserActivities = async () => {
   }
 };
 
+export const registerActivity = async (type, gymId) => {
+  try {
+    const response = await fetch(`${API_URL}/user-activity`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        type,
+        gymId
+      })
+    });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error registering activity:', error);
+    return {
+      success: false,
+      message: 'Error de conexión con el servidor'
+    };
+  }
+};
+
 export const getUserTraining = async () => {
   try {
     const response = await fetch(`${API_URL}/training`, {
