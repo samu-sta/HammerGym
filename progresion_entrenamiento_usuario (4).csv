@@ -1,0 +1,2833 @@
+id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejercicio,peso_kg,repeticiones,series,sensacion_post_ejercicio,lesionado
+1,2025-04-29,1,Empuje,Press con Mancuernas,37.5,9,4,8,false
+1,2025-04-29,1,Empuje,Press Militar,42.5,9,3,6,false
+1,2025-04-29,1,Empuje,Press Banca,65,8,3,8,false
+1,2025-05-02,2,Empuje,Press con Mancuernas,37.5,9,4,8,false
+1,2025-05-02,2,Empuje,Press Militar,42.5,9,3,7,false
+1,2025-05-02,2,Empuje,Press Banca,65,9,3,6,false
+1,2025-05-05,1,Jalón,Dominadas,0,9,4,6,false
+1,2025-05-05,1,Jalón,Jalón al Pecho,47.5,9,4,6,false
+1,2025-05-05,1,Jalón,Remo con Barra,52.5,10,4,8,false
+1,2025-05-08,2,Jalón,Dominadas,0,9,4,8,false
+1,2025-05-08,2,Jalón,Jalón al Pecho,47.5,9,4,8,false
+1,2025-05-08,2,Jalón,Remo con Barra,52.5,10,4,7,false
+1,2025-05-10,3,Jalón,Dominadas,2.5,10,4,7,false
+1,2025-05-10,3,Jalón,Jalón al Pecho,47.5,9,4,8,false
+1,2025-05-10,3,Jalón,Remo con Barra,52.5,11,4,7,false
+1,2025-05-13,4,Jalón,Dominadas,2.5,11,5,6,false
+1,2025-05-13,4,Jalón,Jalón al Pecho,47.5,10,4,6,false
+1,2025-05-13,4,Jalón,Remo con Barra,52.5,11,4,9,false
+1,2025-05-16,1,Piernas,Sentadilla,85,8,3,8,false
+1,2025-05-16,1,Piernas,Peso Muerto,95,10,4,7,false
+1,2025-05-16,1,Piernas,Prensa de Piernas,127.5,10,4,6,false
+1,2025-05-18,2,Piernas,Sentadilla,85,9,3,6,false
+1,2025-05-18,2,Piernas,Peso Muerto,95,10,4,7,false
+1,2025-05-18,2,Piernas,Prensa de Piernas,127.5,10,5,5,false
+1,2025-05-21,3,Piernas,Sentadilla,87.5,9,3,9,false
+1,2025-05-21,3,Piernas,Peso Muerto,97.5,11,4,7,false
+1,2025-05-21,3,Piernas,Prensa de Piernas,127.5,9,4,7,false
+1,2025-05-23,4,Piernas,Sentadilla,87.5,9,3,8,false
+1,2025-05-23,4,Piernas,Peso Muerto,97.5,12,4,7,false
+1,2025-05-23,4,Piernas,Prensa de Piernas,127.5,9,4,9,false
+1,2025-05-25,3,Empuje,Press Militar,42.5,9,3,9,false
+1,2025-05-25,1,Empuje,Press Inclinado,52.5,10,4,7,false
+1,2025-05-25,3,Empuje,Press con Mancuernas,40,9,4,6,false
+1,2025-05-27,4,Empuje,Press Militar,42.5,9,3,8,false
+1,2025-05-27,2,Empuje,Press Inclinado,52.5,10,4,8,false
+1,2025-05-27,4,Empuje,Press con Mancuernas,40,9,5,7,false
+1,2025-05-29,5,Empuje,Press Militar,42.5,9,3,8,false
+1,2025-05-29,3,Empuje,Press Inclinado,55,10,4,8,false
+1,2025-05-29,5,Empuje,Press con Mancuernas,40,9,5,9,false
+1,2025-05-31,6,Empuje,Press Militar,45,10,3,7,false
+1,2025-05-31,4,Empuje,Press Inclinado,55,11,5,3,true
+1,2025-05-31,6,Empuje,Press con Mancuernas,22.5,6,3,5,false
+1,2025-06-02,1,Jalón,Remo con Mancuerna,22.5,8,3,7,false
+1,2025-06-02,5,Jalón,Remo con Barra,52.5,11,4,7,false
+1,2025-06-02,5,Jalón,Dominadas,2.5,11,5,9,false
+1,2025-06-04,2,Jalón,Remo con Mancuerna,22.5,9,3,6,false
+1,2025-06-04,6,Jalón,Remo con Barra,55,12,4,8,false
+1,2025-06-04,6,Jalón,Dominadas,5,12,5,6,false
+1,2025-06-07,3,Jalón,Remo con Mancuerna,22.5,9,4,6,false
+1,2025-06-07,7,Jalón,Remo con Barra,55,12,4,9,false
+1,2025-06-07,7,Jalón,Dominadas,5,12,5,8,false
+1,2025-06-10,1,Piernas,Zancadas,22.5,10,3,6,false
+1,2025-06-10,5,Piernas,Sentadilla,87.5,9,3,8,false
+1,2025-06-10,1,Piernas,Extensiones de Cuádriceps,42.5,8,4,7,false
+1,2025-06-13,2,Piernas,Zancadas,22.5,10,3,8,false
+1,2025-06-13,6,Piernas,Sentadilla,90,9,3,7,false
+1,2025-06-13,2,Piernas,Extensiones de Cuádriceps,42.5,9,3,8,false
+1,2025-06-16,3,Piernas,Zancadas,25,10,3,6,false
+1,2025-06-16,7,Piernas,Sentadilla,90,10,3,6,false
+1,2025-06-16,3,Piernas,Extensiones de Cuádriceps,42.5,9,3,8,false
+1,2025-06-19,4,Piernas,Zancadas,25,10,3,8,false
+1,2025-06-19,8,Piernas,Sentadilla,90,10,3,7,false
+1,2025-06-19,4,Piernas,Extensiones de Cuádriceps,42.5,10,3,7,false
+1,2025-06-22,3,Empuje,Press Banca,37.5,6,2,5,false
+1,2025-06-22,7,Empuje,Press con Mancuernas,25,6,3,5,false
+1,2025-06-22,5,Empuje,Press Inclinado,30,6,2,4,false
+1,2025-06-24,4,Empuje,Press Banca,40,6,2,5,false
+1,2025-06-24,8,Empuje,Press con Mancuernas,27.5,6,3,5,false
+1,2025-06-24,6,Empuje,Press Inclinado,35,7,2,4,false
+1,2025-06-27,5,Empuje,Press Banca,45,6,2,5,false
+1,2025-06-27,9,Empuje,Press con Mancuernas,30,7,4,6,false
+1,2025-06-27,7,Empuje,Press Inclinado,37.5,7,3,5,false
+1,2025-06-30,6,Empuje,Press Banca,50,7,2,6,false
+1,2025-06-30,10,Empuje,Press con Mancuernas,25,6,3,6,false
+1,2025-06-30,8,Empuje,Press Inclinado,42.5,8,3,5,false
+1,2025-07-03,4,Jalón,Remo con Mancuerna,22.5,9,4,8,false
+1,2025-07-03,8,Jalón,Dominadas,5,12,5,8,false
+1,2025-07-03,5,Jalón,Jalón al Pecho,47.5,10,4,9,false
+1,2025-07-05,5,Jalón,Remo con Mancuerna,22.5,9,4,7,false
+1,2025-07-05,9,Jalón,Dominadas,7.5,12,5,7,false
+1,2025-07-05,6,Jalón,Jalón al Pecho,47.5,11,4,6,false
+1,2025-07-08,6,Jalón,Remo con Mancuerna,25,10,5,7,false
+1,2025-07-08,10,Jalón,Dominadas,7.5,12,5,8,false
+1,2025-07-08,7,Jalón,Jalón al Pecho,47.5,11,4,8,false
+1,2025-07-10,7,Jalón,Remo con Mancuerna,25,11,5,6,false
+1,2025-07-10,11,Jalón,Dominadas,7.5,12,5,8,false
+1,2025-07-10,8,Jalón,Jalón al Pecho,47.5,12,4,7,false
+1,2025-07-13,5,Piernas,Peso Muerto,97.5,12,4,4,true
+1,2025-07-13,5,Piernas,Prensa de Piernas,72.5,6,2,5,false
+1,2025-07-13,5,Piernas,Zancadas,15,6,2,5,false
+1,2025-07-16,6,Piernas,Peso Muerto,55,7,2,4,false
+1,2025-07-16,6,Piernas,Prensa de Piernas,80,6,2,5,false
+1,2025-07-16,6,Piernas,Zancadas,15,7,2,5,false
+1,2025-07-18,7,Piernas,Peso Muerto,60,8,2,4,false
+1,2025-07-18,7,Piernas,Prensa de Piernas,87.5,6,3,5,false
+1,2025-07-18,7,Piernas,Zancadas,17.5,7,2,5,false
+1,2025-07-21,1,Empuje,Fondos,0,6,2,5,false
+1,2025-07-21,7,Empuje,Press Militar,25,6,2,5,false
+1,2025-07-21,7,Empuje,Press Banca,40,6,2,6,false
+1,2025-07-23,2,Empuje,Fondos,0,7,2,5,false
+1,2025-07-23,8,Empuje,Press Militar,27.5,7,2,5,false
+1,2025-07-23,8,Empuje,Press Banca,35,6,2,6,false
+1,2025-07-26,3,Empuje,Fondos,0,7,2,5,false
+1,2025-07-26,9,Empuje,Press Militar,30,7,2,5,false
+1,2025-07-26,9,Empuje,Press Banca,35,6,3,5,false
+1,2025-07-29,8,Jalón,Remo con Barra,55,12,4,8,false
+1,2025-07-29,9,Jalón,Jalón al Pecho,50,12,4,8,false
+1,2025-07-29,8,Jalón,Remo con Mancuerna,25,11,5,8,false
+1,2025-08-01,9,Jalón,Remo con Barra,57.5,12,5,5,false
+1,2025-08-01,10,Jalón,Jalón al Pecho,50,12,4,9,false
+1,2025-08-01,9,Jalón,Remo con Mancuerna,25,11,5,7,false
+1,2025-08-04,10,Jalón,Remo con Barra,57.5,12,5,9,false
+1,2025-08-04,11,Jalón,Jalón al Pecho,50,12,4,9,false
+1,2025-08-04,10,Jalón,Remo con Mancuerna,25,12,5,7,false
+1,2025-08-06,11,Jalón,Remo con Barra,57.5,12,5,9,false
+1,2025-08-06,12,Jalón,Jalón al Pecho,52.5,12,4,7,false
+1,2025-08-06,11,Jalón,Remo con Mancuerna,25,12,5,9,false
+1,2025-08-09,9,Piernas,Sentadilla,50,6,2,5,false
+1,2025-08-09,8,Piernas,Prensa de Piernas,95,7,3,6,false
+1,2025-08-09,8,Piernas,Peso Muerto,67.5,9,3,5,false
+1,2025-08-11,10,Piernas,Sentadilla,57.5,7,2,5,false
+1,2025-08-11,9,Piernas,Prensa de Piernas,77.5,6,2,6,false
+1,2025-08-11,9,Piernas,Peso Muerto,72.5,9,3,5,false
+1,2025-08-14,11,Piernas,Sentadilla,62.5,7,2,5,false
+1,2025-08-14,10,Piernas,Prensa de Piernas,67.5,6,2,6,false
+1,2025-08-14,10,Piernas,Peso Muerto,80,10,3,5,false
+1,2025-08-16,12,Piernas,Sentadilla,67.5,8,2,6,false
+1,2025-08-16,11,Piernas,Prensa de Piernas,67.5,6,3,5,false
+1,2025-08-16,11,Piernas,Peso Muerto,85,10,3,6,false
+1,2025-08-19,10,Empuje,Press Militar,35,8,2,6,false
+1,2025-08-19,4,Empuje,Fondos,0,8,2,6,false
+1,2025-08-19,9,Empuje,Press Inclinado,45,8,3,5,false
+1,2025-08-21,11,Empuje,Press Militar,27.5,6,2,6,false
+1,2025-08-21,5,Empuje,Fondos,0,6,2,6,false
+1,2025-08-21,10,Empuje,Press Inclinado,47.5,9,3,6,false
+1,2025-08-24,12,Empuje,Press Militar,25,6,2,6,false
+1,2025-08-24,6,Empuje,Fondos,0,6,2,6,false
+1,2025-08-24,11,Empuje,Press Inclinado,45,8,2,6,false
+1,2025-08-27,13,Empuje,Press Militar,25,6,3,5,false
+1,2025-08-27,7,Empuje,Fondos,0,6,3,7,false
+1,2025-08-27,12,Empuje,Press Inclinado,45,8,2,7,false
+1,2025-08-30,12,Jalón,Dominadas,7.5,12,5,7,false
+1,2025-08-30,12,Jalón,Remo con Mancuerna,27.5,12,5,8,false
+1,2025-08-30,13,Jalón,Jalón al Pecho,52.5,12,5,6,false
+1,2025-09-02,13,Jalón,Dominadas,7.5,12,5,9,false
+1,2025-09-02,13,Jalón,Remo con Mancuerna,27.5,12,5,8,false
+1,2025-09-02,14,Jalón,Jalón al Pecho,52.5,12,5,7,false
+1,2025-09-05,14,Jalón,Dominadas,7.5,12,5,7,false
+1,2025-09-05,14,Jalón,Remo con Mancuerna,27.5,12,5,3,true
+1,2025-09-05,15,Jalón,Jalón al Pecho,30,7,3,5,false
+1,2025-09-07,15,Jalón,Dominadas,5,7,3,5,false
+1,2025-09-07,15,Jalón,Remo con Mancuerna,15,7,3,4,false
+1,2025-09-07,16,Jalón,Jalón al Pecho,32.5,8,3,5,false
+1,2025-09-09,5,Piernas,Extensiones de Cuádriceps,25,6,2,5,false
+1,2025-09-09,12,Piernas,Peso Muerto,85,9,3,8,false
+1,2025-09-09,8,Piernas,Zancadas,20,8,2,6,false
+1,2025-09-12,6,Piernas,Extensiones de Cuádriceps,27.5,7,2,5,false
+1,2025-09-12,13,Piernas,Peso Muerto,85,9,3,9,false
+1,2025-09-12,9,Piernas,Zancadas,17.5,6,2,6,false
+1,2025-09-15,7,Piernas,Extensiones de Cuádriceps,30,7,2,5,false
+1,2025-09-15,14,Piernas,Peso Muerto,85,9,3,7,false
+1,2025-09-15,10,Piernas,Zancadas,15,6,2,6,false
+1,2025-09-17,8,Piernas,Extensiones de Cuádriceps,32.5,8,2,6,false
+1,2025-09-17,15,Piernas,Peso Muerto,87.5,10,4,6,false
+1,2025-09-17,11,Piernas,Zancadas,15,6,3,6,false
+1,2025-09-19,14,Empuje,Press Militar,25,6,3,9,false
+1,2025-09-19,10,Empuje,Press Banca,35,6,3,9,false
+1,2025-09-19,13,Empuje,Press Inclinado,45,8,3,6,false
+1,2025-09-22,12,Jalón,Remo con Barra,32.5,7,3,5,false
+1,2025-09-22,17,Jalón,Jalón al Pecho,35,9,3,5,false
+1,2025-09-22,16,Jalón,Remo con Mancuerna,17.5,8,3,4,false
+1,2025-09-24,13,Jalón,Remo con Barra,35,8,3,5,false
+1,2025-09-24,18,Jalón,Jalón al Pecho,40,9,4,6,false
+1,2025-09-24,17,Jalón,Remo con Mancuerna,20,9,3,5,false
+1,2025-09-27,14,Jalón,Remo con Barra,40,9,3,5,false
+1,2025-09-27,19,Jalón,Jalón al Pecho,32.5,7,3,6,false
+1,2025-09-27,18,Jalón,Remo con Mancuerna,20,9,4,5,false
+1,2025-09-30,15,Jalón,Remo con Barra,42.5,9,4,6,false
+1,2025-09-30,20,Jalón,Jalón al Pecho,27.5,6,2,6,false
+1,2025-09-30,19,Jalón,Remo con Mancuerna,22.5,10,4,5,false
+1,2025-10-03,12,Piernas,Prensa de Piernas,67.5,6,3,8,false
+1,2025-10-03,13,Piernas,Sentadilla,55,6,2,6,false
+1,2025-10-03,16,Piernas,Peso Muerto,87.5,11,5,5,false
+1,2025-10-06,13,Piernas,Prensa de Piernas,67.5,6,3,9,false
+1,2025-10-06,14,Piernas,Sentadilla,47.5,6,2,6,false
+1,2025-10-06,17,Piernas,Peso Muerto,87.5,11,5,9,false
+1,2025-10-08,14,Piernas,Prensa de Piernas,67.5,7,3,5,false
+1,2025-10-08,15,Piernas,Sentadilla,47.5,6,3,7,false
+1,2025-10-08,18,Piernas,Peso Muerto,87.5,11,5,8,false
+1,2025-10-11,11,Empuje,Press Banca,35,6,3,7,false
+1,2025-10-11,8,Empuje,Fondos,0,6,3,7,false
+1,2025-10-11,11,Empuje,Press con Mancuernas,22.5,6,2,6,false
+1,2025-10-13,12,Empuje,Press Banca,35,6,3,8,false
+1,2025-10-13,9,Empuje,Fondos,0,6,4,8,false
+1,2025-10-13,12,Empuje,Press con Mancuernas,22.5,6,3,2,true
+1,2025-10-15,13,Empuje,Press Banca,20,6,2,5,false
+1,2025-10-15,10,Empuje,Fondos,0,6,2,5,false
+1,2025-10-15,13,Empuje,Press con Mancuernas,12.5,6,2,4,false
+1,2025-10-18,14,Empuje,Press Banca,22.5,6,2,5,false
+1,2025-10-18,11,Empuje,Fondos,0,6,2,5,false
+1,2025-10-18,14,Empuje,Press con Mancuernas,15,6,2,4,false
+1,2025-10-21,21,Jalón,Jalón al Pecho,25,6,2,6,false
+1,2025-10-21,20,Jalón,Remo con Mancuerna,25,10,4,6,false
+1,2025-10-21,16,Jalón,Dominadas,5,8,3,5,false
+1,2025-10-23,22,Jalón,Jalón al Pecho,25,6,3,5,false
+1,2025-10-23,21,Jalón,Remo con Mancuerna,25,9,4,8,false
+1,2025-10-23,17,Jalón,Dominadas,5,9,3,5,false
+1,2025-10-26,23,Jalón,Jalón al Pecho,25,6,3,7,false
+1,2025-10-26,22,Jalón,Remo con Mancuerna,25,9,4,4,true
+1,2025-10-26,18,Jalón,Dominadas,5,9,4,6,false
+1,2025-10-28,19,Piernas,Peso Muerto,87.5,12,5,7,false
+1,2025-10-28,15,Piernas,Prensa de Piernas,67.5,8,3,6,false
+1,2025-10-28,12,Piernas,Zancadas,15,6,3,8,false
+1,2025-10-30,20,Piernas,Peso Muerto,87.5,12,5,7,false
+1,2025-10-30,16,Piernas,Prensa de Piernas,67.5,8,3,8,false
+1,2025-10-30,13,Piernas,Zancadas,15,6,3,7,false
+1,2025-11-01,21,Piernas,Peso Muerto,90,12,4,9,false
+1,2025-11-01,17,Piernas,Prensa de Piernas,67.5,8,3,8,false
+1,2025-11-01,14,Piernas,Zancadas,15,6,3,8,false
+1,2025-11-04,12,Empuje,Fondos,0,6,3,5,false
+1,2025-11-04,15,Empuje,Press Banca,25,6,2,5,false
+1,2025-11-04,15,Empuje,Press con Mancuernas,15,6,2,5,false
+1,2025-11-06,13,Empuje,Fondos,0,6,3,6,false
+1,2025-11-06,16,Empuje,Press Banca,27.5,6,2,6,false
+1,2025-11-06,16,Empuje,Press con Mancuernas,17.5,6,2,5,false
+1,2025-11-09,14,Empuje,Fondos,0,6,2,6,false
+1,2025-11-09,17,Empuje,Press Banca,22.5,6,2,6,false
+1,2025-11-09,17,Empuje,Press con Mancuernas,17.5,6,2,5,false
+1,2025-11-11,23,Jalón,Remo con Mancuerna,15,6,2,4,false
+1,2025-11-11,24,Jalón,Jalón al Pecho,15,6,2,5,false
+1,2025-11-11,16,Jalón,Remo con Barra,35,7,3,6,false
+1,2025-11-13,24,Jalón,Remo con Mancuerna,15,6,2,4,false
+1,2025-11-13,25,Jalón,Jalón al Pecho,15,6,2,5,false
+1,2025-11-13,17,Jalón,Remo con Barra,30,6,2,6,false
+1,2025-11-15,25,Jalón,Remo con Mancuerna,17.5,6,3,5,false
+1,2025-11-15,26,Jalón,Jalón al Pecho,17.5,6,2,5,false
+1,2025-11-15,18,Jalón,Remo con Barra,27.5,6,2,6,false
+1,2025-11-18,15,Piernas,Zancadas,17.5,6,3,6,false
+1,2025-11-18,16,Piernas,Sentadilla,47.5,6,3,8,false
+1,2025-11-18,22,Piernas,Peso Muerto,90,12,5,5,false
+1,2025-11-21,16,Piernas,Zancadas,17.5,6,3,8,false
+1,2025-11-21,17,Piernas,Sentadilla,47.5,6,4,6,false
+1,2025-11-21,23,Piernas,Peso Muerto,90,12,4,9,false
+1,2025-11-23,18,Empuje,Press Banca,20,6,2,6,false
+1,2025-11-23,18,Empuje,Press con Mancuernas,20,6,2,6,false
+1,2025-11-23,15,Empuje,Press Militar,15,6,2,5,false
+1,2025-11-25,19,Empuje,Press Banca,20,6,3,5,false
+1,2025-11-25,19,Empuje,Press con Mancuernas,20,6,3,6,false
+1,2025-11-25,16,Empuje,Press Militar,15,6,2,5,false
+1,2025-11-27,20,Empuje,Press Banca,20,6,3,7,false
+1,2025-11-27,20,Empuje,Press con Mancuernas,20,6,3,9,false
+1,2025-11-27,17,Empuje,Press Militar,17.5,6,2,5,false
+1,2025-11-29,27,Jalón,Jalón al Pecho,20,6,2,6,false
+1,2025-11-29,19,Jalón,Remo con Barra,27.5,6,3,4,true
+1,2025-11-29,26,Jalón,Remo con Mancuerna,20,7,3,5,false
+1,2025-12-01,18,Piernas,Prensa de Piernas,67.5,9,3,8,false
+1,2025-12-01,24,Piernas,Peso Muerto,90,12,4,7,false
+1,2025-12-01,17,Piernas,Zancadas,17.5,7,3,7,false
+1,2025-12-03,19,Piernas,Prensa de Piernas,67.5,10,3,6,false
+1,2025-12-03,25,Piernas,Peso Muerto,90,12,4,8,false
+1,2025-12-03,18,Piernas,Zancadas,20,8,3,7,false
+1,2025-12-06,20,Piernas,Prensa de Piernas,67.5,11,3,8,false
+1,2025-12-06,26,Piernas,Peso Muerto,90,12,4,7,false
+1,2025-12-06,19,Piernas,Zancadas,20,8,3,8,false
+1,2025-12-09,21,Piernas,Prensa de Piernas,70,12,3,6,false
+1,2025-12-09,27,Piernas,Peso Muerto,90,12,4,9,false
+1,2025-12-09,20,Piernas,Zancadas,20,8,3,8,false
+1,2025-12-11,15,Empuje,Fondos,0,6,2,6,false
+1,2025-12-11,18,Empuje,Press Militar,20,6,2,6,false
+1,2025-12-11,21,Empuje,Press Banca,20,6,4,5,false
+1,2025-12-13,16,Empuje,Fondos,0,6,2,6,false
+1,2025-12-13,19,Empuje,Press Militar,17.5,6,2,6,false
+1,2025-12-13,22,Empuje,Press Banca,20,6,4,8,false
+1,2025-12-16,17,Empuje,Fondos,0,6,2,7,false
+1,2025-12-16,20,Empuje,Press Militar,15,6,2,6,false
+1,2025-12-16,23,Empuje,Press Banca,20,6,4,9,false
+1,2025-12-18,18,Empuje,Fondos,0,6,3,9,false
+1,2025-12-18,21,Empuje,Press Militar,15,6,2,6,false
+1,2025-12-18,24,Empuje,Press Banca,22.5,6,4,7,false
+1,2025-12-20,20,Jalón,Remo con Barra,15,6,2,4,false
+1,2025-12-20,19,Jalón,Dominadas,5,7,3,6,false
+1,2025-12-20,28,Jalón,Jalón al Pecho,17.5,6,2,6,false
+1,2025-12-22,21,Jalón,Remo con Barra,17.5,6,2,4,false
+1,2025-12-22,20,Jalón,Dominadas,5,6,2,6,false
+1,2025-12-22,29,Jalón,Jalón al Pecho,15,6,2,6,false
+1,2025-12-25,22,Jalón,Remo con Barra,20,6,2,5,false
+1,2025-12-25,21,Jalón,Dominadas,5,6,2,6,false
+1,2025-12-25,30,Jalón,Jalón al Pecho,15,6,2,6,false
+1,2025-12-28,23,Jalón,Remo con Barra,20,6,2,5,false
+1,2025-12-28,22,Jalón,Dominadas,5,6,3,7,false
+1,2025-12-28,31,Jalón,Jalón al Pecho,15,6,2,7,false
+1,2025-12-30,22,Piernas,Prensa de Piernas,70,12,3,7,false
+1,2025-12-30,21,Piernas,Zancadas,22.5,9,4,7,false
+1,2025-12-30,9,Piernas,Extensiones de Cuádriceps,27.5,6,2,6,false
+1,2026-01-02,23,Piernas,Prensa de Piernas,70,12,3,8,false
+1,2026-01-02,22,Piernas,Zancadas,22.5,10,4,8,false
+1,2026-01-02,10,Piernas,Extensiones de Cuádriceps,25,6,2,6,false
+1,2026-01-05,22,Empuje,Press Militar,15,6,3,6,false
+1,2026-01-05,14,Empuje,Press Inclinado,25,6,2,5,false
+1,2026-01-05,19,Empuje,Fondos,0,7,4,9,false
+1,2026-01-08,23,Empuje,Press Militar,15,6,3,7,false
+1,2026-01-08,15,Empuje,Press Inclinado,27.5,6,2,5,false
+1,2026-01-08,20,Empuje,Fondos,0,7,4,9,false
+1,2026-01-10,24,Empuje,Press Militar,15,6,3,7,false
+1,2026-01-10,16,Empuje,Press Inclinado,30,6,2,5,false
+1,2026-01-10,21,Empuje,Fondos,2.5,8,4,5,false
+1,2026-01-13,24,Jalón,Remo con Barra,22.5,6,2,5,false
+1,2026-01-13,23,Jalón,Dominadas,5,6,3,8,false
+1,2026-01-13,1,Jalón,Peso Muerto Rumano,42.5,6,2,5,false
+1,2026-01-16,25,Jalón,Remo con Barra,25,6,2,6,false
+1,2026-01-16,24,Jalón,Dominadas,7.5,7,3,6,false
+1,2026-01-16,2,Jalón,Peso Muerto Rumano,47.5,7,2,5,false
+1,2026-01-18,26,Jalón,Remo con Barra,22.5,6,2,6,false
+1,2026-01-18,25,Jalón,Dominadas,7.5,7,3,9,false
+1,2026-01-18,3,Jalón,Peso Muerto Rumano,52.5,7,3,5,false
+1,2026-01-20,27,Jalón,Remo con Barra,22.5,6,2,7,false
+1,2026-01-20,26,Jalón,Dominadas,7.5,7,3,7,false
+1,2026-01-20,4,Jalón,Peso Muerto Rumano,57.5,8,3,6,false
+1,2026-01-22,18,Piernas,Sentadilla,47.5,6,4,7,false
+1,2026-01-22,23,Piernas,Zancadas,22.5,11,3,9,false
+1,2026-01-22,11,Piernas,Extensiones de Cuádriceps,25,6,3,2,true
+1,2026-01-25,19,Piernas,Sentadilla,27.5,6,2,5,false
+1,2026-01-25,24,Piernas,Zancadas,12.5,7,2,5,false
+1,2026-01-25,12,Piernas,Extensiones de Cuádriceps,15,6,2,4,false
+1,2026-01-28,20,Piernas,Sentadilla,30,6,2,5,false
+1,2026-01-28,25,Piernas,Zancadas,15,7,2,5,false
+1,2026-01-28,13,Piernas,Extensiones de Cuádriceps,15,6,2,4,false
+1,2026-01-30,21,Piernas,Sentadilla,32.5,6,3,5,false
+1,2026-01-30,26,Piernas,Zancadas,15,8,2,5,false
+1,2026-01-30,14,Piernas,Extensiones de Cuádriceps,17.5,6,2,5,false
+1,2026-02-01,25,Empuje,Press Banca,22.5,6,3,3,true
+1,2026-02-01,17,Empuje,Press Inclinado,35,6,2,6,false
+1,2026-02-01,25,Empuje,Press Militar,7.5,6,2,5,false
+1,2026-02-04,27,Jalón,Dominadas,10,8,3,5,false
+1,2026-02-04,32,Jalón,Jalón al Pecho,15,6,3,7,false
+1,2026-02-04,28,Jalón,Remo con Barra,22.5,6,3,5,false
+1,2026-02-07,28,Jalón,Dominadas,10,9,3,6,false
+1,2026-02-07,33,Jalón,Jalón al Pecho,15,6,3,7,false
+1,2026-02-07,29,Jalón,Remo con Barra,22.5,6,3,7,false
+1,2026-02-09,29,Jalón,Dominadas,10,9,4,5,false
+1,2026-02-09,34,Jalón,Jalón al Pecho,15,6,3,9,false
+1,2026-02-09,30,Jalón,Remo con Barra,22.5,6,3,9,false
+1,2026-02-12,28,Piernas,Peso Muerto,50,7,2,5,false
+1,2026-02-12,22,Piernas,Sentadilla,35,6,3,6,false
+1,2026-02-12,24,Piernas,Prensa de Piernas,40,7,2,5,false
+1,2026-02-14,29,Piernas,Peso Muerto,57.5,8,2,5,false
+1,2026-02-14,23,Piernas,Sentadilla,27.5,6,2,6,false
+1,2026-02-14,25,Piernas,Prensa de Piernas,45,8,2,5,false
+1,2026-02-16,30,Piernas,Peso Muerto,62.5,9,3,5,false
+1,2026-02-16,24,Piernas,Sentadilla,25,6,2,6,false
+1,2026-02-16,26,Piernas,Prensa de Piernas,47.5,9,2,5,false
+1,2026-02-19,31,Piernas,Peso Muerto,67.5,9,3,6,false
+1,2026-02-19,25,Piernas,Sentadilla,25,6,3,7,false
+1,2026-02-19,27,Piernas,Prensa de Piernas,52.5,9,2,6,false
+1,2026-02-21,22,Empuje,Fondos,0,6,2,5,false
+1,2026-02-21,26,Empuje,Press Militar,10,6,2,5,false
+1,2026-02-21,26,Empuje,Press Banca,12.5,6,2,4,false
+1,2026-02-24,23,Empuje,Fondos,0,6,2,5,false
+1,2026-02-24,27,Empuje,Press Militar,10,6,2,5,false
+1,2026-02-24,27,Empuje,Press Banca,15,6,2,4,false
+1,2026-02-27,24,Empuje,Fondos,0,6,3,5,false
+1,2026-02-27,28,Empuje,Press Militar,12.5,6,2,6,false
+1,2026-02-27,28,Empuje,Press Banca,15,6,3,5,false
+1,2026-03-01,27,Jalón,Remo con Mancuerna,20,7,3,5,false
+1,2026-03-01,30,Jalón,Dominadas,10,8,4,7,false
+1,2026-03-01,5,Jalón,Peso Muerto Rumano,47.5,6,2,6,false
+1,2026-03-04,28,Jalón,Remo con Mancuerna,22.5,8,3,6,false
+1,2026-03-04,31,Jalón,Dominadas,10,8,4,4,true
+1,2026-03-04,6,Jalón,Peso Muerto Rumano,42.5,6,2,6,false
+1,2026-03-06,29,Jalón,Remo con Mancuerna,12.5,6,2,5,false
+1,2026-03-06,32,Jalón,Dominadas,5,6,2,4,false
+1,2026-03-06,7,Jalón,Peso Muerto Rumano,42.5,6,3,7,false
+1,2026-03-09,32,Piernas,Peso Muerto,55,7,2,6,false
+1,2026-03-09,27,Piernas,Zancadas,17.5,8,2,6,false
+1,2026-03-09,15,Piernas,Extensiones de Cuádriceps,20,6,2,5,false
+1,2026-03-11,33,Piernas,Peso Muerto,47.5,6,2,6,false
+1,2026-03-11,28,Piernas,Zancadas,15,6,2,6,false
+1,2026-03-11,16,Piernas,Extensiones de Cuádriceps,20,6,2,5,false
+1,2026-03-14,34,Piernas,Peso Muerto,47.5,6,3,6,false
+1,2026-03-14,29,Piernas,Zancadas,12.5,6,2,6,false
+1,2026-03-14,17,Piernas,Extensiones de Cuádriceps,22.5,6,2,6,false
+1,2026-03-17,35,Piernas,Peso Muerto,47.5,6,3,8,false
+1,2026-03-17,30,Piernas,Zancadas,12.5,6,3,7,false
+1,2026-03-17,18,Piernas,Extensiones de Cuádriceps,22.5,6,3,5,false
+1,2026-03-19,29,Empuje,Press Militar,10,6,2,6,false
+1,2026-03-19,25,Empuje,Fondos,0,6,3,6,false
+1,2026-03-19,29,Empuje,Press Banca,17.5,6,3,5,false
+1,2026-03-22,30,Empuje,Press Militar,10,6,2,6,false
+1,2026-03-22,26,Empuje,Fondos,0,6,2,6,false
+1,2026-03-22,30,Empuje,Press Banca,17.5,6,3,5,false
+1,2026-03-24,31,Empuje,Press Militar,10,6,2,6,false
+1,2026-03-24,27,Empuje,Fondos,0,6,2,6,false
+1,2026-03-24,31,Empuje,Press Banca,20,6,3,6,false
+1,2026-03-26,32,Empuje,Press Militar,10,6,3,6,false
+1,2026-03-26,28,Empuje,Fondos,0,6,3,8,false
+1,2026-03-26,32,Empuje,Press Banca,20,6,3,7,false
+1,2026-03-29,35,Jalón,Jalón al Pecho,7.5,6,2,5,false
+1,2026-03-29,31,Jalón,Remo con Barra,12.5,6,2,5,false
+1,2026-03-29,33,Jalón,Dominadas,7.5,6,2,4,false
+1,2026-04-01,36,Jalón,Jalón al Pecho,10,6,2,5,false
+1,2026-04-01,32,Jalón,Remo con Barra,15,6,2,5,false
+1,2026-04-01,34,Jalón,Dominadas,7.5,6,3,5,false
+1,2026-04-04,37,Jalón,Jalón al Pecho,10,6,2,5,false
+1,2026-04-04,33,Jalón,Remo con Barra,15,6,2,5,false
+1,2026-04-04,35,Jalón,Dominadas,7.5,6,3,5,false
+1,2026-04-06,38,Jalón,Jalón al Pecho,12.5,6,2,6,false
+1,2026-04-06,34,Jalón,Remo con Barra,17.5,6,2,6,false
+1,2026-04-06,36,Jalón,Dominadas,7.5,6,3,5,false
+1,2026-04-08,36,Piernas,Peso Muerto,47.5,6,3,7,false
+1,2026-04-08,28,Piernas,Prensa de Piernas,42.5,7,2,6,false
+1,2026-04-08,31,Piernas,Zancadas,12.5,6,3,9,false
+1,2026-04-11,37,Piernas,Peso Muerto,47.5,7,3,5,false
+1,2026-04-11,29,Piernas,Prensa de Piernas,37.5,6,2,6,false
+1,2026-04-11,32,Piernas,Zancadas,12.5,6,3,7,false
+1,2026-04-13,38,Piernas,Peso Muerto,47.5,7,3,7,false
+1,2026-04-13,30,Piernas,Prensa de Piernas,37.5,6,3,3,true
+1,2026-04-13,33,Piernas,Zancadas,7.5,6,2,5,false
+1,2026-04-16,33,Empuje,Press Banca,20,6,4,7,false
+1,2026-04-16,33,Empuje,Press Militar,10,6,3,8,false
+1,2026-04-16,18,Empuje,Press Inclinado,27.5,6,2,6,false
+1,2026-04-18,34,Empuje,Press Banca,20,6,4,9,false
+1,2026-04-18,34,Empuje,Press Militar,10,6,3,7,false
+1,2026-04-18,19,Empuje,Press Inclinado,25,6,2,6,false
+1,2026-04-20,35,Empuje,Press Banca,20,7,4,6,false
+1,2026-04-20,35,Empuje,Press Militar,10,7,3,6,false
+1,2026-04-20,20,Empuje,Press Inclinado,25,6,3,5,false
+1,2026-04-22,36,Empuje,Press Banca,22.5,7,4,6,false
+1,2026-04-22,36,Empuje,Press Militar,10,8,4,7,false
+1,2026-04-22,21,Empuje,Press Inclinado,25,6,3,9,false
+1,2026-04-24,35,Jalón,Remo con Barra,15,6,2,6,false
+1,2026-04-24,37,Jalón,Dominadas,10,7,3,6,false
+1,2026-04-24,8,Jalón,Peso Muerto Rumano,42.5,6,4,6,false
+1,2026-04-27,36,Jalón,Remo con Barra,12.5,6,2,6,false
+1,2026-04-27,38,Jalón,Dominadas,10,6,3,9,false
+1,2026-04-27,9,Jalón,Peso Muerto Rumano,42.5,6,4,7,false
+1,2026-04-30,37,Jalón,Remo con Barra,12.5,6,3,7,false
+1,2026-04-30,39,Jalón,Dominadas,10,6,3,8,false
+1,2026-04-30,10,Jalón,Peso Muerto Rumano,42.5,6,5,2,true
+1,2026-05-02,26,Piernas,Sentadilla,15,6,2,5,false
+1,2026-05-02,34,Piernas,Zancadas,7.5,6,2,5,false
+1,2026-05-02,19,Piernas,Extensiones de Cuádriceps,12.5,6,2,5,false
+1,2026-05-05,27,Piernas,Sentadilla,15,6,2,5,false
+1,2026-05-05,35,Piernas,Zancadas,7.5,6,2,5,false
+1,2026-05-05,20,Piernas,Extensiones de Cuádriceps,15,6,2,5,false
+1,2026-05-07,28,Piernas,Sentadilla,17.5,6,2,5,false
+1,2026-05-07,36,Piernas,Zancadas,10,6,2,6,false
+1,2026-05-07,21,Piernas,Extensiones de Cuádriceps,15,6,2,5,false
+1,2026-05-09,37,Empuje,Press Banca,22.5,8,4,8,false
+1,2026-05-09,37,Empuje,Press Militar,10,8,4,8,false
+1,2026-05-09,21,Empuje,Press con Mancuernas,12.5,6,2,5,false
+1,2026-05-12,38,Empuje,Press Banca,22.5,8,5,7,false
+1,2026-05-12,38,Empuje,Press Militar,10,9,4,8,false
+1,2026-05-12,22,Empuje,Press con Mancuernas,12.5,6,2,5,false
+1,2026-05-14,39,Empuje,Press Banca,25,9,5,6,false
+1,2026-05-14,39,Empuje,Press Militar,12.5,9,5,6,false
+1,2026-05-14,23,Empuje,Press con Mancuernas,15,6,2,5,false
+1,2026-05-16,40,Jalón,Dominadas,5,6,2,5,false
+1,2026-05-16,38,Jalón,Remo con Barra,7.5,6,2,5,false
+1,2026-05-16,39,Jalón,Jalón al Pecho,10,6,2,6,false
+1,2026-05-18,41,Jalón,Dominadas,7.5,6,2,5,false
+1,2026-05-18,39,Jalón,Remo con Barra,7.5,6,2,5,false
+1,2026-05-18,40,Jalón,Jalón al Pecho,10,6,2,6,false
+1,2026-05-21,42,Jalón,Dominadas,7.5,6,2,5,false
+1,2026-05-21,40,Jalón,Remo con Barra,7.5,6,2,5,false
+1,2026-05-21,41,Jalón,Jalón al Pecho,10,6,2,6,false
+1,2026-05-24,22,Piernas,Extensiones de Cuádriceps,17.5,6,2,6,false
+1,2026-05-24,29,Piernas,Sentadilla,20,6,2,6,false
+1,2026-05-24,39,Piernas,Peso Muerto,27.5,6,2,5,false
+1,2026-05-27,22,Empuje,Press Inclinado,25,6,3,8,false
+1,2026-05-27,29,Empuje,Fondos,0,6,3,7,false
+1,2026-05-27,40,Empuje,Press Banca,25,9,5,7,false
+1,2026-05-29,23,Empuje,Press Inclinado,25,6,3,9,false
+1,2026-05-29,30,Empuje,Fondos,0,7,3,8,false
+1,2026-05-29,41,Empuje,Press Banca,25,9,5,7,false
+1,2026-05-31,24,Empuje,Press Inclinado,25,7,3,7,false
+1,2026-05-31,31,Empuje,Fondos,0,8,3,7,false
+1,2026-05-31,42,Empuje,Press Banca,25,9,4,7,false
+1,2026-06-02,41,Jalón,Remo con Barra,10,6,2,6,false
+1,2026-06-02,43,Jalón,Dominadas,7.5,6,2,6,false
+1,2026-06-02,11,Jalón,Peso Muerto Rumano,25,6,2,4,false
+1,2026-06-05,42,Jalón,Remo con Barra,7.5,6,2,6,false
+1,2026-06-05,44,Jalón,Dominadas,5,6,2,6,false
+1,2026-06-05,12,Jalón,Peso Muerto Rumano,27.5,6,2,4,false
+1,2026-06-07,43,Jalón,Remo con Barra,7.5,6,2,6,false
+1,2026-06-07,45,Jalón,Dominadas,5,6,2,6,false
+1,2026-06-07,13,Jalón,Peso Muerto Rumano,30,6,3,5,false
+1,2026-06-10,44,Jalón,Remo con Barra,7.5,6,3,5,false
+1,2026-06-10,46,Jalón,Dominadas,5,6,3,7,false
+1,2026-06-10,14,Jalón,Peso Muerto Rumano,32.5,6,3,5,false
+1,2026-06-13,30,Piernas,Sentadilla,17.5,6,2,6,false
+1,2026-06-13,40,Piernas,Peso Muerto,30,6,2,5,false
+1,2026-06-13,37,Piernas,Zancadas,7.5,6,2,6,false
+1,2026-06-16,31,Piernas,Sentadilla,15,6,2,6,false
+1,2026-06-16,41,Piernas,Peso Muerto,32.5,6,2,5,false
+1,2026-06-16,38,Piernas,Zancadas,7.5,6,2,6,false
+1,2026-06-19,32,Piernas,Sentadilla,15,6,2,6,false
+1,2026-06-19,42,Piernas,Peso Muerto,35,6,2,6,false
+1,2026-06-19,39,Piernas,Zancadas,7.5,6,3,6,false
+1,2026-06-22,33,Piernas,Sentadilla,15,6,2,7,false
+1,2026-06-22,43,Piernas,Peso Muerto,27.5,6,2,6,false
+1,2026-06-22,40,Piernas,Zancadas,7.5,6,3,8,false
+1,2026-06-25,40,Empuje,Press Militar,12.5,9,5,9,false
+1,2026-06-25,32,Empuje,Fondos,0,9,4,9,false
+1,2026-06-25,24,Empuje,Press con Mancuernas,15,6,2,6,false
+1,2026-06-27,41,Empuje,Press Militar,12.5,10,4,9,false
+1,2026-06-27,33,Empuje,Fondos,0,9,4,8,false
+1,2026-06-27,25,Empuje,Press con Mancuernas,12.5,6,2,6,false
+1,2026-06-30,42,Empuje,Press Militar,12.5,10,4,7,false
+1,2026-06-30,34,Empuje,Fondos,0,9,5,7,false
+1,2026-06-30,26,Empuje,Press con Mancuernas,10,6,2,6,false
+1,2026-07-02,15,Jalón,Peso Muerto Rumano,35,6,3,5,false
+1,2026-07-02,47,Jalón,Dominadas,5,6,3,8,false
+1,2026-07-02,30,Jalón,Remo con Mancuerna,15,6,2,5,false
+1,2026-07-05,16,Jalón,Peso Muerto Rumano,37.5,6,3,6,false
+1,2026-07-05,48,Jalón,Dominadas,7.5,7,3,6,false
+1,2026-07-05,31,Jalón,Remo con Mancuerna,15,6,2,5,false
+1,2026-07-08,17,Jalón,Peso Muerto Rumano,37.5,6,3,9,false
+1,2026-07-08,49,Jalón,Dominadas,7.5,7,3,9,false
+1,2026-07-08,32,Jalón,Remo con Mancuerna,17.5,6,2,6,false
+1,2026-07-11,18,Jalón,Peso Muerto Rumano,37.5,6,3,9,false
+1,2026-07-11,50,Jalón,Dominadas,7.5,7,3,8,false
+1,2026-07-11,33,Jalón,Remo con Mancuerna,15,6,2,6,false
+1,2026-07-13,44,Piernas,Peso Muerto,25,6,2,6,false
+1,2026-07-13,34,Piernas,Sentadilla,15,6,3,6,false
+1,2026-07-13,41,Piernas,Zancadas,7.5,6,3,7,false
+1,2026-07-15,45,Piernas,Peso Muerto,22.5,6,2,6,false
+1,2026-07-15,35,Piernas,Sentadilla,15,6,3,7,false
+1,2026-07-15,42,Piernas,Zancadas,10,7,3,7,false
+1,2026-07-17,46,Piernas,Peso Muerto,22.5,6,3,4,true
+1,2026-07-17,36,Piernas,Sentadilla,7.5,6,2,5,false
+1,2026-07-17,43,Piernas,Zancadas,5,6,2,5,false
+1,2026-07-19,43,Empuje,Press Banca,25,9,3,8,false
+1,2026-07-19,27,Empuje,Press con Mancuernas,10,6,3,5,false
+1,2026-07-19,35,Empuje,Fondos,0,9,5,9,false
+1,2026-07-21,44,Empuje,Press Banca,25,10,3,6,false
+1,2026-07-21,28,Empuje,Press con Mancuernas,10,6,3,7,false
+1,2026-07-21,36,Empuje,Fondos,2.5,10,5,7,false
+1,2026-07-24,45,Empuje,Press Banca,25,11,3,6,false
+1,2026-07-24,29,Empuje,Press con Mancuernas,10,6,3,9,false
+1,2026-07-24,37,Empuje,Fondos,2.5,10,5,8,false
+1,2026-07-26,34,Jalón,Remo con Mancuerna,12.5,6,2,6,false
+1,2026-07-26,51,Jalón,Dominadas,7.5,7,3,8,false
+1,2026-07-26,42,Jalón,Jalón al Pecho,10,6,3,6,false
+1,2026-07-29,35,Jalón,Remo con Mancuerna,12.5,6,3,7,false
+1,2026-07-29,52,Jalón,Dominadas,7.5,8,4,5,false
+1,2026-07-29,43,Jalón,Jalón al Pecho,10,6,3,9,false
+1,2026-07-31,36,Jalón,Remo con Mancuerna,12.5,6,3,8,false
+1,2026-07-31,53,Jalón,Dominadas,7.5,8,5,7,false
+1,2026-07-31,44,Jalón,Jalón al Pecho,10,6,3,7,false
+1,2026-08-02,37,Jalón,Remo con Mancuerna,12.5,7,3,7,false
+1,2026-08-02,54,Jalón,Dominadas,7.5,8,5,8,false
+1,2026-08-02,45,Jalón,Jalón al Pecho,12.5,6,3,6,false
+1,2026-08-04,37,Piernas,Sentadilla,10,6,2,5,false
+1,2026-08-04,44,Piernas,Zancadas,7.5,6,2,5,false
+1,2026-08-04,47,Piernas,Peso Muerto,12.5,6,2,4,false
+1,2026-08-06,38,Piernas,Sentadilla,10,6,2,5,false
+1,2026-08-06,45,Piernas,Zancadas,7.5,6,2,5,false
+1,2026-08-06,48,Piernas,Peso Muerto,15,6,2,4,false
+1,2026-08-09,39,Piernas,Sentadilla,12.5,6,2,6,false
+1,2026-08-09,46,Piernas,Zancadas,7.5,6,2,6,false
+1,2026-08-09,49,Piernas,Peso Muerto,15,6,2,5,false
+1,2026-08-12,43,Empuje,Press Militar,12.5,11,4,8,false
+1,2026-08-12,38,Empuje,Fondos,2.5,11,5,8,false
+1,2026-08-12,25,Empuje,Press Inclinado,25,7,3,8,false
+1,2026-08-14,44,Empuje,Press Militar,12.5,11,4,7,false
+1,2026-08-14,39,Empuje,Fondos,2.5,12,5,6,false
+1,2026-08-14,26,Empuje,Press Inclinado,25,8,3,6,false
+1,2026-08-16,45,Empuje,Press Militar,15,11,3,7,false
+1,2026-08-16,40,Empuje,Fondos,2.5,12,5,8,false
+1,2026-08-16,27,Empuje,Press Inclinado,25,8,3,8,false
+1,2026-08-18,38,Jalón,Remo con Mancuerna,12.5,7,3,7,false
+1,2026-08-18,19,Jalón,Peso Muerto Rumano,37.5,6,3,9,false
+1,2026-08-18,46,Jalón,Jalón al Pecho,12.5,6,3,7,false
+1,2026-08-21,39,Jalón,Remo con Mancuerna,12.5,8,3,8,false
+1,2026-08-21,20,Jalón,Peso Muerto Rumano,37.5,6,3,7,false
+1,2026-08-21,47,Jalón,Jalón al Pecho,12.5,6,3,7,false
+1,2026-08-24,40,Jalón,Remo con Mancuerna,12.5,9,3,7,false
+1,2026-08-24,21,Jalón,Peso Muerto Rumano,37.5,6,3,8,false
+1,2026-08-24,48,Jalón,Jalón al Pecho,12.5,6,4,6,false
+1,2026-08-26,41,Jalón,Remo con Mancuerna,12.5,9,3,8,false
+1,2026-08-26,22,Jalón,Peso Muerto Rumano,37.5,7,3,5,false
+1,2026-08-26,49,Jalón,Jalón al Pecho,12.5,6,4,8,false
+2,2025-04-29,1,Empuje,Press con Mancuernas,37.5,9,4,8,false
+2,2025-04-29,1,Empuje,Press Inclinado,55,10,4,7,false
+2,2025-04-29,1,Empuje,Press Militar,42.5,9,3,8,false
+2,2025-05-01,2,Empuje,Press con Mancuernas,37.5,9,4,8,false
+2,2025-05-01,2,Empuje,Press Inclinado,55,10,4,8,false
+2,2025-05-01,2,Empuje,Press Militar,42.5,10,3,7,false
+2,2025-05-04,3,Empuje,Press con Mancuernas,37.5,10,4,8,false
+2,2025-05-04,3,Empuje,Press Inclinado,57.5,10,4,7,false
+2,2025-05-04,3,Empuje,Press Militar,45,10,3,7,false
+2,2025-05-07,4,Empuje,Press con Mancuernas,37.5,10,4,9,false
+2,2025-05-07,4,Empuje,Press Inclinado,57.5,11,3,7,false
+2,2025-05-07,4,Empuje,Press Militar,45,10,3,8,false
+2,2025-05-10,1,Jalón,Peso Muerto Rumano,75,8,4,6,false
+2,2025-05-10,1,Jalón,Remo con Barra,55,8,4,7,false
+2,2025-05-10,1,Jalón,Remo con Mancuerna,22.5,9,3,8,false
+2,2025-05-13,2,Jalón,Peso Muerto Rumano,75,8,4,9,false
+2,2025-05-13,2,Jalón,Remo con Barra,55,8,4,9,false
+2,2025-05-13,2,Jalón,Remo con Mancuerna,22.5,10,3,8,false
+2,2025-05-15,3,Jalón,Peso Muerto Rumano,77.5,9,5,6,false
+2,2025-05-15,3,Jalón,Remo con Barra,55,9,4,8,false
+2,2025-05-15,3,Jalón,Remo con Mancuerna,25,10,4,7,false
+2,2025-05-17,1,Piernas,Peso Muerto,97.5,9,4,7,false
+2,2025-05-17,1,Piernas,Sentadilla,87.5,8,3,8,false
+2,2025-05-17,1,Piernas,Prensa de Piernas,130,10,4,6,false
+2,2025-05-20,2,Piernas,Peso Muerto,97.5,9,4,7,false
+2,2025-05-20,2,Piernas,Sentadilla,87.5,8,3,9,false
+2,2025-05-20,2,Piernas,Prensa de Piernas,130,10,4,8,false
+2,2025-05-22,3,Piernas,Peso Muerto,100,10,4,6,false
+2,2025-05-22,3,Piernas,Sentadilla,87.5,9,3,6,false
+2,2025-05-22,3,Piernas,Prensa de Piernas,132.5,10,4,9,false
+2,2025-05-25,4,Piernas,Peso Muerto,100,10,4,8,false
+2,2025-05-25,4,Piernas,Sentadilla,87.5,9,3,8,false
+2,2025-05-25,4,Piernas,Prensa de Piernas,132.5,11,4,8,false
+2,2025-05-27,1,Empuje,Press Banca,65,9,3,8,false
+2,2025-05-27,1,Empuje,Fondos,0,9,4,6,false
+2,2025-05-27,5,Empuje,Press con Mancuernas,37.5,11,5,7,false
+2,2025-05-29,2,Empuje,Press Banca,65,9,3,7,false
+2,2025-05-29,2,Empuje,Fondos,0,9,4,9,false
+2,2025-05-29,6,Empuje,Press con Mancuernas,37.5,11,5,8,false
+2,2025-06-01,3,Empuje,Press Banca,67.5,9,3,7,false
+2,2025-06-01,3,Empuje,Fondos,2.5,10,5,6,false
+2,2025-06-01,7,Empuje,Press con Mancuernas,37.5,12,5,6,false
+2,2025-06-04,4,Empuje,Press Banca,67.5,9,3,7,false
+2,2025-06-04,4,Empuje,Fondos,2.5,11,5,8,false
+2,2025-06-04,8,Empuje,Press con Mancuernas,37.5,12,5,7,false
+2,2025-06-06,4,Jalón,Remo con Barra,55,10,3,9,false
+2,2025-06-06,4,Jalón,Peso Muerto Rumano,77.5,10,5,8,false
+2,2025-06-06,1,Jalón,Jalón al Pecho,50,9,4,6,false
+2,2025-06-08,5,Jalón,Remo con Barra,55,10,3,7,false
+2,2025-06-08,5,Jalón,Peso Muerto Rumano,77.5,10,5,8,false
+2,2025-06-08,2,Jalón,Jalón al Pecho,50,9,4,7,false
+2,2025-06-10,6,Jalón,Remo con Barra,57.5,10,3,9,false
+2,2025-06-10,6,Jalón,Peso Muerto Rumano,77.5,11,5,7,false
+2,2025-06-10,3,Jalón,Jalón al Pecho,50,9,4,9,false
+2,2025-06-12,1,Piernas,Extensiones de Cuádriceps,42.5,8,4,7,false
+2,2025-06-12,5,Piernas,Sentadilla,87.5,9,3,7,false
+2,2025-06-12,5,Piernas,Prensa de Piernas,132.5,11,4,7,false
+2,2025-06-15,2,Piernas,Extensiones de Cuádriceps,42.5,8,4,9,false
+2,2025-06-15,6,Piernas,Sentadilla,90,10,3,7,false
+2,2025-06-15,6,Piernas,Prensa de Piernas,135,11,4,7,false
+2,2025-06-18,3,Piernas,Extensiones de Cuádriceps,42.5,9,4,6,false
+2,2025-06-18,7,Piernas,Sentadilla,90,11,3,8,false
+2,2025-06-18,7,Piernas,Prensa de Piernas,135,12,4,8,false
+2,2025-06-21,5,Empuje,Press Militar,45,10,3,8,false
+2,2025-06-21,5,Empuje,Press Banca,67.5,9,3,9,false
+2,2025-06-21,5,Empuje,Press Inclinado,57.5,11,3,9,false
+2,2025-06-24,6,Empuje,Press Militar,47.5,10,3,8,false
+2,2025-06-24,6,Empuje,Press Banca,70,10,3,5,false
+2,2025-06-24,6,Empuje,Press Inclinado,60,11,3,7,false
+2,2025-06-27,7,Empuje,Press Militar,47.5,10,3,8,false
+2,2025-06-27,7,Empuje,Press Banca,70,10,4,6,false
+2,2025-06-27,7,Empuje,Press Inclinado,60,12,3,8,false
+2,2025-06-29,7,Jalón,Remo con Barra,57.5,11,3,6,false
+2,2025-06-29,4,Jalón,Remo con Mancuerna,25,10,4,9,false
+2,2025-06-29,1,Jalón,Dominadas,0,8,3,6,false
+2,2025-07-02,1,Piernas,Zancadas,22.5,9,4,6,false
+2,2025-07-02,8,Piernas,Prensa de Piernas,135,12,4,7,false
+2,2025-07-02,8,Piernas,Sentadilla,90,12,3,8,false
+2,2025-07-05,2,Piernas,Zancadas,22.5,9,4,7,false
+2,2025-07-05,9,Piernas,Prensa de Piernas,135,12,4,7,false
+2,2025-07-05,9,Piernas,Sentadilla,92.5,12,3,8,false
+2,2025-07-07,3,Piernas,Zancadas,22.5,9,4,9,false
+2,2025-07-07,10,Piernas,Prensa de Piernas,135,12,5,7,false
+2,2025-07-07,10,Piernas,Sentadilla,92.5,12,3,9,false
+2,2025-07-10,8,Empuje,Press Militar,47.5,10,3,9,false
+2,2025-07-10,9,Empuje,Press con Mancuernas,40,12,5,8,false
+2,2025-07-10,8,Empuje,Press Inclinado,60,12,3,9,false
+2,2025-07-13,9,Empuje,Press Militar,50,10,3,7,false
+2,2025-07-13,10,Empuje,Press con Mancuernas,40,12,5,7,false
+2,2025-07-13,9,Empuje,Press Inclinado,62.5,12,3,9,false
+2,2025-07-16,10,Empuje,Press Militar,50,10,3,8,false
+2,2025-07-16,11,Empuje,Press con Mancuernas,40,12,5,9,false
+2,2025-07-16,10,Empuje,Press Inclinado,62.5,12,4,2,true
+2,2025-07-19,11,Empuje,Press Militar,27.5,6,2,5,false
+2,2025-07-19,12,Empuje,Press con Mancuernas,22.5,7,3,5,false
+2,2025-07-19,11,Empuje,Press Inclinado,35,7,2,4,false
+2,2025-07-21,8,Jalón,Remo con Barra,57.5,12,3,8,false
+2,2025-07-21,4,Jalón,Jalón al Pecho,50,9,5,6,false
+2,2025-07-21,5,Jalón,Remo con Mancuerna,25,11,4,7,false
+2,2025-07-23,9,Jalón,Remo con Barra,57.5,12,3,9,false
+2,2025-07-23,5,Jalón,Jalón al Pecho,50,10,5,6,false
+2,2025-07-23,6,Jalón,Remo con Mancuerna,25,12,4,7,false
+2,2025-07-26,10,Jalón,Remo con Barra,57.5,12,3,7,false
+2,2025-07-26,6,Jalón,Jalón al Pecho,52.5,11,5,5,false
+2,2025-07-26,7,Jalón,Remo con Mancuerna,25,12,4,7,false
+2,2025-07-28,4,Piernas,Zancadas,22.5,10,5,6,false
+2,2025-07-28,11,Piernas,Sentadilla,92.5,12,3,9,false
+2,2025-07-28,4,Piernas,Extensiones de Cuádriceps,42.5,9,4,8,false
+2,2025-07-31,5,Piernas,Zancadas,22.5,11,5,7,false
+2,2025-07-31,12,Piernas,Sentadilla,95,12,3,8,false
+2,2025-07-31,5,Piernas,Extensiones de Cuádriceps,42.5,9,4,8,false
+2,2025-08-03,6,Piernas,Zancadas,22.5,11,5,7,false
+2,2025-08-03,13,Piernas,Sentadilla,95,12,3,7,false
+2,2025-08-03,6,Piernas,Extensiones de Cuádriceps,45,9,4,6,false
+2,2025-08-06,7,Piernas,Zancadas,22.5,11,4,7,false
+2,2025-08-06,14,Piernas,Sentadilla,95,12,4,7,false
+2,2025-08-06,7,Piernas,Extensiones de Cuádriceps,45,9,4,9,false
+2,2025-08-08,12,Empuje,Press Militar,32.5,7,2,5,false
+2,2025-08-08,13,Empuje,Press con Mancuernas,25,8,3,5,false
+2,2025-08-08,8,Empuje,Press Banca,40,6,2,5,false
+2,2025-08-10,13,Empuje,Press Militar,35,7,2,5,false
+2,2025-08-10,14,Empuje,Press con Mancuernas,27.5,9,3,5,false
+2,2025-08-10,9,Empuje,Press Banca,45,7,2,5,false
+2,2025-08-13,14,Empuje,Press Militar,37.5,8,2,6,false
+2,2025-08-13,15,Empuje,Press con Mancuernas,30,9,4,6,false
+2,2025-08-13,10,Empuje,Press Banca,47.5,7,3,5,false
+2,2025-08-15,15,Empuje,Press Militar,30,6,2,6,false
+2,2025-08-15,16,Empuje,Press con Mancuernas,25,7,3,6,false
+2,2025-08-15,11,Empuje,Press Banca,52.5,8,3,6,false
+2,2025-08-17,2,Jalón,Dominadas,0,8,4,8,false
+2,2025-08-17,11,Jalón,Remo con Barra,57.5,12,4,5,false
+2,2025-08-17,7,Jalón,Jalón al Pecho,52.5,10,5,8,false
+2,2025-08-19,3,Jalón,Dominadas,0,9,4,9,false
+2,2025-08-19,12,Jalón,Remo con Barra,60,12,4,7,false
+2,2025-08-19,8,Jalón,Jalón al Pecho,52.5,10,5,9,false
+2,2025-08-22,4,Jalón,Dominadas,0,9,3,7,false
+2,2025-08-22,13,Jalón,Remo con Barra,60,12,4,7,false
+2,2025-08-22,9,Jalón,Jalón al Pecho,55,10,5,9,false
+2,2025-08-25,8,Piernas,Zancadas,22.5,12,5,7,false
+2,2025-08-25,5,Piernas,Peso Muerto,100,11,4,6,false
+2,2025-08-25,8,Piernas,Extensiones de Cuádriceps,45,9,3,9,false
+2,2025-08-28,9,Piernas,Zancadas,25,12,5,6,false
+2,2025-08-28,6,Piernas,Peso Muerto,100,11,4,7,false
+2,2025-08-28,9,Piernas,Extensiones de Cuádriceps,47.5,10,3,5,false
+2,2025-08-30,10,Piernas,Zancadas,25,12,5,8,false
+2,2025-08-30,7,Piernas,Peso Muerto,100,12,4,7,false
+2,2025-08-30,10,Piernas,Extensiones de Cuádriceps,47.5,10,3,9,false
+2,2025-09-01,12,Empuje,Press Banca,42.5,6,2,6,false
+2,2025-09-01,5,Empuje,Fondos,2.5,7,3,5,false
+2,2025-09-01,16,Empuje,Press Militar,27.5,6,2,6,false
+2,2025-09-03,13,Empuje,Press Banca,37.5,6,2,6,false
+2,2025-09-03,6,Empuje,Fondos,2.5,7,3,5,false
+2,2025-09-03,17,Empuje,Press Militar,27.5,6,3,7,false
+2,2025-09-05,14,Empuje,Press Banca,37.5,6,3,7,false
+2,2025-09-05,7,Empuje,Fondos,2.5,8,3,5,false
+2,2025-09-05,18,Empuje,Press Militar,27.5,6,3,7,false
+2,2025-09-08,10,Jalón,Jalón al Pecho,55,10,5,7,false
+2,2025-09-08,8,Jalón,Remo con Mancuerna,25,12,4,9,false
+2,2025-09-08,7,Jalón,Peso Muerto Rumano,77.5,12,5,7,false
+2,2025-09-10,11,Jalón,Jalón al Pecho,55,11,5,8,false
+2,2025-09-10,9,Jalón,Remo con Mancuerna,25,12,4,9,false
+2,2025-09-10,8,Jalón,Peso Muerto Rumano,77.5,12,4,9,false
+2,2025-09-12,12,Jalón,Jalón al Pecho,55,12,5,6,false
+2,2025-09-12,10,Jalón,Remo con Mancuerna,25,12,4,9,false
+2,2025-09-12,9,Jalón,Peso Muerto Rumano,77.5,12,5,6,false
+2,2025-09-14,13,Jalón,Jalón al Pecho,55,12,5,9,false
+2,2025-09-14,11,Jalón,Remo con Mancuerna,25,12,4,8,false
+2,2025-09-14,10,Jalón,Peso Muerto Rumano,77.5,12,5,7,false
+2,2025-09-16,8,Piernas,Peso Muerto,100,12,4,8,false
+2,2025-09-16,11,Piernas,Extensiones de Cuádriceps,47.5,10,3,8,false
+2,2025-09-16,15,Piernas,Sentadilla,97.5,12,4,7,false
+2,2025-09-19,9,Piernas,Peso Muerto,102.5,12,4,8,false
+2,2025-09-19,12,Piernas,Extensiones de Cuádriceps,50,10,3,6,false
+2,2025-09-19,16,Piernas,Sentadilla,97.5,12,4,9,false
+2,2025-09-22,10,Piernas,Peso Muerto,102.5,12,4,7,false
+2,2025-09-22,13,Piernas,Extensiones de Cuádriceps,50,10,3,8,false
+2,2025-09-22,17,Piernas,Sentadilla,97.5,12,4,9,false
+2,2025-09-24,8,Empuje,Fondos,2.5,8,4,6,false
+2,2025-09-24,19,Empuje,Press Militar,27.5,6,3,9,false
+2,2025-09-24,15,Empuje,Press Banca,37.5,6,3,9,false
+2,2025-09-27,9,Empuje,Fondos,2.5,6,3,6,false
+2,2025-09-27,20,Empuje,Press Militar,27.5,7,3,7,false
+2,2025-09-27,16,Empuje,Press Banca,37.5,7,3,7,false
+2,2025-09-30,10,Empuje,Fondos,2.5,6,2,6,false
+2,2025-09-30,21,Empuje,Press Militar,30,7,3,6,false
+2,2025-09-30,17,Empuje,Press Banca,37.5,8,3,7,false
+2,2025-10-03,11,Empuje,Fondos,2.5,6,3,6,false
+2,2025-10-03,22,Empuje,Press Militar,30,8,3,8,false
+2,2025-10-03,18,Empuje,Press Banca,40,8,3,6,false
+2,2025-10-06,11,Jalón,Peso Muerto Rumano,77.5,12,4,9,false
+2,2025-10-06,14,Jalón,Jalón al Pecho,55,12,5,7,false
+2,2025-10-06,14,Jalón,Remo con Barra,60,12,4,9,false
+2,2025-10-08,12,Jalón,Peso Muerto Rumano,80,12,4,8,false
+2,2025-10-08,15,Jalón,Jalón al Pecho,57.5,12,5,9,false
+2,2025-10-08,15,Jalón,Remo con Barra,62.5,12,5,5,false
+2,2025-10-10,13,Jalón,Peso Muerto Rumano,80,12,4,9,false
+2,2025-10-10,16,Jalón,Jalón al Pecho,57.5,12,4,7,false
+2,2025-10-10,16,Jalón,Remo con Barra,62.5,12,5,9,false
+2,2025-10-13,11,Piernas,Peso Muerto,102.5,12,4,7,false
+2,2025-10-13,11,Piernas,Prensa de Piernas,135,12,5,7,false
+2,2025-10-13,18,Piernas,Sentadilla,97.5,12,4,7,false
+2,2025-10-16,12,Piernas,Peso Muerto,105,12,4,7,false
+2,2025-10-16,12,Piernas,Prensa de Piernas,137.5,12,5,8,false
+2,2025-10-16,19,Piernas,Sentadilla,97.5,12,4,7,false
+2,2025-10-18,13,Piernas,Peso Muerto,105,12,4,9,false
+2,2025-10-18,13,Piernas,Prensa de Piernas,137.5,12,5,9,false
+2,2025-10-18,20,Piernas,Sentadilla,97.5,12,4,9,false
+2,2025-10-21,19,Empuje,Press Banca,40,8,3,8,false
+2,2025-10-21,17,Empuje,Press con Mancuernas,22.5,6,2,6,false
+2,2025-10-21,23,Empuje,Press Militar,30,8,3,9,false
+2,2025-10-24,20,Empuje,Press Banca,40,8,3,8,false
+2,2025-10-24,18,Empuje,Press con Mancuernas,20,6,2,6,false
+2,2025-10-24,24,Empuje,Press Militar,32.5,9,3,6,false
+2,2025-10-26,21,Empuje,Press Banca,40,8,3,8,false
+2,2025-10-26,19,Empuje,Press con Mancuernas,20,6,3,7,false
+2,2025-10-26,25,Empuje,Press Militar,32.5,9,3,7,false
+2,2025-10-29,17,Jalón,Remo con Barra,62.5,12,5,8,false
+2,2025-10-29,14,Jalón,Peso Muerto Rumano,80,12,4,8,false
+2,2025-10-29,12,Jalón,Remo con Mancuerna,27.5,12,4,6,false
+2,2025-10-31,18,Jalón,Remo con Barra,65,12,5,8,false
+2,2025-10-31,15,Jalón,Peso Muerto Rumano,82.5,12,4,8,false
+2,2025-10-31,13,Jalón,Remo con Mancuerna,27.5,12,4,9,false
+2,2025-11-03,19,Jalón,Remo con Barra,65,12,5,8,false
+2,2025-11-03,16,Jalón,Peso Muerto Rumano,82.5,12,4,9,false
+2,2025-11-03,14,Jalón,Remo con Mancuerna,27.5,12,4,7,false
+2,2025-11-06,20,Jalón,Remo con Barra,65,12,5,7,false
+2,2025-11-06,17,Jalón,Peso Muerto Rumano,82.5,12,4,9,false
+2,2025-11-06,15,Jalón,Remo con Mancuerna,30,12,4,8,false
+2,2025-11-08,21,Piernas,Sentadilla,97.5,12,5,7,false
+2,2025-11-08,14,Piernas,Peso Muerto,105,12,4,3,true
+2,2025-11-08,14,Piernas,Extensiones de Cuádriceps,27.5,6,2,5,false
+2,2025-11-10,22,Piernas,Sentadilla,55,7,3,5,false
+2,2025-11-10,15,Piernas,Peso Muerto,60,7,2,4,false
+2,2025-11-10,15,Piernas,Extensiones de Cuádriceps,32.5,7,2,5,false
+2,2025-11-13,23,Piernas,Sentadilla,60,8,3,5,false
+2,2025-11-13,16,Piernas,Peso Muerto,65,8,2,4,false
+2,2025-11-13,16,Piernas,Extensiones de Cuádriceps,35,7,2,5,false
+2,2025-11-16,22,Empuje,Press Banca,40,9,3,8,false
+2,2025-11-16,20,Empuje,Press con Mancuernas,20,6,4,6,false
+2,2025-11-16,26,Empuje,Press Militar,32.5,9,3,8,false
+2,2025-11-19,23,Empuje,Press Banca,40,9,3,9,false
+2,2025-11-19,21,Empuje,Press con Mancuernas,20,6,4,7,false
+2,2025-11-19,27,Empuje,Press Militar,35,10,3,7,false
+2,2025-11-21,24,Empuje,Press Banca,40,10,3,7,false
+2,2025-11-21,22,Empuje,Press con Mancuernas,20,6,4,8,false
+2,2025-11-21,28,Empuje,Press Militar,35,10,3,7,false
+2,2025-11-24,25,Empuje,Press Banca,40,10,3,8,false
+2,2025-11-24,23,Empuje,Press con Mancuernas,20,7,3,7,false
+2,2025-11-24,29,Empuje,Press Militar,35,10,3,9,false
+2,2025-11-27,16,Jalón,Remo con Mancuerna,30,12,3,8,false
+2,2025-11-27,5,Jalón,Dominadas,0,9,4,8,false
+2,2025-11-27,18,Jalón,Peso Muerto Rumano,85,12,4,7,false
+2,2025-11-30,17,Jalón,Remo con Mancuerna,30,12,3,8,false
+2,2025-11-30,6,Jalón,Dominadas,0,10,4,8,false
+2,2025-11-30,19,Jalón,Peso Muerto Rumano,85,12,4,9,false
+2,2025-12-02,18,Jalón,Remo con Mancuerna,32.5,12,3,8,false
+2,2025-12-02,7,Jalón,Dominadas,0,10,4,9,false
+2,2025-12-02,20,Jalón,Peso Muerto Rumano,85,12,3,8,false
+2,2025-12-05,19,Jalón,Remo con Mancuerna,32.5,12,3,8,false
+2,2025-12-05,8,Jalón,Dominadas,0,10,5,8,false
+2,2025-12-05,21,Jalón,Peso Muerto Rumano,87.5,12,3,9,false
+2,2025-12-07,11,Piernas,Zancadas,15,7,3,5,false
+2,2025-12-07,17,Piernas,Peso Muerto,72.5,9,3,5,false
+2,2025-12-07,24,Piernas,Sentadilla,67.5,9,3,5,false
+2,2025-12-09,12,Piernas,Zancadas,15,8,3,5,false
+2,2025-12-09,18,Piernas,Peso Muerto,80,9,3,5,false
+2,2025-12-09,25,Piernas,Sentadilla,72.5,9,4,6,false
+2,2025-12-12,13,Piernas,Zancadas,17.5,9,3,5,false
+2,2025-12-12,19,Piernas,Peso Muerto,85,10,3,5,false
+2,2025-12-12,26,Piernas,Sentadilla,60,7,3,6,false
+2,2025-12-15,14,Piernas,Zancadas,20,9,4,6,false
+2,2025-12-15,20,Piernas,Peso Muerto,92.5,10,3,6,false
+2,2025-12-15,27,Piernas,Sentadilla,52.5,6,2,6,false
+2,2025-12-18,12,Empuje,Fondos,2.5,6,3,7,false
+2,2025-12-18,12,Empuje,Press Inclinado,40,8,2,4,false
+2,2025-12-18,26,Empuje,Press Banca,40,11,3,7,false
+2,2025-12-21,13,Empuje,Fondos,2.5,6,3,7,false
+2,2025-12-21,13,Empuje,Press Inclinado,42.5,9,2,5,false
+2,2025-12-21,27,Empuje,Press Banca,42.5,12,3,7,false
+2,2025-12-24,14,Empuje,Fondos,2.5,6,3,9,false
+2,2025-12-24,14,Empuje,Press Inclinado,47.5,9,2,5,false
+2,2025-12-24,28,Empuje,Press Banca,42.5,12,3,9,false
+2,2025-12-27,17,Jalón,Jalón al Pecho,57.5,12,4,7,false
+2,2025-12-27,21,Jalón,Remo con Barra,65,12,5,8,false
+2,2025-12-27,9,Jalón,Dominadas,2.5,10,5,7,false
+2,2025-12-29,18,Jalón,Jalón al Pecho,60,12,4,9,false
+2,2025-12-29,22,Jalón,Remo con Barra,65,12,5,9,false
+2,2025-12-29,10,Jalón,Dominadas,2.5,11,5,7,false
+2,2026-01-01,19,Jalón,Jalón al Pecho,60,12,4,9,false
+2,2026-01-01,23,Jalón,Remo con Barra,65,12,5,8,false
+2,2026-01-01,11,Jalón,Dominadas,2.5,12,5,7,false
+2,2026-01-04,20,Jalón,Jalón al Pecho,60,12,4,7,false
+2,2026-01-04,24,Jalón,Remo con Barra,67.5,12,5,8,false
+2,2026-01-04,12,Jalón,Dominadas,5,12,5,7,false
+2,2026-01-07,14,Piernas,Prensa de Piernas,77.5,7,3,5,false
+2,2026-01-07,15,Piernas,Zancadas,17.5,7,3,6,false
+2,2026-01-07,21,Piernas,Peso Muerto,92.5,9,4,5,false
+2,2026-01-10,15,Empuje,Fondos,2.5,6,4,5,false
+2,2026-01-10,30,Empuje,Press Militar,37.5,10,3,8,false
+2,2026-01-10,24,Empuje,Press con Mancuernas,22.5,7,3,8,false
+2,2026-01-13,16,Empuje,Fondos,2.5,7,5,7,false
+2,2026-01-13,31,Empuje,Press Militar,37.5,10,3,8,false
+2,2026-01-13,25,Empuje,Press con Mancuernas,22.5,7,3,2,true
+2,2026-01-15,17,Empuje,Fondos,2.5,6,3,5,false
+2,2026-01-15,32,Empuje,Press Militar,20,6,2,5,false
+2,2026-01-15,26,Empuje,Press con Mancuernas,12.5,6,2,4,false
+2,2026-01-18,25,Jalón,Remo con Barra,67.5,12,5,8,false
+2,2026-01-18,21,Jalón,Jalón al Pecho,60,12,4,8,false
+2,2026-01-18,13,Jalón,Dominadas,5,12,5,8,false
+2,2026-01-20,26,Jalón,Remo con Barra,67.5,12,5,7,false
+2,2026-01-20,22,Jalón,Jalón al Pecho,60,12,4,7,false
+2,2026-01-20,14,Jalón,Dominadas,5,12,5,8,false
+2,2026-01-23,27,Jalón,Remo con Barra,67.5,12,5,8,false
+2,2026-01-23,23,Jalón,Jalón al Pecho,60,12,4,8,false
+2,2026-01-23,15,Jalón,Dominadas,5,12,5,8,false
+2,2026-01-25,28,Jalón,Remo con Barra,67.5,12,5,8,false
+2,2026-01-25,24,Jalón,Jalón al Pecho,60,12,4,9,false
+2,2026-01-25,16,Jalón,Dominadas,5,12,5,9,false
+2,2026-01-27,16,Piernas,Zancadas,15,6,2,6,false
+2,2026-01-27,22,Piernas,Peso Muerto,92.5,8,4,8,false
+2,2026-01-27,15,Piernas,Prensa de Piernas,85,8,3,5,false
+2,2026-01-30,17,Piernas,Zancadas,15,6,3,7,false
+2,2026-01-30,23,Piernas,Peso Muerto,92.5,8,4,3,true
+2,2026-01-30,16,Piernas,Prensa de Piernas,95,9,3,5,false
+2,2026-02-01,18,Piernas,Zancadas,7.5,6,2,5,false
+2,2026-02-01,24,Piernas,Peso Muerto,52.5,6,2,4,false
+2,2026-02-01,17,Piernas,Prensa de Piernas,102.5,9,4,6,false
+2,2026-02-04,18,Empuje,Fondos,2.5,6,3,5,false
+2,2026-02-04,29,Empuje,Press Banca,25,7,2,5,false
+2,2026-02-04,33,Empuje,Press Militar,22.5,7,2,5,false
+2,2026-02-06,19,Empuje,Fondos,2.5,6,3,5,false
+2,2026-02-06,30,Empuje,Press Banca,27.5,8,2,5,false
+2,2026-02-06,34,Empuje,Press Militar,25,7,2,5,false
+2,2026-02-08,20,Empuje,Fondos,2.5,6,4,6,false
+2,2026-02-08,31,Empuje,Press Banca,30,9,2,5,false
+2,2026-02-08,35,Empuje,Press Militar,27.5,8,2,6,false
+2,2026-02-10,25,Jalón,Jalón al Pecho,60,12,4,8,false
+2,2026-02-10,17,Jalón,Dominadas,5,12,5,9,false
+2,2026-02-10,22,Jalón,Peso Muerto Rumano,87.5,12,3,2,true
+2,2026-02-13,26,Jalón,Jalón al Pecho,35,7,2,5,false
+2,2026-02-13,18,Jalón,Dominadas,2.5,7,3,5,false
+2,2026-02-13,23,Jalón,Peso Muerto Rumano,50,7,2,4,false
+2,2026-02-15,27,Jalón,Jalón al Pecho,37.5,8,2,5,false
+2,2026-02-15,19,Jalón,Dominadas,2.5,8,3,5,false
+2,2026-02-15,24,Jalón,Peso Muerto Rumano,55,8,2,4,false
+2,2026-02-18,28,Jalón,Jalón al Pecho,42.5,9,3,5,false
+2,2026-02-18,20,Jalón,Dominadas,2.5,9,3,5,false
+2,2026-02-18,25,Jalón,Peso Muerto Rumano,60,9,2,5,false
+2,2026-02-20,19,Piernas,Zancadas,10,6,2,5,false
+2,2026-02-20,28,Piernas,Sentadilla,30,6,2,5,false
+2,2026-02-20,25,Piernas,Peso Muerto,57.5,6,2,4,false
+2,2026-02-22,20,Piernas,Zancadas,10,6,2,5,false
+2,2026-02-22,29,Piernas,Sentadilla,32.5,6,2,5,false
+2,2026-02-22,26,Piernas,Peso Muerto,62.5,6,3,5,false
+2,2026-02-25,21,Piernas,Zancadas,12.5,6,2,6,false
+2,2026-02-25,30,Piernas,Sentadilla,35,6,2,5,false
+2,2026-02-25,27,Piernas,Peso Muerto,70,6,3,5,false
+2,2026-02-28,22,Piernas,Zancadas,10,6,2,6,false
+2,2026-02-28,31,Piernas,Sentadilla,40,6,2,6,false
+2,2026-02-28,28,Piernas,Peso Muerto,75,6,3,5,false
+2,2026-03-02,27,Empuje,Press con Mancuernas,15,6,2,4,false
+2,2026-03-02,36,Empuje,Press Militar,22.5,6,2,6,false
+2,2026-03-02,21,Empuje,Fondos,2.5,6,3,6,false
+2,2026-03-04,28,Empuje,Press con Mancuernas,15,6,2,5,false
+2,2026-03-04,37,Empuje,Press Militar,20,6,2,6,false
+2,2026-03-04,22,Empuje,Fondos,2.5,6,2,6,false
+2,2026-03-07,29,Empuje,Press con Mancuernas,17.5,6,2,5,false
+2,2026-03-07,38,Empuje,Press Militar,20,6,2,6,false
+2,2026-03-07,23,Empuje,Fondos,2.5,6,3,6,false
+2,2026-03-10,29,Jalón,Remo con Barra,37.5,7,3,5,false
+2,2026-03-10,21,Jalón,Dominadas,5,9,4,6,false
+2,2026-03-10,20,Jalón,Remo con Mancuerna,17.5,7,2,5,false
+2,2026-03-13,30,Jalón,Remo con Barra,42.5,8,3,5,false
+2,2026-03-13,22,Jalón,Dominadas,5,7,3,6,false
+2,2026-03-13,21,Jalón,Remo con Mancuerna,20,8,2,5,false
+2,2026-03-16,29,Piernas,Peso Muerto,80,7,3,6,false
+2,2026-03-16,32,Piernas,Sentadilla,32.5,6,2,6,false
+2,2026-03-16,23,Piernas,Zancadas,10,6,2,6,false
+2,2026-03-18,30,Piernas,Peso Muerto,75,6,2,6,false
+2,2026-03-18,33,Piernas,Sentadilla,27.5,6,2,6,false
+2,2026-03-18,24,Piernas,Zancadas,10,6,3,6,false
+2,2026-03-21,31,Piernas,Peso Muerto,75,6,3,5,false
+2,2026-03-21,34,Piernas,Sentadilla,27.5,6,3,5,false
+2,2026-03-21,25,Piernas,Zancadas,10,6,4,7,false
+2,2026-03-23,39,Empuje,Press Militar,20,6,3,5,false
+2,2026-03-23,32,Empuje,Press Banca,32.5,9,2,6,false
+2,2026-03-23,30,Empuje,Press con Mancuernas,17.5,6,2,5,false
+2,2026-03-25,40,Empuje,Press Militar,20,6,3,7,false
+2,2026-03-25,33,Empuje,Press Banca,27.5,7,2,6,false
+2,2026-03-25,31,Empuje,Press con Mancuernas,20,6,2,6,false
+2,2026-03-27,41,Empuje,Press Militar,20,6,3,8,false
+2,2026-03-27,34,Empuje,Press Banca,25,6,2,6,false
+2,2026-03-27,32,Empuje,Press con Mancuernas,20,6,3,5,false
+2,2026-03-30,23,Jalón,Dominadas,5,6,2,6,false
+2,2026-03-30,26,Jalón,Peso Muerto Rumano,65,9,2,5,false
+2,2026-03-30,22,Jalón,Remo con Mancuerna,22.5,9,2,5,false
+2,2026-04-01,24,Jalón,Dominadas,5,6,3,6,false
+2,2026-04-01,27,Jalón,Peso Muerto Rumano,70,10,2,5,false
+2,2026-04-01,23,Jalón,Remo con Mancuerna,25,9,2,6,false
+2,2026-04-03,25,Jalón,Dominadas,5,6,3,8,false
+2,2026-04-03,28,Jalón,Peso Muerto Rumano,77.5,10,2,6,false
+2,2026-04-03,24,Jalón,Remo con Mancuerna,20,7,2,6,false
+2,2026-04-06,26,Piernas,Zancadas,10,6,4,9,false
+2,2026-04-06,18,Piernas,Prensa de Piernas,82.5,7,3,6,false
+2,2026-04-06,32,Piernas,Peso Muerto,75,6,3,7,false
+2,2026-04-08,33,Empuje,Press con Mancuernas,20,6,3,8,false
+2,2026-04-08,24,Empuje,Fondos,2.5,6,3,9,false
+2,2026-04-08,35,Empuje,Press Banca,25,6,3,5,false
+2,2026-04-11,34,Empuje,Press con Mancuernas,20,6,3,9,false
+2,2026-04-11,25,Empuje,Fondos,2.5,6,3,7,false
+2,2026-04-11,36,Empuje,Press Banca,25,6,3,8,false
+2,2026-04-13,35,Empuje,Press con Mancuernas,20,7,3,6,false
+2,2026-04-13,26,Empuje,Fondos,2.5,7,4,5,false
+2,2026-04-13,37,Empuje,Press Banca,25,6,3,7,false
+2,2026-04-15,26,Jalón,Dominadas,5,6,3,8,false
+2,2026-04-15,31,Jalón,Remo con Barra,47.5,9,3,5,false
+2,2026-04-15,29,Jalón,Peso Muerto Rumano,77.5,9,3,7,false
+2,2026-04-18,27,Jalón,Dominadas,5,6,3,9,false
+2,2026-04-18,32,Jalón,Remo con Barra,50,9,4,6,false
+2,2026-04-18,30,Jalón,Peso Muerto Rumano,77.5,9,3,9,false
+2,2026-04-20,28,Jalón,Dominadas,5,7,3,5,false
+2,2026-04-20,33,Jalón,Remo con Barra,40,7,3,6,false
+2,2026-04-20,31,Jalón,Peso Muerto Rumano,77.5,9,3,9,false
+2,2026-04-22,29,Jalón,Dominadas,5,7,3,7,false
+2,2026-04-22,34,Jalón,Remo con Barra,35,6,2,6,false
+2,2026-04-22,32,Jalón,Peso Muerto Rumano,77.5,10,3,7,false
+2,2026-04-24,35,Piernas,Sentadilla,27.5,6,3,7,false
+2,2026-04-24,19,Piernas,Prensa de Piernas,72.5,6,2,6,false
+2,2026-04-24,17,Piernas,Extensiones de Cuádriceps,37.5,8,2,6,false
+2,2026-04-26,36,Piernas,Sentadilla,27.5,6,3,8,false
+2,2026-04-26,20,Piernas,Prensa de Piernas,72.5,6,3,7,false
+2,2026-04-26,18,Piernas,Extensiones de Cuádriceps,30,6,2,6,false
+2,2026-04-29,37,Piernas,Sentadilla,27.5,6,3,9,false
+2,2026-04-29,21,Piernas,Prensa de Piernas,72.5,6,4,7,false
+2,2026-04-29,19,Piernas,Extensiones de Cuádriceps,27.5,6,2,6,false
+2,2026-05-01,38,Piernas,Sentadilla,27.5,7,4,5,false
+2,2026-05-01,22,Piernas,Prensa de Piernas,72.5,6,4,8,false
+2,2026-05-01,20,Piernas,Extensiones de Cuádriceps,27.5,6,3,6,false
+2,2026-05-03,42,Empuje,Press Militar,20,6,4,4,true
+2,2026-05-03,36,Empuje,Press con Mancuernas,12.5,6,2,5,false
+2,2026-05-03,27,Empuje,Fondos,2.5,6,2,5,false
+2,2026-05-06,29,Jalón,Jalón al Pecho,45,9,3,6,false
+2,2026-05-06,30,Jalón,Dominadas,5,8,3,6,false
+2,2026-05-06,33,Jalón,Peso Muerto Rumano,80,11,4,6,false
+2,2026-05-08,30,Jalón,Jalón al Pecho,37.5,7,2,6,false
+2,2026-05-08,31,Jalón,Dominadas,5,8,3,9,false
+2,2026-05-08,34,Jalón,Peso Muerto Rumano,80,11,4,7,false
+2,2026-05-10,31,Jalón,Jalón al Pecho,32.5,6,2,6,false
+2,2026-05-10,32,Jalón,Dominadas,5,8,3,8,false
+2,2026-05-10,35,Jalón,Peso Muerto Rumano,80,11,3,7,false
+2,2026-05-12,32,Jalón,Jalón al Pecho,32.5,6,3,7,false
+2,2026-05-12,33,Jalón,Dominadas,5,8,3,8,false
+2,2026-05-12,36,Jalón,Peso Muerto Rumano,80,11,4,6,false
+2,2026-05-14,33,Piernas,Peso Muerto,75,6,3,8,false
+2,2026-05-14,23,Piernas,Prensa de Piernas,72.5,7,4,5,false
+2,2026-05-14,39,Piernas,Sentadilla,30,8,4,6,false
+2,2026-05-17,34,Piernas,Peso Muerto,75,6,3,8,false
+2,2026-05-17,24,Piernas,Prensa de Piernas,72.5,7,4,8,false
+2,2026-05-17,40,Piernas,Sentadilla,30,8,4,9,false
+2,2026-05-20,35,Piernas,Peso Muerto,75,6,3,7,false
+2,2026-05-20,25,Piernas,Prensa de Piernas,72.5,8,3,7,false
+2,2026-05-20,41,Piernas,Sentadilla,30,8,4,9,false
+2,2026-05-23,28,Empuje,Fondos,2.5,6,2,5,false
+2,2026-05-23,37,Empuje,Press con Mancuernas,12.5,6,2,5,false
+2,2026-05-23,38,Empuje,Press Banca,15,6,2,5,false
+2,2026-05-25,29,Empuje,Fondos,2.5,6,2,5,false
+2,2026-05-25,38,Empuje,Press con Mancuernas,15,6,2,5,false
+2,2026-05-25,39,Empuje,Press Banca,15,6,2,5,false
+2,2026-05-27,30,Empuje,Fondos,2.5,6,2,6,false
+2,2026-05-27,39,Empuje,Press con Mancuernas,15,6,2,6,false
+2,2026-05-27,40,Empuje,Press Banca,17.5,6,2,5,false
+2,2026-05-30,31,Empuje,Fondos,2.5,6,2,6,false
+2,2026-05-30,40,Empuje,Press con Mancuernas,12.5,6,2,6,false
+2,2026-05-30,41,Empuje,Press Banca,20,6,2,6,false
+2,2026-06-02,35,Jalón,Remo con Barra,35,6,3,7,false
+2,2026-06-02,34,Jalón,Dominadas,5,8,3,7,false
+2,2026-06-02,33,Jalón,Jalón al Pecho,32.5,6,3,9,false
+2,2026-06-04,36,Jalón,Remo con Barra,35,6,3,8,false
+2,2026-06-04,35,Jalón,Dominadas,5,8,3,8,false
+2,2026-06-04,34,Jalón,Jalón al Pecho,32.5,6,3,7,false
+2,2026-06-07,37,Jalón,Remo con Barra,35,6,3,8,false
+2,2026-06-07,36,Jalón,Dominadas,7.5,8,3,7,false
+2,2026-06-07,35,Jalón,Jalón al Pecho,32.5,6,4,5,false
+2,2026-06-10,36,Piernas,Peso Muerto,77.5,7,3,5,false
+2,2026-06-10,27,Piernas,Zancadas,12.5,7,4,7,false
+2,2026-06-10,21,Piernas,Extensiones de Cuádriceps,27.5,6,3,8,false
+2,2026-06-12,37,Piernas,Peso Muerto,77.5,7,3,8,false
+2,2026-06-12,28,Piernas,Zancadas,12.5,7,4,8,false
+2,2026-06-12,22,Piernas,Extensiones de Cuádriceps,27.5,6,3,9,false
+2,2026-06-14,38,Piernas,Peso Muerto,77.5,7,3,8,false
+2,2026-06-14,29,Piernas,Zancadas,12.5,7,4,8,false
+2,2026-06-14,23,Piernas,Extensiones de Cuádriceps,27.5,7,3,6,false
+2,2026-06-16,41,Empuje,Press con Mancuernas,10,6,2,6,false
+2,2026-06-16,42,Empuje,Press Banca,17.5,6,2,6,false
+2,2026-06-16,32,Empuje,Fondos,2.5,6,2,6,false
+2,2026-06-18,42,Empuje,Press con Mancuernas,10,6,3,7,false
+2,2026-06-18,43,Empuje,Press Banca,15,6,2,6,false
+2,2026-06-18,33,Empuje,Fondos,2.5,6,2,6,false
+2,2026-06-20,43,Empuje,Press con Mancuernas,10,6,3,8,false
+2,2026-06-20,44,Empuje,Press Banca,15,6,3,5,false
+2,2026-06-20,34,Empuje,Fondos,2.5,6,3,5,false
+2,2026-06-22,44,Empuje,Press con Mancuernas,10,6,3,8,false
+2,2026-06-22,45,Empuje,Press Banca,15,6,3,8,false
+2,2026-06-22,35,Empuje,Fondos,2.5,6,3,7,false
+2,2026-06-25,37,Jalón,Dominadas,7.5,8,3,8,false
+2,2026-06-25,38,Jalón,Remo con Barra,35,6,3,8,false
+2,2026-06-25,25,Jalón,Remo con Mancuerna,17.5,6,2,6,false
+2,2026-06-28,39,Piernas,Peso Muerto,80,8,3,5,false
+2,2026-06-28,26,Piernas,Prensa de Piernas,72.5,8,3,8,false
+2,2026-06-28,30,Piernas,Zancadas,15,7,4,7,false
+2,2026-07-01,40,Piernas,Peso Muerto,80,8,3,7,false
+2,2026-07-01,27,Piernas,Prensa de Piernas,75,9,4,7,false
+2,2026-07-01,31,Piernas,Zancadas,15,8,4,6,false
+2,2026-07-04,41,Piernas,Peso Muerto,80,8,3,8,false
+2,2026-07-04,28,Piernas,Prensa de Piernas,75,9,4,7,false
+2,2026-07-04,32,Piernas,Zancadas,15,9,4,6,false
+2,2026-07-07,46,Empuje,Press Banca,15,6,3,9,false
+2,2026-07-07,36,Empuje,Fondos,2.5,6,3,7,false
+2,2026-07-07,15,Empuje,Press Inclinado,50,10,2,5,false
+2,2026-07-10,47,Empuje,Press Banca,15,6,3,8,false
+2,2026-07-10,37,Empuje,Fondos,2.5,6,3,8,false
+2,2026-07-10,16,Empuje,Press Inclinado,55,10,2,6,false
+2,2026-07-12,48,Empuje,Press Banca,15,7,3,6,false
+2,2026-07-12,38,Empuje,Fondos,2.5,7,3,7,false
+2,2026-07-12,17,Empuje,Press Inclinado,55,9,3,7,false
+2,2026-07-15,49,Empuje,Press Banca,15,7,3,8,false
+2,2026-07-15,39,Empuje,Fondos,2.5,8,3,7,false
+2,2026-07-15,18,Empuje,Press Inclinado,55,9,3,9,false
+2,2026-07-17,38,Jalón,Dominadas,7.5,9,3,6,false
+2,2026-07-17,39,Jalón,Remo con Barra,37.5,7,3,6,false
+2,2026-07-17,36,Jalón,Jalón al Pecho,35,6,4,6,false
+2,2026-07-19,39,Jalón,Dominadas,10,9,3,4,true
+2,2026-07-19,40,Jalón,Remo con Barra,20,6,2,5,false
+2,2026-07-19,37,Jalón,Jalón al Pecho,20,6,2,5,false
+2,2026-07-21,40,Jalón,Dominadas,5,6,2,4,false
+2,2026-07-21,41,Jalón,Remo con Barra,22.5,6,2,5,false
+2,2026-07-21,38,Jalón,Jalón al Pecho,22.5,6,2,5,false
+2,2026-07-24,41,Jalón,Dominadas,5,6,2,4,false
+2,2026-07-24,42,Jalón,Remo con Barra,25,6,2,5,false
+2,2026-07-24,39,Jalón,Jalón al Pecho,25,6,3,5,false
+2,2026-07-26,42,Piernas,Peso Muerto,80,8,4,6,false
+2,2026-07-26,42,Piernas,Sentadilla,32.5,9,4,7,false
+2,2026-07-26,33,Piernas,Zancadas,15,9,4,9,false
+2,2026-07-29,43,Piernas,Peso Muerto,80,8,5,5,false
+2,2026-07-29,43,Piernas,Sentadilla,32.5,10,4,7,false
+2,2026-07-29,34,Piernas,Zancadas,15,9,4,9,false
+2,2026-07-31,44,Piernas,Peso Muerto,80,8,5,8,false
+2,2026-07-31,44,Piernas,Sentadilla,32.5,11,4,6,false
+2,2026-07-31,35,Piernas,Zancadas,15,9,4,8,false
+2,2026-08-02,45,Piernas,Peso Muerto,80,8,4,8,false
+2,2026-08-02,45,Piernas,Sentadilla,32.5,11,4,8,false
+2,2026-08-02,36,Piernas,Zancadas,17.5,9,4,6,false
+2,2026-08-04,40,Empuje,Fondos,2.5,8,3,9,false
+2,2026-08-04,50,Empuje,Press Banca,15,7,3,8,false
+2,2026-08-04,45,Empuje,Press con Mancuernas,12.5,7,3,6,false
+2,2026-08-06,41,Empuje,Fondos,2.5,8,3,9,false
+2,2026-08-06,51,Empuje,Press Banca,15,7,4,5,false
+2,2026-08-06,46,Empuje,Press con Mancuernas,12.5,8,3,8,false
+2,2026-08-09,42,Empuje,Fondos,5,9,3,6,false
+2,2026-08-09,52,Empuje,Press Banca,15,7,4,9,false
+2,2026-08-09,47,Empuje,Press con Mancuernas,12.5,8,3,7,false
+2,2026-08-12,43,Empuje,Fondos,5,9,3,7,false
+2,2026-08-12,53,Empuje,Press Banca,15,8,4,6,false
+2,2026-08-12,48,Empuje,Press con Mancuernas,15,9,3,6,false
+2,2026-08-14,43,Jalón,Remo con Barra,27.5,6,2,6,false
+2,2026-08-14,37,Jalón,Peso Muerto Rumano,45,7,2,5,false
+2,2026-08-14,26,Jalón,Remo con Mancuerna,10,6,2,5,false
+2,2026-08-17,44,Jalón,Remo con Barra,22.5,6,2,6,false
+2,2026-08-17,38,Jalón,Peso Muerto Rumano,50,7,2,5,false
+2,2026-08-17,27,Jalón,Remo con Mancuerna,10,6,2,5,false
+2,2026-08-20,45,Jalón,Remo con Barra,20,6,2,6,false
+2,2026-08-20,39,Jalón,Peso Muerto Rumano,55,8,3,5,false
+2,2026-08-20,28,Jalón,Remo con Mancuerna,12.5,6,2,5,false
+2,2026-08-22,46,Piernas,Peso Muerto,80,8,4,9,false
+2,2026-08-22,29,Piernas,Prensa de Piernas,75,10,4,8,false
+2,2026-08-22,37,Piernas,Zancadas,17.5,10,4,7,false
+2,2026-08-25,47,Piernas,Peso Muerto,80,8,5,7,false
+2,2026-08-25,30,Piernas,Prensa de Piernas,77.5,10,4,7,false
+2,2026-08-25,38,Piernas,Zancadas,17.5,10,4,7,false
+2,2026-08-27,48,Piernas,Peso Muerto,80,8,5,8,false
+2,2026-08-27,31,Piernas,Prensa de Piernas,77.5,10,5,6,false
+2,2026-08-27,39,Piernas,Zancadas,17.5,10,4,7,false
+2,2026-08-29,54,Empuje,Press Banca,15,8,4,9,false
+2,2026-08-29,43,Empuje,Press Militar,12.5,6,2,4,false
+2,2026-08-29,49,Empuje,Press con Mancuernas,15,9,4,7,false
+2,2026-08-31,55,Empuje,Press Banca,15,8,4,7,false
+2,2026-08-31,44,Empuje,Press Militar,12.5,6,2,4,false
+2,2026-08-31,50,Empuje,Press con Mancuernas,15,9,4,8,false
+2,2026-09-03,56,Empuje,Press Banca,15,8,5,7,false
+2,2026-09-03,45,Empuje,Press Militar,15,6,2,5,false
+2,2026-09-03,51,Empuje,Press con Mancuernas,17.5,10,4,5,false
+2,2026-09-06,57,Empuje,Press Banca,17.5,8,5,6,false
+2,2026-09-06,46,Empuje,Press Militar,15,6,2,5,false
+2,2026-09-06,52,Empuje,Press con Mancuernas,17.5,10,4,8,false
+2,2026-09-09,42,Jalón,Dominadas,5,6,2,5,false
+2,2026-09-09,40,Jalón,Peso Muerto Rumano,60,8,3,6,false
+2,2026-09-09,29,Jalón,Remo con Mancuerna,12.5,6,2,6,false
+2,2026-09-12,43,Jalón,Dominadas,5,7,2,5,false
+2,2026-09-12,41,Jalón,Peso Muerto Rumano,50,6,2,6,false
+2,2026-09-12,30,Jalón,Remo con Mancuerna,10,6,2,6,false
+2,2026-09-15,44,Jalón,Dominadas,5,7,2,5,false
+2,2026-09-15,42,Jalón,Peso Muerto Rumano,45,6,2,6,false
+2,2026-09-15,31,Jalón,Remo con Mancuerna,10,6,2,6,false
+2,2026-09-18,40,Piernas,Zancadas,17.5,11,5,3,true
+2,2026-09-18,46,Piernas,Sentadilla,17.5,7,2,5,false
+2,2026-09-18,24,Piernas,Extensiones de Cuádriceps,15,6,2,5,false
+2,2026-09-20,41,Piernas,Zancadas,10,6,2,4,false
+2,2026-09-20,47,Piernas,Sentadilla,20,7,2,5,false
+2,2026-09-20,25,Piernas,Extensiones de Cuádriceps,17.5,6,2,5,false
+2,2026-09-23,42,Piernas,Zancadas,10,7,2,4,false
+2,2026-09-23,48,Piernas,Sentadilla,22.5,8,3,5,false
+2,2026-09-23,26,Piernas,Extensiones de Cuádriceps,20,6,2,5,false
+2,2026-09-25,43,Piernas,Zancadas,12.5,7,3,5,false
+2,2026-09-25,49,Piernas,Sentadilla,25,8,3,6,false
+2,2026-09-25,27,Piernas,Extensiones de Cuádriceps,20,6,2,6,false
+2,2026-09-27,53,Empuje,Press con Mancuernas,17.5,10,4,9,false
+2,2026-09-27,58,Empuje,Press Banca,17.5,8,5,7,false
+2,2026-09-27,44,Empuje,Fondos,5,10,3,8,false
+2,2026-09-29,54,Empuje,Press con Mancuernas,20,11,4,7,false
+2,2026-09-29,59,Empuje,Press Banca,17.5,8,5,7,false
+2,2026-09-29,45,Empuje,Fondos,7.5,10,3,3,true
+2,2026-10-01,55,Empuje,Press con Mancuernas,12.5,7,2,5,false
+2,2026-10-01,60,Empuje,Press Banca,10,6,3,5,false
+2,2026-10-01,46,Empuje,Fondos,2.5,6,2,4,false
+2,2026-10-03,56,Empuje,Press con Mancuernas,12.5,7,2,5,false
+2,2026-10-03,61,Empuje,Press Banca,10,6,3,5,false
+2,2026-10-03,47,Empuje,Fondos,2.5,7,2,4,false
+2,2026-10-06,46,Jalón,Remo con Barra,20,6,3,6,false
+2,2026-10-06,45,Jalón,Dominadas,7.5,8,2,6,false
+2,2026-10-06,43,Jalón,Peso Muerto Rumano,45,6,3,5,false
+2,2026-10-08,47,Jalón,Remo con Barra,20,6,3,9,false
+2,2026-10-08,46,Jalón,Dominadas,7.5,7,3,7,false
+2,2026-10-08,44,Jalón,Peso Muerto Rumano,45,6,3,9,false
+2,2026-10-11,48,Jalón,Remo con Barra,20,6,3,8,false
+2,2026-10-11,47,Jalón,Dominadas,7.5,7,3,9,false
+2,2026-10-11,45,Jalón,Peso Muerto Rumano,45,6,3,8,false
+2,2026-10-14,49,Jalón,Remo con Barra,20,7,4,6,false
+2,2026-10-14,48,Jalón,Dominadas,10,7,3,6,false
+2,2026-10-14,46,Jalón,Peso Muerto Rumano,45,6,3,9,false
+2,2026-10-17,44,Piernas,Zancadas,12.5,8,3,5,false
+2,2026-10-17,28,Piernas,Extensiones de Cuádriceps,17.5,6,2,6,false
+2,2026-10-17,50,Piernas,Sentadilla,20,6,2,6,false
+2,2026-10-19,45,Piernas,Zancadas,15,8,3,5,false
+2,2026-10-19,29,Piernas,Extensiones de Cuádriceps,15,6,2,6,false
+2,2026-10-19,51,Piernas,Sentadilla,17.5,6,2,6,false
+2,2026-10-21,46,Piernas,Zancadas,15,9,3,6,false
+2,2026-10-21,30,Piernas,Extensiones de Cuádriceps,15,6,3,6,false
+2,2026-10-21,52,Piernas,Sentadilla,17.5,6,2,6,false
+2,2026-10-24,47,Piernas,Zancadas,15,8,2,6,false
+2,2026-10-24,31,Piernas,Extensiones de Cuádriceps,15,6,3,9,false
+2,2026-10-24,53,Piernas,Sentadilla,17.5,6,2,7,false
+2,2026-10-26,62,Empuje,Press Banca,12.5,6,3,5,false
+2,2026-10-26,47,Empuje,Press Militar,17.5,6,2,5,false
+2,2026-10-26,19,Empuje,Press Inclinado,30,6,2,5,false
+2,2026-10-28,63,Empuje,Press Banca,12.5,6,4,6,false
+2,2026-10-28,48,Empuje,Press Militar,17.5,6,2,6,false
+2,2026-10-28,20,Empuje,Press Inclinado,35,6,2,5,false
+2,2026-10-30,64,Empuje,Press Banca,10,6,3,6,false
+2,2026-10-30,49,Empuje,Press Militar,17.5,6,2,6,false
+2,2026-10-30,21,Empuje,Press Inclinado,37.5,6,2,5,false
+2,2026-11-01,65,Empuje,Press Banca,10,6,2,6,false
+2,2026-11-01,50,Empuje,Press Militar,17.5,6,3,7,false
+2,2026-11-01,22,Empuje,Press Inclinado,42.5,7,2,6,false
+3,2025-04-29,1,Empuje,Press Banca,52.5,10,4,7,false
+3,2025-04-29,1,Empuje,Press Militar,35,10,4,6,false
+3,2025-04-29,1,Empuje,Fondos,0,9,3,7,false
+3,2025-05-01,2,Empuje,Press Banca,52.5,10,4,8,false
+3,2025-05-01,2,Empuje,Press Militar,35,10,4,8,false
+3,2025-05-01,2,Empuje,Fondos,0,10,4,7,false
+3,2025-05-04,3,Empuje,Press Banca,52.5,10,4,8,false
+3,2025-05-04,3,Empuje,Press Militar,37.5,11,4,5,false
+3,2025-05-04,3,Empuje,Fondos,2.5,11,4,7,false
+3,2025-05-06,1,Jalón,Dominadas,0,8,3,7,false
+3,2025-05-06,1,Jalón,Remo con Barra,45,10,3,8,false
+3,2025-05-06,1,Jalón,Peso Muerto Rumano,62.5,8,4,8,false
+3,2025-05-08,2,Jalón,Dominadas,0,8,3,8,false
+3,2025-05-08,2,Jalón,Remo con Barra,45,10,3,7,false
+3,2025-05-08,2,Jalón,Peso Muerto Rumano,62.5,9,3,9,false
+3,2025-05-11,1,Piernas,Sentadilla,72.5,9,4,6,false
+3,2025-05-11,1,Piernas,Prensa de Piernas,107.5,10,3,7,false
+3,2025-05-11,1,Piernas,Extensiones de Cuádriceps,35,10,4,7,false
+3,2025-05-14,2,Piernas,Sentadilla,72.5,9,4,9,false
+3,2025-05-14,2,Piernas,Prensa de Piernas,107.5,11,3,6,false
+3,2025-05-14,2,Piernas,Extensiones de Cuádriceps,35,10,4,9,false
+3,2025-05-16,3,Piernas,Sentadilla,75,10,5,7,false
+3,2025-05-16,3,Piernas,Prensa de Piernas,107.5,11,4,7,false
+3,2025-05-16,3,Piernas,Extensiones de Cuádriceps,37.5,10,5,7,false
+3,2025-05-19,4,Empuje,Press Militar,37.5,11,3,7,false
+3,2025-05-19,4,Empuje,Press Banca,52.5,11,5,6,false
+3,2025-05-19,1,Empuje,Press con Mancuernas,30,9,3,7,false
+3,2025-05-22,5,Empuje,Press Militar,37.5,11,3,9,false
+3,2025-05-22,5,Empuje,Press Banca,52.5,12,5,8,false
+3,2025-05-22,2,Empuje,Press con Mancuernas,30,10,3,7,false
+3,2025-05-24,6,Empuje,Press Militar,37.5,12,3,7,false
+3,2025-05-24,6,Empuje,Press Banca,55,12,4,9,false
+3,2025-05-24,3,Empuje,Press con Mancuernas,32.5,10,3,8,false
+3,2025-05-26,1,Jalón,Remo con Mancuerna,17.5,8,4,7,false
+3,2025-05-26,3,Jalón,Remo con Barra,47.5,10,3,8,false
+3,2025-05-26,1,Jalón,Jalón al Pecho,40,8,4,7,false
+3,2025-05-29,2,Jalón,Remo con Mancuerna,17.5,8,5,7,false
+3,2025-05-29,4,Jalón,Remo con Barra,47.5,10,3,9,false
+3,2025-05-29,2,Jalón,Jalón al Pecho,40,8,5,5,false
+3,2025-06-01,3,Jalón,Remo con Mancuerna,17.5,9,5,6,false
+3,2025-06-01,5,Jalón,Remo con Barra,47.5,11,3,7,false
+3,2025-06-01,3,Jalón,Jalón al Pecho,40,8,5,7,false
+3,2025-06-03,4,Jalón,Remo con Mancuerna,17.5,9,4,9,false
+3,2025-06-03,6,Jalón,Remo con Barra,50,12,3,6,false
+3,2025-06-03,4,Jalón,Jalón al Pecho,40,8,5,7,false
+3,2025-06-05,1,Piernas,Zancadas,17.5,8,4,6,false
+3,2025-06-05,4,Piernas,Extensiones de Cuádriceps,37.5,11,5,8,false
+3,2025-06-05,1,Piernas,Peso Muerto,80,10,4,8,false
+3,2025-06-07,2,Piernas,Zancadas,17.5,8,4,8,false
+3,2025-06-07,5,Piernas,Extensiones de Cuádriceps,37.5,11,5,7,false
+3,2025-06-07,2,Piernas,Peso Muerto,80,10,4,7,false
+3,2025-06-10,3,Piernas,Zancadas,20,8,4,6,false
+3,2025-06-10,6,Piernas,Extensiones de Cuádriceps,40,12,5,6,false
+3,2025-06-10,3,Piernas,Peso Muerto,82.5,10,4,7,false
+3,2025-06-13,4,Empuje,Press con Mancuernas,32.5,11,3,8,false
+3,2025-06-13,1,Empuje,Press Inclinado,45,8,4,8,false
+3,2025-06-13,4,Empuje,Fondos,2.5,11,4,7,false
+3,2025-06-16,5,Empuje,Press con Mancuernas,32.5,11,3,8,false
+3,2025-06-16,2,Empuje,Press Inclinado,45,8,4,9,false
+3,2025-06-16,5,Empuje,Fondos,2.5,12,4,7,false
+3,2025-06-18,6,Empuje,Press con Mancuernas,32.5,11,3,8,false
+3,2025-06-18,3,Empuje,Press Inclinado,47.5,9,4,2,true
+3,2025-06-18,6,Empuje,Fondos,2.5,7,2,5,false
+3,2025-06-21,7,Empuje,Press con Mancuernas,17.5,7,2,5,false
+3,2025-06-21,4,Empuje,Press Inclinado,25,6,2,4,false
+3,2025-06-21,7,Empuje,Fondos,2.5,8,2,5,false
+3,2025-06-23,3,Jalón,Peso Muerto Rumano,65,10,3,5,false
+3,2025-06-23,5,Jalón,Remo con Mancuerna,17.5,10,4,6,false
+3,2025-06-23,7,Jalón,Remo con Barra,50,12,3,7,false
+3,2025-06-25,4,Jalón,Peso Muerto Rumano,65,10,3,7,false
+3,2025-06-25,6,Jalón,Remo con Mancuerna,20,11,4,5,false
+3,2025-06-25,8,Jalón,Remo con Barra,50,12,3,9,false
+3,2025-06-27,5,Jalón,Peso Muerto Rumano,65,10,3,8,false
+3,2025-06-27,7,Jalón,Remo con Mancuerna,20,11,3,7,false
+3,2025-06-27,9,Jalón,Remo con Barra,52.5,12,3,7,false
+3,2025-06-29,4,Piernas,Prensa de Piernas,107.5,11,4,7,false
+3,2025-06-29,4,Piernas,Zancadas,20,8,4,9,false
+3,2025-06-29,7,Piernas,Extensiones de Cuádriceps,40,12,5,8,false
+3,2025-07-02,5,Piernas,Prensa de Piernas,107.5,11,3,9,false
+3,2025-07-02,5,Piernas,Zancadas,20,8,4,9,false
+3,2025-07-02,8,Piernas,Extensiones de Cuádriceps,40,12,5,8,false
+3,2025-07-04,6,Piernas,Prensa de Piernas,107.5,11,3,7,false
+3,2025-07-04,6,Piernas,Zancadas,20,9,4,6,false
+3,2025-07-04,9,Piernas,Extensiones de Cuádriceps,42.5,12,5,8,false
+3,2025-07-07,7,Piernas,Prensa de Piernas,107.5,12,3,8,false
+3,2025-07-07,7,Piernas,Zancadas,20,10,4,6,false
+3,2025-07-07,10,Piernas,Extensiones de Cuádriceps,42.5,12,5,9,false
+3,2025-07-10,7,Empuje,Press Banca,30,7,2,5,false
+3,2025-07-10,5,Empuje,Press Inclinado,27.5,6,2,4,false
+3,2025-07-10,7,Empuje,Press Militar,20,7,2,5,false
+3,2025-07-13,8,Empuje,Press Banca,35,8,2,5,false
+3,2025-07-13,6,Empuje,Press Inclinado,30,6,3,5,false
+3,2025-07-13,8,Empuje,Press Militar,22.5,8,2,5,false
+3,2025-07-16,8,Jalón,Remo con Mancuerna,20,11,3,9,false
+3,2025-07-16,5,Jalón,Jalón al Pecho,40,8,5,7,false
+3,2025-07-16,6,Jalón,Peso Muerto Rumano,65,10,3,9,false
+3,2025-07-19,9,Jalón,Remo con Mancuerna,20,11,3,7,false
+3,2025-07-19,6,Jalón,Jalón al Pecho,42.5,9,5,5,false
+3,2025-07-19,7,Jalón,Peso Muerto Rumano,65,11,3,6,false
+3,2025-07-22,10,Jalón,Remo con Mancuerna,20,12,3,8,false
+3,2025-07-22,7,Jalón,Jalón al Pecho,42.5,9,5,8,false
+3,2025-07-22,8,Jalón,Peso Muerto Rumano,65,11,3,7,false
+3,2025-07-24,4,Piernas,Sentadilla,75,11,5,8,false
+3,2025-07-24,8,Piernas,Prensa de Piernas,107.5,12,3,9,false
+3,2025-07-24,11,Piernas,Extensiones de Cuádriceps,42.5,12,5,8,false
+3,2025-07-27,5,Piernas,Sentadilla,75,12,5,8,false
+3,2025-07-27,9,Piernas,Prensa de Piernas,107.5,12,3,7,false
+3,2025-07-27,12,Piernas,Extensiones de Cuádriceps,42.5,12,4,9,false
+3,2025-07-29,6,Piernas,Sentadilla,77.5,12,5,9,false
+3,2025-07-29,10,Piernas,Prensa de Piernas,107.5,12,4,6,false
+3,2025-07-29,13,Piernas,Extensiones de Cuádriceps,42.5,12,4,7,false
+3,2025-08-01,7,Piernas,Sentadilla,77.5,12,5,9,false
+3,2025-08-01,11,Piernas,Prensa de Piernas,107.5,12,5,6,false
+3,2025-08-01,14,Piernas,Extensiones de Cuádriceps,42.5,12,5,5,false
+3,2025-08-04,9,Empuje,Press Banca,37.5,9,3,5,false
+3,2025-08-04,9,Empuje,Press Militar,25,9,2,5,false
+3,2025-08-04,8,Empuje,Fondos,2.5,9,3,5,false
+3,2025-08-07,10,Empuje,Press Banca,42.5,9,3,6,false
+3,2025-08-07,10,Empuje,Press Militar,27.5,9,2,6,false
+3,2025-08-07,9,Empuje,Fondos,2.5,9,3,6,false
+3,2025-08-10,11,Empuje,Press Banca,35,7,2,6,false
+3,2025-08-10,11,Empuje,Press Militar,22.5,7,2,6,false
+3,2025-08-10,10,Empuje,Fondos,2.5,7,2,6,false
+3,2025-08-12,12,Empuje,Press Banca,30,6,2,6,false
+3,2025-08-12,12,Empuje,Press Militar,20,6,2,6,false
+3,2025-08-12,11,Empuje,Fondos,2.5,6,2,6,false
+3,2025-08-15,10,Jalón,Remo con Barra,52.5,12,4,5,false
+3,2025-08-15,3,Jalón,Dominadas,2.5,9,3,6,false
+3,2025-08-15,9,Jalón,Peso Muerto Rumano,67.5,12,3,7,false
+3,2025-08-18,11,Jalón,Remo con Barra,52.5,12,4,9,false
+3,2025-08-18,4,Jalón,Dominadas,2.5,9,3,8,false
+3,2025-08-18,10,Jalón,Peso Muerto Rumano,67.5,12,3,8,false
+3,2025-08-21,12,Jalón,Remo con Barra,52.5,12,4,7,false
+3,2025-08-21,5,Jalón,Dominadas,2.5,9,3,9,false
+3,2025-08-21,11,Jalón,Peso Muerto Rumano,67.5,12,4,5,false
+3,2025-08-24,13,Jalón,Remo con Barra,52.5,12,4,7,false
+3,2025-08-24,6,Jalón,Dominadas,5,9,3,7,false
+3,2025-08-24,12,Jalón,Peso Muerto Rumano,67.5,12,4,7,false
+3,2025-08-26,8,Piernas,Zancadas,20,10,3,7,false
+3,2025-08-26,8,Piernas,Sentadilla,77.5,12,5,8,false
+3,2025-08-26,4,Piernas,Peso Muerto,82.5,10,4,9,false
+3,2025-08-29,9,Piernas,Zancadas,20,10,4,6,false
+3,2025-08-29,9,Piernas,Sentadilla,80,12,5,7,false
+3,2025-08-29,5,Piernas,Peso Muerto,82.5,11,5,6,false
+3,2025-09-01,10,Piernas,Zancadas,20,10,4,7,false
+3,2025-09-01,10,Piernas,Sentadilla,80,12,5,7,false
+3,2025-09-01,6,Piernas,Peso Muerto,82.5,11,5,7,false
+3,2025-09-03,7,Empuje,Press Inclinado,35,6,3,5,false
+3,2025-09-03,13,Empuje,Press Banca,30,6,3,5,false
+3,2025-09-03,13,Empuje,Press Militar,20,6,3,6,false
+3,2025-09-06,8,Empuje,Press Inclinado,37.5,6,3,5,false
+3,2025-09-06,14,Empuje,Press Banca,30,6,3,7,false
+3,2025-09-06,14,Empuje,Press Militar,20,6,3,9,false
+3,2025-09-09,9,Empuje,Press Inclinado,40,7,3,6,false
+3,2025-09-09,15,Empuje,Press Banca,30,6,3,9,false
+3,2025-09-09,15,Empuje,Press Militar,22.5,7,3,5,false
+3,2025-09-11,10,Empuje,Press Inclinado,37.5,6,2,6,false
+3,2025-09-11,16,Empuje,Press Banca,30,7,3,6,false
+3,2025-09-11,16,Empuje,Press Militar,22.5,7,3,7,false
+3,2025-09-14,14,Jalón,Remo con Barra,52.5,12,4,7,false
+3,2025-09-14,7,Jalón,Dominadas,5,9,3,9,false
+3,2025-09-14,13,Jalón,Peso Muerto Rumano,67.5,12,4,8,false
+3,2025-09-16,15,Jalón,Remo con Barra,55,12,4,9,false
+3,2025-09-16,8,Jalón,Dominadas,5,9,3,7,false
+3,2025-09-16,14,Jalón,Peso Muerto Rumano,67.5,12,4,8,false
+3,2025-09-19,16,Jalón,Remo con Barra,55,12,5,6,false
+3,2025-09-19,9,Jalón,Dominadas,7.5,9,3,7,false
+3,2025-09-19,15,Jalón,Peso Muerto Rumano,70,12,4,9,false
+3,2025-09-21,7,Piernas,Peso Muerto,82.5,11,5,9,false
+3,2025-09-21,11,Piernas,Zancadas,20,10,3,7,false
+3,2025-09-21,12,Piernas,Prensa de Piernas,107.5,12,5,8,false
+3,2025-09-24,8,Piernas,Peso Muerto,82.5,11,5,7,false
+3,2025-09-24,12,Piernas,Zancadas,20,10,3,8,false
+3,2025-09-24,13,Piernas,Prensa de Piernas,107.5,12,5,8,false
+3,2025-09-26,9,Piernas,Peso Muerto,85,12,5,7,false
+3,2025-09-26,13,Piernas,Zancadas,20,10,3,7,false
+3,2025-09-26,14,Piernas,Prensa de Piernas,107.5,12,5,7,false
+3,2025-09-28,10,Piernas,Peso Muerto,85,12,5,9,false
+3,2025-09-28,14,Piernas,Zancadas,20,10,3,7,false
+3,2025-09-28,15,Piernas,Prensa de Piernas,110,12,4,7,false
+3,2025-10-01,12,Empuje,Fondos,2.5,6,3,7,false
+3,2025-10-01,8,Empuje,Press con Mancuernas,20,7,2,5,false
+3,2025-10-01,11,Empuje,Press Inclinado,37.5,6,2,7,false
+3,2025-10-04,13,Empuje,Fondos,2.5,6,3,8,false
+3,2025-10-04,9,Empuje,Press con Mancuernas,22.5,8,2,5,false
+3,2025-10-04,12,Empuje,Press Inclinado,37.5,6,2,7,false
+3,2025-10-06,14,Empuje,Fondos,2.5,6,4,5,false
+3,2025-10-06,10,Empuje,Press con Mancuernas,25,8,2,6,false
+3,2025-10-06,13,Empuje,Press Inclinado,37.5,6,3,6,false
+3,2025-10-09,15,Empuje,Fondos,2.5,6,4,7,false
+3,2025-10-09,11,Empuje,Press con Mancuernas,20,6,2,6,false
+3,2025-10-09,14,Empuje,Press Inclinado,37.5,6,3,9,false
+3,2025-10-11,16,Jalón,Peso Muerto Rumano,70,12,3,7,false
+3,2025-10-11,17,Jalón,Remo con Barra,55,12,5,8,false
+3,2025-10-11,11,Jalón,Remo con Mancuerna,20,12,3,9,false
+3,2025-10-13,17,Jalón,Peso Muerto Rumano,70,12,3,7,false
+3,2025-10-13,18,Jalón,Remo con Barra,55,12,5,9,false
+3,2025-10-13,12,Jalón,Remo con Mancuerna,20,12,3,8,false
+3,2025-10-15,18,Jalón,Peso Muerto Rumano,70,12,3,9,false
+3,2025-10-15,19,Jalón,Remo con Barra,55,12,4,8,false
+3,2025-10-15,13,Jalón,Remo con Mancuerna,20,12,3,8,false
+3,2025-10-17,19,Jalón,Peso Muerto Rumano,70,12,3,8,false
+3,2025-10-17,20,Jalón,Remo con Barra,55,12,5,5,false
+3,2025-10-17,14,Jalón,Remo con Mancuerna,20,12,3,8,false
+3,2025-10-20,15,Piernas,Zancadas,22.5,10,3,8,false
+3,2025-10-20,11,Piernas,Sentadilla,80,12,5,9,false
+3,2025-10-20,15,Piernas,Extensiones de Cuádriceps,45,12,4,9,false
+3,2025-10-22,16,Piernas,Zancadas,22.5,11,3,8,false
+3,2025-10-22,12,Piernas,Sentadilla,82.5,12,5,8,false
+3,2025-10-22,16,Piernas,Extensiones de Cuádriceps,45,12,4,8,false
+3,2025-10-25,17,Piernas,Zancadas,22.5,12,3,8,false
+3,2025-10-25,13,Piernas,Sentadilla,82.5,12,5,9,false
+3,2025-10-25,17,Piernas,Extensiones de Cuádriceps,45,12,5,6,false
+3,2025-10-28,18,Piernas,Zancadas,22.5,12,3,8,false
+3,2025-10-28,14,Piernas,Sentadilla,82.5,12,5,8,false
+3,2025-10-28,18,Piernas,Extensiones de Cuádriceps,45,12,5,7,false
+3,2025-10-31,17,Empuje,Press Militar,22.5,7,3,7,false
+3,2025-10-31,17,Empuje,Press Banca,30,8,4,6,false
+3,2025-10-31,16,Empuje,Fondos,2.5,6,4,8,false
+3,2025-11-02,18,Empuje,Press Militar,22.5,7,3,9,false
+3,2025-11-02,18,Empuje,Press Banca,30,8,3,9,false
+3,2025-11-02,17,Empuje,Fondos,2.5,6,4,8,false
+3,2025-11-04,19,Empuje,Press Militar,22.5,7,4,5,false
+3,2025-11-04,19,Empuje,Press Banca,30,9,3,6,false
+3,2025-11-04,18,Empuje,Fondos,2.5,7,4,5,false
+3,2025-11-07,20,Empuje,Press Militar,22.5,7,4,7,false
+3,2025-11-07,20,Empuje,Press Banca,30,10,3,7,false
+3,2025-11-07,19,Empuje,Fondos,2.5,7,4,8,false
+3,2025-11-10,10,Jalón,Dominadas,7.5,10,3,8,false
+3,2025-11-10,15,Jalón,Remo con Mancuerna,22.5,12,4,7,false
+3,2025-11-10,20,Jalón,Peso Muerto Rumano,70,12,4,7,false
+3,2025-11-12,11,Jalón,Dominadas,7.5,11,3,8,false
+3,2025-11-12,16,Jalón,Remo con Mancuerna,22.5,12,4,7,false
+3,2025-11-12,21,Jalón,Peso Muerto Rumano,72.5,12,4,9,false
+3,2025-11-15,12,Jalón,Dominadas,7.5,11,3,9,false
+3,2025-11-15,17,Jalón,Remo con Mancuerna,22.5,12,5,5,false
+3,2025-11-15,22,Jalón,Peso Muerto Rumano,72.5,12,4,9,false
+3,2025-11-17,15,Piernas,Sentadilla,85,12,4,9,false
+3,2025-11-17,11,Piernas,Peso Muerto,85,12,5,8,false
+3,2025-11-17,19,Piernas,Zancadas,22.5,12,3,8,false
+3,2025-11-20,16,Piernas,Sentadilla,85,12,4,8,false
+3,2025-11-20,12,Piernas,Peso Muerto,87.5,12,5,7,false
+3,2025-11-20,20,Piernas,Zancadas,22.5,12,3,7,false
+3,2025-11-23,17,Piernas,Sentadilla,85,12,4,7,false
+3,2025-11-23,13,Piernas,Peso Muerto,87.5,12,5,9,false
+3,2025-11-23,21,Piernas,Zancadas,25,12,3,6,false
+3,2025-11-25,18,Piernas,Sentadilla,87.5,12,4,7,false
+3,2025-11-25,14,Piernas,Peso Muerto,87.5,12,5,7,false
+3,2025-11-25,22,Piernas,Zancadas,25,12,3,9,false
+3,2025-11-27,20,Empuje,Fondos,2.5,7,4,8,false
+3,2025-11-27,21,Empuje,Press Banca,30,10,3,9,false
+3,2025-11-27,21,Empuje,Press Militar,25,7,4,8,false
+3,2025-11-30,21,Empuje,Fondos,2.5,7,4,8,false
+3,2025-11-30,22,Empuje,Press Banca,30,10,3,8,false
+3,2025-11-30,22,Empuje,Press Militar,25,7,4,9,false
+3,2025-12-03,22,Empuje,Fondos,2.5,7,4,8,false
+3,2025-12-03,23,Empuje,Press Banca,30,11,4,6,false
+3,2025-12-03,23,Empuje,Press Militar,25,7,4,7,false
+3,2025-12-05,23,Empuje,Fondos,2.5,8,4,7,false
+3,2025-12-05,24,Empuje,Press Banca,32.5,12,4,7,false
+3,2025-12-05,24,Empuje,Press Militar,25,7,4,7,false
+3,2025-12-07,8,Jalón,Jalón al Pecho,42.5,9,5,8,false
+3,2025-12-07,23,Jalón,Peso Muerto Rumano,72.5,12,3,7,false
+3,2025-12-07,13,Jalón,Dominadas,7.5,11,4,2,true
+3,2025-12-10,9,Jalón,Jalón al Pecho,25,6,3,5,false
+3,2025-12-10,24,Jalón,Peso Muerto Rumano,40,7,2,5,false
+3,2025-12-10,14,Jalón,Dominadas,5,7,2,4,false
+3,2025-12-12,16,Piernas,Prensa de Piernas,110,12,4,8,false
+3,2025-12-12,15,Piernas,Peso Muerto,87.5,12,4,7,false
+3,2025-12-12,19,Piernas,Sentadilla,87.5,12,4,8,false
+3,2025-12-15,17,Piernas,Prensa de Piernas,110,12,4,8,false
+3,2025-12-15,16,Piernas,Peso Muerto,87.5,12,4,8,false
+3,2025-12-15,20,Piernas,Sentadilla,87.5,12,3,8,false
+3,2025-12-18,18,Piernas,Prensa de Piernas,110,12,5,5,false
+3,2025-12-18,17,Piernas,Peso Muerto,87.5,12,4,9,false
+3,2025-12-18,21,Piernas,Sentadilla,87.5,12,3,9,false
+3,2025-12-20,19,Piernas,Prensa de Piernas,110,12,5,7,false
+3,2025-12-20,18,Piernas,Peso Muerto,90,12,4,9,false
+3,2025-12-20,22,Piernas,Sentadilla,87.5,12,3,9,false
+3,2025-12-22,25,Empuje,Press Banca,32.5,12,4,9,false
+3,2025-12-22,12,Empuje,Press con Mancuernas,17.5,6,2,6,false
+3,2025-12-22,24,Empuje,Fondos,2.5,9,4,6,false
+3,2025-12-24,21,Jalón,Remo con Barra,30,7,2,5,false
+3,2025-12-24,18,Jalón,Remo con Mancuerna,12.5,7,2,5,false
+3,2025-12-24,25,Jalón,Peso Muerto Rumano,45,8,2,5,false
+3,2025-12-26,22,Jalón,Remo con Barra,35,8,2,5,false
+3,2025-12-26,19,Jalón,Remo con Mancuerna,15,8,2,5,false
+3,2025-12-26,26,Jalón,Peso Muerto Rumano,50,9,2,5,false
+3,2025-12-28,23,Jalón,Remo con Barra,37.5,9,3,5,false
+3,2025-12-28,20,Jalón,Remo con Mancuerna,15,9,3,5,false
+3,2025-12-28,27,Jalón,Peso Muerto Rumano,55,9,2,6,false
+3,2025-12-31,24,Jalón,Remo con Barra,42.5,9,3,6,false
+3,2025-12-31,21,Jalón,Remo con Mancuerna,17.5,9,3,6,false
+3,2025-12-31,28,Jalón,Peso Muerto Rumano,45,7,2,6,false
+3,2026-01-03,20,Piernas,Prensa de Piernas,110,12,5,8,false
+3,2026-01-03,19,Piernas,Extensiones de Cuádriceps,45,12,5,9,false
+3,2026-01-03,23,Piernas,Sentadilla,87.5,12,3,7,false
+3,2026-01-05,21,Piernas,Prensa de Piernas,110,12,5,9,false
+3,2026-01-05,20,Piernas,Extensiones de Cuádriceps,45,12,5,9,false
+3,2026-01-05,24,Piernas,Sentadilla,90,12,3,9,false
+3,2026-01-07,22,Piernas,Prensa de Piernas,110,12,5,8,false
+3,2026-01-07,21,Piernas,Extensiones de Cuádriceps,47.5,12,5,8,false
+3,2026-01-07,25,Piernas,Sentadilla,90,12,3,9,false
+3,2026-01-09,23,Piernas,Prensa de Piernas,110,12,5,9,false
+3,2026-01-09,22,Piernas,Extensiones de Cuádriceps,47.5,12,5,8,false
+3,2026-01-09,26,Piernas,Sentadilla,90,12,4,7,false
+3,2026-01-11,25,Empuje,Fondos,2.5,10,4,6,false
+3,2026-01-11,13,Empuje,Press con Mancuernas,17.5,6,2,6,false
+3,2026-01-11,25,Empuje,Press Militar,25,8,4,8,false
+3,2026-01-14,26,Empuje,Fondos,2.5,10,4,7,false
+3,2026-01-14,14,Empuje,Press con Mancuernas,17.5,6,2,7,false
+3,2026-01-14,26,Empuje,Press Militar,25,8,4,9,false
+3,2026-01-17,27,Empuje,Fondos,2.5,10,4,9,false
+3,2026-01-17,15,Empuje,Press con Mancuernas,17.5,6,3,5,false
+3,2026-01-17,27,Empuje,Press Militar,27.5,9,4,6,false
+3,2026-01-20,28,Empuje,Fondos,2.5,10,3,9,false
+3,2026-01-20,16,Empuje,Press con Mancuernas,17.5,6,4,5,false
+3,2026-01-20,28,Empuje,Press Militar,27.5,10,4,7,false
+3,2026-01-23,29,Jalón,Peso Muerto Rumano,40,6,2,6,false
+3,2026-01-23,22,Jalón,Remo con Mancuerna,15,7,2,6,false
+3,2026-01-23,10,Jalón,Jalón al Pecho,27.5,6,3,5,false
+3,2026-01-25,30,Jalón,Peso Muerto Rumano,40,6,3,7,false
+3,2026-01-25,23,Jalón,Remo con Mancuerna,12.5,6,2,6,false
+3,2026-01-25,11,Jalón,Jalón al Pecho,30,6,3,5,false
+3,2026-01-27,31,Jalón,Peso Muerto Rumano,40,6,4,6,false
+3,2026-01-27,24,Jalón,Remo con Mancuerna,12.5,6,3,6,false
+3,2026-01-27,12,Jalón,Jalón al Pecho,32.5,7,4,6,false
+3,2026-01-29,32,Jalón,Peso Muerto Rumano,40,6,3,9,false
+3,2026-01-29,25,Jalón,Remo con Mancuerna,12.5,6,3,7,false
+3,2026-01-29,13,Jalón,Jalón al Pecho,27.5,6,3,6,false
+3,2026-02-01,27,Piernas,Sentadilla,92.5,12,4,7,false
+3,2026-02-01,19,Piernas,Peso Muerto,90,12,4,8,false
+3,2026-02-01,23,Piernas,Zancadas,25,12,3,9,false
+3,2026-02-04,29,Empuje,Fondos,2.5,10,3,7,false
+3,2026-02-04,15,Empuje,Press Inclinado,37.5,6,3,9,false
+3,2026-02-04,26,Empuje,Press Banca,32.5,12,4,9,false
+3,2026-02-06,30,Empuje,Fondos,5,11,3,7,false
+3,2026-02-06,16,Empuje,Press Inclinado,37.5,7,3,7,false
+3,2026-02-06,27,Empuje,Press Banca,35,12,4,8,false
+3,2026-02-09,31,Empuje,Fondos,5,11,3,9,false
+3,2026-02-09,17,Empuje,Press Inclinado,37.5,8,3,6,false
+3,2026-02-09,28,Empuje,Press Banca,35,12,5,5,false
+3,2026-02-12,32,Empuje,Fondos,5,12,3,8,false
+3,2026-02-12,18,Empuje,Press Inclinado,40,8,3,7,false
+3,2026-02-12,29,Empuje,Press Banca,35,12,5,9,false
+3,2026-02-14,15,Jalón,Dominadas,5,7,2,4,false
+3,2026-02-14,26,Jalón,Remo con Mancuerna,12.5,6,3,9,false
+3,2026-02-14,33,Jalón,Peso Muerto Rumano,42.5,7,3,5,false
+3,2026-02-16,23,Piernas,Extensiones de Cuádriceps,47.5,12,5,7,false
+3,2026-02-16,24,Piernas,Prensa de Piernas,110,12,5,7,false
+3,2026-02-16,28,Piernas,Sentadilla,92.5,12,5,4,true
+3,2026-02-18,24,Piernas,Extensiones de Cuádriceps,27.5,7,3,5,false
+3,2026-02-18,25,Piernas,Prensa de Piernas,62.5,7,3,5,false
+3,2026-02-18,29,Piernas,Sentadilla,52.5,7,2,4,false
+3,2026-02-20,25,Piernas,Extensiones de Cuádriceps,30,8,3,5,false
+3,2026-02-20,26,Piernas,Prensa de Piernas,70,8,3,5,false
+3,2026-02-20,30,Piernas,Sentadilla,57.5,8,2,4,false
+3,2026-02-23,19,Empuje,Press Inclinado,40,8,3,9,false
+3,2026-02-23,33,Empuje,Fondos,5,12,3,9,false
+3,2026-02-23,29,Empuje,Press Militar,27.5,11,5,5,false
+3,2026-02-26,20,Empuje,Press Inclinado,40,8,3,8,false
+3,2026-02-26,34,Empuje,Fondos,5,12,3,7,false
+3,2026-02-26,30,Empuje,Press Militar,27.5,11,5,9,false
+3,2026-02-28,21,Empuje,Press Inclinado,42.5,8,3,6,false
+3,2026-02-28,35,Empuje,Fondos,5,12,3,7,false
+3,2026-02-28,31,Empuje,Press Militar,27.5,11,5,8,false
+3,2026-03-02,22,Empuje,Press Inclinado,42.5,8,3,8,false
+3,2026-03-02,36,Empuje,Fondos,7.5,12,3,7,false
+3,2026-03-02,32,Empuje,Press Militar,27.5,12,5,7,false
+3,2026-03-05,16,Jalón,Dominadas,5,8,2,5,false
+3,2026-03-05,14,Jalón,Jalón al Pecho,25,6,2,6,false
+3,2026-03-05,25,Jalón,Remo con Barra,35,7,2,6,false
+3,2026-03-08,17,Jalón,Dominadas,5,8,2,5,false
+3,2026-03-08,15,Jalón,Jalón al Pecho,25,6,3,6,false
+3,2026-03-08,26,Jalón,Remo con Barra,30,6,2,6,false
+3,2026-03-11,18,Jalón,Dominadas,5,9,2,5,false
+3,2026-03-11,16,Jalón,Jalón al Pecho,25,6,3,8,false
+3,2026-03-11,27,Jalón,Remo con Barra,30,6,3,7,false
+3,2026-03-14,20,Piernas,Peso Muerto,50,7,2,5,false
+3,2026-03-14,26,Piernas,Extensiones de Cuádriceps,32.5,9,3,5,false
+3,2026-03-14,31,Piernas,Sentadilla,62.5,9,3,5,false
+3,2026-03-17,21,Piernas,Peso Muerto,57.5,8,2,5,false
+3,2026-03-17,27,Piernas,Extensiones de Cuádriceps,35,9,4,6,false
+3,2026-03-17,32,Piernas,Sentadilla,70,9,3,5,false
+3,2026-03-20,22,Piernas,Peso Muerto,62.5,9,3,5,false
+3,2026-03-20,28,Piernas,Extensiones de Cuádriceps,27.5,7,3,6,false
+3,2026-03-20,33,Piernas,Sentadilla,75,10,3,5,false
+3,2026-03-23,23,Piernas,Peso Muerto,67.5,9,3,6,false
+3,2026-03-23,29,Piernas,Extensiones de Cuádriceps,25,6,2,6,false
+3,2026-03-23,34,Piernas,Sentadilla,80,10,3,6,false
+3,2026-03-25,30,Empuje,Press Banca,37.5,12,5,8,false
+3,2026-03-25,37,Empuje,Fondos,7.5,12,3,9,false
+3,2026-03-25,23,Empuje,Press Inclinado,42.5,9,3,7,false
+3,2026-03-27,31,Empuje,Press Banca,37.5,12,5,9,false
+3,2026-03-27,38,Empuje,Fondos,7.5,12,3,7,false
+3,2026-03-27,24,Empuje,Press Inclinado,45,10,3,6,false
+3,2026-03-29,32,Empuje,Press Banca,37.5,12,5,9,false
+3,2026-03-29,39,Empuje,Fondos,10,12,3,7,false
+3,2026-03-29,25,Empuje,Press Inclinado,45,11,3,8,false
+3,2026-04-01,33,Empuje,Press Banca,37.5,12,5,8,false
+3,2026-04-01,40,Empuje,Fondos,10,12,3,7,false
+3,2026-04-01,26,Empuje,Press Inclinado,45,12,3,8,false
+3,2026-04-03,17,Jalón,Jalón al Pecho,25,6,3,9,false
+3,2026-04-03,19,Jalón,Dominadas,7.5,9,2,6,false
+3,2026-04-03,28,Jalón,Remo con Barra,30,6,3,8,false
+3,2026-04-05,18,Jalón,Jalón al Pecho,27.5,7,3,6,false
+3,2026-04-05,20,Jalón,Dominadas,7.5,8,2,6,false
+3,2026-04-05,29,Jalón,Remo con Barra,30,7,3,5,false
+3,2026-04-07,19,Jalón,Jalón al Pecho,27.5,8,3,8,false
+3,2026-04-07,21,Jalón,Dominadas,7.5,7,3,5,false
+3,2026-04-07,30,Jalón,Remo con Barra,30,7,3,7,false
+3,2026-04-09,24,Piernas,Zancadas,15,7,2,5,false
+3,2026-04-09,24,Piernas,Peso Muerto,55,7,2,6,false
+3,2026-04-09,27,Piernas,Prensa de Piernas,75,9,3,5,false
+3,2026-04-11,25,Piernas,Zancadas,15,8,2,5,false
+3,2026-04-11,25,Piernas,Peso Muerto,47.5,6,2,6,false
+3,2026-04-11,28,Piernas,Prensa de Piernas,82.5,9,4,6,false
+3,2026-04-13,26,Piernas,Zancadas,17.5,9,2,5,false
+3,2026-04-13,26,Piernas,Peso Muerto,47.5,6,3,5,false
+3,2026-04-13,29,Piernas,Prensa de Piernas,67.5,7,3,6,false
+3,2026-04-16,34,Empuje,Press Banca,37.5,12,5,7,false
+3,2026-04-16,27,Empuje,Press Inclinado,45,12,3,8,false
+3,2026-04-16,41,Empuje,Fondos,10,12,3,7,false
+3,2026-04-19,35,Empuje,Press Banca,37.5,12,4,7,false
+3,2026-04-19,28,Empuje,Press Inclinado,45,12,3,7,false
+3,2026-04-19,42,Empuje,Fondos,10,12,3,8,false
+3,2026-04-21,36,Empuje,Press Banca,40,12,4,7,false
+3,2026-04-21,29,Empuje,Press Inclinado,45,12,3,9,false
+3,2026-04-21,43,Empuje,Fondos,10,12,3,9,false
+3,2026-04-23,27,Jalón,Remo con Mancuerna,15,6,3,5,false
+3,2026-04-23,22,Jalón,Dominadas,7.5,6,3,8,false
+3,2026-04-23,34,Jalón,Peso Muerto Rumano,42.5,7,4,6,false
+3,2026-04-26,28,Jalón,Remo con Mancuerna,15,6,3,2,true
+3,2026-04-26,23,Jalón,Dominadas,5,6,2,5,false
+3,2026-04-26,35,Jalón,Peso Muerto Rumano,25,6,2,5,false
+3,2026-04-28,29,Jalón,Remo con Mancuerna,7.5,6,2,4,false
+3,2026-04-28,24,Jalón,Dominadas,5,6,2,5,false
+3,2026-04-28,36,Jalón,Peso Muerto Rumano,27.5,6,2,5,false
+3,2026-04-30,27,Piernas,Peso Muerto,47.5,6,4,5,false
+3,2026-04-30,35,Piernas,Sentadilla,75,9,2,6,false
+3,2026-04-30,27,Piernas,Zancadas,20,9,2,6,false
+3,2026-05-02,28,Piernas,Peso Muerto,47.5,6,4,9,false
+3,2026-05-02,36,Piernas,Sentadilla,75,8,3,5,false
+3,2026-05-02,28,Piernas,Zancadas,17.5,7,2,6,false
+3,2026-05-05,29,Piernas,Peso Muerto,47.5,6,4,7,false
+3,2026-05-05,37,Piernas,Sentadilla,75,7,3,7,false
+3,2026-05-05,29,Piernas,Zancadas,15,6,2,6,false
+3,2026-05-07,33,Empuje,Press Militar,30,12,5,8,false
+3,2026-05-07,17,Empuje,Press con Mancuernas,17.5,6,4,7,false
+3,2026-05-07,30,Empuje,Press Inclinado,45,12,3,9,false
+3,2026-05-09,34,Empuje,Press Militar,30,12,5,7,false
+3,2026-05-09,18,Empuje,Press con Mancuernas,17.5,6,4,9,false
+3,2026-05-09,31,Empuje,Press Inclinado,45,12,3,9,false
+3,2026-05-12,35,Empuje,Press Militar,30,12,4,8,false
+3,2026-05-12,19,Empuje,Press con Mancuernas,17.5,7,4,6,false
+3,2026-05-12,32,Empuje,Press Inclinado,45,12,3,9,false
+3,2026-05-14,37,Jalón,Peso Muerto Rumano,30,6,3,5,false
+3,2026-05-14,31,Jalón,Remo con Barra,17.5,6,2,5,false
+3,2026-05-14,20,Jalón,Jalón al Pecho,15,6,2,5,false
+3,2026-05-16,38,Jalón,Peso Muerto Rumano,32.5,6,3,6,false
+3,2026-05-16,32,Jalón,Remo con Barra,20,6,2,5,false
+3,2026-05-16,21,Jalón,Jalón al Pecho,17.5,6,2,5,false
+3,2026-05-18,39,Jalón,Peso Muerto Rumano,27.5,6,2,6,false
+3,2026-05-18,33,Jalón,Remo con Barra,20,6,2,5,false
+3,2026-05-18,22,Jalón,Jalón al Pecho,20,6,2,5,false
+3,2026-05-20,30,Piernas,Peso Muerto,50,7,4,6,false
+3,2026-05-20,30,Piernas,Zancadas,15,6,2,6,false
+3,2026-05-20,30,Piernas,Extensiones de Cuádriceps,25,6,3,5,false
+3,2026-05-22,31,Piernas,Peso Muerto,50,7,4,7,false
+3,2026-05-22,31,Piernas,Zancadas,15,6,3,5,false
+3,2026-05-22,31,Piernas,Extensiones de Cuádriceps,25,6,3,9,false
+3,2026-05-24,32,Piernas,Peso Muerto,50,7,5,5,false
+3,2026-05-24,32,Piernas,Zancadas,15,6,3,8,false
+3,2026-05-24,32,Piernas,Extensiones de Cuádriceps,25,6,4,6,false
+3,2026-05-26,36,Empuje,Press Militar,32.5,12,4,6,false
+3,2026-05-26,33,Empuje,Press Inclinado,47.5,12,3,7,false
+3,2026-05-26,20,Empuje,Press con Mancuernas,17.5,7,4,7,false
+3,2026-05-28,37,Empuje,Press Militar,32.5,12,4,8,false
+3,2026-05-28,34,Empuje,Press Inclinado,47.5,12,4,6,false
+3,2026-05-28,21,Empuje,Press con Mancuernas,20,8,4,5,false
+3,2026-05-30,38,Empuje,Press Militar,32.5,12,4,7,false
+3,2026-05-30,35,Empuje,Press Inclinado,47.5,12,4,8,false
+3,2026-05-30,22,Empuje,Press con Mancuernas,20,8,4,8,false
+4,2025-04-29,1,Empuje,Press Banca,70,8,4,6,false
+4,2025-04-29,1,Empuje,Press Militar,47.5,8,3,8,false
+4,2025-04-29,1,Empuje,Fondos,0,8,3,8,false
+4,2025-05-01,2,Empuje,Press Banca,70,8,4,9,false
+4,2025-05-01,2,Empuje,Press Militar,47.5,8,3,7,false
+4,2025-05-01,2,Empuje,Fondos,0,9,3,9,false
+4,2025-05-03,3,Empuje,Press Banca,70,9,4,6,false
+4,2025-05-03,3,Empuje,Press Militar,50,9,3,6,false
+4,2025-05-03,3,Empuje,Fondos,0,9,3,9,false
+4,2025-05-06,1,Jalón,Dominadas,0,9,4,8,false
+4,2025-05-06,1,Jalón,Peso Muerto Rumano,82.5,9,4,6,false
+4,2025-05-06,1,Jalón,Remo con Barra,60,8,3,7,false
+4,2025-05-08,2,Jalón,Dominadas,0,10,4,9,false
+4,2025-05-08,2,Jalón,Peso Muerto Rumano,82.5,9,4,7,false
+4,2025-05-08,2,Jalón,Remo con Barra,60,8,4,7,false
+4,2025-05-10,3,Jalón,Dominadas,2.5,10,5,5,false
+4,2025-05-10,3,Jalón,Peso Muerto Rumano,82.5,9,3,8,false
+4,2025-05-10,3,Jalón,Remo con Barra,60,9,4,8,false
+4,2025-05-12,1,Piernas,Peso Muerto,107.5,8,3,8,false
+4,2025-05-12,1,Piernas,Sentadilla,95,9,3,8,false
+4,2025-05-12,1,Piernas,Zancadas,22.5,10,4,6,false
+4,2025-05-14,2,Piernas,Peso Muerto,107.5,9,3,6,false
+4,2025-05-14,2,Piernas,Sentadilla,95,9,3,9,false
+4,2025-05-14,2,Piernas,Zancadas,22.5,10,4,7,false
+4,2025-05-16,3,Piernas,Peso Muerto,110,9,3,8,false
+4,2025-05-16,3,Piernas,Sentadilla,97.5,10,3,7,false
+4,2025-05-16,3,Piernas,Zancadas,22.5,10,5,7,false
+4,2025-05-19,4,Piernas,Peso Muerto,110,10,3,6,false
+4,2025-05-19,4,Piernas,Sentadilla,97.5,11,4,5,false
+4,2025-05-19,4,Piernas,Zancadas,22.5,10,5,9,false
+4,2025-05-21,1,Empuje,Press con Mancuernas,42.5,9,4,8,false
+4,2025-05-21,4,Empuje,Press Banca,70,9,4,7,false
+4,2025-05-21,4,Empuje,Press Militar,50,9,3,7,false
+4,2025-05-23,1,Jalón,Remo con Mancuerna,22.5,8,4,6,false
+4,2025-05-23,4,Jalón,Dominadas,2.5,10,5,8,false
+4,2025-05-23,4,Jalón,Peso Muerto Rumano,82.5,10,3,6,false
+4,2025-05-26,2,Jalón,Remo con Mancuerna,22.5,8,4,7,false
+4,2025-05-26,5,Jalón,Dominadas,2.5,10,4,9,false
+4,2025-05-26,5,Jalón,Peso Muerto Rumano,82.5,11,3,8,false
+4,2025-05-28,3,Jalón,Remo con Mancuerna,22.5,8,4,7,false
+4,2025-05-28,6,Jalón,Dominadas,5,10,4,6,false
+4,2025-05-28,6,Jalón,Peso Muerto Rumano,85,11,3,9,false
+4,2025-05-31,1,Piernas,Prensa de Piernas,142.5,10,3,7,false
+4,2025-05-31,5,Piernas,Sentadilla,97.5,12,4,6,false
+4,2025-05-31,1,Piernas,Extensiones de Cuádriceps,47.5,10,4,6,false
+4,2025-06-02,2,Piernas,Prensa de Piernas,142.5,10,3,8,false
+4,2025-06-02,6,Piernas,Sentadilla,97.5,12,4,7,false
+4,2025-06-02,2,Piernas,Extensiones de Cuádriceps,47.5,10,4,7,false
+4,2025-06-05,3,Piernas,Prensa de Piernas,145,10,3,9,false
+4,2025-06-05,7,Piernas,Sentadilla,97.5,12,4,9,false
+4,2025-06-05,3,Piernas,Extensiones de Cuádriceps,47.5,10,4,8,false
+4,2025-06-08,4,Piernas,Prensa de Piernas,145,11,3,7,false
+4,2025-06-08,8,Piernas,Sentadilla,97.5,12,4,7,false
+4,2025-06-08,4,Piernas,Extensiones de Cuádriceps,47.5,10,4,7,false
+4,2025-06-10,5,Empuje,Press Banca,70,10,4,8,false
+4,2025-06-10,1,Empuje,Press Inclinado,60,8,4,6,false
+4,2025-06-10,5,Empuje,Press Militar,50,9,3,8,false
+4,2025-06-12,6,Empuje,Press Banca,70,11,3,7,false
+4,2025-06-12,2,Empuje,Press Inclinado,60,8,4,8,false
+4,2025-06-12,6,Empuje,Press Militar,50,10,3,7,false
+4,2025-06-14,1,Jalón,Jalón al Pecho,52.5,9,4,7,false
+4,2025-06-14,7,Jalón,Peso Muerto Rumano,85,11,3,8,false
+4,2025-06-14,7,Jalón,Dominadas,5,10,4,8,false
+4,2025-06-17,2,Jalón,Jalón al Pecho,52.5,9,4,9,false
+4,2025-06-17,8,Jalón,Peso Muerto Rumano,85,11,3,7,false
+4,2025-06-17,8,Jalón,Dominadas,5,10,4,7,false
+4,2025-06-20,3,Jalón,Jalón al Pecho,55,9,3,7,false
+4,2025-06-20,9,Jalón,Peso Muerto Rumano,87.5,11,3,9,false
+4,2025-06-20,9,Jalón,Dominadas,5,11,4,6,false
+4,2025-06-23,4,Jalón,Jalón al Pecho,55,10,4,7,false
+4,2025-06-23,10,Jalón,Peso Muerto Rumano,87.5,11,3,8,false
+4,2025-06-23,10,Jalón,Dominadas,5,11,4,8,false
+4,2025-06-25,5,Piernas,Peso Muerto,110,10,3,8,false
+4,2025-06-25,5,Piernas,Extensiones de Cuádriceps,47.5,11,5,6,false
+4,2025-06-25,5,Piernas,Prensa de Piernas,145,11,3,8,false
+4,2025-06-27,6,Piernas,Peso Muerto,112.5,11,3,7,false
+4,2025-06-27,6,Piernas,Extensiones de Cuádriceps,50,11,5,7,false
+4,2025-06-27,6,Piernas,Prensa de Piernas,147.5,12,3,8,false
+4,2025-06-30,7,Piernas,Peso Muerto,112.5,11,3,9,false
+4,2025-06-30,7,Piernas,Extensiones de Cuádriceps,50,11,4,8,false
+4,2025-06-30,7,Piernas,Prensa de Piernas,147.5,12,3,9,false
+4,2025-07-02,8,Piernas,Peso Muerto,112.5,12,3,7,false
+4,2025-07-02,8,Piernas,Extensiones de Cuádriceps,50,11,3,8,false
+4,2025-07-02,8,Piernas,Prensa de Piernas,147.5,12,3,7,false
+4,2025-07-04,4,Empuje,Fondos,0,9,3,8,false
+4,2025-07-04,7,Empuje,Press Banca,70,11,3,8,false
+4,2025-07-04,7,Empuje,Press Militar,50,11,3,7,false
+4,2025-07-07,5,Empuje,Fondos,0,10,3,9,false
+4,2025-07-07,8,Empuje,Press Banca,70,11,3,8,false
+4,2025-07-07,8,Empuje,Press Militar,50,12,4,3,true
+4,2025-07-09,6,Empuje,Fondos,0,6,2,5,false
+4,2025-07-09,9,Empuje,Press Banca,40,7,2,5,false
+4,2025-07-09,9,Empuje,Press Militar,27.5,7,2,4,false
+4,2025-07-12,7,Empuje,Fondos,0,7,2,5,false
+4,2025-07-12,10,Empuje,Press Banca,45,7,2,5,false
+4,2025-07-12,10,Empuje,Press Militar,32.5,7,2,4,false
+4,2025-07-14,11,Jalón,Dominadas,5,11,4,9,false
+4,2025-07-14,4,Jalón,Remo con Barra,60,9,4,8,false
+4,2025-07-14,4,Jalón,Remo con Mancuerna,22.5,8,5,6,false
+4,2025-07-16,12,Jalón,Dominadas,5,11,4,7,false
+4,2025-07-16,5,Jalón,Remo con Barra,60,10,4,6,false
+4,2025-07-16,5,Jalón,Remo con Mancuerna,22.5,8,5,8,false
+4,2025-07-18,13,Jalón,Dominadas,5,12,4,8,false
+4,2025-07-18,6,Jalón,Remo con Barra,60,10,4,9,false
+4,2025-07-18,6,Jalón,Remo con Mancuerna,25,9,4,8,false
+4,2025-07-21,14,Jalón,Dominadas,5,12,4,7,false
+4,2025-07-21,7,Jalón,Remo con Barra,60,10,4,7,false
+4,2025-07-21,7,Jalón,Remo con Mancuerna,25,9,4,9,false
+4,2025-07-24,5,Piernas,Zancadas,22.5,10,5,9,false
+4,2025-07-24,9,Piernas,Sentadilla,100,12,4,7,false
+4,2025-07-24,9,Piernas,Peso Muerto,112.5,12,3,7,false
+4,2025-07-27,6,Piernas,Zancadas,25,11,5,6,false
+4,2025-07-27,10,Piernas,Sentadilla,100,12,4,8,false
+4,2025-07-27,10,Piernas,Peso Muerto,112.5,12,3,8,false
+4,2025-07-30,7,Piernas,Zancadas,25,11,4,8,false
+4,2025-07-30,11,Piernas,Sentadilla,100,12,3,9,false
+4,2025-07-30,11,Piernas,Peso Muerto,112.5,12,4,7,false
+4,2025-08-02,8,Piernas,Zancadas,25,11,4,8,false
+4,2025-08-02,12,Piernas,Sentadilla,102.5,12,3,7,false
+4,2025-08-02,12,Piernas,Peso Muerto,112.5,12,4,9,false
+4,2025-08-04,11,Empuje,Press Militar,35,8,2,5,false
+4,2025-08-04,2,Empuje,Press con Mancuernas,25,6,2,5,false
+4,2025-08-04,3,Empuje,Press Inclinado,35,6,2,5,false
+4,2025-08-06,15,Jalón,Dominadas,7.5,12,5,6,false
+4,2025-08-06,8,Jalón,Remo con Mancuerna,25,9,4,7,false
+4,2025-08-06,8,Jalón,Remo con Barra,60,11,4,6,false
+4,2025-08-08,16,Jalón,Dominadas,7.5,12,5,7,false
+4,2025-08-08,9,Jalón,Remo con Mancuerna,27.5,9,3,7,false
+4,2025-08-08,9,Jalón,Remo con Barra,62.5,11,4,8,false
+4,2025-08-10,17,Jalón,Dominadas,7.5,12,5,7,false
+4,2025-08-10,10,Jalón,Remo con Mancuerna,27.5,10,3,6,false
+4,2025-08-10,10,Jalón,Remo con Barra,62.5,12,4,8,false
+4,2025-08-13,13,Piernas,Peso Muerto,112.5,12,4,9,false
+4,2025-08-13,13,Piernas,Sentadilla,102.5,12,3,8,false
+4,2025-08-13,9,Piernas,Zancadas,25,12,4,6,false
+4,2025-08-16,14,Piernas,Peso Muerto,112.5,12,4,8,false
+4,2025-08-16,14,Piernas,Sentadilla,102.5,12,3,7,false
+4,2025-08-16,10,Piernas,Zancadas,25,12,4,8,false
+4,2025-08-18,15,Piernas,Peso Muerto,115,12,4,7,false
+4,2025-08-18,15,Piernas,Sentadilla,105,12,3,8,false
+4,2025-08-18,11,Piernas,Zancadas,25,12,4,8,false
+4,2025-08-21,8,Empuje,Fondos,0,7,2,5,false
+4,2025-08-21,3,Empuje,Press con Mancuernas,27.5,6,2,5,false
+4,2025-08-21,4,Empuje,Press Inclinado,37.5,6,2,5,false
+4,2025-08-24,9,Empuje,Fondos,0,8,2,6,false
+4,2025-08-24,4,Empuje,Press con Mancuernas,30,6,3,5,false
+4,2025-08-24,5,Empuje,Press Inclinado,42.5,6,3,5,false
+4,2025-08-27,10,Empuje,Fondos,0,6,2,6,false
+4,2025-08-27,5,Empuje,Press con Mancuernas,32.5,7,3,6,false
+4,2025-08-27,6,Empuje,Press Inclinado,45,6,3,6,false
+4,2025-08-29,11,Jalón,Remo con Mancuerna,27.5,10,3,9,false
+4,2025-08-29,18,Jalón,Dominadas,7.5,12,5,7,false
+4,2025-08-29,11,Jalón,Peso Muerto Rumano,87.5,12,3,7,false
+4,2025-08-31,16,Piernas,Peso Muerto,115,12,4,8,false
+4,2025-08-31,9,Piernas,Extensiones de Cuádriceps,52.5,12,3,7,false
+4,2025-08-31,9,Piernas,Prensa de Piernas,150,12,3,8,false
+4,2025-09-03,17,Piernas,Peso Muerto,115,12,4,7,false
+4,2025-09-03,10,Piernas,Extensiones de Cuádriceps,52.5,12,3,9,false
+4,2025-09-03,10,Piernas,Prensa de Piernas,150,12,3,9,false
+4,2025-09-05,18,Piernas,Peso Muerto,115,12,4,8,false
+4,2025-09-05,11,Piernas,Extensiones de Cuádriceps,52.5,12,3,7,false
+4,2025-09-05,11,Piernas,Prensa de Piernas,150,12,3,7,false
+4,2025-09-07,19,Piernas,Peso Muerto,115,12,4,7,false
+4,2025-09-07,12,Piernas,Extensiones de Cuádriceps,55,12,3,9,false
+4,2025-09-07,12,Piernas,Prensa de Piernas,152.5,12,3,9,false
+4,2025-09-10,7,Empuje,Press Inclinado,37.5,6,2,6,false
+4,2025-09-10,12,Empuje,Press Militar,37.5,8,2,5,false
+4,2025-09-10,11,Empuje,Fondos,0,6,2,6,false
+4,2025-09-13,8,Empuje,Press Inclinado,32.5,6,2,6,false
+4,2025-09-13,13,Empuje,Press Militar,40,9,2,5,false
+4,2025-09-13,12,Empuje,Fondos,0,6,2,6,false
+4,2025-09-15,9,Empuje,Press Inclinado,32.5,6,3,7,false
+4,2025-09-15,14,Empuje,Press Militar,45,9,2,6,false
+4,2025-09-15,13,Empuje,Fondos,0,6,3,9,false
+4,2025-09-18,10,Empuje,Press Inclinado,32.5,6,3,8,false
+4,2025-09-18,15,Empuje,Press Militar,45,8,3,6,false
+4,2025-09-18,14,Empuje,Fondos,0,6,3,7,false
+4,2025-09-21,19,Jalón,Dominadas,7.5,12,5,7,false
+4,2025-09-21,11,Jalón,Remo con Barra,62.5,12,4,9,false
+4,2025-09-21,12,Jalón,Peso Muerto Rumano,87.5,12,3,8,false
+4,2025-09-24,20,Jalón,Dominadas,7.5,12,5,9,false
+4,2025-09-24,12,Jalón,Remo con Barra,65,12,4,9,false
+4,2025-09-24,13,Jalón,Peso Muerto Rumano,87.5,12,3,8,false
+4,2025-09-26,21,Jalón,Dominadas,10,12,5,7,false
+4,2025-09-26,13,Jalón,Remo con Barra,65,12,5,5,false
+4,2025-09-26,14,Jalón,Peso Muerto Rumano,87.5,12,3,8,false
+4,2025-09-28,12,Piernas,Zancadas,25,12,3,7,false
+4,2025-09-28,16,Piernas,Sentadilla,105,12,3,7,false
+4,2025-09-28,13,Piernas,Extensiones de Cuádriceps,55,12,3,8,false
+4,2025-09-30,13,Piernas,Zancadas,25,12,3,7,false
+4,2025-09-30,17,Piernas,Sentadilla,105,12,4,7,false
+4,2025-09-30,14,Piernas,Extensiones de Cuádriceps,55,12,3,9,false
+4,2025-10-02,14,Piernas,Zancadas,25,12,4,6,false
+4,2025-10-02,18,Piernas,Sentadilla,105,12,4,8,false
+4,2025-10-02,15,Piernas,Extensiones de Cuádriceps,57.5,12,3,7,false
+4,2025-10-05,15,Piernas,Zancadas,25,12,5,6,false
+4,2025-10-05,19,Piernas,Sentadilla,105,12,4,8,false
+4,2025-10-05,16,Piernas,Extensiones de Cuádriceps,57.5,12,3,7,false
+4,2025-10-07,11,Empuje,Press Banca,47.5,8,2,5,false
+4,2025-10-07,6,Empuje,Press con Mancuernas,27.5,6,2,6,false
+4,2025-10-07,16,Empuje,Press Militar,45,7,3,8,false
+4,2025-10-09,12,Empuje,Press Banca,52.5,8,2,6,false
+4,2025-10-09,7,Empuje,Press con Mancuernas,25,6,2,6,false
+4,2025-10-09,17,Empuje,Press Militar,45,7,3,8,false
+4,2025-10-12,12,Jalón,Remo con Mancuerna,27.5,10,3,9,false
+4,2025-10-12,14,Jalón,Remo con Barra,65,12,5,8,false
+4,2025-10-12,5,Jalón,Jalón al Pecho,55,10,4,9,false
+4,2025-10-14,13,Jalón,Remo con Mancuerna,27.5,10,3,8,false
+4,2025-10-14,15,Jalón,Remo con Barra,67.5,12,5,9,false
+4,2025-10-14,6,Jalón,Jalón al Pecho,55,10,4,9,false
+4,2025-10-17,14,Jalón,Remo con Mancuerna,27.5,11,3,6,false
+4,2025-10-17,16,Jalón,Remo con Barra,67.5,12,5,8,false
+4,2025-10-17,7,Jalón,Jalón al Pecho,55,11,4,8,false
+4,2025-10-19,15,Jalón,Remo con Mancuerna,30,11,3,6,false
+4,2025-10-19,17,Jalón,Remo con Barra,67.5,12,5,8,false
+4,2025-10-19,8,Jalón,Jalón al Pecho,55,11,5,6,false
+4,2025-10-21,20,Piernas,Peso Muerto,115,12,4,8,false
+4,2025-10-21,20,Piernas,Sentadilla,105,12,4,7,false
+4,2025-10-21,17,Piernas,Extensiones de Cuádriceps,57.5,12,3,9,false
+4,2025-10-23,21,Piernas,Peso Muerto,117.5,12,3,9,false
+4,2025-10-23,21,Piernas,Sentadilla,107.5,12,5,4,true
+4,2025-10-23,18,Piernas,Extensiones de Cuádriceps,32.5,7,2,5,false
+4,2025-10-25,11,Empuje,Press Inclinado,32.5,7,3,7,false
+4,2025-10-25,15,Empuje,Fondos,0,6,4,8,false
+4,2025-10-25,18,Empuje,Press Militar,47.5,7,4,6,false
+4,2025-10-27,12,Empuje,Press Inclinado,32.5,7,3,7,false
+4,2025-10-27,16,Empuje,Fondos,0,6,4,8,false
+4,2025-10-27,19,Empuje,Press Militar,47.5,7,4,9,false
+4,2025-10-29,13,Empuje,Press Inclinado,32.5,7,3,9,false
+4,2025-10-29,17,Empuje,Fondos,0,6,4,8,false
+4,2025-10-29,20,Empuje,Press Militar,47.5,8,4,6,false
+4,2025-10-31,22,Jalón,Dominadas,10,12,5,8,false
+4,2025-10-31,18,Jalón,Remo con Barra,70,12,5,8,false
+4,2025-10-31,15,Jalón,Peso Muerto Rumano,87.5,12,3,9,false
+4,2025-11-02,23,Jalón,Dominadas,10,12,5,7,false
+4,2025-11-02,19,Jalón,Remo con Barra,70,12,5,7,false
+4,2025-11-02,16,Jalón,Peso Muerto Rumano,87.5,12,3,8,false
+4,2025-11-05,24,Jalón,Dominadas,12.5,12,5,6,false
+4,2025-11-05,20,Jalón,Remo con Barra,70,12,5,8,false
+4,2025-11-05,17,Jalón,Peso Muerto Rumano,87.5,12,3,7,false
+4,2025-11-07,22,Piernas,Peso Muerto,65,7,2,5,false
+4,2025-11-07,22,Piernas,Sentadilla,60,7,2,4,false
+4,2025-11-07,19,Piernas,Extensiones de Cuádriceps,35,8,2,5,false
+4,2025-11-09,23,Piernas,Peso Muerto,72.5,8,2,5,false
+4,2025-11-09,23,Piernas,Sentadilla,65,8,2,4,false
+4,2025-11-09,20,Piernas,Extensiones de Cuádriceps,40,9,2,5,false
+4,2025-11-12,24,Piernas,Peso Muerto,80,9,2,5,false
+4,2025-11-12,24,Piernas,Sentadilla,72.5,9,3,5,false
+4,2025-11-12,21,Piernas,Extensiones de Cuádriceps,42.5,9,2,6,false
+4,2025-11-14,25,Piernas,Peso Muerto,87.5,9,2,6,false
+4,2025-11-14,25,Piernas,Sentadilla,80,9,3,5,false
+4,2025-11-14,22,Piernas,Extensiones de Cuádriceps,35,7,2,6,false
+4,2025-11-16,18,Empuje,Fondos,0,7,4,7,false
+4,2025-11-16,14,Empuje,Press Inclinado,32.5,7,3,9,false
+4,2025-11-16,13,Empuje,Press Banca,42.5,6,2,6,false
+4,2025-11-18,19,Empuje,Fondos,0,7,4,8,false
+4,2025-11-18,15,Empuje,Press Inclinado,35,7,4,5,false
+4,2025-11-18,14,Empuje,Press Banca,37.5,6,2,6,false
+4,2025-11-21,20,Empuje,Fondos,0,7,4,7,false
+4,2025-11-21,16,Empuje,Press Inclinado,35,7,4,9,false
+4,2025-11-21,15,Empuje,Press Banca,37.5,6,3,7,false
+4,2025-11-23,21,Empuje,Fondos,0,7,3,9,false
+4,2025-11-23,17,Empuje,Press Inclinado,35,8,4,8,false
+4,2025-11-23,16,Empuje,Press Banca,37.5,6,3,8,false
+4,2025-11-25,25,Jalón,Dominadas,12.5,12,5,8,false
+4,2025-11-25,21,Jalón,Remo con Barra,72.5,12,5,7,false
+4,2025-11-25,9,Jalón,Jalón al Pecho,57.5,11,5,7,false
+4,2025-11-28,26,Jalón,Dominadas,12.5,12,4,7,false
+4,2025-11-28,22,Jalón,Remo con Barra,72.5,12,5,8,false
+4,2025-11-28,10,Jalón,Jalón al Pecho,57.5,11,5,9,false
+4,2025-11-30,27,Jalón,Dominadas,15,12,3,7,false
+4,2025-11-30,23,Jalón,Remo con Barra,72.5,12,5,8,false
+4,2025-11-30,11,Jalón,Jalón al Pecho,57.5,12,5,8,false
+4,2025-12-03,28,Jalón,Dominadas,15,12,3,9,false
+4,2025-12-03,24,Jalón,Remo con Barra,75,12,5,7,false
+4,2025-12-03,12,Jalón,Jalón al Pecho,60,12,4,7,false
+4,2025-12-05,26,Piernas,Sentadilla,85,10,3,5,false
+4,2025-12-05,26,Piernas,Peso Muerto,70,7,2,6,false
+4,2025-12-05,23,Piernas,Extensiones de Cuádriceps,30,6,2,6,false
+4,2025-12-08,27,Piernas,Sentadilla,92.5,10,3,6,false
+4,2025-12-08,27,Piernas,Peso Muerto,62.5,6,2,6,false
+4,2025-12-08,24,Piernas,Extensiones de Cuádriceps,27.5,6,2,6,false
+4,2025-12-11,21,Empuje,Press Militar,47.5,9,5,6,false
+4,2025-12-11,18,Empuje,Press Inclinado,37.5,8,4,6,false
+4,2025-12-11,17,Empuje,Press Banca,37.5,7,3,7,false
+4,2025-12-14,22,Empuje,Press Militar,47.5,9,5,9,false
+4,2025-12-14,19,Empuje,Press Inclinado,37.5,9,3,7,false
+4,2025-12-14,18,Empuje,Press Banca,40,7,3,7,false
+4,2025-12-17,25,Jalón,Remo con Barra,75,12,5,8,false
+4,2025-12-17,18,Jalón,Peso Muerto Rumano,87.5,12,4,5,false
+4,2025-12-17,29,Jalón,Dominadas,15,12,3,8,false
+4,2025-12-19,26,Jalón,Remo con Barra,75,12,5,8,false
+4,2025-12-19,19,Jalón,Peso Muerto Rumano,87.5,12,4,7,false
+4,2025-12-19,30,Jalón,Dominadas,17.5,12,3,7,false
+4,2025-12-22,27,Jalón,Remo con Barra,77.5,12,4,8,false
+4,2025-12-22,20,Jalón,Peso Muerto Rumano,87.5,12,4,7,false
+4,2025-12-22,31,Jalón,Dominadas,17.5,12,3,9,false
+4,2025-12-25,28,Jalón,Remo con Barra,77.5,12,4,7,false
+4,2025-12-25,21,Jalón,Peso Muerto Rumano,87.5,12,5,6,false
+4,2025-12-25,32,Jalón,Dominadas,17.5,12,3,7,false
+4,2025-12-28,28,Piernas,Peso Muerto,62.5,6,3,5,false
+4,2025-12-28,16,Piernas,Zancadas,15,7,3,5,false
+4,2025-12-28,28,Piernas,Sentadilla,92.5,9,3,9,false
+4,2025-12-31,29,Piernas,Peso Muerto,62.5,6,4,7,false
+4,2025-12-31,17,Piernas,Zancadas,15,8,3,5,false
+4,2025-12-31,29,Piernas,Sentadilla,92.5,9,3,7,false
+4,2026-01-03,30,Piernas,Peso Muerto,62.5,6,5,6,false
+4,2026-01-03,18,Piernas,Zancadas,17.5,9,3,5,false
+4,2026-01-03,30,Piernas,Sentadilla,95,9,3,8,false
+4,2026-01-05,31,Piernas,Peso Muerto,62.5,6,5,7,false
+4,2026-01-05,19,Piernas,Zancadas,20,9,4,6,false
+4,2026-01-05,31,Piernas,Sentadilla,95,9,3,8,false
+4,2026-01-07,8,Empuje,Press con Mancuernas,25,6,3,7,false
+4,2026-01-07,19,Empuje,Press Banca,40,8,3,8,false
+4,2026-01-07,22,Empuje,Fondos,0,7,3,7,false
+4,2026-01-09,9,Empuje,Press con Mancuernas,25,6,3,8,false
+4,2026-01-09,20,Empuje,Press Banca,40,8,3,7,false
+4,2026-01-09,23,Empuje,Fondos,0,7,3,8,false
+4,2026-01-11,29,Jalón,Remo con Barra,77.5,12,4,8,false
+4,2026-01-11,33,Jalón,Dominadas,20,12,3,8,false
+4,2026-01-11,16,Jalón,Remo con Mancuerna,30,11,3,9,false
+4,2026-01-13,30,Jalón,Remo con Barra,80,12,4,7,false
+4,2026-01-13,34,Jalón,Dominadas,20,12,3,7,false
+4,2026-01-13,17,Jalón,Remo con Mancuerna,30,12,3,7,false
+4,2026-01-16,31,Jalón,Remo con Barra,80,12,4,7,false
+4,2026-01-16,35,Jalón,Dominadas,20,12,3,7,false
+4,2026-01-16,18,Jalón,Remo con Mancuerna,32.5,12,3,7,false
+4,2026-01-18,32,Piernas,Peso Muerto,62.5,6,5,9,false
+4,2026-01-18,25,Piernas,Extensiones de Cuádriceps,27.5,6,3,5,false
+4,2026-01-18,32,Piernas,Sentadilla,95,9,3,9,false
+4,2026-01-20,33,Piernas,Peso Muerto,62.5,7,5,6,false
+4,2026-01-20,26,Piernas,Extensiones de Cuádriceps,27.5,6,3,8,false
+4,2026-01-20,33,Piernas,Sentadilla,97.5,10,4,6,false
+4,2026-01-22,34,Piernas,Peso Muerto,62.5,7,5,7,false
+4,2026-01-22,27,Piernas,Extensiones de Cuádriceps,27.5,6,3,8,false
+4,2026-01-22,34,Piernas,Sentadilla,97.5,11,4,8,false
+4,2026-01-25,23,Empuje,Press Militar,47.5,10,5,7,false
+4,2026-01-25,21,Empuje,Press Banca,42.5,9,3,6,false
+4,2026-01-25,10,Empuje,Press con Mancuernas,25,6,3,8,false
+4,2026-01-28,24,Empuje,Press Militar,50,11,4,8,false
+4,2026-01-28,22,Empuje,Press Banca,42.5,9,3,9,false
+4,2026-01-28,11,Empuje,Press con Mancuernas,25,6,3,8,false
+4,2026-01-30,25,Empuje,Press Militar,50,12,5,5,false
+4,2026-01-30,23,Empuje,Press Banca,42.5,9,3,8,false
+4,2026-01-30,12,Empuje,Press con Mancuernas,27.5,7,3,6,false
+4,2026-02-01,22,Jalón,Peso Muerto Rumano,87.5,12,5,9,false
+4,2026-02-01,19,Jalón,Remo con Mancuerna,32.5,12,3,7,false
+4,2026-02-01,36,Jalón,Dominadas,20,12,3,9,false
+4,2026-02-03,23,Jalón,Peso Muerto Rumano,87.5,12,5,8,false
+4,2026-02-03,20,Jalón,Remo con Mancuerna,32.5,12,3,9,false
+4,2026-02-03,37,Jalón,Dominadas,20,12,3,9,false
+4,2026-02-05,24,Jalón,Peso Muerto Rumano,90,12,5,9,false
+4,2026-02-05,21,Jalón,Remo con Mancuerna,35,12,3,7,false
+4,2026-02-05,38,Jalón,Dominadas,20,12,3,7,false
+4,2026-02-07,35,Piernas,Sentadilla,97.5,12,4,6,false
+4,2026-02-07,20,Piernas,Zancadas,17.5,7,3,6,false
+4,2026-02-07,35,Piernas,Peso Muerto,62.5,8,5,6,false
+4,2026-02-09,36,Piernas,Sentadilla,97.5,12,3,9,false
+4,2026-02-09,21,Piernas,Zancadas,15,6,2,6,false
+4,2026-02-09,36,Piernas,Peso Muerto,62.5,8,5,9,false
+4,2026-02-12,37,Piernas,Sentadilla,97.5,12,3,9,false
+4,2026-02-12,22,Piernas,Zancadas,15,6,3,5,false
+4,2026-02-12,37,Piernas,Peso Muerto,62.5,8,5,8,false
+4,2026-02-15,38,Piernas,Sentadilla,97.5,12,3,8,false
+4,2026-02-15,23,Piernas,Zancadas,15,6,3,8,false
+4,2026-02-15,38,Piernas,Peso Muerto,62.5,8,5,7,false
+4,2026-02-17,13,Empuje,Press con Mancuernas,27.5,7,3,7,false
+4,2026-02-17,26,Empuje,Press Militar,50,12,5,8,false
+4,2026-02-17,24,Empuje,Press Banca,45,9,3,6,false
+4,2026-02-19,14,Empuje,Press con Mancuernas,27.5,7,3,7,false
+4,2026-02-19,27,Empuje,Press Militar,52.5,12,5,7,false
+4,2026-02-19,25,Empuje,Press Banca,45,9,3,9,false
+4,2026-02-22,15,Empuje,Press con Mancuernas,27.5,7,4,6,false
+4,2026-02-22,28,Empuje,Press Militar,52.5,12,4,8,false
+4,2026-02-22,26,Empuje,Press Banca,45,10,3,7,false
+4,2026-02-25,25,Jalón,Peso Muerto Rumano,90,12,5,9,false
+4,2026-02-25,13,Jalón,Jalón al Pecho,60,12,4,9,false
+4,2026-02-25,39,Jalón,Dominadas,20,12,3,7,false
+4,2026-02-28,26,Jalón,Peso Muerto Rumano,90,12,5,7,false
+4,2026-02-28,14,Jalón,Jalón al Pecho,60,12,3,8,false
+4,2026-02-28,40,Jalón,Dominadas,20,12,3,9,false
+4,2026-03-03,27,Jalón,Peso Muerto Rumano,90,12,5,8,false
+4,2026-03-03,15,Jalón,Jalón al Pecho,62.5,12,3,8,false
+4,2026-03-03,41,Jalón,Dominadas,20,12,3,9,false
+4,2026-03-06,28,Jalón,Peso Muerto Rumano,90,12,5,9,false
+4,2026-03-06,16,Jalón,Jalón al Pecho,62.5,12,3,9,false
+4,2026-03-06,42,Jalón,Dominadas,20,12,3,9,false
+4,2026-03-08,24,Piernas,Zancadas,15,6,3,9,false
+4,2026-03-08,39,Piernas,Sentadilla,100,12,3,8,false
+4,2026-03-08,28,Piernas,Extensiones de Cuádriceps,27.5,7,3,5,false
+4,2026-03-11,25,Piernas,Zancadas,15,7,3,7,false
+4,2026-03-11,40,Piernas,Sentadilla,100,12,3,8,false
+4,2026-03-11,29,Piernas,Extensiones de Cuádriceps,27.5,8,3,8,false
+4,2026-03-13,26,Piernas,Zancadas,15,7,3,8,false
+4,2026-03-13,41,Piernas,Sentadilla,100,12,3,2,true
+4,2026-03-13,30,Piernas,Extensiones de Cuádriceps,15,6,2,5,false
+4,2026-03-15,27,Piernas,Zancadas,7.5,6,2,5,false
+4,2026-03-15,42,Piernas,Sentadilla,57.5,7,2,4,false
+4,2026-03-15,31,Piernas,Extensiones de Cuádriceps,17.5,6,2,5,false
+4,2026-03-17,20,Empuje,Press Inclinado,37.5,9,3,8,false
+4,2026-03-17,27,Empuje,Press Banca,47.5,11,3,5,false
+4,2026-03-17,16,Empuje,Press con Mancuernas,27.5,7,4,9,false
+4,2026-03-19,21,Empuje,Press Inclinado,40,10,3,6,false
+4,2026-03-19,28,Empuje,Press Banca,47.5,11,3,9,false
+4,2026-03-19,17,Empuje,Press con Mancuernas,27.5,8,4,2,true
+4,2026-03-22,22,Empuje,Press Inclinado,22.5,6,2,5,false
+4,2026-03-22,29,Empuje,Press Banca,27.5,7,2,5,false
+4,2026-03-22,18,Empuje,Press con Mancuernas,15,6,2,4,false
+4,2026-03-25,23,Empuje,Press Inclinado,25,7,2,5,false
+4,2026-03-25,30,Empuje,Press Banca,30,7,2,5,false
+4,2026-03-25,19,Empuje,Press con Mancuernas,17.5,6,2,4,false
+4,2026-03-27,43,Jalón,Dominadas,20,12,3,8,false
+4,2026-03-27,22,Jalón,Remo con Mancuerna,35,12,3,9,false
+4,2026-03-27,17,Jalón,Jalón al Pecho,62.5,12,3,9,false
+4,2026-03-29,39,Piernas,Peso Muerto,35,6,3,5,false
+4,2026-03-29,32,Piernas,Extensiones de Cuádriceps,20,6,2,5,false
+4,2026-03-29,43,Piernas,Sentadilla,62.5,8,2,4,false
+4,2026-03-31,40,Piernas,Peso Muerto,40,6,3,5,false
+4,2026-03-31,33,Piernas,Extensiones de Cuádriceps,20,6,2,6,false
+4,2026-03-31,44,Piernas,Sentadilla,70,9,2,5,false
+4,2026-04-02,41,Piernas,Peso Muerto,42.5,6,3,5,false
+4,2026-04-02,34,Piernas,Extensiones de Cuádriceps,17.5,6,2,6,false
+4,2026-04-02,45,Piernas,Sentadilla,75,9,2,5,false
+4,2026-04-04,29,Empuje,Press Militar,30,7,2,5,false
+4,2026-04-04,31,Empuje,Press Banca,32.5,8,2,5,false
+4,2026-04-04,20,Empuje,Press con Mancuernas,20,6,3,5,false
+4,2026-04-07,30,Empuje,Press Militar,32.5,8,2,5,false
+4,2026-04-07,32,Empuje,Press Banca,35,8,2,6,false
+4,2026-04-07,21,Empuje,Press con Mancuernas,20,6,3,5,false
+4,2026-04-10,31,Empuje,Press Militar,35,9,3,5,false
+4,2026-04-10,33,Empuje,Press Banca,27.5,6,2,6,false
+4,2026-04-10,22,Empuje,Press con Mancuernas,22.5,6,3,5,false
+4,2026-04-12,44,Jalón,Dominadas,20,12,3,8,false
+4,2026-04-12,29,Jalón,Peso Muerto Rumano,90,12,5,3,true
+4,2026-04-12,23,Jalón,Remo con Mancuerna,20,7,2,5,false
+4,2026-04-15,45,Jalón,Dominadas,12.5,7,2,5,false
+4,2026-04-15,30,Jalón,Peso Muerto Rumano,50,7,3,4,false
+4,2026-04-15,24,Jalón,Remo con Mancuerna,22.5,8,2,5,false
+4,2026-04-17,13,Piernas,Prensa de Piernas,85,7,2,5,false
+4,2026-04-17,42,Piernas,Peso Muerto,47.5,6,4,6,false
+4,2026-04-17,35,Piernas,Extensiones de Cuádriceps,15,6,2,6,false
+4,2026-04-20,14,Piernas,Prensa de Piernas,95,8,2,5,false
+4,2026-04-20,43,Piernas,Peso Muerto,37.5,6,3,6,false
+4,2026-04-20,36,Piernas,Extensiones de Cuádriceps,15,6,3,6,false
+4,2026-04-22,15,Piernas,Prensa de Piernas,105,9,2,5,false
+4,2026-04-22,44,Piernas,Peso Muerto,32.5,6,2,6,false
+4,2026-04-22,37,Piernas,Extensiones de Cuádriceps,15,6,3,7,false
+4,2026-04-25,24,Empuje,Fondos,0,6,2,5,false
+4,2026-04-25,34,Empuje,Press Banca,25,6,2,6,false
+4,2026-04-25,32,Empuje,Press Militar,40,9,3,6,false
+4,2026-04-27,25,Empuje,Fondos,0,6,2,5,false
+4,2026-04-27,35,Empuje,Press Banca,22.5,6,2,6,false
+4,2026-04-27,33,Empuje,Press Militar,32.5,7,2,6,false
+4,2026-04-30,26,Empuje,Fondos,0,6,2,5,false
+4,2026-04-30,36,Empuje,Press Banca,22.5,6,3,6,false
+4,2026-04-30,34,Empuje,Press Militar,27.5,6,2,6,false
+4,2026-05-02,27,Empuje,Fondos,0,6,2,6,false
+4,2026-05-02,37,Empuje,Press Banca,22.5,6,3,7,false
+4,2026-05-02,35,Empuje,Press Militar,27.5,6,3,7,false
+4,2026-05-04,46,Jalón,Dominadas,12.5,8,2,5,false
+4,2026-05-04,32,Jalón,Remo con Barra,45,7,2,5,false
+4,2026-05-04,18,Jalón,Jalón al Pecho,35,7,2,5,false
+4,2026-05-06,47,Jalón,Dominadas,15,9,2,5,false
+4,2026-05-06,33,Jalón,Remo con Barra,50,8,2,5,false
+4,2026-05-06,19,Jalón,Jalón al Pecho,40,8,2,5,false
+4,2026-05-09,48,Jalón,Dominadas,15,9,2,6,false
+4,2026-05-09,34,Jalón,Remo con Barra,55,9,3,5,false
+4,2026-05-09,20,Jalón,Jalón al Pecho,42.5,9,2,5,false
+4,2026-05-12,49,Jalón,Dominadas,12.5,7,2,6,false
+4,2026-05-12,35,Jalón,Remo con Barra,60,9,3,6,false
+4,2026-05-12,21,Jalón,Jalón al Pecho,47.5,9,2,6,false
+4,2026-05-15,16,Piernas,Prensa de Piernas,115,9,2,6,false
+4,2026-05-15,28,Piernas,Zancadas,10,6,2,5,false
+4,2026-05-15,38,Piernas,Extensiones de Cuádriceps,15,6,3,7,false
+4,2026-05-18,17,Piernas,Prensa de Piernas,92.5,7,2,6,false
+4,2026-05-18,29,Piernas,Zancadas,10,6,2,5,false
+4,2026-05-18,39,Piernas,Extensiones de Cuádriceps,15,6,3,9,false
+4,2026-05-20,18,Piernas,Prensa de Piernas,80,6,2,6,false
+4,2026-05-20,30,Piernas,Zancadas,12.5,6,2,6,false
+4,2026-05-20,40,Piernas,Extensiones de Cuádriceps,15,7,3,5,false
+4,2026-05-22,19,Piernas,Prensa de Piernas,75,6,2,6,false
+4,2026-05-22,31,Piernas,Zancadas,10,6,2,6,false
+4,2026-05-22,41,Piernas,Extensiones de Cuádriceps,15,8,3,8,false
+4,2026-05-24,23,Empuje,Press con Mancuernas,25,6,3,6,false
+4,2026-05-24,38,Empuje,Press Banca,22.5,6,3,7,false
+4,2026-05-24,36,Empuje,Press Militar,27.5,6,3,7,false
+4,2026-05-27,24,Empuje,Press con Mancuernas,25,6,3,8,false
+4,2026-05-27,39,Empuje,Press Banca,22.5,6,3,8,false
+4,2026-05-27,37,Empuje,Press Militar,27.5,6,3,8,false
+4,2026-05-30,25,Empuje,Press con Mancuernas,25,6,3,9,false
+4,2026-05-30,40,Empuje,Press Banca,22.5,7,3,7,false
+4,2026-05-30,38,Empuje,Press Militar,27.5,6,3,7,false
+4,2026-06-01,22,Jalón,Jalón al Pecho,37.5,7,2,6,false
+4,2026-06-01,31,Jalón,Peso Muerto Rumano,57.5,8,3,4,false
+4,2026-06-01,25,Jalón,Remo con Mancuerna,25,9,2,5,false
+4,2026-06-03,23,Jalón,Jalón al Pecho,32.5,6,2,6,false
+4,2026-06-03,32,Jalón,Peso Muerto Rumano,62.5,9,3,5,false
+4,2026-06-03,26,Jalón,Remo con Mancuerna,27.5,9,2,6,false
+4,2026-06-06,24,Jalón,Jalón al Pecho,32.5,6,3,7,false
+4,2026-06-06,33,Jalón,Peso Muerto Rumano,67.5,9,4,5,false
+4,2026-06-06,27,Jalón,Remo con Mancuerna,22.5,7,2,6,false
+4,2026-06-09,25,Jalón,Jalón al Pecho,32.5,6,3,8,false
+4,2026-06-09,34,Jalón,Peso Muerto Rumano,72.5,10,4,5,false
+4,2026-06-09,28,Jalón,Remo con Mancuerna,20,6,2,6,false
+4,2026-06-12,45,Piernas,Peso Muerto,32.5,6,3,7,false
+4,2026-06-12,42,Piernas,Extensiones de Cuádriceps,17.5,8,3,6,false
+4,2026-06-12,46,Piernas,Sentadilla,82.5,10,2,5,false
+4,2026-06-15,46,Piernas,Peso Muerto,32.5,6,4,7,false
+4,2026-06-15,43,Piernas,Extensiones de Cuádriceps,17.5,8,3,8,false
+4,2026-06-15,47,Piernas,Sentadilla,87.5,10,2,6,false
+4,2026-06-17,47,Piernas,Peso Muerto,32.5,6,4,9,false
+4,2026-06-17,44,Piernas,Extensiones de Cuádriceps,17.5,9,3,6,false
+4,2026-06-17,48,Piernas,Sentadilla,87.5,9,3,5,false
+4,2026-06-20,39,Empuje,Press Militar,30,7,3,7,false
+4,2026-06-20,24,Empuje,Press Inclinado,27.5,7,2,5,false
+4,2026-06-20,28,Empuje,Fondos,0,6,2,6,false
+4,2026-06-22,40,Empuje,Press Militar,30,7,3,9,false
+4,2026-06-22,25,Empuje,Press Inclinado,30,8,2,6,false
+4,2026-06-22,29,Empuje,Fondos,0,6,2,6,false
+4,2026-06-24,41,Empuje,Press Militar,30,7,3,7,false
+4,2026-06-24,26,Empuje,Press Inclinado,25,6,2,6,false
+4,2026-06-24,30,Empuje,Fondos,0,6,3,8,false
+4,2026-06-26,42,Empuje,Press Militar,32.5,8,3,6,false
+4,2026-06-26,27,Empuje,Press Inclinado,22.5,6,2,6,false
+4,2026-06-26,31,Empuje,Fondos,0,6,3,8,false
+4,2026-06-29,29,Jalón,Remo con Mancuerna,20,6,3,6,false
+4,2026-06-29,26,Jalón,Jalón al Pecho,32.5,6,3,8,false
+4,2026-06-29,36,Jalón,Remo con Barra,50,7,2,6,false
+4,2026-07-01,30,Jalón,Remo con Mancuerna,20,6,3,9,false
+4,2026-07-01,27,Jalón,Jalón al Pecho,35,6,3,7,false
+4,2026-07-01,37,Jalón,Remo con Barra,45,6,2,6,false
+4,2026-07-03,20,Piernas,Prensa de Piernas,75,6,3,7,false
+4,2026-07-03,49,Piernas,Sentadilla,87.5,8,3,7,false
+4,2026-07-03,48,Piernas,Peso Muerto,35,6,4,8,false
+4,2026-07-05,21,Piernas,Prensa de Piernas,75,6,3,8,false
+4,2026-07-05,50,Piernas,Sentadilla,87.5,8,3,8,false
+4,2026-07-05,49,Piernas,Peso Muerto,35,7,5,5,false
+4,2026-07-08,22,Piernas,Prensa de Piernas,75,7,4,6,false
+4,2026-07-08,51,Piernas,Sentadilla,87.5,8,3,9,false
+4,2026-07-08,50,Piernas,Peso Muerto,35,7,5,7,false
+4,2026-07-10,23,Piernas,Prensa de Piernas,75,8,4,6,false
+4,2026-07-10,52,Piernas,Sentadilla,87.5,8,3,8,false
+4,2026-07-10,51,Piernas,Peso Muerto,35,7,5,8,false
+5,2025-04-29,1,Empuje,Press Banca,70,10,3,7,false
+5,2025-04-29,1,Empuje,Fondos,0,10,4,8,false
+5,2025-04-29,1,Empuje,Press con Mancuernas,40,10,4,7,false
+5,2025-05-01,2,Empuje,Press Banca,70,10,3,7,false
+5,2025-05-01,2,Empuje,Fondos,0,10,4,9,false
+5,2025-05-01,2,Empuje,Press con Mancuernas,40,10,4,9,false
+5,2025-05-04,3,Empuje,Press Banca,72.5,11,3,7,false
+5,2025-05-04,3,Empuje,Fondos,2.5,11,4,5,false
+5,2025-05-04,3,Empuje,Press con Mancuernas,42.5,10,4,8,false
+5,2025-05-07,4,Empuje,Press Banca,72.5,11,4,4,true
+5,2025-05-07,4,Empuje,Fondos,0,6,2,5,false
+5,2025-05-07,4,Empuje,Press con Mancuernas,25,6,2,5,false
+5,2025-05-10,1,Jalón,Peso Muerto Rumano,82.5,10,3,7,false
+5,2025-05-10,1,Jalón,Remo con Barra,57.5,8,4,8,false
+5,2025-05-10,1,Jalón,Dominadas,0,9,4,7,false
+5,2025-05-12,2,Jalón,Peso Muerto Rumano,82.5,11,3,7,false
+5,2025-05-12,2,Jalón,Remo con Barra,57.5,9,4,6,false
+5,2025-05-12,2,Jalón,Dominadas,0,9,3,8,false
+5,2025-05-14,3,Jalón,Peso Muerto Rumano,82.5,11,3,9,false
+5,2025-05-14,3,Jalón,Remo con Barra,57.5,10,4,8,false
+5,2025-05-14,3,Jalón,Dominadas,2.5,10,3,7,false
+5,2025-05-17,4,Jalón,Peso Muerto Rumano,82.5,12,3,8,false
+5,2025-05-17,4,Jalón,Remo con Barra,57.5,11,4,8,false
+5,2025-05-17,4,Jalón,Dominadas,2.5,11,3,8,false
+5,2025-05-20,1,Piernas,Extensiones de Cuádriceps,47.5,8,4,8,false
+5,2025-05-20,1,Piernas,Peso Muerto,105,9,4,6,false
+5,2025-05-20,1,Piernas,Zancadas,22.5,8,4,6,false
+5,2025-05-22,2,Piernas,Extensiones de Cuádriceps,47.5,9,4,8,false
+5,2025-05-22,2,Piernas,Peso Muerto,105,9,4,7,false
+5,2025-05-22,2,Piernas,Zancadas,22.5,8,4,8,false
+5,2025-05-24,3,Piernas,Extensiones de Cuádriceps,50,10,4,7,false
+5,2025-05-24,3,Piernas,Peso Muerto,105,9,4,9,false
+5,2025-05-24,3,Piernas,Zancadas,22.5,9,4,6,false
+5,2025-05-27,5,Empuje,Press Banca,40,7,2,4,false
+5,2025-05-27,1,Empuje,Press Militar,27.5,6,2,5,false
+5,2025-05-27,1,Empuje,Press Inclinado,32.5,6,2,5,false
+5,2025-05-29,6,Empuje,Press Banca,45,7,2,4,false
+5,2025-05-29,2,Empuje,Press Militar,30,7,2,5,false
+5,2025-05-29,2,Empuje,Press Inclinado,35,7,2,5,false
+5,2025-06-01,7,Empuje,Press Banca,50,8,2,5,false
+5,2025-06-01,3,Empuje,Press Militar,32.5,7,2,5,false
+5,2025-06-01,3,Empuje,Press Inclinado,40,7,3,5,false
+5,2025-06-04,5,Jalón,Peso Muerto Rumano,82.5,12,3,8,false
+5,2025-06-04,5,Jalón,Remo con Barra,57.5,11,4,8,false
+5,2025-06-04,1,Jalón,Remo con Mancuerna,22.5,9,4,7,false
+5,2025-06-06,6,Jalón,Peso Muerto Rumano,85,12,3,7,false
+5,2025-06-06,6,Jalón,Remo con Barra,57.5,11,4,7,false
+5,2025-06-06,2,Jalón,Remo con Mancuerna,22.5,10,5,7,false
+5,2025-06-08,7,Jalón,Peso Muerto Rumano,85,12,3,8,false
+5,2025-06-08,7,Jalón,Remo con Barra,57.5,12,5,7,false
+5,2025-06-08,3,Jalón,Remo con Mancuerna,25,11,5,6,false
+5,2025-06-10,4,Piernas,Zancadas,22.5,9,4,9,false
+5,2025-06-10,1,Piernas,Sentadilla,92.5,10,4,6,false
+5,2025-06-10,4,Piernas,Peso Muerto,105,9,4,7,false
+5,2025-06-13,5,Piernas,Zancadas,22.5,9,3,9,false
+5,2025-06-13,2,Piernas,Sentadilla,92.5,10,4,9,false
+5,2025-06-13,5,Piernas,Peso Muerto,105,9,4,7,false
+5,2025-06-16,6,Piernas,Zancadas,25,10,3,5,false
+5,2025-06-16,3,Piernas,Sentadilla,92.5,11,4,8,false
+5,2025-06-16,6,Piernas,Peso Muerto,105,10,4,7,false
+5,2025-06-19,4,Empuje,Press Militar,35,8,2,6,false
+5,2025-06-19,8,Empuje,Press Banca,55,8,2,5,false
+5,2025-06-19,5,Empuje,Press con Mancuernas,27.5,7,2,5,false
+5,2025-06-22,5,Empuje,Press Militar,27.5,6,2,6,false
+5,2025-06-22,9,Empuje,Press Banca,60,9,2,5,false
+5,2025-06-22,6,Empuje,Press con Mancuernas,30,7,3,5,false
+5,2025-06-25,6,Empuje,Press Militar,25,6,2,6,false
+5,2025-06-25,10,Empuje,Press Banca,62.5,9,2,6,false
+5,2025-06-25,7,Empuje,Press con Mancuernas,32.5,8,3,6,false
+5,2025-06-28,7,Empuje,Press Militar,25,6,3,6,false
+5,2025-06-28,11,Empuje,Press Banca,62.5,8,3,6,false
+5,2025-06-28,8,Empuje,Press con Mancuernas,27.5,6,2,6,false
+5,2025-07-01,5,Jalón,Dominadas,2.5,11,3,9,false
+5,2025-07-01,1,Jalón,Jalón al Pecho,52.5,8,4,6,false
+5,2025-07-01,8,Jalón,Peso Muerto Rumano,85,12,3,7,false
+5,2025-07-04,6,Jalón,Dominadas,5,11,4,5,false
+5,2025-07-04,2,Jalón,Jalón al Pecho,52.5,8,4,8,false
+5,2025-07-04,9,Jalón,Peso Muerto Rumano,87.5,12,3,8,false
+5,2025-07-07,7,Jalón,Dominadas,5,11,4,9,false
+5,2025-07-07,3,Jalón,Jalón al Pecho,55,8,4,8,false
+5,2025-07-07,10,Jalón,Peso Muerto Rumano,87.5,12,3,9,false
+5,2025-07-09,8,Jalón,Dominadas,5,11,4,7,false
+5,2025-07-09,4,Jalón,Jalón al Pecho,55,8,3,7,false
+5,2025-07-09,11,Jalón,Peso Muerto Rumano,87.5,12,3,9,false
+5,2025-07-11,7,Piernas,Zancadas,25,10,3,9,false
+5,2025-07-11,4,Piernas,Sentadilla,92.5,11,4,9,false
+5,2025-07-11,4,Piernas,Extensiones de Cuádriceps,50,10,4,8,false
+5,2025-07-14,8,Piernas,Zancadas,25,11,3,6,false
+5,2025-07-14,5,Piernas,Sentadilla,92.5,12,4,6,false
+5,2025-07-14,5,Piernas,Extensiones de Cuádriceps,50,10,4,8,false
+5,2025-07-16,9,Piernas,Zancadas,25,11,3,8,false
+5,2025-07-16,6,Piernas,Sentadilla,95,12,4,9,false
+5,2025-07-16,6,Piernas,Extensiones de Cuádriceps,50,11,4,8,false
+5,2025-07-19,10,Piernas,Zancadas,25,12,4,7,false
+5,2025-07-19,7,Piernas,Sentadilla,95,12,4,8,false
+5,2025-07-19,7,Piernas,Extensiones de Cuádriceps,50,11,4,8,false
+5,2025-07-22,12,Empuje,Press Banca,62.5,7,3,7,false
+5,2025-07-22,8,Empuje,Press Militar,25,6,3,9,false
+5,2025-07-22,4,Empuje,Press Inclinado,42.5,8,3,6,false
+5,2025-07-25,13,Empuje,Press Banca,62.5,7,3,8,false
+5,2025-07-25,9,Empuje,Press Militar,27.5,7,4,6,false
+5,2025-07-25,5,Empuje,Press Inclinado,35,6,2,6,false
+5,2025-07-27,14,Empuje,Press Banca,62.5,7,3,7,false
+5,2025-07-27,10,Empuje,Press Militar,27.5,7,4,7,false
+5,2025-07-27,6,Empuje,Press Inclinado,30,6,2,6,false
+5,2025-07-30,12,Jalón,Peso Muerto Rumano,87.5,12,3,9,false
+5,2025-07-30,9,Jalón,Dominadas,5,12,4,6,false
+5,2025-07-30,4,Jalón,Remo con Mancuerna,25,11,5,9,false
+5,2025-08-02,13,Jalón,Peso Muerto Rumano,87.5,12,4,5,false
+5,2025-08-02,10,Jalón,Dominadas,5,12,4,7,false
+5,2025-08-02,5,Jalón,Remo con Mancuerna,25,11,4,9,false
+5,2025-08-05,14,Jalón,Peso Muerto Rumano,87.5,12,5,6,false
+5,2025-08-05,11,Jalón,Dominadas,5,12,5,5,false
+5,2025-08-05,6,Jalón,Remo con Mancuerna,27.5,11,4,7,false
+5,2025-08-08,11,Piernas,Zancadas,25,12,4,8,false
+5,2025-08-08,8,Piernas,Extensiones de Cuádriceps,50,12,4,7,false
+5,2025-08-08,8,Piernas,Sentadilla,95,12,5,6,false
+5,2025-08-11,12,Piernas,Zancadas,25,12,4,8,false
+5,2025-08-11,9,Piernas,Extensiones de Cuádriceps,52.5,12,4,7,false
+5,2025-08-11,9,Piernas,Sentadilla,97.5,12,5,9,false
+5,2025-08-13,13,Piernas,Zancadas,25,12,4,7,false
+5,2025-08-13,10,Piernas,Extensiones de Cuádriceps,52.5,12,4,7,false
+5,2025-08-13,10,Piernas,Sentadilla,97.5,12,5,9,false
+5,2025-08-15,15,Empuje,Press Banca,65,7,3,8,false
+5,2025-08-15,11,Empuje,Press Militar,27.5,7,3,9,false
+5,2025-08-15,7,Empuje,Press Inclinado,27.5,6,2,6,false
+5,2025-08-17,16,Empuje,Press Banca,65,8,3,7,false
+5,2025-08-17,12,Empuje,Press Militar,30,7,3,8,false
+5,2025-08-17,8,Empuje,Press Inclinado,27.5,6,2,7,false
+5,2025-08-20,17,Empuje,Press Banca,65,8,3,7,false
+5,2025-08-20,13,Empuje,Press Militar,30,7,4,6,false
+5,2025-08-20,9,Empuje,Press Inclinado,27.5,6,3,5,false
+5,2025-08-22,15,Jalón,Peso Muerto Rumano,87.5,12,5,8,false
+5,2025-08-22,12,Jalón,Dominadas,5,12,5,8,false
+5,2025-08-22,8,Jalón,Remo con Barra,57.5,12,5,7,false
+5,2025-08-24,16,Jalón,Peso Muerto Rumano,87.5,12,5,9,false
+5,2025-08-24,13,Jalón,Dominadas,5,12,5,9,false
+5,2025-08-24,9,Jalón,Remo con Barra,60,12,5,7,false
+5,2025-08-26,7,Piernas,Peso Muerto,105,11,5,7,false
+5,2025-08-26,14,Piernas,Zancadas,25,12,4,7,false
+5,2025-08-26,11,Piernas,Sentadilla,97.5,12,5,7,false
+5,2025-08-29,8,Piernas,Peso Muerto,105,12,5,8,false
+5,2025-08-29,15,Piernas,Zancadas,27.5,12,4,7,false
+5,2025-08-29,12,Piernas,Sentadilla,100,12,5,8,false
+5,2025-09-01,9,Piernas,Peso Muerto,107.5,12,5,8,false
+5,2025-09-01,16,Piernas,Zancadas,27.5,12,4,7,false
+5,2025-09-01,13,Piernas,Sentadilla,100,12,5,8,false
+5,2025-09-04,14,Empuje,Press Militar,30,8,4,7,false
+5,2025-09-04,18,Empuje,Press Banca,67.5,9,3,5,false
+5,2025-09-04,9,Empuje,Press con Mancuernas,25,6,2,6,false
+5,2025-09-07,15,Empuje,Press Militar,30,9,4,7,false
+5,2025-09-07,19,Empuje,Press Banca,67.5,9,3,7,false
+5,2025-09-07,10,Empuje,Press con Mancuernas,22.5,6,2,6,false
+5,2025-09-10,16,Empuje,Press Militar,30,9,5,7,false
+5,2025-09-10,20,Empuje,Press Banca,67.5,9,3,8,false
+5,2025-09-10,11,Empuje,Press con Mancuernas,22.5,6,2,7,false
+5,2025-09-13,17,Empuje,Press Militar,30,10,5,8,false
+5,2025-09-13,21,Empuje,Press Banca,67.5,9,3,9,false
+5,2025-09-13,12,Empuje,Press con Mancuernas,22.5,6,3,6,false
+5,2025-09-15,14,Jalón,Dominadas,5,12,5,7,false
+5,2025-09-15,5,Jalón,Jalón al Pecho,55,8,3,7,false
+5,2025-09-15,10,Jalón,Remo con Barra,60,12,5,8,false
+5,2025-09-18,15,Jalón,Dominadas,7.5,12,5,7,false
+5,2025-09-18,6,Jalón,Jalón al Pecho,57.5,9,3,7,false
+5,2025-09-18,11,Jalón,Remo con Barra,60,12,5,8,false
+5,2025-09-21,16,Jalón,Dominadas,7.5,12,5,8,false
+5,2025-09-21,7,Jalón,Jalón al Pecho,57.5,10,3,7,false
+5,2025-09-21,12,Jalón,Remo con Barra,62.5,12,5,8,false
+5,2025-09-24,14,Piernas,Sentadilla,100,12,5,8,false
+5,2025-09-24,17,Piernas,Zancadas,27.5,12,4,8,false
+5,2025-09-24,11,Piernas,Extensiones de Cuádriceps,52.5,12,4,7,false
+5,2025-09-26,15,Piernas,Sentadilla,102.5,12,5,7,false
+5,2025-09-26,18,Piernas,Zancadas,30,12,4,8,false
+5,2025-09-26,12,Piernas,Extensiones de Cuádriceps,55,12,5,5,false
+5,2025-09-29,16,Piernas,Sentadilla,102.5,12,5,8,false
+5,2025-09-29,19,Piernas,Zancadas,30,12,4,7,false
+5,2025-09-29,13,Piernas,Extensiones de Cuádriceps,55,12,5,9,false
+5,2025-10-02,13,Empuje,Press con Mancuernas,22.5,6,3,8,false
+5,2025-10-02,5,Empuje,Fondos,0,7,2,5,false
+5,2025-10-02,18,Empuje,Press Militar,32.5,10,5,6,false
+5,2025-10-05,14,Empuje,Press con Mancuernas,22.5,7,3,7,false
+5,2025-10-05,6,Empuje,Fondos,0,7,3,5,false
+5,2025-10-05,19,Empuje,Press Militar,32.5,10,4,7,false
+5,2025-10-07,15,Empuje,Press con Mancuernas,25,8,3,7,false
+5,2025-10-07,7,Empuje,Fondos,0,8,3,6,false
+5,2025-10-07,20,Empuje,Press Militar,32.5,11,3,7,false
+5,2025-10-09,17,Jalón,Dominadas,7.5,12,5,9,false
+5,2025-10-09,7,Jalón,Remo con Mancuerna,27.5,12,4,7,false
+5,2025-10-09,17,Jalón,Peso Muerto Rumano,87.5,12,4,9,false
+5,2025-10-12,10,Piernas,Peso Muerto,107.5,12,5,8,false
+5,2025-10-12,17,Piernas,Sentadilla,102.5,12,5,8,false
+5,2025-10-12,14,Piernas,Extensiones de Cuádriceps,55,12,5,7,false
+5,2025-10-14,11,Piernas,Peso Muerto,107.5,12,5,7,false
+5,2025-10-14,18,Piernas,Sentadilla,102.5,12,5,9,false
+5,2025-10-14,15,Piernas,Extensiones de Cuádriceps,55,12,4,7,false
+5,2025-10-16,12,Piernas,Peso Muerto,110,12,5,7,false
+5,2025-10-16,19,Piernas,Sentadilla,102.5,12,4,8,false
+5,2025-10-16,16,Piernas,Extensiones de Cuádriceps,55,12,5,7,false
+5,2025-10-19,8,Empuje,Fondos,0,6,2,6,false
+5,2025-10-19,22,Empuje,Press Banca,67.5,9,3,8,false
+5,2025-10-19,16,Empuje,Press con Mancuernas,25,9,3,6,false
+5,2025-10-21,9,Empuje,Fondos,0,6,2,6,false
+5,2025-10-21,23,Empuje,Press Banca,67.5,10,3,6,false
+5,2025-10-21,17,Empuje,Press con Mancuernas,25,9,3,8,false
+5,2025-10-24,10,Empuje,Fondos,0,6,3,8,false
+5,2025-10-24,24,Empuje,Press Banca,70,10,3,7,false
+5,2025-10-24,18,Empuje,Press con Mancuernas,27.5,9,3,6,false
+5,2025-10-27,13,Jalón,Remo con Barra,62.5,12,5,7,false
+5,2025-10-27,18,Jalón,Dominadas,7.5,12,5,7,false
+5,2025-10-27,8,Jalón,Remo con Mancuerna,27.5,12,4,9,false
+5,2025-10-29,14,Jalón,Remo con Barra,62.5,12,5,7,false
+5,2025-10-29,19,Jalón,Dominadas,7.5,12,5,8,false
+5,2025-10-29,9,Jalón,Remo con Mancuerna,27.5,12,4,9,false
+5,2025-10-31,15,Jalón,Remo con Barra,65,12,5,9,false
+5,2025-10-31,20,Jalón,Dominadas,7.5,12,5,7,false
+5,2025-10-31,10,Jalón,Remo con Mancuerna,27.5,12,3,9,false
+5,2025-11-03,16,Jalón,Remo con Barra,65,12,5,7,false
+5,2025-11-03,21,Jalón,Dominadas,10,12,5,5,false
+5,2025-11-03,11,Jalón,Remo con Mancuerna,27.5,12,3,8,false
+5,2025-11-05,20,Piernas,Zancadas,30,12,4,9,false
+5,2025-11-05,20,Piernas,Sentadilla,102.5,12,4,9,false
+5,2025-11-05,13,Piernas,Peso Muerto,110,12,4,7,false
+5,2025-11-07,21,Piernas,Zancadas,32.5,12,4,7,false
+5,2025-11-07,21,Piernas,Sentadilla,105,12,4,7,false
+5,2025-11-07,14,Piernas,Peso Muerto,110,12,4,8,false
+5,2025-11-10,22,Piernas,Zancadas,32.5,12,4,9,false
+5,2025-11-10,22,Piernas,Sentadilla,105,12,3,9,false
+5,2025-11-10,15,Piernas,Peso Muerto,112.5,12,4,9,false
+5,2025-11-13,11,Empuje,Fondos,0,6,3,8,false
+5,2025-11-13,10,Empuje,Press Inclinado,27.5,6,3,7,false
+5,2025-11-13,25,Empuje,Press Banca,70,11,3,7,false
+5,2025-11-15,12,Empuje,Fondos,0,7,3,7,false
+5,2025-11-15,11,Empuje,Press Inclinado,27.5,6,3,8,false
+5,2025-11-15,26,Empuje,Press Banca,70,11,3,8,false
+5,2025-11-18,13,Empuje,Fondos,0,7,3,9,false
+5,2025-11-18,12,Empuje,Press Inclinado,27.5,6,3,8,false
+5,2025-11-18,27,Empuje,Press Banca,72.5,11,3,8,false
+5,2025-11-20,14,Empuje,Fondos,0,7,3,9,false
+5,2025-11-20,13,Empuje,Press Inclinado,27.5,6,3,8,false
+5,2025-11-20,28,Empuje,Press Banca,72.5,11,3,7,false
+5,2025-11-23,17,Jalón,Remo con Barra,65,12,5,9,false
+5,2025-11-23,22,Jalón,Dominadas,10,12,5,8,false
+5,2025-11-23,12,Jalón,Remo con Mancuerna,30,12,4,6,false
+5,2025-11-26,16,Piernas,Peso Muerto,112.5,12,4,7,false
+5,2025-11-26,23,Piernas,Sentadilla,105,12,3,8,false
+5,2025-11-26,1,Piernas,Prensa de Piernas,140,8,3,7,false
+5,2025-11-28,17,Piernas,Peso Muerto,112.5,12,4,7,false
+5,2025-11-28,24,Piernas,Sentadilla,107.5,12,3,9,false
+5,2025-11-28,2,Piernas,Prensa de Piernas,140,8,3,7,false
+5,2025-11-30,14,Empuje,Press Inclinado,27.5,7,3,5,false
+5,2025-11-30,21,Empuje,Press Militar,32.5,11,3,7,false
+5,2025-11-30,19,Empuje,Press con Mancuernas,27.5,9,3,7,false
+5,2025-12-02,15,Empuje,Press Inclinado,27.5,7,3,9,false
+5,2025-12-02,22,Empuje,Press Militar,32.5,11,3,7,false
+5,2025-12-02,20,Empuje,Press con Mancuernas,27.5,9,4,7,false
+5,2025-12-05,16,Empuje,Press Inclinado,27.5,7,3,8,false
+5,2025-12-05,23,Empuje,Press Militar,32.5,11,3,8,false
+5,2025-12-05,21,Empuje,Press con Mancuernas,27.5,9,4,8,false
+5,2025-12-08,17,Empuje,Press Inclinado,27.5,7,3,8,false
+5,2025-12-08,24,Empuje,Press Militar,35,11,3,6,false
+5,2025-12-08,22,Empuje,Press con Mancuernas,27.5,9,4,7,false
+5,2025-12-10,18,Jalón,Remo con Barra,67.5,12,5,7,false
+5,2025-12-10,8,Jalón,Jalón al Pecho,57.5,11,3,6,false
+5,2025-12-10,18,Jalón,Peso Muerto Rumano,90,12,4,9,false
+5,2025-12-13,19,Jalón,Remo con Barra,67.5,12,5,9,false
+5,2025-12-13,9,Jalón,Jalón al Pecho,57.5,11,3,7,false
+5,2025-12-13,19,Jalón,Peso Muerto Rumano,90,12,4,8,false
+5,2025-12-16,20,Jalón,Remo con Barra,67.5,12,5,8,false
+5,2025-12-16,10,Jalón,Jalón al Pecho,57.5,11,3,8,false
+5,2025-12-16,20,Jalón,Peso Muerto Rumano,90,12,5,6,false
+5,2025-12-18,18,Piernas,Peso Muerto,115,12,3,9,false
+5,2025-12-18,25,Piernas,Sentadilla,107.5,12,3,8,false
+5,2025-12-18,3,Piernas,Prensa de Piernas,142.5,9,4,7,false
+5,2025-12-20,19,Piernas,Peso Muerto,115,12,3,7,false
+5,2025-12-20,26,Piernas,Sentadilla,107.5,12,3,9,false
+5,2025-12-20,4,Piernas,Prensa de Piernas,142.5,9,4,8,false
+5,2025-12-23,20,Piernas,Peso Muerto,115,12,3,7,false
+5,2025-12-23,27,Piernas,Sentadilla,107.5,12,3,7,false
+5,2025-12-23,5,Piernas,Prensa de Piernas,142.5,9,4,9,false
+5,2025-12-25,29,Empuje,Press Banca,72.5,12,3,8,false
+5,2025-12-25,15,Empuje,Fondos,2.5,7,3,6,false
+5,2025-12-25,23,Empuje,Press con Mancuernas,27.5,9,4,7,false
+5,2025-12-28,30,Empuje,Press Banca,75,12,3,7,false
+5,2025-12-28,16,Empuje,Fondos,2.5,8,3,6,false
+5,2025-12-28,24,Empuje,Press con Mancuernas,30,9,4,8,false
+5,2025-12-30,31,Empuje,Press Banca,75,12,3,9,false
+5,2025-12-30,17,Empuje,Fondos,2.5,8,3,9,false
+5,2025-12-30,25,Empuje,Press con Mancuernas,30,10,4,7,false
+5,2026-01-01,32,Empuje,Press Banca,75,12,3,8,false
+5,2026-01-01,18,Empuje,Fondos,2.5,8,3,8,false
+5,2026-01-01,26,Empuje,Press con Mancuernas,30,11,4,8,false
+5,2026-01-04,13,Jalón,Remo con Mancuerna,30,12,3,8,false
+5,2026-01-04,21,Jalón,Remo con Barra,67.5,12,5,9,false
+5,2026-01-04,21,Jalón,Peso Muerto Rumano,92.5,12,5,8,false
+5,2026-01-07,14,Jalón,Remo con Mancuerna,30,12,3,9,false
+5,2026-01-07,22,Jalón,Remo con Barra,67.5,12,5,8,false
+5,2026-01-07,22,Jalón,Peso Muerto Rumano,92.5,12,5,7,false
+5,2026-01-10,15,Jalón,Remo con Mancuerna,30,12,4,5,false
+5,2026-01-10,23,Jalón,Remo con Barra,67.5,12,5,7,false
+5,2026-01-10,23,Jalón,Peso Muerto Rumano,92.5,12,4,8,false
+5,2026-01-13,17,Piernas,Extensiones de Cuádriceps,55,12,5,7,false
+5,2026-01-13,6,Piernas,Prensa de Piernas,142.5,10,5,5,false
+5,2026-01-13,28,Piernas,Sentadilla,107.5,12,3,8,false
+5,2026-01-15,18,Piernas,Extensiones de Cuádriceps,55,12,5,9,false
+5,2026-01-15,7,Piernas,Prensa de Piernas,142.5,11,5,6,false
+5,2026-01-15,29,Piernas,Sentadilla,107.5,12,3,8,false
+5,2026-01-17,19,Piernas,Extensiones de Cuádriceps,55,12,5,7,false
+5,2026-01-17,8,Piernas,Prensa de Piernas,142.5,11,5,7,false
+5,2026-01-17,30,Piernas,Sentadilla,110,12,3,9,false
+5,2026-01-20,25,Empuje,Press Militar,35,11,3,9,false
+5,2026-01-20,27,Empuje,Press con Mancuernas,30,11,4,8,false
+5,2026-01-20,18,Empuje,Press Inclinado,30,8,3,7,false
+5,2026-01-22,26,Empuje,Press Militar,35,11,3,9,false
+5,2026-01-22,28,Empuje,Press con Mancuernas,30,11,4,7,false
+5,2026-01-22,19,Empuje,Press Inclinado,30,8,3,8,false
+5,2026-01-25,27,Empuje,Press Militar,37.5,12,3,5,false
+5,2026-01-25,29,Empuje,Press con Mancuernas,30,12,4,6,false
+5,2026-01-25,20,Empuje,Press Inclinado,30,8,3,8,false
+5,2026-01-27,28,Empuje,Press Militar,37.5,12,3,7,false
+5,2026-01-27,30,Empuje,Press con Mancuernas,32.5,12,4,8,false
+5,2026-01-27,21,Empuje,Press Inclinado,30,9,3,8,false
+5,2026-01-29,11,Jalón,Jalón al Pecho,57.5,12,4,7,false
+5,2026-01-29,16,Jalón,Remo con Mancuerna,30,12,4,7,false
+5,2026-01-29,23,Jalón,Dominadas,10,12,5,9,false
+5,2026-02-01,12,Jalón,Jalón al Pecho,60,12,3,9,false
+5,2026-02-01,17,Jalón,Remo con Mancuerna,30,12,4,9,false
+5,2026-02-01,24,Jalón,Dominadas,10,12,5,8,false
+5,2026-02-04,13,Jalón,Jalón al Pecho,60,12,3,8,false
+5,2026-02-04,18,Jalón,Remo con Mancuerna,32.5,12,4,6,false
+5,2026-02-04,25,Jalón,Dominadas,10,12,4,8,false
+5,2026-02-06,14,Jalón,Jalón al Pecho,60,12,3,7,false
+5,2026-02-06,19,Jalón,Remo con Mancuerna,32.5,12,4,7,false
+5,2026-02-06,26,Jalón,Dominadas,10,12,3,7,false
+5,2026-02-09,9,Piernas,Prensa de Piernas,142.5,11,5,9,false
+5,2026-02-09,31,Piernas,Sentadilla,110,12,3,9,false
+5,2026-02-09,23,Piernas,Zancadas,32.5,12,4,9,false
+5,2026-02-11,10,Piernas,Prensa de Piernas,142.5,12,5,6,false
+5,2026-02-11,32,Piernas,Sentadilla,110,12,3,8,false
+5,2026-02-11,24,Piernas,Zancadas,35,12,4,8,false
+5,2026-02-14,11,Piernas,Prensa de Piernas,142.5,12,5,7,false
+5,2026-02-14,33,Piernas,Sentadilla,112.5,12,3,7,false
+5,2026-02-14,25,Piernas,Zancadas,35,12,4,9,false
+5,2026-02-16,12,Piernas,Prensa de Piernas,142.5,12,4,8,false
+5,2026-02-16,34,Piernas,Sentadilla,112.5,12,4,7,false
+5,2026-02-16,26,Piernas,Zancadas,35,12,3,9,false
+5,2026-02-18,33,Empuje,Press Banca,77.5,12,4,7,false
+5,2026-02-18,29,Empuje,Press Militar,37.5,12,3,9,false
+5,2026-02-18,31,Empuje,Press con Mancuernas,32.5,12,4,7,false
+5,2026-02-20,24,Jalón,Remo con Barra,70,12,4,8,false
+5,2026-02-20,27,Jalón,Dominadas,12.5,12,3,7,false
+5,2026-02-20,24,Jalón,Peso Muerto Rumano,95,12,4,8,false
+5,2026-02-23,25,Jalón,Remo con Barra,70,12,4,9,false
+5,2026-02-23,28,Jalón,Dominadas,12.5,12,3,7,false
+5,2026-02-23,25,Jalón,Peso Muerto Rumano,95,12,4,8,false
+5,2026-02-25,26,Jalón,Remo con Barra,70,12,4,9,false
+5,2026-02-25,29,Jalón,Dominadas,12.5,12,3,9,false
+5,2026-02-25,26,Jalón,Peso Muerto Rumano,95,12,4,9,false
+5,2026-02-27,27,Jalón,Remo con Barra,72.5,12,4,7,false
+5,2026-02-27,30,Jalón,Dominadas,15,12,3,5,false
+5,2026-02-27,27,Jalón,Peso Muerto Rumano,95,12,4,7,false
+5,2026-03-01,35,Piernas,Sentadilla,112.5,12,4,7,false
+5,2026-03-01,13,Piernas,Prensa de Piernas,142.5,12,4,7,false
+5,2026-03-01,20,Piernas,Extensiones de Cuádriceps,55,12,5,8,false
+5,2026-03-03,36,Piernas,Sentadilla,115,12,4,9,false
+5,2026-03-03,14,Piernas,Prensa de Piernas,142.5,12,4,8,false
+5,2026-03-03,21,Piernas,Extensiones de Cuádriceps,57.5,12,5,9,false
+5,2026-03-05,37,Piernas,Sentadilla,115,12,4,9,false
+5,2026-03-05,15,Piernas,Prensa de Piernas,142.5,12,4,9,false
+5,2026-03-05,22,Piernas,Extensiones de Cuádriceps,57.5,12,5,8,false
+5,2026-03-07,38,Piernas,Sentadilla,115,12,4,7,false
+5,2026-03-07,16,Piernas,Prensa de Piernas,142.5,12,4,8,false
+5,2026-03-07,23,Piernas,Extensiones de Cuádriceps,57.5,12,5,8,false
+5,2026-03-09,19,Empuje,Fondos,2.5,9,3,6,false
+5,2026-03-09,30,Empuje,Press Militar,40,12,3,8,false
+5,2026-03-09,34,Empuje,Press Banca,77.5,12,4,8,false
+5,2026-03-11,20,Empuje,Fondos,2.5,9,3,3,true
+5,2026-03-11,31,Empuje,Press Militar,22.5,7,2,5,false
+5,2026-03-11,35,Empuje,Press Banca,42.5,7,2,5,false
+5,2026-03-14,21,Empuje,Fondos,2.5,6,2,4,false
+5,2026-03-14,32,Empuje,Press Militar,25,8,2,5,false
+5,2026-03-14,36,Empuje,Press Banca,47.5,8,2,5,false
+5,2026-03-16,22,Empuje,Fondos,2.5,6,2,4,false
+5,2026-03-16,33,Empuje,Press Militar,27.5,9,2,5,false
+5,2026-03-16,37,Empuje,Press Banca,52.5,9,3,5,false
+5,2026-03-19,31,Jalón,Dominadas,15,12,3,7,false
+5,2026-03-19,28,Jalón,Peso Muerto Rumano,95,12,4,7,false
+5,2026-03-19,28,Jalón,Remo con Barra,72.5,12,4,8,false
+5,2026-03-21,32,Jalón,Dominadas,15,12,3,9,false
+5,2026-03-21,29,Jalón,Peso Muerto Rumano,95,12,3,9,false
+5,2026-03-21,29,Jalón,Remo con Barra,72.5,12,4,9,false
+5,2026-03-24,33,Jalón,Dominadas,17.5,12,4,6,false
+5,2026-03-24,30,Jalón,Peso Muerto Rumano,97.5,12,3,8,false
+5,2026-03-24,30,Jalón,Remo con Barra,75,12,4,7,false
+5,2026-03-27,34,Jalón,Dominadas,17.5,12,4,7,false
+5,2026-03-27,31,Jalón,Peso Muerto Rumano,97.5,12,3,8,false
+5,2026-03-27,31,Jalón,Remo con Barra,75,12,4,7,false
+5,2026-03-29,27,Piernas,Zancadas,37.5,12,4,7,false
+5,2026-03-29,39,Piernas,Sentadilla,117.5,12,4,8,false
+5,2026-03-29,24,Piernas,Extensiones de Cuádriceps,60,12,5,9,false
+5,2026-04-01,22,Empuje,Press Inclinado,17.5,6,2,5,false
+5,2026-04-01,38,Empuje,Press Banca,57.5,9,3,6,false
+5,2026-04-01,32,Empuje,Press con Mancuernas,17.5,7,2,5,false
+5,2026-04-03,23,Empuje,Press Inclinado,20,6,2,5,false
+5,2026-04-03,39,Empuje,Press Banca,47.5,7,2,6,false
+5,2026-04-03,33,Empuje,Press con Mancuernas,20,8,2,5,false
+5,2026-04-05,24,Empuje,Press Inclinado,20,6,2,5,false
+5,2026-04-05,40,Empuje,Press Banca,42.5,6,2,6,false
+5,2026-04-05,34,Empuje,Press con Mancuernas,22.5,9,3,5,false
+5,2026-04-07,32,Jalón,Remo con Barra,75,12,4,8,false
+5,2026-04-07,35,Jalón,Dominadas,17.5,12,4,9,false
+5,2026-04-07,15,Jalón,Jalón al Pecho,62.5,12,3,8,false
+5,2026-04-09,33,Jalón,Remo con Barra,77.5,12,4,7,false
+5,2026-04-09,36,Jalón,Dominadas,20,12,4,8,false
+5,2026-04-09,16,Jalón,Jalón al Pecho,62.5,12,3,9,false
+5,2026-04-12,34,Jalón,Remo con Barra,77.5,12,4,8,false
+5,2026-04-12,37,Jalón,Dominadas,20,12,4,9,false
+5,2026-04-12,17,Jalón,Jalón al Pecho,62.5,12,3,9,false
+5,2026-04-14,28,Piernas,Zancadas,37.5,12,4,9,false
+5,2026-04-14,40,Piernas,Sentadilla,117.5,12,4,9,false
+5,2026-04-14,21,Piernas,Peso Muerto,117.5,12,3,7,false
+5,2026-04-17,29,Piernas,Zancadas,37.5,12,4,9,false
+5,2026-04-17,41,Piernas,Sentadilla,117.5,12,4,7,false
+5,2026-04-17,22,Piernas,Peso Muerto,117.5,12,3,9,false
+5,2026-04-19,30,Piernas,Zancadas,40,12,4,8,false
+5,2026-04-19,42,Piernas,Sentadilla,117.5,12,3,8,false
+5,2026-04-19,23,Piernas,Peso Muerto,117.5,12,3,9,false
+5,2026-04-22,23,Empuje,Fondos,2.5,6,2,5,false
+5,2026-04-22,34,Empuje,Press Militar,30,9,2,6,false
+5,2026-04-22,41,Empuje,Press Banca,40,6,2,6,false
+5,2026-04-24,24,Empuje,Fondos,2.5,7,2,5,false
+5,2026-04-24,35,Empuje,Press Militar,25,7,2,6,false
+5,2026-04-24,42,Empuje,Press Banca,40,6,2,7,false
+5,2026-04-27,25,Empuje,Fondos,2.5,7,2,5,false
+5,2026-04-27,36,Empuje,Press Militar,22.5,6,2,6,false
+5,2026-04-27,43,Empuje,Press Banca,40,6,3,7,false
+5,2026-04-30,26,Empuje,Fondos,2.5,8,2,6,false
+5,2026-04-30,37,Empuje,Press Militar,20,6,2,6,false
+5,2026-04-30,44,Empuje,Press Banca,40,6,4,6,false
+5,2026-05-02,20,Jalón,Remo con Mancuerna,32.5,12,4,8,false
+5,2026-05-02,32,Jalón,Peso Muerto Rumano,97.5,12,3,7,false
+5,2026-05-02,38,Jalón,Dominadas,20,12,4,7,false
+5,2026-05-05,21,Jalón,Remo con Mancuerna,35,12,4,8,false
+5,2026-05-05,33,Jalón,Peso Muerto Rumano,100,12,3,9,false
+5,2026-05-05,39,Jalón,Dominadas,22.5,12,4,6,false
+5,2026-05-07,22,Jalón,Remo con Mancuerna,35,12,4,7,false
+5,2026-05-07,34,Jalón,Peso Muerto Rumano,100,12,3,8,false
+5,2026-05-07,40,Jalón,Dominadas,22.5,12,4,7,false
+5,2026-05-09,43,Piernas,Sentadilla,117.5,12,3,7,false
+5,2026-05-09,25,Piernas,Extensiones de Cuádriceps,60,12,5,9,false
+5,2026-05-09,31,Piernas,Zancadas,40,12,4,7,false
+5,2026-05-12,44,Piernas,Sentadilla,117.5,12,3,8,false
+5,2026-05-12,26,Piernas,Extensiones de Cuádriceps,60,12,5,9,false
+5,2026-05-12,32,Piernas,Zancadas,40,12,4,8,false
+5,2026-05-14,45,Piernas,Sentadilla,120,12,3,7,false
+5,2026-05-14,27,Piernas,Extensiones de Cuádriceps,62.5,12,5,9,false
+5,2026-05-14,33,Piernas,Zancadas,42.5,12,4,6,false
+5,2026-05-17,46,Piernas,Sentadilla,120,12,4,7,false
+5,2026-05-17,28,Piernas,Extensiones de Cuádriceps,62.5,12,5,9,false
+5,2026-05-17,34,Piernas,Zancadas,42.5,12,4,9,false
+5,2026-05-19,45,Empuje,Press Banca,40,6,3,8,false
+5,2026-05-19,27,Empuje,Fondos,2.5,7,3,5,false
+5,2026-05-19,38,Empuje,Press Militar,20,6,3,5,false
+5,2026-05-21,46,Empuje,Press Banca,40,7,3,5,false
+5,2026-05-21,28,Empuje,Fondos,2.5,6,3,7,false
+5,2026-05-21,39,Empuje,Press Militar,20,6,3,8,false
+5,2026-05-23,47,Empuje,Press Banca,40,7,3,8,false
+5,2026-05-23,29,Empuje,Fondos,2.5,6,3,8,false
+5,2026-05-23,40,Empuje,Press Militar,20,6,3,7,false
+5,2026-05-25,48,Empuje,Press Banca,40,7,3,8,false
+5,2026-05-25,30,Empuje,Fondos,2.5,6,3,7,false
+5,2026-05-25,41,Empuje,Press Militar,20,6,3,9,false
+5,2026-05-27,35,Jalón,Peso Muerto Rumano,100,12,3,9,false
+5,2026-05-27,35,Jalón,Remo con Barra,77.5,12,3,9,false
+5,2026-05-27,41,Jalón,Dominadas,22.5,12,4,7,false
+5,2026-05-30,36,Jalón,Peso Muerto Rumano,102.5,12,3,7,false
+5,2026-05-30,36,Jalón,Remo con Barra,77.5,12,4,6,false
+5,2026-05-30,42,Jalón,Dominadas,22.5,12,4,7,false
+5,2026-06-01,37,Jalón,Peso Muerto Rumano,102.5,12,3,7,false
+5,2026-06-01,37,Jalón,Remo con Barra,77.5,12,4,8,false
+5,2026-06-01,43,Jalón,Dominadas,22.5,12,4,8,false
+5,2026-06-04,38,Jalón,Peso Muerto Rumano,102.5,12,3,7,false
+5,2026-06-04,38,Jalón,Remo con Barra,77.5,12,4,7,false
+5,2026-06-04,44,Jalón,Dominadas,22.5,12,4,9,false
+5,2026-06-06,24,Piernas,Peso Muerto,120,12,3,9,false
+5,2026-06-06,35,Piernas,Zancadas,42.5,12,4,7,false
+5,2026-06-06,29,Piernas,Extensiones de Cuádriceps,62.5,12,5,7,false
+5,2026-06-09,25,Piernas,Peso Muerto,120,12,3,8,false
+5,2026-06-09,36,Piernas,Zancadas,45,12,4,7,false
+5,2026-06-09,30,Piernas,Extensiones de Cuádriceps,65,12,5,8,false
+5,2026-06-12,26,Piernas,Peso Muerto,120,12,3,9,false
+5,2026-06-12,37,Piernas,Zancadas,45,12,3,8,false
+5,2026-06-12,31,Piernas,Extensiones de Cuádriceps,65,12,5,9,false
+5,2026-06-15,27,Piernas,Peso Muerto,120,12,3,8,false
+5,2026-06-15,38,Piernas,Zancadas,45,12,3,9,false
+5,2026-06-15,32,Piernas,Extensiones de Cuádriceps,65,12,5,8,false
+5,2026-06-18,31,Empuje,Fondos,2.5,6,3,7,false
+5,2026-06-18,35,Empuje,Press con Mancuernas,25,9,3,6,false
+5,2026-06-18,25,Empuje,Press Inclinado,22.5,7,2,6,false
+5,2026-06-20,32,Empuje,Fondos,2.5,6,3,8,false
+5,2026-06-20,36,Empuje,Press con Mancuernas,20,7,2,6,false
+5,2026-06-20,26,Empuje,Press Inclinado,17.5,6,2,6,false
+5,2026-06-23,33,Empuje,Fondos,5,7,3,6,false
+5,2026-06-23,37,Empuje,Press con Mancuernas,17.5,6,2,6,false
+5,2026-06-23,27,Empuje,Press Inclinado,15,6,2,6,false
+5,2026-06-26,34,Empuje,Fondos,5,7,3,7,false
+5,2026-06-26,38,Empuje,Press con Mancuernas,17.5,6,3,6,false
+5,2026-06-26,28,Empuje,Press Inclinado,15,6,2,6,false
+5,2026-06-29,45,Jalón,Dominadas,22.5,12,4,9,false
+5,2026-06-29,18,Jalón,Jalón al Pecho,65,12,3,8,false
+5,2026-06-29,39,Jalón,Peso Muerto Rumano,105,12,3,9,false
+5,2026-07-01,46,Jalón,Dominadas,22.5,12,4,8,false
+5,2026-07-01,19,Jalón,Jalón al Pecho,65,12,3,9,false
+5,2026-07-01,40,Jalón,Peso Muerto Rumano,105,12,3,8,false
+5,2026-07-03,47,Jalón,Dominadas,22.5,12,4,9,false
+5,2026-07-03,20,Jalón,Jalón al Pecho,65,12,3,7,false
+5,2026-07-03,41,Jalón,Peso Muerto Rumano,105,12,3,7,false
+5,2026-07-06,39,Piernas,Zancadas,45,12,3,8,false
+5,2026-07-06,47,Piernas,Sentadilla,120,12,4,7,false
+5,2026-07-06,28,Piernas,Peso Muerto,120,12,3,9,false
+5,2026-07-09,40,Piernas,Zancadas,45,12,3,7,false
+5,2026-07-09,48,Piernas,Sentadilla,120,12,4,9,false
+5,2026-07-09,29,Piernas,Peso Muerto,120,12,4,6,false
+5,2026-07-12,41,Piernas,Zancadas,45,12,4,6,false
+5,2026-07-12,49,Piernas,Sentadilla,120,12,4,9,false
+5,2026-07-12,30,Piernas,Peso Muerto,122.5,12,4,7,false
+5,2026-07-15,42,Piernas,Zancadas,47.5,12,3,9,false
+5,2026-07-15,50,Piernas,Sentadilla,120,12,4,8,false
+5,2026-07-15,31,Piernas,Peso Muerto,122.5,12,4,9,false
+5,2026-07-18,49,Empuje,Press Banca,40,7,3,7,false
+5,2026-07-18,42,Empuje,Press Militar,22.5,7,3,7,false
+5,2026-07-18,39,Empuje,Press con Mancuernas,17.5,6,3,7,false
+5,2026-07-20,50,Empuje,Press Banca,40,8,3,7,false
+5,2026-07-20,43,Empuje,Press Militar,22.5,8,3,2,true
+5,2026-07-20,40,Empuje,Press con Mancuernas,10,6,2,5,false
+5,2026-07-23,51,Empuje,Press Banca,22.5,6,2,5,false
+5,2026-07-23,44,Empuje,Press Militar,12.5,6,2,4,false
+5,2026-07-23,41,Empuje,Press con Mancuernas,10,6,2,5,false
+5,2026-07-26,23,Jalón,Remo con Mancuerna,35,12,4,9,false
+5,2026-07-26,48,Jalón,Dominadas,25,12,4,6,false
+5,2026-07-26,21,Jalón,Jalón al Pecho,67.5,12,3,8,false
+5,2026-07-29,24,Jalón,Remo con Mancuerna,37.5,12,4,6,false
+5,2026-07-29,49,Jalón,Dominadas,25,12,3,7,false
+5,2026-07-29,22,Jalón,Jalón al Pecho,67.5,12,3,8,false
+5,2026-08-01,25,Jalón,Remo con Mancuerna,37.5,12,3,9,false
+5,2026-08-01,50,Jalón,Dominadas,25,12,3,8,false
+5,2026-08-01,23,Jalón,Jalón al Pecho,67.5,12,3,9,false
+5,2026-08-04,26,Jalón,Remo con Mancuerna,37.5,12,3,9,false
+5,2026-08-04,51,Jalón,Dominadas,27.5,12,3,6,false
+5,2026-08-04,24,Jalón,Jalón al Pecho,70,12,3,8,false
+5,2026-08-06,33,Piernas,Extensiones de Cuádriceps,67.5,12,5,7,false
+5,2026-08-06,17,Piernas,Prensa de Piernas,142.5,12,4,7,false
+5,2026-08-06,32,Piernas,Peso Muerto,122.5,12,4,7,false
+5,2026-08-09,34,Piernas,Extensiones de Cuádriceps,67.5,12,5,9,false
+5,2026-08-09,18,Piernas,Prensa de Piernas,145,12,4,8,false
+5,2026-08-09,33,Piernas,Peso Muerto,125,12,4,8,false
+5,2026-08-11,35,Piernas,Extensiones de Cuádriceps,67.5,12,5,9,false
+5,2026-08-11,19,Piernas,Prensa de Piernas,145,12,4,9,false
+5,2026-08-11,34,Piernas,Peso Muerto,125,12,3,7,false
+5,2026-08-14,36,Piernas,Extensiones de Cuádriceps,70,12,5,7,false
+5,2026-08-14,20,Piernas,Prensa de Piernas,145,12,4,7,false
+5,2026-08-14,35,Piernas,Peso Muerto,125,12,3,9,false

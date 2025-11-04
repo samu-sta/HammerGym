@@ -1,0 +1,38 @@
+USER
+edad
+genero
+peso
+altura
+bpm
+duracion_media_sesion
+porcentaje_grasa
+circunferencia_cintura_cm
+circunferencia_cintura_maxima_cm
+fecha_registro
+
+BONE
+hueso_id (PK)
+nombre_hueso (UNIQUE)
+
+MEASURES_BONE_USER
+usuario_id (FK → USUARIOS)
+hueso_id (FK → HUESOS)
+longitud_ideal
+longitud_real
+
+EXERCISE
+nombre
+tipo (ENUM: 'EMPUJE', 'JALON', 'PIERNA')
+
+USER_EXERCISE
+usuario_id (PK/FK → USUARIOS)
+ejercicio_id (PK/FK → EJERCICIOS)
+fecha_entrenamiento: DATE [PK]
+peso_kg: DECIMAL(5,2) [NULL],
+repeticiones: INT [NULL],
+series: INT [NULL],
+sensacion_post_ejercicio: INT [NULL] [CHECK: 1-10],
+lesionado: BOOLEAN [DEFAULT: FALSE],
+    
+
+
