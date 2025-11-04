@@ -16,6 +16,7 @@ import { AccountProvider } from './context/AccountContext.jsx';
 import TrainerPage from './pages/TrainerPage.jsx';
 import CreateTraining from './components/trainer/createTraining/CreateTraining.jsx';
 import UserProgress from './components/trainer/userProgress/UserProgress.jsx';
+import DecisionPage from './pages/DecisionPage.jsx';
 import UsersManagement from './pages/UsersManagement.jsx';
 import TrainersManagement from './pages/TrainersManagement.jsx';
 import GymsManagement from './pages/GymsManagement.jsx';
@@ -111,6 +112,7 @@ function App() {
               <Route path="/entrenador" element={<TrainerPage />} />
               <Route path="/entrenador/crear-plan" element={<CreateTraining />} />
               <Route path="/entrenador/:email/progress" element={<UserProgress />} />
+              <Route path="/entrenador/:email/decision" element={<DecisionPage />} />
               <Route path="/entrenador/training/:userEmail" element={<CreateTraining />} />
               <Route path="/entrenador/management" element={<TrainersManagement />} />
             </Route>

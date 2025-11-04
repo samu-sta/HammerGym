@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +15,32 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Tailwind CSS custom properties for DSS components */
+  --background: 240 6% 7%;
+  --foreground: 0 0% 98%;
+  --card: 240 5% 11%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 5% 11%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 45 94% 47%;
+  --primary-foreground: 240 6% 7%;
+  --secondary: 240 5% 18%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 5% 18%;
+  --muted-foreground: 240 5% 65%;
+  --accent: 45 94% 47%;
+  --accent-foreground: 240 6% 7%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --success: 142 76% 36%;
+  --success-foreground: 240 6% 7%;
+  --warning: 45 93% 47%;
+  --warning-foreground: 240 6% 7%;
+  --border: 240 5% 18%;
+  --input: 240 5% 18%;
+  --ring: 45 94% 47%;
+  --radius: 0.625rem;
 }
 
 * {

@@ -1,8 +1,9 @@
 import React from 'react';
-import { FaUser, FaChartLine, FaDumbbell } from 'react-icons/fa';
+import { FaUser, FaChartLine, FaDumbbell, FaLightbulb } from 'react-icons/fa';
 import UserInfo from './UserInfo';
 import ActionLink from '../../../common/ActionLink';
 import '../styles/UserCard.css';
+
 const UserCard = ({ user, formatDate }) => {
   return (
     <article className="user-card">
@@ -28,6 +29,12 @@ const UserCard = ({ user, formatDate }) => {
             icon={<FaDumbbell className="button-icon" />}
             text="Ver Entrenamiento"
             className="view-training-button"
+          />
+          <ActionLink
+            to={`/entrenador/${user.email}/decision`}
+            icon={<FaLightbulb className="button-icon" />}
+            text="Decisión"
+            className="decision-button"
           />
         </aside>
       </main>
