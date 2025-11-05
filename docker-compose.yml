@@ -40,6 +40,8 @@ services:
     volumes:
       - ./backend:/app
       - /app/node_modules
+      - ./Dataset med_os comp (1).csv:/app/Dataset med_os comp (1).csv:ro
+      - ./progresion_entrenamiento_usuario (4).csv:/app/progresion_entrenamiento_usuario (4).csv:ro
 
   db:
     image: mysql:8.0

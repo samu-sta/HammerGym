@@ -29,9 +29,9 @@ const BoneMeasuresUser = sequelize.define('BoneMeasuresUser', {
       allowNull: false
     }
 }, {
-    tableName: 'Exercise',
+    tableName: 'BoneMeasuresUser',
     timestamps: false,
     sequelize
 });
 
-export default ExerciseModel;
+export default BoneMeasuresUser;

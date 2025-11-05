@@ -23,6 +23,9 @@ import argon2 from 'argon2';
 import AttendanceModel from '../models/Attendance.js';
 import setupAssociations from './associations.js';
 import ScheduleDayModel from '../models/ScheduleDay.js';
+import BoneModel from '../models/Bone.js';
+import BoneMeasuresUserModel from '../models/BoneMeasuresUser.js';
+import runETL from '../scripts/etl.js';
 
 dotenv.config();
 
@@ -250,7 +253,9 @@ const initDatabase = async () => {
       for (const dayInfo of trainingDays) {
         const trainingDay = await TrainingDayModel.create({
           day: dayInfo.day,
-          userId: user.accountId
+          userId: user.accountId,
+          trainerId: trainer.accountId,
+          date: new Date()
         });
 
         for (const exerciseIndex of dayInfo.exercises) {
@@ -665,7 +670,17 @@ const initDatabase = async () => {
 
       console.log('- Admin: admin@example.com / password123');
 
-      console.log('Database, tables, and sample data created successfully!');
+      // 🚀 Ejecutar proceso ETL para importar datos de CSV
+      console.log('\n🚀 Starting ETL process to import CSV data...');
+      try {
+        await runETL();
+        console.log('✅ ETL process completed successfully!');
+      } catch (etlError) {
+        console.error('❌ ETL process failed:', etlError.message);
+        console.log('⚠️ Continuing with standard initialization...');
+      }
+
+      console.log('\n✅ Database, tables, and sample data created successfully!');
       console.log('Created training plan ID:', training.id);
       console.log('Login credentials:');
       console.log('- User: user@example.com / password123');

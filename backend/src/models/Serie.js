@@ -28,6 +28,19 @@ const SerieModel = sequelize.define('Serie', {
     weigth: {
         type: DataTypes.DOUBLE,
         allowNull: false
+    },
+    sensations: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        validate: {
+            min: 1,
+            max: 10
+        }
+    },
+    injured: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
     }
 }, {
     tableName: 'Serie',
