@@ -86,15 +86,13 @@ export const getUserCompleteData = async (req, res) => {
     // 5. Agrupar series por ejercicio y calcular KPIs
     const exercisesData = {};
     
-    // Extraer el user_id del CSV desde el email (formato: user1@hammergym.com)
-    const csvUserId = user.account.email.match(/user(\d+)@/)?.[1] || userId;
-    
-    series.forEach(serie => {
+    // Procesar series de forma asíncrona para calcular KPIs
+    for (const serie of series) {
       const exerciseName = serie.exercise.name;
       
       if (!exercisesData[exerciseName]) {
-        // Obtener KPIs para este ejercicio usando el CSV userId
-        const kpis = getExerciseKPI(csvUserId, exerciseName);
+        // Obtener KPIs para este ejercicio usando el userId real (account.id)
+        const kpis = await getExerciseKPI(userId, exerciseName);
         
         // Obtener medidas de huesos específicas para este ejercicio
         const exerciseBoneMeasures = boneMeasures
@@ -148,7 +146,7 @@ export const getUserCompleteData = async (req, res) => {
       stats.averageWeight = ((stats.averageWeight * (stats.totalSeries - 1)) + serie.weigth) / stats.totalSeries;
       stats.averageReps = ((stats.averageReps * (stats.totalSeries - 1)) + serie.reps) / stats.totalSeries;
       stats.maxWeight = Math.max(stats.maxWeight, serie.weigth);
-    });
+    }
 
     // Redondear promedios
     Object.values(exercisesData).forEach(exercise => {
