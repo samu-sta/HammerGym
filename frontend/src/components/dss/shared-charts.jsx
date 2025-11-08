@@ -14,8 +14,8 @@ import {
   LabelList,
 } from "recharts"
 import { Calendar } from "lucide-react"
-import { mockExercises, exerciseColors } from "@/data/dss-exercises"
-import { getSelectedExerciseNames, filterBiomechanicalData } from "@/utils/dss-chartHelpers"
+import { exerciseColors } from "@/data/dss-exercises"
+import { filterBiomechanicalData } from "@/utils/dss-chartHelpers"
 import { WEEK_OPTIONS } from "@/constants/dss-config"
 import { useState } from "react"
 
@@ -64,14 +64,18 @@ const generateTicks = (min, max) => {
 }
 
 export function SharedCharts({ selectedExerciseIds, userData }) {
-  const [weeksToShow, setWeeksToShow] = useState(6)
+  const [weeksToShow, setWeeksToShow] = useState(20)
   
   // Get training data for current user
   const progressionData = userData.training.progressionData
   const biomechanicalData = userData.training.biomechanicalData
+  const exercises = userData.exercises || []
   
-  // Get selected exercise names from IDs
-  const selectedExerciseNames = getSelectedExerciseNames(mockExercises, selectedExerciseIds)
+  // Convertir IDs de ejercicios a nombres usando los datos del backend
+  const selectedExerciseNames = selectedExerciseIds.map(id => {
+    const exercise = exercises.find(ex => ex.id === id)
+    return exercise ? exercise.name : null
+  }).filter(Boolean)
   
   // Filter progression data to show only the last X weeks
   const filteredProgressionData = progressionData.slice(-weeksToShow)

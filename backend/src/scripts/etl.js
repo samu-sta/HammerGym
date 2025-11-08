@@ -89,18 +89,37 @@ const createUsersFromMeasures = async (measuresData) => {
   return usersCreated;
 };
 
-// Función para crear huesos y medidas de usuario
+// Función para crear huesos y medidas de usuario por ejercicio
 const createBonesAndMeasures = async (measuresData, usersCreated) => {
-  console.log('\n🦴 Creando huesos y medidas de usuario...');
+  console.log('\n🦴 Creando huesos y medidas de usuario por ejercicio...');
   
-  // Definir los huesos básicos (medidas reales del cuerpo)
+  // Definir los huesos básicos
   const boneDefinitions = [
-    { name: 'femur', columnReal: 'femur_length_cm' },
-    { name: 'tibia', columnReal: 'tibia_length_cm' },
-    { name: 'humerus', columnReal: 'humerus_length_cm' },
-    { name: 'radius', columnReal: 'radius_length_cm' },
-    { name: 'torso', columnReal: 'torso_length_cm' }
+    { name: 'femur', columnReal: 'femur_length_cm', csvName: 'femur' },
+    { name: 'tibia', columnReal: 'tibia_length_cm', csvName: 'tibia' },
+    { name: 'humerus', columnReal: 'humerus_length_cm', csvName: 'humero' },
+    { name: 'radius', columnReal: 'radius_length_cm', csvName: 'radio' },
+    { name: 'torso', columnReal: 'torso_length_cm', csvName: 'torso' }
   ];
+
+  // Mapeo de nombres de ejercicios en CSV de medidas a nombres en la base de datos
+  const exerciseMapping = {
+    'press_mancuernas': 'Press con Mancuernas',
+    'press_militar': 'Press Militar',
+    'press_banca': 'Press Banca',
+    'press_inclinado': 'Press Inclinado',
+    'fondos': 'Fondos',
+    'dominadas': 'Dominadas',
+    'jalon_pecho': 'Jalón al Pecho',
+    'remo_barra': 'Remo con Barra',
+    'peso_muerto_rumano': 'Peso Muerto Rumano',
+    'remo_mancuerna': 'Remo con Mancuerna',
+    'sentadilla': 'Sentadilla',
+    'prensa_piernas': 'Prensa de Piernas',
+    'extensiones_cuadriceps': 'Extensiones de Cuádriceps',
+    'peso_muerto': 'Peso Muerto',
+    'zancadas': 'Zancadas'
+  };
 
   // Crear huesos si no existen
   const bones = {};
@@ -117,64 +136,168 @@ const createBonesAndMeasures = async (measuresData, usersCreated) => {
     }
   }
 
-  // Crear medidas de huesos para cada usuario
-  let measuresCount = 0;
+  // Obtener todos los ejercicios de la base de datos
+  const exercises = await ExerciseModel.findAll();
+  const exercisesByName = {};
+  exercises.forEach(ex => {
+    exercisesByName[ex.name] = ex;
+  });
+
+  console.log(`📋 Ejercicios encontrados: ${exercises.length}`);
+
+  // Crear medidas por usuario, ejercicio y hueso
+  let measuresCreated = 0;
+  let measuresUpdated = 0;
+  let measuresFailed = 0;
+  
   for (const row of measuresData) {
     try {
-      // Buscar el accountId del usuario creado
       const userCreated = usersCreated.find(u => u.userId === row.user_id);
       if (!userCreated) {
-        console.log(`⏭️  Usuario ${row.user_id} no encontrado en usuarios creados, saltando...`);
+        console.log(`⏭️  Usuario ${row.user_id} no encontrado, saltando...`);
         continue;
       }
 
-      // Crear medidas para cada hueso
-      for (const boneDef of boneDefinitions) {
-        const realValue = row[boneDef.columnReal];
-        
-        if (realValue && bones[boneDef.name]) {
-          // Para las medidas ideales, usaremos un promedio de las medidas ideales relacionadas
-          // Por ejemplo, para humerus, promediamos todas las columnas ideal_*_humero_cm
-          const idealColumns = Object.keys(row).filter(col => 
-            col.includes(`ideal_`) && col.includes(`_${boneDef.name === 'humerus' ? 'humero' : boneDef.name}_cm`)
-          );
+      // Verificar que el usuario existe en la BD
+      const userExists = await UserModel.findOne({
+        where: { accountId: userCreated.accountId }
+      });
+
+      if (!userExists) {
+        console.error(`❌ Usuario con accountId ${userCreated.accountId} NO EXISTE en la BD`);
+        continue;
+      }
+
+      // Para cada ejercicio, crear medidas para todos los 5 huesos
+      for (const [csvExName, dbExName] of Object.entries(exerciseMapping)) {
+        const exercise = exercisesByName[dbExName];
+        if (!exercise) {
+          console.log(`⚠️  Ejercicio "${dbExName}" no encontrado en la base de datos`);
+          continue;
+        }
+
+        // Para cada hueso
+        for (const boneDef of boneDefinitions) {
+          const realValue = parseFloat(row[boneDef.columnReal]);
           
-          let idealValue = realValue; // Por defecto, usar el valor real
-          if (idealColumns.length > 0) {
-            const idealValues = idealColumns
-              .map(col => parseFloat(row[col]))
-              .filter(val => !isNaN(val));
-            
-            if (idealValues.length > 0) {
-              idealValue = idealValues.reduce((a, b) => a + b, 0) / idealValues.length;
-            }
+          // Validar realValue con más detalle
+          if (isNaN(realValue)) {
+            console.log(`⚠️  Usuario ${row.user_id}, Ejercicio ${dbExName}, Hueso ${boneDef.name}: realValue es NaN (columna: ${boneDef.columnReal}, valor: ${row[boneDef.columnReal]})`);
+            measuresFailed++;
+            continue;
+          }
+          
+          if (realValue <= 0 || realValue > 999.99) {
+            console.log(`⚠️  Usuario ${row.user_id}, Ejercicio ${dbExName}, Hueso ${boneDef.name}: realValue fuera de rango (${realValue})`);
+            measuresFailed++;
+            continue;
+          }
+          
+          // Buscar la columna ideal específica para este ejercicio y hueso
+          const idealColumnName = `ideal_${csvExName}_${boneDef.csvName}_cm`;
+          const idealValue = parseFloat(row[idealColumnName]);
+          
+          // Validar idealValue con más detalle
+          if (isNaN(idealValue)) {
+            console.log(`⚠️  Usuario ${row.user_id}, Ejercicio ${dbExName}, Hueso ${boneDef.name}: idealValue es NaN (columna: ${idealColumnName}, valor: ${row[idealColumnName]})`);
+            measuresFailed++;
+            continue;
+          }
+          
+          if (idealValue <= 0 || idealValue > 999.99) {
+            console.log(`⚠️  Usuario ${row.user_id}, Ejercicio ${dbExName}, Hueso ${boneDef.name}: idealValue fuera de rango (${idealValue})`);
+            measuresFailed++;
+            continue;
           }
 
           try {
-            await BoneMeasuresUserModel.create({
+            // Verificar que las foreign keys existen
+            const boneExists = await BoneModel.findByPk(bones[boneDef.name].id);
+            const exerciseExists = await ExerciseModel.findByPk(exercise.id);
+            
+            if (!boneExists) {
+              console.error(`❌ Hueso con id ${bones[boneDef.name].id} NO EXISTE en la BD`);
+              measuresFailed++;
+              continue;
+            }
+            
+            if (!exerciseExists) {
+              console.error(`❌ Ejercicio con id ${exercise.id} NO EXISTE en la BD`);
+              measuresFailed++;
+              continue;
+            }
+
+            // Intentar crear con validación explícita
+            const measureData = {
               userId: userCreated.accountId,
               boneId: bones[boneDef.name].id,
-              real: parseFloat(realValue),
-              ideal: Math.round(idealValue * 10) / 10 // Redondear a 1 decimal
+              exerciseId: exercise.id,
+              real: realValue,
+              ideal: idealValue
+            };
+
+            // Validar que todos los campos requeridos están presentes
+            if (!measureData.userId || !measureData.boneId || !measureData.exerciseId) {
+              console.error(`❌ Datos incompletos:`, measureData);
+              measuresFailed++;
+              continue;
+            }
+
+            // Usar findOrCreate para evitar duplicados
+            const [measure, created] = await BoneMeasuresUserModel.findOrCreate({
+              where: {
+                userId: measureData.userId,
+                boneId: measureData.boneId,
+                exerciseId: measureData.exerciseId
+              },
+              defaults: {
+                real: measureData.real,
+                ideal: measureData.ideal
+              }
             });
-            measuresCount++;
+
+            if (created) {
+              measuresCreated++;
+            } else {
+              await measure.update({
+                real: measureData.real,
+                ideal: measureData.ideal
+              });
+              measuresUpdated++;
+            }
           } catch (error) {
-            // Si ya existe, lo ignoramos (primary key duplicada)
-            if (!error.message.includes('PRIMARY')) {
-              console.error(`❌ Error creando medida para usuario ${row.user_id}, hueso ${boneDef.name}:`, error.message);
+            measuresFailed++;
+            console.error(`❌ ERROR DETALLADO - Usuario ${row.user_id}, Ejercicio ${dbExName}, Hueso ${boneDef.name}:`);
+            console.error(`   Mensaje: ${error.message}`);
+            console.error(`   Nombre: ${error.name}`);
+            console.error(`   userId: ${userCreated.accountId} (type: ${typeof userCreated.accountId})`);
+            console.error(`   boneId: ${bones[boneDef.name].id} (type: ${typeof bones[boneDef.name].id})`);
+            console.error(`   exerciseId: ${exercise.id} (type: ${typeof exercise.id})`);
+            console.error(`   real: ${realValue} (type: ${typeof realValue})`);
+            console.error(`   ideal: ${idealValue} (type: ${typeof idealValue})`);
+            
+            // Imprimir el error completo de Sequelize si existe
+            if (error.errors) {
+              console.error(`   Errores de validación de Sequelize:`);
+              error.errors.forEach(err => {
+                console.error(`      - ${err.path}: ${err.message} (type: ${err.type})`);
+              });
             }
           }
         }
       }
 
-      console.log(`✅ Medidas creadas para usuario ${row.user_id}`);
+      console.log(`✅ Medidas procesadas para usuario ${row.user_id}`);
     } catch (error) {
       console.error(`❌ Error procesando medidas para usuario ${row.user_id}:`, error.message);
     }
   }
 
-  console.log(`\n📊 Total de medidas creadas: ${measuresCount}`);
-  return measuresCount;
+  console.log(`\n📊 Medidas creadas: ${measuresCreated}`);
+  console.log(`📊 Medidas actualizadas: ${measuresUpdated}`);
+  console.log(`📊 Medidas fallidas: ${measuresFailed}`);
+  console.log(`📊 Total esperado: ${usersCreated.length} usuarios × ${Object.keys(exerciseMapping).length} ejercicios × 5 huesos = ${usersCreated.length * Object.keys(exerciseMapping).length * 5}`);
+  return measuresCreated + measuresUpdated;
 };
 
 // Función para crear ejercicios únicos
@@ -200,7 +323,7 @@ const createExercises = async (trainingData) => {
         defaults: {
           name: data.name,
           description: `Ejercicio de ${data.type}`,
-          muscles: data.type
+          type: data.type
         }
       });
 
@@ -377,9 +500,9 @@ export const runETL = async () => {
     console.log('🚀 ==========================================');
 
     // Rutas de los archivos CSV
-    // Usar rutas absolutas desde /app (dentro del contenedor Docker)
-    const measuresPath = '/app/Dataset med_os comp (1).csv';
-    const trainingPath = '/app/progresion_entrenamiento_usuario (4).csv';
+    // Usar rutas relativas desde la raíz del proyecto backend
+    const measuresPath = path.join(__dirname, '../../../Dataset med_os comp (1).csv');
+    const trainingPath = path.join(__dirname, '../../../progresion_entrenamiento_usuario (4).csv');
 
     console.log('📂 Rutas de archivos CSV:');
     console.log(`   Medidas: ${measuresPath}`);
@@ -413,19 +536,19 @@ export const runETL = async () => {
     const users = await createUsersFromMeasures(measuresData);
     console.log(`\n📊 Resumen: ${users.length} usuarios procesados`);
 
-    // Paso 2: Crear huesos y medidas de usuario
+    // Paso 2: Crear ejercicios (ANTES de las medidas, porque las medidas necesitan los IDs de ejercicios)
     console.log('\n' + '='.repeat(50));
-    console.log('PASO 2: CREANDO HUESOS Y MEDIDAS');
-    console.log('='.repeat(50));
-    const measuresCount = await createBonesAndMeasures(measuresData, users);
-    console.log(`\n📊 Resumen: ${measuresCount} medidas creadas`);
-
-    // Paso 3: Crear ejercicios
-    console.log('\n' + '='.repeat(50));
-    console.log('PASO 3: CREANDO EJERCICIOS');
+    console.log('PASO 2: CREANDO EJERCICIOS');
     console.log('='.repeat(50));
     const exercises = await createExercises(trainingData);
     console.log(`\n📊 Resumen: ${exercises.length} ejercicios procesados`);
+
+    // Paso 3: Crear huesos y medidas de usuario por ejercicio
+    console.log('\n' + '='.repeat(50));
+    console.log('PASO 3: CREANDO HUESOS Y MEDIDAS POR EJERCICIO');
+    console.log('='.repeat(50));
+    const measuresCount = await createBonesAndMeasures(measuresData, users);
+    console.log(`\n📊 Resumen: ${measuresCount} medidas creadas`);
 
     // Paso 4: Crear series desde datos históricos
     console.log('\n' + '='.repeat(50));

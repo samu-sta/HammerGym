@@ -37,11 +37,11 @@ export const SCORE_THRESHOLDS = {
   GOOD: 6.5,
 }
 
-// Exercise types
+// Exercise types (deben coincidir con los tipos del backend)
 export const EXERCISE_TYPES = {
   PUSH: "Empuje",
-  PULL: "Jalón",
-  LEGS: "Pierna",
+  PULL: "Jalon",
+  LEGS: "Piernas",
 }
 
 // Week options for chart filtering

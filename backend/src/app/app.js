@@ -10,6 +10,7 @@ import { ProgressUserRoutes } from '../routes/ProgressUser.Routes.js';
 import { ClassRoutes } from "../routes/Class.Routes.js";
 import { ExercisesRoutes } from '../routes/Exercises.Routes.js';
 import { TrainerRoutes } from '../routes/Trainer.Routes.js';
+import TrainerDataRoutes from '../routes/TrainerData.Routes.js';
 import { GymRoutes } from '../routes/Gym.Routes.js';
 import { MachineModelRoutes } from '../routes/MachineModel.Routes.js';
 import { MachineRoutes } from '../routes/Machine.Routes.js';
@@ -48,6 +49,7 @@ export const createApp = () => {
 
   app.use('/user', UserRoutes());
   app.use('/trainer', TrainerRoutes());
+  app.use('/trainer-data', TrainerDataRoutes);
   app.use('/gym', GymRoutes());
   app.use('/machine-model', MachineModelRoutes());
   app.use('/machines', MachineRoutes());

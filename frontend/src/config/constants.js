@@ -166,7 +166,7 @@ export const mapDifficultyToNumeric = (difficulty) => {
   }
 };
 
-export const API_URL = import.meta.env.VITE_API_URL;
+export const API_URL = "http://localhost:3000" || import.meta.env.VITE_API_URL;
 
 // User-related constants
 export const USER_ROLES = {

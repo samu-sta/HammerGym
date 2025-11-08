@@ -59,27 +59,50 @@ const datosDecisionCompletos = {
 }
 
 /**
- * Función que simula una llamada API para obtener los datos de decisión del usuario
+ * Función que obtiene los datos de decisión del usuario desde el backend
+ * Los datos ya vienen formateados desde el backend
  * @param {string} userEmail - Email del usuario (parámetro de la URL)
  * @returns {Promise<Object>} Datos completos del usuario para el sistema de decisión
  */
 export async function getDatosDecisionUsuario(userEmail) {
-  // Simular delay de red (200-500ms)
-  const delay = Math.random() * 300 + 200
-  
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Por ahora siempre devuelve los datos de Juan Pérez
-      // TODO: Cuando se implemente la API, hacer fetch a: 
-      // GET /api/decision/${userEmail}
-      
-      resolve({
-        success: true,
-        data: datosDecisionCompletos,
-        timestamp: new Date().toISOString()
-      })
-    }, delay)
-  })
+  try {
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+    
+    // Llamar al endpoint del backend
+    const response = await fetch(`${API_URL}/trainer-data/user/${encodeURIComponent(userEmail)}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include' // Para enviar cookies de autenticación
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error en la petición: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message || 'Error al obtener datos del usuario');
+    }
+
+    // Los datos ya vienen formateados desde el backend
+    return {
+      success: true,
+      data: data.data,
+      timestamp: new Date().toISOString()
+    };
+
+  } catch (error) {
+    console.error('Error al obtener datos de decisión:', error);
+    
+    return {
+      success: false,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    };
+  }
 }
 
 /**
@@ -96,6 +119,13 @@ export function formatearDatosParaComponentes(datosJSON) {
       maxWaistCircumference: datosJSON.riesgoMetabolico.circunferenciaCinturaMaxima,
     },
     observations: datosJSON.observaciones,
+    exercises: datosJSON.ejercicios.map(ejercicio => ({
+      id: ejercicio.id,
+      name: ejercicio.nombre,
+      type: ejercicio.tipo,
+      affinityIndex: ejercicio.kpis.indiceAfinidad,
+      biomechanicalEfficiency: ejercicio.kpis.eficienciaBiomecanica,
+    })),
     training: {
       progressionData: datosJSON.progresion,
       biomechanicalData: datosJSON.biomecanica,

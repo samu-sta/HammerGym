@@ -11,6 +11,11 @@ export function BentoGrid({ onSelectionChange, userData }) {
   const [selectedExercises, setSelectedExercises] = useState([])
   const [filterType, setFilterType] = useState(EXERCISE_TYPES.PUSH)
   
+  // Usar ejercicios del backend en lugar de mocks
+  const exercises = userData.exercises || []
+  
+  console.log(exercises);
+  console.log(mockExercises);
   // Reset selection when user changes
   useEffect(() => {
     setSelectedExercises([])
@@ -23,7 +28,7 @@ export function BentoGrid({ onSelectionChange, userData }) {
   )
   const riskStatus = getMetabolicRisk(waistRatio)
 
-  const filteredExercises = mockExercises.filter((ex) => ex.type === filterType)
+  const filteredExercises = exercises.filter((ex) => ex.type === filterType)
 
   const handleFilterChange = (newFilterType) => {
     setFilterType(newFilterType)
@@ -133,7 +138,7 @@ export function BentoGrid({ onSelectionChange, userData }) {
             <p className="w-32 text-center text-[10px] font-semibold text-muted-foreground uppercase tracking-wide">
               Eficiencia Biomecánica
             </p>
-            <div className="w-5" /> {/* Spacer for checkbox */}
+            <div className="w-5" />
           </div>
         </div>
 

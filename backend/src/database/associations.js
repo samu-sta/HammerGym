@@ -281,19 +281,37 @@ const setupAssociations = () => {
     as: 'membership'
   });
 
-  // Bone and BoneMeasuresUser associations (Many-to-Many through BoneMeasuresUser)
-  UserModel.belongsToMany(BoneModel, {
-    through: BoneMeasuresUserModel,
+  // BoneMeasuresUser direct associations (for direct queries)
+  BoneMeasuresUserModel.belongsTo(BoneModel, {
+    foreignKey: 'boneId',
+    as: 'bone'
+  });
+
+  BoneMeasuresUserModel.belongsTo(UserModel, {
     foreignKey: 'userId',
-    otherKey: 'boneId',
+    targetKey: 'accountId',
+    as: 'user'
+  });
+
+  BoneMeasuresUserModel.belongsTo(ExerciseModel, {
+    foreignKey: 'exerciseId',
+    as: 'exercise'
+  });
+
+  BoneModel.hasMany(BoneMeasuresUserModel, {
+    foreignKey: 'boneId',
     as: 'boneMeasures'
   });
 
-  BoneModel.belongsToMany(UserModel, {
-    through: BoneMeasuresUserModel,
-    foreignKey: 'boneId',
-    otherKey: 'userId',
-    as: 'users'
+  UserModel.hasMany(BoneMeasuresUserModel, {
+    foreignKey: 'userId',
+    sourceKey: 'accountId',
+    as: 'boneMeasuresData'
+  });
+
+  ExerciseModel.hasMany(BoneMeasuresUserModel, {
+    foreignKey: 'exerciseId',
+    as: 'boneMeasures'
   });
 
   console.log('Associations set up successfully');

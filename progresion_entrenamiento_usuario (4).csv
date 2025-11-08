@@ -5,10 +5,10 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2025-05-02,2,Empuje,Press con Mancuernas,37.5,9,4,8,false
 1,2025-05-02,2,Empuje,Press Militar,42.5,9,3,7,false
 1,2025-05-02,2,Empuje,Press Banca,65,9,3,6,false
-1,2025-05-05,1,Jalón,Dominadas,0,9,4,6,false
+1,2025-05-05,1,Jalón,Dominadas,2.5,9,4,6,false
 1,2025-05-05,1,Jalón,Jalón al Pecho,47.5,9,4,6,false
 1,2025-05-05,1,Jalón,Remo con Barra,52.5,10,4,8,false
-1,2025-05-08,2,Jalón,Dominadas,0,9,4,8,false
+1,2025-05-08,2,Jalón,Dominadas,2.5,9,4,8,false
 1,2025-05-08,2,Jalón,Jalón al Pecho,47.5,9,4,8,false
 1,2025-05-08,2,Jalón,Remo con Barra,52.5,10,4,7,false
 1,2025-05-10,3,Jalón,Dominadas,2.5,10,4,7,false
@@ -39,7 +39,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2025-05-29,3,Empuje,Press Inclinado,55,10,4,8,false
 1,2025-05-29,5,Empuje,Press con Mancuernas,40,9,5,9,false
 1,2025-05-31,6,Empuje,Press Militar,45,10,3,7,false
-1,2025-05-31,4,Empuje,Press Inclinado,55,11,5,3,true
+1,2025-05-31,4,Empuje,Press Inclinado,55,11,5,5,true
 1,2025-05-31,6,Empuje,Press con Mancuernas,22.5,6,3,5,false
 1,2025-06-02,1,Jalón,Remo con Mancuerna,22.5,8,3,7,false
 1,2025-06-02,5,Jalón,Remo con Barra,52.5,11,4,7,false
@@ -95,13 +95,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2025-07-18,7,Piernas,Peso Muerto,60,8,2,4,false
 1,2025-07-18,7,Piernas,Prensa de Piernas,87.5,6,3,5,false
 1,2025-07-18,7,Piernas,Zancadas,17.5,7,2,5,false
-1,2025-07-21,1,Empuje,Fondos,0,6,2,5,false
+1,2025-07-21,1,Empuje,Fondos,2.5,6,2,5,false
 1,2025-07-21,7,Empuje,Press Militar,25,6,2,5,false
 1,2025-07-21,7,Empuje,Press Banca,40,6,2,6,false
-1,2025-07-23,2,Empuje,Fondos,0,7,2,5,false
+1,2025-07-23,2,Empuje,Fondos,2.5,7,2,5,false
 1,2025-07-23,8,Empuje,Press Militar,27.5,7,2,5,false
 1,2025-07-23,8,Empuje,Press Banca,35,6,2,6,false
-1,2025-07-26,3,Empuje,Fondos,0,7,2,5,false
+1,2025-07-26,3,Empuje,Fondos,2.5,7,2,5,false
 1,2025-07-26,9,Empuje,Press Militar,30,7,2,5,false
 1,2025-07-26,9,Empuje,Press Banca,35,6,3,5,false
 1,2025-07-29,8,Jalón,Remo con Barra,55,12,4,8,false
@@ -129,16 +129,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2025-08-16,11,Piernas,Prensa de Piernas,67.5,6,3,5,false
 1,2025-08-16,11,Piernas,Peso Muerto,85,10,3,6,false
 1,2025-08-19,10,Empuje,Press Militar,35,8,2,6,false
-1,2025-08-19,4,Empuje,Fondos,0,8,2,6,false
+1,2025-08-19,4,Empuje,Fondos,2.5,8,2,6,false
 1,2025-08-19,9,Empuje,Press Inclinado,45,8,3,5,false
 1,2025-08-21,11,Empuje,Press Militar,27.5,6,2,6,false
-1,2025-08-21,5,Empuje,Fondos,0,6,2,6,false
+1,2025-08-21,5,Empuje,Fondos,2.5,6,2,6,false
 1,2025-08-21,10,Empuje,Press Inclinado,47.5,9,3,6,false
 1,2025-08-24,12,Empuje,Press Militar,25,6,2,6,false
-1,2025-08-24,6,Empuje,Fondos,0,6,2,6,false
+1,2025-08-24,6,Empuje,Fondos,2.5,6,2,6,false
 1,2025-08-24,11,Empuje,Press Inclinado,45,8,2,6,false
 1,2025-08-27,13,Empuje,Press Militar,25,6,3,5,false
-1,2025-08-27,7,Empuje,Fondos,0,6,3,7,false
+1,2025-08-27,7,Empuje,Fondos,2.5,6,3,7,false
 1,2025-08-27,12,Empuje,Press Inclinado,45,8,2,7,false
 1,2025-08-30,12,Jalón,Dominadas,7.5,12,5,7,false
 1,2025-08-30,12,Jalón,Remo con Mancuerna,27.5,12,5,8,false
@@ -147,7 +147,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2025-09-02,13,Jalón,Remo con Mancuerna,27.5,12,5,8,false
 1,2025-09-02,14,Jalón,Jalón al Pecho,52.5,12,5,7,false
 1,2025-09-05,14,Jalón,Dominadas,7.5,12,5,7,false
-1,2025-09-05,14,Jalón,Remo con Mancuerna,27.5,12,5,3,true
+1,2025-09-05,14,Jalón,Remo con Mancuerna,27.5,12,5,5,true
 1,2025-09-05,15,Jalón,Jalón al Pecho,30,7,3,5,false
 1,2025-09-07,15,Jalón,Dominadas,5,7,3,5,false
 1,2025-09-07,15,Jalón,Remo con Mancuerna,15,7,3,4,false
@@ -189,16 +189,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2025-10-08,15,Piernas,Sentadilla,47.5,6,3,7,false
 1,2025-10-08,18,Piernas,Peso Muerto,87.5,11,5,8,false
 1,2025-10-11,11,Empuje,Press Banca,35,6,3,7,false
-1,2025-10-11,8,Empuje,Fondos,0,6,3,7,false
+1,2025-10-11,8,Empuje,Fondos,2.5,6,3,7,false
 1,2025-10-11,11,Empuje,Press con Mancuernas,22.5,6,2,6,false
 1,2025-10-13,12,Empuje,Press Banca,35,6,3,8,false
-1,2025-10-13,9,Empuje,Fondos,0,6,4,8,false
-1,2025-10-13,12,Empuje,Press con Mancuernas,22.5,6,3,2,true
+1,2025-10-13,9,Empuje,Fondos,2.5,6,4,8,false
+1,2025-10-13,12,Empuje,Press con Mancuernas,22.5,6,3,5,true
 1,2025-10-15,13,Empuje,Press Banca,20,6,2,5,false
-1,2025-10-15,10,Empuje,Fondos,0,6,2,5,false
+1,2025-10-15,10,Empuje,Fondos,2.5,6,2,5,false
 1,2025-10-15,13,Empuje,Press con Mancuernas,12.5,6,2,4,false
 1,2025-10-18,14,Empuje,Press Banca,22.5,6,2,5,false
-1,2025-10-18,11,Empuje,Fondos,0,6,2,5,false
+1,2025-10-18,11,Empuje,Fondos,2.5,6,2,5,false
 1,2025-10-18,14,Empuje,Press con Mancuernas,15,6,2,4,false
 1,2025-10-21,21,Jalón,Jalón al Pecho,25,6,2,6,false
 1,2025-10-21,20,Jalón,Remo con Mancuerna,25,10,4,6,false
@@ -218,13 +218,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2025-11-01,21,Piernas,Peso Muerto,90,12,4,9,false
 1,2025-11-01,17,Piernas,Prensa de Piernas,67.5,8,3,8,false
 1,2025-11-01,14,Piernas,Zancadas,15,6,3,8,false
-1,2025-11-04,12,Empuje,Fondos,0,6,3,5,false
+1,2025-11-04,12,Empuje,Fondos,2.5,6,3,5,false
 1,2025-11-04,15,Empuje,Press Banca,25,6,2,5,false
 1,2025-11-04,15,Empuje,Press con Mancuernas,15,6,2,5,false
-1,2025-11-06,13,Empuje,Fondos,0,6,3,6,false
+1,2025-11-06,13,Empuje,Fondos,2.5,6,3,6,false
 1,2025-11-06,16,Empuje,Press Banca,27.5,6,2,6,false
 1,2025-11-06,16,Empuje,Press con Mancuernas,17.5,6,2,5,false
-1,2025-11-09,14,Empuje,Fondos,0,6,2,6,false
+1,2025-11-09,14,Empuje,Fondos,2.5,6,2,6,false
 1,2025-11-09,17,Empuje,Press Banca,22.5,6,2,6,false
 1,2025-11-09,17,Empuje,Press con Mancuernas,17.5,6,2,5,false
 1,2025-11-11,23,Jalón,Remo con Mancuerna,15,6,2,4,false
@@ -266,16 +266,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2025-12-09,21,Piernas,Prensa de Piernas,70,12,3,6,false
 1,2025-12-09,27,Piernas,Peso Muerto,90,12,4,9,false
 1,2025-12-09,20,Piernas,Zancadas,20,8,3,8,false
-1,2025-12-11,15,Empuje,Fondos,0,6,2,6,false
+1,2025-12-11,15,Empuje,Fondos,2.5,6,2,6,false
 1,2025-12-11,18,Empuje,Press Militar,20,6,2,6,false
 1,2025-12-11,21,Empuje,Press Banca,20,6,4,5,false
-1,2025-12-13,16,Empuje,Fondos,0,6,2,6,false
+1,2025-12-13,16,Empuje,Fondos,2.5,6,2,6,false
 1,2025-12-13,19,Empuje,Press Militar,17.5,6,2,6,false
 1,2025-12-13,22,Empuje,Press Banca,20,6,4,8,false
-1,2025-12-16,17,Empuje,Fondos,0,6,2,7,false
+1,2025-12-16,17,Empuje,Fondos,2.5,6,2,7,false
 1,2025-12-16,20,Empuje,Press Militar,15,6,2,6,false
 1,2025-12-16,23,Empuje,Press Banca,20,6,4,9,false
-1,2025-12-18,18,Empuje,Fondos,0,6,3,9,false
+1,2025-12-18,18,Empuje,Fondos,2.5,6,3,9,false
 1,2025-12-18,21,Empuje,Press Militar,15,6,2,6,false
 1,2025-12-18,24,Empuje,Press Banca,22.5,6,4,7,false
 1,2025-12-20,20,Jalón,Remo con Barra,15,6,2,4,false
@@ -298,10 +298,10 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-01-02,10,Piernas,Extensiones de Cuádriceps,25,6,2,6,false
 1,2026-01-05,22,Empuje,Press Militar,15,6,3,6,false
 1,2026-01-05,14,Empuje,Press Inclinado,25,6,2,5,false
-1,2026-01-05,19,Empuje,Fondos,0,7,4,9,false
+1,2026-01-05,19,Empuje,Fondos,2.5,7,4,9,false
 1,2026-01-08,23,Empuje,Press Militar,15,6,3,7,false
 1,2026-01-08,15,Empuje,Press Inclinado,27.5,6,2,5,false
-1,2026-01-08,20,Empuje,Fondos,0,7,4,9,false
+1,2026-01-08,20,Empuje,Fondos,2.5,7,4,9,false
 1,2026-01-10,24,Empuje,Press Militar,15,6,3,7,false
 1,2026-01-10,16,Empuje,Press Inclinado,30,6,2,5,false
 1,2026-01-10,21,Empuje,Fondos,2.5,8,4,5,false
@@ -319,7 +319,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-01-20,4,Jalón,Peso Muerto Rumano,57.5,8,3,6,false
 1,2026-01-22,18,Piernas,Sentadilla,47.5,6,4,7,false
 1,2026-01-22,23,Piernas,Zancadas,22.5,11,3,9,false
-1,2026-01-22,11,Piernas,Extensiones de Cuádriceps,25,6,3,2,true
+1,2026-01-22,11,Piernas,Extensiones de Cuádriceps,25,6,3,5,true
 1,2026-01-25,19,Piernas,Sentadilla,27.5,6,2,5,false
 1,2026-01-25,24,Piernas,Zancadas,12.5,7,2,5,false
 1,2026-01-25,12,Piernas,Extensiones de Cuádriceps,15,6,2,4,false
@@ -329,7 +329,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-01-30,21,Piernas,Sentadilla,32.5,6,3,5,false
 1,2026-01-30,26,Piernas,Zancadas,15,8,2,5,false
 1,2026-01-30,14,Piernas,Extensiones de Cuádriceps,17.5,6,2,5,false
-1,2026-02-01,25,Empuje,Press Banca,22.5,6,3,3,true
+1,2026-02-01,25,Empuje,Press Banca,22.5,6,3,5,true
 1,2026-02-01,17,Empuje,Press Inclinado,35,6,2,6,false
 1,2026-02-01,25,Empuje,Press Militar,7.5,6,2,5,false
 1,2026-02-04,27,Jalón,Dominadas,10,8,3,5,false
@@ -353,13 +353,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-02-19,31,Piernas,Peso Muerto,67.5,9,3,6,false
 1,2026-02-19,25,Piernas,Sentadilla,25,6,3,7,false
 1,2026-02-19,27,Piernas,Prensa de Piernas,52.5,9,2,6,false
-1,2026-02-21,22,Empuje,Fondos,0,6,2,5,false
+1,2026-02-21,22,Empuje,Fondos,2.5,6,2,5,false
 1,2026-02-21,26,Empuje,Press Militar,10,6,2,5,false
 1,2026-02-21,26,Empuje,Press Banca,12.5,6,2,4,false
-1,2026-02-24,23,Empuje,Fondos,0,6,2,5,false
+1,2026-02-24,23,Empuje,Fondos,2.5,6,2,5,false
 1,2026-02-24,27,Empuje,Press Militar,10,6,2,5,false
 1,2026-02-24,27,Empuje,Press Banca,15,6,2,4,false
-1,2026-02-27,24,Empuje,Fondos,0,6,3,5,false
+1,2026-02-27,24,Empuje,Fondos,2.5,6,3,5,false
 1,2026-02-27,28,Empuje,Press Militar,12.5,6,2,6,false
 1,2026-02-27,28,Empuje,Press Banca,15,6,3,5,false
 1,2026-03-01,27,Jalón,Remo con Mancuerna,20,7,3,5,false
@@ -384,16 +384,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-03-17,30,Piernas,Zancadas,12.5,6,3,7,false
 1,2026-03-17,18,Piernas,Extensiones de Cuádriceps,22.5,6,3,5,false
 1,2026-03-19,29,Empuje,Press Militar,10,6,2,6,false
-1,2026-03-19,25,Empuje,Fondos,0,6,3,6,false
+1,2026-03-19,25,Empuje,Fondos,2.5,6,3,6,false
 1,2026-03-19,29,Empuje,Press Banca,17.5,6,3,5,false
 1,2026-03-22,30,Empuje,Press Militar,10,6,2,6,false
-1,2026-03-22,26,Empuje,Fondos,0,6,2,6,false
+1,2026-03-22,26,Empuje,Fondos,2.5,6,2,6,false
 1,2026-03-22,30,Empuje,Press Banca,17.5,6,3,5,false
 1,2026-03-24,31,Empuje,Press Militar,10,6,2,6,false
-1,2026-03-24,27,Empuje,Fondos,0,6,2,6,false
+1,2026-03-24,27,Empuje,Fondos,2.5,6,2,6,false
 1,2026-03-24,31,Empuje,Press Banca,20,6,3,6,false
 1,2026-03-26,32,Empuje,Press Militar,10,6,3,6,false
-1,2026-03-26,28,Empuje,Fondos,0,6,3,8,false
+1,2026-03-26,28,Empuje,Fondos,2.5,6,3,8,false
 1,2026-03-26,32,Empuje,Press Banca,20,6,3,7,false
 1,2026-03-29,35,Jalón,Jalón al Pecho,7.5,6,2,5,false
 1,2026-03-29,31,Jalón,Remo con Barra,12.5,6,2,5,false
@@ -414,7 +414,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-04-11,29,Piernas,Prensa de Piernas,37.5,6,2,6,false
 1,2026-04-11,32,Piernas,Zancadas,12.5,6,3,7,false
 1,2026-04-13,38,Piernas,Peso Muerto,47.5,7,3,7,false
-1,2026-04-13,30,Piernas,Prensa de Piernas,37.5,6,3,3,true
+1,2026-04-13,30,Piernas,Prensa de Piernas,37.5,6,3,5,true
 1,2026-04-13,33,Piernas,Zancadas,7.5,6,2,5,false
 1,2026-04-16,33,Empuje,Press Banca,20,6,4,7,false
 1,2026-04-16,33,Empuje,Press Militar,10,6,3,8,false
@@ -436,7 +436,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-04-27,9,Jalón,Peso Muerto Rumano,42.5,6,4,7,false
 1,2026-04-30,37,Jalón,Remo con Barra,12.5,6,3,7,false
 1,2026-04-30,39,Jalón,Dominadas,10,6,3,8,false
-1,2026-04-30,10,Jalón,Peso Muerto Rumano,42.5,6,5,2,true
+1,2026-04-30,10,Jalón,Peso Muerto Rumano,42.5,6,5,5,true
 1,2026-05-02,26,Piernas,Sentadilla,15,6,2,5,false
 1,2026-05-02,34,Piernas,Zancadas,7.5,6,2,5,false
 1,2026-05-02,19,Piernas,Extensiones de Cuádriceps,12.5,6,2,5,false
@@ -468,13 +468,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-05-24,29,Piernas,Sentadilla,20,6,2,6,false
 1,2026-05-24,39,Piernas,Peso Muerto,27.5,6,2,5,false
 1,2026-05-27,22,Empuje,Press Inclinado,25,6,3,8,false
-1,2026-05-27,29,Empuje,Fondos,0,6,3,7,false
+1,2026-05-27,29,Empuje,Fondos,2.5,6,3,7,false
 1,2026-05-27,40,Empuje,Press Banca,25,9,5,7,false
 1,2026-05-29,23,Empuje,Press Inclinado,25,6,3,9,false
-1,2026-05-29,30,Empuje,Fondos,0,7,3,8,false
+1,2026-05-29,30,Empuje,Fondos,2.5,7,3,8,false
 1,2026-05-29,41,Empuje,Press Banca,25,9,5,7,false
 1,2026-05-31,24,Empuje,Press Inclinado,25,7,3,7,false
-1,2026-05-31,31,Empuje,Fondos,0,8,3,7,false
+1,2026-05-31,31,Empuje,Fondos,2.5,8,3,7,false
 1,2026-05-31,42,Empuje,Press Banca,25,9,4,7,false
 1,2026-06-02,41,Jalón,Remo con Barra,10,6,2,6,false
 1,2026-06-02,43,Jalón,Dominadas,7.5,6,2,6,false
@@ -501,13 +501,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-06-22,43,Piernas,Peso Muerto,27.5,6,2,6,false
 1,2026-06-22,40,Piernas,Zancadas,7.5,6,3,8,false
 1,2026-06-25,40,Empuje,Press Militar,12.5,9,5,9,false
-1,2026-06-25,32,Empuje,Fondos,0,9,4,9,false
+1,2026-06-25,32,Empuje,Fondos,2.5,9,4,9,false
 1,2026-06-25,24,Empuje,Press con Mancuernas,15,6,2,6,false
 1,2026-06-27,41,Empuje,Press Militar,12.5,10,4,9,false
-1,2026-06-27,33,Empuje,Fondos,0,9,4,8,false
+1,2026-06-27,33,Empuje,Fondos,2.5,9,4,8,false
 1,2026-06-27,25,Empuje,Press con Mancuernas,12.5,6,2,6,false
 1,2026-06-30,42,Empuje,Press Militar,12.5,10,4,7,false
-1,2026-06-30,34,Empuje,Fondos,0,9,5,7,false
+1,2026-06-30,34,Empuje,Fondos,2.5,9,5,7,false
 1,2026-06-30,26,Empuje,Press con Mancuernas,10,6,2,6,false
 1,2026-07-02,15,Jalón,Peso Muerto Rumano,35,6,3,5,false
 1,2026-07-02,47,Jalón,Dominadas,5,6,3,8,false
@@ -532,7 +532,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 1,2026-07-17,43,Piernas,Zancadas,5,6,2,5,false
 1,2026-07-19,43,Empuje,Press Banca,25,9,3,8,false
 1,2026-07-19,27,Empuje,Press con Mancuernas,10,6,3,5,false
-1,2026-07-19,35,Empuje,Fondos,0,9,5,9,false
+1,2026-07-19,35,Empuje,Fondos,2.5,9,5,9,false
 1,2026-07-21,44,Empuje,Press Banca,25,10,3,6,false
 1,2026-07-21,28,Empuje,Press con Mancuernas,10,6,3,7,false
 1,2026-07-21,36,Empuje,Fondos,2.5,10,5,7,false
@@ -615,10 +615,10 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2025-05-25,4,Piernas,Sentadilla,87.5,9,3,8,false
 2,2025-05-25,4,Piernas,Prensa de Piernas,132.5,11,4,8,false
 2,2025-05-27,1,Empuje,Press Banca,65,9,3,8,false
-2,2025-05-27,1,Empuje,Fondos,0,9,4,6,false
+2,2025-05-27,1,Empuje,Fondos,2.5,9,4,6,false
 2,2025-05-27,5,Empuje,Press con Mancuernas,37.5,11,5,7,false
 2,2025-05-29,2,Empuje,Press Banca,65,9,3,7,false
-2,2025-05-29,2,Empuje,Fondos,0,9,4,9,false
+2,2025-05-29,2,Empuje,Fondos,2.5,9,4,9,false
 2,2025-05-29,6,Empuje,Press con Mancuernas,37.5,11,5,8,false
 2,2025-06-01,3,Empuje,Press Banca,67.5,9,3,7,false
 2,2025-06-01,3,Empuje,Fondos,2.5,10,5,6,false
@@ -655,7 +655,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2025-06-27,7,Empuje,Press Inclinado,60,12,3,8,false
 2,2025-06-29,7,Jalón,Remo con Barra,57.5,11,3,6,false
 2,2025-06-29,4,Jalón,Remo con Mancuerna,25,10,4,9,false
-2,2025-06-29,1,Jalón,Dominadas,0,8,3,6,false
+2,2025-06-29,1,Jalón,Dominadas,2.5,8,3,6,false
 2,2025-07-02,1,Piernas,Zancadas,22.5,9,4,6,false
 2,2025-07-02,8,Piernas,Prensa de Piernas,135,12,4,7,false
 2,2025-07-02,8,Piernas,Sentadilla,90,12,3,8,false
@@ -673,7 +673,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2025-07-13,9,Empuje,Press Inclinado,62.5,12,3,9,false
 2,2025-07-16,10,Empuje,Press Militar,50,10,3,8,false
 2,2025-07-16,11,Empuje,Press con Mancuernas,40,12,5,9,false
-2,2025-07-16,10,Empuje,Press Inclinado,62.5,12,4,2,true
+2,2025-07-16,10,Empuje,Press Inclinado,62.5,12,4,5,true
 2,2025-07-19,11,Empuje,Press Militar,27.5,6,2,5,false
 2,2025-07-19,12,Empuje,Press con Mancuernas,22.5,7,3,5,false
 2,2025-07-19,11,Empuje,Press Inclinado,35,7,2,4,false
@@ -710,13 +710,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2025-08-15,15,Empuje,Press Militar,30,6,2,6,false
 2,2025-08-15,16,Empuje,Press con Mancuernas,25,7,3,6,false
 2,2025-08-15,11,Empuje,Press Banca,52.5,8,3,6,false
-2,2025-08-17,2,Jalón,Dominadas,0,8,4,8,false
+2,2025-08-17,2,Jalón,Dominadas,2.5,8,4,8,false
 2,2025-08-17,11,Jalón,Remo con Barra,57.5,12,4,5,false
 2,2025-08-17,7,Jalón,Jalón al Pecho,52.5,10,5,8,false
-2,2025-08-19,3,Jalón,Dominadas,0,9,4,9,false
+2,2025-08-19,3,Jalón,Dominadas,2.5,9,4,9,false
 2,2025-08-19,12,Jalón,Remo con Barra,60,12,4,7,false
 2,2025-08-19,8,Jalón,Jalón al Pecho,52.5,10,5,9,false
-2,2025-08-22,4,Jalón,Dominadas,0,9,3,7,false
+2,2025-08-22,4,Jalón,Dominadas,2.5,9,3,7,false
 2,2025-08-22,13,Jalón,Remo con Barra,60,12,4,7,false
 2,2025-08-22,9,Jalón,Jalón al Pecho,55,10,5,9,false
 2,2025-08-25,8,Piernas,Zancadas,22.5,12,5,7,false
@@ -810,7 +810,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2025-11-06,17,Jalón,Peso Muerto Rumano,82.5,12,4,9,false
 2,2025-11-06,15,Jalón,Remo con Mancuerna,30,12,4,8,false
 2,2025-11-08,21,Piernas,Sentadilla,97.5,12,5,7,false
-2,2025-11-08,14,Piernas,Peso Muerto,105,12,4,3,true
+2,2025-11-08,14,Piernas,Peso Muerto,105,12,4,5,true
 2,2025-11-08,14,Piernas,Extensiones de Cuádriceps,27.5,6,2,5,false
 2,2025-11-10,22,Piernas,Sentadilla,55,7,3,5,false
 2,2025-11-10,15,Piernas,Peso Muerto,60,7,2,4,false
@@ -831,16 +831,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2025-11-24,23,Empuje,Press con Mancuernas,20,7,3,7,false
 2,2025-11-24,29,Empuje,Press Militar,35,10,3,9,false
 2,2025-11-27,16,Jalón,Remo con Mancuerna,30,12,3,8,false
-2,2025-11-27,5,Jalón,Dominadas,0,9,4,8,false
+2,2025-11-27,5,Jalón,Dominadas,2.5,9,4,8,false
 2,2025-11-27,18,Jalón,Peso Muerto Rumano,85,12,4,7,false
 2,2025-11-30,17,Jalón,Remo con Mancuerna,30,12,3,8,false
-2,2025-11-30,6,Jalón,Dominadas,0,10,4,8,false
+2,2025-11-30,6,Jalón,Dominadas,2.5,10,4,8,false
 2,2025-11-30,19,Jalón,Peso Muerto Rumano,85,12,4,9,false
 2,2025-12-02,18,Jalón,Remo con Mancuerna,32.5,12,3,8,false
-2,2025-12-02,7,Jalón,Dominadas,0,10,4,9,false
+2,2025-12-02,7,Jalón,Dominadas,2.5,10,4,9,false
 2,2025-12-02,20,Jalón,Peso Muerto Rumano,85,12,3,8,false
 2,2025-12-05,19,Jalón,Remo con Mancuerna,32.5,12,3,8,false
-2,2025-12-05,8,Jalón,Dominadas,0,10,5,8,false
+2,2025-12-05,8,Jalón,Dominadas,2.5,10,5,8,false
 2,2025-12-05,21,Jalón,Peso Muerto Rumano,87.5,12,3,9,false
 2,2025-12-07,11,Piernas,Zancadas,15,7,3,5,false
 2,2025-12-07,17,Piernas,Peso Muerto,72.5,9,3,5,false
@@ -883,7 +883,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2026-01-10,24,Empuje,Press con Mancuernas,22.5,7,3,8,false
 2,2026-01-13,16,Empuje,Fondos,2.5,7,5,7,false
 2,2026-01-13,31,Empuje,Press Militar,37.5,10,3,8,false
-2,2026-01-13,25,Empuje,Press con Mancuernas,22.5,7,3,2,true
+2,2026-01-13,25,Empuje,Press con Mancuernas,22.5,7,3,5,true
 2,2026-01-15,17,Empuje,Fondos,2.5,6,3,5,false
 2,2026-01-15,32,Empuje,Press Militar,20,6,2,5,false
 2,2026-01-15,26,Empuje,Press con Mancuernas,12.5,6,2,4,false
@@ -903,7 +903,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2026-01-27,22,Piernas,Peso Muerto,92.5,8,4,8,false
 2,2026-01-27,15,Piernas,Prensa de Piernas,85,8,3,5,false
 2,2026-01-30,17,Piernas,Zancadas,15,6,3,7,false
-2,2026-01-30,23,Piernas,Peso Muerto,92.5,8,4,3,true
+2,2026-01-30,23,Piernas,Peso Muerto,92.5,8,4,5,true
 2,2026-01-30,16,Piernas,Prensa de Piernas,95,9,3,5,false
 2,2026-02-01,18,Piernas,Zancadas,7.5,6,2,5,false
 2,2026-02-01,24,Piernas,Peso Muerto,52.5,6,2,4,false
@@ -919,7 +919,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2026-02-08,35,Empuje,Press Militar,27.5,8,2,6,false
 2,2026-02-10,25,Jalón,Jalón al Pecho,60,12,4,8,false
 2,2026-02-10,17,Jalón,Dominadas,5,12,5,9,false
-2,2026-02-10,22,Jalón,Peso Muerto Rumano,87.5,12,3,2,true
+2,2026-02-10,22,Jalón,Peso Muerto Rumano,87.5,12,3,5,true
 2,2026-02-13,26,Jalón,Jalón al Pecho,35,7,2,5,false
 2,2026-02-13,18,Jalón,Dominadas,2.5,7,3,5,false
 2,2026-02-13,23,Jalón,Peso Muerto Rumano,50,7,2,4,false
@@ -1184,7 +1184,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2026-09-15,44,Jalón,Dominadas,5,7,2,5,false
 2,2026-09-15,42,Jalón,Peso Muerto Rumano,45,6,2,6,false
 2,2026-09-15,31,Jalón,Remo con Mancuerna,10,6,2,6,false
-2,2026-09-18,40,Piernas,Zancadas,17.5,11,5,3,true
+2,2026-09-18,40,Piernas,Zancadas,17.5,11,5,5,true
 2,2026-09-18,46,Piernas,Sentadilla,17.5,7,2,5,false
 2,2026-09-18,24,Piernas,Extensiones de Cuádriceps,15,6,2,5,false
 2,2026-09-20,41,Piernas,Zancadas,10,6,2,4,false
@@ -1201,7 +1201,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2026-09-27,44,Empuje,Fondos,5,10,3,8,false
 2,2026-09-29,54,Empuje,Press con Mancuernas,20,11,4,7,false
 2,2026-09-29,59,Empuje,Press Banca,17.5,8,5,7,false
-2,2026-09-29,45,Empuje,Fondos,7.5,10,3,3,true
+2,2026-09-29,45,Empuje,Fondos,7.5,10,3,5,true
 2,2026-10-01,55,Empuje,Press con Mancuernas,12.5,7,2,5,false
 2,2026-10-01,60,Empuje,Press Banca,10,6,3,5,false
 2,2026-10-01,46,Empuje,Fondos,2.5,6,2,4,false
@@ -1246,17 +1246,17 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 2,2026-11-01,22,Empuje,Press Inclinado,42.5,7,2,6,false
 3,2025-04-29,1,Empuje,Press Banca,52.5,10,4,7,false
 3,2025-04-29,1,Empuje,Press Militar,35,10,4,6,false
-3,2025-04-29,1,Empuje,Fondos,0,9,3,7,false
+3,2025-04-29,1,Empuje,Fondos,2.5,9,3,7,false
 3,2025-05-01,2,Empuje,Press Banca,52.5,10,4,8,false
 3,2025-05-01,2,Empuje,Press Militar,35,10,4,8,false
-3,2025-05-01,2,Empuje,Fondos,0,10,4,7,false
+3,2025-05-01,2,Empuje,Fondos,2.5,10,4,7,false
 3,2025-05-04,3,Empuje,Press Banca,52.5,10,4,8,false
 3,2025-05-04,3,Empuje,Press Militar,37.5,11,4,5,false
 3,2025-05-04,3,Empuje,Fondos,2.5,11,4,7,false
-3,2025-05-06,1,Jalón,Dominadas,0,8,3,7,false
+3,2025-05-06,1,Jalón,Dominadas,2.5,8,3,7,false
 3,2025-05-06,1,Jalón,Remo con Barra,45,10,3,8,false
 3,2025-05-06,1,Jalón,Peso Muerto Rumano,62.5,8,4,8,false
-3,2025-05-08,2,Jalón,Dominadas,0,8,3,8,false
+3,2025-05-08,2,Jalón,Dominadas,2.5,8,3,8,false
 3,2025-05-08,2,Jalón,Remo con Barra,45,10,3,7,false
 3,2025-05-08,2,Jalón,Peso Muerto Rumano,62.5,9,3,9,false
 3,2025-05-11,1,Piernas,Sentadilla,72.5,9,4,6,false
@@ -1305,7 +1305,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 3,2025-06-16,2,Empuje,Press Inclinado,45,8,4,9,false
 3,2025-06-16,5,Empuje,Fondos,2.5,12,4,7,false
 3,2025-06-18,6,Empuje,Press con Mancuernas,32.5,11,3,8,false
-3,2025-06-18,3,Empuje,Press Inclinado,47.5,9,4,2,true
+3,2025-06-18,3,Empuje,Press Inclinado,47.5,9,4,5,true
 3,2025-06-18,6,Empuje,Fondos,2.5,7,2,5,false
 3,2025-06-21,7,Empuje,Press con Mancuernas,17.5,7,2,5,false
 3,2025-06-21,4,Empuje,Press Inclinado,25,6,2,4,false
@@ -1507,7 +1507,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 3,2025-12-05,24,Empuje,Press Militar,25,7,4,7,false
 3,2025-12-07,8,Jalón,Jalón al Pecho,42.5,9,5,8,false
 3,2025-12-07,23,Jalón,Peso Muerto Rumano,72.5,12,3,7,false
-3,2025-12-07,13,Jalón,Dominadas,7.5,11,4,2,true
+3,2025-12-07,13,Jalón,Dominadas,7.5,11,4,5,true
 3,2025-12-10,9,Jalón,Jalón al Pecho,25,6,3,5,false
 3,2025-12-10,24,Jalón,Peso Muerto Rumano,40,7,2,5,false
 3,2025-12-10,14,Jalón,Dominadas,5,7,2,4,false
@@ -1676,7 +1676,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 3,2026-04-23,27,Jalón,Remo con Mancuerna,15,6,3,5,false
 3,2026-04-23,22,Jalón,Dominadas,7.5,6,3,8,false
 3,2026-04-23,34,Jalón,Peso Muerto Rumano,42.5,7,4,6,false
-3,2026-04-26,28,Jalón,Remo con Mancuerna,15,6,3,2,true
+3,2026-04-26,28,Jalón,Remo con Mancuerna,15,6,3,5,true
 3,2026-04-26,23,Jalón,Dominadas,5,6,2,5,false
 3,2026-04-26,35,Jalón,Peso Muerto Rumano,25,6,2,5,false
 3,2026-04-28,29,Jalón,Remo con Mancuerna,7.5,6,2,4,false
@@ -1729,17 +1729,17 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 3,2026-05-30,22,Empuje,Press con Mancuernas,20,8,4,8,false
 4,2025-04-29,1,Empuje,Press Banca,70,8,4,6,false
 4,2025-04-29,1,Empuje,Press Militar,47.5,8,3,8,false
-4,2025-04-29,1,Empuje,Fondos,0,8,3,8,false
+4,2025-04-29,1,Empuje,Fondos,2.5,8,3,8,false
 4,2025-05-01,2,Empuje,Press Banca,70,8,4,9,false
 4,2025-05-01,2,Empuje,Press Militar,47.5,8,3,7,false
-4,2025-05-01,2,Empuje,Fondos,0,9,3,9,false
+4,2025-05-01,2,Empuje,Fondos,2.5,9,3,9,false
 4,2025-05-03,3,Empuje,Press Banca,70,9,4,6,false
 4,2025-05-03,3,Empuje,Press Militar,50,9,3,6,false
-4,2025-05-03,3,Empuje,Fondos,0,9,3,9,false
-4,2025-05-06,1,Jalón,Dominadas,0,9,4,8,false
+4,2025-05-03,3,Empuje,Fondos,2.5,9,3,9,false
+4,2025-05-06,1,Jalón,Dominadas,2.5,9,4,8,false
 4,2025-05-06,1,Jalón,Peso Muerto Rumano,82.5,9,4,6,false
 4,2025-05-06,1,Jalón,Remo con Barra,60,8,3,7,false
-4,2025-05-08,2,Jalón,Dominadas,0,10,4,9,false
+4,2025-05-08,2,Jalón,Dominadas,2.5,10,4,9,false
 4,2025-05-08,2,Jalón,Peso Muerto Rumano,82.5,9,4,7,false
 4,2025-05-08,2,Jalón,Remo con Barra,60,8,4,7,false
 4,2025-05-10,3,Jalón,Dominadas,2.5,10,5,5,false
@@ -1811,16 +1811,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2025-07-02,8,Piernas,Peso Muerto,112.5,12,3,7,false
 4,2025-07-02,8,Piernas,Extensiones de Cuádriceps,50,11,3,8,false
 4,2025-07-02,8,Piernas,Prensa de Piernas,147.5,12,3,7,false
-4,2025-07-04,4,Empuje,Fondos,0,9,3,8,false
+4,2025-07-04,4,Empuje,Fondos,2.5,9,3,8,false
 4,2025-07-04,7,Empuje,Press Banca,70,11,3,8,false
 4,2025-07-04,7,Empuje,Press Militar,50,11,3,7,false
-4,2025-07-07,5,Empuje,Fondos,0,10,3,9,false
+4,2025-07-07,5,Empuje,Fondos,2.5,10,3,9,false
 4,2025-07-07,8,Empuje,Press Banca,70,11,3,8,false
-4,2025-07-07,8,Empuje,Press Militar,50,12,4,3,true
-4,2025-07-09,6,Empuje,Fondos,0,6,2,5,false
+4,2025-07-07,8,Empuje,Press Militar,50,12,4,5,true
+4,2025-07-09,6,Empuje,Fondos,2.5,6,2,5,false
 4,2025-07-09,9,Empuje,Press Banca,40,7,2,5,false
 4,2025-07-09,9,Empuje,Press Militar,27.5,7,2,4,false
-4,2025-07-12,7,Empuje,Fondos,0,7,2,5,false
+4,2025-07-12,7,Empuje,Fondos,2.5,7,2,5,false
 4,2025-07-12,10,Empuje,Press Banca,45,7,2,5,false
 4,2025-07-12,10,Empuje,Press Militar,32.5,7,2,4,false
 4,2025-07-14,11,Jalón,Dominadas,5,11,4,9,false
@@ -1868,13 +1868,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2025-08-18,15,Piernas,Peso Muerto,115,12,4,7,false
 4,2025-08-18,15,Piernas,Sentadilla,105,12,3,8,false
 4,2025-08-18,11,Piernas,Zancadas,25,12,4,8,false
-4,2025-08-21,8,Empuje,Fondos,0,7,2,5,false
+4,2025-08-21,8,Empuje,Fondos,2.5,7,2,5,false
 4,2025-08-21,3,Empuje,Press con Mancuernas,27.5,6,2,5,false
 4,2025-08-21,4,Empuje,Press Inclinado,37.5,6,2,5,false
-4,2025-08-24,9,Empuje,Fondos,0,8,2,6,false
+4,2025-08-24,9,Empuje,Fondos,2.5,8,2,6,false
 4,2025-08-24,4,Empuje,Press con Mancuernas,30,6,3,5,false
 4,2025-08-24,5,Empuje,Press Inclinado,42.5,6,3,5,false
-4,2025-08-27,10,Empuje,Fondos,0,6,2,6,false
+4,2025-08-27,10,Empuje,Fondos,2.5,6,2,6,false
 4,2025-08-27,5,Empuje,Press con Mancuernas,32.5,7,3,6,false
 4,2025-08-27,6,Empuje,Press Inclinado,45,6,3,6,false
 4,2025-08-29,11,Jalón,Remo con Mancuerna,27.5,10,3,9,false
@@ -1894,16 +1894,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2025-09-07,12,Piernas,Prensa de Piernas,152.5,12,3,9,false
 4,2025-09-10,7,Empuje,Press Inclinado,37.5,6,2,6,false
 4,2025-09-10,12,Empuje,Press Militar,37.5,8,2,5,false
-4,2025-09-10,11,Empuje,Fondos,0,6,2,6,false
+4,2025-09-10,11,Empuje,Fondos,2.5,6,2,6,false
 4,2025-09-13,8,Empuje,Press Inclinado,32.5,6,2,6,false
 4,2025-09-13,13,Empuje,Press Militar,40,9,2,5,false
-4,2025-09-13,12,Empuje,Fondos,0,6,2,6,false
+4,2025-09-13,12,Empuje,Fondos,2.5,6,2,6,false
 4,2025-09-15,9,Empuje,Press Inclinado,32.5,6,3,7,false
 4,2025-09-15,14,Empuje,Press Militar,45,9,2,6,false
-4,2025-09-15,13,Empuje,Fondos,0,6,3,9,false
+4,2025-09-15,13,Empuje,Fondos,2.5,6,3,9,false
 4,2025-09-18,10,Empuje,Press Inclinado,32.5,6,3,8,false
 4,2025-09-18,15,Empuje,Press Militar,45,8,3,6,false
-4,2025-09-18,14,Empuje,Fondos,0,6,3,7,false
+4,2025-09-18,14,Empuje,Fondos,2.5,6,3,7,false
 4,2025-09-21,19,Jalón,Dominadas,7.5,12,5,7,false
 4,2025-09-21,11,Jalón,Remo con Barra,62.5,12,4,9,false
 4,2025-09-21,12,Jalón,Peso Muerto Rumano,87.5,12,3,8,false
@@ -1950,13 +1950,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2025-10-23,21,Piernas,Sentadilla,107.5,12,5,4,true
 4,2025-10-23,18,Piernas,Extensiones de Cuádriceps,32.5,7,2,5,false
 4,2025-10-25,11,Empuje,Press Inclinado,32.5,7,3,7,false
-4,2025-10-25,15,Empuje,Fondos,0,6,4,8,false
+4,2025-10-25,15,Empuje,Fondos,2.5,6,4,8,false
 4,2025-10-25,18,Empuje,Press Militar,47.5,7,4,6,false
 4,2025-10-27,12,Empuje,Press Inclinado,32.5,7,3,7,false
-4,2025-10-27,16,Empuje,Fondos,0,6,4,8,false
+4,2025-10-27,16,Empuje,Fondos,2.5,6,4,8,false
 4,2025-10-27,19,Empuje,Press Militar,47.5,7,4,9,false
 4,2025-10-29,13,Empuje,Press Inclinado,32.5,7,3,9,false
-4,2025-10-29,17,Empuje,Fondos,0,6,4,8,false
+4,2025-10-29,17,Empuje,Fondos,2.5,6,4,8,false
 4,2025-10-29,20,Empuje,Press Militar,47.5,8,4,6,false
 4,2025-10-31,22,Jalón,Dominadas,10,12,5,8,false
 4,2025-10-31,18,Jalón,Remo con Barra,70,12,5,8,false
@@ -1979,16 +1979,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2025-11-14,25,Piernas,Peso Muerto,87.5,9,2,6,false
 4,2025-11-14,25,Piernas,Sentadilla,80,9,3,5,false
 4,2025-11-14,22,Piernas,Extensiones de Cuádriceps,35,7,2,6,false
-4,2025-11-16,18,Empuje,Fondos,0,7,4,7,false
+4,2025-11-16,18,Empuje,Fondos,2.5,7,4,7,false
 4,2025-11-16,14,Empuje,Press Inclinado,32.5,7,3,9,false
 4,2025-11-16,13,Empuje,Press Banca,42.5,6,2,6,false
-4,2025-11-18,19,Empuje,Fondos,0,7,4,8,false
+4,2025-11-18,19,Empuje,Fondos,2.5,7,4,8,false
 4,2025-11-18,15,Empuje,Press Inclinado,35,7,4,5,false
 4,2025-11-18,14,Empuje,Press Banca,37.5,6,2,6,false
-4,2025-11-21,20,Empuje,Fondos,0,7,4,7,false
+4,2025-11-21,20,Empuje,Fondos,2.5,7,4,7,false
 4,2025-11-21,16,Empuje,Press Inclinado,35,7,4,9,false
 4,2025-11-21,15,Empuje,Press Banca,37.5,6,3,7,false
-4,2025-11-23,21,Empuje,Fondos,0,7,3,9,false
+4,2025-11-23,21,Empuje,Fondos,2.5,7,3,9,false
 4,2025-11-23,17,Empuje,Press Inclinado,35,8,4,8,false
 4,2025-11-23,16,Empuje,Press Banca,37.5,6,3,8,false
 4,2025-11-25,25,Jalón,Dominadas,12.5,12,5,8,false
@@ -2041,10 +2041,10 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2026-01-05,31,Piernas,Sentadilla,95,9,3,8,false
 4,2026-01-07,8,Empuje,Press con Mancuernas,25,6,3,7,false
 4,2026-01-07,19,Empuje,Press Banca,40,8,3,8,false
-4,2026-01-07,22,Empuje,Fondos,0,7,3,7,false
+4,2026-01-07,22,Empuje,Fondos,2.5,7,3,7,false
 4,2026-01-09,9,Empuje,Press con Mancuernas,25,6,3,8,false
 4,2026-01-09,20,Empuje,Press Banca,40,8,3,7,false
-4,2026-01-09,23,Empuje,Fondos,0,7,3,8,false
+4,2026-01-09,23,Empuje,Fondos,2.5,7,3,8,false
 4,2026-01-11,29,Jalón,Remo con Barra,77.5,12,4,8,false
 4,2026-01-11,33,Jalón,Dominadas,20,12,3,8,false
 4,2026-01-11,16,Jalón,Remo con Mancuerna,30,11,3,9,false
@@ -2121,7 +2121,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2026-03-11,40,Piernas,Sentadilla,100,12,3,8,false
 4,2026-03-11,29,Piernas,Extensiones de Cuádriceps,27.5,8,3,8,false
 4,2026-03-13,26,Piernas,Zancadas,15,7,3,8,false
-4,2026-03-13,41,Piernas,Sentadilla,100,12,3,2,true
+4,2026-03-13,41,Piernas,Sentadilla,100,12,3,5,true
 4,2026-03-13,30,Piernas,Extensiones de Cuádriceps,15,6,2,5,false
 4,2026-03-15,27,Piernas,Zancadas,7.5,6,2,5,false
 4,2026-03-15,42,Piernas,Sentadilla,57.5,7,2,4,false
@@ -2131,7 +2131,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2026-03-17,16,Empuje,Press con Mancuernas,27.5,7,4,9,false
 4,2026-03-19,21,Empuje,Press Inclinado,40,10,3,6,false
 4,2026-03-19,28,Empuje,Press Banca,47.5,11,3,9,false
-4,2026-03-19,17,Empuje,Press con Mancuernas,27.5,8,4,2,true
+4,2026-03-19,17,Empuje,Press con Mancuernas,27.5,8,4,5,true
 4,2026-03-22,22,Empuje,Press Inclinado,22.5,6,2,5,false
 4,2026-03-22,29,Empuje,Press Banca,27.5,7,2,5,false
 4,2026-03-22,18,Empuje,Press con Mancuernas,15,6,2,4,false
@@ -2160,7 +2160,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2026-04-10,33,Empuje,Press Banca,27.5,6,2,6,false
 4,2026-04-10,22,Empuje,Press con Mancuernas,22.5,6,3,5,false
 4,2026-04-12,44,Jalón,Dominadas,20,12,3,8,false
-4,2026-04-12,29,Jalón,Peso Muerto Rumano,90,12,5,3,true
+4,2026-04-12,29,Jalón,Peso Muerto Rumano,90,12,5,5,true
 4,2026-04-12,23,Jalón,Remo con Mancuerna,20,7,2,5,false
 4,2026-04-15,45,Jalón,Dominadas,12.5,7,2,5,false
 4,2026-04-15,30,Jalón,Peso Muerto Rumano,50,7,3,4,false
@@ -2174,16 +2174,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2026-04-22,15,Piernas,Prensa de Piernas,105,9,2,5,false
 4,2026-04-22,44,Piernas,Peso Muerto,32.5,6,2,6,false
 4,2026-04-22,37,Piernas,Extensiones de Cuádriceps,15,6,3,7,false
-4,2026-04-25,24,Empuje,Fondos,0,6,2,5,false
+4,2026-04-25,24,Empuje,Fondos,2.5,6,2,5,false
 4,2026-04-25,34,Empuje,Press Banca,25,6,2,6,false
 4,2026-04-25,32,Empuje,Press Militar,40,9,3,6,false
-4,2026-04-27,25,Empuje,Fondos,0,6,2,5,false
+4,2026-04-27,25,Empuje,Fondos,2.5,6,2,5,false
 4,2026-04-27,35,Empuje,Press Banca,22.5,6,2,6,false
 4,2026-04-27,33,Empuje,Press Militar,32.5,7,2,6,false
-4,2026-04-30,26,Empuje,Fondos,0,6,2,5,false
+4,2026-04-30,26,Empuje,Fondos,2.5,6,2,5,false
 4,2026-04-30,36,Empuje,Press Banca,22.5,6,3,6,false
 4,2026-04-30,34,Empuje,Press Militar,27.5,6,2,6,false
-4,2026-05-02,27,Empuje,Fondos,0,6,2,6,false
+4,2026-05-02,27,Empuje,Fondos,2.5,6,2,6,false
 4,2026-05-02,37,Empuje,Press Banca,22.5,6,3,7,false
 4,2026-05-02,35,Empuje,Press Militar,27.5,6,3,7,false
 4,2026-05-04,46,Jalón,Dominadas,12.5,8,2,5,false
@@ -2242,16 +2242,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2026-06-17,48,Piernas,Sentadilla,87.5,9,3,5,false
 4,2026-06-20,39,Empuje,Press Militar,30,7,3,7,false
 4,2026-06-20,24,Empuje,Press Inclinado,27.5,7,2,5,false
-4,2026-06-20,28,Empuje,Fondos,0,6,2,6,false
+4,2026-06-20,28,Empuje,Fondos,2.5,6,2,6,false
 4,2026-06-22,40,Empuje,Press Militar,30,7,3,9,false
 4,2026-06-22,25,Empuje,Press Inclinado,30,8,2,6,false
-4,2026-06-22,29,Empuje,Fondos,0,6,2,6,false
+4,2026-06-22,29,Empuje,Fondos,2.5,6,2,6,false
 4,2026-06-24,41,Empuje,Press Militar,30,7,3,7,false
 4,2026-06-24,26,Empuje,Press Inclinado,25,6,2,6,false
-4,2026-06-24,30,Empuje,Fondos,0,6,3,8,false
+4,2026-06-24,30,Empuje,Fondos,2.5,6,3,8,false
 4,2026-06-26,42,Empuje,Press Militar,32.5,8,3,6,false
 4,2026-06-26,27,Empuje,Press Inclinado,22.5,6,2,6,false
-4,2026-06-26,31,Empuje,Fondos,0,6,3,8,false
+4,2026-06-26,31,Empuje,Fondos,2.5,6,3,8,false
 4,2026-06-29,29,Jalón,Remo con Mancuerna,20,6,3,6,false
 4,2026-06-29,26,Jalón,Jalón al Pecho,32.5,6,3,8,false
 4,2026-06-29,36,Jalón,Remo con Barra,50,7,2,6,false
@@ -2271,23 +2271,23 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 4,2026-07-10,52,Piernas,Sentadilla,87.5,8,3,8,false
 4,2026-07-10,51,Piernas,Peso Muerto,35,7,5,8,false
 5,2025-04-29,1,Empuje,Press Banca,70,10,3,7,false
-5,2025-04-29,1,Empuje,Fondos,0,10,4,8,false
+5,2025-04-29,1,Empuje,Fondos,2.5,10,4,8,false
 5,2025-04-29,1,Empuje,Press con Mancuernas,40,10,4,7,false
 5,2025-05-01,2,Empuje,Press Banca,70,10,3,7,false
-5,2025-05-01,2,Empuje,Fondos,0,10,4,9,false
+5,2025-05-01,2,Empuje,Fondos,2.5,10,4,9,false
 5,2025-05-01,2,Empuje,Press con Mancuernas,40,10,4,9,false
 5,2025-05-04,3,Empuje,Press Banca,72.5,11,3,7,false
 5,2025-05-04,3,Empuje,Fondos,2.5,11,4,5,false
 5,2025-05-04,3,Empuje,Press con Mancuernas,42.5,10,4,8,false
 5,2025-05-07,4,Empuje,Press Banca,72.5,11,4,4,true
-5,2025-05-07,4,Empuje,Fondos,0,6,2,5,false
+5,2025-05-07,4,Empuje,Fondos,2.5,6,2,5,false
 5,2025-05-07,4,Empuje,Press con Mancuernas,25,6,2,5,false
 5,2025-05-10,1,Jalón,Peso Muerto Rumano,82.5,10,3,7,false
 5,2025-05-10,1,Jalón,Remo con Barra,57.5,8,4,8,false
-5,2025-05-10,1,Jalón,Dominadas,0,9,4,7,false
+5,2025-05-10,1,Jalón,Dominadas,2.5,9,4,7,false
 5,2025-05-12,2,Jalón,Peso Muerto Rumano,82.5,11,3,7,false
 5,2025-05-12,2,Jalón,Remo con Barra,57.5,9,4,6,false
-5,2025-05-12,2,Jalón,Dominadas,0,9,3,8,false
+5,2025-05-12,2,Jalón,Dominadas,2.5,9,3,8,false
 5,2025-05-14,3,Jalón,Peso Muerto Rumano,82.5,11,3,9,false
 5,2025-05-14,3,Jalón,Remo con Barra,57.5,10,4,8,false
 5,2025-05-14,3,Jalón,Dominadas,2.5,10,3,7,false
@@ -2448,13 +2448,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 5,2025-09-29,19,Piernas,Zancadas,30,12,4,7,false
 5,2025-09-29,13,Piernas,Extensiones de Cuádriceps,55,12,5,9,false
 5,2025-10-02,13,Empuje,Press con Mancuernas,22.5,6,3,8,false
-5,2025-10-02,5,Empuje,Fondos,0,7,2,5,false
+5,2025-10-02,5,Empuje,Fondos,2.5,7,2,5,false
 5,2025-10-02,18,Empuje,Press Militar,32.5,10,5,6,false
 5,2025-10-05,14,Empuje,Press con Mancuernas,22.5,7,3,7,false
-5,2025-10-05,6,Empuje,Fondos,0,7,3,5,false
+5,2025-10-05,6,Empuje,Fondos,2.5,7,3,5,false
 5,2025-10-05,19,Empuje,Press Militar,32.5,10,4,7,false
 5,2025-10-07,15,Empuje,Press con Mancuernas,25,8,3,7,false
-5,2025-10-07,7,Empuje,Fondos,0,8,3,6,false
+5,2025-10-07,7,Empuje,Fondos,2.5,8,3,6,false
 5,2025-10-07,20,Empuje,Press Militar,32.5,11,3,7,false
 5,2025-10-09,17,Jalón,Dominadas,7.5,12,5,9,false
 5,2025-10-09,7,Jalón,Remo con Mancuerna,27.5,12,4,7,false
@@ -2468,13 +2468,13 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 5,2025-10-16,12,Piernas,Peso Muerto,110,12,5,7,false
 5,2025-10-16,19,Piernas,Sentadilla,102.5,12,4,8,false
 5,2025-10-16,16,Piernas,Extensiones de Cuádriceps,55,12,5,7,false
-5,2025-10-19,8,Empuje,Fondos,0,6,2,6,false
+5,2025-10-19,8,Empuje,Fondos,2.5,6,2,6,false
 5,2025-10-19,22,Empuje,Press Banca,67.5,9,3,8,false
 5,2025-10-19,16,Empuje,Press con Mancuernas,25,9,3,6,false
-5,2025-10-21,9,Empuje,Fondos,0,6,2,6,false
+5,2025-10-21,9,Empuje,Fondos,2.5,6,2,6,false
 5,2025-10-21,23,Empuje,Press Banca,67.5,10,3,6,false
 5,2025-10-21,17,Empuje,Press con Mancuernas,25,9,3,8,false
-5,2025-10-24,10,Empuje,Fondos,0,6,3,8,false
+5,2025-10-24,10,Empuje,Fondos,2.5,6,3,8,false
 5,2025-10-24,24,Empuje,Press Banca,70,10,3,7,false
 5,2025-10-24,18,Empuje,Press con Mancuernas,27.5,9,3,6,false
 5,2025-10-27,13,Jalón,Remo con Barra,62.5,12,5,7,false
@@ -2498,16 +2498,16 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 5,2025-11-10,22,Piernas,Zancadas,32.5,12,4,9,false
 5,2025-11-10,22,Piernas,Sentadilla,105,12,3,9,false
 5,2025-11-10,15,Piernas,Peso Muerto,112.5,12,4,9,false
-5,2025-11-13,11,Empuje,Fondos,0,6,3,8,false
+5,2025-11-13,11,Empuje,Fondos,2.5,6,3,8,false
 5,2025-11-13,10,Empuje,Press Inclinado,27.5,6,3,7,false
 5,2025-11-13,25,Empuje,Press Banca,70,11,3,7,false
-5,2025-11-15,12,Empuje,Fondos,0,7,3,7,false
+5,2025-11-15,12,Empuje,Fondos,2.5,7,3,7,false
 5,2025-11-15,11,Empuje,Press Inclinado,27.5,6,3,8,false
 5,2025-11-15,26,Empuje,Press Banca,70,11,3,8,false
-5,2025-11-18,13,Empuje,Fondos,0,7,3,9,false
+5,2025-11-18,13,Empuje,Fondos,2.5,7,3,9,false
 5,2025-11-18,12,Empuje,Press Inclinado,27.5,6,3,8,false
 5,2025-11-18,27,Empuje,Press Banca,72.5,11,3,8,false
-5,2025-11-20,14,Empuje,Fondos,0,7,3,9,false
+5,2025-11-20,14,Empuje,Fondos,2.5,7,3,9,false
 5,2025-11-20,13,Empuje,Press Inclinado,27.5,6,3,8,false
 5,2025-11-20,28,Empuje,Press Banca,72.5,11,3,7,false
 5,2025-11-23,17,Jalón,Remo con Barra,65,12,5,9,false
@@ -2645,7 +2645,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 5,2026-03-09,19,Empuje,Fondos,2.5,9,3,6,false
 5,2026-03-09,30,Empuje,Press Militar,40,12,3,8,false
 5,2026-03-09,34,Empuje,Press Banca,77.5,12,4,8,false
-5,2026-03-11,20,Empuje,Fondos,2.5,9,3,3,true
+5,2026-03-11,20,Empuje,Fondos,2.5,9,3,5,true
 5,2026-03-11,31,Empuje,Press Militar,22.5,7,2,5,false
 5,2026-03-11,35,Empuje,Press Banca,42.5,7,2,5,false
 5,2026-03-14,21,Empuje,Fondos,2.5,6,2,4,false
@@ -2802,7 +2802,7 @@ id_usuario,fecha_entrenamiento,id_ejercicio_realizado,tipo_ejercicio,nombre_ejer
 5,2026-07-18,42,Empuje,Press Militar,22.5,7,3,7,false
 5,2026-07-18,39,Empuje,Press con Mancuernas,17.5,6,3,7,false
 5,2026-07-20,50,Empuje,Press Banca,40,8,3,7,false
-5,2026-07-20,43,Empuje,Press Militar,22.5,8,3,2,true
+5,2026-07-20,43,Empuje,Press Militar,22.5,8,3,5,true
 5,2026-07-20,40,Empuje,Press con Mancuernas,10,6,2,5,false
 5,2026-07-23,51,Empuje,Press Banca,22.5,6,2,5,false
 5,2026-07-23,44,Empuje,Press Militar,12.5,6,2,4,false
