@@ -7,8 +7,8 @@ const TrainingDayModel = sequelize.define('TrainingDay', {
     primaryKey: true,
     autoIncrement: true
   },
-  day: {
-    type: DataTypes.ENUM('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'),
+  date: {
+    type: DataTypes.DATE,
     allowNull: false
   },
   userId: {
@@ -17,6 +17,14 @@ const TrainingDayModel = sequelize.define('TrainingDay', {
     references: {
       model: 'Training',
       key: 'userId'
+    }
+  },
+  trainerId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'Training',
+      key: 'trainerId'
     }
   }
 }, {

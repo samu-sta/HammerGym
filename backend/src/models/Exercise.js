@@ -15,9 +15,7 @@ const ExerciseModel = sequelize.define('Exercise', {
         type: DataTypes.STRING(255),
         allowNull: false
     },
-    muscles: {
-        type: DataTypes.ENUM('biceps', 'triceps', 'back', 'chest', 'shoulders', 'legs'),
-    }
+    type: DataTypes.ENUM('Empuje', 'Jalon', 'Piernas'),
 }, {
     tableName: 'Exercise',
     timestamps: false,

@@ -18,6 +18,8 @@ import MachineModelModel from '../models/MachineModel.js';
 import ContractModel from '../models/Contract.js';
 import MembershipModel from '../models/Membership.js';
 import MembershipFeatureModel from '../models/MembershipFeature.js';
+import BoneModel from '../models/Bone.js';
+import BoneMeasuresUserModel from '../models/BoneMeasuresUser.js';
 
 const setupAssociations = () => {
 
@@ -277,6 +279,39 @@ const setupAssociations = () => {
   MembershipFeatureModel.belongsTo(MembershipModel, {
     foreignKey: 'membershipId',
     as: 'membership'
+  });
+
+  // BoneMeasuresUser direct associations (for direct queries)
+  BoneMeasuresUserModel.belongsTo(BoneModel, {
+    foreignKey: 'boneId',
+    as: 'bone'
+  });
+
+  BoneMeasuresUserModel.belongsTo(UserModel, {
+    foreignKey: 'userId',
+    targetKey: 'accountId',
+    as: 'user'
+  });
+
+  BoneMeasuresUserModel.belongsTo(ExerciseModel, {
+    foreignKey: 'exerciseId',
+    as: 'exercise'
+  });
+
+  BoneModel.hasMany(BoneMeasuresUserModel, {
+    foreignKey: 'boneId',
+    as: 'boneMeasures'
+  });
+
+  UserModel.hasMany(BoneMeasuresUserModel, {
+    foreignKey: 'userId',
+    sourceKey: 'accountId',
+    as: 'boneMeasuresData'
+  });
+
+  ExerciseModel.hasMany(BoneMeasuresUserModel, {
+    foreignKey: 'exerciseId',
+    as: 'boneMeasures'
   });
 
   console.log('Associations set up successfully');

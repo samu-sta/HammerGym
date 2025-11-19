@@ -96,3 +96,68 @@ Licencia MIT
 4. Push a la rama (`git push origin feature/NuevaFuncionalidad`)
 5. Abre un Pull Request
 
+
+
+erDiagram
+    USER ||--o{ MEASURES_BONE_USER : "tiene"
+    USER ||--o{ SERIE : "realiza"
+    USER ||--o{ TRAINING_DAY : "participa"
+    BONE ||--o{ MEASURES_BONE_USER : "se_mide_en"
+    EXERCISE ||--o{ SERIE : "incluye"
+    TRAINING_DAY ||--o{ SERIE : "contiene"
+    TRAINER ||--o{ TRAINING_DAY : "supervisa"
+
+    USER {
+        int usuario_id PK
+        int edad
+        string genero
+        decimal peso
+        decimal altura
+        int bpm
+        int duracion_media_sesion
+        decimal porcentaje_grasa
+        decimal circunferencia_cintura_cm
+        decimal circunferencia_cintura_maxima_cm
+    }
+
+    BONE {
+        int hueso_id PK
+        string nombre_hueso UK
+    }
+
+    MEASURES_BONE_USER {
+        int usuario_id FK
+        int hueso_id FK
+        decimal longitud_ideal
+        decimal longitud_real
+    }
+
+    EXERCISE {
+        int ejercicio_id PK
+        string nombre
+        enum tipo "EMPUJE|JALON|PIERNA"
+    }
+
+    SERIE {
+        int usuario_id PK_FK
+        int ejercicio_id PK_FK
+        date fecha_entrenamiento PK
+        int id_dia_entreno FK
+        decimal peso_kg "NULL"
+        int repeticiones "NULL"
+        int sensacion_post_ejercicio "1-10, NULL"
+        boolean lesionado "DEFAULT FALSE"
+    }
+
+    TRAINING_DAY {
+        int id PK
+        date date
+        int id_usuario FK
+        int id_entrenador FK
+    }
+
+    TRAINER {
+        int entrenador_id PK
+        string nombre
+        string especialidad
+    }
