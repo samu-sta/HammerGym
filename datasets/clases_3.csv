@@ -1,244 +1,244 @@
-clase_id,entrenador_id,fecha_clase,capacidad_max,asistencia_real
-1,TRN-001,2025-01-03,15,14
-2,TRN-001,2025-01-10,15,13
-3,TRN-001,2025-01-17,15,14
-4,TRN-001,2025-01-24,15,15
-5,TRN-001,2025-01-28,15,13
-6,TRN-001,2025-01-31,15,14
-7,TRN-001,2025-02-07,16,15
-8,TRN-001,2025-02-14,16,14
-9,TRN-001,2025-02-21,16,15
-10,TRN-001,2025-02-25,16,16
-11,TRN-001,2025-02-28,16,14
-12,TRN-001,2025-03-07,16,15
-13,TRN-001,2025-03-14,16,15
-14,TRN-001,2025-03-21,16,15
-15,TRN-001,2025-03-25,16,14
-16,TRN-001,2025-03-28,16,16
-17,TRN-001,2025-04-04,16,15
-18,TRN-001,2025-04-11,16,14
-19,TRN-001,2025-04-18,17,16
-20,TRN-001,2025-04-22,17,15
-21,TRN-001,2025-04-25,17,16
-22,TRN-001,2025-04-29,17,16
-23,TRN-001,2025-05-02,17,15
-24,TRN-001,2025-05-09,17,16
-25,TRN-001,2025-05-16,17,16
-26,TRN-001,2025-05-20,17,15
-27,TRN-001,2025-05-23,17,16
-28,TRN-001,2025-05-27,17,17
-29,TRN-001,2025-05-30,17,16
-30,TRN-001,2025-06-06,17,15
-31,TRN-001,2025-06-13,18,17
-32,TRN-001,2025-06-17,18,16
-33,TRN-001,2025-06-20,18,17
-34,TRN-001,2025-06-24,18,16
-35,TRN-001,2025-06-27,18,17
-36,TRN-001,2025-06-30,18,16
-37,TRN-002,2025-01-02,15,13
-38,TRN-002,2025-01-09,15,14
-39,TRN-002,2025-01-16,15,13
-40,TRN-002,2025-01-23,15,14
-41,TRN-002,2025-01-27,15,12
-42,TRN-002,2025-01-30,15,13
-43,TRN-002,2025-02-06,16,15
-44,TRN-002,2025-02-13,16,14
-45,TRN-002,2025-02-20,16,15
-46,TRN-002,2025-02-24,16,14
-47,TRN-002,2025-02-27,16,13
-48,TRN-002,2025-03-06,16,14
-49,TRN-002,2025-03-13,16,15
-50,TRN-002,2025-03-20,16,14
-51,TRN-002,2025-03-24,16,15
-52,TRN-002,2025-03-27,16,14
-53,TRN-002,2025-04-03,16,15
-54,TRN-002,2025-04-10,16,13
-55,TRN-002,2025-04-17,17,15
-56,TRN-002,2025-04-21,17,16
-57,TRN-002,2025-04-24,17,15
-58,TRN-002,2025-04-28,17,14
-59,TRN-002,2025-05-01,17,15
-60,TRN-002,2025-05-08,17,16
-61,TRN-002,2025-05-15,17,15
-62,TRN-002,2025-05-19,17,16
-63,TRN-002,2025-05-22,17,14
-64,TRN-002,2025-05-26,17,15
-65,TRN-002,2025-05-29,17,16
-66,TRN-002,2025-06-05,17,15
-67,TRN-002,2025-06-12,17,16
-68,TRN-002,2025-06-16,17,15
-69,TRN-002,2025-06-19,17,16
-70,TRN-002,2025-06-23,17,14
-71,TRN-002,2025-06-26,17,15
-72,TRN-002,2025-06-30,17,16
-73,TRN-003,2025-01-04,14,11
-74,TRN-003,2025-01-11,14,10
-75,TRN-003,2025-01-18,14,11
-76,TRN-003,2025-01-22,14,10
-77,TRN-003,2025-01-25,14,9
-78,TRN-003,2025-01-29,14,11
-79,TRN-003,2025-02-05,14,10
-80,TRN-003,2025-02-12,14,11
-81,TRN-003,2025-02-19,14,10
-82,TRN-003,2025-02-23,14,9
-83,TRN-003,2025-02-26,14,11
-84,TRN-003,2025-03-05,14,10
-85,TRN-003,2025-03-12,15,12
-86,TRN-003,2025-03-19,15,11
-87,TRN-003,2025-03-23,15,12
-88,TRN-003,2025-03-26,15,10
-89,TRN-003,2025-04-02,15,11
-90,TRN-003,2025-04-09,15,12
-91,TRN-003,2025-04-16,15,11
-92,TRN-003,2025-04-20,15,12
-93,TRN-003,2025-04-23,15,11
-94,TRN-003,2025-04-30,15,10
-95,TRN-003,2025-05-07,15,12
-96,TRN-003,2025-05-14,15,11
-97,TRN-003,2025-05-18,15,12
-98,TRN-003,2025-05-21,15,11
-99,TRN-003,2025-05-28,15,10
-100,TRN-003,2025-06-04,15,12
-101,TRN-003,2025-06-11,15,11
-102,TRN-003,2025-06-15,15,10
-103,TRN-003,2025-06-18,15,11
-104,TRN-003,2025-06-22,15,12
-105,TRN-003,2025-06-25,15,11
-106,TRN-003,2025-06-29,15,10
-107,TRN-004,2025-01-06,14,10
-108,TRN-004,2025-01-13,14,11
-109,TRN-004,2025-01-20,14,9
-110,TRN-004,2025-01-24,14,10
-111,TRN-004,2025-01-27,14,11
-112,TRN-004,2025-01-31,14,10
-113,TRN-004,2025-02-08,14,11
-114,TRN-004,2025-02-15,14,10
-115,TRN-004,2025-02-18,14,9
-116,TRN-004,2025-02-22,14,10
-117,TRN-004,2025-02-25,14,11
-118,TRN-004,2025-03-01,14,9
-119,TRN-004,2025-03-08,15,11
-120,TRN-004,2025-03-15,15,12
-121,TRN-004,2025-03-18,15,10
-122,TRN-004,2025-03-22,15,11
-123,TRN-004,2025-03-29,15,10
-124,TRN-004,2025-04-05,15,11
-125,TRN-004,2025-04-12,15,11
-126,TRN-004,2025-04-15,15,10
-127,TRN-004,2025-04-19,15,12
-128,TRN-004,2025-04-26,15,11
-129,TRN-004,2025-05-03,15,10
-130,TRN-004,2025-05-10,15,11
-131,TRN-004,2025-05-13,15,10
-132,TRN-004,2025-05-17,15,11
-133,TRN-004,2025-05-24,15,12
-134,TRN-004,2025-05-27,15,10
-135,TRN-004,2025-05-31,15,11
-136,TRN-004,2025-06-07,15,10
-137,TRN-004,2025-06-10,15,11
-138,TRN-004,2025-06-14,15,12
-139,TRN-004,2025-06-21,15,11
-140,TRN-004,2025-06-24,15,10
-141,TRN-004,2025-06-28,15,11
-142,TRN-005,2025-01-05,13,9
-143,TRN-005,2025-01-12,13,10
-144,TRN-005,2025-01-19,13,9
-145,TRN-005,2025-01-23,13,10
-146,TRN-005,2025-01-26,13,8
-147,TRN-005,2025-01-30,13,9
-148,TRN-005,2025-02-04,14,10
-149,TRN-005,2025-02-11,14,11
-150,TRN-005,2025-02-16,14,9
-151,TRN-005,2025-02-20,14,10
-152,TRN-005,2025-02-24,14,11
-153,TRN-005,2025-02-27,14,10
-154,TRN-005,2025-03-04,14,11
-155,TRN-005,2025-03-11,14,10
-156,TRN-005,2025-03-16,14,11
-157,TRN-005,2025-03-20,14,9
-158,TRN-005,2025-03-25,14,10
-159,TRN-005,2025-03-30,14,11
-160,TRN-005,2025-04-06,14,10
-161,TRN-005,2025-04-08,14,11
-162,TRN-005,2025-04-13,14,10
-163,TRN-005,2025-04-20,14,9
-164,TRN-005,2025-04-27,14,11
-165,TRN-005,2025-05-04,14,10
-166,TRN-005,2025-05-06,14,11
-167,TRN-005,2025-05-11,14,10
-168,TRN-005,2025-05-18,14,9
-169,TRN-005,2025-05-25,14,10
-170,TRN-005,2025-06-01,14,11
-171,TRN-005,2025-06-03,14,10
-172,TRN-005,2025-06-08,14,11
-173,TRN-005,2025-06-15,14,10
-174,TRN-005,2025-06-22,14,9
-175,TRN-005,2025-06-29,14,10
-176,TRN-006,2025-01-07,13,8
-177,TRN-006,2025-01-14,13,7
-178,TRN-006,2025-01-21,13,9
-179,TRN-006,2025-01-25,13,8
-180,TRN-006,2025-01-28,13,7
-181,TRN-006,2025-01-31,13,8
-182,TRN-006,2025-02-09,13,7
-183,TRN-006,2025-02-10,13,8
-184,TRN-006,2025-02-17,13,9
-185,TRN-006,2025-02-21,13,7
-186,TRN-006,2025-02-24,13,8
-187,TRN-006,2025-02-28,13,6
-188,TRN-006,2025-03-07,12,8
-189,TRN-006,2025-03-09,12,7
-190,TRN-006,2025-03-17,12,9
-191,TRN-006,2025-03-21,12,8
-192,TRN-006,2025-03-26,12,7
-193,TRN-006,2025-04-01,12,8
-194,TRN-006,2025-04-07,12,7
-195,TRN-006,2025-04-14,12,9
-196,TRN-006,2025-04-18,12,8
-197,TRN-006,2025-04-25,12,7
-198,TRN-006,2025-05-05,12,8
-199,TRN-006,2025-05-12,12,7
-200,TRN-006,2025-05-17,12,9
-201,TRN-006,2025-05-20,12,8
-202,TRN-006,2025-05-26,12,7
-203,TRN-006,2025-06-02,12,6
-204,TRN-006,2025-06-09,12,7
-205,TRN-006,2025-06-14,12,8
-206,TRN-006,2025-06-16,12,9
-207,TRN-006,2025-06-21,12,7
-208,TRN-006,2025-06-28,12,8
-209,TRN-007,2025-01-08,12,7
-210,TRN-007,2025-01-15,12,6
-211,TRN-007,2025-01-19,12,8
-212,TRN-007,2025-01-22,12,7
-213,TRN-007,2025-01-26,12,6
-214,TRN-007,2025-01-29,12,7
-215,TRN-007,2025-02-02,12,8
-216,TRN-007,2025-02-09,12,7
-217,TRN-007,2025-02-14,12,6
-218,TRN-007,2025-02-18,12,8
-219,TRN-007,2025-02-22,12,7
-220,TRN-007,2025-02-26,12,6
-221,TRN-007,2025-03-02,13,8
-222,TRN-007,2025-03-10,13,7
-223,TRN-007,2025-03-15,13,9
-224,TRN-007,2025-03-18,13,8
-225,TRN-007,2025-03-24,13,7
-226,TRN-007,2025-03-31,13,6
-227,TRN-007,2025-04-04,13,7
-228,TRN-007,2025-04-08,13,8
-229,TRN-007,2025-04-14,13,9
-230,TRN-007,2025-04-21,13,7
-231,TRN-007,2025-04-28,13,6
-232,TRN-007,2025-05-05,13,8
-233,TRN-007,2025-05-09,13,7
-234,TRN-007,2025-05-13,13,6
-235,TRN-007,2025-05-19,13,8
-236,TRN-007,2025-05-24,13,9
-237,TRN-007,2025-05-30,13,7
-238,TRN-007,2025-06-04,13,6
-239,TRN-007,2025-06-08,13,7
-240,TRN-007,2025-06-11,13,8
-241,TRN-007,2025-06-17,13,9
-242,TRN-007,2025-06-23,13,7
-243,TRN-007,2025-06-27,13,6
+clase_id,entrenador_id,fecha_clase,capacidad_max,asistencia_real,nombre,descripcion,dificultad
+1,1,2025-01-03,15,14,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+2,1,2025-01-10,15,13,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+3,1,2025-01-17,15,14,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+4,1,2025-01-24,15,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+5,1,2025-01-28,15,13,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+6,1,2025-01-31,15,14,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+7,1,2025-02-07,16,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+8,1,2025-02-14,16,14,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+9,1,2025-02-21,16,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+10,1,2025-02-25,16,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+11,1,2025-02-28,16,14,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+12,1,2025-03-07,16,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+13,1,2025-03-14,16,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+14,1,2025-03-21,16,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+15,1,2025-03-25,16,14,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+16,1,2025-03-28,16,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+17,1,2025-04-04,16,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+18,1,2025-04-11,16,14,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+19,1,2025-04-18,17,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+20,1,2025-04-22,17,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+21,1,2025-04-25,17,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+22,1,2025-04-29,17,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+23,1,2025-05-02,17,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+24,1,2025-05-09,17,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+25,1,2025-05-16,17,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+26,1,2025-05-20,17,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+27,1,2025-05-23,17,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+28,1,2025-05-27,17,17,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+29,1,2025-05-30,17,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+30,1,2025-06-06,17,15,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+31,1,2025-06-13,18,17,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+32,1,2025-06-17,18,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+33,1,2025-06-20,18,17,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+34,1,2025-06-24,18,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+35,1,2025-06-27,18,17,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+36,1,2025-06-30,18,16,HIIT Power,High Intensity Interval Training for advanced fitness levels,high
+37,2,2025-01-02,15,13,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+38,2,2025-01-09,15,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+39,2,2025-01-16,15,13,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+40,2,2025-01-23,15,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+41,2,2025-01-27,15,12,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+42,2,2025-01-30,15,13,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+43,2,2025-02-06,16,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+44,2,2025-02-13,16,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+45,2,2025-02-20,16,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+46,2,2025-02-24,16,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+47,2,2025-02-27,16,13,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+48,2,2025-03-06,16,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+49,2,2025-03-13,16,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+50,2,2025-03-20,16,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+51,2,2025-03-24,16,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+52,2,2025-03-27,16,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+53,2,2025-04-03,16,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+54,2,2025-04-10,16,13,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+55,2,2025-04-17,17,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+56,2,2025-04-21,17,16,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+57,2,2025-04-24,17,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+58,2,2025-04-28,17,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+59,2,2025-05-01,17,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+60,2,2025-05-08,17,16,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+61,2,2025-05-15,17,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+62,2,2025-05-19,17,16,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+63,2,2025-05-22,17,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+64,2,2025-05-26,17,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+65,2,2025-05-29,17,16,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+66,2,2025-06-05,17,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+67,2,2025-06-12,17,16,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+68,2,2025-06-16,17,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+69,2,2025-06-19,17,16,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+70,2,2025-06-23,17,14,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+71,2,2025-06-26,17,15,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+72,2,2025-06-30,17,16,CrossFit Advance,Advanced CrossFit techniques and Olympic lifting,high
+73,3,2025-01-04,14,11,Functional Training,Functional movements for everyday strength and mobility,medium
+74,3,2025-01-11,14,10,Functional Training,Functional movements for everyday strength and mobility,medium
+75,3,2025-01-18,14,11,Functional Training,Functional movements for everyday strength and mobility,medium
+76,3,2025-01-22,14,10,Functional Training,Functional movements for everyday strength and mobility,medium
+77,3,2025-01-25,14,9,Functional Training,Functional movements for everyday strength and mobility,medium
+78,3,2025-01-29,14,11,Functional Training,Functional movements for everyday strength and mobility,medium
+79,3,2025-02-05,14,10,Functional Training,Functional movements for everyday strength and mobility,medium
+80,3,2025-02-12,14,11,Functional Training,Functional movements for everyday strength and mobility,medium
+81,3,2025-02-19,14,10,Functional Training,Functional movements for everyday strength and mobility,medium
+82,3,2025-02-23,14,9,Functional Training,Functional movements for everyday strength and mobility,medium
+83,3,2025-02-26,14,11,Functional Training,Functional movements for everyday strength and mobility,medium
+84,3,2025-03-05,14,10,Functional Training,Functional movements for everyday strength and mobility,medium
+85,3,2025-03-12,15,12,Functional Training,Functional movements for everyday strength and mobility,medium
+86,3,2025-03-19,15,11,Functional Training,Functional movements for everyday strength and mobility,medium
+87,3,2025-03-23,15,12,Functional Training,Functional movements for everyday strength and mobility,medium
+88,3,2025-03-26,15,10,Functional Training,Functional movements for everyday strength and mobility,medium
+89,3,2025-04-02,15,11,Functional Training,Functional movements for everyday strength and mobility,medium
+90,3,2025-04-09,15,12,Functional Training,Functional movements for everyday strength and mobility,medium
+91,3,2025-04-16,15,11,Functional Training,Functional movements for everyday strength and mobility,medium
+92,3,2025-04-20,15,12,Functional Training,Functional movements for everyday strength and mobility,medium
+93,3,2025-04-23,15,11,Functional Training,Functional movements for everyday strength and mobility,medium
+94,3,2025-04-30,15,10,Functional Training,Functional movements for everyday strength and mobility,medium
+95,3,2025-05-07,15,12,Functional Training,Functional movements for everyday strength and mobility,medium
+96,3,2025-05-14,15,11,Functional Training,Functional movements for everyday strength and mobility,medium
+97,3,2025-05-18,15,12,Functional Training,Functional movements for everyday strength and mobility,medium
+98,3,2025-05-21,15,11,Functional Training,Functional movements for everyday strength and mobility,medium
+99,3,2025-05-28,15,10,Functional Training,Functional movements for everyday strength and mobility,medium
+100,3,2025-06-04,15,12,Functional Training,Functional movements for everyday strength and mobility,medium
+101,3,2025-06-11,15,11,Functional Training,Functional movements for everyday strength and mobility,medium
+102,3,2025-06-15,15,10,Functional Training,Functional movements for everyday strength and mobility,medium
+103,3,2025-06-18,15,11,Functional Training,Functional movements for everyday strength and mobility,medium
+104,3,2025-06-22,15,12,Functional Training,Functional movements for everyday strength and mobility,medium
+105,3,2025-06-25,15,11,Functional Training,Functional movements for everyday strength and mobility,medium
+106,3,2025-06-29,15,10,Functional Training,Functional movements for everyday strength and mobility,medium
+107,4,2025-01-06,14,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+108,4,2025-01-13,14,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+109,4,2025-01-20,14,9,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+110,4,2025-01-24,14,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+111,4,2025-01-27,14,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+112,4,2025-01-31,14,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+113,4,2025-02-08,14,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+114,4,2025-02-15,14,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+115,4,2025-02-18,14,9,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+116,4,2025-02-22,14,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+117,4,2025-02-25,14,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+118,4,2025-03-01,14,9,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+119,4,2025-03-08,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+120,4,2025-03-15,15,12,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+121,4,2025-03-18,15,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+122,4,2025-03-22,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+123,4,2025-03-29,15,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+124,4,2025-04-05,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+125,4,2025-04-12,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+126,4,2025-04-15,15,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+127,4,2025-04-19,15,12,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+128,4,2025-04-26,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+129,4,2025-05-03,15,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+130,4,2025-05-10,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+131,4,2025-05-13,15,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+132,4,2025-05-17,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+133,4,2025-05-24,15,12,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+134,4,2025-05-27,15,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+135,4,2025-05-31,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+136,4,2025-06-07,15,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+137,4,2025-06-10,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+138,4,2025-06-14,15,12,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+139,4,2025-06-21,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+140,4,2025-06-24,15,10,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+141,4,2025-06-28,15,11,Strength & Conditioning,Build muscle and improve overall conditioning,medium
+142,5,2025-01-05,13,9,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+143,5,2025-01-12,13,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+144,5,2025-01-19,13,9,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+145,5,2025-01-23,13,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+146,5,2025-01-26,13,8,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+147,5,2025-01-30,13,9,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+148,5,2025-02-04,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+149,5,2025-02-11,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+150,5,2025-02-16,14,9,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+151,5,2025-02-20,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+152,5,2025-02-24,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+153,5,2025-02-27,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+154,5,2025-03-04,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+155,5,2025-03-11,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+156,5,2025-03-16,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+157,5,2025-03-20,14,9,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+158,5,2025-03-25,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+159,5,2025-03-30,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+160,5,2025-04-06,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+161,5,2025-04-08,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+162,5,2025-04-13,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+163,5,2025-04-20,14,9,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+164,5,2025-04-27,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+165,5,2025-05-04,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+166,5,2025-05-06,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+167,5,2025-05-11,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+168,5,2025-05-18,14,9,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+169,5,2025-05-25,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+170,5,2025-06-01,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+171,5,2025-06-03,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+172,5,2025-06-08,14,11,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+173,5,2025-06-15,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+174,5,2025-06-22,14,9,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+175,5,2025-06-29,14,10,Cardio Blast,Energetic cardio workout for weight loss and endurance,medium
+176,6,2025-01-07,13,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+177,6,2025-01-14,13,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+178,6,2025-01-21,13,9,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+179,6,2025-01-25,13,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+180,6,2025-01-28,13,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+181,6,2025-01-31,13,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+182,6,2025-02-09,13,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+183,6,2025-02-10,13,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+184,6,2025-02-17,13,9,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+185,6,2025-02-21,13,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+186,6,2025-02-24,13,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+187,6,2025-02-28,13,6,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+188,6,2025-03-07,12,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+189,6,2025-03-09,12,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+190,6,2025-03-17,12,9,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+191,6,2025-03-21,12,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+192,6,2025-03-26,12,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+193,6,2025-04-01,12,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+194,6,2025-04-07,12,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+195,6,2025-04-14,12,9,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+196,6,2025-04-18,12,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+197,6,2025-04-25,12,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+198,6,2025-05-05,12,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+199,6,2025-05-12,12,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+200,6,2025-05-17,12,9,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+201,6,2025-05-20,12,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+202,6,2025-05-26,12,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+203,6,2025-06-02,12,6,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+204,6,2025-06-09,12,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+205,6,2025-06-14,12,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+206,6,2025-06-16,12,9,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+207,6,2025-06-21,12,7,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+208,6,2025-06-28,12,8,Yoga Flow,Gentle yoga practice for flexibility and relaxation,low
+209,7,2025-01-08,12,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+210,7,2025-01-15,12,6,Pilates Core,Core strengthening and body alignment through Pilates,low
+211,7,2025-01-19,12,8,Pilates Core,Core strengthening and body alignment through Pilates,low
+212,7,2025-01-22,12,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+213,7,2025-01-26,12,6,Pilates Core,Core strengthening and body alignment through Pilates,low
+214,7,2025-01-29,12,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+215,7,2025-02-02,12,8,Pilates Core,Core strengthening and body alignment through Pilates,low
+216,7,2025-02-09,12,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+217,7,2025-02-14,12,6,Pilates Core,Core strengthening and body alignment through Pilates,low
+218,7,2025-02-18,12,8,Pilates Core,Core strengthening and body alignment through Pilates,low
+219,7,2025-02-22,12,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+220,7,2025-02-26,12,6,Pilates Core,Core strengthening and body alignment through Pilates,low
+221,7,2025-03-02,13,8,Pilates Core,Core strengthening and body alignment through Pilates,low
+222,7,2025-03-10,13,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+223,7,2025-03-15,13,9,Pilates Core,Core strengthening and body alignment through Pilates,low
+224,7,2025-03-18,13,8,Pilates Core,Core strengthening and body alignment through Pilates,low
+225,7,2025-03-24,13,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+226,7,2025-03-31,13,6,Pilates Core,Core strengthening and body alignment through Pilates,low
+227,7,2025-04-04,13,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+228,7,2025-04-08,13,8,Pilates Core,Core strengthening and body alignment through Pilates,low
+229,7,2025-04-14,13,9,Pilates Core,Core strengthening and body alignment through Pilates,low
+230,7,2025-04-21,13,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+231,7,2025-04-28,13,6,Pilates Core,Core strengthening and body alignment through Pilates,low
+232,7,2025-05-05,13,8,Pilates Core,Core strengthening and body alignment through Pilates,low
+233,7,2025-05-09,13,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+234,7,2025-05-13,13,6,Pilates Core,Core strengthening and body alignment through Pilates,low
+235,7,2025-05-19,13,8,Pilates Core,Core strengthening and body alignment through Pilates,low
+236,7,2025-05-24,13,9,Pilates Core,Core strengthening and body alignment through Pilates,low
+237,7,2025-05-30,13,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+238,7,2025-06-04,13,6,Pilates Core,Core strengthening and body alignment through Pilates,low
+239,7,2025-06-08,13,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+240,7,2025-06-11,13,8,Pilates Core,Core strengthening and body alignment through Pilates,low
+241,7,2025-06-17,13,9,Pilates Core,Core strengthening and body alignment through Pilates,low
+242,7,2025-06-23,13,7,Pilates Core,Core strengthening and body alignment through Pilates,low
+243,7,2025-06-27,13,6,Pilates Core,Core strengthening and body alignment through Pilates,low
