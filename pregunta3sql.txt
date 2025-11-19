@@ -1,0 +1,13 @@
+ENTRENADOR
+  id INT PRIMARY KEY
+
+CONTRATO_CLIENTE_ENTRENADOR
+  id INT PRIMARY KEY
+  clienteId INT FOREIGN KEY
+  entrenadorId INT FOREIGN KEY
+  entrenadorAsignado VARCHAR(10) NOT NULL,
+  fechaInicioContrato DATE NOT NULL,
+  fechaFinContrato DATE,
+
+CLIENTE
+  id INT PRIMARY KEY

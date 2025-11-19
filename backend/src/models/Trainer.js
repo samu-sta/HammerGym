@@ -10,6 +10,11 @@ const TrainerModel = sequelize.define('Trainer', {
       model: 'Account',
       key: 'id'
     }
+  },
+  averageRating: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0
   }
 }, {
   tableName: 'Trainer',
