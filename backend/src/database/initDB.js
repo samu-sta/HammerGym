@@ -25,7 +25,10 @@ import setupAssociations from './associations.js';
 import ScheduleDayModel from '../models/ScheduleDay.js';
 import BoneModel from '../models/Bone.js';
 import BoneMeasuresUserModel from '../models/BoneMeasuresUser.js';
-import runETL from '../scripts/etl.js';
+import runETL from '../scripts/etl1.js';
+import runETL2 from '../scripts/etl2.js';
+import ClientTrainerContractModel from '../models/ClientTrainerContract.js';
+import MonthlyEconomyTrainerModel from '../models/MonthlyEconomyTrainer.js';
 
 dotenv.config();
 
@@ -345,42 +348,6 @@ const initDatabase = async () => {
         observations: 'Entrenamiento de volumen, muchas repeticiones hoy'
       });
 
-      const classInstance = await ClassModel.create({
-        name: 'Yoga Avanzado',
-        description: 'Clase de yoga para niveles avanzados.',
-        maxCapacity: 20,
-        currentCapacity: 0,
-        schedule: 'Lunes 10:00 AM - 12:00 PM',
-        difficulty: 'medium',
-        trainerId: trainer.accountId
-      });
-
-      const schedule = await ScheduleModel.create({
-        classId: classInstance.id,
-        startDate: '2025-01-01',
-        endDate: '2025-12-31'
-      });
-
-      await ScheduleDayModel.create({
-        scheduleId: classInstance.id,
-        day: 'Monday',
-        startHour: '09:00:00',
-        endHour: '18:00:00'
-      });
-
-      await ScheduleDayModel.create({
-        scheduleId: classInstance.id,
-        day: 'Tuesday',
-        startHour: '09:00:00',
-        endHour: '18:00:00'
-      });
-
-      await AttendanceModel.create({
-        userId: user.accountId,
-        classId: classInstance.id,
-        attendanceDate: new Date()
-      });
-
       // Crear varios entrenadores adicionales para las nuevas clases
       const trainerAccounts = [];
       for (let i = 1; i <= 3; i++) {
@@ -517,34 +484,7 @@ const initDatabase = async () => {
         }
       ];
 
-      // Crear las clases y sus horarios
-      for (const classInfo of classesInfo) {
-        const newClass = await ClassModel.create({
-          name: classInfo.name,
-          description: classInfo.description,
-          maxCapacity: classInfo.maxCapacity,
-          currentCapacity: 0,
-          schedule: `Varios horarios semanales`,
-          difficulty: classInfo.difficulty,
-          trainerId: classInfo.trainerId
-        });
-
-        const schedule = await ScheduleModel.create({
-          classId: newClass.id,
-          startDate: '2025-04-01',
-          endDate: '2025-07-31'
-        });
-
-        // Crear los días de horario para cada clase
-        for (const dayInfo of classInfo.days) {
-          await ScheduleDayModel.create({
-            scheduleId: newClass.id,
-            day: dayInfo.day,
-            startHour: dayInfo.startHour,
-            endHour: dayInfo.endHour
-          });
-        }
-      }
+      
 
       const adminAccount = await AccountModel.create({
         email: 'admin@example.com',
@@ -670,13 +610,23 @@ const initDatabase = async () => {
 
       console.log('- Admin: admin@example.com / password123');
 
-      // 🚀 Ejecutar proceso ETL para importar datos de CSV
-      console.log('\n🚀 Starting ETL process to import CSV data...');
+      // 🚀 Ejecutar proceso ETL1 para importar datos de CSV
+      console.log('\n🚀 Starting ETL1 process to import CSV data...');
       try {
         await runETL();
-        console.log('✅ ETL process completed successfully!');
+        console.log('✅ ETL1 process completed successfully!');
       } catch (etlError) {
-        console.error('❌ ETL process failed:', etlError.message);
+        console.error('❌ ETL1 process failed:', etlError.message);
+        console.log('⚠️ Continuing with ETL2...');
+      }
+
+      // 🚀 Ejecutar proceso ETL2 para importar datos de entrenadores, clientes y clases
+      console.log('\n🚀 Starting ETL2 process to import trainers, clients and classes...');
+      try {
+        await runETL2();
+        console.log('✅ ETL2 process completed successfully!');
+      } catch (etlError2) {
+        console.error('❌ ETL2 process failed:', etlError2.message);
         console.log('⚠️ Continuing with standard initialization...');
       }
 

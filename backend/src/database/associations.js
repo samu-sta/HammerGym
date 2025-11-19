@@ -20,6 +20,8 @@ import MembershipModel from '../models/Membership.js';
 import MembershipFeatureModel from '../models/MembershipFeature.js';
 import BoneModel from '../models/Bone.js';
 import BoneMeasuresUserModel from '../models/BoneMeasuresUser.js';
+import ClientTrainerContractModel from '../models/ClientTrainerContract.js';
+import MonthlyEconomyTrainerModel from '../models/MonthlyEconomyTrainer.js';
 
 const setupAssociations = () => {
 
@@ -312,6 +314,44 @@ const setupAssociations = () => {
   ExerciseModel.hasMany(BoneMeasuresUserModel, {
     foreignKey: 'exerciseId',
     as: 'boneMeasures'
+  });
+
+  // ClientTrainerContract associations
+  UserModel.hasMany(ClientTrainerContractModel, {
+    foreignKey: 'clientId',
+    sourceKey: 'accountId',
+    as: 'trainerContracts'
+  });
+
+  ClientTrainerContractModel.belongsTo(UserModel, {
+    foreignKey: 'clientId',
+    targetKey: 'accountId',
+    as: 'client'
+  });
+
+  TrainerModel.hasMany(ClientTrainerContractModel, {
+    foreignKey: 'trainerId',
+    sourceKey: 'accountId',
+    as: 'clientContracts'
+  });
+
+  ClientTrainerContractModel.belongsTo(TrainerModel, {
+    foreignKey: 'trainerId',
+    targetKey: 'accountId',
+    as: 'trainer'
+  });
+
+  // MonthlyEconomyTrainer associations
+  TrainerModel.hasMany(MonthlyEconomyTrainerModel, {
+    foreignKey: 'trainerId',
+    sourceKey: 'accountId',
+    as: 'monthlyEconomy'
+  });
+
+  MonthlyEconomyTrainerModel.belongsTo(TrainerModel, {
+    foreignKey: 'trainerId',
+    targetKey: 'accountId',
+    as: 'trainer'
   });
 
   console.log('Associations set up successfully');
