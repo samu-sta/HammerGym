@@ -9,6 +9,7 @@ import AttendanceModel from '../models/Attendance.js';
 import MESSAGES from '../messages/messages.js';
 import updateUserSchema from "../schemas/UpdateUserSchema.js";
 import { Sequelize } from 'sequelize';
+import { calculateAllKPIs } from '../services/KPICalculator.js';
 
 export default class TrainerController {
 
@@ -249,9 +250,18 @@ export default class TrainerController {
         })
       );
 
+      // Calcular KPIs para cada entrenador
+      const trainersWithKPIs = trainersStatistics.map(trainer => {
+        const kpis = calculateAllKPIs(trainer, trainersStatistics);
+        return {
+          ...trainer,
+          kpis
+        };
+      });
+
       return res.status(200).json({
         success: true,
-        trainers: trainersStatistics
+        trainers: trainersWithKPIs
       });
     } catch (error) {
       console.error('Error en getTrainersStatistics:', error);

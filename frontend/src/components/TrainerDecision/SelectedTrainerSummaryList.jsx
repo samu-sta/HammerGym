@@ -45,7 +45,7 @@ const SelectedTrainerSummaryList = ({ trainers, onRemoveTrainer }) => {
                 <span className="text-sm text-gray-600">TRCE</span>
                 <div className="flex items-center gap-2">
                   <span className={`font-bold ${trceStatus.color}`}>
-                    {trainer.kpis.trce}%
+                    {trainer.kpis.trce.toFixed(1)}
                   </span>
                   <span className="text-lg">{trceStatus.icon}</span>
                 </div>
@@ -56,7 +56,7 @@ const SelectedTrainerSummaryList = ({ trainers, onRemoveTrainer }) => {
                 <span className="text-sm text-gray-600">ISAC</span>
                 <div className="flex items-center gap-2">
                   <span className={`font-bold ${isacStatus.color}`}>
-                    {trainer.kpis.isac}%
+                    {trainer.kpis.isac.toFixed(1)}
                   </span>
                   <span className="text-lg">{isacStatus.icon}</span>
                 </div>
@@ -67,7 +67,7 @@ const SelectedTrainerSummaryList = ({ trainers, onRemoveTrainer }) => {
                 <span className="text-sm text-gray-600">REDD</span>
                 <div className="flex items-center gap-2">
                   <span className={`font-bold ${reddStatus.color}`}>
-                    {trainer.kpis.redd}%
+                    {trainer.kpis.redd.toFixed(1)}
                   </span>
                   <span className="text-lg">{reddStatus.icon}</span>
                 </div>
@@ -77,7 +77,7 @@ const SelectedTrainerSummaryList = ({ trainers, onRemoveTrainer }) => {
               <div className="flex items-center justify-between pt-2 border-t border-gray-200">
                 <span className="text-sm font-semibold text-gray-700">Score Global</span>
                 <span className="font-bold text-lg text-gray-900">
-                  {trainer.kpis.globalScore}%
+                  {trainer.kpis.globalScore.toFixed(1)}
                 </span>
               </div>
             </section>

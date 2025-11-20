@@ -23,7 +23,7 @@ const TRCEBreakdown = ({ trainers }) => {
   const gaugeData = useMemo(() => {
     return selectedTrainers.map((trainer, idx) => {
       const trce = trainer.kpis.trce;
-      const remaining = 100 - trce;
+      const remaining = 10 - trce;
       
       return {
         trainer: trainer.username,
@@ -153,7 +153,7 @@ const TRCEBreakdown = ({ trainers }) => {
 
                 <div className="text-center -mt-8 relative z-10 mb-4">
                   <p className="text-3xl font-bold" style={{ color: TRAINER_COLORS[idx] }}>
-                    {trainer.kpis.trce}%
+                    {trainer.kpis.trce.toFixed(1)}
                   </p>
                   <p className="text-xs text-gray-400">
                     Retención
