@@ -1,0 +1,217 @@
+import React, { useMemo } from 'react';
+import {
+  useReactTable,
+  getCoreRowModel,
+  getSortedRowModel,
+  flexRender
+} from '@tantml:function_calls>
+<invoke name="grep_search">
+<parameter name="query">@/components/dss/ui/card
+
+const TrainerComparisonTable = ({ trainers, selectedTrainers = [], onToggleTrainer }) => {
+  const columns = useMemo(
+    () => [
+      {
+        id: 'select',
+        header: () => (
+          <div className="text-center">
+            <input
+              type="checkbox"
+              className="w-4 h-4 cursor-pointer"
+              checked={trainers.length > 0 && selectedTrainers.length === trainers.length}
+              onChange={(e) => {
+                if (e.target.checked) {
+                  trainers.forEach(trainer => {
+                    if (!selectedTrainers.some(t => t.id === trainer.id)) {
+                      onToggleTrainer(trainer);
+                    }
+                  });
+                } else {
+                  selectedTrainers.forEach(trainer => onToggleTrainer(trainer));
+                }
+              }}
+            />
+          </div>
+        ),
+        cell: ({ row }) => (
+          <div className="text-center">
+            <input
+              type="checkbox"
+              className="w-4 h-4 cursor-pointer"
+              checked={selectedTrainers.some(t => t.id === row.original.id)}
+              onChange={() => onToggleTrainer(row.original)}
+            />
+          </div>
+        )
+      },
+      {
+        accessorKey: 'username',
+        header: 'Entrenador',
+        cell: info => (
+          <span className="font-semibold text-gray-900">{info.getValue()}</span>
+        )
+      },
+      {
+        id: 'trce',
+        accessorFn: row => row.kpis?.trce,
+        header: () => (
+          <div className="text-center">
+            <div>TRCE</div>
+            <div className="text-xs font-normal text-gray-500">Retención</div>
+          </div>
+        ),
+        cell: info => <KPICell value={info.getValue()} kpiType="TRCE" />
+      },
+      {
+        id: 'isac',
+        accessorFn: row => row.kpis?.isac,
+        header: () => (
+          <div className="text-center">
+            <div>ISAC</div>
+            <div className="text-xs font-normal text-gray-500">Satisfacción</div>
+          </div>
+        ),
+        cell: info => <KPICell value={info.getValue()} kpiType="ISAC" />
+      },
+      {
+        id: 'redd',
+        accessorFn: row => row.kpis?.redd,
+        header: () => (
+          <div className="text-center">
+            <div>REDD</div>
+            <div className="text-xs font-normal text-gray-500">Económico</div>
+          </div>
+        ),
+        cell: info => <KPICell value={info.getValue()} kpiType="REDD" />
+      },
+      {
+        id: 'globalScore',
+        accessorFn: row => row.kpis?.globalScore,
+        header: () => (
+          <div className="text-center">
+            <div>Score Global</div>
+            <div className="text-xs font-normal text-gray-500">Ponderado</div>
+          </div>
+        ),
+        cell: info => <KPICell value={info.getValue()} kpiType="GLOBAL_SCORE" isBold />
+      },
+      {
+        id: 'status',
+        header: 'Estado',
+        cell: ({ row }) => <StatusCell trainer={row.original} />
+      }
+    ],
+    [trainers, selectedTrainers, onToggleTrainer]
+  );
+
+  const table = useReactTable({
+    data: trainers,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    initialState: {
+      sorting: [{ id: 'globalScore', desc: true }]
+    }
+  });
+
+  return (
+    <article className="bg-white rounded-lg shadow-md overflow-hidden">
+      <header className="px-6 py-4 bg-gray-50 border-b border-gray-200">
+        <h2 className="text-xl font-semibold text-gray-900">
+          Comparativa de Entrenadores
+        </h2>
+        <p className="text-sm text-gray-600 mt-1">
+          Selecciona hasta 3 entrenadores para comparar sus KPIs • Click en columnas para ordenar
+        </p>
+        <div className="mt-2 flex items-center gap-3">
+          {selectedTrainers.length > 0 && (
+            <div className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
+              {selectedTrainers.length}/3 seleccionado{selectedTrainers.length > 1 ? 's' : ''}
+            </div>
+          )}
+          {selectedTrainers.length === 3 && (
+            <div className="inline-block px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">
+              ⚠ Máximo alcanzado
+            </div>
+          )}
+        </div>
+      </header>
+
+      <div className="overflow-x-auto">
+        <table className="w-full">
+          <thead className="bg-gray-50 border-b border-gray-200">
+            {table.getHeaderGroups().map(headerGroup => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map(header => (
+                  <th
+                    key={header.id}
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {header.isPlaceholder ? null : (
+                      <div className="flex items-center gap-2">
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                        {{
+                          asc: ' 🔼',
+                          desc: ' 🔽',
+                        }[header.column.getIsSorted()] ?? null}
+                      </div>
+                    )}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {table.getRowModel().rows.map(row => (
+              <tr key={row.id} className="hover:bg-gray-50 transition-colors">
+                {row.getVisibleCells().map(cell => (
+                  <td key={cell.id} className="px-6 py-4 whitespace-nowrap">
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </article>
+  );
+};
+
+// Componente para celdas de KPI con colores
+const KPICell = ({ value, kpiType, isBold = false }) => {
+  const { color, bgColor, icon } = useKPIStatus(value, kpiType);
+
+  return (
+    <div
+      className={`flex items-center justify-center gap-2 px-3 py-1 rounded-lg ${bgColor}`}
+      title={`${kpiType}: ${value}%`}
+    >
+      <span className="text-lg">{icon}</span>
+      <span className={`${color} ${isBold ? 'font-bold' : 'font-semibold'}`}>
+        {value}%
+      </span>
+    </div>
+  );
+};
+
+// Componente para el estado global
+const StatusCell = ({ trainer }) => {
+  const { icon, label, color } = useKPIStatus(
+    trainer.kpis.globalScore,
+    'GLOBAL_SCORE'
+  );
+
+  return (
+    <div className="flex items-center gap-2">
+      <span className="text-2xl">{icon}</span>
+      <span className={`font-medium ${color}`}>{label}</span>
+    </div>
+  );
+};
+
+export default TrainerComparisonTable;

@@ -2,8 +2,13 @@ import TrainingModel from '../models/Training.js';
 import UserModel from '../models/User.js';
 import AccountModel from '../models/Account.js';
 import TrainerModel from '../models/Trainer.js';
+import ClientTrainerContractModel from '../models/ClientTrainerContract.js';
+import MonthlyEconomyTrainerModel from '../models/MonthlyEconomyTrainer.js';
+import ClassModel from '../models/Class.js';
+import AttendanceModel from '../models/Attendance.js';
 import MESSAGES from '../messages/messages.js';
 import updateUserSchema from "../schemas/UpdateUserSchema.js";
+import { Sequelize } from 'sequelize';
 
 export default class TrainerController {
 
@@ -147,6 +152,114 @@ export default class TrainerController {
     } catch (error) {
       console.error(error);
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
+    }
+  };
+
+  getTrainersStatistics = async (_req, res) => {
+    try {
+      // Obtener todos los entrenadores con sus relaciones
+      const trainers = await TrainerModel.findAll({
+        include: [
+          {
+            model: AccountModel,
+            as: 'account',
+            attributes: ['id', 'username', 'email']
+          },
+          {
+            model: ClientTrainerContractModel,
+            as: 'clientContracts',
+            include: [
+              {
+                model: UserModel,
+                as: 'client',
+                include: [
+                  {
+                    model: AccountModel,
+                    as: 'account',
+                    attributes: ['username', 'email']
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            model: MonthlyEconomyTrainerModel,
+            as: 'monthlyEconomy'
+          },
+          {
+            model: ClassModel,
+            as: 'classes'
+          }
+        ]
+      });
+
+      // Procesar cada entrenador para calcular estadísticas
+      const trainersStatistics = await Promise.all(
+        trainers.map(async (trainer) => {
+          // Calcular asistencia promedio y capacidad máxima promedio de las clases
+          const classes = trainer.classes || [];
+          
+          let avgAttendance = 0;
+          let avgMaxCapacity = 0;
+          
+          if (classes.length > 0) {
+            // Calcular asistencia promedio
+            const attendanceCounts = await Promise.all(
+              classes.map(async (classInstance) => {
+                const count = await AttendanceModel.count({
+                  where: { classId: classInstance.id }
+                });
+                return count;
+              })
+            );
+            
+            const totalAttendance = attendanceCounts.reduce((sum, count) => sum + count, 0);
+            avgAttendance = totalAttendance / classes.length;
+            
+            // Calcular capacidad máxima promedio
+            const totalMaxCapacity = classes.reduce((sum, cls) => sum + cls.maxCapacity, 0);
+            avgMaxCapacity = totalMaxCapacity / classes.length;
+          }
+
+          return {
+            id: trainer.accountId,
+            username: trainer.account?.username,
+            email: trainer.account?.email,
+            averageRating: trainer.averageRating,
+            clientContracts: trainer.clientContracts.map(contract => ({
+              id: contract.id,
+              clientId: contract.clientId,
+              clientUsername: contract.client?.account?.username,
+              clientEmail: contract.client?.account?.email,
+              startDate: contract.startDate,
+              endDate: contract.endDate
+            })),
+            monthlyEconomy: trainer.monthlyEconomy.map(economy => ({
+              id: economy.id,
+              period: economy.period,
+              income: parseFloat(economy.income),
+              costs: parseFloat(economy.costs),
+              activeClients: economy.activeClients,
+              potentialClients: economy.potentialClients
+            })),
+            averageAttendance: Math.round(avgAttendance * 100) / 100,
+            averageMaxCapacity: Math.round(avgMaxCapacity * 100) / 100,
+            totalClasses: classes.length
+          };
+        })
+      );
+
+      return res.status(200).json({
+        success: true,
+        trainers: trainersStatistics
+      });
+    } catch (error) {
+      console.error('Error en getTrainersStatistics:', error);
+      return res.status(500).json({
+        success: false,
+        message: MESSAGES.ERROR_500,
+        error: error.message
+      });
     }
   };
 

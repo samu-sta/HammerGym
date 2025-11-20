@@ -26,6 +26,12 @@ const AdminPage = () => {
       route: '/admin/trainers'
     },
     {
+      title: 'Decisión de Entrenadores',
+      icon: <FaUserTie className="admin-action-icon" />,
+      description: 'Análisis de rendimiento y KPIs para decisiones estratégicas',
+      route: '/admin/trainer-decision'
+    },
+    {
       title: 'Ejercicios',
       icon: <FaRunning className="admin-action-icon" />,
       description: 'Gestiona el catálogo de ejercicios disponibles para entrenamiento',

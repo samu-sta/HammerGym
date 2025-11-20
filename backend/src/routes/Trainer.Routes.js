@@ -9,6 +9,7 @@ export const TrainerRoutes = () => {
 
 
   trainerRouter.get('/assigned-users', authTrainer, trainerController.getTrainerAssignedUsers);
+  trainerRouter.get('/statistics', authAdmin, trainerController.getTrainersStatistics);
   trainerRouter.get("/", authAdmin, trainerController.getAllTrainers);
   trainerRouter.get("/:id", authAdmin, trainerController.getTrainerById);
   trainerRouter.post("/", authAdmin, trainerController.createTrainer);
