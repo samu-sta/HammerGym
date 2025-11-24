@@ -7,40 +7,47 @@
 
 /**
  * Calcula TRCE (Tasa de Retención de Clientes y Engagement)
- * TRCE = (Clientes Retenidos / Clientes Inicio) × 100
- * Promedio de los últimos 3 meses
+ * TRCE = (Retención × 0.7) + (Captación × 0.3)
+ * - Retención: % de clientes que NO se volvieron inactivos
+ * - Captación: % de nuevos clientes captados respecto al total
+ * Usa ÚNICAMENTE los datos reales de contratos (clientContracts)
  */
-const calculateTRCE = (monthlyEconomy) => {
-  if (!monthlyEconomy || monthlyEconomy.length === 0) return 0;
+const calculateTRCE = (trainer, allTrainers) => {
+  const { clientContracts } = trainer;
+  
+  if (!clientContracts || clientContracts.length === 0) return 0;
 
-  // Usar los últimos 3 meses
-  const recentMonths = monthlyEconomy.slice(-3);
-  let totalTRCE = 0;
+  // COMPONENTE 1: RETENCIÓN (70%)
+  // Calcular cuántos clientes se retienen (siguen activos) vs los que se perdieron
+  const totalContratos = clientContracts.length;
+  const contratosActivos = clientContracts.filter(c => !c.endDate || c.endDate === null).length;
+  const contratosInactivos = clientContracts.filter(c => c.endDate !== null && c.endDate !== undefined).length;
+  
+  // Tasa de retención: % de contratos que siguen activos
+  const tasaRetencion = totalContratos > 0 ? (contratosActivos / totalContratos) * 100 : 0;
 
-  recentMonths.forEach((month, index) => {
-    if (index === 0) return; // No se puede calcular retención para el primer mes
-
-    const prevMonth = recentMonths[index - 1];
-    const clientesInicio = prevMonth.activeClients;
-    const clientesFinal = month.activeClients;
-
-    // Estimar nuevos clientes (simplificación: diferencia positiva)
-    const diferencia = clientesFinal - clientesInicio;
-    const nuevosClientes = Math.max(0, diferencia);
-
-    // Clientes retenidos
-    const retenidos = clientesFinal - nuevosClientes;
-
-    // TRCE para este mes
-    const trce = clientesInicio > 0 ? (retenidos / clientesInicio) * 100 : 0;
-    totalTRCE += trce;
+  // COMPONENTE 2: CAPTACIÓN (30%)
+  // Contar total de contratos de este trainer
+  const totalContratosTrainer = clientContracts.length;
+  
+  // Contar total de contratos de TODOS los trainers
+  let totalContratosGlobal = 0;
+  allTrainers.forEach(t => {
+    if (t.clientContracts && t.clientContracts.length > 0) {
+      totalContratosGlobal += t.clientContracts.length;
+    }
   });
 
-  // Promedio (dividir por n-1 ya que el primer mes no cuenta)
-  const avgTRCE = recentMonths.length > 1 ? totalTRCE / (recentMonths.length - 1) : 0;
+  // Tasa de captación: % de clientes captados respecto al total
+  const tasaCaptacion = totalContratosGlobal > 0 
+    ? (totalContratosTrainer / totalContratosGlobal) * 100 
+    : 0;
+
+  // TRCE combinado: 70% retención + 30% captación
+  const trce = (tasaRetencion * 0.9) + (tasaCaptacion * 0.1);
   
   // Convertir de escala 0-100 a 0-10
-  const trceScale10 = avgTRCE / 10;
+  const trceScale10 = trce / 10;
   return Math.round(trceScale10 * 100) / 100;
 };
 
@@ -156,7 +163,7 @@ const calculateGlobalScore = (trce, isac, redd) => {
  * Calcula todos los KPIs para un entrenador
  */
 const calculateAllKPIs = (trainer, allTrainers) => {
-  const trce = calculateTRCE(trainer.monthlyEconomy);
+  const trce = calculateTRCE(trainer, allTrainers);
   const isac = calculateISAC(trainer);
   const redd = calculateREDD(trainer, allTrainers);
   const globalScore = calculateGlobalScore(trce, isac, redd);

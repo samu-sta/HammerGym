@@ -19,21 +19,21 @@ const TRCEBreakdown = ({ trainers }) => {
   const selectedTrainers = trainers.slice(0, 3);
   const [monthsToShow, setMonthsToShow] = useState(6);
 
-  // Datos para los gauges
+  // Datos para los gauges - usar retención real en lugar de TRCE
   const gaugeData = useMemo(() => {
     return selectedTrainers.map((trainer, idx) => {
-      const trce = trainer.kpis.trce;
-      const remaining = 10 - trce;
+      const retencionReal = trainer.retencionReal || 0; // Porcentaje 0-100
+      const remaining = 100 - retencionReal;
       
       return {
         trainer: trainer.username,
-        value: trce,
+        value: retencionReal,
         data: [
-          { name: 'TRCE', value: trce, fill: TRAINER_COLORS[idx] },
+          { name: 'Retención', value: retencionReal, fill: TRAINER_COLORS[idx] },
           { name: 'Restante', value: remaining, fill: '#e5e7eb' }
         ],
         color: TRAINER_COLORS[idx],
-        targetMet: trce >= KPI_TARGETS.TRCE
+        targetMet: retencionReal >= 80 // Meta de 80% de retención
       };
     });
   }, [selectedTrainers]);
@@ -59,7 +59,9 @@ const TRCEBreakdown = ({ trainers }) => {
         
         const clientesInicio = firstMonth.activeClients;
         const clientesFinal = lastMonth.activeClients;
-        const nuevosClientes = Math.max(0, clientesFinal - clientesInicio);
+        
+        // Sumar nuevos clientes de los meses filtrados (desde el backend)
+        const nuevosClientes = filteredMonths.reduce((sum, month) => sum + (month.nuevosClientes || 0), 0);
 
         if (metric === 'Clientes Inicio') {
           dataPoint[trainer.username] = clientesInicio;
@@ -121,9 +123,10 @@ const TRCEBreakdown = ({ trainers }) => {
             
             const clientesInicio = firstMonth.activeClients;
             const clientesFinal = lastMonth.activeClients;
-            const nuevosClientes = Math.max(0, clientesFinal - clientesInicio);
-            const retenidos = clientesFinal - nuevosClientes;
-            const perdidos = Math.max(0, clientesInicio - retenidos);
+            
+            // Sumar nuevos clientes y perdidos de los meses filtrados (datos reales del backend)
+            const nuevosClientes = filteredMonths.reduce((sum, month) => sum + (month.nuevosClientes || 0), 0);
+            const perdidos = filteredMonths.reduce((sum, month) => sum + (month.clientesPerdidos || 0), 0);
 
             return (
               <figure key={idx} className="flex flex-col items-center">
@@ -153,10 +156,10 @@ const TRCEBreakdown = ({ trainers }) => {
 
                 <div className="text-center -mt-8 relative z-10 mb-4">
                   <p className="text-3xl font-bold" style={{ color: TRAINER_COLORS[idx] }}>
-                    {trainer.kpis.trce.toFixed(1)}
+                    {trainer.retencionReal?.toFixed(1) || '0.0'}%
                   </p>
                   <p className="text-xs text-gray-400">
-                    Retención
+                    Retención Real
                   </p>
                 </div>
 

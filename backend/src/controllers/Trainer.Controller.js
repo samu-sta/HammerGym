@@ -235,14 +235,35 @@ export default class TrainerController {
               startDate: contract.startDate,
               endDate: contract.endDate
             })),
-            monthlyEconomy: trainer.monthlyEconomy.map(economy => ({
-              id: economy.id,
-              period: economy.period,
-              income: parseFloat(economy.income),
-              costs: parseFloat(economy.costs),
-              activeClients: economy.activeClients,
-              potentialClients: economy.potentialClients
-            })),
+            monthlyEconomy: trainer.monthlyEconomy.map(economy => {
+              const period = new Date(economy.period);
+              const mesInicio = new Date(period.getFullYear(), period.getMonth(), 1);
+              const mesFin = new Date(period.getFullYear(), period.getMonth() + 1, 0);
+
+              // Calcular NUEVOS CLIENTES en este mes desde clientContracts
+              const nuevosClientes = trainer.clientContracts.filter(contract => {
+                const startDate = new Date(contract.startDate);
+                return startDate >= mesInicio && startDate <= mesFin;
+              }).length;
+
+              // Calcular CLIENTES PERDIDOS en este mes desde clientContracts
+              const clientesPerdidos = trainer.clientContracts.filter(contract => {
+                if (!contract.endDate) return false;
+                const endDate = new Date(contract.endDate);
+                return endDate >= mesInicio && endDate <= mesFin;
+              }).length;
+
+              return {
+                id: economy.id,
+                period: economy.period,
+                income: parseFloat(economy.income),
+                costs: parseFloat(economy.costs),
+                activeClients: economy.activeClients,
+                potentialClients: economy.potentialClients,
+                nuevosClientes: nuevosClientes,
+                clientesPerdidos: clientesPerdidos
+              };
+            }),
             averageAttendance: Math.round(avgAttendance * 100) / 100,
             averageMaxCapacity: Math.round(avgMaxCapacity * 100) / 100,
             totalClasses: classes.length
@@ -253,9 +274,16 @@ export default class TrainerController {
       // Calcular KPIs para cada entrenador
       const trainersWithKPIs = trainersStatistics.map(trainer => {
         const kpis = calculateAllKPIs(trainer, trainersStatistics);
+        
+        // Calcular retención real (porcentaje de contratos activos)
+        const totalContratos = trainer.clientContracts.length;
+        const contratosActivos = trainer.clientContracts.filter(c => !c.endDate || c.endDate === null).length;
+        const retencionReal = totalContratos > 0 ? (contratosActivos / totalContratos) * 100 : 0;
+        
         return {
           ...trainer,
-          kpis
+          kpis,
+          retencionReal: Math.round(retencionReal * 100) / 100
         };
       });
 
