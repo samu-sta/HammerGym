@@ -1,0 +1,13 @@
+equipment_id,equipment_type,manufacturer,purchase_date,purchase_cost,replacement_value,criticality,location
+CARD-001,Treadmill,Life Fitness,2022-03-15,3800,3344,4.7,Cardio Zone
+CARD-002,Elliptical,Precor,2021-11-20,4200,3864,4.6,Cardio Zone
+CARD-003,Exercise Bike,Technogym,2023-01-10,3500,2975,4.8,Cardio Zone
+CARD-004,Rowing Machine,Hammer Strength,2022-08-05,4100,3690,4.5,Cardio Zone
+STR-001,Chest Press,Hammer Strength,2021-06-12,2400,2088,3.9,Strength Area
+STR-002,Leg Press,Life Fitness,2023-04-18,2800,2548,4.1,Strength Area
+STR-003,Lat Pulldown,Precor,2022-09-22,1800,1494,3.7,Strength Area
+STR-004,Shoulder Press,Technogym,2021-12-08,2100,1869,3.8,Strength Area
+STR-005,Leg Extension,Life Fitness,2023-02-14,1500,1275,4.0,Strength Area
+STR-006,Leg Curl,Hammer Strength,2022-05-30,2600,2340,3.6,Strength Area
+STR-007,Pec Deck,Precor,2021-09-25,1900,1634,3.8,Strength Area
+STR-008,Cable Crossover,Technogym,2023-06-07,2300,2024,4.2,Strength Area
