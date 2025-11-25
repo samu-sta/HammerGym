@@ -14,6 +14,15 @@ const MachineModelModel = sequelize.define('MachineModel', {
     brand: {
         type: DataTypes.STRING(45),
         allowNull: false
+    },
+    criticality: {
+        type: DataTypes.DECIMAL(2, 1),
+        allowNull: true,
+        validate: {
+            min: 1.0,
+            max: 5.0
+        },
+        comment: 'Criticality rating 1.0-5.0'
     }
 }, {
     tableName: 'MachineModel',

@@ -7,6 +7,22 @@ const MachineModel = sequelize.define('Machine', {
         primaryKey: true,
         autoIncrement: true
     },
+    purchaseDate: {
+        type: DataTypes.DATEONLY,
+        allowNull: true
+    },
+    purchaseCost: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: true
+    },
+    replacementValue: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: true
+    },
+    location: {
+        type: DataTypes.STRING(100),
+        allowNull: true
+    },
     status: {
         type: DataTypes.ENUM('available', 'broken', 'preparing', 'outOfService'),
         allowNull: false,

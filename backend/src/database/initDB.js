@@ -29,6 +29,10 @@ import runETL from '../scripts/etl1.js';
 import runETL2 from '../scripts/etl2.js';
 import ClientTrainerContractModel from '../models/ClientTrainerContract.js';
 import MonthlyEconomyTrainerModel from '../models/MonthlyEconomyTrainer.js';
+import MaintenanceHistory from '../models/MaintenanceHistory.js';
+import MachinePart from '../models/MachinePart.js';
+import MachinePartReplaced from '../models/MachinePartReplaced.js';
+import MachineMetrics from '../models/MachineMetrics.js';
 
 dotenv.config();
 
