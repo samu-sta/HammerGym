@@ -27,6 +27,7 @@ import BoneModel from '../models/Bone.js';
 import BoneMeasuresUserModel from '../models/BoneMeasuresUser.js';
 import runETL from '../scripts/etl1.js';
 import runETL2 from '../scripts/etl2.js';
+import runETL3 from '../scripts/etl3.js';
 import ClientTrainerContractModel from '../models/ClientTrainerContract.js';
 import MonthlyEconomyTrainerModel from '../models/MonthlyEconomyTrainer.js';
 import MaintenanceHistory from '../models/MaintenanceHistory.js';
@@ -631,6 +632,16 @@ const initDatabase = async () => {
         console.log('✅ ETL2 process completed successfully!');
       } catch (etlError2) {
         console.error('❌ ETL2 process failed:', etlError2.message);
+        console.log('⚠️ Continuing with standard initialization...');
+      }
+
+      // 🚀 Ejecutar proceso ETL3 para importar datos de equipamiento
+      console.log('\n🚀 Starting ETL3 process to import equipment data...');
+      try {
+        await runETL3();
+        console.log('✅ ETL3 process completed successfully!');
+      } catch (etlError3) {
+        console.error('❌ ETL3 process failed:', etlError3.message);
         console.log('⚠️ Continuing with standard initialization...');
       }
 
