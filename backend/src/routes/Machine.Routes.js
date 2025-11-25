@@ -15,6 +15,7 @@ export const MachineRoutes = () => {
 
   // Rutas protegidas (sólo admin)
   machineRouter.use(authAdmin);
+  machineRouter.get('/admin/datasets', machineController.getEquipmentDatasets);
   machineRouter.post('/', machineController.createMachine);
   machineRouter.put('/:id', machineController.updateMachine);
   machineRouter.delete('/:id', machineController.deleteMachine);
