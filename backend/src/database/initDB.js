@@ -552,67 +552,6 @@ const initDatabase = async () => {
         }
       ]);
 
-      // Crear máquinas de prueba
-      const machines = await MachineModel.bulkCreate([
-        // Máquinas para el gimnasio original (Budapest)
-        {
-          status: 'available',
-          machineModelId: machineModels[0].id, // Leg Press
-          gymId: gym.id
-        },
-        {
-          status: 'available',
-          machineModelId: machineModels[1].id, // Smith Machine
-          gymId: gym.id
-        },
-        {
-          status: 'broken',
-          machineModelId: machineModels[2].id, // Chest Press
-          gymId: gym.id
-        },
-
-        // Máquinas para Madrid
-        {
-          status: 'available',
-          machineModelId: machineModels[0].id, // Leg Press
-          gymId: additionalGyms[0].id
-        },
-        {
-          status: 'available',
-          machineModelId: machineModels[3].id, // Lat Pulldown
-          gymId: additionalGyms[0].id
-        },
-        {
-          status: 'preparing',
-          machineModelId: machineModels[4].id, // Shoulder Press
-          gymId: additionalGyms[0].id
-        },
-
-        // Máquinas para Barcelona
-        {
-          status: 'available',
-          machineModelId: machineModels[1].id, // Smith Machine
-          gymId: additionalGyms[1].id
-        },
-        {
-          status: 'available',
-          machineModelId: machineModels[2].id, // Chest Press
-          gymId: additionalGyms[1].id
-        },
-
-        // Máquinas para Valencia
-        {
-          status: 'available',
-          machineModelId: machineModels[3].id, // Lat Pulldown
-          gymId: additionalGyms[2].id
-        },
-        {
-          status: 'outOfService',
-          machineModelId: machineModels[4].id, // Shoulder Press
-          gymId: additionalGyms[2].id
-        }
-      ]);
-
       console.log('- Admin: admin@example.com / password123');
 
       // 🚀 Ejecutar proceso ETL1 para importar datos de CSV

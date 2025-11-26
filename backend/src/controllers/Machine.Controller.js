@@ -185,7 +185,10 @@ export default class MachineController {
   // Admin-only endpoint: Get complete equipment data from datasets
   getEquipmentDatasets = async (_req, res) => {
     try {
+      console.log('📊 Starting getEquipmentDatasets...');
+      
       // 1. Get all machines with their models and gym info
+      console.log('📊 Step 1: Fetching machines...');
       const machines = await MachineModel.findAll({
         include: [
           { 
@@ -201,10 +204,13 @@ export default class MachineController {
         ],
         order: [['id', 'ASC']]
       });
+      console.log(`📊 Found ${machines.length} machines`);
 
       // 2. Calculate KPIs for all machines
+      console.log('📊 Step 2: Calculating KPIs...');
       const machineIds = machines.map(m => m.id);
       const kpisMap = await KPIMachineCalculator.calculateKPIsForMachines(machineIds);
+      console.log(`📊 Calculated KPIs for ${Object.keys(kpisMap).length} machines`);
 
       // 3. Attach KPIs to each machine
       const machinesWithKPIs = machines.map(machine => {
@@ -220,6 +226,7 @@ export default class MachineController {
       });
 
       // 4. Get all maintenance history with parts replaced
+      console.log('📊 Step 3: Fetching maintenance history...');
       const maintenanceHistory = await MaintenanceHistory.findAll({
         include: [
           {
@@ -243,8 +250,10 @@ export default class MachineController {
         ],
         order: [['dateCompleted', 'DESC']]
       });
+      console.log(`📊 Found ${maintenanceHistory.length} maintenance records`);
 
       // 5. Get all machine metrics
+      console.log('📊 Step 4: Fetching machine metrics...');
       const machineMetrics = await MachineMetrics.findAll({
         include: [
           {
@@ -262,13 +271,17 @@ export default class MachineController {
         ],
         order: [['machineId', 'ASC'], ['month', 'DESC']]
       });
+      console.log(`📊 Found ${machineMetrics.length} metrics records`);
 
       // 6. Get all machine parts catalog
+      console.log('📊 Step 5: Fetching machine parts...');
       const machineParts = await MachinePart.findAll({
         order: [['name', 'ASC']]
       });
+      console.log(`📊 Found ${machineParts.length} machine parts`);
 
       // 7. Calculate summary statistics
+      console.log('📊 Step 6: Calculating summary statistics...');
       const totalMachines = machines.length;
       const totalMaintenanceRecords = maintenanceHistory.length;
       const totalMetricsRecords = machineMetrics.length;
@@ -298,6 +311,7 @@ export default class MachineController {
       const avgUptime = machinesWithKPIs.reduce((sum, m) => sum + m.kpis.equipmentUptime, 0) / totalMachines;
       const avgCostRelative = machinesWithKPIs.reduce((sum, m) => sum + m.kpis.maintenanceCostRelative, 0) / totalMachines;
 
+      console.log('📊 Sending response...');
       return res.status(200).json({
         success: true,
         data: {
@@ -322,7 +336,8 @@ export default class MachineController {
         }
       });
     } catch (error) {
-      console.error('Error fetching equipment datasets:', error);
+      console.error('❌ Error fetching equipment datasets:', error);
+      console.error('Error stack:', error.stack);
       return res.status(500).json({ success: false, message: MESSAGES.ERROR_500 });
     }
   };
