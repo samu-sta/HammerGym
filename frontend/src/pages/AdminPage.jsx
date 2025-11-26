@@ -32,6 +32,12 @@ const AdminPage = () => {
       route: '/admin/trainer-decision'
     },
     {
+      title: 'Decisión de Equipamiento',
+      icon: <FaTools className="admin-action-icon" />,
+      description: 'Análisis de KPIs de máquinas: Uptime, Costes y Riesgo de Fallo',
+      route: '/admin/machine-decision'
+    },
+    {
       title: 'Ejercicios',
       icon: <FaRunning className="admin-action-icon" />,
       description: 'Gestiona el catálogo de ejercicios disponibles para entrenamiento',

@@ -1,0 +1,77 @@
+{
+    "new_features": [
+        {
+            "feature1": "days_since_last_failure",
+            "feature2": "avg_daily_peak_usage",
+            "operation": "ratio",
+            "score": 0.2115626463
+        },
+        {
+            "feature1": "avg_daily_peak_usage",
+            "feature2": "days_since_last_failure",
+            "operation": "ratio",
+            "score": 0.2588329254
+        },
+        {
+            "feature1": "failure_count_12m",
+            "feature2": "temperature_deviation",
+            "operation": "ratio",
+            "score": 0.3084297324
+        },
+        {
+            "feature1": "temperature_deviation",
+            "feature2": "failure_count_12m",
+            "operation": "ratio",
+            "score": 0.3084297324
+        },
+        {
+            "feature1": "power_consumption",
+            "feature2": "days_since_last_failure",
+            "operation": "multiply",
+            "score": 0.3490983349
+        },
+        {
+            "feature1": "days_since_last_failure",
+            "feature2": "age_months",
+            "operation": "sum",
+            "score": 0.3531583379
+        },
+        {
+            "feature1": "failure_count_12m",
+            "feature2": "days_since_last_failure",
+            "operation": "multiply",
+            "score": 0.3607275141
+        },
+        {
+            "feature1": "days_since_last_failure",
+            "feature2": "failure_count_12m",
+            "operation": "ratio",
+            "score": 0.4022141612
+        },
+        {
+            "feature1": "days_since_last_failure",
+            "feature2": "total_sessions",
+            "operation": "ratio",
+            "score": 0.4041630803
+        },
+        {
+            "feature1": "vibration_level",
+            "feature2": "failure_count_12m",
+            "operation": "ratio",
+            "score": 0.419849972
+        }
+    ],
+    "new_columns": [
+        "days_since_last_failure_ratio_avg_daily_peak_usage",
+        "avg_daily_peak_usage_ratio_days_since_last_failure",
+        "failure_count_12m_ratio_temperature_deviation",
+        "temperature_deviation_ratio_failure_count_12m",
+        "power_consumption_multiply_days_since_last_failure",
+        "days_since_last_failure_sum_age_months",
+        "failure_count_12m_multiply_days_since_last_failure",
+        "days_since_last_failure_ratio_failure_count_12m",
+        "days_since_last_failure_ratio_total_sessions",
+        "vibration_level_ratio_failure_count_12m"
+    ],
+    "ml_task": "regression"
+}

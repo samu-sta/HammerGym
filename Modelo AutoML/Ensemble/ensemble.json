@@ -1,0 +1,72 @@
+{
+    "name": "Ensemble",
+    "ml_task": "regression",
+    "optimize_metric": "rmse",
+    "selected_models": [
+        {
+            "model": "101_Xgboost",
+            "repeat": 1.0
+        },
+        {
+            "model": "103_Xgboost",
+            "repeat": 2.0
+        },
+        {
+            "model": "109_ExtraTrees",
+            "repeat": 7.0
+        },
+        {
+            "model": "2_DecisionTree",
+            "repeat": 6.0
+        },
+        {
+            "model": "37_CatBoost",
+            "repeat": 1.0
+        },
+        {
+            "model": "3_DecisionTree_GoldenFeatures",
+            "repeat": 7.0
+        },
+        {
+            "model": "47_RandomForest_SelectedFeatures",
+            "repeat": 5.0
+        },
+        {
+            "model": "58_NeuralNetwork_SelectedFeatures",
+            "repeat": 3.0
+        },
+        {
+            "model": "63_NeuralNetwork",
+            "repeat": 1.0
+        },
+        {
+            "model": "80_CatBoost_SelectedFeatures",
+            "repeat": 10.0
+        },
+        {
+            "model": "82_RandomForest_SelectedFeatures",
+            "repeat": 9.0
+        },
+        {
+            "model": "8_Default_NeuralNetwork",
+            "repeat": 2.0
+        },
+        {
+            "model": "95_NeuralNetwork_SelectedFeatures",
+            "repeat": 1.0
+        },
+        {
+            "model": "96_NeuralNetwork_SelectedFeatures",
+            "repeat": 2.0
+        },
+        {
+            "model": "99_Xgboost_SelectedFeatures",
+            "repeat": 48.0
+        }
+    ],
+    "predictions_fname": "Ensemble\\predictions_ensemble.csv",
+    "metric_name": "rmse",
+    "final_loss": 6.606468182116938,
+    "train_time": 60.46886229515076,
+    "is_stacked": false
+}

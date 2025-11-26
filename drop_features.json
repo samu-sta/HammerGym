@@ -1,0 +1,9 @@
+[
+    "equipment_type",
+    "manufacturer",
+    "avg_daily_peak_usage",
+    "temperature_deviation",
+    "power_consumption",
+    "vibration_level",
+    "random_feature"
+]

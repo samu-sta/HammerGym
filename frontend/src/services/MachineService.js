@@ -134,3 +134,25 @@ export const fetchMachineModels = async () => {
     throw error;
   }
 };
+
+/**
+ * Obtiene todos los datos de equipamiento con KPIs (solo admin)
+ * Incluye máquinas con KPIs, historial de mantenimiento, métricas y piezas
+ */
+export const fetchEquipmentDatasets = async () => {
+  try {
+    const response = await fetch(`${API_URL}/machines/admin/datasets`, {
+      credentials: 'include'
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching equipment datasets:', error);
+    throw error;
+  }
+};

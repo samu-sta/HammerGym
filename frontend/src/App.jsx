@@ -20,6 +20,7 @@ import TrainingDecisionPage from './pages/TrainingDecisionPage.jsx';
 import UsersManagement from './pages/UsersManagement.jsx';
 import TrainersManagement from './pages/TrainersManagement.jsx';
 import TrainerDecisionPage from './pages/TrainerDecisionPage.jsx';
+import MachineDecisionPage from './pages/MachineDecisionPage.jsx';
 import GymsManagement from './pages/GymsManagement.jsx';
 import MachineModelsManagement from './pages/MachineModelsManagement.jsx';
 import MachinesManagement from './pages/MachinesManagement.jsx';
@@ -94,6 +95,7 @@ function App() {
               <Route path="/admin/users" element={<UsersManagement />} />
               <Route path="/admin/trainers" element={<TrainersManagement />} />
               <Route path="/admin/trainer-decision" element={<TrainerDecisionPage />} />
+              <Route path="/admin/machine-decision" element={<MachineDecisionPage />} />
               <Route path="/admin/memberships" element={<MembershipsManagement />} />
               <Route path="/admin/membership-features" element={<MembershipFeaturesManagement />} />
               <Route path="/admin/contracts" element={<ContractsManagement />} />
