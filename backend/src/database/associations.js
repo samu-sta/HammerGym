@@ -22,6 +22,10 @@ import BoneModel from '../models/Bone.js';
 import BoneMeasuresUserModel from '../models/BoneMeasuresUser.js';
 import ClientTrainerContractModel from '../models/ClientTrainerContract.js';
 import MonthlyEconomyTrainerModel from '../models/MonthlyEconomyTrainer.js';
+import MaintenanceHistory from '../models/MaintenanceHistory.js';
+import MachinePart from '../models/MachinePart.js';
+import MachinePartReplaced from '../models/MachinePartReplaced.js';
+import MachineMetrics from '../models/MachineMetrics.js';
 
 const setupAssociations = () => {
 
@@ -352,6 +356,54 @@ const setupAssociations = () => {
     foreignKey: 'trainerId',
     targetKey: 'accountId',
     as: 'trainer'
+  });
+
+  // Machine - MaintenanceHistory associations
+  MachineModel.hasMany(MaintenanceHistory, {
+    foreignKey: 'machineId',
+    as: 'maintenanceHistory'
+  });
+
+  MaintenanceHistory.belongsTo(MachineModel, {
+    foreignKey: 'machineId',
+    as: 'machine'
+  });
+
+  // MaintenanceHistory - MachinePart (Many-to-Many through MachinePartReplaced)
+  MaintenanceHistory.belongsToMany(MachinePart, {
+    through: MachinePartReplaced,
+    foreignKey: 'maintenanceHistoryId',
+    otherKey: 'machinePartId',
+    as: 'partsReplaced'
+  });
+
+  MachinePart.belongsToMany(MaintenanceHistory, {
+    through: MachinePartReplaced,
+    foreignKey: 'machinePartId',
+    otherKey: 'maintenanceHistoryId',
+    as: 'maintenanceRecords'
+  });
+
+  // Direct associations for MachinePartReplaced
+  MachinePartReplaced.belongsTo(MaintenanceHistory, {
+    foreignKey: 'maintenanceHistoryId',
+    as: 'maintenance'
+  });
+
+  MachinePartReplaced.belongsTo(MachinePart, {
+    foreignKey: 'machinePartId',
+    as: 'part'
+  });
+
+  // Machine - MachineMetrics associations
+  MachineModel.hasMany(MachineMetrics, {
+    foreignKey: 'machineId',
+    as: 'metrics'
+  });
+
+  MachineMetrics.belongsTo(MachineModel, {
+    foreignKey: 'machineId',
+    as: 'machine'
   });
 
   console.log('Associations set up successfully');

@@ -27,8 +27,13 @@ import BoneModel from '../models/Bone.js';
 import BoneMeasuresUserModel from '../models/BoneMeasuresUser.js';
 import runETL from '../scripts/etl1.js';
 import runETL2 from '../scripts/etl2.js';
+import runETL3 from '../scripts/etl3.js';
 import ClientTrainerContractModel from '../models/ClientTrainerContract.js';
 import MonthlyEconomyTrainerModel from '../models/MonthlyEconomyTrainer.js';
+import MaintenanceHistory from '../models/MaintenanceHistory.js';
+import MachinePart from '../models/MachinePart.js';
+import MachinePartReplaced from '../models/MachinePartReplaced.js';
+import MachineMetrics from '../models/MachineMetrics.js';
 
 dotenv.config();
 
@@ -547,67 +552,6 @@ const initDatabase = async () => {
         }
       ]);
 
-      // Crear máquinas de prueba
-      const machines = await MachineModel.bulkCreate([
-        // Máquinas para el gimnasio original (Budapest)
-        {
-          status: 'available',
-          machineModelId: machineModels[0].id, // Leg Press
-          gymId: gym.id
-        },
-        {
-          status: 'available',
-          machineModelId: machineModels[1].id, // Smith Machine
-          gymId: gym.id
-        },
-        {
-          status: 'broken',
-          machineModelId: machineModels[2].id, // Chest Press
-          gymId: gym.id
-        },
-
-        // Máquinas para Madrid
-        {
-          status: 'available',
-          machineModelId: machineModels[0].id, // Leg Press
-          gymId: additionalGyms[0].id
-        },
-        {
-          status: 'available',
-          machineModelId: machineModels[3].id, // Lat Pulldown
-          gymId: additionalGyms[0].id
-        },
-        {
-          status: 'preparing',
-          machineModelId: machineModels[4].id, // Shoulder Press
-          gymId: additionalGyms[0].id
-        },
-
-        // Máquinas para Barcelona
-        {
-          status: 'available',
-          machineModelId: machineModels[1].id, // Smith Machine
-          gymId: additionalGyms[1].id
-        },
-        {
-          status: 'available',
-          machineModelId: machineModels[2].id, // Chest Press
-          gymId: additionalGyms[1].id
-        },
-
-        // Máquinas para Valencia
-        {
-          status: 'available',
-          machineModelId: machineModels[3].id, // Lat Pulldown
-          gymId: additionalGyms[2].id
-        },
-        {
-          status: 'outOfService',
-          machineModelId: machineModels[4].id, // Shoulder Press
-          gymId: additionalGyms[2].id
-        }
-      ]);
-
       console.log('- Admin: admin@example.com / password123');
 
       // 🚀 Ejecutar proceso ETL1 para importar datos de CSV
@@ -627,6 +571,16 @@ const initDatabase = async () => {
         console.log('✅ ETL2 process completed successfully!');
       } catch (etlError2) {
         console.error('❌ ETL2 process failed:', etlError2.message);
+        console.log('⚠️ Continuing with standard initialization...');
+      }
+
+      // 🚀 Ejecutar proceso ETL3 para importar datos de equipamiento
+      console.log('\n🚀 Starting ETL3 process to import equipment data...');
+      try {
+        await runETL3();
+        console.log('✅ ETL3 process completed successfully!');
+      } catch (etlError3) {
+        console.error('❌ ETL3 process failed:', etlError3.message);
         console.log('⚠️ Continuing with standard initialization...');
       }
 
