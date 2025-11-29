@@ -1,0 +1,13 @@
+equipment_id,categoria_ejercicio,precio_compra_original,precio_mantenimiento_fijo
+1,cardio,3800,650
+2,cardio,4200,720
+3,cardio,3500,580
+4,cardio,4100,690
+5,push,2400,480
+6,leg,2800,550
+7,pull,1800,320
+8,push,2100,420
+9,leg,1500,180
+10,leg,2600,520
+11,push,1900,380
+12,pull,2300,450

@@ -37,6 +37,7 @@ const runETL3 = async () => {
     const equipmentMasterPath = path.join(__dirname, '../../../datasets/equipment_master_2.csv');
     const maintenanceHistoryPath = path.join(__dirname, '../../../datasets/maintenance_history_2.csv');
     const equipmentMetricsPath = path.join(__dirname, '../../../datasets/equipment_metrics_2.csv');
+    const equipmentPriceTypePath = path.join(__dirname, '../../../datasets/equipment_price_type.csv');
 
     // Verificar que los archivos existen
     if (!fs.existsSync(equipmentMasterPath)) {
@@ -48,16 +49,21 @@ const runETL3 = async () => {
     if (!fs.existsSync(equipmentMetricsPath)) {
       throw new Error(`File not found: ${equipmentMetricsPath}`);
     }
+    if (!fs.existsSync(equipmentPriceTypePath)) {
+      throw new Error(`File not found: ${equipmentPriceTypePath}`);
+    }
 
     // Leer los CSVs
     console.log('\n📂 Reading CSV files...');
     const equipmentMasterData = await readCSV(equipmentMasterPath);
     const maintenanceHistoryData = await readCSV(maintenanceHistoryPath);
     const equipmentMetricsData = await readCSV(equipmentMetricsPath);
+    const equipmentPriceTypeData = await readCSV(equipmentPriceTypePath);
 
     console.log(`✅ Equipment Master: ${equipmentMasterData.length} records`);
     console.log(`✅ Maintenance History: ${maintenanceHistoryData.length} records`);
     console.log(`✅ Equipment Metrics: ${equipmentMetricsData.length} records`);
+    console.log(`✅ Equipment Price/Type: ${equipmentPriceTypeData.length} records`);
 
     // Obtener el primer gimnasio disponible
     const gym = await GymModel.findOne();
@@ -294,12 +300,79 @@ const runETL3 = async () => {
 
     console.log(`\n✅ Step 4 Complete: ${metricsCount} metrics records created`);
 
+    // PASO 5: Actualizar MachineModels con datos de precio y categoría
+    console.log('\n📊 STEP 5: Updating MachineModels with Pricing and Category Data');
+    console.log('-'.repeat(60));
+
+    // Crear mapeo equipment_id -> MachineModel para actualización
+    const equipmentToModelMap = {};
+    
+    for (const row of equipmentMasterData) {
+      const { equipment_id, equipment_type, manufacturer } = row;
+      const modelKey = `${equipment_type}-${manufacturer}`;
+      
+      // Buscar el MachineModel correspondiente
+      const machineModel = await MachineModelModel.findOne({
+        where: {
+          name: equipment_type,
+          brand: manufacturer
+        }
+      });
+      
+      if (machineModel) {
+        equipmentToModelMap[equipment_id] = machineModel.id;
+      }
+    }
+
+    let updatedModels = 0;
+    const processedModelIds = new Set(); // Para evitar actualizar el mismo modelo múltiples veces
+
+    for (const row of equipmentPriceTypeData) {
+      try {
+        const {
+          equipment_id,
+          categoria_ejercicio,
+          precio_compra_original,
+          precio_mantenimiento_fijo
+        } = row;
+
+        const machineModelId = equipmentToModelMap[equipment_id];
+        
+        if (!machineModelId) {
+          console.log(`   ⚠️  Skipping equipment ${equipment_id}: model not found`);
+          continue;
+        }
+
+        // Solo actualizar si no hemos procesado este modelo antes
+        if (!processedModelIds.has(machineModelId)) {
+          await MachineModelModel.update({
+            exerciseCategory: categoria_ejercicio,
+            originalPurchasePrice: parseFloat(precio_compra_original),
+            fixedMaintenancePrice: parseFloat(precio_mantenimiento_fijo)
+          }, {
+            where: { id: machineModelId }
+          });
+
+          processedModelIds.add(machineModelId);
+          updatedModels++;
+          
+          console.log(`   ✅ Updated MachineModel ID ${machineModelId}: ${categoria_ejercicio}, $${precio_compra_original}, $${precio_mantenimiento_fijo}`);
+        }
+
+      } catch (error) {
+        console.error(`   ❌ Error updating pricing for equipment ${row.equipment_id}:`, error.message);
+      }
+    }
+
+    console.log(`\n✅ Step 5 Complete: ${updatedModels} machine models updated with pricing data`);
+
     // RESUMEN FINAL
     console.log('\n' + '='.repeat(60));
     console.log('✅ ETL3 Process Completed Successfully!');
     console.log('='.repeat(60));
     console.log(`📊 Summary:`);
     console.log(`   - Machine Models: ${Object.keys(machineModelCache).length} types`);
+    console.log(`   - Machine Models Updated: ${updatedModels} with pricing/category`);
     console.log(`   - Machines: ${Object.keys(equipmentIdMap).length} units`);
     console.log(`   - Machine Parts: ${Object.keys(machinePartMap).length} types`);
     console.log(`   - Maintenance Records: ${maintenanceCount} entries`);

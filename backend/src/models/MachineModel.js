@@ -23,6 +23,21 @@ const MachineModelModel = sequelize.define('MachineModel', {
             max: 5.0
         },
         comment: 'Criticality rating 1.0-5.0'
+    },
+    exerciseCategory: {
+        type: DataTypes.STRING(20),
+        allowNull: true,
+        comment: 'Exercise category: cardio, push, pull, leg'
+    },
+    originalPurchasePrice: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: true,
+        comment: 'Original purchase price'
+    },
+    fixedMaintenancePrice: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: true,
+        comment: 'Fixed maintenance price'
     }
 }, {
     tableName: 'MachineModel',
