@@ -130,36 +130,7 @@ const FailureRiskChart = ({ machines, machineMetrics, maintenanceHistory }) => {
                   </td>
                 ))}
               </tr>
-              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Marca</td>
-                {tableData.map((row) => (
-                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.manufacturer}</td>
-                ))}
-              </tr>
-              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Horas totales</td>
-                {tableData.map((row) => (
-                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.totalOperationalHours}</td>
-                ))}
-              </tr>
-              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Horas últimos 30 días</td>
-                {tableData.map((row) => (
-                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.hoursLast30d}</td>
-                ))}
-              </tr>
-              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Sesiones</td>
-                {tableData.map((row) => (
-                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.totalSessions}</td>
-                ))}
-              </tr>
-              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Uso pico diario</td>
-                {tableData.map((row) => (
-                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.avgDailyPeakUsage}</td>
-                ))}
-              </tr>
+              {/* Ordenado por importancia SHAP (de mayor a menor) */}
               <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
                 <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Días s/fallo</td>
                 {tableData.map((row) => (
@@ -173,39 +144,69 @@ const FailureRiskChart = ({ machines, machineMetrics, maintenanceHistory }) => {
                 ))}
               </tr>
               <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Fallos totales</td>
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Fallos últimos 12m</td>
                 {tableData.map((row) => (
                   <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.failuresLast12m}</td>
                 ))}
               </tr>
               <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Vibración</td>
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Horas totales</td>
                 {tableData.map((row) => (
-                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.vibration}</td>
+                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.totalOperationalHours}</td>
                 ))}
               </tr>
               <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Temperatura</td>
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Tipo de equipo</td>
                 {tableData.map((row) => (
-                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.temperature}</td>
+                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs capitalize">{row.equipmentType}</td>
                 ))}
               </tr>
               <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Potencia (kWh)</td>
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">ID Equipo</td>
+                {tableData.map((row) => (
+                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.equipmentId}</td>
+                ))}
+              </tr>
+              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Edad (meses)</td>
+                {tableData.map((row) => (
+                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.ageMonths}</td>
+                ))}
+              </tr>
+              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Sesiones totales</td>
+                {tableData.map((row) => (
+                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.totalSessions}</td>
+                ))}
+              </tr>
+              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Consumo energía</td>
                 {tableData.map((row) => (
                   <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.powerConsumption}</td>
                 ))}
               </tr>
               <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Costo total</td>
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Nivel vibración</td>
                 {tableData.map((row) => (
-                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.costLast12m}</td>
+                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.vibration}</td>
                 ))}
               </tr>
               <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
-                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Inactividad total</td>
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Desviación temp.</td>
                 {tableData.map((row) => (
-                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.downtimeLast12m}</td>
+                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.temperature}</td>
+                ))}
+              </tr>
+              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Uso pico diario</td>
+                {tableData.map((row) => (
+                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.avgDailyPeakUsage}</td>
+                ))}
+              </tr>
+              <tr className="border-b border-[#333] hover:bg-[#2a2a2a] transition-colors">
+                <td className="py-3 px-3 text-gray-300 font-medium text-xs sticky left-0 bg-[#1f1f1f]">Marca</td>
+                {tableData.map((row) => (
+                  <td key={row.id} className="py-3 px-3 text-center text-gray-300 text-xs">{row.manufacturer}</td>
                 ))}
               </tr>
             </tbody>

@@ -194,7 +194,7 @@ export default class MachineController {
           { 
             model: MachineModelModel, 
             as: 'model',
-            attributes: ['id', 'name', 'brand', 'criticality']
+            attributes: ['id', 'name', 'brand', 'criticality', 'exerciseCategory', 'originalPurchasePrice', 'fixedMaintenancePrice']
           },
           { 
             model: GymModel, 
@@ -220,7 +220,8 @@ export default class MachineController {
           kpis: kpisMap[machine.id] || {
             equipmentUptime: 0,
             maintenanceCostRelative: 0,
-            diasDespuesDeFallo: KPIMachineCalculator.DIAS_DESPUES_DE_FALLO
+            diasDespuesDeFallo: KPIMachineCalculator.DIAS_DESPUES_DE_FALLO,
+            rarityIndex: 0
           }
         };
       });

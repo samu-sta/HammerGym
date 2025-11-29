@@ -1,6 +1,8 @@
 import MaintenanceHistory from '../models/MaintenanceHistory.js';
 import MachineMetrics from '../models/MachineMetrics.js';
 import MachineModel from '../models/Machine.js';
+import MachineModelModel from '../models/MachineModel.js';
+import PredictiveModelService from './PredictiveModelService.js';
 import { Op } from 'sequelize';
 
 /**
@@ -9,10 +11,10 @@ import { Op } from 'sequelize';
 class KPIMachineCalculator {
   
   /**
-   * Constante temporal para días hasta próximo fallo
-   * TODO: Reemplazar con llamada al servicio de predicción ML
+   * Constante temporal para días hasta próximo fallo (DEPRECADA)
+   * Se usa el servicio de predicción PredictiveModelService
    */
-  static DIAS_DESPUES_DE_FALLO = 15;
+  static DIAS_DESPUES_DE_FALLO = 15; // Deprecado - solo para fallback
 
   /**
    * Calcula Equipment Uptime (%)
@@ -105,14 +107,65 @@ class KPIMachineCalculator {
   }
 
   /**
+   * Calcula Índice de Rareza (IR)
+   * Formula: IR = 10 / √N
+   * Donde N es el número de máquinas del mismo tipo de ejercicio
+   * 
+   * @param {number} machineId - ID de la máquina
+   * @returns {Promise<number>} - Índice de Rareza
+   */
+  static async calculateRarityIndex(machineId) {
+    try {
+      // Obtener la máquina con su modelo para saber el exerciseCategory
+      const machine = await MachineModel.findByPk(machineId, {
+        include: [{
+          model: MachineModelModel,
+          as: 'model',
+          attributes: ['exerciseCategory']
+        }]
+      });
+
+      if (!machine || !machine.model || !machine.model.exerciseCategory) {
+        return 0;
+      }
+
+      const exerciseCategory = machine.model.exerciseCategory;
+
+      // Contar cuántas máquinas tienen el mismo tipo de ejercicio
+      const count = await MachineModel.count({
+        include: [{
+          model: MachineModelModel,
+          as: 'model',
+          where: {
+            exerciseCategory: exerciseCategory
+          }
+        }]
+      });
+
+      if (count === 0) {
+        return 0;
+      }
+
+      // Calcular IR = 10 / √N
+      const rarityIndex = 10 / Math.sqrt(count);
+
+      return Math.round(rarityIndex * 100) / 100; // Redondear a 2 decimales
+    } catch (error) {
+      console.error(`Error calculating rarity index for machine ${machineId}:`, error);
+      return 0;
+    }
+  }
+
+  /**
    * Calcula todos los KPIs para una máquina específica
    * 
    * @param {number} machineId - ID de la máquina
    * @param {Date} startDate - Fecha inicio para uptime (opcional, default: hace 12 meses)
    * @param {Date} endDate - Fecha fin para uptime (opcional, default: hoy)
+   * @param {number} diasHastaFallo - Predicción de días hasta fallo (opcional, se obtiene del servicio predictivo)
    * @returns {Promise<Object>} - Objeto con todos los KPIs
    */
-  static async calculateAllKPIs(machineId, startDate = null, endDate = null) {
+  static async calculateAllKPIs(machineId, startDate = null, endDate = null, diasHastaFallo = null) {
     try {
       // Fechas por defecto: últimos 12 meses
       if (!endDate) {
@@ -123,23 +176,26 @@ class KPIMachineCalculator {
         startDate.setMonth(startDate.getMonth() - 12);
       }
 
-      // Calcular ambos KPIs en paralelo
-      const [equipmentUptime, maintenanceCostRelative] = await Promise.all([
+      // Calcular todos los KPIs en paralelo
+      const [equipmentUptime, maintenanceCostRelative, rarityIndex] = await Promise.all([
         this.calculateEquipmentUptime(machineId, startDate, endDate),
-        this.calculateMaintenanceCostRelative(machineId)
+        this.calculateMaintenanceCostRelative(machineId),
+        this.calculateRarityIndex(machineId)
       ]);
 
       return {
         equipmentUptime,
         maintenanceCostRelative,
-        diasDespuesDeFallo: this.DIAS_DESPUES_DE_FALLO
+        diasDespuesDeFallo: diasHastaFallo || this.DIAS_DESPUES_DE_FALLO, // Usar predicción o valor por defecto
+        rarityIndex
       };
     } catch (error) {
       console.error(`Error calculating KPIs for machine ${machineId}:`, error);
       return {
         equipmentUptime: 0,
         maintenanceCostRelative: 0,
-        diasDespuesDeFallo: this.DIAS_DESPUES_DE_FALLO
+        diasDespuesDeFallo: diasHastaFallo || this.DIAS_DESPUES_DE_FALLO,
+        rarityIndex: 0
       };
     }
   }
@@ -154,8 +210,15 @@ class KPIMachineCalculator {
    */
   static async calculateKPIsForMachines(machineIds, startDate = null, endDate = null) {
     try {
+      // Primero obtener predicciones de fallo para todas las máquinas
+      console.log('📊 Obteniendo predicciones de fallos del modelo ML...');
+      const failurePredictions = await PredictiveModelService.getPredictionsForMachines(machineIds);
+      console.log(`📊 Predicciones obtenidas para ${Object.keys(failurePredictions).length} máquinas`);
+
+      // Calcular KPIs para cada máquina con su predicción
       const kpisPromises = machineIds.map(async (machineId) => {
-        const kpis = await this.calculateAllKPIs(machineId, startDate, endDate);
+        const diasHastaFallo = failurePredictions[machineId] || this.DIAS_DESPUES_DE_FALLO;
+        const kpis = await this.calculateAllKPIs(machineId, startDate, endDate, diasHastaFallo);
         return { machineId, kpis };
       });
 

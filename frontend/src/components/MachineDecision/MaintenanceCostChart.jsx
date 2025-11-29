@@ -50,29 +50,27 @@ const MaintenanceCostChart = ({ machines }) => {
               </div>
 
               {/* Barra horizontal */}
-              <div className="relative h-8 bg-[#2a2a2a] rounded-lg overflow-hidden">
-                {/* Línea del 100% (punto medio) */}
-                <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-white z-10"></div>
-                <div className="absolute left-1/2 -top-6 text-[10px] text-white font-semibold transform -translate-x-1/2">
-                  100% (Decisión)
+              <div className="relative">
+                <div className="relative h-8 bg-[#2a2a2a] rounded-lg overflow-hidden">
+                  {/* Línea del 100% (punto medio) */}
+                  <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-white z-10"></div>
+
+                  {/* Barra de progreso */}
+                  <div
+                    className={`h-full transition-all duration-500 ${
+                      shouldReplace 
+                        ? 'bg-gradient-to-r from-yellow-500 to-red-500' 
+                        : 'bg-gradient-to-r from-green-500 to-yellow-500'
+                    }`}
+                    style={{ width: `${barWidth}%` }}
+                  ></div>
                 </div>
 
-                {/* Barra de progreso */}
-                <div
-                  className={`h-full transition-all duration-500 ${
-                    shouldReplace 
-                      ? 'bg-gradient-to-r from-yellow-500 to-red-500' 
-                      : 'bg-gradient-to-r from-green-500 to-yellow-500'
-                  }`}
-                  style={{ width: `${barWidth}%` }}
-                ></div>
-
-                {/* Etiquetas de 0% y 200% */}
-                <div className="absolute left-2 top-1/2 -translate-y-1/2 text-[10px] text-gray-400">
-                  0%
-                </div>
-                <div className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-gray-400">
-                  200%
+                {/* Etiquetas de 0%, 100% y 200% debajo de la barra */}
+                <div className="relative flex justify-between items-center mt-1 px-1">
+                  <span className="text-[10px] text-gray-400">0%</span>
+                  <span className="text-[10px] text-gray-400">100%</span>
+                  <span className="text-[10px] text-gray-400">200%</span>
                 </div>
               </div>
             </div>

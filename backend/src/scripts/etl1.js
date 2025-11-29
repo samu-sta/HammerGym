@@ -501,8 +501,8 @@ export const runETL = async () => {
 
     // Rutas de los archivos CSV
     // Usar rutas relativas desde la raíz del proyecto backend
-    const measuresPath = path.join(__dirname, '../../../Dataset med_os comp (1).csv');
-    const trainingPath = path.join(__dirname, '../../../progresion_entrenamiento_usuario (4).csv');
+    const measuresPath = path.join(__dirname, '../../../datasets/dataset_med_os_comp_1.csv');
+    const trainingPath = path.join(__dirname, '../../../datasets/progresion_entrenamiento_usuario_1.csv');
 
     console.log('📂 Rutas de archivos CSV:');
     console.log(`   Medidas: ${measuresPath}`);
